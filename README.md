@@ -14,9 +14,9 @@
 本文档使用 [Sphinx](http://www.sphinx-doc.org/) 构建得到。Sphinx 是基于 Python 的
 文档生成工具。
 
-1. 下载文档源码
+1.  下载文档源码
 
-	git clone --depth=50 https://github.com/seismo-learn/seismology101.git
+        git clone --depth=50 https://github.com/seismo-learn/seismology101.git
 
 2.  安装文档所需依赖
 
