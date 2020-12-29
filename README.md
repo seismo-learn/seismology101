@@ -16,7 +16,7 @@
 
 1. 下载文档源码
 
-		git clone --depth=50 https://github.com/seismo-learn/seismology101.git
+	git clone --depth=50 https://github.com/seismo-learn/seismology101.git
 
 2.  安装文档所需依赖
 
