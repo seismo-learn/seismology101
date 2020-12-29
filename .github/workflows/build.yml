@@ -1,0 +1,91 @@
+name: Build Website
+
+# Run for PRs and the main branch
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build sphinx document
+        run: make dirhtml
+
+      - name: Deploy documentation
+        if: success() && github.event_name == 'push'
+        # peaceiris/actions-gh-pages@v3.7.3
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/dirhtml
+          # Only keep the latest commit to avoid bloating the repository
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Deploy for preview
+        if: success() && github.event_name == 'pull_request'
+        # peaceiris/actions-gh-pages@v3.7.3
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
+        with:
+          # personal token can be generated at https://github.com/settings/tokens,
+          # and added to https://github.com/organizations/seismo-learn/settings/secrets/actions
+          personal_token: ${{ secrets.TOKEN_DOCUMENT_DEPLOY }}
+          publish_dir: ./build/dirhtml
+          destination_dir: ${{ github.repository }}/${{ github.head_ref }}
+          external_repository: seismo-learn/sitepreview
+          keep_files: false
+          allow_empty_commit: true
+          force_orphan: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        if: github.event_name == 'pull_request'
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: This comment was written by the Continuous Documentation bot!
+
+      - name: Create comment
+        if: steps.fc.outputs.comment-id == 0 && github.event_name == 'pull_request'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            This comment was written by the Continuous Documentation bot!
+
+            - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}
+            - **Commit hash**: ${{ github.event.pull_request.head.sha }}
+
+      - name: Update comment
+        if: steps.fc.outputs.comment-id != 0 && github.event_name == 'pull_request'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          edit-mode: replace
+          body: |
+            This comment was written by the Continuous Documentation bot!
+
+            - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}
+            - **Commit hash**: ${{ github.event.pull_request.head.sha }}
