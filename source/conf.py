@@ -20,6 +20,9 @@
 project = "地震学入门教程"
 author = "seismo-learn"
 copyright = f"2020, {author}."
+github_user = "seismo-learn"
+github_repo = "seismology101"
+github_url = f"https://github.com/{github_user}/{github_repo}"
 
 
 # -- General configuration ---------------------------------------------------
@@ -57,25 +60,25 @@ html_last_updated_fmt = "%Y年%m月%d日"
 html_title = project
 
 html_context = {
-    "favicon" : "favicon.ico",
+    "favicon": "favicon.ico",
     "display_github": True,
-    "github_user": "seismo-learn",
-    "github_repo": "seismology101",
+    "github_user": github_user,
+    "github_repo": github_repo,
     "github_version": "main",
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "blob",
     "menu_links": [
         (
             '<i class="fa fa-github fa-fw"></i> 网站源码',
-            "https://github.com/seismo-learn/seismology101",
+            github_url,
         ),
         (
             '<i class="fa fa-edit fa-fw"></i> 贡献指南',
-            "https://github.com/seismo-learn/seismology101/blob/main/CONTRIBUTING.md",
+            f"{github_url}/blob/main/CONTRIBUTING.md",
         ),
         (
             '<i class="fa fa-comments fa-fw"></i> 参与讨论',
-            "https://github.com/seismo-learn/seismology101/discussions",
+            f"{github_url}/discussions",
         ),
     ],
 }
