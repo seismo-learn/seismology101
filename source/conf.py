@@ -32,6 +32,7 @@ github_url = f"https://github.com/{github_user}/{github_repo}"
 # ones.
 extensions = [
     "sphinx.ext.githubpages",
+    "sphinx_cjkspace.cjkspace",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
