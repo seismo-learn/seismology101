@@ -29,6 +29,7 @@ copyright = f"2020, {author}."
 # ones.
 extensions = [
     "sphinx.ext.githubpages",
+    "sphinx_cjkspace.cjkspace",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
