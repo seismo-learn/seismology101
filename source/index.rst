@@ -8,7 +8,7 @@
    :hidden:
 
    introduction/index
-   seismic-data/index
+   seismogram/index
 
 
 .. toctree::
