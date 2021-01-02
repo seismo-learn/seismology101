@@ -1,4 +1,4 @@
-# 地震学入门教程
+# 地震“学”入门教程
 
 ![build](https://github.com/seismo-learn/seismology101/workflows/Build%20Website/badge.svg)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
