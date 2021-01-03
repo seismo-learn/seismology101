@@ -1,9 +1,13 @@
 波形数据格式
 ============
 
-There are many different seismic data formats in seismology community. The most commonly used formats are SAC, miniSEED and SEED.
+日常科研中，我们会接触许多不同的波形数据格式，最常见的是 SAC、miniSEED、以及 SEED 格式。
 
-- **SAC** is a good format for data analysis, though difficult for storing. This format is defined by the software SAC (Seismic Analysis Codes), although it is supported by many other tools
-- **SEED** (Standard for the Exchange of Earthquake Data) is a data format intended primarily for the archival and exchange of seismological time series data and related metadata. The latest `SEED 2.4 <http://www.fdsn.org/pdf/SEEDManual_V2.4.pdf>`__ is published in 2012.
-- **miniSEED** is the subset of the SEED standard that is used for time series data. Very limited metadata for the time series is included in miniSEED beyond time series identification and simple state-of-health flags. In particular, geographic coordinates, response/scaling information and other information needed to interpret the data values are not included.
-
+- **SAC**：该格式由 SAC（Seismic Analysis Codes）软件定义，许多其他软件都支持该格式。
+  SAC 格式一般用于数据处理和分析，若用于存储数据，则需要很大的磁盘空间。
+- **SEED**:全称 Standard for the Exchange of Earthquake Data（地震数据交换标准），
+  主要用于地震学时间序列数据和相关元数据的归档和交换。最新的 SEED 是 2012 年发布的
+  `SEED 2.4 <http://www.fdsn.org/pdf/SEEDManual_V2.4.pdf>`__。
+- **miniSEED**：SEED 的子集，用于地震学时间序列数据的归档和交换。
+  miniSEED 包含的时间序列的元数据非常有限，一般只有时间序列标识和简单的运行状况标志，
+  不包含台站地理坐标，仪器响应以及其他解释数据所需的信息。
