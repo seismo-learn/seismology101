@@ -9,7 +9,7 @@
 
    introduction/index
    seismogram/index
-
+   glossary/index.rst   
 
 .. toctree::
    :maxdepth: 3
