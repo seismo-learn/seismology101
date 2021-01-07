@@ -46,10 +46,10 @@ miniSEED 是 SEED 格式的子集，一般用于地震学时间序列数据的�
 不包含台站地理坐标、仪器响应以及其他解释数据所需的信息。
 
 近几年，由于地震学数据处理和分析软件的快速发展
-（如 `ObsPy <https://github.com/obspy/obspy/wiki>`__），
+（如 `ObsPy <https://github.com/obspy/obspy/wiki>`__\ ），
 miniseed 格式也常用于数据处理和分析。此时，需要的元数据从一定格式的
 元数据中提取。例如，目前比较流行的组合方式是 miniSEED 格式的时间序列数据和
-`stationXML <https://www.fdsn.org/xml/station/>`__ 格式的元数据。
+`StationXML <https://www.fdsn.org/xml/station/>`__ 格式的元数据。
 
 其他格式
 --------
