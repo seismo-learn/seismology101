@@ -18,7 +18,7 @@ from datetime import datetime
 
 # -- Project information -----------------------------------------------------
 
-project = "地震“学”入门教程"
+project = "地震学入门教程"
 author = "seismo-learn"
 copyright = f"2020–{datetime.today().year}, {author}"
 github_user = "seismo-learn"
