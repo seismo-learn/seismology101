@@ -33,7 +33,10 @@
    :hidden:
 
    introduction/index
+   seismic-source/index
+   seismic-wave/index
    seismogram/index
+   software/index
 
 
 .. toctree::
