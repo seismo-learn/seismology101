@@ -51,17 +51,6 @@ miniseed 格式也常用于数据处理和分析。此时，需要的元数据�
 元数据中提取。例如，目前比较流行的组合方式是 miniSEED 格式的时间序列数据和
 `StationXML <https://www.fdsn.org/xml/station/>`__ 格式的元数据。
 
-其他格式
---------
-
-日常科研中，我们还会接触其他常见的波形数据格式：
-
-- rg16 格式：全称 Receiver Gather 1.6-1，是 `Magseis Fairfield <https://magseisfairfield.com/>`__
-  制造的 `Zland <https://fairfieldgeo.com/media/pdfs/FG-ZLand-Brochure-ENGLISH.pdf>`__
-  地震仪记录的波形数据格式。
-- WIN32 格式：日本 `NIED Hinet <https://www.hinet.bosai.go.jp/>`__
-  基于 WIN 数据格式开发的格式，主要用于 Hinet 波形数据的存储和交换。
-
 格式转换
 --------
 
@@ -72,8 +61,6 @@ miniseed 格式也常用于数据处理和分析。此时，需要的元数据�
   几乎可以实现目前所有波形数据格式的互相转换。
 - `mseed2sac <https://github.com/iris-edu/mseed2sac>`__ 软件可以
   将 miniSEED 格式转成 SAC 格式。
-- `WIN32 Tools <https://hinetwww11.bosai.go.jp/auth/manual/?LANG=en#WIN32TOOLS>`__
-  中的 ``win2sac_32`` 可以将 WIN32 格式转成 SAC 格式。
 
 参考文档
 --------
