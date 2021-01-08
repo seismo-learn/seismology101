@@ -3,6 +3,18 @@
 
 .. toctree::
    :maxdepth: 3
+   :caption: 计算机基础
+   :hidden:
+
+   computer/operating-system
+   computer/linux-setup
+   computer/macos-setup
+   computer/linux101
+   computer/commands
+
+
+.. toctree::
+   :maxdepth: 3
    :caption: 编程基础
    :hidden:
 
@@ -13,6 +25,7 @@
    programming/fortran
    programming/compile
    programming/version-control
+
 
 .. toctree::
    :maxdepth: 3
