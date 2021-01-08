@@ -8,8 +8,8 @@
    :hidden:
 
    introduction/index
+   seismograph/index.rst   
    seismogram/index
-   glossary/index.rst   
 
 .. toctree::
    :maxdepth: 3
