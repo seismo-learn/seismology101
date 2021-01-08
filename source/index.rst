@@ -1,6 +1,18 @@
 地震学入门教程
 ##############
 
+.. toctree::
+   :maxdepth: 3
+   :caption: 编程基础
+   :hidden:
+
+   programming/introduction
+   programming/bash
+   programming/python
+   programming/c
+   programming/fortran
+   programming/compile
+   programming/version-control
 
 .. toctree::
    :maxdepth: 3
