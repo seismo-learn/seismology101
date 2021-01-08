@@ -1,6 +1,16 @@
 地震“学”入门教程
 ################
 
+.. toctree::
+   :maxdepth: 3
+   :caption: 计算机基础
+   :hidden:
+
+   computer/operating-system
+   computer/linux-setup
+   computer/macos-setup
+   computer/linux101
+   computer/commands
 
 .. toctree::
    :maxdepth: 3
