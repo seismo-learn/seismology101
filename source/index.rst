@@ -44,7 +44,7 @@
    :caption: 地震学实践
    :hidden:
 
-   data-fetch/index
+   exercises/waveform-fetch
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
 撰写的《地震学入门教程》。
