@@ -35,9 +35,9 @@
    introduction/index
    seismic-source/index
    seismic-wave/index
+   seismograph/index.rst  
    seismogram/index
    software/index
-
 
 .. toctree::
    :maxdepth: 3
