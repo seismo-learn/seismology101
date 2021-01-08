@@ -12,7 +12,7 @@
    programming/c
    programming/fortran
    programming/compile
-   programming/git
+   programming/version-control
 
 .. toctree::
    :maxdepth: 3
