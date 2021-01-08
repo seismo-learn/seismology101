@@ -33,8 +33,8 @@
    :hidden:
 
    introduction/index
-   seismic_source/index
-   seismic_wave/index
+   seismic-source/index
+   seismic-wave/index
    seismogram/index
    software/index
 
