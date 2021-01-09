@@ -1,7 +1,7 @@
 选择操作系统
 ============
 
-个人电脑有三种常用的操作系统：Microsoft Windows、macOS 和 Linux。
+个人电脑有三种常见的操作系统：Microsoft Windows、macOS 和 Linux。
 从市场占有率上看，Microsoft Windows 用户数目远远多于 macOS 和 Linux 用户。
 然而，大多数地震学科研工作者都选择 Linux 或 macOS 作为日常研究的主要操作系统。
 主要原因有如下几点：
@@ -9,6 +9,7 @@
 1. Linux 和 macOS 上可以更容易的获取和使用编程所需的开发工具
 2. 大多数地震学相关的程序/代码都是在 Linux 上编写的，且仅在 Linux 和 macOS 下可以使用
 3. Linux 和 macOS 自带了可以对数据做基本处理的命令行工具
+4. 高性能计算服务器几乎都只使用 Linux 系统
 
 对于初学者，我们\ **建议使用 Linux 或 macOS 系统**\ ，除非你非常确定自己的科研
 工作并不需要用到别人提供的代码，或者你有足够的知识和能力在 Windows 系统下
