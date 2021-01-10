@@ -15,14 +15,6 @@
 工作并不需要用到别人提供的代码，或者你有足够的知识和能力在 Windows 系统下
 编译和使用别人的代码。
 
-macOS
------
-
-Mac 笔记本或台式机（如 MacBook Air、MacBook Pro、iMac）自带的 macOS 系统
-可以满足科研工作的大部分需求。对于拥有 macOS 系统的用户，建议直接使用 macOS 系统。
-可以参考《\ :doc:`/computer/macos-setup`\ 》对 macOS 系统进行进一步配置，以满足
-科研工作的需求。
-
 Linux
 -----
 
@@ -37,6 +29,14 @@ Linux 有很多不同的发行版，所有 Linux 发行版都可以免费获取�
 对于不了解 Linux 的用户，我们推荐安装 XXXX。XXXX 用户可以参考
 《\ :doc:`/computer/linux-setup`\ 》对 Linux 系统进行进一步配置，
 以满足科研工作的需求。
+
+macOS
+-----
+
+Mac 笔记本或台式机（如 MacBook Air、MacBook Pro、iMac）自带的 macOS 系统
+可以满足科研工作的大部分需求。对于拥有 macOS 系统的用户，建议直接使用 macOS 系统。
+可以参考《\ :doc:`/computer/macos-setup`\ 》对 macOS 系统进行进一步配置，以满足
+科研工作的需求。
 
 Microsoft Windows
 -----------------
