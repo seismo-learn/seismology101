@@ -43,7 +43,7 @@ Microsoft Windows
 
 如本节开头所说，不建议地震学科研工作者使用 Windows 操作系统，而建议 Windows 用户
 安装并使用 Linux 系统。Windows 用户使用 Linux 系统的方式有很多，
-比如安装双系统、使用虚拟机安装 Linux，
+比如安装双系统、使用虚拟机安装 Linux
 以及使用“适用于 Linux 的 Windows 子系统”（Windows Subsystem for Linux，即 WSL）。
 
 目前，推荐使用 WSL 方式安装 Linux 系统。读者可以进一步参考
