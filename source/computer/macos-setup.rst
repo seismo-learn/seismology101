@@ -95,7 +95,7 @@ Python 3.x。建议通过 `Anaconda <https://seismo-learn.org/software/anaconda/
 来安装最新版 Python。
 
 git
-~~~
+^^^
 
 `git <https://git-scm.com/>`__ 是最流行的版本控制工具，也是科研过程中编写代码
 以及项目管理推荐使用的软件。使用如下命令安装 git::
