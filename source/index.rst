@@ -7,8 +7,7 @@
    :hidden:
 
    computer/operating-system
-   computer/linux-setup
-   computer/macos-setup
+   computer/setup
    computer/linux101
    computer/commands
 
@@ -35,7 +34,7 @@
    introduction/index
    seismic-source/index
    seismic-wave/index
-   seismograph/index.rst  
+   seismograph/index.rst
    seismogram/index
    software/index
 
