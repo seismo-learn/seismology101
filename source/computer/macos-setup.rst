@@ -19,7 +19,8 @@ macOS 配置指南
 Command Line Tools for Xcode
 ----------------------------
 
-Command Line Tools for Xcode 是 macOS 下的开发基础包，其包含了常用的命令行开发工具，
+Xcode 是 macOS 下的集成开发环境（IDE），类似于 Windows 下的 Microsoft Visual Studio。
+Command Line Tools for Xcode 是 Xcode 的一个子集，其包含了常用的命令行开发工具，
 比如 C 编译器、make、git 等，是安装很多其他软件的基础。
 
 按下 :kbd:`Command+空格`\ ，搜索并打开“Terminal”。在 Terminal 中执行如下命令
