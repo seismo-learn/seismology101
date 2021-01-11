@@ -6,7 +6,7 @@
 .. toctree::
    :maxdepth: 3
 
-   linux-setup
+   fedora-setup
    macos-setup
    wsl-setup
 
