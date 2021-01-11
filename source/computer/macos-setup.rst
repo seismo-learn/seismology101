@@ -73,7 +73,7 @@ Command Line Tools for Xcode 已经提供了 C 编译器和相关工具，因而
 C编译器。
 
 Java
-~~~~
+^^^^
 
 若要运行 Java 程序，则需要安装 java::
 
