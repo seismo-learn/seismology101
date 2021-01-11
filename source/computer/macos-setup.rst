@@ -102,29 +102,52 @@ git
 
     $ brew install git
 
+其他命令行工具
+--------------
+
+这里推荐一些常用的命令行工具。
+
+Windows 和 Linux/macOS 系统下，文本文件的换行符时不同的。
+dos2unix 可以将 Windows 系统下的换行符转换为 UNIX 系统下的换行符。
+unix2dos 则反之::
+
+    $ brew install dos2unix unix2dos
+
+`gawk <https://www.gnu.org/software/gawk/>`__ 是用于文本处理的命令行工具。
+macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 gawk::
+
+    $ brew install gawk
+
 其他效率软件
 ------------
 
 如上所说，Homebrew 可以用于安装日常及科研的大部分软件。这里推荐一些常用的
-macOS 下的软件::
+macOS 下的软件。
 
-    # QQ
+通讯软件 QQ 与微信::
+
     $ brew install --cask qq
-
-    # 微信
     $ brew install --cask wechat
 
-    # 解压软件
+搜狗输入法::
+
+    $ brew install --cask sogouinput
+
+解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
+
     $ brew install --cask the-unarchiver
 
-    # 文本编辑器 Visual Studio Code
+文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
+
     $ brew install --cask visual-studio-code
 
-    # 视频播放器
+更好用的本地视频播放器 `IINA <https://iina.io/>`__::
+
     $ brew install --cask iina
 
-    # 搜狗输入法
-    $ brew install --cask sogouinput
+macOS 自带了 Terminal，但 `iTerm2 <https://iterm2.com/>`__ 更好用::
+
+    $ brew install --cask iterm2
 
 macOS 下空格键具有强大的功能。在文件浏览器 Finder 中，按下空格键，会调用
 QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF 以及图片等格式。
