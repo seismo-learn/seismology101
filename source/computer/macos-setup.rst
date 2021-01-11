@@ -80,7 +80,7 @@ Java
     $ brew install java
 
 Fortran
-~~~~~~~
+^^^^^^^
 
 若需要编译 Fortran 程序，则可以安装 `GNU Fortran <https://gcc.gnu.org/fortran/>`__
 编译器（即 ``gfortran``\ ）::
