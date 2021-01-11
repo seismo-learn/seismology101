@@ -27,7 +27,7 @@ Linux 有很多不同的发行版，几乎所有 Linux 发行版都可以免费�
 读者可以根据自己的喜好自行选择合适的 Linux 发行版。
 
 对于不了解 Linux 的用户，我们\ **推荐安装 Fedora**\ 。Fedora 用户可以参考
-《\ :doc:`/computer/linux-setup`\ 》对 Linux 系统进行进一步配置，
+《\ :doc:`/computer/fedora-setup`\ 》对 Fedora 系统进行进一步配置，
 以满足科研工作的需求。
 
 .. note::
