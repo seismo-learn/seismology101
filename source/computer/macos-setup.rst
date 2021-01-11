@@ -42,16 +42,17 @@ Homebrew 的详细用法见官方文档。此处仅列出一些常用的用法::
     $ brew search java
 
     # 安装 java 软件包
-    brew install java
+    $ brew install java
 
-    # 安装 QQ。由于 QQ 是带图形界面的软件，因而这里需要使用 --cask 选项
-    brew install --cask qq
+    # 安装 QQ
+    # 由于 QQ 是带图形界面的软件，因而这里需要使用 --cask 选项
+    $ brew install --cask qq
 
     # 升级某个软件
-    brew upgrade xxx
+    $ brew upgrade xxx
 
     # 卸载某个软件
-    brew uninstall xxx
+    $ brew uninstall xxx
 
 .. note::
 
