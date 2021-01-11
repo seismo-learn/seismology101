@@ -18,7 +18,7 @@
 Linux
 -----
 
-Linux 有很多不同的发行版，所有 Linux 发行版都可以免费获取与安装。
+Linux 有很多不同的发行版，几乎所有 Linux 发行版都可以免费获取与安装。
 比较流行的发行版有
 `Ubuntu <https://ubuntu.com/>`__\ 、\
 `Debian <https://www.debian.org/>`__\ 、\
@@ -26,16 +26,19 @@ Linux 有很多不同的发行版，所有 Linux 发行版都可以免费获取�
 `CentOS <https://www.centos.org/>`__ 等。
 读者可以根据自己的喜好自行选择合适的 Linux 发行版。
 
-.. note::
-
-   Red Hat 在 2020 年 12 月宣布将停止 CentOS Linux 项目。CentOS Linux 8 将在
-   2021 年末停止更新。同时，考虑到广大用户对 CentOS Linux 7 的使用需求，
-   Red Hat 将继续更新和维护其至 2024 年 6 月 30 日。详情请阅读
-   `CentOS 通告 <https://lists.centos.org/pipermail/centos-announce/2020-December/048208.html>`__。
-
-对于不了解 Linux 的用户，我们推荐安装 XXXX。XXXX 用户可以参考
+对于不了解 Linux 的用户，我们\ **推荐安装 Fedora**\ 。Fedora 用户可以参考
 《\ :doc:`/computer/linux-setup`\ 》对 Linux 系统进行进一步配置，
 以满足科研工作的需求。
+
+.. note::
+
+   选择 **Ubuntu** 的用户推荐使用 Ubuntu 20.04 LTS（长期支持版）或 Ubuntu 20.10（最新版）。
+
+   选择 **CentOS** 的用户推荐使用 `CentOS Stream <https://www.centos.org/centos-stream/>`__，
+   而非 `CentOS Linux <https://www.centos.org/centos-linux/>`__。
+   Red Hat 在 2020 年 12 月宣布将停止 CentOS Linux 项目。CentOS Linux 8 将在
+   2021 年末停止更新。CentOS Linux 7 也将于 2024 年 6 月 30 日停止更新。
+   详情请阅读 `CentOS 博客 <https://blog.centos.org/2020/12/future-is-centos-stream/>`__。
 
 macOS
 -----
