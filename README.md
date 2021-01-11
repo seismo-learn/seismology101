@@ -1,10 +1,12 @@
-# 地震“学”入门教程
+# 地震学科研入门教程
 
 ![build](https://github.com/seismo-learn/seismology101/workflows/Build%20Website/badge.svg)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 
 
-本文档主要介绍地震学基础，以便初学者快速入门等。
+本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及其他刚接触地震学的科研人员。
+
+本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以作为地震学新手的入门自学材料，也可以作为各个研究组的入门培训材料。
 
 - 项目主页：https://github.com/seismo-learn/seismology101
 - 网页版：https://seismo-learn.org/seismology101/
