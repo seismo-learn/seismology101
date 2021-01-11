@@ -88,7 +88,7 @@ Fortran
     $ brew install gfortran
 
 Python
-~~~~~~
+^^^^^^
 
 macOS 默认的 Python 版本为 Python 2.7，而目前主流的 Python 版本为
 Python 3.x。建议通过 `Anaconda <https://seismo-learn.org/software/anaconda/>`__
