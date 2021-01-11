@@ -6,7 +6,7 @@
 然而，大多数地震学科研工作者都选择 Linux 或 macOS 作为日常研究的主要操作系统。
 主要原因有如下几点：
 
-1. Linux 和 macOS 上可以更容易的获取和使用编程所需的开发工具
+1. Linux 和 macOS 上可以更容易地获取和使用编程所需的开发工具
 2. 大多数地震学相关的程序/代码都是在 Linux 上编写的，且仅在 Linux 和 macOS 下可以使用
 3. Linux 和 macOS 自带了可以对数据做基本处理的命令行工具
 4. 高性能计算服务器几乎都只使用 Linux 系统
@@ -41,18 +41,17 @@ macOS
 -----
 
 Mac 笔记本或台式机（如 MacBook Air、MacBook Pro、iMac）自带的 macOS 系统
-可以满足科研工作的大部分需求。对于拥有 macOS 系统的用户，建议直接使用 macOS 系统。
-可以参考《\ :doc:`/computer/macos-setup`\ 》对 macOS 系统进行进一步配置，以满足
-科研工作的需求。
+可以满足科研工作的大部分需求。对于拥有 macOS 系统的读者，我们建议直接使用
+macOS 系统。可以参考《\ :doc:`/computer/macos-setup`\ 》对 macOS 系统进行
+进一步配置，以满足科研工作的需求。
 
 Microsoft Windows
 -----------------
 
-如本节开头所说，不建议地震学科研工作者使用 Windows 操作系统，而建议 Windows 用户
+如前所述，不建议地震学科研工作者使用 Windows 系统，而建议 Windows 用户
 安装并使用 Linux 系统。Windows 用户使用 Linux 系统的方式有很多，
 比如安装双系统、使用虚拟机安装 Linux
 以及使用“适用于 Linux 的 Windows 子系统”（Windows Subsystem for Linux，即 WSL）。
 
-目前，推荐使用 WSL 方式安装 Linux 系统。读者可以进一步参考
-《\ :doc:`/computer/wsl-setup`\ 》来安装并配置 WSL 系统，
-以满足科研工作的需求。
+推荐使用 WSL 方式安装 Linux 系统。读者可以进一步参考
+《\ :doc:`/computer/wsl-setup`\ 》来安装并配置 WSL 系统，以满足科研工作的需求。
