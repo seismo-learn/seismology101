@@ -132,10 +132,6 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 gawk:
 
 如上所说，Homebrew 可以用于安装日常及科研的大部分软件。这里推荐一些常用的 macOS 软件。
 
-搜狗输入法::
-
-    $ brew install --cask sogouinput
-
 解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
 
     $ brew install --cask the-unarchiver
@@ -143,10 +139,6 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 gawk:
 文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
 
     $ brew install --cask visual-studio-code
-
-更好用的本地视频播放器 `IINA <https://iina.io/>`__::
-
-    $ brew install --cask iina
 
 macOS 自带了 Terminal，但 `iTerm2 <https://iterm2.com/>`__ 更好用::
 
