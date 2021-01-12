@@ -43,6 +43,13 @@
 
    exercises/waveform-fetch
 
+.. toctree::
+   :maxdepth: 3
+   :caption: 实践经验
+   :hidden:
+
+   best-practices/index
+
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
 撰写的《地震学科研入门教程》。
