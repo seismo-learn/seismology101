@@ -45,9 +45,10 @@
 
 .. toctree::
    :maxdepth: 3
-   :caption: 最佳实践
+   :caption: 实践经验
    :hidden:
 
+   best-practices/index
    best-practices/installation-path
 
 
