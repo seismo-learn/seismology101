@@ -130,7 +130,8 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 gawk:
 其他效率软件
 ------------
 
-如上所说，Homebrew 可以用于安装日常及科研的大部分软件。这里推荐一些常用的 macOS 软件。
+如上所说，Homebrew 可以用于安装日常及科研的大部分软件。这里推荐一些可以提升
+效率的 macOS 软件。
 
 解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
 
