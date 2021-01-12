@@ -46,11 +46,11 @@ Homebrew
 
 Homebrew 的详细用法见官方文档。此处仅列出一些常用的用法::
 
-    # 模糊搜索与 java 相关的软件
-    $ brew search java
+    # 模糊搜索与 wget 相关的软件
+    $ brew search wget
 
-    # 安装 java 软件包
-    $ brew install java
+    # 安装 wget 软件包
+    $ brew install wget
 
     # 安装 QQ
     # 由于 QQ 是带图形界面的软件，因而这里需要使用 --cask 选项
@@ -84,9 +84,9 @@ C编译器。
 Java
 ^^^^
 
-若要运行 Java 程序，则需要安装 java::
+若要运行 Java 程序，则需要安装 Java 开发环境::
 
-    $ brew install java
+    $ brew install openjdk
 
 Fortran
 ^^^^^^^
