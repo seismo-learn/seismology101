@@ -52,9 +52,9 @@ Homebrew 的详细用法见官方文档。此处仅列出一些常用的用法::
     # 安装 wget 软件包
     $ brew install wget
 
-    # 安装 QQ
-    # 由于 QQ 是带图形界面的软件，因而这里需要使用 --cask 选项
-    $ brew install --cask qq
+    # 安装 Visual Studio Code
+    # 由于 Visual Studio Code 是带图形界面的软件，因而这里需要使用 --cask 选项
+    $ brew install --cask visual-studio-code
 
     # 升级某个软件
     $ brew upgrade xxx
@@ -131,11 +131,6 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 gawk:
 ------------
 
 如上所说，Homebrew 可以用于安装日常及科研的大部分软件。这里推荐一些常用的 macOS 软件。
-
-通讯软件 QQ 与微信::
-
-    $ brew install --cask qq
-    $ brew install --cask wechat
 
 搜狗输入法::
 
