@@ -49,7 +49,7 @@
    :hidden:
 
    best-practices/index
-   best-practices/installation-path
+   best-practices/software-installation
 
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
