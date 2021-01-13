@@ -81,8 +81,8 @@ Linux 或 macOS 系统下安装软件通常有如下几种方式：
 这里推荐将科研相关软件安装到 :file:`~/opt/` 目录下，而不是更常见的 :file:`/opt/`
 或 :file:`/usr/local/` 目录，主要是基于如下几点考虑：
 
--   某些包管理器使用了这些目录，比如 macOS 下的 Homebrew 的软件安装路径是 :file:`/usr/local`\ ，
-    macOS 的 MacPorts 的软件安装路径是 :file:`/opt/local`
+-   某些包管理器使用了这些目录，比如 macOS 下的 Homebrew 的软件安装路径是 :file:`/usr/local/`\ ，
+    macOS 的 MacPorts 的软件安装路径是 :file:`/opt/local/`
 -   某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）默认将软件安装到
     :file:`/opt/` 目录下
 -   地震学科研软件与其他软件属于不同的两类软件，因而将二者放在不同的目录下更合理
