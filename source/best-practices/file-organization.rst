@@ -139,7 +139,7 @@ Documents
 
 用于存放个人文档。可自行根据自己的需求进一步创建子目录。
 
-考虑到其他软件，比如 Matlab、Zoom 等，也会像 :file:`Documents` 目录里建子目录并
+考虑到其他软件，比如 Matlab、Zoom 等，也会在 :file:`Documents` 目录里创建子目录并
 写文件，读者也可以考虑不使用 :file:`Documents` 目录，而自行在家目录下建立其他
 用于存放个人文档的目录，比如目录 :file:`research` 用于存放科研相关的文档，
 目录 :file:`life` 用于存放私人文档。
