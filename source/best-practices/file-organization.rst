@@ -36,13 +36,13 @@
 
 -   为了满足日常科研需求，在家目录下新建的、用于存储科研相关文件的目录
 
-    - :file:`bin`
-    - :file:`src`
     - :file:`software`
-    - :file:`opt`
-    - :file:`projects`
+    - :file:`src`
     - :file:`codes`
+    - :file:`opt`
+    - :file:`bin`
     - :file:`data`
+    - :file:`projects`
     - :file:`workspace`
 
 -   根据需求创建的其他目录
