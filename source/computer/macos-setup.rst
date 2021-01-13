@@ -4,7 +4,7 @@ macOS 配置指南
 :本节作者: `王亮 <https://github.com/wangliang1989>`__\ （作者）、
            `田冬冬 <https://me.seisman.info/>`__\ （作者）、
            `姚家园 <https://github.com/core-man>`__\ （审稿）
-:最后更新日期: 2021-01-11
+:最近更新日期: 2021-01-11
 
 ----
 
