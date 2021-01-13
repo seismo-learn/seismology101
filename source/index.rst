@@ -49,6 +49,7 @@
    :hidden:
 
    best-practices/index
+   best-practices/software-installation
    best-practices/backup
 
 
