@@ -29,12 +29,12 @@
    :caption: 地震学基础
    :hidden:
 
-   introduction/index
-   seismic-source/index
-   seismic-wave/index
-   seismograph/index.rst
-   seismogram/index
-   software/index
+   seismology/introduction/index
+   seismology/seismic-source/index
+   seismology/seismic-wave/index
+   seismology/seismograph/index
+   seismology/seismogram/index
+   seismology/software/index
 
 .. toctree::
    :maxdepth: 3
