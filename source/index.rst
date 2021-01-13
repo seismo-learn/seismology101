@@ -29,12 +29,12 @@
    :caption: 地震学基础
    :hidden:
 
-   introduction/index
-   seismic-source/index
-   seismic-wave/index
-   seismograph/index.rst
-   seismogram/index
-   software/index
+   seismology/introduction/index
+   seismology/seismic-source/index
+   seismology/seismic-wave/index
+   seismology/seismograph/index
+   seismology/seismogram/index
+   seismology/software/index
 
 .. toctree::
    :maxdepth: 3
@@ -49,8 +49,8 @@
    :hidden:
 
    best-practices/index
-   best-practices/software-installation
    best-practices/file-organization
+   best-practices/software-installation
    
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
