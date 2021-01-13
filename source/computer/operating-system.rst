@@ -1,6 +1,12 @@
 选择操作系统
 ============
 
+:本节贡献者: `田冬冬 <https://me.seisman.info>`__ （作者）、`姚家园 <https://github.com/core-man>`__ （作者）
+:最近更新日期: 2021-01-10
+:预计阅读时间: 5 分钟
+
+----
+
 个人电脑有三种常见的操作系统：Microsoft Windows、macOS 和 Linux。
 从市场占有率上看，Microsoft Windows 用户数目远远多于 macOS 和 Linux 用户。
 然而，大多数地震学科研工作者都选择 Linux 或 macOS 作为日常研究的主要操作系统。
