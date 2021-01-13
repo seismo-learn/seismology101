@@ -1,7 +1,7 @@
 软件安装最佳实践
 ================
 
-:本节贡献者: `姚家园 <https://github.com/core-man>`__ （作者）、`田冬冬 <https://me.seisman.info>`__ （作者）
+:本节贡献者: `田冬冬 <https://me.seisman.info>`__ （作者）、`姚家园 <https://github.com/core-man>`__ （作者）
 :最近更新日期: 2021-01-12
 :预计阅读时间: X 分钟
 
