@@ -84,14 +84,6 @@ C
 Command Line Tools for Xcode 已经提供了 C 编译器和相关工具，因而无需单独安装
 C编译器。
 
-Java
-^^^^
-
-若要运行 Java 程序，则需要安装 Java 开发环境::
-
-    $ brew install openjdk
-    $ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-
 Fortran
 ^^^^^^^
 
@@ -99,6 +91,14 @@ Fortran
 编译器（即 ``gfortran``\ ）::
 
     $ brew install gfortran
+
+Java
+^^^^
+
+若要运行 Java 程序，则需要安装 Java 开发环境::
+
+    $ brew install openjdk
+    $ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 Python
 ^^^^^^
@@ -138,6 +138,10 @@ unix2dos 则反之::
 macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 gawk::
 
     $ brew install gawk
+
+`wget <https://www.gnu.org/software/wget/>`__ 是用于下载文件的命令行工具::
+
+    $ brew install wget
 
 其他效率软件
 ------------
