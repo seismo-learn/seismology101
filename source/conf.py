@@ -41,6 +41,7 @@ rst_prolog = """
 # ones.
 extensions = [
     "sphinx.ext.githubpages",
+    "sphinx.ext.intersphinx",
     "sphinx_cjkspace.cjkspace",
 ]
 
@@ -58,6 +59,14 @@ language = "zh_CN"
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
+
+# Cross-refering other projects
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
+intersphinx_mapping = {
+    "seis": ("https://seismo-learn.org/seismology/", None),
+    "seis101": ("https://seismo-learn.org/seismology101/", None),
+    "software": ("https://seismo-learn.org/software/", None),
+}
 
 
 # -- Options for HTML output -------------------------------------------------
