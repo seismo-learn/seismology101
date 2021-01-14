@@ -115,6 +115,14 @@ git
 
     $ brew install git
 
+.. note::
+
+   使用 ``brew`` 命令安装的 git 位于 ``/usr/local/bin/`` 目录下，而
+   Command Line Tools for Xcode 携带的 git 位于 ``/usr/bin/``
+   目录下。我们使用 ``echo $PATH`` 命令查看环境变量 ``$PATH`` 会发现，
+   一般情况下，\ ``/usr/local/bin/`` 位于 ``/usr/bin/`` 前。因此，
+   此时我们使用的 git 其实是通过 ``brew`` 安装的版本。
+
 其他命令行工具
 --------------
 
