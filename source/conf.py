@@ -26,6 +26,14 @@ github_repo = "seismology101"
 github_url = f"https://github.com/{github_user}/{github_repo}"
 
 
+# -- Contributor information -------------------------------------------------
+
+rst_prolog = """
+.. |田冬冬| replace:: `田冬冬 <https://me.seisman.info/>`__
+.. |姚家园| replace:: `姚家园 <https://github.com/core-man>`__
+"""
+
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -33,6 +41,7 @@ github_url = f"https://github.com/{github_user}/{github_repo}"
 # ones.
 extensions = [
     "sphinx.ext.githubpages",
+    "sphinx.ext.intersphinx",
     "sphinx_cjkspace.cjkspace",
 ]
 
@@ -50,6 +59,14 @@ language = "zh_CN"
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
+
+# Cross-refering other projects
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
+intersphinx_mapping = {
+    "seis": ("https://seismo-learn.org/seismology/", None),
+    "seis101": ("https://seismo-learn.org/seismology101/", None),
+    "software": ("https://seismo-learn.org/software/", None),
+}
 
 
 # -- Options for HTML output -------------------------------------------------
