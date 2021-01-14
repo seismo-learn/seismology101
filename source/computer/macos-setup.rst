@@ -30,8 +30,8 @@ Command Line Tools for Xcode 是 Xcode 的一个子集，其包含了常用的�
 
 在弹出的窗口点击“Install”即可。
 
-此处安装的 Command Line Tools 可能不是最新版，可以到“App Store”的“更新”中查看
-是否有相关更新。如果有，则升级到最新版。
+此处安装的 Command Line Tools 可能不是最新版，可以到“App Store”的“更新”中或
+“设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
 
 Homebrew
 --------
