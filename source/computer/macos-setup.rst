@@ -28,6 +28,13 @@ Command Line Tools for Xcode 是 Xcode 的一个子集，其包含了常用的�
 此处安装的 Command Line Tools 可能不是最新版，可以到“App Store”的“更新”中或
 “设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
 
+.. note::
+
+   可以查看 ``/Library/Developer/CommandLineTools/usr/bin`` 目录，
+   了解安装的所有命令，如 ``gcc``\ 、``make``\ 、``git``\ 。使用这些命令
+   时，其环境变量路径时 ``/usr/bin``\ 。
+   
+
 Homebrew
 --------
 
