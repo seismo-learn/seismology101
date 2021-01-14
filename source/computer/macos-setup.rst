@@ -169,3 +169,9 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
 
     # 预览渲染后的markdown文件
     $ brew install --cask qlmarkdown
+
+.. note::
+
+   安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开，
+   因为苹果无法判断其是否是恶意软件。可以在 ``System Preferences`` 的
+   ``Security & Privacy`` 中点击 ``Open Anyway`` 使用这些插件。
