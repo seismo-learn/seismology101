@@ -44,6 +44,7 @@ Homebrew
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+安装好以后，打开新的 Terminal 便可以使用 ``brew`` 命令。
 Homebrew 的详细用法见官方文档。此处仅列出一些常用的用法::
 
     # 模糊搜索与 wget 相关的软件
