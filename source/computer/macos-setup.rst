@@ -97,7 +97,7 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 """"
 
 安装好 Homebrew 后，打开新的 Terminal 便可以使用 Homebrew 提供的 ``brew`` 命令。
-``brew`` 的详细用法见 `官方文档 <https://docs.brew.sh/Manpage>__`\ 。此处仅列出一些常用的用法::
+``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__\ 。此处仅列出一些常用的用法::
 
     # 模糊搜索与 wget 相关的软件
     $ brew search wget
@@ -114,6 +114,36 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 
     # 卸载某个软件
     $ brew uninstall xxx
+
+.. note::
+
+   ``brew``\ ：Homebrew 用于安装各种软件包、库文件以及字体等的命令。
+
+   ``Formula``\ ：一个软件的描述文件，包含了如何安装此软件等信息。``Formulae`` 是其复数。
+   每个软件对应一个 ``Formula``\ 。例如，git 对应 ``Formula`` 是
+   :file:`/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb`\ 。
+   使用 ``brew ls --formula`` 命令可以查看已安装的 ``Formulae``。
+
+   ``Tap``\ ：一个含有一系列软件（即 ``Formulae``\ ）的 git 仓库。使用
+   `brew tap <https://docs.brew.sh/Taps#the-brew-tap-command>`__
+   命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
+   :file:`/usr/local/Homebrew/Library/Taps/homebrew/` 目录。
+   常见软件仓库有 ``homebrew-core`` 和 ``homebrew-cask``\ 。其中，\ ``homebrew-core`` 是内置
+   核心仓库，\ ``homebrew-cask`` 仓库则含有各种 macOS 系统下的应用程序。
+
+   ``Bottle``\ ：预先编译好的二进制软件包。使用 ``Bottle`` 安装软件，
+   比从源码编译和安装更快。如果一个软件仓库包含预编译的软件包，使用 ``brew install``
+   时会自动使用它。
+
+   ``Cask``\ ：Homebrew 的扩展（extension ），用来安装 macOS 的图形界面应用程序。
+   使用 ``brew ls --cask`` 命令可以查看已安装的 ``casks``。
+
+   ``Cellar``\ ：所有软件的安装目录，即 :file:`/usr/local/Cellar`\ 。
+
+   ``Keg``\ ：某一软件的安装目录，如 :file:`/usr/local/Cellar/git/2.30.0`\ 。
+
+   更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__\ 。
+
 
 编程开发环境
 ------------
