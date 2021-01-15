@@ -115,6 +115,9 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 
 .. note::
 
+   使用 Homebrew 时会碰到很多名词。这里做简单解释，
+   更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__\ 。
+   
    ``brew``
       Homebrew 用于安装各种软件包、库文件以及字体等的命令。
 
