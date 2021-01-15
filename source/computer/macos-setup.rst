@@ -209,7 +209,7 @@ unix2dos 则反之::
     $ brew install dos2unix unix2dos
 
 `gawk <https://www.gnu.org/software/gawk/>`__ 是用于文本处理的命令行工具。
-macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 gawk::
+macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 ``gawk``::
 
     $ brew install gawk
 
