@@ -1,4 +1,4 @@
-name: Build Website
+name: CI
 
 # Run for PRs and the main branch
 on:
