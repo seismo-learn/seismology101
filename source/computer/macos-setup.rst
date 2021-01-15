@@ -13,11 +13,17 @@ macOS 配置指南
 
 ----
 
+安装系统
+--------
+
 第一次启动 Mac 电脑后，经过简单的设置，就得到了一个可供日常使用的 macOS 系统，
 但这样的 macOS 系统尚不能满足日常科研与编程开发的需求，还需要做进一步的配置。
 
+系统工具
+--------
+
 Command Line Tools for Xcode
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Xcode 是 macOS 下的集成开发环境（IDE），类似于 Windows 下的 Microsoft Visual Studio。
 Command Line Tools for Xcode 是 Xcode 的一个子集，其包含了常用的命令行开发工具，
@@ -41,7 +47,7 @@ Command Line Tools for Xcode 是 Xcode 的一个子集，其包含了常用的�
 
 
 Homebrew
---------
+^^^^^^^^
 
 `Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下的第三方软件包管理器。
 可以用于安装各种常见的软件包、库文件以及字体。日常及科研工作中所需的大多数软件、
