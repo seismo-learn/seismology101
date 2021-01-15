@@ -205,7 +205,7 @@ git
 这里推荐一些常用的命令行工具。
 
 Windows 和 Linux/macOS 系统下，`文本文件的换行符 <http://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
-``dos2unix`` 可以将 Windows 系统下的换行符转换为 UNIX 系统下的换行符。
+``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符。
 ``unix2dos`` 则反之::
 
     $ brew install dos2unix unix2dos
@@ -252,5 +252,5 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
 
 .. note::
 
-   安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开，
-   因为系统无法判断其是否是恶意软件。可以在“系统偏好设置”的“安全性与隐私”中点击“总是打开”来使用这些插件。
+   安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开。
+   这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”中点击“总是打开”来使用这些插件。
