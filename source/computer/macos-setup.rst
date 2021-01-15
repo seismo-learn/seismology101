@@ -8,7 +8,7 @@ macOS 配置指南
 
 .. note::
 
-   本节内容适用于 macOS Catalina (10.15) 和 macOS (11.x)。
+   本节内容适用于 macOS Catalina (10.15) 和 macOS Big Sur (11.x)。
    对于其他 macOS 版本不一定适用。
 
 ----
