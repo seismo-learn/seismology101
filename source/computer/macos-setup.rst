@@ -6,6 +6,11 @@ macOS 配置指南
            `姚家园 <https://github.com/core-man>`__\ （审稿）
 :最近更新日期: 2021-01-14
 
+.. note::
+
+   本节内容适用于 macOS Catalina (10.15) 和 macOS (11.x)。
+   对于其他 macOS 版本不一定适用。
+
 ----
 
 第一次启动 Mac 电脑后，经过简单的设置，就得到了一个可供日常使用的 macOS 系统，
@@ -33,7 +38,7 @@ Command Line Tools for Xcode 是 Xcode 的一个子集，其包含了常用的�
    可以查看 ``/Library/Developer/CommandLineTools/usr/bin`` 目录，
    了解安装的所有命令，如 ``gcc``\ 、``make``\ 、``git``\ 。使用这些命令
    时，其环境变量路径时 ``/usr/bin``\ 。
-   
+
 
 Homebrew
 --------
