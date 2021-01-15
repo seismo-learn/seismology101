@@ -122,7 +122,7 @@ C
 ^
 
 Command Line Tools for Xcode 已经提供了 C 编译器和相关工具，因而无需单独安装
-C编译器。
+C 编译器。
 
 Fortran
 ^^^^^^^
