@@ -129,8 +129,10 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
       `brew tap <https://docs.brew.sh/Taps#the-brew-tap-command>`__
       命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
       :file:`/usr/local/Homebrew/Library/Taps/homebrew/` 目录。
-      常见软件仓库有 homebrew-core 和 homebrew-cask。其中，homebrew-core 是内置
-      核心仓库，homebrew-cask 仓库则含有各种 macOS 系统下的应用程序。
+      常见软件仓库有 `homebrew-core <https://github.com/Homebrew/homebrew-core>`__
+      和 `homebrew-cask <https://github.com/Homebrew/homebrew-cask>`__。
+      其中，homebrew-core 是内置核心仓库，
+      homebrew-cask 仓库则含有各种 macOS 系统下带图形界面的应用程序。
 
    Bottle
       预先编译好的二进制软件包。使用 Bottle 安装软件，
