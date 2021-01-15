@@ -152,9 +152,6 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
    Keg
       某一软件的安装目录，如 :file:`/usr/local/Cellar/git/2.30.0`\ 。
 
-   更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__\ 。
-
-
 编程开发环境
 ------------
 
