@@ -45,40 +45,59 @@ macOS 系统的更新也十分简单。当有新版本发布以后，可以直�
 Command Line Tools for Xcode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Xcode 是 macOS 下的集成开发环境（IDE），类似于 Windows 下的 Microsoft Visual Studio。
-Command Line Tools for Xcode 是 Xcode 的一个子集，其包含了常用的命令行开发工具，
-比如 C 编译器、make、git 等，是安装很多其他软件的基础。
+`Xcode <https://developer.apple.com/cn/xcode/>`__ 是 macOS 下的集成开发环境（IDE），
+类似于 Windows 下的 `Microsoft Visual Studio <https://visualstudio.microsoft.com/>`__\ 。
+Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，
+比如 C 编译器、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必须软件。
 
-按下 :kbd:`Command+空格`\ ，搜索并打开“Terminal”。在 Terminal 中执行如下命令
-以安装 Command Line Tools for Xcode::
+按下 :kbd:`Command+空格`\ ，搜索“Terminal”并按下 :kbd:`Enter` 键以打开 Terminal 应用。
+在 Terminal 中执行如下命令以安装 Command Line Tools for Xcode::
 
    $ xcode-select --install
 
-在弹出的窗口点击“Install”即可。
+在弹出的窗口中点击“Install”即可。
 
-此处安装的 Command Line Tools 可能不是最新版，可以到“App Store”的“更新”中或
-“设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
+此处安装的 Command Line Tools for Xcode 可能不是最新版。点击右上角的 Apple 图标，
+在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
 
 .. note::
 
-   可以查看 ``/Library/Developer/CommandLineTools/usr/bin`` 目录，
-   了解安装的所有命令，如 ``gcc``\ 、``make``\ 、``git``\ 。使用这些命令
-   时，其环境变量路径时 ``/usr/bin``\ 。
-
+   Command Line Tools for Xcode 会被安装到 :file:`/Library/Developer/CommandLineTools/`
+   目录，其提供的命令行工具位于 :file:`/Library/Developer/CommandLineTools/usr/bin` 目录，
+   包括 ``gcc``、``make``、``git`` 等。
 
 Homebrew
 ^^^^^^^^
 
-`Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下的第三方软件包管理器。
-可以用于安装各种常见的软件包、库文件以及字体。日常及科研工作中所需的大多数软件、
+`Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器，
+类似于 Linux 系统下的 ``apt``、``yum``、``dnf`` 等包管理器。
+其可以用于安装各种常见的软件包、库文件以及字体。日常及科研工作中所需的大多数软件、
 库文件以及字体都可以通过 Homebrew 安装。
+
+安装
+~~~~
 
 要安装 Homebrew，需要将如下命令复制到终端中并执行::
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-安装好以后，打开新的 Terminal 便可以使用 ``brew`` 命令。
-Homebrew 的详细用法见官方文档。此处仅列出一些常用的用法::
+Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装的所有软件包
+也都将被安装到该目录下。
+
+.. note::
+
+   GitHub 在国内访问不畅，以上安装命令可能会由于网络问题而失败。
+   若以上命令失败，可参考 https://github.com/ineo6/homebrew-install 的
+   解决办法。
+
+   同样由于网络的原因，Homebrew 在国内可能下载速度较慢。建议参照
+   https://github.com/ineo6/homebrew-install 教程设置中科大源或清华大学源。
+
+使用
+~~~~
+
+安装好 Homebrew 后，打开新的 Terminal 便可以使用 Homebrew 提供的 ``brew`` 命令。
+``brew`` 的详细用法见官方文档。此处仅列出一些常用的用法::
 
     # 模糊搜索与 wget 相关的软件
     $ brew search wget
@@ -95,16 +114,6 @@ Homebrew 的详细用法见官方文档。此处仅列出一些常用的用法::
 
     # 卸载某个软件
     $ brew uninstall xxx
-
-.. note::
-
-   Homebrew 可能在国内下载速度较慢，可以考虑使用中科大 LUG 提供的 Homebrew 镜像。
-   详细使用方法见：
-
-   - Homebrew 源镜像：http://mirrors.ustc.edu.cn/help/brew.git.html
-   - Homebrew Bottles 源镜像：http://mirrors.ustc.edu.cn/help/homebrew-bottles.html
-   - Homebrew Core 源镜像：http://mirrors.ustc.edu.cn/help/homebrew-core.git.html
-   - Homebrew Cask 源镜像：http://mirrors.ustc.edu.cn/help/homebrew-cask.git.html
 
 编程开发环境
 ------------
