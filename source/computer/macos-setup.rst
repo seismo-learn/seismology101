@@ -26,7 +26,7 @@ macOS 系统的更新也十分简单。当有新版本发布以后，可以直�
    :align: center  
 
    ==================== ====================  ======================
-    版本号               代号                  发布日期
+   版本号                代号                   发布日期
    ==================== ====================  ======================
    macOS 10.13          High Sierra           2017 年 9 月 25 日
    macOS 10.14          Mojave                2018 年 9 月 24 日
@@ -46,7 +46,7 @@ Command Line Tools for Xcode
 `Xcode <https://developer.apple.com/cn/xcode/>`__ 是 macOS 下的集成开发环境（IDE），
 类似于 Windows 下的 `Microsoft Visual Studio <https://visualstudio.microsoft.com/>`__\ 。
 Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，
-比如 C 编译器、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必须软件。
+比如 C 编译器、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
 
 按下 :kbd:`Command+空格`\ ，搜索“Terminal”并按下 :kbd:`Enter` 键以打开 Terminal 应用。
 在 Terminal 中执行如下命令以安装 Command Line Tools for Xcode::
@@ -75,7 +75,7 @@ Homebrew
 安装
 """"
 
-要安装 Homebrew，需要将如下命令复制到终端中并执行::
+安装 Homebrew，需要将如下命令复制到终端中并执行::
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -143,7 +143,7 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
       时会自动使用它。
 
    Cask
-      Homebrew 的扩展（extension ），用来安装 macOS 的图形界面应用程序。
+      Homebrew 的扩展（extension ），用来安装 macOS 下的图形界面应用程序。
       使用 ``brew ls --cask`` 命令可以查看已安装的 casks。
 
    Cellar
@@ -181,7 +181,7 @@ Python
 ^^^^^^
 
 macOS 默认的 Python 版本为 Python 2.7，而目前主流的 Python 版本为
-Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/>`__
+Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/>`
 来安装最新版 Python。
 
 git
@@ -225,17 +225,17 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 ``gaw
 如上所说，Homebrew 可以用于安装日常及科研的大部分软件。这里推荐一些可以提升
 效率的 macOS 软件。
 
-解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
+macOS 自带了 Terminal，但 `iTerm2 <https://iterm2.com/>`__ 更好用::
 
-    $ brew install --cask the-unarchiver
+    $ brew install --cask iterm2
 
 文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
 
     $ brew install --cask visual-studio-code
 
-macOS 自带了 Terminal，但 `iTerm2 <https://iterm2.com/>`__ 更好用::
+解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
 
-    $ brew install --cask iterm2
+    $ brew install --cask the-unarchiver
 
 macOS 下空格键具有强大的功能。在文件浏览器 Finder 中，按下空格键，会调用
 QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF 以及图片等格式。
@@ -244,7 +244,7 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
     # 预览源码时加上语法高亮
     $ brew install --cask qlcolorcode
 
-    # 预览无后缀的纯文本文件，比如README, HISTORY等
+    # 预览无后缀的纯文本文件，比如 README，HISTORY 等
     $ brew install --cask qlstephen
 
     # 预览渲染后的markdown文件
