@@ -181,7 +181,7 @@ Python
 ^^^^^^
 
 macOS 默认的 Python 版本为 Python 2.7，而目前主流的 Python 版本为
-Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/>`__
+Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/>`
 来安装最新版 Python。
 
 git
