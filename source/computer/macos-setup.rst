@@ -94,7 +94,7 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
    https://github.com/ineo6/homebrew-install 教程设置中科大源或清华大学源。
 
 使用
-~~~~
+""""
 
 安装好 Homebrew 后，打开新的 Terminal 便可以使用 Homebrew 提供的 ``brew`` 命令。
 ``brew`` 的详细用法见官方文档。此处仅列出一些常用的用法::
