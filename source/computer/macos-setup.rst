@@ -138,7 +138,7 @@ Java
 若要运行 Java 程序，则需要安装 Java 开发环境::
 
     $ brew install openjdk
-    $ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+    $ sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 Python
 ^^^^^^
