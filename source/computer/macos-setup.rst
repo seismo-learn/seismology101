@@ -1,9 +1,9 @@
 macOS 配置指南
 ==============
 
-:本节作者: `王亮 <https://github.com/wangliang1989>`__\ （作者）、
-           `田冬冬 <https://me.seisman.info/>`__\ （作者）、
-           `姚家园 <https://github.com/core-man>`__\ （作者）
+:本节作者: |王亮|\（作者）、
+           |田冬冬|\（作者）、
+           |姚家园|\（作者）
 :最近更新日期: 2021-01-15
 
 .. note::
@@ -23,7 +23,7 @@ macOS 配置指南
 macOS 系统的更新也十分简单。当有新版本发布以后，可以直接在“系统偏好设置”的“软件更新”中直接更新即可。
 
 .. table:: 近几年的 macOS 系统版本号
-   :align: center  
+   :align: center
 
    ==================== ====================  ======================
    版本号                代号                   发布日期
@@ -117,7 +117,7 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 
    使用 Homebrew 时会碰到很多名词。这里做简单解释，
    更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__\ 。
-   
+
    ``brew``
       Homebrew 用于安装各种软件包、库文件以及字体等的命令。
 
