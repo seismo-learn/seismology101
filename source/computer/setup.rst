@@ -7,6 +7,7 @@
    :maxdepth: 3
 
    fedora-setup
+   ubuntu-setup
    macos-setup
    wsl-setup
 
