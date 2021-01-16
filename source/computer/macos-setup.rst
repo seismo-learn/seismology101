@@ -204,7 +204,7 @@ git
 
 这里推荐一些常用的命令行工具。
 
-Windows 和 Linux/macOS 系统下，`文本文件的换行符 <http://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
+Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
 ``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符。
 ``unix2dos`` 则反之::
 
