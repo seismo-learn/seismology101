@@ -265,7 +265,7 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
 
 如果在使用 macOS 的同时，偶尔需要使用 Windows 或 Linux 系统，可以考虑使用虚拟机。
 macOS 下最常用的虚拟机软件有
-`Parallel Desktop <https://www.parallels.com/>`__\、
+`Parallels Desktop <https://www.parallels.com/>`__\、
 `VMware Fusion <https://www.vmware.com/products/fusion.html>`__ 和
 `VirtualBox <https://www.virtualbox.org/>`__\ 。
 其中 VirtualBox 是免费软件；Parallel Desktop 和 VMware Fusion 是收费软件，
