@@ -17,10 +17,7 @@
    :hidden:
 
    programming/introduction
-   programming/bash
-   programming/python
-   programming/c
-   programming/fortran
+   programming/languages
    programming/compile
    programming/version-control
 
@@ -51,7 +48,7 @@
    best-practices/index
    best-practices/file-organization
    best-practices/software-installation
-   
+
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
 撰写的《地震学科研入门教程》。
