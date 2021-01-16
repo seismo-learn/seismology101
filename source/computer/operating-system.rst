@@ -47,6 +47,13 @@ Fedora 用户可以参考 《\ :doc:`/computer/fedora-setup`\ 》
    2021 年末停止更新。CentOS Linux 7 也将于 2024 年 6 月 30 日停止更新。
    详情请阅读 `CentOS 博客 <https://blog.centos.org/2020/12/future-is-centos-stream/>`__。
 
+.. note::
+
+    由于维护者目前没有可供安装 Ubuntu 的空闲机器，因而其配置指南短期内无法完成。
+    如果你有 Linux 使用经验，且愿意从头安装 Ubuntu，请到
+    `Issue #64 <https://github.com/seismo-learn/seismology101/issues/64>`__
+    下发表评论。
+
 macOS
 -----
 

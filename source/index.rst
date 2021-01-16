@@ -17,10 +17,7 @@
    :hidden:
 
    programming/introduction
-   programming/bash
-   programming/python
-   programming/c
-   programming/fortran
+   programming/languages
    programming/compile
    programming/version-control
 
