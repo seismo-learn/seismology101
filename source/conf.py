@@ -31,6 +31,7 @@ github_url = f"https://github.com/{github_user}/{github_repo}"
 rst_prolog = """
 .. |田冬冬| replace:: `田冬冬 <https://me.seisman.info/>`__
 .. |姚家园| replace:: `姚家园 <https://github.com/core-man>`__
+.. |王亮| replace:: `王亮 <https://github.com/wangliang1989>`__
 """
 
 
@@ -88,6 +89,9 @@ html_context = {
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "blob",
     "menu_links": [
+        (   '<i class="fa fa-home"></i> 地震“学”主站',
+            "https://seismo-learn.org/",
+        ),
         (
             '<i class="fa fa-github fa-fw"></i> 网站源码',
             github_url,
