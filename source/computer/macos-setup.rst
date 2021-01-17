@@ -200,7 +200,7 @@ git
    因此，我们使用的 ``git`` 其实是通过 Homebrew 安装的版本。
 
 其他命令行工具
---------------
+^^^^^^^^^^^^^^
 
 这里推荐一些常用的命令行工具。
 
@@ -219,23 +219,34 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 ``gaw
 
     $ brew install wget
 
-其他效率软件
-------------
+日常软件
+--------
 
-如上所说，Homebrew 可以用于安装日常及科研的大部分软件。这里推荐一些可以提升
-效率的 macOS 软件。
+以下软件均为可选，有需要的用户可以作为自己的需求选择是否安装。
+
+iTerm2
+^^^^^^
 
 macOS 自带了 Terminal，但 `iTerm2 <https://iterm2.com/>`__ 更好用::
 
     $ brew install --cask iterm2
 
+文本编辑器
+^^^^^^^^^^
+
 文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
 
     $ brew install --cask visual-studio-code
 
+解压软件
+^^^^^^^^
+
 解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
 
     $ brew install --cask the-unarchiver
+
+QuickLook 插件
+^^^^^^^^^^^^^^
 
 macOS 下空格键具有强大的功能。在文件浏览器 Finder 中，按下空格键，会调用
 QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF 以及图片等格式。
@@ -254,11 +265,6 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
 
    安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开。
    这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”中点击“总是打开”来使用这些插件。
-
-可选软件
---------
-
-以下软件均为可选，有需要的用户可以作为自己的需求选择是否安装。
 
 虚拟机
 ^^^^^^
