@@ -1,10 +1,10 @@
 macOS 配置指南
 ==============
 
-:本节作者: |王亮|\（作者）、
-           |田冬冬|\（作者）、
-           |姚家园|\（作者）
-:最近更新日期: 2021-01-15
+:本节贡献者: |王亮|\（作者）、
+             |田冬冬|\（作者）、
+             |姚家园|\（作者）
+:最近更新日期: 2021-01-17
 
 .. note::
 
@@ -198,6 +198,14 @@ git
    Command Line Tools for Xcode 安装的 ``git`` 位于 :file:`/usr/bin/`
    目录下。在环境变量 **PATH** 中，:file:`/usr/local/bin/` 一般在 :file:`/usr/bin/` 前。
    因此，我们使用的 ``git`` 其实是通过 Homebrew 安装的版本。
+
+X11
+^^^
+
+X11 是 UNIX 系统下常用的一种视窗系统。某些软件（如 SAC 和 CPS330）需要使用它。
+在 macOS 下，需要安装 `XQuartz <https://www.xquartz.org/>`__::
+
+   $ brew install --cask xquartz
 
 其他命令行工具
 --------------
