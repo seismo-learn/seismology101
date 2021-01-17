@@ -32,6 +32,7 @@ rst_prolog = """
 .. |田冬冬| replace:: `田冬冬 <https://me.seisman.info/>`__
 .. |姚家园| replace:: `姚家园 <https://github.com/core-man>`__
 .. |王亮| replace:: `王亮 <https://github.com/wangliang1989>`__
+.. |赵志远| replace:: `赵志远 <https://github.com/zhaozhiyuan1989>`__
 """
 
 
