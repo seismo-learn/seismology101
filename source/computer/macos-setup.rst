@@ -202,7 +202,7 @@ git
 X11
 ^^^
 
-X11 是 UNIX 系统下常用的一种视窗系统。某些软件（如 SAC 和 CPS330）需要使用它。
+X11（也称 X Window System）是 UNIX 系统下常用的一种视窗系统。某些软件（如 SAC 和 CPS330）需要使用它。
 在 macOS 下，需要安装 `XQuartz <https://www.xquartz.org/>`__::
 
    $ brew install --cask xquartz
