@@ -51,7 +51,7 @@
 
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
-撰写的《地震学科研入门教程》。
+撰写的《地震“学”科研入门教程》。
 
 .. warning::
 
