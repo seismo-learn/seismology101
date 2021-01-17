@@ -208,6 +208,7 @@ X11（也称 X Window System）是 UNIX 系统下常用的一种视窗系统。�
    $ brew install --cask xquartz
 
 需要注意，可能需要重启电脑后 X11 才能生效。建议等配置完 macOS 后再重启。
+
 其他命令行工具
 ^^^^^^^^^^^^^^
 
