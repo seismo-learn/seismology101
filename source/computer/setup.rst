@@ -4,7 +4,7 @@
 这一节介绍如何配置自己的操作系统，以满足日常科研工作的需求。
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    fedora-setup
    ubuntu-setup
