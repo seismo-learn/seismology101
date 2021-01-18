@@ -84,8 +84,9 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
         # Vcxsrv Display
         # Windows 每次重启后 WSL2 namesever 的 IP 可能发生变化，如下设置保证能够连接到 XServer
-        export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
-        export LIBGL_ALWAYS_INDIRECT=1
+        $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
+        $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
+        $ source ~/.bashrc
 
 4.  打开图形界面进行测试
 
