@@ -72,27 +72,26 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
 1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可
 
-2. 运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改；
+2.  运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改
 
-3. 在 Linux 的 ``~/.bashrc`` 文件中添加如下命令后执行 ``source ~/.bashrc``：
-   
-::    
+3.  在 Linux 的 ``~/.bashrc`` 文件中添加如下命令后执行 ``source ~/.bashrc`` ::
+
 
     # Vcxsrv Display
     # Windows 每次重启后 WSL2 namesever 的 IP 可能发生变化，如下设置保证能够连接到 XServer
     export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
     export LIBGL_ALWAYS_INDIRECT=1
 
-4、打开图形界面进行测试。
+4.  打开图形界面进行测试
 
 .. note::
 
    安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。
    
-WSL 重要命令
----------------
+常用命令
+---------
   
-以下命令均在 PowerShell 的管理员模式下运行，并且已安装 WSL2 版本的 Ubuntu20.04LTS，名称为 Ubuntu
+以下命令均在已安装 WSL2 版本的 Ubuntu 20.04 LTS（名称为 Ubuntu）下，使用 PowerShell 的管理员模式运行
 
 ::    
 
