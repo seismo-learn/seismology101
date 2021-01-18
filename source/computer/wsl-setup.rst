@@ -111,7 +111,8 @@ WSL 访问 Windows
 Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WSL 终端中
 输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后对目录中的文件进行编辑、运行。
 
-Windows 访问 WSL：
+Windows 访问 WSL
+^^^^^^^^^^^^^^^
 
 有两种方式可以在 Windows 中打开 WSL 的文件目录。
 
