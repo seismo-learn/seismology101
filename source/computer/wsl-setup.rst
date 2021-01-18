@@ -131,8 +131,8 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
     # 设置默认发行版
     $ wsl -s Ubuntu20.04
 
-    # 删除某个发行版
-    $ wsl --unregister Ubuntu  # 删除名为 Ubuntu 的发行版
+    # 删除某个发行版（如名为 Ubuntu）
+    $ wsl --unregister Ubuntu
 
 进入和退出 Linux 环境::
 
