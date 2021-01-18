@@ -97,8 +97,9 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 Windows 和 WSL 文件系统互访
 ---------------------------
 
-WSL1 版本的 Linux 发行版可以和 Windows 系统互相访问文件，而 WSL2 版本的 Linux 文件无法被 Windows 访问。因此，如果想查看
-某个 Linux 发行版的安装位置，可以先切换到 WSL1 版本，进入 Linux 后新建一个名字很特别的文件夹，
+WSL1 版本的 Linux 发行版可以和 Windows 系统互相访问文件，而 WSL2 版本
+的 Linux 文件无法被 Windows 访问。因此，如果想查看WSL2 版本的某个 Linux 发行版
+的安装位置，可以先切换到 WSL1 版本，进入 Linux 后新建一个名字很特别的文件夹，
 然后在 Windows 中查找其位置。
 
 PowerShell 比较难用。推荐使用 VScode，并安装插件
