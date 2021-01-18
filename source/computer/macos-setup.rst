@@ -258,8 +258,8 @@ macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。�
 
     $ brew install --cask visual-studio-code
 
-`Typora <https://typora.io/>`__ 是一款\ **轻便简洁**\ 的 Markdown 编辑器，支持即时渲染技术，
-适合日常临时编写小型 Markdown 文件::
+`Typora <https://typora.io/>`__ 是一款\ **轻便简洁**\ 的 Markdown 编辑器，支持即时渲染技术。
+与 Visual Studio Code 相比，Typora 启动更快，适合日常临时编写小型 Markdown 文件::
 
     $ brew install --cask typora
 
