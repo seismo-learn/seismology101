@@ -33,7 +33,7 @@ macOS 系统的更新也十分简单。当有新版本发布以后，可以直�
    macOS 11             Big Sur               2020 年 9 月 12 日
    ==================== ====================  ======================
 
-系统工具
+系统软件
 --------
 
 经过简单设置后的 macOS 系统，尚不能满足日常科研与编程开发的需求，还需要做
@@ -214,8 +214,8 @@ X11（也称 X Window System）是 UNIX 系统下常用的一种视窗系统。�
    3. 重启电脑后，打开 Terminal，执行命令 ``/opt/X11/bin/xclock``\ 。若出现一个
       带时钟的窗口，则表明 X11 正常安装与运行
 
-其他命令行工具
-^^^^^^^^^^^^^^
+命令行工具
+----------
 
 这里推荐一些常用的命令行工具。
 
@@ -257,6 +257,11 @@ macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。�
 推荐安装更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
 
     $ brew install --cask visual-studio-code
+
+`Typora <https://typora.io/>`__ 是一款\ **轻便简洁**\ 的 Markdown 编辑器，支持即时渲染技术。
+与 Visual Studio Code 相比，Typora 启动更快，适合日常临时编写小型 Markdown 文件::
+
+    $ brew install --cask typora
 
 解压软件
 ^^^^^^^^
