@@ -99,7 +99,7 @@ WSL1 版本的 Linux 发行版可以和 Windows 系统互相访问文件，而 W
 的安装位置，可以先切换到 WSL1 版本，进入 Linux 后新建一个名字很特别的文件夹，
 然后在 Windows 中查找其位置。
 
-推荐使用 VScode，并安装插件
+推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
 `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
 使用 Windows 的 VScode 可以编辑和运行 WSL 的文件，且不会
 因为跨文件系统工作使性能下降。
