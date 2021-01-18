@@ -19,8 +19,6 @@ macOS 配置指南
 
 第一次启动 Mac 电脑后，经过简单的设置，就得到了一个可供日常使用的 macOS 系统。
 
-设置的过程很直观，唯一需要注意的是，在为电脑创建一个账户时，账户名应避免中文和空格。
-
 macOS 系统的更新也十分简单。当有新版本发布以后，可以直接在“系统偏好设置”的“软件更新”中直接更新即可。
 
 .. table:: 近几年的 macOS 系统版本号
@@ -76,7 +74,7 @@ Homebrew
 安装
 """"
 
-安装 Homebrew，需要将如下命令复制到终端中并执行::
+打开 Terminal，将如下命令复制到 Terminal 中并按下 :kbd:`Enter` 键即可安装 Homebrew::
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -95,7 +93,7 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 使用
 """"
 
-安装好 Homebrew 后，打开新的 Terminal 便可以使用 Homebrew 提供的 ``brew`` 命令。
+安装好 Homebrew 后，即可以使用 Homebrew 提供的 ``brew`` 命令。
 ``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__\ 。此处仅列出一些常用的用法::
 
     # 模糊搜索与 wget 相关的软件
@@ -120,16 +118,21 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
    更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__\ 。
 
    ``brew``
-      Homebrew 用于安装各种软件包、库文件以及字体等的命令。
+      Homebrew 提供的命令，用于查询、安装、卸载、升级以及管理软件包。
 
    Formula
-      一个软件的描述文件，包含了如何安装此软件等信息。Formulae 是其复数。
-      每个软件对应一个 Formula。例如，git 对应 Formula 是
+      软件的描述文件，包含了软件的基本信息和编译安装方法。
+      Homebrew 根据 Formula 提供的信息，即可编译或安装软件。
+      每个软件对应一个 Formula。例如，git 对应的 Formula 是
       :file:`/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb`\ 。
-      使用 ``brew ls --formula`` 命令可以查看已安装的 Formulae。
+
+   Bottle
+      预先编译好的二进制软件包。使用 Bottle 安装软件，
+      比从源码编译和安装更快。如果一个软件仓库包含预编译的软件包，使用 ``brew install``
+      时会自动使用它。
 
    Tap
-      一个含有一系列软件（即 Formulae）的 git 仓库。使用
+      一个含有一系列软件的 git 仓库。使用
       `brew tap <https://docs.brew.sh/Taps#the-brew-tap-command>`__
       命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
       :file:`/usr/local/Homebrew/Library/Taps/homebrew/` 目录。
@@ -138,14 +141,9 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
       其中，homebrew-core 是内置核心仓库，
       homebrew-cask 仓库则含有各种 macOS 系统下带图形界面的应用程序。
 
-   Bottle
-      预先编译好的二进制软件包。使用 Bottle 安装软件，
-      比从源码编译和安装更快。如果一个软件仓库包含预编译的软件包，使用 ``brew install``
-      时会自动使用它。
-
    Cask
-      Homebrew 的扩展（extension ），用来安装 macOS 下的图形界面应用程序。
-      使用 ``brew ls --cask`` 命令可以查看已安装的 casks。
+      Homebrew 的扩展功能，用于安装 macOS 下的图形界面应用程序。
+      使用 ``brew list --cask`` 命令可以查看已安装的 casks。
 
    Cellar
       所有软件的安装目录，即 :file:`/usr/local/Cellar`\ 。
@@ -189,7 +187,8 @@ git
 ^^^
 
 `git <https://git-scm.com/>`__ 是最流行的版本控制工具，也是科研过程中编写代码
-以及项目管理推荐使用的软件。使用如下命令安装 git::
+以及项目管理推荐使用的软件。Command Line Tools for Xcode 中已经安装了 Apple 版
+的 git，其与原版 git 有一些区别。可以用如下命令安装原版的 git::
 
     $ brew install git
 
@@ -208,7 +207,12 @@ X11（也称 X Window System）是 UNIX 系统下常用的一种视窗系统。�
 
    $ brew install --cask xquartz
 
-需要注意，可能需要重启电脑后 X11 才能生效。建议等配置完 macOS 后再重启。
+.. note::
+
+   1. 与其他通过 Homebrew 安装的软件不同，X11 被安装到了 :file:`/opt/X11` 目录下
+   2. 需要重启电脑后，X11 才能生效，可以等配置完 macOS 系统后再重启
+   3. 重启电脑后，打开 Terminal，执行命令 ``/opt/X11/bin/xclock``\ 。若出现一个
+      带时钟的窗口，则表明 X11 正常安装与运行
 
 其他命令行工具
 ^^^^^^^^^^^^^^
@@ -238,21 +242,28 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 ``gaw
 iTerm2
 ^^^^^^
 
-macOS 自带了 Terminal，但 `iTerm2 <https://iterm2.com/>`__ 更好用::
+macOS 系统自带了 Terminal 应用，但 `iTerm2 <https://iterm2.com/>`__ 相比于自带的
+Terminal 具有更多有用的功能，比如支持水平和垂直分隔窗格、强大的终端搜索功能、
+更好用的复制粘贴功能等。
+
+::
 
     $ brew install --cask iterm2
 
 文本编辑器
 ^^^^^^^^^^
 
-文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
+macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。无法满足日常编程需求。
+推荐安装更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
 
     $ brew install --cask visual-studio-code
 
 解压软件
 ^^^^^^^^
 
-解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
+macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但不支持 ``.rar`` 格式。
+推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__\ ，其支持
+几乎所有压缩格式::
 
     $ brew install --cask the-unarchiver
 
@@ -275,7 +286,8 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
 .. note::
 
    安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开。
-   这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”中点击“总是打开”来使用这些插件。
+   这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”
+   中点击“总是打开”来使用这些插件。这一操作可能需要重启电脑才会生效。
 
 虚拟机
 ^^^^^^
