@@ -43,7 +43,7 @@ Linux 配置
 
 按照官方文档安装 WSL 之后，就可以根据你的 Linux 发行版进行配置使用了。
 
-如果你安装了 Ubuntu，可以参考 :doc:`/computer/ubuntu-setup` 进行配置。
+如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
 
 图形界面显示
 ---------------
