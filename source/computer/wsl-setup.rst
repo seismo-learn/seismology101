@@ -39,6 +39,7 @@ WSL 的安装方式可以参考官方文档：
 
 WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
 推荐使用  WSL 安装 Ubuntu 20.04 LTS 或 Ubuntu 20.10。
+
 配置 Linux
 -----------
 
