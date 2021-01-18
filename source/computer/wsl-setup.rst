@@ -61,18 +61,6 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
     
     # 将 Ubuntu 由 WSL1 改回 WSL2
     $ wsl --set-version Ubuntu 2
-
-    # 导出 Linux 发行版，可做为备份
-    # 在 D 盘中新建备份目录，命名为 WSLBAK
-    $ mkdir -p D:\WSLBAK
-    # 导出到备份目录下，命名为 20210117bak.tar
-    $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
-    
-    # 导入并还原之前备份的 Linux 发行版
-    # 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu20.04
-    $ mkdir -p D:\WSLDIR\Ubuntu20.04
-    # 导入并还原之前的备份，将此发行版命名为 Ubuntu20.04
-    $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
     
     # 设置默认发行版
     $ wsl -s Ubuntu20.04
