@@ -29,8 +29,6 @@ WSL 分为 WSL1 和 WSL2 两个发行版本。由于底层原理不同，在大�
 安装 WSL
 ---------------
 
-目前官方无 Fedora 发行版，推荐使用 Ubuntu20.04LTS。
-
 WSL 的安装方式可以参考官方文档：
 
 - 中文指南：https://docs.microsoft.com/zh-cn/windows/wsl/install-win10
@@ -38,6 +36,8 @@ WSL 的安装方式可以参考官方文档：
 
 官方文档对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。
 
+WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
+推荐使用  WSL 安装 Ubuntu 20.04 LTS 或 Ubuntu 20.10。
 配置 Linux
 -----------
 
