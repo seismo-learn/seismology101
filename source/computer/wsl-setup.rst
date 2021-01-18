@@ -42,45 +42,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 安装 WSL 之后，还需要对 Linux 发行版进行一定配置。
 
 如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
-
-安装 X Server
---------------
-
-WLS 本身不支持图形界面，需要在 Windows 中安装 X server
-来接收和显示 Linux 中的图形界面。
-
-.. note::
-
-   X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗系统，
-   主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接受对图形输出
-   的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
-
-
-Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ 、
-`Xming <http://www.straightrunning.com/XmingNotes/>`__\ 、
-`Xmanager <https://www.xshellcn.com/>`__ 等。
-其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。
-Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
-VcXsrv 的使用方式和界面与 Xming 极为相近。
-推荐使用 VcXsrv，本文以此软件为例进行介绍。
-
-1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可
-
-2.  运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改
-
-3.  Windows 每次重启后 WSL2 namesever 的 IP 可能发生变化，修改 Linux 的
-     环境变量以保证始终能连接到 X Server::
-
-        $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
-        $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
-        $ source ~/.bashrc
-
-4.  打开图形界面进行测试
-
-.. note::
-
-   安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。
-   
+ 
 常用命令
 ---------
   
@@ -141,3 +103,42 @@ PowerShell 比较难用。推荐使用 VScode，并安装插件
 `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
 使用 Windows 的 VScode 可以编辑和运行 WSL 的文件，且不会
 因为跨文件系统工作使性能下降。
+
+安装 X Server
+--------------
+
+WLS 本身不支持图形界面，需要在 Windows 中安装 X server
+来接收和显示 Linux 中的图形界面。
+
+.. note::
+
+   X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗系统，
+   主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接受对图形输出
+   的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
+
+
+Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ 、
+`Xming <http://www.straightrunning.com/XmingNotes/>`__\ 、
+`Xmanager <https://www.xshellcn.com/>`__ 等。
+其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。
+Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
+VcXsrv 的使用方式和界面与 Xming 极为相近。
+推荐使用 VcXsrv，本文以此软件为例进行介绍。
+
+1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可
+
+2.  运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改
+
+3.  Windows 每次重启后 WSL2 namesever 的 IP 可能发生变化，修改 Linux 的
+     环境变量以保证始终能连接到 X Server::
+
+        $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
+        $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
+        $ source ~/.bashrc
+
+4.  打开图形界面进行测试
+
+.. note::
+
+   安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。
+
