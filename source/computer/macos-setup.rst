@@ -267,6 +267,21 @@ macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式�
 
     $ brew install --cask the-unarchiver
 
+
+搜狗输入法
+^^^^^^^^^^
+
+macOS 系统自带了中文输入法，但是\ `搜狗输入法 <https://pinyin.sogou.com/mac/>`__\
+更加好用。
+
+下载::
+
+    $ brew install --cask sogouinput
+
+安装（需要使用 :file:`.app` 文件的实际路径）::
+
+    $ open /usr/local/Caskroom/sogouinput/58a,1588947491/sogou_mac_58a.app
+
 QuickLook 插件
 ^^^^^^^^^^^^^^
 
