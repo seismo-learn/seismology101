@@ -48,7 +48,7 @@ Linux 配置
 图形界面显示
 ---------------
 
-由于 WSL 本身不支持图形界面，我们需要额外安装 X Server 并指定图形输出位置，使得带有 GUI 的
+由于 WSL 本身不支持图形界面，我们需要额外安装 X Server 并指定图形输出位置，使得带有图形界面的
 桌面程序可以被显示和运行。
 
 Windows 上多种可选的 X Server 软件，`VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ 
