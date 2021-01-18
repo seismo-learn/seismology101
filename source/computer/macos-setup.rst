@@ -92,7 +92,7 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 使用
 """"
 
-安装好 Homebrew 后，打开新的 Terminal 便可以使用 Homebrew 提供的 ``brew`` 命令。
+安装好 Homebrew 后，即可以使用 Homebrew 提供的 ``brew`` 命令。
 ``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__\ 。此处仅列出一些常用的用法::
 
     # 模糊搜索与 wget 相关的软件
