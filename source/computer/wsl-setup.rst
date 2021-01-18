@@ -130,7 +130,7 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 2.  运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改
 
 3.  Windows 每次重启后 WSL2 namesever 的 IP 可能发生变化，修改 Linux 的
-     环境变量以保证始终能连接到 X Server::
+    环境变量以保证始终能连接到 X Server::
 
         $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
         $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
