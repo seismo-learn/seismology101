@@ -241,21 +241,28 @@ macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 ``gaw
 iTerm2
 ^^^^^^
 
-macOS 自带了 Terminal，但 `iTerm2 <https://iterm2.com/>`__ 更好用::
+macOS 系统自带了 Terminal 应用，但 `iTerm2 <https://iterm2.com/>`__ 相比于自带的
+Terminal 具有更多有用的功能，比如支持水平和垂直分隔窗格、强大的终端搜索功能、
+更好用的复制粘贴功能等。
+
+::
 
     $ brew install --cask iterm2
 
 文本编辑器
 ^^^^^^^^^^
 
-文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
+macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。无法满足日常编程需求。
+推荐安装更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
 
     $ brew install --cask visual-studio-code
 
 解压软件
 ^^^^^^^^
 
-解压软件 `The Unarchiver <https://theunarchiver.com/>`__::
+macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但不支持 ``.rar`` 格式。
+推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__\ ，其支持
+几乎所有压缩格式::
 
     $ brew install --cask the-unarchiver
 
@@ -278,7 +285,8 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
 .. note::
 
    安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开。
-   这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”中点击“总是打开”来使用这些插件。
+   这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”
+   中点击“总是打开”来使用这些插件。这一操作可能需要重启电脑才会生效。
 
 虚拟机
 ^^^^^^
