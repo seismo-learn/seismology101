@@ -73,7 +73,7 @@ Homebrew
 安装
 """"
 
-安装 Homebrew，需要将如下命令复制到终端中并执行::
+打开 Terminal，将如下命令复制到 Terminal 中并按下 :kbd:`Enter` 键即可安装 Homebrew::
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
