@@ -105,7 +105,8 @@ WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WS
 还是从 Windows 访问 WSL，WSL1的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
 时，建议将 Linux 发行版设置为 WSL1。
 
-WSL 访问 Windows：
+WSL 访问 Windows
+^^^^^^^^^^^^^^^
 
 Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WSL 终端中
 输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后对目录中的文件进行编辑、运行。
