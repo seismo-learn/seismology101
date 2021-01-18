@@ -95,6 +95,9 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
     # 导入并还原之前的备份，将此发行版命名为 Ubuntu20.04
     $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
 
+    # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
+    $ wsl --unregister Ubuntu
+    
 Windows 和 WSL 文件系统互访
 ---------------------------
 
