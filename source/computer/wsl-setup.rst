@@ -8,13 +8,20 @@ WSL 配置指南
 WSL 是什么?
 ---------------
 
-Windows Subsystem for Linux（简称 WSL）是一个在 Windows 10 上能够运行原生 Linux 二进制可执行文件（ ELF 格式）的兼容层，也被称为“适用于 Linux 的 Windows 子系统”。
+Windows Subsystem for Linux（简称 WSL）是一个在 Windows 10 上能够运行原生
+Linux 二进制可执行文件（ ELF 格式）的兼容层，也被称为“适用于 Linux 的 Windows 子系统”。
 
-简单来说，在 Windows 10 上启用 WSL 功能后，就可以在 Windows 上安装 Linux 分发，原样运行 Linux 下的大多数命令行工具、实用工具和应用程序，对于不想安装双系统或者虚拟机的人来说是个不错的选择。
+简单来说，在 Windows 10 上启用 WSL 功能后，就可以在 Windows 上安装 Linux 发行版，
+原样运行 Linux 下的大多数命令行工具、实用工具和应用程序，对于不想安装双系统或者虚拟机的
+人来说是个不错的选择。
 
-WSL 可以同时安装多个不同版本的 Linux 分发，并且随时进行切换，支持利用 ``wsl --export`` 命令将整个子系统随时打包备份，并在之后利用 ``wsl --import`` 命令进行还原。与虚拟机相比，在启动速度、消耗资源以及性能利用上有较大优势。
+WSL 可以同时安装多个不同的 Linux 发行版，并且随时进行切换，支持利用 ``wsl --export`` 
+命令将整个子系统随时打包备份，并在之后利用 ``wsl --import`` 命令进行还原。与虚拟机相比，
+在启动速度、消耗资源以及性能利用上有较大优势。
 
-WSL 分为 WSL1 和 WSL2 两个发行版本，由于底层原理不同，在大多数情况下，建议使用 WSL2，因为它提供更快的性能和 100% 的系统调用兼容性。仅当你的项目需要经常从 Linux 上访问存储在 Windows 系统上的文件或者利用 Windows 软件对 Linux 上的文件进行处理时，通过 WSL1 可实现更快的性能。
+WSL 分为 WSL1 和 WSL2 两个发行版本，由于底层原理不同，在大多数情况下，建议使用 WSL2，
+因为它提供更快的性能和 100% 的系统调用兼容性。仅当你的项目需要经常从 Linux 上访问存储
+在 Windows 系统上的文件或者利用 Windows 软件对 Linux 上的文件进行处理时，通过 WSL1 可实现更快的性能。
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版更改为 WSL1 或者 WSL2。
 
@@ -40,13 +47,16 @@ Linux 配置
 图形界面显示
 ---------------
 
-由于 WSL 本身不支持图形界面，我们需要额外安装 X Server 并指定图形输出位置，使得带有 GUI 的桌面程序可以被显示和运行。
+由于 WSL 本身不支持图形界面，我们需要额外安装 X Server 并指定图形输出位置，使得带有 GUI 的
+桌面程序可以被显示和运行。
 
-Windows 上多种可选的 X Server 软件，`VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ 作为开源免费软件，使用方式简单，本文以此软件为例进行介绍。
+Windows 上多种可选的 X Server 软件，`VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ 
+作为开源免费软件，使用方式简单，本文以此软件为例进行介绍。
 
 1、下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ ，默认安装即可；
 
-2、运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它界面无需更改；
+2、运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，
+其它界面无需更改；
 
 3、在 Linux 的 ``~/.bashrc`` 文件中添加如下命令后执行 ``source ~/.bashrc``：
    
@@ -72,9 +82,9 @@ WSL 重要命令
 
     # 1、查看 wsl 命令帮助
     $ wsl -h
-    # 2、列出所有已安装的 Linux 分发的状态，并显示是 wsl1 还是 wsl2
+    # 2、列出所有已安装的 Linux 发行版的状态，并显示是 wsl1 还是 wsl2
     $ wsl -l -v
-    # 3、停止正在运行的 Linux 分发，假设分发的名字为 Ubuntu
+    # 3、停止正在运行的 Linux 发行版，假设其名字为 Ubuntu
     $ wsl -t Ubuntu
     # 4、将 Ubuntu 由 wsl2 更改为 wsl1
     $ wsl --set-version Ubuntu 1
@@ -84,25 +94,32 @@ WSL 重要命令
     $ bash
     # 7、退出 Linux 环境
     $ exit
-    # 8、将名字为 Ubuntu 的 Linux 分发导出备份
+    # 8、将名字为 Ubuntu 的 Linux 发行版导出备份
     $ mkdir -p D:\WSLBAK  # 创建备份文件夹
     $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar   # 备份 wsl 
-    # 9、将之前备份的 Linux 分发 Ubuntu 导入还原
-    # 默认的 Linux 分发都安装在 C 盘，导入还原的时候可以选择其它位置避免 C 盘空间不够
+    # 9、将之前备份的 Linux 发行版 Ubuntu 导入还原
+    # 默认的 Linux 发行版都安装在 C 盘，导入还原的时候可以选择其它位置避免 C 盘空间不够
     $ mkdir -p D:\WSLDIR\Ubuntu20.04  # 创建还原的位置
-    $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  # 还原 wsl 到 D 盘，并命名为 Ubuntu20.04
-    # 10、设置默认分发
-    $ wsl -s Ubuntu20.04   # 因为现在有不止一个 Linux 分发存在，所以需要选择键入 bash 的时候激活哪个分发
-    # 11、删除某个分发
-    $ wsl --unregister Ubuntu  # 删除名为 Ubuntu 的分发
+    # 还原 wsl 到 D 盘，并命名为 Ubuntu20.04
+    $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
+    # 10、设置默认发行版
+    # 因为现在有不止一个 Linux 发行版存在，所以需要选择键入 bash 的时候激活哪个
+    $ wsl -s Ubuntu20.04   
+    # 11、删除某个发行版
+    $ wsl --unregister Ubuntu  # 删除名为 Ubuntu 的发行版
 
     
 其它
 ---------------
 
-开启 WSL 后 Linux 分发的默认安装位置在 C 盘，当你安装多个分发的时候显然会占用 C 盘大量的空间，我们可以选择将一个全新安装的 Linux 分发先导出备份，然后再还原到其它的位置，
-然后将 C 盘上的分发删除，以保证 C 盘有足够的空间。
+开启 WSL 后 Linux 发行版的默认安装位置在 C 盘，当你安装多个发行版的时候显然会占用 C 盘大量的空间，
+我们可以选择将一个全新安装的 Linux 发行版先导出备份，然后再还原到其它的位置，
+然后将 C 盘上的发行版删除，以保证 C 盘有足够的空间。
 
-WSL1 版本的 Linux 分发可以和 Windows 系统互相访问文件，而 WSL2 则不行。因此，如果想查看某个 Linux 分发的安装位置，可以先切换到 WSL1 版本，进入 Linux 后新建一个名字很特别的文件夹，然后在 Windows 中查找其位置。
+WSL1 版本的 Linux 发行版可以和 Windows 系统互相访问文件，而 WSL2 则不行。因此，如果想查看
+某个 Linux 发行版的安装位置，可以先切换到 WSL1 版本，进入 Linux 后新建一个名字很特别的文件夹，
+然后在 Windows 中查找其位置。
 
-由于 PowerShell 实在难用，推荐使用 VScode 安装 ``Remote - WSL`` 插件，可以实现在 Windows 的 VScode 中对 Linux 的项目文件进行创作、编辑或运行，而不会造成任何与跨 Linux 和 Windows 文件系统工作相关联的性能下降。
+由于 PowerShell 实在难用，推荐使用 VScode 安装 ``Remote - WSL`` 插件，可以实现
+在 Windows 的 VScode 中对 Linux 的项目文件进行创作、编辑或运行，
+而不会造成任何与跨 Linux 和 Windows 文件系统工作相关联的性能下降。
