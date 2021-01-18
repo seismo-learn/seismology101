@@ -112,9 +112,9 @@ WSL1 版本的 Linux 发行版可以和 Windows 系统互相访问文件，而 W
 
 安装 WSL 之后，还需要对 Linux 发行版进行一定配置。
 
-如果你安装了 Fedora，可以参考 《\ :doc:`/computer/fedora-setup` 》进行配置。
+如果你安装了 Fedora，可以参考 《\ :doc:`/computer/fedora-setup`\ 》进行配置。
 
-如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
+如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup`\ 》进行配置。
 
 安装 X Server
 --------------
