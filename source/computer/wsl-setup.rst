@@ -150,7 +150,7 @@ Ubuntu 和 Fedora 用户可以参考《\ :doc:`/computer/ubuntu-setup`\ 》和
 安装 X Server
 --------------
 
-WLS 本身不支持图形界面，需要在 Windows 中安装 X server
+WLS 本身不支持图形界面，需要在 Windows 中安装 X Server
 来接收和显示 Linux 中的图形界面。
 
 .. note::
@@ -158,7 +158,6 @@ WLS 本身不支持图形界面，需要在 Windows 中安装 X server
    X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗系统，
    主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接受对图形输出
    的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
-
 
 Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ 、
 `Xming <http://www.straightrunning.com/XmingNotes/>`__\ 、
