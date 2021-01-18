@@ -130,7 +130,7 @@ Windows 访问 WSL
 
 .. note::
 
-   推荐在 Windows 中安装 `everything <https://www.voidtools.com/zh-cn/>`__\ 
+   推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
    实现文件夹和文件的快速定位。
    
    在一些支持 UNC 路径的软件中（如 MATLAB）可以直接运行 WSL2 中的文件。
