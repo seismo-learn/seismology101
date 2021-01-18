@@ -7,7 +7,7 @@ WSL 配置指南
 :预计花费时间: 120 分钟
 
 WSL 是什么?
----------------
+-------------
 
 Windows Subsystem for Linux（简称 WSL）是一个在 Windows 10 上能够运行原生
 Linux 二进制可执行文件（ ELF 格式）的兼容层，也被称为“适用于 Linux 的 Windows 子系统”。
