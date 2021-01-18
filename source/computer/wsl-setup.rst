@@ -80,32 +80,42 @@ WSL 重要命令
 
 ::    
 
-    # 1、查看 wsl 命令帮助
+    # 查看 wsl 命令帮助
     $ wsl -h
-    # 2、列出所有已安装的 Linux 发行版的状态，并显示是 wsl1 还是 wsl2
+    
+    # 列出所有已安装的 Linux 发行版的状态，并显示是 wsl1 还是 wsl2
     $ wsl -l -v
-    # 3、停止正在运行的 Linux 发行版，假设其名字为 Ubuntu
+    
+    # 停止正在运行的 Linux 发行版，假设其名字为 Ubuntu
     $ wsl -t Ubuntu
-    # 4、将 Ubuntu 由 wsl2 更改为 wsl1
+    
+    # 将 Ubuntu 由 wsl2 更改为 wsl1
     $ wsl --set-version Ubuntu 1
-    # 5、将 Ubuntu 由 wsl1 改回 wsl2
+    
+    # 将 Ubuntu 由 wsl1 改回 wsl2
     $ wsl --set-version Ubuntu 2
-    # 6、进入 Linux 环境
+    
+    # 进入 Linux 环境
     $ bash
-    # 7、退出 Linux 环境
+    
+    # 退出 Linux 环境
     $ exit
-    # 8、将名字为 Ubuntu 的 Linux 发行版导出备份
+    
+    # 将名字为 Ubuntu 的 Linux 发行版导出备份
     $ mkdir -p D:\WSLBAK  # 创建备份文件夹
     $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar   # 备份 wsl 
-    # 9、将之前备份的 Linux 发行版 Ubuntu 导入还原
+    
+    # 将之前备份的 Linux 发行版 Ubuntu 导入还原
     # 默认的 Linux 发行版都安装在 C 盘，导入还原的时候可以选择其它位置避免 C 盘空间不够
     $ mkdir -p D:\WSLDIR\Ubuntu20.04  # 创建还原的位置
     # 还原 wsl 到 D 盘，并命名为 Ubuntu20.04
     $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
-    # 10、设置默认发行版
+    
+    # 设置默认发行版
     # 因为现在有不止一个 Linux 发行版存在，所以需要选择键入 bash 的时候激活哪个
     $ wsl -s Ubuntu20.04   
-    # 11、删除某个发行版
+    
+    # 删除某个发行版
     $ wsl --unregister Ubuntu  # 删除名为 Ubuntu 的发行版
 
     
