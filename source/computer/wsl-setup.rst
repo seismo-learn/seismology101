@@ -8,11 +8,11 @@ WSL 配置指南
 :预计花费时间: 120 分钟
 
 .. warning::
-    
-    本文尚未经过除作者外的其他 Windows 用户测试，欢迎阅读并给与反馈。
-    
+
+   本文尚未经过除作者外的其他 Windows 用户测试，欢迎阅读并给与反馈。
+
 简介
------
+----
 
 WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数情况下，建议使用 WSL2，
 因为它提供更快的性能和 100% 的系统调用兼容性。但是，当涉及到跨系统的文件互访时
@@ -22,7 +22,7 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
 安装 WSL
----------------
+--------
 
 WSL 的安装方式可以参考官方文档：
 
@@ -38,14 +38,14 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
    想在 WSL 上安装 Fedora 的读者可以参考以下安装指南：
 
-   - https://fedoramagazine.org/wsl-fedora-33/
-   - https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/
+   - 英文指南：https://fedoramagazine.org/wsl-fedora-33/
+   - 中文指南：https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/
 
    需要注意的是，我们尚未验证以上安装指南是否有效。
 
 常用命令
----------
-  
+--------
+
 我们在已安装 WSL2 版本的 Ubuntu 20.04 LTS（假设名称为 Ubuntu）下，使用 PowerShell 的
 管理员模式运行以下命令。
 
@@ -62,10 +62,10 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
     # 将 Ubuntu 由 WSL2 更改为 WSL1
     $ wsl --set-version Ubuntu 1
-    
+
     # 将 Ubuntu 由 WSL1 改回 WSL2
     $ wsl --set-version Ubuntu 2
-    
+
     # 设置默认发行版
     $ wsl -s Ubuntu20.04
 
@@ -76,10 +76,10 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
     # 启动并进入 Linux 环境（进入默认发行版）
     $ bash
-    
+
     # 退出 Linux 环境（并不会改变 WSL 的运行状态）
     $ exit
- 
+
 开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。为了避免占用 C 盘的大量空间，
 可以将已安装的 Linux 发行版导出备份，再导入还原到其他盘，最后删除 C 盘上的发行版::
 
@@ -88,31 +88,31 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
     $ mkdir -p D:\WSLBAK
     # 导出到备份目录下，命名为 20210117bak.tar
     $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
-    
+
     # 导入并还原之前备份的 Linux 发行版
     # 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu20.04
     $ mkdir -p D:\WSLDIR\Ubuntu20.04
     # 导入并还原之前的备份，将此发行版命名为 Ubuntu20.04
-    $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
+    $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar
 
     # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
     $ wsl --unregister Ubuntu
-    
+
 Windows 和 WSL 文件系统互访
 ---------------------------
 
 WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，
-还是从 Windows 访问 WSL，WSL1的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
+还是从 Windows 访问 WSL，WSL1 的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
 时，建议将 Linux 发行版设置为 WSL1。
 
 WSL 访问 Windows
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WSL 终端中
 输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后对目录中的文件进行编辑、运行。
 
 Windows 访问 WSL
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 有两种方式可以在 Windows 中打开 WSL 的文件目录：
 
@@ -132,9 +132,9 @@ Windows 访问 WSL
 
    推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
    实现文件夹和文件的快速定位。
-   
+
    在一些支持 UNC 路径的软件中（如 MATLAB）可以直接运行 WSL2 中的文件。
-   
+
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
    使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
@@ -142,11 +142,10 @@ Windows 访问 WSL
 配置 Linux
 -----------
 
-安装 WSL 之后，还需要对 Linux 发行版进行一定配置。
+安装 WSL 之后，还需要对 Linux 系统进行配置。
 
-如果你安装了 Fedora，可以参考 《\ :doc:`/computer/fedora-setup`\ 》进行配置。
-
-如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup`\ 》进行配置。
+Ubuntu 和 Fedora 用户可以参考《\ :doc:`/computer/ubuntu-setup`\ 》和
+《\ :doc:`/computer/fedora-setup`\ 》对系统进行配置，以满足科研工作的需求。
 
 安装 X Server
 --------------
@@ -171,7 +170,7 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
 1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可
 
-2.  运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**，其他选项无需更改
+2.  运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**\，其他选项无需更改
 
 3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化，修改 Linux 的
     环境变量以保证始终能连接到 X Server::
