@@ -130,6 +130,8 @@ WSL1 版本的 Linux 发行版可以和 Windows 系统互相访问文件，而 W
 某个 Linux 发行版的安装位置，可以先切换到 WSL1 版本，进入 Linux 后新建一个名字很特别的文件夹，
 然后在 Windows 中查找其位置。
 
-由于 PowerShell 实在难用，推荐使用 VScode 安装 ``Remote - WSL`` 插件，可以实现
+由于 PowerShell 实在难用，推荐使用 VScode 安装 
+`Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__ 
+插件，可以实现
 在 Windows 的 VScode 中对 Linux 的项目文件进行创作、编辑或运行，
 而不会造成任何与跨 Linux 和 Windows 文件系统工作相关联的性能下降。
