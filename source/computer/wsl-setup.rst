@@ -70,7 +70,7 @@ Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
 VcXsrv 的使用方式和界面与 Xming 极为相近。
 推荐使用 VcXsrv，本文以此软件为例进行介绍。
 
-1. 下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可；
+1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可
 
 2. 运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改；
 
