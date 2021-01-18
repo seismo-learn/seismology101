@@ -186,7 +186,8 @@ git
 ^^^
 
 `git <https://git-scm.com/>`__ 是最流行的版本控制工具，也是科研过程中编写代码
-以及项目管理推荐使用的软件。使用如下命令安装 git::
+以及项目管理推荐使用的软件。Command Line Tools for Xcode 中已经安装了 Apple 版
+的 git，其与原版 git 有一些区别。可以用如下命令安装原版的 git::
 
     $ brew install git
 
