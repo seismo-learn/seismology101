@@ -35,13 +35,6 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
    开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。安装多个发行版会占用 C 盘的大量空间。
    可以先将一个新安装的 Linux 发行版导出备份，然后将其还原到其它盘，最后删除 C 盘上的发行版。
    这样可以保证 C 盘有足够的空间。
-
-配置 Linux
------------
-
-安装 WSL 之后，还需要对 Linux 发行版进行一定配置。
-
-如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
  
 常用命令
 ---------
@@ -103,6 +96,13 @@ PowerShell 比较难用。推荐使用 VScode，并安装插件
 `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
 使用 Windows 的 VScode 可以编辑和运行 WSL 的文件，且不会
 因为跨文件系统工作使性能下降。
+
+配置 Linux
+-----------
+
+安装 WSL 之后，还需要对 Linux 发行版进行一定配置。
+
+如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
 
 安装 X Server
 --------------
