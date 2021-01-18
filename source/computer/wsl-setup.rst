@@ -81,7 +81,7 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
 2.  运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改
 
-3.  在 Linux 的 ``~/.bashrc`` 文件中添加如下命令后执行 ``source ~/.bashrc`` ::
+3.  在 Linux 的 ``~/.bashrc`` 文件中添加如下内容，然后执行 ``source ~/.bashrc`` ::
 
         # Vcxsrv Display
         # Windows 每次重启后 WSL2 namesever 的 IP 可能发生变化，如下设置保证能够连接到 XServer
