@@ -54,7 +54,7 @@ Linux 配置
 Windows 上多种可选的 X Server 软件，`VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ 
 作为开源免费软件，使用方式简单，本文以此软件为例进行介绍。
 
-1、下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ ，默认安装即可；
+1. 下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可；
 
 2、运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，
 其它界面无需更改；
