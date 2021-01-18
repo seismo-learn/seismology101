@@ -45,7 +45,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 配置 Linux
 -----------
 
-按照官方文档安装 WSL 之后，就可以根据你的 Linux 发行版进行配置使用了。
+安装 WSL 之后，还需要对 Linux 发行版进行一定配置。
 
 如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
 
