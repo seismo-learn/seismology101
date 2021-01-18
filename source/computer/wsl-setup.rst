@@ -152,7 +152,8 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
         $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
         $ source ~/.bashrc
 
-4.  打开图形界面进行测试（以 Ubuntu 为例）
+4.  打开图形界面进行测试（以 Ubuntu 为例）::
+
         # x11-apps 中包含了很多小程序如 xclock、xeyes
         $ sudo apt install x11-apps
         $ xclock
