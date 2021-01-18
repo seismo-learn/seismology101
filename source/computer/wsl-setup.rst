@@ -123,8 +123,9 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
     $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
     
     # 导入并还原之前备份的 Linux 发行版
-    # 可以选择还原到其它盘，以避免 C 盘空间不够。这里还原到 D 盘，并命名为 Ubuntu20.04
-    $ mkdir -p D:\WSLDIR\Ubuntu20.04  # 创建还原的位置
+    # 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu20.04
+    $ mkdir -p D:\WSLDIR\Ubuntu20.04
+    # 导入并还原之前的备份，将此发行版命名为 Ubuntu20.04
     $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
     
     # 设置默认发行版
