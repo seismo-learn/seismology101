@@ -267,6 +267,15 @@ macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式�
 
     $ brew install --cask the-unarchiver
 
+Google Earth
+^^^^^^^^^^^^
+
+Google Earth 提供了网页版和桌面版应用。
+非重度用户可以使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
+重度用户可以安装使用如下命令安装桌面版应用::
+
+    $ brew install --cask google-earth-pro
+
 QuickLook 插件
 ^^^^^^^^^^^^^^
 
