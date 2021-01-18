@@ -54,8 +54,13 @@ WLS  需要安装 X11 来支持图形界面，使得带有图形界面的
 应用程序可以正常地显示和运行。
 
 
-Windows 上多种可选的 X Server 软件，`VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ 
-作为开源免费软件，使用方式简单，本文以此软件为例进行介绍。
+Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ 、
+`Xming <http://www.straightrunning.com/XmingNotes/>`__\ 、
+`Xmanager <https://www.xshellcn.com/>`__ 等。
+其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。
+Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
+VcXsrv 的使用方式和界面与 Xming 极为相近。
+推荐使用 VcXsrv，本文以此软件为例进行介绍。
 
 1. 下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可；
 
