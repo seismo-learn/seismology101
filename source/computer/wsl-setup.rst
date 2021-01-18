@@ -13,7 +13,7 @@ Windows Subsystem for Linux（简称 WSL）是一个在 Windows 10 上能够运�
 Linux 二进制可执行文件（ ELF 格式）的兼容层，也被称为“适用于 Linux 的 Windows 子系统”。
 
 简单来说，在 Windows 10 上启用 WSL 功能后，就可以在 Windows 上安装 Linux 发行版，
-原样运行 Linux 下的大多数命令行工具、实用工具和应用程序，对于不想安装双系统或者虚拟机的
+原样运行 Linux 下的大多数命令行工具、实用工具和应用程序。对于不想安装双系统或者虚拟机的
 人来说是个不错的选择。
 
 WSL 可以同时安装多个不同的 Linux 发行版，并且随时进行切换，支持利用 ``wsl --export`` 
