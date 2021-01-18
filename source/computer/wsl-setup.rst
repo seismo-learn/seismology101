@@ -49,8 +49,8 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
 如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
 
-X Server
---------
+安装 X Server
+--------------
 
 WLS 本身不支持图形界面，需要在 Windows 中安装 X server
 来接收和显示 Linux 中的图形界面。
