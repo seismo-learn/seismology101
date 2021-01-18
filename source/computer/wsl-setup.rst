@@ -123,12 +123,15 @@ Windows 访问 WSL::
 由于 WSL2 使用 VHD 虚拟磁盘文件作为 Linux 发行版的根目录，导致 Windows 无法直接
 使用真实路径进行访问，而 Windows 的 cmd 并不支持 UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）。
 因此，如果 Windows 想要编译或者运行 WSL 中的文件，需要先把 Linux 发行版切换到 WSL1 版本，
-进入 WSL 后新建一个名字独特的文件夹，然后在 Windows 中对该文件夹进行定位。
+进入 WSL 后新建一个名字独特的文件夹，然后在 Windows 中对该文件夹进行定位，从而确定
+其真实的路径。
 
 .. note::
 
    推荐在 Windows 中安装 `everything <https://www.voidtools.com/zh-cn/>`__\ 
    实现文件夹和文件的快速定位。
+   
+   在一些支持 UNC 路径的软件中（如 MATLAB）可以直接运行 WSL2 中的文件。
    
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
