@@ -56,8 +56,7 @@ Windows 上多种可选的 X Server 软件，`VcXsrv <https://sourceforge.net/pr
 
 1. 下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可；
 
-2、运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，
-其它界面无需更改；
+2. 运行 XLaunch，除了在 ``Extra settings`` 界面勾选 ``Disable access control`` 之外，其它选项无需更改；
 
 3、在 Linux 的 ``~/.bashrc`` 文件中添加如下命令后执行 ``source ~/.bashrc``：
    
