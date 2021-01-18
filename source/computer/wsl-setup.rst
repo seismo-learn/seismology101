@@ -150,7 +150,7 @@ Ubuntu 和 Fedora 用户可以参考《\ :doc:`/computer/ubuntu-setup`\ 》和
 安装 X Server
 --------------
 
-WLS 本身不支持图形界面，需要在 Windows 中安装 X Server
+WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
 来接收和显示 Linux 中的图形界面。
 
 .. note::
@@ -178,10 +178,16 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
         $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
         $ source ~/.bashrc
 
-4.  打开图形界面进行测试（以 Ubuntu 为例）::
+4.  打开图形界面进行测试::
 
         # x11-apps 中包含了很多小程序如 xclock、xeyes
+
+        # Ubuntu 用户使用如下命令安装
         $ sudo apt install x11-apps
+        # Fedora 用户使用如下命令安装
+        $ sudo dnf install xorg-x11-apps
+
+        # 运行 xclock。若能看到一个时钟窗口，则表示图形界面设置成功
         $ xclock
 
 .. note::
