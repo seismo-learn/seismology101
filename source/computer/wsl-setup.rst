@@ -32,6 +32,15 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
 .. note::
 
+   想在 WSL 上安装 Fedora 的读者可以参考以下安装指南：
+
+   - https://fedoramagazine.org/wsl-fedora-33/
+   - https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/
+
+   需要注意的是，我们尚未验证以上安装指南是否有效。
+
+.. note::
+
    开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。安装多个发行版会占用 C 盘的大量空间。
    可以先将一个新安装的 Linux 发行版导出备份，然后将其还原到其它盘，最后删除 C 盘上的发行版。
    这样可以保证 C 盘有足够的空间。
