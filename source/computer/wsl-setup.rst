@@ -100,7 +100,7 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 我们在已安装 WSL2 版本的 Ubuntu 20.04 LTS（假设名称为 Ubuntu）下，使用 PowerShell 的
 管理员模式运行以下命令。
 
-wsl 命令用法::
+``wsl`` 命令用法::
 
     # 查看 wsl 命令帮助
     $ wsl -h
