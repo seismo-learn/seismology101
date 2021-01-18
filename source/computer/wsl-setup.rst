@@ -72,9 +72,9 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
     # 删除某个发行版（如名为 Ubuntu）
     $ wsl --unregister Ubuntu
 
-进入和退出 Linux 环境::
+启动、进入和退出 Linux 环境::
 
-    # 进入 Linux 环境（进入默认发行版）
+    # 启动并进入 Linux 环境（进入默认发行版）
     $ bash
     
     # 退出 Linux 环境（并不会改变 WSL 的运行状态）
