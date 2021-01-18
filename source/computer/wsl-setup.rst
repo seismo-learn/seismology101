@@ -111,6 +111,8 @@ PowerShell 比较难用。推荐使用 VScode，并安装插件
 
 安装 WSL 之后，还需要对 Linux 发行版进行一定配置。
 
+如果你安装了 Fedora，可以参考 《\ :doc:`/computer/fedora-setup` 》进行配置。
+
 如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
 
 安装 X Server
