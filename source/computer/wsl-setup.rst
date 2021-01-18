@@ -101,15 +101,38 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 Windows 和 WSL 文件系统互访
 ---------------------------
 
-WSL1 版本的 Linux 发行版可以和 Windows 系统互相访问文件，而 WSL2 版本
-的 Linux 文件无法被 Windows 访问。因此，如果想查看WSL2 版本的某个 Linux 发行版
-的安装位置，可以先切换到 WSL1 版本，进入 Linux 后新建一个名字很特别的文件夹，
-然后在 Windows 中查找其位置。
+WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，
+还是从 Windows 访问 WSL，WSL1的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
+时，建议将 Linux 发行版设置为 WSL1。
 
-推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
-`Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
-使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会
-因为跨文件系统工作使性能下降。
+WSL 访问 Windows::
+
+Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WSL 终端中
+输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后对目录中的文件进行编辑、运行。
+
+Windows 访问 WSL::
+
+有两种方式可以在 Windows 中打开 WSL 的文件目录。
+
+1. 在 Windows 的文件夹地址栏中输入 ``\\wsl$`` 会显示所有已安装的 WSL 目录，
+然后根据需要找到文件进行操作。
+
+2. 进入 WSL 之后在终端输入 ``cd ~ && explorer.exe .`` 会在 Windows 下打开
+家目录，根据需要找到文件进行修改。
+
+由于 WSL2 使用 VHD 虚拟磁盘文件作为 Linux 发行版的根目录，导致 Windows 无法直接
+使用真实路径进行访问，而 Windows 的 cmd 并不支持 UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）。
+因此，如果 Windows 想要编译或者运行 WSL 中的文件，需要先把 Linux 发行版切换到 WSL1 版本，
+进入 WSL 后新建一个名字独特的文件夹，然后在 Windows 中对该文件夹进行定位。
+
+.. note::
+
+   推荐在 Windows 中安装 `everything <https://www.voidtools.com/zh-cn/>`__\ 
+   实现文件夹和文件的快速定位。
+   
+   推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
+   `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
+   使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
 
 配置 Linux
 -----------
