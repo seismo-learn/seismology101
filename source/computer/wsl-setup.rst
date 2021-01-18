@@ -47,8 +47,8 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
 如果你安装了 Ubuntu，可以参考 《\ :doc:`/computer/ubuntu-setup` 》进行配置。
 
-X11
----
+X Server
+--------
 
 WLS  需要安装 X11 来支持图形界面，使得带有图形界面的
 应用程序可以正常地显示和运行。
