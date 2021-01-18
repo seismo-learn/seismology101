@@ -10,7 +10,7 @@ WSL 配置指南
 WSL 是什么?
 -------------
 
-Windows Subsystem for Linux（简称 WSL）是一个在 Windows 10 上能够运行原生
+Windows Subsystem for Linux（简称 WSL）是一个在 Windows 10 上运行原生
 Linux 二进制可执行文件（ ELF 格式）的兼容层，也被称为“适用于 Linux 的 Windows 子系统”。
 
 简单来说，在 Windows 10 上启用 WSL 功能后，就可以在 Windows 上安装 Linux 发行版，
