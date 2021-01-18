@@ -97,49 +97,49 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 常用命令
 ---------
   
-以下命令均在已安装 WSL2 版本的 Ubuntu 20.04 LTS（名称为 Ubuntu）下，使用 PowerShell 的管理员模式运行
+我们在已安装 WSL2 版本的 Ubuntu 20.04 LTS（假设名称为 Ubuntu）下，使用 PowerShell 的
+管理员模式运行以下命令。
 
-::    
+wsl 命令用法::
 
     # 查看 wsl 命令帮助
     $ wsl -h
-    
-    # 列出所有已安装的 Linux 发行版的状态，并显示是 wsl1 还是 wsl2
+
+    # 列出所有已安装的 Linux 发行版的状态，并显示是 WSL1 还是 WSL2
     $ wsl -l -v
-    
-    # 停止正在运行的 Linux 发行版，假设其名字为 Ubuntu
+
+    # 停止正在运行的 Linux 发行版
     $ wsl -t Ubuntu
-    
-    # 将 Ubuntu 由 wsl2 更改为 wsl1
+
+    # 将 Ubuntu 由 WSL2 更改为 WSL1
     $ wsl --set-version Ubuntu 1
     
-    # 将 Ubuntu 由 wsl1 改回 wsl2
+    # 将 Ubuntu 由 WSL1 改回 WSL2
     $ wsl --set-version Ubuntu 2
+
+    # 导出 Linux 发行版，做备份
+    $ mkdir -p D:\WSLBAK  # 创建备份文件夹
+    $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar  # 备份 wsl 
     
-    # 进入 Linux 环境
+    # 导入并还原之前备份的 Linux 发行版
+    # 可以选择还原到其它盘，以避免 C 盘空间不够。这里还原到 D 盘，并命名为 Ubuntu20.04
+    $ mkdir -p D:\WSLDIR\Ubuntu20.04  # 创建还原的位置
+    $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
+    
+    # 设置默认发行版
+    $ wsl -s Ubuntu20.04
+
+    # 删除某个发行版
+    $ wsl --unregister Ubuntu  # 删除名为 Ubuntu 的发行版
+
+进入和退出 Linux 环境::
+
+    # 进入 Linux 环境（进入默认发行版）
     $ bash
     
     # 退出 Linux 环境
     $ exit
-    
-    # 将名字为 Ubuntu 的 Linux 发行版导出备份
-    $ mkdir -p D:\WSLBAK  # 创建备份文件夹
-    $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar   # 备份 wsl 
-    
-    # 将之前备份的 Linux 发行版 Ubuntu 导入还原
-    # 默认的 Linux 发行版都安装在 C 盘，导入还原的时候可以选择其它位置避免 C 盘空间不够
-    $ mkdir -p D:\WSLDIR\Ubuntu20.04  # 创建还原的位置
-    # 还原 wsl 到 D 盘，并命名为 Ubuntu20.04
-    $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar  
-    
-    # 设置默认发行版
-    # 因为现在有不止一个 Linux 发行版存在，所以需要选择键入 bash 的时候激活哪个
-    $ wsl -s Ubuntu20.04   
-    
-    # 删除某个发行版
-    $ wsl --unregister Ubuntu  # 删除名为 Ubuntu 的发行版
 
-    
 Windows 和 WSL 文件系统互访
 ---------------------------
 
