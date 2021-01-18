@@ -50,8 +50,9 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 X11
 ---
 
-由于 WSL 本身不支持图形界面，我们需要额外安装 X Server 并指定图形输出位置，使得带有图形界面的
-桌面程序可以被显示和运行。
+WLS  需要安装 X11 来支持图形界面，使得带有图形界面的
+应用程序可以正常地显示和运行。
+
 
 Windows 上多种可选的 X Server 软件，`VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__ 
 作为开源免费软件，使用方式简单，本文以此软件为例进行介绍。
