@@ -40,8 +40,6 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
    - 英文指南：https://fedoramagazine.org/wsl-fedora-33/
    - 中文指南：https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/
-
-   需要注意的是，我们尚未验证以上安装指南是否有效。
    
    指南中的 Fedora rootfs 下载地址可能已失效。请访问 
    https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64
