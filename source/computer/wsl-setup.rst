@@ -125,7 +125,7 @@ Windows 访问 WSL
 1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$``\ ，会显示所有已安装的 WSL 目录，
    然后根据需要找到文件进行操作
 
-2. 进入 WSL 之后在终端输入 ``cd ~ && explorer.exe .`` 会在 Windows 下打开
+2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``\ ，会在 Windows 下打开
    家目录，根据需要找到文件进行修改
 
 由于 WSL2 使用 VHD 虚拟磁盘文件作为 Linux 发行版的根目录，导致 Windows
