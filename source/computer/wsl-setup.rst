@@ -133,11 +133,11 @@ Windows 访问 WSL
    推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
    实现文件夹和文件的快速定位。
 
-   在一些支持 UNC 路径的软件中（如 MATLAB）可以直接运行 WSL2 中的文件。
-
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
    使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
+   
+   在一些支持 UNC 路径的软件中（如 MATLAB）可以直接运行 WSL2 中的文件。
 
 配置 Linux
 -----------
