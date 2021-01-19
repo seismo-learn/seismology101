@@ -15,6 +15,11 @@ Fedora 配置指南
 安装系统
 --------
 
+.. note::
+
+   安装 Fedora 也可以参考 https://techz.io/how-to-install-fedora/
+   给出的详细步骤与图解。
+
 下载 ISO 镜像
 ^^^^^^^^^^^^^
 
@@ -35,8 +40,9 @@ USB 启动盘。
 从 USB 启动盘进入 Live 系统
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，进入 BIOS 设置
-使计算机优先从 USB 盘启动。不同型号的电脑进入 BIOS 的方法也不同，请自行查询。
+将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
+按下 F10 或 F12 进入 BIOS，并使计算机优先从 USB 盘启动。
+注意，不同型号的电脑进入 BIOS 的方法也不同，请自行查询。
 
 若计算机无法从 USB 盘启动，则可能是由于计算机的“安全启动”设置导致的，可以尝试：
 
@@ -60,7 +66,8 @@ USB 启动盘。
 将多个磁盘都选中，被选中的磁盘会有一个“对号”符号。需要注意，不要选中 USB 启动盘。
 
 在“存储设置”中，选择“自动”让安装程序帮你进行自动分区。也可以选择“自定义”，
-但需要你了解 Linux 的分区操作。对于 Fedora 33 而言，使用默认的“自动”分区即可。
+但需要你了解 Linux 的分区操作。由于 Fedora 33 采用了最新的 btrfs 文件系统，
+所以对于 Fedora 33 而言，使用默认的“自动”分区即可。
 
 点击“开始安装”即进入正式安装过程。
 
@@ -72,7 +79,14 @@ USB 启动盘。
 系统软件
 --------
 
-Fedora 使用 ``dnf`` 包管理器来安装、卸载和管理软件包。常用命令有::
+Fedora 使用 ``dnf`` 包管理器来安装、卸载和管理软件包。
+
+.. note::
+
+   国内用户可以参考 http://mirrors.ustc.edu.cn/help/fedora.html 将软件源镜像替换
+   为中科大镜像，以加快软件下载速度。
+
+``dnf`` 常用命令有::
 
     # 更新本地软件包缓存
     $ sudo dnf makecache
@@ -89,8 +103,6 @@ Fedora 使用 ``dnf`` 包管理器来安装、卸载和管理软件包。常用�
     # 卸载软件
     $ sudo dnf remove xxx
 
-国内用户可以参考 http://mirrors.ustc.edu.cn/help/fedora.html 将软件源镜像替换
-为中科大镜像，以加快软件下载速度。
 
 编程开发环境
 ------------
@@ -113,7 +125,7 @@ Fortran
 ^^^^^^^
 
 若需要编译 Fortran 程序，则可以安装 `GNU Fortran <https://gcc.gnu.org/fortran/>`__
-编译器（即 ``gfortran``\ ）:
+编译器（即 ``gfortran``\ ）::
 
     $ sudo dnf install gcc-gfortran
 
@@ -162,7 +174,7 @@ Fedora 系统默认已经安装了日常科研所需的大多数命令行工具�
 
 Fedora 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
 推荐安装更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
-根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions>`__
+根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions>`__\
 安装即可。
 
 解压软件
@@ -179,7 +191,7 @@ Google Earth
 ^^^^^^^^^^^^
 
 非重度用户可以直接使用 `Google Earth Web 版 <https://earth.google.com/web>`__\，
-重度用户可以安装桌面版应用。
+重度用户可以按照如下步骤安装桌面版应用。
 
 1. 到 https://www.google.com/earth/versions/#download-pro 下载 64 位 RPM 包
 2. 下载完成后双击 RPM 安装包即可安装
