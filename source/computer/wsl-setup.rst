@@ -46,8 +46,8 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 常用命令
 --------
 
-我们在已安装 WSL2 版本的 Ubuntu 20.04 LTS（假设名称为 Ubuntu）下，使用 PowerShell 的
-管理员模式运行以下命令。
+打开 CMD 或 PowerShell，我们可以运行如下命令来使用 WSL。以下示例命令假定我们已
+安装 WSL2 版本的 Ubuntu 20.04 LTS，且其名称为 Ubuntu。
 
 ``wsl`` 命令用法::
 
