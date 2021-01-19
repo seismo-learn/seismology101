@@ -54,7 +54,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 常用命令
 --------
 
-打开 CMD 或 PowerShell，我们可以运行如下命令来使用 WSL。以下示例命令假定我们已
+打开 CMD 或 PowerShell，可以运行如下命令来使用 WSL。以下示例命令假定已
 安装 WSL2 版本的 Ubuntu 20.04 LTS，且其名称为 Ubuntu。
 
 ``wsl`` 命令用法::
@@ -120,18 +120,18 @@ WSL 访问 Windows
 ^^^^^^^^^^^^^^^^
 
 Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WSL 终端中
-输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后对目录中的文件进行编辑、运行。
+输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后便可编辑和运行目录中的文件。
 
 Windows 访问 WSL
 ^^^^^^^^^^^^^^^^
 
-有两种方式可以在 Windows 下搜索、打开和编辑 WSL 的文件和目录：
+在 Windows 下搜索、打开和编辑 WSL 下的文件和目录的方式有以下两种：
 
 1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$``\ ，会显示所有已安装的 WSL 目录，
    然后根据需要找到文件进行操作
 
 2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``\ ，会在 Windows 下打开
-   家目录，根据需要找到文件进行修改
+   家目录，根据需要找到文件进行操作
 
 在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：
 
@@ -142,7 +142,7 @@ WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问，这是因
 作为 Linux 发行版的根目录。
 
 Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 PowerShell 时，只能用
-真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法访问用真实路径
+真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法用真实路径
 和 UNC 路径访问 WSL2 文件系统。
 
 Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些支持 UNC 路径的
