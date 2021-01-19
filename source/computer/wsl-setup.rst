@@ -28,9 +28,9 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
    
    已开启 WSL2 功能的用户若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，
    然后使用管理员模式打开 PowerShell，并输入 ``bcdedit /set hypervisorlaunchtype off`` 。
-   重启后 Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用。
+   重启后生效，此时 Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用。
    用户同样可以在 PowerShell 中输入 ``bcdedit /set hypervisorlaunchtype auto`` ，
-   重启后 Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用。
+   重启后生效，此时 Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用。
 
 安装 WSL
 --------
