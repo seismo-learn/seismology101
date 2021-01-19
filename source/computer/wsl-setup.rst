@@ -122,7 +122,7 @@ Windows 访问 WSL
 
 有两种方式可以在 Windows 下搜索、打开和编辑 WSL 的文件和目录：
 
-1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$`` 会显示所有已安装的 WSL 目录，
+1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$``\ ，会显示所有已安装的 WSL 目录，
    然后根据需要找到文件进行操作
 
 2. 进入 WSL 之后在终端输入 ``cd ~ && explorer.exe .`` 会在 Windows 下打开
