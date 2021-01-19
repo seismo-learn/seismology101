@@ -20,6 +20,12 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 更快的性能。
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
+   
+.. warning::
+
+   同时使用 WSL 和 VMware/VirtualBox 的用户建议只启用 WSL1。
+   经测试，开启 WSL2 后 VMware/VirtualBox 无法正常使用，
+   关闭 WSL2 功能后 VMware/VirtualBox 恢复正常。
 
 安装 WSL
 --------
@@ -44,10 +50,6 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
    指南中的 Fedora rootfs 下载地址可能已失效。请访问 
    https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64
    下载最新版本。
-   
-.. warning::
-
-   若使用 WSL2，则其他虚拟机软件（如 VMware 和 VirtualBox）可能无法使用。
 
 常用命令
 --------
