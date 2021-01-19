@@ -102,8 +102,8 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
     # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
     $ wsl --unregister Ubuntu
 
-Windows 和 WSL 文件系统互访
----------------------------
+跨系统文件互访
+--------------
 
 WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，
 还是从 Windows 访问 WSL，WSL1 的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
