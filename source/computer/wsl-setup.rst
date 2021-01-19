@@ -128,11 +128,17 @@ Windows 访问 WSL
 2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``\ ，会在 Windows 下打开
    家目录，根据需要找到文件进行修改
 
-由于 Windows 的 CMD 和 PowerShell 不支持 UNC 路径（指类似 ``\\wsl$`` 这种格式的路径），
-所以使用 CMD 和 PowerShell 访问 WSL 文件系统时，必须使用真实路径。
-但是，WSL2 使用 VHD 虚拟磁盘文件作为 Linux 发行版的根目录，导致 Windows
-的 CMD 和 PowerShell 无法直接使用真实路径访问 WSL2 文件系统。
-因此，使用 CMD 和 PowerShell 时，只能使用真实路径访问 WSL1 文件系统。
+在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：
+
+- 真实路径
+- UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）
+
+WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问，这是因为 WSL2 使用 VHD 虚拟磁盘文件
+作为 Linux 发行版的根目录。
+
+Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 PowerShell 时，只能用
+真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法访问用真实路径
+和 UNC 路径访问 WSL2 文件系统。
 
 如果想使用 Windows 的应用程序、CMD 以及 PowerShell 编译或运行 WSL 中的文件，
 需要先把 Linux 发行版切换到 WSL1 版本，进入 WSL 后新建一个名字独特的文件夹，
