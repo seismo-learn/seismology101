@@ -44,6 +44,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
    指南中的 Fedora rootfs 下载地址可能已失效。请访问 
    https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64
    下载最新版本。
+   
 .. warning::
 
    若使用 WSL2，则其他虚拟机软件（如 VMware 和 VirtualBox）可能无法使用。
