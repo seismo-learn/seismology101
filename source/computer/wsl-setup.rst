@@ -120,7 +120,7 @@ Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WS
 Windows 访问 WSL
 ^^^^^^^^^^^^^^^^
 
-有两种方式可以在 Windows 中打开 WSL 的文件目录：
+有两种方式可以在 Windows 中打开 WSL 的文件和目录：
 
 1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$`` 会显示所有已安装的 WSL 目录，
    然后根据需要找到文件进行操作
@@ -128,11 +128,12 @@ Windows 访问 WSL
 2. 进入 WSL 之后在终端输入 ``cd ~ && explorer.exe .`` 会在 Windows 下打开
    家目录，根据需要找到文件进行修改
 
-由于 WSL2 使用 VHD 虚拟磁盘文件作为 Linux 发行版的根目录，导致 Windows 无法直接
-使用真实路径访问 WSL2 文件系统，而 Windows 的 CMD 和 PowerShell 并不支持 UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）。
-因此，如果 Windows 想要编译或者运行 WSL 中的文件，需要先把 Linux 发行版切换到 WSL1 版本，
-进入 WSL 后新建一个名字独特的文件夹，然后在 Windows 中对该文件夹进行定位，从而确定
-其真实的路径。
+由于 WSL2 使用 VHD 虚拟磁盘文件作为 Linux 发行版的根目录，导致 Windows
+的 CMD 和 PowerShell 无法直接使用真实路径访问 WSL2 文件系统。
+同时，CMD 和 PowerShell 不支持 UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）。
+因此，如果想使用 Windows 的应用程序、CMD 以及 PowerShell 编译或运行 WSL 中的文件，
+需要先把 Linux 发行版切换到 WSL1 版本，进入 WSL 后新建一个名字独特的文件夹，
+然后在 Windows 中对该文件夹进行定位，从而确定其真实的路径。
 
 .. note::
 
