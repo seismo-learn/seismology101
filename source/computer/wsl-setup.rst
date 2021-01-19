@@ -140,7 +140,10 @@ Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 Power
 真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法访问用真实路径
 和 UNC 路径访问 WSL2 文件系统。
 
-如果想使用 Windows 的应用程序、CMD 以及 PowerShell 编译或运行 WSL 中的文件，
+Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些支持 UNC 路径的
+软件（如 MATLAB）还可以通过 UNC 路径访问 WSL1 或 WSL2 文件系统。
+
+因此，如果想使用 Windows 的 CMD、PowerShell 以及应用程序编译或运行 WSL 中的文件，
 需要先把 Linux 发行版切换到 WSL1 版本，进入 WSL 后新建一个名字独特的文件夹，
 然后在 Windows 中对该文件夹进行定位，从而确定其真实的路径。
 
@@ -152,8 +155,6 @@ Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 Power
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
    使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
-   
-   在一些支持 UNC 路径的软件中（如 MATLAB）可以直接运行 WSL2 中的文件。
 
 配置 Linux
 -----------
