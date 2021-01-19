@@ -4,7 +4,7 @@ WSL 配置指南
 :本节贡献者: |赵志远|\（作者）、
              |姚家园|\（审稿）、
              |田冬冬|\（审稿）
-:最近更新日期: 2021-01-18
+:最近更新日期: 2021-01-19
 :预计花费时间: 120 分钟
 
 .. warning::
@@ -87,17 +87,17 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 可以将已安装的 Linux 发行版导出备份，再导入还原到其它盘，最后删除 C 盘上的发行版。
 这样做的另一个好处是导入时用户就能得到 WSL 的真实路径。
 
-打开 PowerShell，执行如下命令::
+打开 CMD 或 PowerShell，执行如下命令::
 
     # 导出 Linux 发行版，可做为备份
     # 在 D 盘中新建备份目录，命名为 WSLBAK
-    $ mkdir -p D:\WSLBAK
+    $ mkdir D:\WSLBAK
     # 导出到备份目录下，命名为 20210117bak.tar
     $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
 
     # 导入并还原之前备份的 Linux 发行版
     # 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu20.04
-    $ mkdir -p D:\WSLDIR\Ubuntu20.04
+    $ mkdir D:\WSLDIR\Ubuntu20.04
     # 导入并还原之前的备份，将此发行版命名为 Ubuntu20.04
     $ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar
 
