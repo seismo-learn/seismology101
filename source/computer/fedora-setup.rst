@@ -38,8 +38,8 @@ Fedora 配置指南
 在 Windows 下，可以使用 `Rufus <https://rufus.ie/zh_CN.html>`__ 制作
 USB 启动盘。
 
-从 USB 启动盘进入 Live 系统
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+进入 Live 系统
+^^^^^^^^^^^^^^
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 F10 或 F12 进入 BIOS，并使计算机优先从 USB 盘启动。
