@@ -35,8 +35,10 @@ Fedora 配置指南
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
 
-在 Windows 下，可以使用 `Rufus <https://rufus.ie/zh_CN.html>`__ 制作
-USB 启动盘。
+可以使用 `Rufus <https://rufus.ie/zh_CN.html>`__\ （仅限 Windows）、\
+`UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）、\
+`balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）
+制作 USB 启动盘。
 
 进入 Live 系统
 ^^^^^^^^^^^^^^
@@ -98,7 +100,7 @@ Fedora 使用包管理器 ``dnf`` 来安装、卸载和管理软件包。
 
     # 检查并升级某软件
     $ sudo dnf upgrade xxx
- 
+
     # 搜索软件
     $ dnf search xxx
 
