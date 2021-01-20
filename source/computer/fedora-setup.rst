@@ -30,7 +30,7 @@ Fedora 配置指南
 **Fedora 33 Workstation x86_64** 的 ISO 文件下载链接：
 
 - `官方镜像 <https://download.fedoraproject.org/pub/fedora/linux/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__
-- `国内中科大镜像 <http://mirrors.ustc.edu.cn/fedora/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__
+- `中科大镜像 <http://mirrors.ustc.edu.cn/fedora/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__
 
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
@@ -45,12 +45,12 @@ Fedora 配置指南
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 F10 或 F12 进入 BIOS，并使计算机优先从 USB 盘启动。
-注意，不同型号的电脑进入 BIOS 的方法也不同，请自行查询。
+注意，不同型号的电脑进入 BIOS 的方法可能不同，请自行查询。
 
 若计算机无法从 USB 盘启动，则可能是由于计算机的“安全启动”设置导致的，可以尝试：
 
 1. 进入 BIOS 设置
-2. 在 BIOS 设置内关闭安全启动
+2. 在 BIOS 设置内关闭“安全启动”
 
 如果尝试多次都无法正确从 USB 启动，则可能是 USB 启动盘制作失败，请尝试重新制作启动盘。
 
@@ -77,7 +77,7 @@ Fedora 配置指南
 等待安装完成，点击“完成安装”，并重启计算机。
 重启计算机时，记得拔出 USB 启动盘，以免再次进入 USB 安装镜像。
 
-重启后会进入欢迎页面，需要添加账户，用户名只能是英文。
+重启后会进入欢迎页面，需要添加账户。注意用户名只能是英文。
 
 系统软件
 --------
@@ -89,7 +89,7 @@ Fedora 使用包管理器 ``dnf`` 来安装、卸载和管理软件包。
    国内用户可以参考 http://mirrors.ustc.edu.cn/help/fedora.html 将软件源镜像替换
    为中科大镜像，以加快软件下载速度。
 
-``dnf`` 的详细用法请阅读\ `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__\ ，
+``dnf`` 的详细用法请阅读 `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__\ ，
 这里只介绍一些常用命令::
 
     # 更新本地软件包缓存
@@ -132,7 +132,7 @@ Fortran
 ^^^^^^^
 
 `GNU Fortran <https://gcc.gnu.org/fortran/>`__ 编译器是 Linux 下最常用的
-Fortran 编译器，其提供了 ``gfortran`` 命令::::
+Fortran 编译器，其提供了 ``gfortran`` 命令::
 
     $ sudo dnf install gcc-gfortran
 
@@ -152,7 +152,7 @@ Fedora 33 自带了 Python 3.9，足够日常使用，但强烈建议不要使�
 git
 ^^^
 
-`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，也是科研过程中编写代码
+`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，是科研过程中编写代码
 与项目管理推荐使用的软件。一般情况下系统已经安装了该软件。如果没安装，
 可以使用如下命令安装::
 
