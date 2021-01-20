@@ -95,10 +95,12 @@ Fedora 使用包管理器 ``dnf`` 来安装、卸载和管理软件包。
    国内用户可以参考 http://mirrors.ustc.edu.cn/help/fedora.html 将软件源镜像替换
    为中科大镜像，以加快软件下载速度。
 
+   注意，在替换软件源后要执行 ``sudo dnf makecache`` 更新本地缓存的软件包元数据。
+
 ``dnf`` 的详细用法请阅读 `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__\ ，
 这里只介绍一些常用命令::
 
-    # 更新本地软件包缓存
+    # 更新本地软件包元数据缓存
     $ sudo dnf makecache
 
     # 检查并升级所有已经安装的软件
