@@ -23,7 +23,7 @@ Fedora 配置指南
 下载 ISO 镜像
 ^^^^^^^^^^^^^
 
-访问 `Fedora 官网 <https://getfedora.org/>`__\ 并下载 Fedora Workstation 镜像，
+访问 `Fedora 官网 <https://getfedora.org/>`__ 并下载 Fedora Workstation 镜像，
 一般选择 x86_64 版本。
 
 **Fedora 33 Workstation x86_64** 的 ISO 文件下载链接：
