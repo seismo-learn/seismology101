@@ -168,6 +168,10 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
    使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
+   
+   推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__\ ，
+   界面美观、操作方便，支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。
+   可完全替代 CMD 和 PowerShell。
 
 配置 Linux
 -----------
