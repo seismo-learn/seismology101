@@ -20,7 +20,7 @@ Ubuntu 配置指南
 下载 ISO 镜像
 ^^^^^^^^^^^^^
 
-访问 `Ubuntu 官网 <https://ubuntu.com/>`__\ 并下载 Ubuntu Desktop 镜像，
+访问\ `Ubuntu 官网 <https://ubuntu.com/>`__\ 并下载 Ubuntu Desktop 镜像，
 一般选择 AMD64（x86_64）版本。
 
 **Ubuntu 20.04.1 LTS Desktop AMD64** 的 ISO 文件下载链接：
