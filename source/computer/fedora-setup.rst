@@ -94,7 +94,7 @@ Fedora 使用包管理器 ``dnf`` 来安装、卸载和管理软件包。
     $ sudo dnf makecache
 
     # 检查并升级所有已经安装的软件
-    $ sudo dnf update
+    $ sudo dnf upgrade
 
     # 搜索软件
     $ dnf search xxx
