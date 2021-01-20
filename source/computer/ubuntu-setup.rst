@@ -140,7 +140,7 @@ Ubuntu 系统默认已经安装了日常科研所需的大多数命令行工具�
 
 Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
 推荐安装更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
-根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions>`__
+根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions>`__
 安装即可。
 
 解压软件
