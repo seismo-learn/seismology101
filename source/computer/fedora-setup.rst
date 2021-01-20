@@ -21,8 +21,8 @@ Fedora 配置指南
    安装 Fedora 也可以参考 https://techz.io/how-to-install-fedora/
    给出的详细步骤与图解。
 
-下载 ISO 镜像
-^^^^^^^^^^^^^
+下载系统镜像
+^^^^^^^^^^^^
 
 访问 `Fedora 官网 <https://getfedora.org/>`__ 并下载 Fedora Workstation 镜像，
 一般选择 x86_64 版本。
@@ -55,11 +55,11 @@ USB 启动盘。
 开始安装
 ^^^^^^^^
 
-进入 Live 系统之后，选择“Install to Hard Drive” 即开始安装。
+进入 Live 系统之后，选择 “Install to Hard Drive” 即开始安装。
 
-安装程序会首先要你选择安装过程中的语言，可以选择“中文”->“简体中文（中国）”，
-然后点击下方的“继续”按钮。当然你也可以选择“English”->“English (Unite States)”。
-接下来会选择键盘布局（汉语或“English(US)”）、时区和时间（例如“亚洲-上海”）。
+安装程序会首先要你选择安装过程中的语言，可以选择“中文”->“简体中文（中国）”
+或 “English”->“English (Unite States)”，然后点击下方的“继续”按钮。
+接着选择键盘布局（汉语或 “English(US)”）、时区和时间（例如“亚洲-上海”）。
 
 点击“安装目的地”，选择要将系统安装到哪一块硬盘以及如何分区。
 
@@ -80,14 +80,15 @@ USB 启动盘。
 系统软件
 --------
 
-Fedora 使用 ``dnf`` 包管理器来安装、卸载和管理软件包。
+Fedora 使用包管理器 ``dnf`` 来安装、卸载和管理软件包。
 
 .. note::
 
    国内用户可以参考 http://mirrors.ustc.edu.cn/help/fedora.html 将软件源镜像替换
    为中科大镜像，以加快软件下载速度。
 
-``dnf`` 常用命令有::
+``dnf`` 的详细用法请阅读\ `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__\ ，
+这里只介绍一些常用命令::
 
     # 更新本地软件包缓存
     $ sudo dnf makecache
@@ -116,8 +117,8 @@ C/C++ 编译器，其提供了 ``gcc`` 和 ``g++`` 命令::
 
     $ sudo dnf install gcc gcc-c++
 
-`Clang <https://clang.llvm.org/>`__ 系列是 GCC 系列的一大竞争者。相比于 GCC
-编译器，Clang 编译器提供了更友好的报错信息，方便在报错时尽快找到错误。Clang
+`Clang <https://clang.llvm.org/>`__ 系列是 GCC 系列的一大竞争者。与 GCC
+编译器相比，Clang 编译器提供了更友好的报错信息，方便在报错时尽快找到错误。Clang
 编译器提供了 ``clang`` 和 ``clang++`` 命令::
 
     $ sudo dnf install clang
@@ -125,15 +126,15 @@ C/C++ 编译器，其提供了 ``gcc`` 和 ``g++`` 命令::
 Fortran
 ^^^^^^^
 
-若需要编译 Fortran 程序，则可以安装 `GNU Fortran <https://gcc.gnu.org/fortran/>`__
-编译器（即 ``gfortran``\ ）::
+`GNU Fortran <https://gcc.gnu.org/fortran/>`__ 编译器是 Linux 下最常用的
+Fortran 编译器，其提供了 ``gfortran`` 命令::::
 
     $ sudo dnf install gcc-gfortran
 
 Java
 ^^^^
 
-要运行 Java 程序，需要安装 Java 运行环境，即 OpenJDK::
+运行 Java 程序需要安装 Java 运行环境，即 OpenJDK::
 
     $ sudo dnf install java-latest-openjdk
 
@@ -146,7 +147,7 @@ Fedora 33 自带了 Python 3.9，足够日常使用，但强烈建议不要使�
 git
 ^^^
 
-`git <https://git-scm.com/>`__ 是最流行的版本控制工具，也是科研过程中编写代码
+`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，也是科研过程中编写代码
 以及项目管理推荐使用的软件。一般情况下这个软件系统里已经装了。如果没安装，
 可以使用如下命令安装::
 
@@ -155,7 +156,7 @@ git
 X11
 ^^^
 
-X11（也称 X Window System）是 UNIX 系统下常用的一种视窗系统。某些软件
+X11（也称 X Window System 或 X）是 UNIX 系统下常用的一种视窗系统。某些软件
 （如 SAC 和 CPS330）需要使用它::
 
     $ sudo dnf install libX11-devel
@@ -163,7 +164,7 @@ X11（也称 X Window System）是 UNIX 系统下常用的一种视窗系统。�
 命令行工具
 ----------
 
-Fedora 系统默认已经安装了日常科研所需的大多数命令行工具。
+日常科研所需的大多数命令行工具已经默认安装在 Fedora 系统里了。
 
 这一部分暂无推荐。
 
@@ -174,7 +175,7 @@ Fedora 系统默认已经安装了日常科研所需的大多数命令行工具�
 ^^^^^^^^^^
 
 Fedora 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
-推荐安装更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
+推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
 根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions>`__\
 安装即可。
 
@@ -182,7 +183,7 @@ Fedora 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功
 ^^^^^^^^
 
 Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
-``.tar.bz2`` 等），也支持一些 Windows 和 macOS 下常见的压缩格式（如 ``.zip`` 和 ``.7z``\ ），
+``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
 但默认不支持 ``.rar`` 格式。需要安装 `unar <https://theunarchiver.com/command-line>`__
 才能够直接解压 ``.rar`` 格式::
 
@@ -191,14 +192,14 @@ Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（
 Google Earth
 ^^^^^^^^^^^^
 
-非重度用户可以直接使用 `Google Earth Web 版 <https://earth.google.com/web>`__\，
-重度用户可以按照如下步骤安装桌面版应用。
+非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
+重度用户可以按照如下步骤安装桌面版。
 
-1. 到 https://www.google.com/earth/versions/#download-pro 下载 64 位 RPM 包
-2. 下载完成后双击 RPM 安装包即可安装
+1. 下载 64 位 RPM 包：https://www.google.com/earth/versions/#download-pro
+2. 双击下载的 RPM 安装包即可安装
 
-Chrome 浏览器
-^^^^^^^^^^^^^
+Google Chrome 浏览器
+^^^^^^^^^^^^^^^^^^^^^
 
 Fedora 33 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
 
@@ -212,9 +213,8 @@ Fedora 33 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏�
 WPS Office
 ^^^^^^^^^^
 
-Fedora 自带了 LibreOffice，可完成简单的查看和编辑文档的功能，但其兼容性一般。
+Fedora 自带的 LibreOffice 具有简单的文档查看和编辑功能，但其兼容性一般。
 兼容性更好的是 WPS Office。
 
-1.  访问 `WPS Office for Linux 官网 <https://linux.wps.cn/>`__
-2.  下载 64位 RPM 格式的安装包
-3.  双击下载的 RPM 安装包即可安装
+1.  下载 64位 RPM 格式的安装包：`WPS Office for Linux 官网 <https://linux.wps.cn/>`__
+2.  双击下载的 RPM 安装包即可安装
