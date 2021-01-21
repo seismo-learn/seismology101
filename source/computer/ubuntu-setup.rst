@@ -94,6 +94,8 @@ Ubuntu 使用包管理器 ``apt`` 来安装、卸载和管理软件包。
 
    国内用户可以参考 https://mirrors.ustc.edu.cn/help/ubuntu.html 将软件源镜像替换
    为中科大镜像，以加快软件下载速度。
+   
+   注意，在替换软件源后要执行 ``sudo apt update`` 更新本地缓存的软件包元数据。
 
 ``apt`` 的详细用法请阅读 `apt 帮助文档 <http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html>`__\ ，
 这里只介绍一些常用命令::
