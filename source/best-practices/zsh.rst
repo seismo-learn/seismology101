@@ -143,14 +143,14 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
 
   启用该插件前，需提前安装::
 
-      $ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 - `zsh-syntax-highlighting 插件 <https://github.com/zsh-users/zsh-syntax-highlighting>`__\ ：
   高亮 zsh 可用命令
 
   启用该插件前，需提前安装::
 
-      $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+      $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
   该插件需要位于配置文件 :file:`.zshrc` 中的插件列表的最后一位::
 
