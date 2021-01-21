@@ -93,66 +93,66 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
 `在线查询 <https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins>`__\ 。
 这里推荐几个常用的自带插件。
 
-`sudo 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo>`__\ ：
-按两下 :kbd:`ESC` 即可在当前命令前加上 ``sudo``
+- `sudo 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo>`__\ ：
+  按两下 :kbd:`ESC` 即可在当前命令前加上 ``sudo``
 
-`extract 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract>`__\ ： 
-使用 ``x abc.zip`` 语法即可解压几乎所有压缩文件，如 ``.tar.gz``、``.tar.bz2``、``.zip``、
-``.7z``、``.rar`` 等
+- `extract 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract>`__\ ： 
+  使用 ``x abc.zip`` 语法即可解压几乎所有压缩文件，如 ``.tar.gz``、``.tar.bz2``、``.zip``、
+  ``.7z``、``.rar`` 等
 
-`autojump 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump>`__\ ：
-非常智能的目录快速切换的工具
+- `autojump 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump>`__\ ：
+  非常智能的目录快速切换的工具
 
-::
+  ::
 
-    $ pwd
-    /home/seismo-learn
-    $ cd Desktop
-    $ cd /opt
-    $ cd /usr/local
+      $ pwd
+      /home/seismo-learn
+      $ cd Desktop
+      $ cd /opt
+      $ cd /usr/local
 
-    # 用 j 命令迅速从 /usr/local 跳转到与 des 匹配的目录，这里只有 Desktop 可以匹配
-    $ j des
-    $ pwd
-    /home/seisman/Desktop
+      # 用 j 命令迅速从 /usr/local 跳转到与 des 匹配的目录，这里只有 Desktop 可以匹配
+      $ j des
+      $ pwd
+      /home/seisman/Desktop
 
-启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__::
+  启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__::
 
-    # Fedora 用户
-    $ sudo dnf install autojump-zsh
+      # Fedora 用户
+      $ sudo dnf install autojump-zsh
 
-    # CentOS 用户
-    $ sudo yum install autojump-zsh
+      # CentOS 用户
+      $ sudo yum install autojump-zsh
 
-    # Ubuntu/Debian 用户
-    $ sudo apt install autojump
-    # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
+      # Ubuntu/Debian 用户
+      $ sudo apt install autojump
+      # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
 
-    # macOS 用户
-    $ brew install autojump
+      # macOS 用户
+      $ brew install autojump
 
-.. note::
-
-   插件 ``git`` 为 git 的众多常用命令提供了更简单的别名。
-   其中，插件 ``git mergetool --no-prompt`` 的别名是 ``gmt``，
-   与地学软件 GMT 冲突，建议在 ``.zshrc`` 中不启用插件 ``git``\ 。
+  .. note::
+    
+     插件 ``git`` 为 git 的众多常用命令提供了更简单的别名。
+     其中，插件 ``git mergetool --no-prompt`` 的别名是 ``gmt``，
+     与地学软件 GMT 冲突，建议在 ``.zshrc`` 中不启用插件 ``git``\ 。
 
 除了 Oh My Zsh 自带的插件，还可以安装其他插件。这里推荐几个常用的。
 
-`zsh-autosuggestions 插件 <https://github.com/zsh-users/zsh-autosuggestions>`__\ ：
-命令自动补全插件，当输入命令的几个字母，它会自动根据历史输入进行自动补全
+- `zsh-autosuggestions 插件 <https://github.com/zsh-users/zsh-autosuggestions>`__\ ：
+  命令自动补全插件，当输入命令的几个字母，它会自动根据历史输入进行自动补全
 
-启用该插件前，需提前安装::
+  启用该插件前，需提前安装::
 
-    $ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+      $ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-`zsh-syntax-highlighting 插件 <https://github.com/zsh-users/zsh-syntax-highlighting>`__\ ：
-高亮 zsh 可用命令
+- `zsh-syntax-highlighting 插件 <https://github.com/zsh-users/zsh-syntax-highlighting>`__\ ：
+  高亮 zsh 可用命令
 
-启用该插件前，需提前安装::
+  启用该插件前，需提前安装::
 
-    $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+      $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-该插件需要位于配置文件 :file:`.zshrc` 中的插件列表的最后一位::
+  该插件需要位于配置文件 :file:`.zshrc` 中的插件列表的最后一位::
 
-    plugins=([plugins...] zsh-syntax-highlighting)
+      plugins=([plugins...] zsh-syntax-highlighting)
