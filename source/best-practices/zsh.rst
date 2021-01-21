@@ -136,19 +136,19 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
      其中，插件 ``git mergetool --no-prompt`` 的别名是 ``gmt``，
      与地学软件 GMT 冲突，建议在 ``~/.zshrc`` 中不启用插件 ``git``\ 。
 
-除了 Oh My Zsh 自带的插件，还可以安装其他插件。这里推荐几个常用的。
+除了 Oh My Zsh 自带的插件，还可以使用其他插件，只需提前安装即可。这里推荐几个常用的。
 
 - `zsh-autosuggestions 插件 <https://github.com/zsh-users/zsh-autosuggestions>`__\ ：
   命令自动补全插件，当输入命令的几个字母，它会自动根据历史输入进行自动补全
 
-  启用该插件前，需提前安装::
+  ::
 
       $ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 - `zsh-syntax-highlighting 插件 <https://github.com/zsh-users/zsh-syntax-highlighting>`__\ ：
   高亮 zsh 可用命令
 
-  启用该插件前，需提前安装::
+  ::
 
       $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
