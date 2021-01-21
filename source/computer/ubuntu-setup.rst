@@ -146,7 +146,6 @@ Java
 
 运行 Java 程序需要安装 Java 运行环境，即 OpenJDK::
 
-    $ sudo apt update
     $ sudo apt install default-jdk
 
 Python
