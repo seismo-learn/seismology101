@@ -199,21 +199,6 @@ git
    目录下。在环境变量 **PATH** 中，:file:`/usr/local/bin/` 一般在 :file:`/usr/bin/` 前。
    因此，我们使用的 ``git`` 其实是通过 Homebrew 安装的版本。
 
-X11
-^^^
-
-X11（也称 X Window System 或 X）是 UNIX 系统下常用的一种视窗系统。某些软件（如 SAC 和 CPS330）需要使用它。
-在 macOS 下，需要安装 `XQuartz <https://www.xquartz.org/>`__::
-
-   $ brew install --cask xquartz
-
-.. note::
-
-   1. 与其他通过 Homebrew 安装的软件不同，X11 被安装到了 :file:`/opt/X11` 目录下
-   2. 需要重启电脑后，X11 才能生效，可以等配置完 macOS 系统后再重启
-   3. 重启电脑后，打开 Terminal，执行命令 ``/opt/X11/bin/xclock``\ 。若出现一个
-      带时钟的窗口，则表明 X11 正常安装与运行
-
 命令行工具
 ----------
 
