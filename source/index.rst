@@ -49,6 +49,7 @@
    best-practices/file-organization
    best-practices/software-installation
    best-practices/backup
+   best-practices/zsh
 
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
