@@ -20,19 +20,18 @@ zsh 有如下特点：
 在终端键入 ``zsh --version``，若显示 zsh 版本号，则表示 zsh
 已安装。否则需要安装 zsh。
 
-Fedora 用户::
+自 macOS Catalina (10.15) 开始，macOS 系统默认的 Shell 已由 bash 变为 zsh。
 
+Linux 用户可以使用如下命令安装 zsh::
+
+    # Fedora 用户
     $ sudo dnf install zsh
 
-CentOS 用户::
-
+    # CentOS 用户
     $ sudo yum install zsh
 
-Ubuntu/Debian 用户::
-
+    # Ubuntu/Debian 用户
     $ sudo apt install zsh
-
-自 macOS Catalina (10.15) 开始，系统默认的 Shell 已由 bash 变为 zsh。
 
 通过如下命令设置默认 Shell 为 zsh::
 
