@@ -41,8 +41,8 @@ Ubuntu 配置指南
 `balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）
 制作 USB 启动盘。
 
-进入引导加载程序
-^^^^^^^^^^^^^^^^
+进入 Live 系统
+^^^^^^^^^^^^^^^
 
 将制作好的 USB 启动盘插入要安装 Ubuntu 系统的计算机上，开机启动，
 按下 F10 或 F12 进入 BIOS，并使计算机优先从 USB 盘启动。
