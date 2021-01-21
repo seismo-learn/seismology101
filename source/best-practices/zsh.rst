@@ -66,7 +66,7 @@ zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是一
 设置主题
 ^^^^^^^^^
 
-修改配置文件 :file:`.zshrc` 便可以启动不同的主题::
+修改配置文件 :file:`.zshrc` 便可以使用不同的主题::
 
     ZSH_THEME="bira"
 
