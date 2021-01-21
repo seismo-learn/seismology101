@@ -155,3 +155,7 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
   该插件需要位于配置文件 :file:`~/.zshrc` 中的插件列表的最后一位::
 
       plugins=([plugins...] zsh-syntax-highlighting)
+
+  .. note::
+
+     某些主题下，一些插件可能无法正常使用。
