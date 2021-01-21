@@ -48,8 +48,8 @@ zsh 的配置文件为 :file:`~/.zshrc`\ 。因而切换到 zsh 后，
 Oh My Zsh
 ----------
 
-zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是一群人
-一起维护的一套 zsh 配置文件，使用起来非常方便。一般用户直接使用该配置即可。
+zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是由社区
+维护的一套 zsh 配置文件，使用起来非常方便。一般用户直接使用该配置即可。
 
 安装 Oh My Zsh::
 
