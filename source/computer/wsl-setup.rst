@@ -17,7 +17,8 @@ WSL 配置指南
 WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数情况下，建议使用 WSL2，
 因为它提供更快的性能和 100% 的系统调用兼容性。涉及到跨系统的文件互访时
 （Linux 访问 Windows 里的文件，或 Windows 访问 Linux 里的文件），使用 WSL1 具有
-更快的性能。
+更快的性能。WSL1 和 WSL2 的详细对比见
+`官方文档 <https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions>`__\ 。
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
@@ -25,7 +26,7 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
    由于 Hyper-V 兼容性问题，开启 WSL2 功能后 VMware/VirtualBox 将无法正常使用，
    而 WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。
-   
+
    已开启 WSL2 功能的用户若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，
    然后使用管理员模式打开 PowerShell，输入 ``bcdedit /set hypervisorlaunchtype off``
    关闭 Hyper-V，重启后方能生效。此时 Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用。
