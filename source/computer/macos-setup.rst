@@ -163,15 +163,15 @@ C 编译器。
 Fortran
 ^^^^^^^
 
-若需要编译 Fortran 程序，则可以安装 `GNU Fortran <https://gcc.gnu.org/fortran/>`__
-编译器（即 ``gfortran``\ ）::
+`GNU Fortran <https://gcc.gnu.org/fortran/>`__ 编译器是 macOS 下最常用的
+Fortran 编译器，其提供了 ``gfortran`` 命令::
 
     $ brew install gfortran
 
 Java
 ^^^^
 
-若要运行 Java 程序，则需要安装 Java 开发环境::
+运行 Java 程序需要安装 Java 运行环境，即 OpenJDK::
 
     $ brew install openjdk
     $ sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
@@ -186,8 +186,8 @@ Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/index>`
 git
 ^^^
 
-`git <https://git-scm.com/>`__ 是最流行的版本控制工具，也是科研过程中编写代码
-以及项目管理推荐使用的软件。Command Line Tools for Xcode 中已经安装了 Apple 版
+`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，是科研过程中编写代码
+与项目管理推荐使用的软件。Command Line Tools for Xcode 中已经安装了 Apple 版
 的 git，其与原版 git 有一些区别。可以用如下命令安装原版的 git::
 
     $ brew install git
@@ -202,7 +202,7 @@ git
 X11
 ^^^
 
-X11（也称 X Window System）是 UNIX 系统下常用的一种视窗系统。某些软件（如 SAC 和 CPS330）需要使用它。
+X11（也称 X Window System 或 X）是 UNIX 系统下常用的一种视窗系统。某些软件（如 SAC 和 CPS330）需要使用它。
 在 macOS 下，需要安装 `XQuartz <https://www.xquartz.org/>`__::
 
    $ brew install --cask xquartz
@@ -254,7 +254,7 @@ Terminal 具有更多有用的功能，比如支持水平和垂直分隔窗格�
 ^^^^^^^^^^
 
 macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。无法满足日常编程需求。
-推荐安装更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
+推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
 
     $ brew install --cask visual-studio-code
 
@@ -277,7 +277,7 @@ Google Earth
 
 Google Earth 提供了网页版和桌面版应用。
 非重度用户可以使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
-重度用户可以安装使用如下命令安装桌面版应用::
+重度用户可以执行如下命令安装桌面版::
 
     $ brew install --cask google-earth-pro
 
