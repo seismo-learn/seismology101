@@ -20,7 +20,7 @@ zsh 有如下特点：
 在终端键入 ``zsh --version``，若显示 zsh 版本号，则表示 zsh
 已安装。否则需要安装 zsh。
 
-自 macOS Catalina (10.15) 开始，macOS 系统默认的 Shell 已由 bash 变为 zsh。
+自 macOS Catalina（10.15）开始，macOS 系统默认的 Shell 已由 bash 变为 zsh。
 
 Linux 用户可以使用如下命令安装 zsh::
 
@@ -38,7 +38,7 @@ Linux 用户可以使用如下命令安装 zsh::
     $ chsh -s $(which zsh)
 
 ``chsh`` 命令修改的是登陆 Shell，因而需要退出当前用户并重新登陆，
-用户的默认 Shell 就从 bash 变成了 zsh 了。打开新的终端键入
+用户的默认 Shell 就从 bash 变成 zsh 了。打开新的终端并键入
 ``echo $SHELL``\ ，查看当前 Shell，会显示 :file:`/bin/zsh`\ 。
 
 zsh 的配置文件为 :file:`~/.zshrc`\ 。因而切换到 zsh 后，
@@ -55,11 +55,11 @@ zsh 稍作配置会更加方便好用。`Oh My Zsh <https://ohmyz.sh/>`__ 是由
     $ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 该命令会下载 Oh My Zsh 到 :file:`~/.oh-my-zsh` 目录下，生成默认的 zsh 配置文件 :file:`~/.zshrc`\ ，
-并备份老的配置到类似 :file:`.zshrc.pre-oh-my-zsh` 的文件中。
+并备份老的配置到类似 :file:`~/.zshrc.pre-oh-my-zsh` 的文件中。
 
 之后可以根据个人习惯修改配置文件 :file:`~/.zshrc`\ ，如\
 `设置主题 <https://github.com/ohmyzsh/ohmyzsh#themes>`__\ 
-（如 bira）、\ `启用插件 <https://github.com/ohmyzsh/ohmyzsh#plugins>`__\
+、\ `启用插件 <https://github.com/ohmyzsh/ohmyzsh#plugins>`__\
 等。
 
 设置主题
@@ -113,7 +113,7 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
       # 用 j 命令迅速从 /usr/local 跳转到与 des 匹配的目录，这里只有 Desktop 可以匹配
       $ j des
       $ pwd
-      /home/seisman/Desktop
+      /home/seismo-learn/Desktop
 
   启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__::
 
@@ -136,7 +136,7 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
      其中，插件 ``git mergetool --no-prompt`` 的别名是 ``gmt``，
      与地学软件 GMT 冲突，建议在 ``~/.zshrc`` 中不启用插件 ``git``\ 。
 
-除了 Oh My Zsh 自带的插件，还可以使用其他插件，只需提前安装即可。这里推荐几个常用的。
+除了 Oh My Zsh 自带的插件，还可以使用第三插件，只需提前安装即可。这里推荐几个常用的。
 
 - `zsh-autosuggestions 插件 <https://github.com/zsh-users/zsh-autosuggestions>`__\ ：
   命令自动补全插件，当输入命令的几个字母，它会自动根据历史输入进行自动补全
