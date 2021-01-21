@@ -167,14 +167,9 @@ X11
 ^^^
 
 X11（也称 X Window System 或 X）是 UNIX 系统下常用的一种视窗系统。某些软件
-（如 SAC 和 CPS330）。Ubuntu 20.04.1 默认已经安装::
+（如 SAC 和 CPS330）::
 
-    # 运行 xclock。若能看到一个时钟窗口，则表示 X11 已安装。
-    $ xclock
-
-若未安装，可以通过如下命令安装::
-
-    $ sudo apt-get install xorg
+    $ sudo apt install libx11-dev
 
 命令行工具
 ----------
