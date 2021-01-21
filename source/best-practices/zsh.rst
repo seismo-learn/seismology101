@@ -32,7 +32,7 @@ Ubuntu/Debian 用户::
 
     $ sudo apt install zsh
 
-自 macOS Catalina 开始，系统默认的 Shell 已由 bash 变为 zsh。
+自 macOS Catalina (10.15) 开始，系统默认的 Shell 已由 bash 变为 zsh。
 
 通过如下命令设置默认 Shell 为 zsh::
 
