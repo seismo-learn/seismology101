@@ -55,7 +55,7 @@ zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是一
 
     $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-该命令会下载 Oh My Zsh 到 :file:`~/.oh-my-zsh` 目录下，生成默认的 zsh 配置文件 :file:`.zshrc`\ ，
+该命令会下载 Oh My Zsh 到 :file:`~/.oh-my-zsh` 目录下，生成默认的 zsh 配置文件 :file:`~/.zshrc`\ ，
 并备份老的配置到类似 :file:`.zshrc.pre-oh-my-zsh` 的文件中。
 
 之后可以根据个人习惯修改配置文件 :file:`.zshrc`\ ，如\
