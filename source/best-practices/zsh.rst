@@ -37,7 +37,7 @@ Linux 用户可以使用如下命令安装 zsh::
 
     $ chsh -s $(which zsh)
 
-``chsh`` 命令修改的是登陆后的 Shell，因而需要退出当前用户并重新登陆，
+``chsh`` 命令修改的是登陆 Shell，因而需要退出当前用户并重新登陆，
 用户的默认 Shell 就从 bash 变成了 zsh 了。打开新的终端键入
 ``echo $SHELL``\ ，查看当前 Shell，会显示 :file:`/bin/zsh`\ 。
 
@@ -47,7 +47,7 @@ zsh 的配置文件为 :file:`~/.zshrc`\ 。因而切换到 zsh 后，
 Oh My Zsh
 ----------
 
-zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是由 Oh My Zsh 社区
+zsh 稍作配置会更加方便好用。`Oh My Zsh <https://ohmyz.sh/>`__ 是由 Oh My Zsh 社区
 维护的一套 zsh 配置文件，使用起来非常方便。一般用户直接使用该配置即可。
 
 安装 Oh My Zsh::
@@ -73,12 +73,12 @@ zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是由
 
 Oh My Zsh 自带了很多主题，位于 :file:`~/.oh-my-zsh/themes`\ 目录下，可以在线\
 `预览主题效果 <https://github.com/ohmyzsh/ohmyzsh/wiki/Themes>`__\ 。
-用户也可以启动\ `外部主题 <https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes>`__\ 。
+用户也可以使用\ `外部主题 <https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes>`__\ 。
 
 启用插件
 ^^^^^^^^^
 
-一般直接修改配置文件 :file:`.zshrc` 便可启用插件::
+一般直接修改配置文件 :file:`~/.zshrc` 便可启用插件::
 
     plugins=(
       sudo
@@ -100,7 +100,7 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
   ``.7z``、``.rar`` 等
 
 - `autojump 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump>`__\ ：
-  非常智能的目录快速切换的工具
+  非常智能的目录快速切换工具
 
   ::
 
