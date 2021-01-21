@@ -57,7 +57,7 @@ zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是由
 该命令会下载 Oh My Zsh 到 :file:`~/.oh-my-zsh` 目录下，生成默认的 zsh 配置文件 :file:`~/.zshrc`\ ，
 并备份老的配置到类似 :file:`.zshrc.pre-oh-my-zsh` 的文件中。
 
-之后可以根据个人习惯修改配置文件 :file:`.zshrc`\ ，如\
+之后可以根据个人习惯修改配置文件 :file:`~/.zshrc`\ ，如\
 `设置主题 <https://github.com/ohmyzsh/ohmyzsh#themes>`__\ 
 （如 bira）、\ `启用插件 <https://github.com/ohmyzsh/ohmyzsh#plugins>`__\
 等。
@@ -65,7 +65,7 @@ zsh 稍作配置会更加方便好用，`Oh My Zsh <https://ohmyz.sh/>`__ 是由
 设置主题
 ^^^^^^^^^
 
-修改配置文件 :file:`.zshrc` 便可以使用不同的主题::
+修改配置文件 :file:`~/.zshrc` 便可以使用不同的主题::
 
     ZSH_THEME="bira"
 
@@ -134,7 +134,7 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
     
      插件 ``git`` 为 git 的众多常用命令提供了更简单的别名。
      其中，插件 ``git mergetool --no-prompt`` 的别名是 ``gmt``，
-     与地学软件 GMT 冲突，建议在 ``.zshrc`` 中不启用插件 ``git``\ 。
+     与地学软件 GMT 冲突，建议在 ``~/.zshrc`` 中不启用插件 ``git``\ 。
 
 除了 Oh My Zsh 自带的插件，还可以安装其他插件。这里推荐几个常用的。
 
@@ -152,6 +152,6 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
 
       $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-  该插件需要位于配置文件 :file:`.zshrc` 中的插件列表的最后一位::
+  该插件需要位于配置文件 :file:`~/.zshrc` 中的插件列表的最后一位::
 
       plugins=([plugins...] zsh-syntax-highlighting)
