@@ -30,7 +30,7 @@ Ubuntu 配置指南
 
 **Ubuntu Desktop 20.04.1 LTS AMD64** 的 ISO 文件下载链接：
 
-- `官方镜像 <https://ubuntu.com/download/desktop/thank-you?version=20.04.1&architecture=amd64>`__
+- `官方镜像 <https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__
 - `国内中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__
 
 制作 USB 启动盘
