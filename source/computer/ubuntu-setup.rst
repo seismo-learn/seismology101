@@ -216,7 +216,7 @@ Google Earth
 Google Chrome 浏览器
 ^^^^^^^^^^^^^^^^^^^^^
 
-Ubuntu 20.04.1 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
+Ubuntu 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
 
     # 下载 Google Chrome 的 deb 软件包
     $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
