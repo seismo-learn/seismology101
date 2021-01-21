@@ -42,7 +42,8 @@ Ubuntu/Debian 用户::
 用户的默认 Shell 就从 bash 变成了 zsh 了。打开新的终端键入
 ``echo $SHELL``\ ，查看当前 Shell，会显示 :file:`/bin/zsh`\ 。
 
-之后，所有的 Shell 配置都不用写到 :file:`.bashrc`\ ，而要写到 :file:`.zshrc` 中。
+zsh 的配置文件为 :file:`~/.zshrc`\ 。因而切换到 zsh 后，
+所有的 Shell 配置都不用写到 :file:`~/.bashrc`\ ，而要写到 :file:`~/.zshrc` 中。
 
 Oh My Zsh
 ----------
