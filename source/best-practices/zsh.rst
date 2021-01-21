@@ -89,7 +89,7 @@ Oh My Zsh 自带了很多主题，位于 :file:`~/.oh-my-zsh/themes`\ 目录下�
     )
 
 Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下，也可以\
-`在线查询 <https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins>`__\ 。
+`在线查询 <https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins-Overview>`__\ 。
 这里推荐几个常用的自带插件。
 
 - `sudo 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo>`__\ ：
