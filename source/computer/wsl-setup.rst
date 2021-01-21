@@ -4,7 +4,7 @@ WSL 配置指南
 :本节贡献者: |赵志远|\（作者）、
              |姚家园|\（审稿）、
              |田冬冬|\（审稿）
-:最近更新日期: 2021-01-19
+:最近更新日期: 2021-01-21
 :预计花费时间: 120 分钟
 
 .. warning::
@@ -17,7 +17,8 @@ WSL 配置指南
 WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数情况下，建议使用 WSL2，
 因为它提供更快的性能和 100% 的系统调用兼容性。涉及到跨系统的文件互访时
 （Linux 访问 Windows 里的文件，或 Windows 访问 Linux 里的文件），使用 WSL1 具有
-更快的性能。
+更快的性能。WSL1 和 WSL2 的详细对比见
+`官方文档 <https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions>`__\ 。
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
@@ -25,7 +26,7 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
    由于 Hyper-V 兼容性问题，开启 WSL2 功能后 VMware/VirtualBox 将无法正常使用，
    而 WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。
-   
+
    已开启 WSL2 功能的用户若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，
    然后使用管理员模式打开 PowerShell，输入 ``bcdedit /set hypervisorlaunchtype off``
    关闭 Hyper-V，重启后方能生效。此时 Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用。
@@ -164,6 +165,11 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 
    推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
    实现文件夹和文件的快速定位。
+   
+   推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__\ ，
+   可直接在 Microsoft Store 中安装。界面美观、操作方便，
+   支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。
+   可完全替代 CMD 和 PowerShell。
 
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
