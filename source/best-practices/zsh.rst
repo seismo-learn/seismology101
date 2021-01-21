@@ -106,7 +106,7 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
 ::
 
     $ pwd
-    /home/seisman
+    /home/seismo-learn
     $ cd Desktop
     $ cd /opt
     $ cd /usr/local
