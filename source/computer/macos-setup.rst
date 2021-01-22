@@ -45,7 +45,7 @@ Command Line Tools for Xcode
 `Xcode <https://developer.apple.com/cn/xcode/>`__ 是 macOS 下的集成开发环境（IDE），
 类似于 Windows 下的 `Microsoft Visual Studio <https://visualstudio.microsoft.com/>`__\ 。
 Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，
-比如 C 编译器、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
+比如 C/C++ 编译器（\ ``gcc``\ 、\ ``g++``\ ）、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
 
 按下 :kbd:`Command + 空格`\ ，搜索“Terminal”并按下 :kbd:`Enter` 键以打开 Terminal 应用。
 在 Terminal 中执行如下命令以安装 Command Line Tools for Xcode::
@@ -157,8 +157,8 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 C
 ^
 
-Command Line Tools for Xcode 已经提供了 C 编译器和相关工具，因而无需单独安装
-C 编译器。
+Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
+C/C++ 编译器。
 
 Fortran
 ^^^^^^^
