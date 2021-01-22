@@ -198,7 +198,7 @@ Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（
 Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 日常科研经常需要开好几个终端，切换和管理起来比较麻烦。
 
-`Terminator <https://github.com/gnome-terminator/terminator>`__
+`Terminator <https://gnome-terminator.org/>`__
 是一个功能强大的终端模拟器，最常用的功能应该是终端分割和终端切换。
 使用如下命令安装::
 
