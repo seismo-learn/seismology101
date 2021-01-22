@@ -204,7 +204,7 @@ Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
     $ sudo dnf install terminator
 
-以下介绍几个常用快捷键，详细用法见 `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
+以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
 
 - :kbd:`Ctrl + Shift + O`\ : 水平分隔终端
 - :kbd:`Ctrl + Shift + E`\ :  垂直分隔终端
