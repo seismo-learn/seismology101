@@ -164,14 +164,6 @@ git
 
     $ sudo dnf install git
 
-X11
-^^^
-
-X11（也称 X Window System 或 X）是 UNIX 系统下常用的一种视窗系统。某些软件
-（如 SAC 和 CPS330）需要使用它::
-
-    $ sudo dnf install libX11-devel
-
 命令行工具
 ----------
 
@@ -209,8 +201,8 @@ Google Earth
 1. 下载 64 位 RPM 包：https://www.google.com/earth/versions/#download-pro
 2. 双击下载的 RPM 安装包即可安装
 
-Google Chrome 浏览器
-^^^^^^^^^^^^^^^^^^^^^
+浏览器
+^^^^^^
 
 Fedora 33 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
 
