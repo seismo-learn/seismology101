@@ -245,7 +245,7 @@ BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。�
 由于网络上的大部分文档介绍的都是 GNU 实用工具的用法，因而 macOS 用户在使用网络上的
 命令时可能会出现错误。这一点可以通过安装 GNU 实用工具来解决::
 
-    $ brew install autoconf bash binutils coreutils diffutils ed findutils flex gawk \
+    $ brew install autoconf binutils coreutils diffutils ed findutils flex gawk \
         gnu-indent gnu-sed gnu-tar gnu-which gpatch grep gzip less m4 make nano \
         screen
 
