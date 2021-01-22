@@ -45,7 +45,7 @@ Command Line Tools for Xcode
 `Xcode <https://developer.apple.com/cn/xcode/>`__ 是 macOS 下的集成开发环境（IDE），
 类似于 Windows 下的 `Microsoft Visual Studio <https://visualstudio.microsoft.com/>`__\ 。
 Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，
-比如 C 编译器、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
+比如 C/C++ 编译器（\ ``gcc``\ 、\ ``g++``\ ）、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
 
 按下 :kbd:`Command + 空格`\ ，搜索“Terminal”并按下 :kbd:`Enter` 键以打开 Terminal 应用。
 在 Terminal 中执行如下命令以安装 Command Line Tools for Xcode::
@@ -154,11 +154,35 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 编程开发环境
 ------------
 
-C
-^
+C/C++
+^^^^^
 
-Command Line Tools for Xcode 已经提供了 C 编译器和相关工具，因而无需单独安装
-C 编译器。
+Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
+C/C++ 编译器。
+
+.. note::
+
+    Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是 
+    `Apple Clang <https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html>`__ 编译器，
+    其与 `GCC <https://gcc.gnu.org/>`__ 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
+    因而一般用户无需再安装 GCC 编译器。
+
+    由于特殊原因需要安装 GCC 编译器的用户，可以使用如下命令安装::
+
+        $ brew install gcc
+
+    通过 Homebrew 安装的 GCC 提供了命令 ``gcc-10`` 和 ``g++-10``
+    （``10`` 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
+    提供的 ``gcc`` 和 ``g++`` 命令。
+    为了使用 GCC 编译器，用户可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10``\ ，
+    或者在 :file:`/usr/local/bin/` 目录下创建软链接::
+
+        $ cd /usr/local/bin/
+        $ ln -s gcc-10 gcc
+        $ ln -s g++-10 g++
+
+    重开一个终端后，使用 ``gcc`` 和 ``g++`` 则默认使用的是 GCC 编译器。
+    删除软连接后，则默认使用的又是 Apple Clang 编译器了。
 
 Fortran
 ^^^^^^^
