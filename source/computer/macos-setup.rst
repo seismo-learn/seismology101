@@ -154,8 +154,8 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 编程开发环境
 ------------
 
-C
-^
+C/C++
+^^^^^
 
 Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
 C/C++ 编译器。
