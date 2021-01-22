@@ -174,8 +174,8 @@ C 编译器。
     通过 Homebrew 安装的 GCC 提供了命令 ``gcc-10`` 和 ``g++-10``
     （``10`` 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
     提供的 ``gcc`` 和 ``g++`` 命令。
-    为了使用 GCC 编译器，用户可以在 :file:`/usr/local/bin/` 目录下创建如下
-    软链接::
+    为了使用 GCC 编译器，用户可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10``\ ，
+    或者在 :file:`/usr/local/bin/` 目录下创建如下软链接::
 
         $ cd /usr/local/bin/
         $ ln -s gcc-10 gcc
