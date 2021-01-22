@@ -201,8 +201,8 @@ Google Earth
 1. 下载 64 位 RPM 包：https://www.google.com/earth/versions/#download-pro
 2. 双击下载的 RPM 安装包即可安装
 
-Google Chrome 浏览器
-^^^^^^^^^^^^^^^^^^^^^
+浏览器
+^^^^^^
 
 Fedora 33 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
 

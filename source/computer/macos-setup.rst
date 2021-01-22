@@ -266,6 +266,17 @@ Google Earth 提供了网页版和桌面版应用。
 
     $ brew install --cask google-earth-pro
 
+浏览器
+^^^^^^
+
+macOS 自带了 Safari 浏览器，用户也可以安装 Google Chrome 浏览器::
+
+    $ brew install --cask google-chrome
+
+或 Microsoft Edge 浏览器::
+
+    $ brew install --cask microsoft-edge
+
 QuickLook 插件
 ^^^^^^^^^^^^^^
 
