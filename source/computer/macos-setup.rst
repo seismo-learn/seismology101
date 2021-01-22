@@ -247,7 +247,7 @@ BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。�
 
     $ brew install autoconf bash binutils coreutils diffutils ed findutils flex gawk \
         gnu-indent gnu-sed gnu-tar gnu-which gpatch grep gzip less m4 make nano \
-        screen watch wdiff
+        screen
 
 Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在所有工具的名称前
 加上了前缀 ``g``，以避免替换 macOS 系统自带的 BSD 实用工具，即 ``sed`` 是 BSD 提供的，
