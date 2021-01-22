@@ -192,6 +192,24 @@ Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（
 
     $ sudo dnf install unar
 
+终端
+^^^^^
+
+Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
+日常科研经常需要开好几个终端，切换和管理起来比较麻烦。
+
+`Terminator <https://github.com/gnome-terminator/terminator>`__
+是一个功能强大的终端模拟器，最常用的功能应该是终端分割和终端切换。
+使用如下命令安装::
+
+    $ sudo dnf install terminator
+
+以下介绍几个常用快捷键:
+
+- :kbd:`Ctrl + Shift + O`\ : 水平分隔终端
+- :kbd:`Ctrl + Shift + E`\ :  垂直分隔终端
+- :kbd:`Alt + 上下左右`\ :  切换子终端
+
 Google Earth
 ^^^^^^^^^^^^
 
