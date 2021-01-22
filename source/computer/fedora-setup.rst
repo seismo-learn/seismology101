@@ -164,14 +164,6 @@ git
 
     $ sudo dnf install git
 
-X11
-^^^
-
-X11（也称 X Window System 或 X）是 UNIX 系统下常用的一种视窗系统。某些软件
-（如 SAC 和 CPS330）需要使用它::
-
-    $ sudo dnf install libX11-devel
-
 命令行工具
 ----------
 
