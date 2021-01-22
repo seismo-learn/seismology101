@@ -162,9 +162,9 @@ C 编译器。
 
 .. note::
 
-    Command Line Tools for Xcode 提供的 C 编译器本质上是 
+    Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是 
     `Apple Clang <https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html>`__ 编译器，
-    其与 `GCC <https://gcc.gnu.org/>`__ 编译器有差异，但足以满足日常科研中编译 C 程序的需求。
+    其与 `GCC <https://gcc.gnu.org/>`__ 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
     因而一般用户无需再安装 GCC 编译器。
 
     由于特殊原因需要安装 GCC 编译器的用户，可以使用如下命令安装::
