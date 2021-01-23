@@ -153,7 +153,7 @@ Intel 软件开发工具包
 从官网\ `下载安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\ 。
 下载时，选择 Local Installer，使用 ``wget`` 命令下载安装脚本。
 然后使用 ``sudo`` 运行安装脚本。工具包默认安装在 :file:`/opt/intel/oneapi` 目录下。
-安装完成后，按照指示设置好环境变量就可以使用该软件包了。
+安装完成后，按照指示设置好环境变量就可以使用该工具包了。
 
 Java
 ^^^^
