@@ -162,7 +162,7 @@ C/C++ 编译器。
 
 .. note::
 
-    Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是 
+    Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
     `Apple Clang <https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html>`__ 编译器，
     其与 `GCC <https://gcc.gnu.org/>`__ 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
     因而一般用户无需再安装 GCC 编译器。
@@ -234,14 +234,25 @@ Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruany
 
     $ brew install dos2unix unix2dos
 
-`gawk <https://www.gnu.org/software/gawk/>`__ 是用于文本处理的命令行工具。
-macOS 自带的 awk 语法上与 gawk 有所不同。推荐安装并使用 ``gawk``::
-
-    $ brew install gawk
-
 `wget <https://www.gnu.org/software/wget/>`__ 是用于下载文件的命令行工具::
 
     $ brew install wget
+
+macOS 下自带了很多实用工具，如 ``sed``、``grep`` 等（位于 :file:`/usr/bin/`\ 目录下）。
+需要注意，这些实用工具是由 BSD 提供的，而 Linux 系统下的实用工具则是由 GNU 提供的。
+BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。二者之间的常见差异可以参考
+此\ `博文 <https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/>`__\ 。
+由于网络上的大部分文档介绍的都是 GNU 实用工具的用法，因而 macOS 用户在使用网络上的
+命令时可能会出现错误。这一点可以通过安装 GNU 实用工具来解决::
+
+    # 此处仅安装常用的 GNU 实用工具
+    $ brew install findutils gawk gnu-sed gnu-tar grep
+
+Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在所有工具的名称前
+加上了前缀 ``g``，以避免替换 macOS 系统自带的 BSD 实用工具，即 ``sed`` 是 BSD 提供的，
+而 ``gsed`` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 ``g``），
+在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 ``g``），但在写脚本时，
+要额外注意脚本的可移植性。
 
 日常软件
 --------
