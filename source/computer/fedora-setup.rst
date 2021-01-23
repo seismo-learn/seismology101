@@ -241,7 +241,7 @@ Fedora 自带的 LibreOffice 具有简单的文档查看和编辑功能，但其
 2.  双击下载的 RPM 安装包即可安装
 
 Intel oneAPI Toolkits
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
 是英特尔最新的软件开发工具包，并且是免费的，不需要许可证。
