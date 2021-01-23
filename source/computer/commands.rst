@@ -33,9 +33,6 @@ Linux 下有成百上千个命令，每个命令都有众多选项。这一节�
         - `locate`_
         - `find`_
 
-. hlist::
-    :columns: 4
-
     -   输出
 
         - `echo`_
