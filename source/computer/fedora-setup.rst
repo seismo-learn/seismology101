@@ -240,8 +240,8 @@ Fedora 自带的 LibreOffice 具有简单的文档查看和编辑功能，但其
 1.  下载 64位 RPM 格式的安装包：`WPS Office for Linux 官网 <https://linux.wps.cn/>`__
 2.  双击下载的 RPM 安装包即可安装
 
-Intel oneAPI Toolkits
-^^^^^^^^^^^^^^^^^^^^^^
+Intel 软件开发工具包
+^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
 是英特尔最新的软件开发工具包，并且是免费的，不需要许可证。
