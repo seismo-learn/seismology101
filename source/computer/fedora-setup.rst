@@ -142,6 +142,19 @@ Fortran 编译器，其提供了 ``gfortran`` 命令::
 
     $ sudo dnf install gcc-gfortran
 
+Intel 软件开发工具包
+^^^^^^^^^^^^^^^^^^^^
+
+`Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
+是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器。此外还有 MKL 数学库、MPI 并行库等。
+该工具包是免费的，不需要许可证。
+
+日常科研中安装 Base Toolkit 和 HPC Toolkit 即可，
+从官网\ `下载安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\ 。
+下载时，选择 Local Installer，使用 ``wget`` 命令下载安装脚本。
+然后使用 ``sudo`` 运行安装脚本。工具包默认安装在 :file:`/opt/intel/oneapi` 目录下。
+安装完成后，按照指示设置好环境变量就可以使用该软件包了。
+
 Java
 ^^^^
 
@@ -239,16 +252,3 @@ Fedora 自带的 LibreOffice 具有简单的文档查看和编辑功能，但其
 
 1.  下载 64位 RPM 格式的安装包：`WPS Office for Linux 官网 <https://linux.wps.cn/>`__
 2.  双击下载的 RPM 安装包即可安装
-
-Intel 软件开发工具包
-^^^^^^^^^^^^^^^^^^^^
-
-`Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是英特尔最新的软件开发工具包，并且是免费的，不需要许可证。
-直接从\ `官方下载 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\
-即可。
-
-日常科研中安装 Base Toolkit 和 HPC Toolkit 即可，包括了 C/C++ 编译器、Fortran 编译器、
-MKL 数学库、MPI 并行库等。选择 Local Installer，使用 ``wget`` 命令下载安装脚本。
-然后使用 ``sudo`` 运行安装脚本。工具包默认安装在 :file:`/opt/intel/oneapi` 目录下。
-安装完成后，按照指示设置好环境变量就可以使用该软件包了。
