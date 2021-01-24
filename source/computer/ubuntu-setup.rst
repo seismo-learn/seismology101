@@ -155,12 +155,12 @@ Intel 软件开发工具包
 添加 Intel 仓库公钥::
 
     # 下载 Intel 仓库公钥
-    cd ~/Downloads
-    wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+    $ cd ~/Downloads
+    $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
     # 添加到 apt 源密钥环中，以便使用此密钥签名的档案受到信任
-    sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+    $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
     # 删除公钥
-    rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+    $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
 
 添加 Intel 软件仓库::
 
