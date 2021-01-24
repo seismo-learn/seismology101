@@ -206,10 +206,11 @@ Intel 软件开发工具包
 从官网\ `下载安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\ 。
 选择 Local Installer，下载 :file:`.dmg` 文件并安装。默认安装目录是 :file:`/opt/intel/oneapi`。
 
-安装完成后，按照\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macos/>`__\
-配置好环境变量，就可以使用该工具包了::
+配置好环境变量::
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
+
+更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macos/>`__\ 。
 
 Java
 ^^^^

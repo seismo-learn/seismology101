@@ -162,10 +162,11 @@ Intel 软件开发工具包
     $ sudo dnf install intel-basekit
     $ sudo dnf install intel-hpckit
 
-安装完成后，按照\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\
-配置好环境变量，就可以使用该工具包了::
+配置好环境变量::
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+
+更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
 
 Java
 ^^^^
