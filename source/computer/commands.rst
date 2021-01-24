@@ -1,2 +1,88 @@
 常用命令
 ========
+
+Linux 下有成百上千个命令，每个命令都有众多选项。这一节介绍一些常用命令的常用用法。
+
+
+.. rubric:: 命令目录
+
+.. hlist::
+    :columns: 6
+
+    -   压缩与解压
+
+        - `tar`_
+
+    -   文件查看
+
+        - `cat`_
+        - `head`_
+        - `tail`_
+        - `less`_
+
+    -   文件处理
+
+        - `gawk`_
+        - `grep`_
+        - `wc`_
+        - `sort`_
+        - `uniq`_
+
+    -   文件搜索
+
+        - `locate`_
+        - `find`_
+
+    -   其他
+
+        - `ssh`_
+        - `scp`_
+        - `rsync`_
+
+----
+
+cat
+---
+
+find
+----
+
+gawk
+----
+
+grep
+----
+
+head
+----
+
+less
+----
+
+locate
+------
+
+rsync
+-----
+
+scp
+---
+
+sort
+----
+
+ssh
+---
+
+tail
+----
+
+tar
+---
+
+uniq
+----
+
+wc
+--
+

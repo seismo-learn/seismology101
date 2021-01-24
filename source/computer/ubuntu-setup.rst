@@ -3,7 +3,7 @@ Ubuntu 配置指南
 
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）
-:最近更新日期: 2021-01-21
+:最近更新日期: 2021-01-24
 :预计花费时间: 120 分钟
 
 .. note::
@@ -140,6 +140,43 @@ Fortran
 Fortran 编译器，其提供了 ``gfortran`` 命令::
 
     $ sudo apt install gfortran
+
+Intel 软件开发工具包
+^^^^^^^^^^^^^^^^^^^^
+
+`Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
+是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
+此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
+
+在 Ubuntu 系统下，官方手册提供了多种\
+`安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
+如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
+
+添加 Intel 仓库公钥::
+
+    # 下载 Intel 仓库公钥
+    $ cd ~/Downloads
+    $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+    # 添加到 apt 源密钥环中，以便使用此密钥签名的档案受到信任
+    $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+    # 删除公钥
+    $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+
+添加 Intel 软件仓库::
+
+    $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
+    $ sudo apt update
+
+日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
+
+    $ sudo apt install intel-basekit
+    $ sudo apt install intel-hpckit
+
+配置环境变量::
+
+    $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+
+更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
 
 Java
 ^^^^
