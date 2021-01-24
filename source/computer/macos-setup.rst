@@ -206,7 +206,7 @@ Intel 软件开发工具包
 日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。从官网下载\ `安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\ 。
 选择 Local Installer，下载 :file:`.dmg` 文件并安装。默认安装目录是 :file:`/opt/intel/oneapi`。
 
-配置好环境变量::
+配置环境变量::
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
 

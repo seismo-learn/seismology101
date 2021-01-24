@@ -172,7 +172,7 @@ Intel 软件开发工具包
     $ sudo apt install intel-basekit
     $ sudo apt install intel-hpckit
 
-配置好环境变量::
+配置环境变量::
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
