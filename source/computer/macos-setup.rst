@@ -199,11 +199,11 @@ Intel 软件开发工具包
 是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
-日常科研安装 Base Toolkit 和 HPC Toolkit 即可。在 macOS 下，官方手册提供了多种\
+在 macOS 下，官方手册提供了多种\
 `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-macos/>`__\ ，
 如在线安装、本地安装、使用 ``conda`` 安装等。这里，我们选择本地安装。
 
-从官网\ `下载安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\ 。
+日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。从官网下载\ `安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\ 。
 选择 Local Installer，下载 :file:`.dmg` 文件并安装。默认安装目录是 :file:`/opt/intel/oneapi`。
 
 配置好环境变量::

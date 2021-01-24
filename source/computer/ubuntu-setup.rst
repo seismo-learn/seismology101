@@ -148,7 +148,7 @@ Intel 软件开发工具包
 是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
-日常科研安装 Base Toolkit 和 HPC Toolkit 即可。在 Ubuntu 系统下，官方手册提供了多种\
+在 Ubuntu 系统下，官方手册提供了多种\
 `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
 如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
 
@@ -167,7 +167,7 @@ Intel 软件开发工具包
     $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
     $ sudo apt update
 
-安装工具包，默认安装目录是 :file:`/opt/intel/oneapi`::
+日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
 
     $ sudo apt install intel-basekit
     $ sudo apt install intel-hpckit

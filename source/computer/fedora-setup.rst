@@ -157,7 +157,7 @@ Intel 软件开发工具包
 
     $ sudo mv oneAPI.repo /etc/yum.repos.d/
 
-安装工具包，日常科研安装 Base Toolkit 和 HPC Toolkit 即可。默认安装目录是 :file:`/opt/intel/oneapi`::
+日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
 
     $ sudo dnf install intel-basekit
     $ sudo dnf install intel-hpckit
