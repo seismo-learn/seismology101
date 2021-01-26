@@ -120,20 +120,26 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
       $ pwd
       /home/seismo-learn/Desktop
 
-  启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__::
+  启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__:
 
-      # Fedora 用户
-      $ sudo dnf install autojump-zsh
+  .. tabs::
 
-      # CentOS 用户
-      $ sudo yum install autojump-zsh
+      .. code-tab:: bash Fedora
 
-      # Ubuntu/Debian 用户
-      $ sudo apt install autojump
-      # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
+          $ sudo dnf install autojump-zsh
 
-      # macOS 用户
-      $ brew install autojump
+      .. code-tab:: bash CentOS
+
+          $ sudo yum install autojump-zsh
+
+      .. code-tab:: bash Ubuntu/Debian
+
+          # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
+          $ sudo apt install autojump
+          
+      .. code-tab:: bash macOS
+
+          $ brew install autojump
 
   .. note::
 
