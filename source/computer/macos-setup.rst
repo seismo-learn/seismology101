@@ -248,15 +248,37 @@ git
 
 这里推荐一些常用的命令行工具。
 
+dos2unix & unix2dos
+^^^^^^^^^^^^^^^^^^^
+
 Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
 ``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符。
 ``unix2dos`` 则反之::
 
     $ brew install dos2unix unix2dos
 
+wget
+^^^^
+
 `wget <https://www.gnu.org/software/wget/>`__ 是用于下载文件的命令行工具::
 
     $ brew install wget
+
+tldr
+^^^^
+
+`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
+其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
+安装 ``tldr``::
+
+    $ brew install tldr
+
+用法::
+
+    $ tldr tar
+
+GNU 实用工具
+^^^^^^^^^^^^
 
 macOS 下自带了很多实用工具，如 ``sed``、``grep`` 等（位于 :file:`/usr/bin/`\ 目录下）。
 需要注意，这些实用工具是由 BSD 提供的，而 Linux 系统下的实用工具则是由 GNU 提供的。
@@ -273,16 +295,6 @@ Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在
 而 ``gsed`` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 ``g``），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 ``g``），但在写脚本时，
 要额外注意脚本的可移植性。
-
-`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
-其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
-安装 ``tldr``::
-
-    $ brew install tldr
-
-用法::
-
-    $ tldr tar
 
 日常软件
 --------
