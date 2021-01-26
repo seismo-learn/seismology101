@@ -264,6 +264,19 @@ wget
 
     $ brew install wget
 
+tldr
+^^^^
+
+`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
+其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
+安装 ``tldr``::
+
+    $ brew install tldr
+
+用法::
+
+    $ tldr tar
+
 GNU 实用工具
 ^^^^^^^^^^^^
 
@@ -282,19 +295,6 @@ Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在
 而 ``gsed`` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 ``g``），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 ``g``），但在写脚本时，
 要额外注意脚本的可移植性。
-
-tldr
-^^^^
-
-`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
-其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
-安装 ``tldr``::
-
-    $ brew install tldr
-
-用法::
-
-    $ tldr tar
 
 日常软件
 --------
