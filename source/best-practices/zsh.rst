@@ -22,16 +22,21 @@ zsh 有如下特点：
 
 自 macOS Catalina（10.15）开始，macOS 系统默认的 Shell 已由 bash 变为 zsh。
 
-Linux 用户可以使用如下命令安装 zsh::
+Linux 用户可以使用如下命令安装 zsh：
 
-    # Fedora 用户
-    $ sudo dnf install zsh
+.. tabs::
 
-    # CentOS 用户
-    $ sudo yum install zsh
+    .. code-tab:: bash Fedora
 
-    # Ubuntu/Debian 用户
-    $ sudo apt install zsh
+        $ sudo dnf install zsh
+
+    .. code-tab:: bash CentOS
+
+        $ sudo yum install zsh
+
+    .. code-tab:: bash Ubuntu/Debian
+
+        $ sudo apt install zsh
 
 通过如下命令设置默认 Shell 为 zsh::
 
@@ -58,7 +63,7 @@ zsh 稍作配置会更加方便好用。`Oh My Zsh <https://ohmyz.sh/>`__ 是由
 并备份老的配置到类似 :file:`~/.zshrc.pre-oh-my-zsh` 的文件中。
 
 之后可以根据个人习惯修改配置文件 :file:`~/.zshrc`\ ，如\
-`设置主题 <https://github.com/ohmyzsh/ohmyzsh#themes>`__\ 
+`设置主题 <https://github.com/ohmyzsh/ohmyzsh#themes>`__\
 、\ `启用插件 <https://github.com/ohmyzsh/ohmyzsh#plugins>`__\
 等。
 
@@ -95,7 +100,7 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
 - `sudo 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo>`__\ ：
   按两下 :kbd:`ESC` 即可在当前命令前加上 ``sudo``
 
-- `extract 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract>`__\ ： 
+- `extract 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract>`__\ ：
   使用 ``x abc.zip`` 语法即可解压几乎所有压缩文件，如 ``.tar.gz``、``.tar.bz2``、``.zip``、
   ``.7z``、``.rar`` 等
 
@@ -115,23 +120,29 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins`\ 目录下
       $ pwd
       /home/seismo-learn/Desktop
 
-  启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__::
+  启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__:
 
-      # Fedora 用户
-      $ sudo dnf install autojump-zsh
+  .. tabs::
 
-      # CentOS 用户
-      $ sudo yum install autojump-zsh
+      .. code-tab:: bash Fedora
 
-      # Ubuntu/Debian 用户
-      $ sudo apt install autojump
-      # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
+          $ sudo dnf install autojump-zsh
 
-      # macOS 用户
-      $ brew install autojump
+      .. code-tab:: bash CentOS
+
+          $ sudo yum install autojump-zsh
+
+      .. code-tab:: bash Ubuntu/Debian
+
+          # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
+          $ sudo apt install autojump
+          
+      .. code-tab:: bash macOS
+
+          $ brew install autojump
 
   .. note::
-    
+
      `git 插件 <https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git>`__\
      为 git 的众多常用命令提供了更简单的别名。其中，``git mergetool --no-prompt`` 的别名
      是 ``gmt``，与地学软件 GMT 冲突，建议不启用该插件。
