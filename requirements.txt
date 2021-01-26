@@ -1,3 +1,4 @@
 sphinx
+sphinx-cjkspace
+sphinx-tabs
 sphinx_rtd_theme
-sphinx-cjkspace>=0.1.3
