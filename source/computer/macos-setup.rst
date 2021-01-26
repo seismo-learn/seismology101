@@ -248,15 +248,24 @@ git
 
 这里推荐一些常用的命令行工具。
 
+dos2unix & unix2dos
+^^^^^^^^^^^^^^^^^^^
+
 Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
 ``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符。
 ``unix2dos`` 则反之::
 
     $ brew install dos2unix unix2dos
 
+wget
+^^^^
+
 `wget <https://www.gnu.org/software/wget/>`__ 是用于下载文件的命令行工具::
 
     $ brew install wget
+
+GNU 实用工具
+^^^^^^^^^^^^
 
 macOS 下自带了很多实用工具，如 ``sed``、``grep`` 等（位于 :file:`/usr/bin/`\ 目录下）。
 需要注意，这些实用工具是由 BSD 提供的，而 Linux 系统下的实用工具则是由 GNU 提供的。
