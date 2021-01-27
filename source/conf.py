@@ -46,7 +46,6 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_cjkspace.cjkspace",
     "sphinx_tabs.tabs",
-    "notfound.extension",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,9 +70,6 @@ intersphinx_mapping = {
     "seis101": ("https://seismo-learn.org/seismology101/", None),
     "software": ("https://seismo-learn.org/software/", None),
 }
-
-# Options for sphinx-notfound-page
-notfound_urls_prefix = "/"
 
 
 # -- Options for HTML output -------------------------------------------------
