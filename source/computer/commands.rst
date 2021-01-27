@@ -29,6 +29,9 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
 
 3.  网页搜索相关命令
 
+    - 使用 Google 搜索
+    - 在网站 https://man.linuxde.net/ 中查询
+
 .. rubric:: 命令目录
 
 .. hlist::
