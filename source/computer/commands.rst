@@ -9,7 +9,7 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
     ``tldr`` 是由社区维护的简化版的命令帮助文档。其以实例的方式展示了命令的
     常见用法。例如::
 
-        $ tldr mkdir
+        $ tldr mkdir发ind
 
         mkdir
 
@@ -202,6 +202,25 @@ less
 
 locate
 ------
+
+``locate`` 命令可以用于查找目录和文件。该命令比 `find`_ 命令快得多，原因在于它不搜索具体目录，
+而是搜索含有本地所有文件信息的数据库。
+
+搜索名称含 :file:`passwd` 的目录或文件::
+
+    $ locate passwd
+
+搜索名称含 :file:`/etc/sh` 的目录或文件（包括了 :file:`/etc` 目录下所有以 sh 开头的目录或文件）::
+
+    $ locate /etc/sh
+
+搜索名称含 :file:`~/Des` 的目录或文件（包括了 :file:`~` 目录下，所有以 Des 开头的目录或文件）::
+
+    $ locate ~/Des
+
+同上，但忽略大小写::
+
+    $ locate -i ~/des
 
 rsync
 -----
