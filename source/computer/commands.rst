@@ -187,6 +187,19 @@ head
 less
 ----
 
+``less`` 命令可以用来浏览文件内容。该命令允许用户向前或向后浏览文件。
+按 :kbd:`PageUp` 键向上翻页，用 :kbd:`PageDown` 键向下翻页。
+按 :kbd:`Enter` 键或向下方向键则向下移动，用向上方向键则向上移动。
+按 :kbd:`Q` 键退出浏览。
+
+浏览 :file:`/etc/passwd`::
+
+    $ less /etc/passwd
+
+同上，并显示行号::
+
+    $ less -N /etc/passwd
+
 locate
 ------
 
