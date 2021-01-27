@@ -9,7 +9,7 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
     ``tldr`` 是由社区维护的简化版的命令帮助文档。其以实例的方式展示了命令的
     常见用法。例如::
 
-        $ tldr mkdir发ind
+        $ tldr mkdir
 
         mkdir
 
