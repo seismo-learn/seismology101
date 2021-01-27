@@ -205,6 +205,21 @@ ssh
 tail
 ----
 
+``tail`` 命令用于打印文件尾部内容。默认打印文件的后 10 行。
+
+打印 :file:`/etc/passwd` 的后 10 行::
+
+    $ tail /etc/passwd
+
+打印 :file:`/etc/passwd` 的后 5 行::
+
+    $ tail -n 5 /etc/passwd
+
+如果 ``-n`` 选项后的数字（N）前面有加号 :kbd:`+`，则打印的是文件开头的第 N 行到文件末尾，
+并不是最后 N 行。例如，打印 :file:`/etc/passwd` 的第 5 行到文件末尾::
+
+    $ tail -n +5 /etc/passwd
+
 tar
 ---
 
