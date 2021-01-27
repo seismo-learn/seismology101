@@ -174,6 +174,16 @@ grep
 head
 ----
 
+``head`` 命令用于打印文件开头部分的内容。默认打印文件的前 10 行。
+
+打印 :file:`/etc/passwd` 的前 10 行::
+
+    $ head /etc/passwd
+
+打印 :file:`/etc/passwd` 的前 5 行::
+
+    $ head -n 5 /etc/passwd
+
 less
 ----
 
