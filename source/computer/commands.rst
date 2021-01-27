@@ -144,6 +144,33 @@ gawk
 grep
 ----
 
+``grep`` 命令的命名来自 **g**\ lobally search a **re**\ gular expression and **p**\rint
+（以正则表达式进行全局搜索并打印）。它是一个强大的文本搜索工具，可以搜索文件中与指定模式匹配的行并输出。
+
+搜索并打印 :file:`/etc/passwd` 中含有 root 的行::
+
+    $ grep root /etc/passwd
+
+同上，并显示行号::
+
+    $ grep -n root /etc/passwd
+
+搜索并打印 :file:`/etc/passwd` 中不含有 root 的行::
+
+    $ grep -v root /etc/passwd
+
+使用正则表达式搜索并打印 :file:`/etc/passwd` 中含有英文字母的行::
+
+    $ grep -E "[a-zA-Z]+" /etc/passwd
+
+使用正则表达式搜索并打印 :file:`/etc/passwd` 中含有数字的行::
+
+    $ grep -E "[0-9]+" /etc/passwd
+
+使用正则表达式搜索并打印 :file:`/etc/passwd` 中含有英文字母或数字的行::
+
+    $ grep -E "[a-zA-Z]+|[0-9]+" /etc/passwd
+
 head
 ----
 
