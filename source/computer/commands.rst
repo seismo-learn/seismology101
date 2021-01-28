@@ -231,6 +231,111 @@ scp
 sort
 ----
 
+``sort`` 命令可以将文件内容进行排序，并打印排序结果。该命令将文件的每一行作为一个单位，相互比较。
+默认的比较原则是从首字符向后，依次按 ASCII 码值进行比较，最后将他们按排序结果输出。
+
+我们使用示例文件 :file:`seismo-learn-sort.txt` 展示该命令的主要用法::
+
+    $ cat seismo-learn-sort.txt
+    7:software:seisman:-1.3
+    8:software:core-man:101.1
+    1:seismology101:zhaozhiyuan1989:291
+    2:seismology101:seisman:80
+    3:seismology101:wangliang1989:101.2
+    1:seismology101:zhaozhiyuan1989:291
+    6:seismology:core-man:-81.2
+    5:seismology:seisman:91
+    1:seismology101:zhaozhiyuan1989:291
+
+按 ASCII 码值进行升序排序::
+
+    $ sort seismo-learn-sort.txt
+
+按 ASCII 码值进行降序排序::
+
+    $ sort -r seismo-learn-sort.txt
+
+按 ASCII 码值进行升序排序，并忽略相同行::
+
+    $ sort -u seismo-learn-sort.txt
+
+按 ASCII 码值进行降序排序，并忽略相同行::
+
+    $ sort -u -r seismo-learn-sort.txt
+    # 不同选项也可以写在一块
+    # sort -ur seismo-learn-sort.txt
+
+按\ **数值大小**\ 进行升序排序::
+
+    $ sort -n seismo-learn-sort.txt
+
+该命令的 ``-k`` 选项可以指定每一行用于排序的具体部分，不使用该选项时默认是整行。
+该选项可以指定用每行的一部分、某个字段或某个字段的一部分进行排序。
+语法格式为（\ :kbd:`[]` 代表可选选项）::
+
+    -k Fstart[.Cstart][,Fend[.Cend]][Modifier]
+
+其中，\ ``Fstart[.Cstart]`` 为 start 部分，``,Fend[.Cend]`` 为 end 部分，
+``Modifier`` 部分是该命令的一些其他选项，如 ``-n`` 和 ``-r``\ 。
+在 ``-k`` 选项中使用 ``Modifier`` 时，不加连字符 :kbd:`-`\ 。
+
+start 部分有两个子选项：
+
+- ``Fstart``\ ：表示从第几个字段开始排序。默认的字段分割符是空格，可以使用 ``-t``
+  选项重新指定分割符。
+- ``Cstart``\ ：表示从 ``Fstart`` 字段的第几个字符开始算排序字符。省略的话表示
+  该字段的第一个字符开始。
+
+end 部分也有两个类似的子选项。若省略该部分，则表示每一行用于排序的字符从 start 部分指定的位置开始一直到结尾:
+
+- ``Fends``\ ：表示用于排序的字符到第几个字段结束。
+- ``Cend``\ ：表示到 ``Fend`` 字段的第几个字符结束。若省略或设置为 0，则表示到该字段的最后一个字符。
+
+以示例文件的第一行 ``7:software:seisman:-1.3`` 为例:
+
+- ``-k 1``\ ：从第一个字段的首个字符到行末，即 ``7:software:seisman:-1.3``\ 。
+  此时，跟不加该选项时效果一样。
+- ``-k 2.3``\ ：从第二个字段的第三个字符到行末，即 ``ftware:seisman:-1.3``\ 。
+- ``-k 2,2``\ ：从第二个字段的首个字符到第二个字段最后一个字符（整个字段），即 ``software``\ 。
+  此时，跟不加该选项时效果一样。
+- ``-k 1,3``\ ：从第一个字段的首个字符到第三个字段的最后一个字符，即 ``7:software:seisman``\ 。
+- ``-k 2.3,3.4``\ ：从第二个字段的第三字符到第三个字段的第四个字符，即 ``ftware:seis``\ 。
+
+使用冒号 :kbd:`：` 作为字段分隔符，并从第二个字段的首个字符到行末，升序排序 :file:`seismo-learn-sort.txt` ::
+
+    $ sort -t ":" -k 2 seismo-learn-sort.txt
+
+同上，但使用降序排序（以下两种方式均可）:
+
+    $ sort -t ":" -k 2r seismo-learn-sort.txt
+
+同上，但从第二个字段的第三个字符到行末，降序排序::
+
+    $ sort -t ":" -k 2.3r seismo-learn-sort.txt
+
+同上，但从第二个字段的第三个字符开始到第三个字段的第四个字符结束，降序排序::
+
+    $ sort -t ":" -k 2.3,3.4r seismo-learn-sort.txt
+
+只按照第二个字段进行降序排序::
+
+    $ sort -t ":" -k 2,2r seismo-learn-sort.txt
+
+还可以多次使用 ``-k`` 选项，这样会在前一个选项指定的字符范围的排序结果相同时，
+接着比较下一个选项指定的字符范围。
+
+按照第二个字段进行降序排序，若相同则按照第三个字段升序排序::
+
+    $ sort -t ":" -k 2,2r -k 3,3 seismo-learn-sort.txt
+
+按照第二个字段进行降序排序，若相同则按照第四个字段的数值大小降序排序::
+
+    $ sort -t ":" -k 2,2r -k 4,4nr seismo-learn-sort.txt
+
+同上，但并忽略相同行::
+
+    $ sort -t ":" -k 2,2r -k 4,4nr -u seismo-learn-sort.txt
+
 ssh
 ---
 
