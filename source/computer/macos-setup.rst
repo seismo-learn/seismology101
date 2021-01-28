@@ -112,6 +112,10 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
     # 卸载某个软件
     $ brew uninstall xxx
 
+.. tip::
+
+    Homebrew 用户也可以访问网站 https://formulae.brew.sh/ 查看软件包。
+
 .. note::
 
    使用 Homebrew 时会碰到很多名词。这里做简单解释，
