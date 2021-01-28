@@ -225,10 +225,67 @@ locate
 rsync
 -----
 
+``rsync`` 命令的命名来自 **r**\ emote **sync**\ hronization（远程同步）。该命名是一个数据同步工具，
+可以在两个本地目录之间，或本地计算机与远程计算机之间同步文件。与其他文件传输工具（如 FTP 或 `scp`_\ ）不同，
+``rsync`` 命名最大特点是会检查发送方和接收方已有的文件，仅传输有变动的部分（默认规则是文件大小或
+修改时间有变动），因此速度较快，且常用于文件备份。
+
+复制本地源目录 :file:`~/Downloads/source` 到目标目录 :file:`~/workspace/destination` 中，
+即产生 :file:`~/workspace/source` 目录::
+
+    $ rsync -av ~/Downloads/source ~/workspace/destination
+
+以上命令使用了两个常用选项:
+
+- ``-a`` 选项会以递归方式传输文件，并保持所有文件属性。使用该选项等于使用多种选项
+  的组合 ``-rlptgoD``\ ，十分方便。
+- ``-v`` 选项表示将同步结果输出到终端，这样就可以看到哪些内容会被同步了。
+
+如果不确定该命令执行后会产生什么结果，可以先用 ``-n`` 选项模拟执行的结果，并不真的执行命令::
+
+    $ rsync -anv ~/Downloads/source ~/workspace/destination
+
+如果只想同步源目录 :file:`~/Downloads/source` 里面的内容到目标目录 :file:`~/workspace/destination` 中，
+则需要在源目录后面加上斜杠。此时，目标目录中不会产生 :file:`~/workspace/source` 目录::
+
+    $ rsync -av ~/Downloads/source/ ~/workspace/destination
+
+默认情况下，该命令只确保源目录 :file:`~/Downloads/source/` 里的所有内容都复制到目标目录中。
+它不会使两个目录保持相同，并且不会删除目标目录中的文件和目录。如果要使源目录和目标完全同步，
+则可以使用 ``--delete`` 选项删除目标目录中不存在于源目录的文件和目录。
+此时，目标目录 :file:`~/workspace/destination` 成为源目录 :file:`~/Downloads/source/`
+的一个镜像::
+
+    $ rsync -av --delete ~/Downloads/source/ ~/workspace/destination
+
+.. note::
+
+   如果源目录后面没有加斜杠，即::
+
+       $ rsync -av --delete ~/Downloads/source ~/workspace/destination
+    
+   则 ``--delete`` 选项只会保证目标目录中的 :file:`~/workspace/destination/source` 目录
+   与源目录 :file:`~/Downloads/source` 同步。目标目录中的其他目录和文件
+   （如 :file:`~/workspace/test`\ 、\ :file:`~/workspace/README.md`\ ）并不会被删除。
+   此时，源目录 :file:`~/Downloads/source` 的镜像是 :file:`~/workspace/destination/source`\ 。
+
+使用该命令在本地计算机与远程计算机之间同步文件时，用法相同，只需在源目录或者目标目录前加上
+``username@remote_host:`` 表示远程计算机即可。其中 ``username`` 表示用户帐号，``remote_host``
+表示远程计算 IP 地址。``rsync`` 默认使用 `ssh`_ 进行远程登录和数据传输。
+以下命令假定远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn。
+
+将本地源目录 :file:`~/Downloads/source` 同步到远程计算机的目标目录 :file:`~/destination` 中::
+
+    $ rsync -av --delete ~/Downloads/source seismo-learn@192.168.1.100:~/destination
+
+将远程计算机的源目录 :file:`~/source` 同步到本地目标目录 :file:`~/workspace/destination` 中::
+
+    $ rsync -av --delete seismo-learn@192.168.1.100:~/source ~/workspace/destination
+
 scp
 ---
 
-``scp`` 命令的命名来源于 **s**\ ecure **c**\ o\ **p**\ y，用于在本地和远程电脑之间传输文件。
+``scp`` 命令的命名来源于 **s**\ ecure **c**\ o\ **p**\ ，可用于本地和远程电脑之间传输文件。
 该命令基于 `ssh`_ 进行安全的远程文件传输，因此传输是加密的。虽然 ``scp`` 传输速度不如 `rsync`_
 命令，但是它不占资源，不会提高多少系统负荷。当有许多小文件需要传输时，使用 `rsync`_ 命名会导致
 硬盘 I/O（输入/输出）非常高，而 ``scp`` 基本不影响系统正常使用。
