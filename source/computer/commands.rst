@@ -294,19 +294,19 @@ scp
 
 复制远程文件 :file:`/home/seismo-learn/fk3.3.tar.gz` 到本地目录 :file:`~/Downloads` 下::
 
-    $ ssh seismo-learn@192.168.1.100:/home/seismo-learn/fk3.3.tar.gz ~/Downloads/
+    $ scp seismo-learn@192.168.1.100:/home/seismo-learn/fk3.3.tar.gz ~/Downloads/
 
 复制远程目录 :file:`/home/seismo-learn/folder1` 到本地目录 :file:`~/Downloads` 下::
 
-    $ ssh -r seismo-learn@192.168.1.100:/home/seismo-learn/folder1 ~/Downloads/
+    $ scp -r seismo-learn@192.168.1.100:/home/seismo-learn/folder1 ~/Downloads/
 
 上传本地文件 :file:`~/Downloads/fk3.3.tar.gz` 到远程目录 :file:`home/seismo-learn/folder2` 下::
 
-    $ ssh ~/Downloads/fk3.3.tar.gz seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
+    $ scp ~/Downloads/fk3.3.tar.gz seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
 
 上传本地目录 :file:`~/Downloads/folder1` 到远程目录 :file:`home/seismo-learn/folder2` 下::
 
-    $ ssh ~/Downloads/folder1 seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
+    $ scp ~/Downloads/folder1 seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
 
 sort
 ----
@@ -497,17 +497,11 @@ tar
     $ tar -tvf seismo-learn.tar.gz
     $ tar -tvf seismo-learn.tar.tb2
 
-将打包文件 :file:`seismo-learn.tar` 还原::
+将打包压缩文件还原::
 
     $ tar -xvf seismo-learn.tar
-
-将打包压缩文件 :file:`seismo-learn.tar.gz` 解压还原::
-
-    $ tar -zxvf seismo-learn.tar.gz
-
-将打包压缩文件 :file:`seismo-learn.tar.bz2` 解压还原::
-
-    $ tar -jxvf seismo-learn.tar.bz2
+    $ tar -xvf seismo-learn.tar.gz
+    $ tar -xvf seismo-learn.tar.bz2
 
 解压还原被打包和压缩的文件:
 
