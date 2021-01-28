@@ -499,9 +499,15 @@ tar
 
 将打包压缩文件还原::
 
+    # 默认还原到当前目录下
     $ tar -xvf seismo-learn.tar
     $ tar -xvf seismo-learn.tar.gz
     $ tar -xvf seismo-learn.tar.bz2
+    # 还原到 bak 目录下（该目录必须存在）
+    $ mkdir bak
+    $ tar -xvf seismo-learn.tar -C bak
+    $ tar -xvf seismo-learn.tar.gz -C bak
+    $ tar -xvf seismo-learn.tar.bz2 -C bak
 
 解压还原被打包和压缩的文件:
 
