@@ -237,14 +237,15 @@ sort
 我们使用示例文件 :file:`seismo-learn-sort.txt` 展示该命令的主要用法::
 
     $ cat seismo-learn-sort.txt
-    7:software:seisman:-1.3
-    8:software:core-man:101.1
+    6:software:seisman:-1.3
+    1:seismology101:zhaozhiyuan1989:291
+    7:software:core-man:101.1
     1:seismology101:zhaozhiyuan1989:291
     2:seismology101:seisman:80
     3:seismology101:wangliang1989:101.2
-    1:seismology101:zhaozhiyuan1989:291
-    6:seismology:core-man:-81.2
-    5:seismology:seisman:91
+    8:software:zhaozhiyuan1989:291
+    5:seismology:core-man:-81.2
+    4:seismology:seisman:91
     1:seismology101:zhaozhiyuan1989:291
 
 按 ASCII 码值进行升序排序::
@@ -255,7 +256,7 @@ sort
 
     $ sort -r seismo-learn-sort.txt
 
-按 ASCII 码值进行升序排序，并忽略相同行::
+按 ASCII 码值进行升序排序，并忽略相同行（即重复行只统计一次）::
 
     $ sort -u seismo-learn-sort.txt
 
@@ -291,14 +292,14 @@ end 部分也有两个类似的子选项。若省略该部分，则表示每一�
 - ``Fends``\ ：表示用于排序的字符到第几个字段结束。
 - ``Cend``\ ：表示到 ``Fend`` 字段的第几个字符结束。若省略或设置为 0，则表示到该字段的最后一个字符。
 
-以示例文件的第一行 ``7:software:seisman:-1.3`` 为例:
+以示例文件的第一行 ``6:software:seisman:-1.3`` 为例:
 
-- ``-k 1``\ ：从第一个字段的首个字符到行末，即 ``7:software:seisman:-1.3``\ 。
+- ``-k 1``\ ：从第一个字段的首个字符到行末，即 ``6:software:seisman:-1.3``\ 。
   此时，跟不加该选项时效果一样。
 - ``-k 2.3``\ ：从第二个字段的第三个字符到行末，即 ``ftware:seisman:-1.3``\ 。
 - ``-k 2,2``\ ：从第二个字段的首个字符到第二个字段最后一个字符（整个字段），即 ``software``\ 。
   此时，跟不加该选项时效果一样。
-- ``-k 1,3``\ ：从第一个字段的首个字符到第三个字段的最后一个字符，即 ``7:software:seisman``\ 。
+- ``-k 1,3``\ ：从第一个字段的首个字符到第三个字段的最后一个字符，即 ``6:software:seisman``\ 。
 - ``-k 2.3,3.4``\ ：从第二个字段的第三字符到第三个字段的第四个字符，即 ``ftware:seis``\ 。
 
 使用冒号 :kbd:`：` 作为字段分隔符，并从第二个字段的首个字符到行末，升序排序 :file:`seismo-learn-sort.txt` ::
@@ -452,6 +453,83 @@ tar
 
 uniq
 ----
+
+``uniq`` 命令的命名源于 **uniq**\ ue（即\ **唯一**\ ），可以用于忽略或查询文件中的重复行。
+如果重复行不相邻，则该命令不起作用。所以，``uniq`` 命令一般与 `sort`_ 命令结合使用。以下命令
+假设示例文件已经按行排序，即重复行相邻。
+
+打印 :file:`file` 中非重复和重复行，但重复行只打印一次::
+
+    $ uniq file
+    # 以上命令等同于以下命令
+    $ sort -u file
+
+同上，同时打印各行在文件中出现的次数::
+
+    $ uniq -c file
+
+只打印 :file:`file` 中非重复的行::
+
+    $ uniq -u file
+
+只打印 :file:`file` 中重复的行::
+
+    $ uniq -d file
+
+若重复行在文件中不相邻，可以使用 `sort`_ 命令先对文件进行排序::
+
+    $ sort file | uniq
+    # 以上命令等同于以下命令
+    $ sort -c file
+    $ sort file | uniq -c
+    $ sort file | uniq -u
+    $ sort file | uniq -d
+
+若文件已经按行排序，重复行在文件中相邻:
+
+.. tabs::
+
+   .. code-tab:: bash 打印文件并忽略重复行
+
+      # 重复行只打印一次
+      $ uniq file
+      # 以上命令等同于以下命令
+      $ sort -u file
+
+   .. code-tab:: bash 同时统计各行的出现次数
+
+      $ uniq -c file
+
+   .. code-tab:: bash 只打印非重复行
+
+      $ uniq -u file
+
+   .. code-tab:: bash  只打印重复行
+
+      $ uniq -d file
+
+若重复行在文件中不相邻，需要先使用 `sort`_ 命令对文件进行排序，然后再使用 `uniq` 命令：
+
+.. tabs::
+
+   .. code-tab:: bash 打印文件并忽略重复行
+
+      # 重复行只打印一次
+      $ sort file | uniq
+      # 以上命令等同于以下命令
+      $ sort -u file
+
+   .. code-tab:: bash 同时统计各行的出现次数
+
+      $ sort file | uniq -c
+
+   .. code-tab:: bash 只打印非重复行
+
+      $ sort file | uniq -u
+
+   .. code-tab:: bash  只打印重复行
+
+      $ sort file | uniq -d
 
 wc
 --
