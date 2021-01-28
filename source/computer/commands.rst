@@ -386,7 +386,7 @@ end 部分也有两个类似的子选项。若省略该部分，则表示每一�
 
     $ sort -t ":" -k 2 seismo-learn-sort.txt
 
-同上，但使用降序排序（以下两种方式均可）:
+同上，但使用降序排序（以下两种方式均可）::
 
     $ sort -t ":" -k 2r seismo-learn-sort.txt
 
