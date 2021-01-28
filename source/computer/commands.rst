@@ -228,6 +228,29 @@ rsync
 scp
 ---
 
+``scp`` 命令的命名来源于 **s**\ ecure **c**\ o\ **p**\ y，用于在本地和远程电脑之间传输文件。
+该命令基于 `ssh`_ 进行安全的远程文件传输，因此传输是加密的。虽然 ``scp`` 传输速度不如 `rsync`_
+命令，但是它不占资源，不会提高多少系统负荷。当有许多小文件需要传输时，使用 `rsync`_ 命名会导致
+硬盘 I/O（输入/输出）非常高，而 ``scp`` 基本不影响系统正常使用。
+
+以下命令假定远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn。
+
+复制远程文件 :file:`/home/seismo-learn/fk3.3.tar.gz` 到本地目录 :file:`~/Downloads` 下::
+
+    $ ssh seismo-learn@192.168.1.100:/home/seismo-learn/fk3.3.tar.gz ~/Downloads/
+
+复制远程目录 :file:`/home/seismo-learn/folder1` 到本地目录 :file:`~/Downloads` 下::
+
+    $ ssh -r seismo-learn@192.168.1.100:/home/seismo-learn/folder1 ~/Downloads/
+
+上传本地文件 :file:`~/Downloads/fk3.3.tar.gz` 到远程目录 :file:`home/seismo-learn/folder2` 下::
+
+    $ ssh ~/Downloads/fk3.3.tar.gz seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
+
+上传本地目录 :file:`~/Downloads/folder1` 到远程目录 :file:`home/seismo-learn/folder2` 下::
+
+    $ ssh ~/Downloads/folder1 seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
+
 sort
 ----
 
