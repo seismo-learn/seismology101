@@ -50,9 +50,11 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
 
     -   文件处理
 
+        - `diff`_
         - `gawk`_
         - `grep`_
         - `wc`_
+        - `sed`_
         - `sort`_
         - `uniq`_
 
@@ -63,14 +65,12 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
 
     -   其他
 
+        - `df`_
+        - `du`_
         - `ssh`_
         - `scp`_
         - `rsync`_
         - `wget`_
-        - `sed`_
-        - `diff`_
-        - `df`_
-        - `du`_
         - `top`_
 
 ----
