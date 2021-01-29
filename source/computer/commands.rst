@@ -144,7 +144,7 @@ du
 
 查看指定文件所占磁盘空间::
 
-    $ du ~/Downloads/TauP-2.4.5.tar.gz
+    $ du -h ~/Downloads/TauP-2.4.5.tar.gz
 
 find
 ----
