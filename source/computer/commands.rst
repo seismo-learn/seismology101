@@ -103,17 +103,14 @@ diff
     seismology101
     software
 
-比较 :file:`file1` 和 :file:`file2` 的异同，结果显示两个文件的第一到第三行不同::
+比较 :file:`file1` 和 :file:`file2` 的异同，结果显示两个文件第二行不同，其他
+行是相同的::
 
     $ diff file1 file2
-    1,3c1,3
-    < seismo-learn
-    < logo
-    < website
+    2c2
+    < seismology
     ---
     > seismology101
-    > seismology
-    > software
 
 df
 --
