@@ -241,7 +241,8 @@ rsync
 ``rsync`` 命令的命名来自 **r**\ emote **sync**\ hronization（远程同步）。该命名是一个数据同步工具，
 可以在两个本地目录之间，或本地计算机与远程计算机之间同步文件。与其他文件传输工具（如 FTP 或 `scp`_\ ）不同，
 ``rsync`` 命名最大特点是会检查发送方和接收方已有的文件，仅传输有变动的部分（默认规则是文件大小或
-修改时间有变动），因此速度较快，且常用于文件备份。
+修改时间有变动），因此速度较快，且常用于文件备份。可以参考此博文 https://www.ruanyifeng.com/blog/2020/08/rsync.html
+进一步学习其用法。
 
 复制本地源目录 :file:`~/Downloads/source` 到目标目录 :file:`~/workspace/destination` 中，
 即产生 :file:`~/workspace/source` 目录::
@@ -533,7 +534,9 @@ wget
 ----
 
 ``wget`` 命令的名字来自 **W**\ orld **W**\ ide **W**\ eb **get**\ （万维网获取）。
-该命令可以用来从网络上下载文件，支持断点续传。类似的命令还有 ``curl``\ 。
+该命令可以用来从网络上下载文件，支持断点续传。
+类似的命令还有 ``curl``，可以参考此博文 https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
+学习其基本用法。
 
 ::
 
