@@ -169,7 +169,7 @@ https://www.ruanyifeng.com/blog/2018/11/awk.html 学习其用法。
     $ gawk 'FNR>2 {print $1,$3}' file
 
     # 将 /etc/passwd 每一行的第 1 个和第 3 个字段打印到标准输出，
-    # 并设置字段分隔符为冒号：）
+    # 并设置字段分隔符为冒号：
     $ gawk -F ':' '{print $1,$3}' /etc/passwd
 
     # 同上，并打印每一行的行号
