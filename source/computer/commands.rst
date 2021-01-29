@@ -129,7 +129,7 @@ du
 find
 ----
 
-``find`` 命令用来查找指定目录下的子目录和文件，并显示查找到的子目录和文件。
+``find`` 命令用来查找指定目录下的子目录和文件，并显示查找到的子目录和文件::
 
     # 列出 ~/src 目录及其子目录下的所有目录和文件
     $ find ~/src
@@ -175,31 +175,26 @@ grep
 ----
 
 ``grep`` 命令的命名来自 **g**\ lobally search a **re**\ gular expression and **p**\rint
-（以正则表达式进行全局搜索并打印）。它是一个强大的文本搜索工具，可以搜索文件中与指定模式匹配的行并输出。
+（以正则表达式进行全局搜索并打印）。它是一个强大的文本搜索工具，可以搜索文件中与指定模式匹配的行并输出::
 
-搜索并打印 :file:`/etc/passwd` 中含有 root 的行::
-
+    # 搜索并打印 /etc/passwd 中含有 root 的行
     $ grep root /etc/passwd
 
-同上，并显示行号::
-
+    # 同上，并显示行号
     $ grep -n root /etc/passwd
 
-搜索并打印 :file:`/etc/passwd` 中不含有 root 的行::
-
+    # 搜索并打印 /etc/passwd 中不含有 root 的行
     $ grep -v root /etc/passwd
 
 head
 ----
 
-``head`` 命令用于打印文件开头部分的内容。默认打印文件的前 10 行。
+``head`` 命令用于打印文件开头部分的内容::
 
-打印 :file:`/etc/passwd` 的前 10 行::
-
+    # 打印 /etc/passwd 的前 10 行
     $ head /etc/passwd
 
-打印 :file:`/etc/passwd` 的前 5 行::
-
+    # 打印 /etc/passwd 的前 5 行
     $ head -n 5 /etc/passwd
 
 less
@@ -208,36 +203,30 @@ less
 ``less`` 命令可以用来浏览文件内容。该命令允许用户向前或向后浏览文件。
 按 :kbd:`PageUp` 键向上翻页，用 :kbd:`PageDown` 键向下翻页。
 按 :kbd:`Enter` 键或向下方向键则向下移动，用向上方向键则向上移动。
-按 :kbd:`Q` 键退出浏览。
+按 :kbd:`Q` 键退出浏览::
 
-浏览 :file:`/etc/passwd`::
-
+    # 浏览 /etc/passwd
     $ less /etc/passwd
 
-同上，并显示行号::
-
+    # 同上，并显示行号
     $ less -N /etc/passwd
 
 locate
 ------
 
 ``locate`` 命令可以用于查找目录和文件。该命令比 `find`_ 命令快得多，原因在于它不搜索具体目录，
-而是搜索含有本地所有文件信息的数据库。
+而是搜索含有本地所有文件信息的数据库::
 
-搜索名称含 :file:`passwd` 的目录或文件::
-
+    # 搜索名称含 passwd 的目录或文件
     $ locate passwd
 
-搜索名称含 :file:`/etc/sh` 的目录或文件（包括了 :file:`/etc` 目录下所有以 sh 开头的目录或文件）::
-
+    # 搜索名称含 /etc/sh 的目录或文件（包括了 /etc 目录下所有以 sh 开头的目录或文件）
     $ locate /etc/sh
 
-搜索名称含 :file:`~/Des` 的目录或文件（包括了 :file:`~` 目录下，所有以 Des 开头的目录或文件）::
-
+    # 搜索名称含 ~/Des 的目录或文件（包括了 ~ 家目录下，所有以 Des 开头的目录或文件）
     $ locate ~/Des
 
-同上，但忽略大小写::
-
+    # 同上，但忽略大小写
     $ locate -i ~/des
 
 rsync
