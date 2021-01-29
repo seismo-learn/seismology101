@@ -558,25 +558,6 @@ tar
 
     $ tar -jcvf seism-learn.tar file1 file2
 
-打包和压缩 :file:`file1` 和 :file:`file2` 文件:
-
-.. tabs::
-
-   .. code-tab:: bash 仅打包
-
-      # 打包文件命名为 seismo-learn.tar（选项 -f 后的打包文件名一般用 .tar 来作为标识）
-      $ tar -cvf seismo-learn.tar file1 file2
-
-   .. code-tab:: bash 打包后用 gzip 命令压缩
-
-      # 打包压缩文件命名为 seismo-learn.tar.gz（选项 -f 后的打包压缩文件名一般用 .tar.gz 或 .tgz 来作为标识）
-      $ tar -zxvf seismo-learn.tar.gz
-
-   .. code-tab:: bash 打包后用 bzip2 命令压缩
-
-      # 打包压缩文件命名为 seismo-learn.tar.bz2（选项 -f 后的打包压缩文件名一般用 .tar.bz2 或 .tbz 来作为标识）
-      $ tar -jxvf seismo-learn.tar.bz2
-
 查阅打包压缩文件含有哪些文件和目录::
 
     $ tar -tvf seismo-learn.tar
@@ -594,34 +575,6 @@ tar
     $ tar -xvf seismo-learn.tar -C bak
     $ tar -xvf seismo-learn.tar.gz -C bak
     $ tar -xvf seismo-learn.tar.bz2 -C bak
-
-解压还原被打包和压缩的文件:
-
-.. tabs::
-
-   .. code-tab:: bash 还原 .tar 文件
-
-      # 默认还原到当前目录下
-      $ tar -xvf seismo-learn.tar
-      # 还原到 bak 目录下（该目录必须存在）
-      $ mkdir bak
-      $ tar -xvf seismo-learn.tar -C bak
-
-   .. code-tab:: bash 还原 .tar.gz 文件
-
-      # 默认还原到当前目录下
-      $ tar -zxvf seismo-learn.tar.gz
-      # 还原到 bak 目录下（该目录必须存在）
-      $ mkdir bak
-      $ tar -zxvf seismo-learn.tar.gz -C bak
-
-   .. code-tab:: bash 还原 .tar.bz2 文件
-
-      # 默认还原到当前目录下
-      $ tar -jxvf seismo-learn.tar.bz2
-      # 还原到 bak 目录下（该目录必须存在）
-      $ mkdir bak
-      $ tar -jxvf seismo-learn.tar.bz2 -C bak
 
 以上示例使用的 ``-v`` 选项会显示指令执行过程，若不想显示执行过程，可以不使用该选项。
 
@@ -683,52 +636,6 @@ uniq
     $ sort file | uniq -c
     $ sort file | uniq -u
     $ sort file | uniq -d
-
-若文件已经按行排序，重复行在文件中相邻:
-
-.. tabs::
-
-   .. code-tab:: bash 打印文件并忽略重复行
-
-      # 重复行只打印一次
-      $ uniq file
-      # 以上命令等同于以下命令
-      $ sort -u file
-
-   .. code-tab:: bash 同时统计各行的出现次数
-
-      $ uniq -c file
-
-   .. code-tab:: bash 只打印非重复行
-
-      $ uniq -u file
-
-   .. code-tab:: bash  只打印重复行
-
-      $ uniq -d file
-
-若重复行在文件中不相邻，需要先使用 `sort`_ 命令对文件进行排序，然后再使用 `uniq` 命令：
-
-.. tabs::
-
-   .. code-tab:: bash 打印文件并忽略重复行
-
-      # 重复行只打印一次
-      $ sort file | uniq
-      # 以上命令等同于以下命令
-      $ sort -u file
-
-   .. code-tab:: bash 同时统计各行的出现次数
-
-      $ sort file | uniq -c
-
-   .. code-tab:: bash 只打印非重复行
-
-      $ sort file | uniq -u
-
-   .. code-tab:: bash  只打印重复行
-
-      $ sort file | uniq -d
 
 wc
 --
