@@ -124,6 +124,11 @@ df
 ::
 
     $ df -h
+    Filesystem                          Size  Used Avail Use% Mounted on
+    /dev/mapper/cl_ivantjuawinata-root  100G   86G   15G  86% /
+    devtmpfs                            7.8G     0  7.8G   0% /dev
+    tmpfs                               7.8G  114M  7.7G   2% /run
+    /dev/mapper/cl_ivantjuawinata-home  1.1T  904G  149G  86% /home
 
 du
 --
