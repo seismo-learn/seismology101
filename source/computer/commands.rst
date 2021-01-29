@@ -92,7 +92,11 @@ diff
 
 ``diff`` 命令的命名来自 **diff**\ erence。该命令可以用来逐行比较文件的异同::
 
-    $ diff file1 file2
+    # 比较 /etc/passwd 和 /etc/passwd- 的异同
+    # 结果显示 /etc/passwd- 多了第 40 行
+    $ diff diff /etc/passwd /etc/passwd-
+    39a40
+    > guest:x:1001:1001::/home/guest:/bin/bash
 
 df
 --
