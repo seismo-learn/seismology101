@@ -152,7 +152,10 @@ du
 find
 ----
 
-``find`` 命令用来查找指定目录下的子目录和文件，并显示查找到的子目录和文件::
+``find`` 命令用来查找指定目录下的子目录和文件，并执行一些操作。可以参考
+`find命令 <https://man.linuxde.net/find/>`__ 学习更多用法。
+
+::
 
     # 列出 ~/src 目录及其子目录下的所有目录和文件
     $ find ~/src
@@ -160,8 +163,20 @@ find
     # 查找 ~/src 目录及其子目录下以 .c 结尾的目录和文件
     $ find ~/src -name "*.c"
 
-    # 同上，但忽略大小
-    $ find ~/src -iname "*.c"
+    # 查找 ~/src 目录及其子目录下以 .c 结尾的文件
+    $ find ~/src -type f -name "*.c"
+
+    # 查找 ~/src 目录及其子目录下以 .pyc 结尾的文件，并删除
+    $ find ~/src -type f -name "*.pyc" -delete
+
+    # 查找 ~/src 目录及其子目录下以 .c 结尾的文件，并使用 grep 命令找出这些文件中含 seismo-learn 的行
+    $ find ~/src -type f -name "*.c" -exec grep seismo-learn {} +
+
+最后一个命令借助 ``-exec`` 选项，与 `grep`_ 命令结合使用。其中 ``{}`` 用来与 ``-exec`` 选项结合
+使用，表示查找到的文件。借助该选项，``find`` 命令可以跟许多其他 Linux 的命令结合使用。
+
+我们还可以用 ``-ok`` 来代替 ``-exec`` 选项，二者的区别是 ``-ok`` 选项在执行后面的命令前会给出提示，
+输入 :kbd:`y` 才会执行，输入 :kbd:`n` 则不执行。
 
 gawk
 ----
