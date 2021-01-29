@@ -6,26 +6,14 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
 
 1.  使用 `tldr <https://tldr.sh/>`__ 命令查询 [**推荐**]
 
-    ``tldr`` 是由社区维护的简化版的命令帮助文档。其以实例的方式展示了命令的
-    常见用法。例如::
-
-        $ tldr mkdir
-
-        mkdir
-
-        Creates a directory.
-
-        - Create a directory in current directory or given path:
-            mkdir directory
-
-        - Create directories recursively (useful for creating nested dirs):
-            mkdir -p path/to/directory
+    ``tldr`` 是由社区维护的简化版的命令帮助文档。其以实例的方式展示了
+    大多数常用命令的常见用法，但某些命令可能还未编写。例如 ``tldr mkdir``
+    将显示 ``mkdir`` 命令的简单用法。
 
 2.  使用 UNIX 提供的 ``man`` 命令查询
 
-    ``man`` 提供了命令的完整语法，因而通常比较冗长。例如::
-
-        $ man mkdir
+    ``man`` 提供了命令的完整语法，因而通常比较冗长。例如 ``man mkdir`` 将
+    显示 ``mkdir`` 命令的完整语法。
 
 3.  网页搜索相关命令
 
@@ -319,7 +307,7 @@ rsync
    如果源目录后面没有加斜杠，即::
 
        $ rsync -av --delete ~/Downloads/source ~/workspace/destination
-    
+
    则 ``--delete`` 选项只会保证目标目录中的 :file:`~/workspace/destination/source` 目录
    与源目录 :file:`~/Downloads/source` 同步。目标目录中的其他目录和文件
    （如 :file:`~/workspace/test`\ 、\ :file:`~/workspace/README.md`\ ）并不会被删除。
@@ -633,11 +621,11 @@ top
     Tasks: 328 total,   1 running, 327 sleeping,   0 stopped,   0 zombie
     %Cpu(s):  1.0 us,  0.5 sy,  0.0 ni, 98.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
     KiB Mem : 16320540 total,  2548620 free,  6057748 used,  7714172 buff/cache
-    KiB Swap: 17821692 total, 17444092 free,   377600 used.  8252436 avail Mem 
+    KiB Swap: 17821692 total, 17444092 free,   377600 used.  8252436 avail Mem
 
-       PID USER           PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                          
-    120901 seismo-learn   20   0 5027300  88404  45736 S   2.0  0.5   0:20.05 chrome                                                                           
-      2158 seismo-learn   20   0 4355124 444384  57984 S   1.0  2.7   1581:35 gnome-shell                                                                      
+       PID USER           PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+    120901 seismo-learn   20   0 5027300  88404  45736 S   2.0  0.5   0:20.05 chrome
+      2158 seismo-learn   20   0 4355124 444384  57984 S   1.0  2.7   1581:35 gnome-shell
     148103 seismo-learn   20   0  911924  82504  26180 S   1.0  0.5   4:04.09 terminator
 
 ``top`` 命令执行过程中可以使用的一些单字母或数字的交互命令:
