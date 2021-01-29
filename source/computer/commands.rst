@@ -386,20 +386,6 @@ sort
 ``sort`` 命令可以将文件内容进行排序，并输出排序结果。该命令将文件的每一行作为一个单位，相互比较。
 默认的比较原则是从首字符向后，依次按 ASCII 码值进行比较，最后将他们按排序结果输出。
 
-我们使用示例文件 :file:`seismo-learn-sort.txt` 展示该命令的主要用法::
-
-    $ cat seismo-learn-sort.txt
-    6:software:seisman:-1.3
-    1:seismology101:zhaozhiyuan1989:291
-    7:software:core-man:101.1
-    1:seismology101:zhaozhiyuan1989:291
-    2:seismology101:seisman:80
-    3:seismology101:wangliang1989:101.2
-    8:software:zhaozhiyuan1989:291
-    5:seismology:core-man:-81.2
-    4:seismology:seisman:91
-    1:seismology101:zhaozhiyuan1989:291
-
 ::
 
     # 按 ASCII 码值进行升序排序
@@ -452,7 +438,7 @@ tar
 将几个文件组合成一个文件以便于网络传输是非常有用的。
 
 首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录打包成一个文件，而压缩则是将一个大文件
-通过一些压缩算法变成一个小文件。Linux 中的很多压缩程序只能对压缩单个文件，若想压缩一大堆文件，
+通过一些压缩算法变成一个小文件。Linux 中的很多压缩程序只能压缩单个文件，若想压缩一大堆文件，
 首先得将这一大堆文件打成一个包（使用 ``tar`` 命令），再用压缩程序进行压缩
 （使用 ``gzip`` 或 ``bzip2`` 命令）。使用 ``tar`` 命令时，可以直接选择压缩打包的文件，无需
 再单独使用压缩程序进行压缩。
@@ -463,18 +449,19 @@ tar
     $ tar -zcvf seismo-learn.tar.gz file1 file2
 
     # 打包并用 bzip2 命令进行压缩。一般用 .tar.bz2 或 .tbz 来作文件标识
-    $ tar -jcvf seism-learn.tar file1 file2
+    $ tar -jcvf seism-learn.tar.bz2 file1 file2
 
-    # 查阅打包压缩文件含有哪些文件和目录
+    # 列出压缩包中的文件和目录
     $ tar -tvf seismo-learn.tar.gz
 
-    # 将打包压缩文件还原，默认还原到当前目录下
+    # 解压一个压缩包，默认解压到当前目录下
     $ tar -xvf seismo-learn.tar.gz
-    # 还原到 bak 目录下（该目录必须存在）
+    
+    # 解压到 bak 目录下（该目录必须存在）
     $ mkdir bak
     $ tar -xvf seismo-learn.tar.gz -C bak
 
-以上查阅和还原命令也适用于 :file:`.tar` 和 :file:`tar.bz2` 打包压缩文件。
+以上查看和解压命令也适用于 :file:`.tar` 和 :file:`tar.bz2` 压缩包格式。
 
 以上示例使用的 ``-v`` 选项会显示指令执行过程，若不想显示执行过程，可以不使用该选项。
 
