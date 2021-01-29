@@ -399,33 +399,6 @@ sort
 
     $ sort -n seismo-learn-sort.txt
 
-使用冒号 :kbd:`：` 作为字段分隔符，并从第二个字段的首个字符到行末，升序排序 :file:`seismo-learn-sort.txt` ::
-
-    $ sort -t ":" -k 2 seismo-learn-sort.txt
-
-同上，但使用降序排序（以下两种方式均可）::
-
-    $ sort -t ":" -k 2r seismo-learn-sort.txt
-
-只按照第二个字段进行降序排序::
-
-    $ sort -t ":" -k 2,2r seismo-learn-sort.txt
-
-还可以多次使用 ``-k`` 选项，这样会在前一个选项指定的字符范围的排序结果相同时，
-接着比较下一个选项指定的字符范围。
-
-按照第二个字段进行降序排序，若相同则按照第三个字段升序排序::
-
-    $ sort -t ":" -k 2,2r -k 3,3 seismo-learn-sort.txt
-
-按照第二个字段进行降序排序，若相同则按照第四个字段的数值大小降序排序::
-
-    $ sort -t ":" -k 2,2r -k 4,4nr seismo-learn-sort.txt
-
-同上，但并忽略相同行::
-
-    $ sort -t ":" -k 2,2r -k 4,4nr -u seismo-learn-sort.txt
-
 ssh
 ---
 
