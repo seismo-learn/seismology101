@@ -428,24 +428,16 @@ tar
     # 打包并用 bzip2 命令进行压缩。一般用 .tar.bz2 或 .tbz 来作文件标识
     $ tar -jcvf seism-learn.tar file1 file2
 
-查阅打包压缩文件含有哪些文件和目录::
-
-    $ tar -tvf seismo-learn.tar
+    # 查阅打包压缩文件含有哪些文件和目录
     $ tar -tvf seismo-learn.tar.gz
-    $ tar -tvf seismo-learn.tar.tb2
 
-将打包压缩文件还原::
-
-    # 默认还原到当前目录下
-    $ tar -xvf seismo-learn.tar
+    # 将打包压缩文件还原，默认还原到当前目录下
     $ tar -xvf seismo-learn.tar.gz
-    $ tar -xvf seismo-learn.tar.bz2
-
     # 还原到 bak 目录下（该目录必须存在）
     $ mkdir bak
-    $ tar -xvf seismo-learn.tar -C bak
     $ tar -xvf seismo-learn.tar.gz -C bak
-    $ tar -xvf seismo-learn.tar.bz2 -C bak
+
+以上查阅和还原命令也适用于 :file:`.tar` 和 :file:`tar.bz2` 打包压缩文件。
 
 以上示例使用的 ``-v`` 选项会显示指令执行过程，若不想显示执行过程，可以不使用该选项。
 
