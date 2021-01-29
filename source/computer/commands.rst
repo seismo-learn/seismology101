@@ -68,6 +68,10 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
         - `rsync`_
         - `wget`_
         - `sed`_
+        - `diff`_
+        - `df`_
+        - `du`_
+        - `top`_
 
 ----
 
@@ -88,6 +92,49 @@ cat
 打印文件内容并显示行号::
 
     $ cat -n file
+
+diff
+----
+
+``diff`` 命令的命名来自 **diff**\ erence。该命令可以用来逐行比较文件的异同::
+
+    $ diff file1 file2
+
+df
+--
+
+``df`` 命令的命名来自 **d**\ isk **f**\ ree（可使用的磁盘空间）。该命令可以获取硬盘被占用了多少空间，
+目前还剩下多少空间等信息。默认显示单位为 KB::
+
+    $ df
+
+以可读性较高的方式来显示信息，即使用 ``-h`` 或 ``--human-readable`` 选项::
+
+    $ df -h
+
+du
+--
+
+``du`` 命令的名字来自 **d**\ isk **u**\ sage（磁盘使用情况）。该命令可以查看磁盘的使用空间。
+但与 `df`_ 命令不同的是，\ ``du`` 命令用于查看文件和目录磁盘使用的空间。
+
+查看当前目录及其子目录所占磁盘空间::
+
+    $ du
+
+查看指定目录及其子目录所占磁盘空间::
+
+    $ du ~/Downloads
+
+查看指定文件所占磁盘空间::
+
+    $ du ~/Downloads/TauP-2.4.5.tar.gz
+
+以可读性较高的方式来显示信息，即使用 ``-h`` 或 ``--human-readable`` 选项::
+
+    $ du -h
+    $ du -h ~/Downloads
+    $ du -h ~/Downloads/TauP-2.4.5.tar.gz
 
 find
 ----
@@ -565,6 +612,31 @@ tar
       $ tar -jxvf seismo-learn.tar.bz2 -C bak
 
 以上示例使用的 ``-v`` 选项会显示指令执行过程，若不想显示执行过程，可以不使用该选项。
+
+top
+---
+
+``top`` 命令可以实时动态地查看系统的整体运行情况，是一个综合了多方信息，监测系统性能和运行信息
+的实用工具。
+
+::
+
+    $ top
+    top - 14:31:52 up 29 days, 14:02,  5 users,  load average: 0.32, 0.51, 0.49
+    Tasks: 328 total,   1 running, 327 sleeping,   0 stopped,   0 zombie
+    %Cpu(s):  1.0 us,  0.5 sy,  0.0 ni, 98.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+    KiB Mem : 16320540 total,  2548620 free,  6057748 used,  7714172 buff/cache
+    KiB Swap: 17821692 total, 17444092 free,   377600 used.  8252436 avail Mem 
+
+       PID USER           PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                          
+    120901 seismo-learn   20   0 5027300  88404  45736 S   2.0  0.5   0:20.05 chrome                                                                           
+      2158 seismo-learn   20   0 4355124 444384  57984 S   1.0  2.7   1581:35 gnome-shell                                                                      
+    148103 seismo-learn   20   0  911924  82504  26180 S   1.0  0.5   4:04.09 terminator
+
+``top`` 命令执行过程中可以使用的一些单字母或数字的交互命令:
+
+- ``q``\ ：退出命令
+- ``1``\ ：显示每个 CPU 的状态
 
 uniq
 ----
