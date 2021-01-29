@@ -67,6 +67,7 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
         - `scp`_
         - `rsync`_
         - `wget`_
+        - `sed`_
 
 ----
 
@@ -308,6 +309,31 @@ scp
 上传本地目录 :file:`~/Downloads/folder1` 到远程目录 :file:`home/seismo-learn/folder2` 下::
 
     $ scp ~/Downloads/folder1 seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
+
+sed
+---
+
+``sed`` 命令的名字来源与 **s**\ tream **ed**\ itor（流编辑器）。该命令可以用于对输入流
+（文件或管道）执行基本的文本转换。它会把当前处理的行存储在临时缓冲区中再进行处理，处理完成后
+再把缓冲区的内容送往屏幕。接着处理下一行，直到文件末尾。因此默认情况下，文件内容并没有改变。
+
+将 :file:`file` 中每一行的第一个 book 替换成 books::
+
+    $ sed 's/book/books/' file
+
+将 :file:`file` 中每一行的所有的 book 都替换成 books::
+
+    $ sed 's/book/books/g' file
+
+以上命令只是将转换后的文本内容打印出来，并为改变文件本身。可以使用 ``-i`` 选项直接改变文件::
+
+    $ sed -i 's/book/books/g' file
+
+以上命令使用斜杠 :kbd:`/` 当定界符，也可以使用任意定界符::
+
+    $ sed 's#book#books#' file
+    $ sed 's#book#books#g' file
+    $ sed -i 's#book#books#g' file
 
 sort
 ----
@@ -640,7 +666,7 @@ wget
 ----
 
 ``wget`` 命令的名字来自 **W**\ orld **W**\ ide **W**\ eb **get**\ （万维网获取）。
-该命令可以用来从网络上下载文件，支持断点续传。
+该命令可以用来从网络上下载文件，支持断点续传。类似的命令还有 ``curl``\ 。
 
 下载以下网址对应的单个文件（即 :file:`distaz.c` 代码"）::
 
