@@ -366,7 +366,7 @@ sort
     # 按 ASCII 码值进行降序排序
     $ sort -r seismo-learn-sort.txt
 
-    # 按 ASCII 码值进行升序排序，并忽略相同行（即重复行只统计一次）::
+    # 按 ASCII 码值进行升序排序，并忽略相同行（即重复行只统计一次）
     $ sort -u seismo-learn-sort.txt
 
     # 按 ASCII 码值进行降序排序，并忽略相同行
