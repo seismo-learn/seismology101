@@ -80,24 +80,24 @@ cat
 
     # 将一个文件的内容输出到终端
     $ cat file
-    
+
     # 输出文件内容并显示行号
     $ cat -n file
-    
-    # 将文件 file1 和 file2 合并到一个文件 target_file 中
+
+    # 将文件 file1 和 file2 拼接到一个文件 target_file 中
     $ cat file1 file2 > target_file
 
 diff
 ----
 
-``diff`` 命令的命名来自 **diff**\ erence。该命令可以用来逐行比较文件的异同。
+``diff`` 命令的命名来自 **diff**\ erence。该命令可以用来逐行比较两个文件的异同。
 我们用以下两个示例文件展示其用法::
 
-    $ cat file1 
+    $ cat file1
     seismo-learn
     seismology
     software
-    
+
     $ cat file2
     seismo-learn
     seismology101
@@ -115,8 +115,8 @@ diff
 df
 --
 
-``df`` 命令的命名来自 **d**\ isk **f**\ ree（可使用的硬盘空间）。该命令可以获取硬盘被占用了多少空间，
-目前还剩下多少空间等信息。
+``df`` 命令的命名来自 **d**\ isk **f**\ ree（可使用的硬盘空间）。
+该命令可以获取硬盘总空间、已使用空间、剩余空间等信息。
 
 ::
 
@@ -126,7 +126,7 @@ df
     devtmpfs                            7.8G     0  7.8G   0% /dev
     tmpfs                               7.8G  114M  7.7G   2% /run
     /dev/mapper/cl_ivantjuawinata-home  1.1T  904G  149G  86% /home
-    
+
 从输出中可以得知，:file:`/home` 分区总硬盘空间为 1.1 TB，已使用 904 GB，剩余 149 GB。
 
 du
@@ -166,44 +166,43 @@ find
     # 查找 ~/src 目录及其子目录下以 .c 结尾的文件
     $ find ~/src -type f -name "*.c"
 
+使用 ``-delete`` 选项可以直接删除查找的文件或目录::
+
     # 查找 ~/src 目录及其子目录下以 .pyc 结尾的文件，并删除
     $ find ~/src -type f -name "*.pyc" -delete
 
-    # 查找 ~/src 目录及其子目录下以 .c 结尾的文件，并使用 grep 命令找出这些文件中含 seismo-learn 的行
+``find`` 的 ``-exec`` 选项可以调用其他系统命令直接对查找的结果进行处理::
+
+    # 查找 ~/src 目录及其子目录下以 .c 结尾的文件，并执行 grep 命令找出这些文件中含 seismo-learn 的行
     $ find ~/src -type f -name "*.c" -exec grep seismo-learn {} +
 
-最后一个命令借助 ``-exec`` 选项，与 `grep`_ 命令结合使用。其中 ``{}`` 用来与 ``-exec`` 选项结合
-使用，表示查找到的文件。借助该选项，``find`` 命令可以跟许多其他 Linux 的命令结合使用。
-
+这个例子中，``{}`` 与 ``-exec`` 选项结合，表示查找到的文件。
 我们还可以用 ``-ok`` 来代替 ``-exec`` 选项，二者的区别是 ``-ok`` 选项在执行后面的命令前会给出提示，
 输入 :kbd:`y` 才会执行，输入 :kbd:`n` 则不执行。
 
 gawk
 ----
 
-``awk`` 命令的命名起源于其三位作者的姓氏首字母。该命令可以选择标准输入、其它命令的输出或文件中
-的特定字段并进行操作。它依次扫描每一行，并读取里面的每一个字段。可以参考 
-`awk 入门教程 <https://www.ruanyifeng.com/blog/2018/11/awk.html>`__ 学习其用法。
+``awk`` 命令的命名起源于其三位作者的姓氏首字母。该命令可以选择标准输入、其他命令的输出或文件中
+的特定字段并进行操作。它依次扫描每一行，并读取里面的每一个字段。可以参考
+`awk 入门教程 <https://www.ruanyifeng.com/blog/2018/11/awk.html>`__ 学习其更多用法。
 
-``gawk`` 是 GNU 版本的 ``awk`` 命令。Linux 系统下的 ``awk`` 命令一般是指向
-``gawk`` 命令的软链接，可以使用以下命令查看::
-
-    $ ls -l $(which awk)
-    lrwxrwxrwx. 1 root root 4 Aug  4  2018 /usr/bin/awk -> gawk
+``gawk`` 是 GNU 版本的 ``awk`` 命令。通常建议直接使用 ``gawk`` 而非 ``awk``，
+尽管在 Linux 系统下，``awk`` 命令一般是指向 ``gawk`` 命令的软链接。
 
 ::
 
-    # 将一个文件的每一行输出到标准输出
+    # 将一个文件的每一行输出到标准输出。 $0 表示当前行
     $ gawk '{print $0}' file
 
     # 将一个文件的每一行的第 1 个和第 3 个字段输出到标准输出（字段的默认分隔符是空格和制表符）
     $ gawk '{print $1,$3}' file
 
-    # 同上，但忽略第 1 行和第 2 行，从第 3 行开始
+    # 同上，但跳过第 1-2 行，从第 3 行开始。FNR 为当前行的行数
     $ gawk 'FNR>2 {print $1,$3}' file
 
     # 将 /etc/passwd 每一行的第 1 个和第 3 个字段输出到标准输出，
-    # 并设置字段分隔符为冒号：
+    # 并设置字段分隔符为冒号 :
     $ gawk -F ':' '{print $1,$3}' /etc/passwd
 
     # 同上，并输出每一行的行号
@@ -269,10 +268,12 @@ locate
     # 同上，但忽略大小写
     $ locate -i ~/des
 
-该命令所需的数据库是 Linux 系统自动创建的，每天自动更新。因此，``locate`` 命令查不到最新变动过的文件。
-可以在使用该命令前，先使用 ``updatedb`` 命令手动更新数据库。但是 ``updatedb`` 命令的执行过程较长::
+该命令所需的数据库是系统自动创建的，每天自动更新。因此，``locate`` 命令查不到最新变动过的文件。
+可以执行 ``updatedb`` 命令手动更新数据库，但是 ``updatedb`` 命令的执行过程较长::
 
+    # Linux
     $ sudo updatedb
+
     # macOS 系统可以使用以下命令
     $ sudo /usr/libexec/locate.updatedb
 
@@ -343,22 +344,16 @@ scp
 
 ``scp`` 命令的命名来源于 **s**\ ecure **c**\ o\ **p**\ y，可用于本地和远程电脑之间传输文件。
 该命令基于 `ssh`_ 进行安全的远程文件传输，因此传输是加密的。虽然 ``scp`` 传输速度不如 `rsync`_
-命令，但是它不占资源，不会提高多少系统负荷。当有许多小文件需要传输时，使用 `rsync`_ 命名会导致
+命令，但是它不占系统资源。当需要传输大量小文件时，使用 `rsync`_ 命名会导致
 硬盘 I/O（输入/输出）非常高，而 ``scp`` 基本不影响系统正常使用。
 
 以下命令假定远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn::
 
-    # 复制远程文件 /home/seismo-learn/fk3.3.tar.gz 到本地目录 ~/Downloads 下
-    $ scp seismo-learn@192.168.1.100:/home/seismo-learn/fk3.3.tar.gz ~/Downloads/
+    # 复制远程文件或目录 /home/seismo-learn/file-or-folder 到本地目录 ~/Downloads 下
+    $ scp -r seismo-learn@192.168.1.100:/home/seismo-learn/file-or-folder ~/Downloads/
 
-    # 复制远程目录 /home/seismo-learn/folder1 到本地目录 ~/Downloads 下
-    $ scp -r seismo-learn@192.168.1.100:/home/seismo-learn/folder1 ~/Downloads/
-
-    # 上传本地文件 ~/Downloads/fk3.3.tar.gz 到远程目录 home/seismo-learn/folder2
-    $ scp ~/Downloads/fk3.3.tar.gz seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
-
-    # 上传本地目录 ~/Downloads/folder1 到远程目录 home/seismo-learn/folder2
-    $ scp ~/Downloads/folder1 seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
+    # 上传本地文件或目录 ~/Downloads/file-or-folder 到远程目录 home/seismo-learn/folder2
+    $ scp -r ~/Downloads/file-or-folder seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
 
 sed
 ---
@@ -380,6 +375,9 @@ sed
     $ sed 's#book#books#' file
     $ sed 's#book#books#g' file
     $ sed -i 's#book#books#g' file
+
+需要注意，macOS 提供的 BSD ``sed`` 的语法很不同。建议 macOS 用户使用 Homebrew
+安装 ``gnu-sed``，并将以上命令替换为 ``gsed``。
 
 sort
 ----
@@ -405,6 +403,12 @@ sort
 
     # 按数值大小进行升序排序
     $ sort -n seismo-learn-sort.txt
+
+    # 按第三列 ASCII 码值进行升序排列
+    $ sort -k3,3 seismo-learn-sort.txt
+
+    # 按第三列的数值大小进行升序排列
+    $ sort -k3,3n seismo-learn-sort.txt
 
 ssh
 ---
@@ -435,8 +439,8 @@ tar
 ---
 
 ``tar`` 命令的名字来自 **t**\ ape **ar**\ chive（磁带存档），因为该命令最初被用来在磁带上
-创建档案。该命令可以把一大堆文件和目录打包成一个文件，并且可以选择压缩该文件，这对于备份文件或
-将几个文件组合成一个文件以便于网络传输是非常有用的。
+创建档案。该命令可以把一大堆文件和目录打包成一个文件，并且可以对该文件进行压缩。压缩该文件，
+这对于备份文件或将几个文件组合成一个文件以便于网络传输是非常有用的。
 
 首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录打包成一个文件，而压缩则是将一个大文件
 通过一些压缩算法变成一个小文件。Linux 中的很多压缩程序只能压缩单个文件，若想压缩一大堆文件，
@@ -457,7 +461,7 @@ tar
 
     # 解压一个压缩包，默认解压到当前目录下
     $ tar -xvf seismo-learn.tar.gz
-    
+
     # 解压到 bak 目录下（该目录必须存在）
     $ mkdir bak
     $ tar -xvf seismo-learn.tar.gz -C bak
