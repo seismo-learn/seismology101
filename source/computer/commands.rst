@@ -98,6 +98,7 @@ diff
     seismo-learn
     seismology
     software
+    
     $ cat file2
     seismo-learn
     seismology101
@@ -126,6 +127,8 @@ df
     devtmpfs                            7.8G     0  7.8G   0% /dev
     tmpfs                               7.8G  114M  7.7G   2% /run
     /dev/mapper/cl_ivantjuawinata-home  1.1T  904G  149G  86% /home
+    
+从输出中可以得知，`/home` 分区总磁盘空间为1.1 TB，已使用 904 GB，剩余 149 GB。
 
 du
 --
@@ -138,15 +141,15 @@ du
     # 默认显示当前目录及其所有子目录所占磁盘空间
     $ du -h
 
-    # 若只显示当前目录所占磁盘空间，不显示其任何子目录
+    # 设置目录深度为 0，即只显示当前目录所占磁盘空间，不显示其任何子目录
     $ du -h -d 0
 
-    # 若只显示当前目录及其一级子目录所占磁盘空间
+    # 设置目录深度为 1，即只显示当前目录及其一级子目录所占磁盘空间
     $ du -h -d 1
 
 查看指定文件所占磁盘空间::
 
-    $ du -h ~/Downloads/TauP-2.4.5.tar.gz
+    $ du -h file1.txt
 
 find
 ----
