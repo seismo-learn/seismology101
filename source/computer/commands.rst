@@ -165,7 +165,7 @@ https://www.ruanyifeng.com/blog/2018/11/awk.html 学习其用法。
     # 将一个文件的每一行的第 1 个和第 2 个字段打印到标准输出（字段的默认分隔符是空格和制表符）
     $ gawk '{print $1,$3}' file
 
-    同上，但忽略第 1 行和第 2 行，从第 3 行开始
+    # 同上，但忽略第 1 行和第 2 行，从第 3 行开始
     $ gawk 'FNR>2 {print $1,$3}' file
 
     # 将 /etc/passwd 每一行的第 1 个和第 3 个字段打印到标准输出，
@@ -206,8 +206,10 @@ less
 
 ``less`` 命令可以用来浏览文件内容。该命令允许用户向前或向后浏览文件。
 按 :kbd:`PageUp` 键向上翻页，用 :kbd:`PageDown` 键向下翻页。
-按 :kbd:`Enter` 键或向下方向键则向下移动，用向上方向键则向上移动。
-按 :kbd:`Q` 键退出浏览::
+按 :kbd:`Enter` 键或向下方向键则向下移动，用向上方向键则向上移动，
+按 :kbd:`Q` 键退出浏览。
+
+::
 
     # 浏览 /etc/passwd
     $ less /etc/passwd
@@ -356,6 +358,7 @@ sort
     4:seismology:seisman:91
     1:seismology101:zhaozhiyuan1989:291
 
+::
 
     # 按 ASCII 码值进行升序排序
     $ sort seismo-learn-sort.txt
@@ -393,7 +396,7 @@ tail
 
 ``tail`` 命令用于打印文件尾部内容::
 
-    打印 /etc/passwd 的后 10 行
+    # 打印 /etc/passwd 的后 10 行
     $ tail /etc/passwd
 
     # 打印 /etc/passwd 的后 5 行
