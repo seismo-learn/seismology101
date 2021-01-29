@@ -66,6 +66,7 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。这�
         - `ssh`_
         - `scp`_
         - `rsync`_
+        - `wget`_
 
 ----
 
@@ -634,3 +635,21 @@ wc
 只打印 :file:`/etc/passwd` 的行数::
 
     $ wc -l /etc/passwd
+
+wget
+----
+
+``wget`` 命令的名字来自 **W**\ orld **W**\ ide **W**\ eb **get**\ （万维网获取）。
+该命令可以用来从网络上下载文件，支持断点续传。
+
+下载以下网址对应的单个文件（即 :file:`distaz.c` 代码"）::
+
+    $ wget http://www.seis.sc.edu/software/distaz/distaz.c
+
+下载并以不同的文件名保存::
+
+    $ wget -O distaz-rename.c http://www.seis.sc.edu/software/distaz/distaz.c
+
+继续一个未完成的下载任务，这对下载大文件时突然中断非常有帮助::
+
+    $ wget -c http://www.seis.sc.edu/software/distaz/distaz.c
