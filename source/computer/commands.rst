@@ -96,11 +96,11 @@ diff
 
     $ cat file1 
     seismo-learn
-    logo
-    website
-    $ cat file2
-    seismology101
     seismology
+    software
+    $ cat file2
+    seismo-learn
+    seismology101
     software
 
 比较 :file:`file1` 和 :file:`file2` 的异同，结果显示两个文件的第一到第三行不同::
