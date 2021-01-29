@@ -211,18 +211,6 @@ grep
 
     $ grep -v root /etc/passwd
 
-使用正则表达式搜索并打印 :file:`/etc/passwd` 中含有英文字母的行::
-
-    $ grep -E "[a-zA-Z]+" /etc/passwd
-
-使用正则表达式搜索并打印 :file:`/etc/passwd` 中含有数字的行::
-
-    $ grep -E "[0-9]+" /etc/passwd
-
-使用正则表达式搜索并打印 :file:`/etc/passwd` 中含有英文字母或数字的行::
-
-    $ grep -E "[a-zA-Z]+|[0-9]+" /etc/passwd
-
 head
 ----
 
