@@ -76,19 +76,14 @@ cat
 ---
 
 ``cat`` 命令名来源于 con\ **cat**\ enate（即“拼接”）。该命令可以输出某个文件的
-内容，或将多个文件\ **拼接**\ 起来。
+内容，或将多个文件\ **拼接**\ 起来::
 
-将一个文件的内容输出到终端::
-
+    # 将一个文件的内容输出到终端
     $ cat file
-
-将文件 :file:`file1` 和 :file:`file2` 合并到一个文件 :file:`target_file` 中::
-
-    $ cat file1 file2 > target_file
-
-打印文件内容并显示行号::
-
+    # 同时显示行号
     $ cat -n file
+    # 将文件 file1 和 file2 合并到一个文件 target_file 中
+    $ cat file1 file2 > target_file
 
 diff
 ----
