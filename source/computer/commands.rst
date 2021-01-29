@@ -81,7 +81,7 @@ cat
     # 将一个文件的内容输出到终端
     $ cat file
     
-    # 同时显示行号
+    # 输出文件内容并显示行号
     $ cat -n file
     
     # 将文件 file1 和 file2 合并到一个文件 target_file 中
