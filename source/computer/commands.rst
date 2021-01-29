@@ -297,22 +297,18 @@ scp
 命令，但是它不占资源，不会提高多少系统负荷。当有许多小文件需要传输时，使用 `rsync`_ 命名会导致
 硬盘 I/O（输入/输出）非常高，而 ``scp`` 基本不影响系统正常使用。
 
-以下命令假定远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn。
+以下命令假定远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn::
 
-复制远程文件 :file:`/home/seismo-learn/fk3.3.tar.gz` 到本地目录 :file:`~/Downloads` 下::
-
+    # 复制远程文件 /home/seismo-learn/fk3.3.tar.gz 到本地目录 ~/Downloads 下
     $ scp seismo-learn@192.168.1.100:/home/seismo-learn/fk3.3.tar.gz ~/Downloads/
 
-复制远程目录 :file:`/home/seismo-learn/folder1` 到本地目录 :file:`~/Downloads` 下::
-
+    # 复制远程目录 /home/seismo-learn/folder1 到本地目录 ~/Downloads 下
     $ scp -r seismo-learn@192.168.1.100:/home/seismo-learn/folder1 ~/Downloads/
 
-上传本地文件 :file:`~/Downloads/fk3.3.tar.gz` 到远程目录 :file:`home/seismo-learn/folder2` 下::
-
+    # 上传本地文件 ~/Downloads/fk3.3.tar.gz 到远程目录 home/seismo-learn/folder2
     $ scp ~/Downloads/fk3.3.tar.gz seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
 
-上传本地目录 :file:`~/Downloads/folder1` 到远程目录 :file:`home/seismo-learn/folder2` 下::
-
+    # 上传本地目录 ~/Downloads/folder1 到远程目录 home/seismo-learn/folder2
     $ scp ~/Downloads/folder1 seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
 
 sed
@@ -320,22 +316,18 @@ sed
 
 ``sed`` 命令的名字来源与 **s**\ tream **ed**\ itor（流编辑器）。该命令可以用于对输入流
 （文件或管道）执行基本的文本转换。它会把当前处理的行存储在临时缓冲区中再进行处理，处理完成后
-再把缓冲区的内容送往屏幕。接着处理下一行，直到文件末尾。因此默认情况下，文件内容并没有改变。
+再把缓冲区的内容送往屏幕。接着处理下一行，直到文件末尾。因此默认情况下，文件内容并没有改变::
 
-将 :file:`file` 中每一行的第一个 book 替换成 books::
-
+    # 将 file 中每一行的第一个 book 替换成 books
     $ sed 's/book/books/' file
 
-将 :file:`file` 中每一行的所有的 book 都替换成 books::
-
+    # 将 file 中每一行的所有的 book 都替换成 books
     $ sed 's/book/books/g' file
 
-以上命令只是将转换后的文本内容打印出来，并为改变文件本身。可以使用 ``-i`` 选项直接改变文件::
-
+    # 以上命令只是将转换后的文本内容打印出来，并为改变文件本身。可以使用 -i 选项直接改变文件
     $ sed -i 's/book/books/g' file
 
-以上命令使用斜杠 :kbd:`/` 当定界符，也可以使用任意定界符::
-
+    # 以上命令使用斜杠 / 当定界符，也可以使用任意定界符
     $ sed 's#book#books#' file
     $ sed 's#book#books#g' file
     $ sed -i 's#book#books#g' file
@@ -360,26 +352,22 @@ sort
     4:seismology:seisman:91
     1:seismology101:zhaozhiyuan1989:291
 
-按 ASCII 码值进行升序排序::
 
+    # 按 ASCII 码值进行升序排序
     $ sort seismo-learn-sort.txt
 
-按 ASCII 码值进行降序排序::
-
+    # 按 ASCII 码值进行降序排序
     $ sort -r seismo-learn-sort.txt
 
-按 ASCII 码值进行升序排序，并忽略相同行（即重复行只统计一次）::
-
+    # 按 ASCII 码值进行升序排序，并忽略相同行（即重复行只统计一次）::
     $ sort -u seismo-learn-sort.txt
 
-按 ASCII 码值进行降序排序，并忽略相同行::
-
+    # 按 ASCII 码值进行降序排序，并忽略相同行
     $ sort -u -r seismo-learn-sort.txt
     # 不同选项也可以写在一块
     # sort -ur seismo-learn-sort.txt
 
-按\ **数值大小**\ 进行升序排序::
-
+    # 按数值大小进行升序排序
     $ sort -n seismo-learn-sort.txt
 
 ssh
@@ -388,26 +376,23 @@ ssh
 ``ssh`` 命令的命名源于 **S**\ ecure **Sh**\ ell（安全外壳协议，简称 SSH），该协议是
 一种加密的网络传输协议。使用 ``ssh`` 命令可以登录到远程计算机中。常用于登录服务器提交计算任务。
 
-若远程计算机的 IP 地址是 192.168.1.100，用户名是 seismo-learn，执行以下命令可以登录到该
-计算机中::
+若远程计算机的 IP 地址是 192.168.1.100，用户名是 seismo-learn::
 
+    # 登录到远程计算机
     $ ssh seismo-learn@192.168.1.100
 
-以图形界面连接远程计算机（需要配置远程计算上的 ssh 服务器配置）::
-
+    # 以图形界面连接远程计算机（需要配置远程计算上的 ssh 服务器配置）
     $ ssh -X seismo-learn@192.168.1.100
 
 tail
 ----
 
-``tail`` 命令用于打印文件尾部内容。默认打印文件的后 10 行。
+``tail`` 命令用于打印文件尾部内容::
 
-打印 :file:`/etc/passwd` 的后 10 行::
-
+    打印 /etc/passwd 的后 10 行
     $ tail /etc/passwd
 
-打印 :file:`/etc/passwd` 的后 5 行::
-
+    # 打印 /etc/passwd 的后 5 行
     $ tail -n 5 /etc/passwd
 
 如果 ``-n`` 选项后的数字（N）前面有加号 :kbd:`+`，则打印的是文件开头的第 N 行到文件末尾，
@@ -428,17 +413,18 @@ tar
 （使用 ``gzip`` 或 ``bzip2`` 命令）。使用 ``tar`` 命令时，可以直接选择压缩打包的文件，无需
 再单独使用压缩程序进行压缩。
 
-将 :file:`file1` 和 :file:`file2` 文件打包，打包文件命名为 :file:`seismo-learn.tar`
-（选项 ``-f`` 后的打包文件名一般用 :file:`.tar` 来作为标识）::
+::
 
+    # 将 file1 和 file2 打包，打包文件命名为 seismo-learn.tar
+    # 选项 -f 后的打包文件名一般用 .tar 来作为标识
     $ tar -cvf seismo-learn.tar file1 file2
 
-同上，但在打包后用 ``gzip`` 命令进行压缩（一般用 :file:`.tar.gz` 或 :file:`.tgz` 来作标识）::
-
+    # 同上，但在打包后用 gzip 命令进行压缩
+    # 一般用 .tar.gz 或 .tgz 来作标识
     $ tar -zcvf seismo-learn.tar.gz file1 file2
 
-打包后，用 ``bzip2`` 命令进行压缩（一般用 :file:`.tar.bz2` 或 :file:`.tbz` 来作标识）::
-
+    # 打包后，用 bzip2 命令进行压缩
+    # 一般用 .tar.bz2 或 .tbz 来作标识
     $ tar -jcvf seism-learn.tar file1 file2
 
 查阅打包压缩文件含有哪些文件和目录::
@@ -453,6 +439,7 @@ tar
     $ tar -xvf seismo-learn.tar
     $ tar -xvf seismo-learn.tar.gz
     $ tar -xvf seismo-learn.tar.bz2
+
     # 还原到 bak 目录下（该目录必须存在）
     $ mkdir bak
     $ tar -xvf seismo-learn.tar -C bak
@@ -494,22 +481,20 @@ uniq
 如果重复行不相邻，则该命令不起作用。所以，``uniq`` 命令一般与 `sort`_ 命令结合使用。以下命令
 假设示例文件已经按行排序，即重复行相邻。
 
-打印 :file:`file` 中非重复和重复行，但重复行只打印一次::
+::
 
+    # 打印 file 中非重复和重复行，但重复行只打印一次
     $ uniq file
     # 以上命令等同于以下命令
     $ sort -u file
 
-同上，同时打印各行在文件中出现的次数::
-
+    # 同上，同时打印各行在文件中出现的次数
     $ uniq -c file
 
-只打印 :file:`file` 中非重复的行::
-
+    # 只打印 file 中非重复的行
     $ uniq -u file
 
-只打印 :file:`file` 中重复的行::
-
+    # 只打印 file 中重复的行
     $ uniq -d file
 
 若重复行在文件中不相邻，可以使用 `sort`_ 命令先对文件进行排序::
@@ -517,6 +502,7 @@ uniq
     $ sort file | uniq
     # 以上命令等同于以下命令
     $ sort -c file
+
     $ sort file | uniq -c
     $ sort file | uniq -u
     $ sort file | uniq -d
@@ -526,10 +512,9 @@ wc
 
 
 ``wc`` 命令的名字来自 **w**\ ord **c**\ ount（字数）。该命令可以打印文件或标准输入的
-行数、单词数以及字节数。
+行数、单词数以及字节数::
 
-打印统计 :file:`/etc/passwd` 的行数、单词数以及字节数::
-
+    # 打印统计 /etc/passwd 的行数、单词数以及字节数
     $ wc /etc/passwd
 
 使用 ``-l``\ 、\ ``-w``\ 或 ``-c`` 选项，可以分别只打印行数、单词数或字节数。例如，
@@ -543,14 +528,13 @@ wget
 ``wget`` 命令的名字来自 **W**\ orld **W**\ ide **W**\ eb **get**\ （万维网获取）。
 该命令可以用来从网络上下载文件，支持断点续传。类似的命令还有 ``curl``\ 。
 
-下载以下网址对应的单个文件（即 :file:`distaz.c` 代码"）::
+::
 
+    # 下载以下网址对应的单个文件（即 distaz.c 代码）
     $ wget http://www.seis.sc.edu/software/distaz/distaz.c
 
-下载并以不同的文件名保存::
-
+    # 下载并以不同的文件名保存
     $ wget -O distaz-rename.c http://www.seis.sc.edu/software/distaz/distaz.c
 
-继续一个未完成的下载任务，这对下载大文件时突然中断非常有帮助::
-
+    # 继续一个未完成的下载任务，这对下载大文件时突然中断非常有帮助
     $ wget -c http://www.seis.sc.edu/software/distaz/distaz.c
