@@ -91,8 +91,7 @@ diff
 ----
 
 ``diff`` 命令的命名来自 **diff**\ erence。该命令可以用来逐行比较文件的异同。
-
-我们用以下两个示例文件展示用法::
+我们用以下两个示例文件展示其用法::
 
     $ cat file1 
     seismo-learn
@@ -116,7 +115,7 @@ diff
 df
 --
 
-``df`` 命令的命名来自 **d**\ isk **f**\ ree（可使用的磁盘空间）。该命令可以获取硬盘被占用了多少空间，
+``df`` 命令的命名来自 **d**\ isk **f**\ ree（可使用的硬盘空间）。该命令可以获取硬盘被占用了多少空间，
 目前还剩下多少空间等信息。
 
 ::
@@ -128,13 +127,12 @@ df
     tmpfs                               7.8G  114M  7.7G   2% /run
     /dev/mapper/cl_ivantjuawinata-home  1.1T  904G  149G  86% /home
     
-从输出中可以得知，`/home` 分区总磁盘空间为1.1 TB，已使用 904 GB，剩余 149 GB。
+从输出中可以得知，:file:`/home` 分区总磁盘空间为 1.1 TB，已使用 904 GB，剩余 149 GB。
 
 du
 --
 
-``du`` 命令的名字来自 **d**\ isk **u**\ sage（磁盘使用情况）。该命令可以查看磁盘的使用空间。
-但与 `df`_ 命令不同的是，\ ``du`` 命令用于查看文件和目录磁盘使用的空间。
+``du`` 命令的名字来自 **d**\ isk **u**\ sage（磁盘使用情况）。该命令用于查看文件和目录占用的硬盘空间。
 
 查看当前目录所占磁盘空间（也可以在最后指定想查看的目录名）::
 
@@ -214,12 +212,12 @@ grep
 head
 ----
 
-``head`` 命令用于打印文件开头部分的内容::
+``head`` 命令用于输出文件开头部分的内容::
 
-    # 打印 /etc/passwd 的前 10 行
+    # 输出 /etc/passwd 的前 10 行
     $ head /etc/passwd
 
-    # 打印 /etc/passwd 的前 5 行
+    # 输出 /etc/passwd 的前 5 行
     $ head -n 5 /etc/passwd
 
 less
@@ -416,12 +414,12 @@ ssh
 tail
 ----
 
-``tail`` 命令用于打印文件尾部内容::
+``tail`` 命令用于输出文件尾部内容::
 
-    # 打印 /etc/passwd 的后 10 行
+    # 输出 /etc/passwd 的后 10 行
     $ tail /etc/passwd
 
-    # 打印 /etc/passwd 的后 5 行
+    # 输出 /etc/passwd 的后 5 行
     $ tail -n 5 /etc/passwd
 
 tar
