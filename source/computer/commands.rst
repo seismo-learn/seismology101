@@ -90,13 +90,30 @@ cat
 diff
 ----
 
-``diff`` 命令的命名来自 **diff**\ erence。该命令可以用来逐行比较文件的异同::
+``diff`` 命令的命名来自 **diff**\ erence。该命令可以用来逐行比较文件的异同。
 
-    # 比较 /etc/passwd 和 /etc/passwd- 的异同
-    # 结果显示 /etc/passwd- 多了第 40 行
-    $ diff diff /etc/passwd /etc/passwd-
-    39a40
-    > guest:x:1001:1001::/home/guest:/bin/bash
+我们用以下两个示例文件展示用法::
+
+    $ cat file1 
+    seismo-learn
+    logo
+    website
+    $ cat file2
+    seismology101
+    seismology
+    software
+
+比较 :file:`file1` 和 :file:`file2` 的异同，结果显示两个文件的第一到第三行不同::
+
+    $ diff file1 file2
+    1,3c1,3
+    < seismo-learn
+    < logo
+    < website
+    ---
+    > seismology101
+    > seismology
+    > software
 
 df
 --
