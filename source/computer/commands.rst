@@ -269,6 +269,13 @@ locate
     # 同上，但忽略大小写
     $ locate -i ~/des
 
+该命令所需的数据库是 Linux 系统自动创建的，每天自动更新。因此，``locate`` 命令查不到最新变动过的文件。
+可以在使用该命令前，先使用 ``updatedb`` 命令手动更新数据库。但是 ``updatedb`` 命令的执行过程较长::
+
+    $ sudo updatedb
+    # macOS 系统可以使用以下命令
+    $ sudo /usr/libexec/locate.updatedb
+
 rsync
 -----
 
