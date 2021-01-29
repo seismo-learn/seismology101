@@ -228,7 +228,7 @@ less
 ``less`` 命令可以用来浏览文件内容，比 ``more`` 命令功能更强大。因此，一个常用的笑话记忆方式是
 “less is more”。该命令允许用户向前或向后浏览文件：按 :kbd:`PageUp` 键向上翻页，
 用 :kbd:`PageDown` 键向下翻页，按 :kbd:`Enter` 键或向下方向键则向下移动，
-用向上方向键则向上移动。按 :kbd:`Q` 键退出浏览。
+用向上方向键则向上移动。按 :kbd:`q` 键退出浏览。
 
 ::
 
@@ -424,11 +424,6 @@ tail
     # 打印 /etc/passwd 的后 5 行
     $ tail -n 5 /etc/passwd
 
-如果 ``-n`` 选项后的数字（N）前面有加号 :kbd:`+`，则打印的是文件开头的第 N 行到文件末尾，
-并不是最后 N 行。例如，打印 :file:`/etc/passwd` 的第 5 行到文件末尾::
-
-    $ tail -n +5 /etc/passwd
-
 tar
 ---
 
@@ -542,7 +537,7 @@ wget
 
 ``wget`` 命令的名字来自 **W**\ orld **W**\ ide **W**\ eb **get**\ （万维网获取）。
 该命令可以用来从网络上下载文件，支持断点续传。
-类似的命令还有 ``curl``，可以参考此博文 https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
+类似的命令还有 ``curl``，可以参考 `curl 用法指南 <https://www.ruanyifeng.com/blog/2019/09/curl-reference.html>`__
 学习其基本用法。
 
 ::
