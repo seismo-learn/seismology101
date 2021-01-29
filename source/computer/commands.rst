@@ -422,16 +422,10 @@ tar
 
 ::
 
-    # 将 file1 和 file2 打包，打包文件命名为 seismo-learn.tar
-    # 选项 -f 后的打包文件名一般用 .tar 来作为标识
-    $ tar -cvf seismo-learn.tar file1 file2
-
-    # 同上，但在打包后用 gzip 命令进行压缩
-    # 一般用 .tar.gz 或 .tgz 来作标识
+    # 将 file1 和 file2 打包并用 gzip 命令进行压缩，文件命名为 seismo-learn.tar.gz。也可用 .tgz 来作标识
     $ tar -zcvf seismo-learn.tar.gz file1 file2
 
-    # 打包后，用 bzip2 命令进行压缩
-    # 一般用 .tar.bz2 或 .tbz 来作标识
+    # 打包并用 bzip2 命令进行压缩。一般用 .tar.bz2 或 .tbz 来作文件标识
     $ tar -jcvf seism-learn.tar file1 file2
 
 查阅打包压缩文件含有哪些文件和目录::
