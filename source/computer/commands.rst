@@ -153,7 +153,7 @@ find
 ----
 
 ``find`` 命令用来查找指定目录下的子目录和文件，并执行一些操作。可以参考
-`find命令 <https://man.linuxde.net/find/>`__ 学习更多用法。
+`find 命令 <https://man.linuxde.net/find/>`__ 学习更多用法。
 
 ::
 
@@ -201,8 +201,7 @@ gawk
     # 同上，但跳过第 1-2 行，从第 3 行开始。FNR 为当前行的行数
     $ gawk 'FNR>2 {print $1,$3}' file
 
-    # 将 /etc/passwd 每一行的第 1 个和第 3 个字段输出到标准输出，
-    # 并设置字段分隔符为冒号 :
+    # 将 /etc/passwd 每一行的第 1 个和第 3 个字段输出到标准输出，并设置字段分隔符为冒号
     $ gawk -F ':' '{print $1,$3}' /etc/passwd
 
     # 同上，并输出每一行的行号
