@@ -17,7 +17,7 @@ WSL 配置指南
 WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数情况下，建议使用 WSL2，
 因为它提供更快的性能和 100% 的系统调用兼容性。涉及到跨系统的文件互访时
 （Linux 访问 Windows 里的文件，或 Windows 访问 Linux 里的文件），使用 WSL1 具有
-更快的性能。WSL1 和 WSL2 的详细对比见
+更快的性能。WSL1 和 WSL2 的详细对比见\
 `官方文档 <https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions>`__\ 。
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
