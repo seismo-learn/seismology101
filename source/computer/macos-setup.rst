@@ -371,7 +371,7 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
     # 预览无后缀的纯文本文件，比如 README，HISTORY 等
     $ brew install --cask qlstephen
 
-    # 预览渲染后的markdown文件
+    # 预览渲染后的 Markdown 文件
     $ brew install --cask qlmarkdown
 
 .. note::
