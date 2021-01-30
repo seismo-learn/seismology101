@@ -89,6 +89,9 @@ macOS 下最好用的备份工具当属 Time Machine。
 Time Machine
 ^^^^^^^^^^^^^
 
+rysnc
+^^^^^^
+
 Windows
 -------
 
