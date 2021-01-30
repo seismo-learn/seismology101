@@ -78,19 +78,35 @@ rysnc
 DejaDup
 ^^^^^^^
 
+.. warning::
+
+   本段正在编写中，尚未完成。
+
 btrfs
 ^^^^^
+
+.. warning::
+
+   本段正在编写中，尚未完成。
 
 macOS
 -----
 
-macOS 下最好用的备份工具当属 Time Machine。
+macOS 下最好用的备份工具当属 Time Machine，当然也可以使用 ``rsync`` 命令进行备份。
 
 Time Machine
 ^^^^^^^^^^^^^
 
+.. warning::
+
+   本段正在编写中，尚未完成。
+
 rysnc
 ^^^^^^
+
+.. warning::
+
+   本段正在编写中，尚未完成。
 
 Windows
 -------
@@ -98,5 +114,13 @@ Windows
 robocopy
 ^^^^^^^^
 
+.. warning::
+
+   本段正在编写中，尚未完成。
+
 Backup
 ^^^^^^
+
+.. warning::
+
+   本段正在编写中，尚未完成。
