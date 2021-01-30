@@ -303,7 +303,7 @@ Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在
 日常软件
 --------
 
-以下软件均为可选，有需要的用户可以作为自己的需求选择是否安装。
+以下软件均为可选，有需要的用户可以根据自己的需求选择是否安装。
 
 iTerm2
 ^^^^^^
@@ -334,7 +334,7 @@ macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。�
 
 macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但不支持 ``.rar`` 格式。
 推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__\ ，其支持
-几乎所有压缩格式::
+几乎所有压缩格式。通过双击 ``.rar`` 文件直接解压::
 
     $ brew install --cask the-unarchiver
 
@@ -371,7 +371,7 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
     # 预览无后缀的纯文本文件，比如 README，HISTORY 等
     $ brew install --cask qlstephen
 
-    # 预览渲染后的markdown文件
+    # 预览渲染后的 Markdown 文件
     $ brew install --cask qlmarkdown
 
 .. note::
