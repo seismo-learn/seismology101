@@ -288,40 +288,41 @@ locate
 rsync
 -----
 
-``rsync`` 命令的命名来自 **r**\ emote **sync**\ hronization（远程同步）。该命名可以用来同步文件，
-可以是两个本地目录之间，也可以是本地计算机与远程计算机之间。与其他文件传输工具（如 FTP 或 `scp`_\ ）不同，
-``rsync`` 命名会检查发送方和接收方已有的文件，仅传输有变动的部分（默认规则是文件大小或
-修改时间有变动）。因此，同步速度较快，常用于文件备份。可以参考
+``rsync`` 命令的命名来自 **r**\ emote **sync**\ hronization（远程同步）。该命名可以用于同步文件，
+可以是两个本地目录之间，也可以是本地计算机与远程计算机之间。与其他文件传输工具（如 `scp`_\ ）不同，
+``rsync`` 命令仅传输有变动的部分。因此，同步速度更快，常用于文件备份。可以参考
 `rsync 用法教程 <https://www.ruanyifeng.com/blog/2020/08/rsync.html>`__
 进一步学习其用法。
 
 以下示例假设源目录是 :file:`~/Downloads/source`\，目标目录是 :file:`~/workspace/destination`\ ，
 远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn。
 
-::
+同步两个本地目录::
 
-    # 复制源目录到目标目录下，并删除目标目录下的 source 目录中不存在于源目录里的文件和目录。~/workspace/source 目录成为源目录的一个镜像
+    # 将源目录同步到目标目录下。~/workspace/destination/source 成为源目录的一个镜像
     $ rsync -av --delete ~/Downloads/source ~/workspace/destination
 
-    # 复制源目录下的文件和目录到目标目录下，并删除目标目录下那些不存在于源目录下的文件和目录。目标目录本身成为源目录的一个镜像
+    # 将源目录下的 **文件和目录** 同步到目标目录下。~/workspace/destination 成为源目录的一个镜像
+    # 该命令与上一命令相比，在源目录的结尾多了一个反斜杠 "/"
     $ rsync -av --delete ~/Downloads/source/ ~/workspace/destination
-
-    # 同步本地源目录到远程计算机的目标目录下
-    $ rsync -av --delete ~/Downloads/source seismo-learn@192.168.1.100:~/destination
-
-    # 同步远程计算机的源目录本地目标目录下
-    $ rsync -av --delete seismo-learn@192.168.1.100:~/source ~/workspace/destination
 
     # 若只想查看命令执行效果，不真的执行命令，可以使用 -n 选项。例如
     $ rsync -anv ~/Downloads/source ~/workspace/destination
-    $ rsync -anv --delete ~/Downloads/source seismo-learn@192.168.1.100:~/destination
 
-具体解释以下几个选项：
+同步本地源目录到远程计算机的目标目录下::
 
-- ``-a`` 选项表示以递归方式传输文件，并保持所有文件属性。使用该选项等于使用多种选项的组合 -rlptgoD，十分方便
-- ``-v`` 选项表示将执行结果输出到终端。可以用于查看哪些内容会被同步了
-- ``delete`` 选项表示删除目标目录下那些不存在于源目录下的文件和目录，实现源目录和目标目录的同步。
-- ``-n`` 选项表示模拟执行结果，不真的执行命令。适用于测试效果
+    $ rsync -av --delete ~/Downloads/source seismo-learn@192.168.1.100:~/workspace/destination
+
+同步远程计算机的源目录本地目标目录下::
+
+    $ rsync -av --delete seismo-learn@192.168.1.100:~/Downloads/source ~/workspace/destination
+
+具体解释以下几个常用选项：
+
+- ``-a`` 选项表示以归档方式传输文件，并保持所有文件属性
+- ``-v`` 选项表示将执行过程输出到终端，用于查看哪些内容正在被同步
+- ``--delete`` 选项表示删除目标目录下那些不存在于源目录下的文件和目录，实现源目录和目标目录的同步
+- ``-n`` 选项表示不执行命令，但模拟执行结果，可用于检测命令的运行是否符合预期
 
 scp
 ---
