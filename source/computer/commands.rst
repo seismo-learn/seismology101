@@ -291,21 +291,10 @@ rsync
 
 ::
 
-    # 复制源目录到目标目录下，即产生 ~/workspace/source 目录
-    # -a 选项会以递归方式传输文件，并保持所有文件属性。使用该选项等于使用多种选项的组合 -rlptgoD，十分方便
-    # -v 选项表示将执行结果输出到终端。可以用于查看哪些内容会被同步了
-    $ rsync -av ~/Downloads/source ~/workspace/destination
-
-    # 使用 -n 选项模拟执行的结果，并不真的执行命令
-    $ rsync -anv ~/Downloads/source ~/workspace/destination
-
-    # 同步源目录里的内容到目标目录下，需要在源目录后面加上斜杠。目标目录中不会产生 ~/workspace/source 目录
-    $ rsync -av ~/Downloads/source/ ~/workspace/destination
-
-    # 同步源目录到目标目录下，并删除目标目录下的 source 目录中不存在于源目录里的文件和目录。~/workspace/source 成为源目录的一个镜像
+    # 复制源目录到目标目录下，并删除目标目录下的 source 目录中不存在于源目录里的文件和目录。~/workspace/source 成为源目录的一个镜像
     $ rsync -av --delete ~/Downloads/source ~/workspace/destination
 
-    # 同步源目录里的内容到目标目录下，并删除目标目录中不存在于源目录里的文件和目录。目标目录本身成为源目录的一个镜像
+    # 复制源目录里的内容到目标目录下，并删除目标目录中不存在于源目录里的文件和目录。目标目录本身成为源目录的一个镜像
     $ rsync -av --delete ~/Downloads/source/ ~/workspace/destination
 
     # 同步本地源目录到远程计算机的目标目录下
@@ -313,6 +302,17 @@ rsync
 
     # 同步远程计算机的源目录本地目标目录下
     $ rsync -av --delete seismo-learn@192.168.1.100:~/source ~/workspace/destination
+
+    # 若只想查看命令效果，不真的执行命令，可以使用 -n 选项。例如
+    $ rsync -anv ~/Downloads/source ~/workspace/destination
+    $ rsync -anv --delete ~/Downloads/source seismo-learn@192.168.1.100:~/destination
+
+具体解释以下几个选项：
+
+- ``-a`` 选项表示以递归方式传输文件，并保持所有文件属性。使用该选项等于使用多种选项的组合 -rlptgoD，十分方便
+- ``-v`` 选项表示将执行结果输出到终端。可以用于查看哪些内容会被同步了
+- ``-n`` 选项模拟执行的结果，并不真的执行命令，适用于测试效果
+- ``delete`` 选项表示删除目标目录中那些不存在与源目录中的文件和目录，实现源目录和目标目录的同步。
 
 scp
 ---
