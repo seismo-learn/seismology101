@@ -28,35 +28,46 @@ Ubuntu 配置指南
 访问 `Ubuntu 官网 <https://ubuntu.com/>`__ 并下载 Ubuntu Desktop 镜像，
 一般选择 AMD64（x86_64）版本。
 
-**Ubuntu Desktop 20.04.1 LTS AMD64** 的 ISO 文件下载链接：
+**Ubuntu Desktop 20.04.1 LTS AMD64** 的 ISO 文件（约 2.6 GB）下载链接：
 
 - `官方镜像 <https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__
-- `国内中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__
+- `国内中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__ [**推荐国内用户使用**]
 
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
 
-可以使用 `Rufus <https://rufus.ie/zh_CN.html>`__\ （仅限 Windows）、\
-`UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）、\
-`balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）
+准备一个 4 GB 以上容量的 U 盘，利用 USB 启动盘制作工具和 ISO 镜像文件
 制作 USB 启动盘。
 
+USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh_CN.html>`__\ （仅限 Windows）、\
+`UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）
+或 `balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）。
+
+.. warning::
+
+   制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
+
 进入 Live 系统
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 将制作好的 USB 启动盘插入要安装 Ubuntu 系统的计算机上，开机启动，
-按下 F10 或 F12 进入 BIOS，并使计算机优先从 USB 盘启动。
-注意，不同型号的电脑进入 BIOS 的方法可能不同，请自行查询。
+按下 :kbd:`F10` 或 :kbd:`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
+正确启动后，则会进入 GRUB，按向上向下键选中“Ubuntu”以进入 Ubuntu 的 Live 系统。
 
-若计算机无法从 USB 盘启动，则可能是由于计算机的“安全启动”设置导致的，可以尝试
-进入 BIOS 设置，并在 BIOS 设置内关闭“安全启动”。
+.. note::
 
-如果尝试多次都无法正确从 USB 启动，则可能是 USB 启动盘制作失败，请尝试重新制作启动盘。
+    Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Live 系统中进行
+    任何操作以体验该系统。
+
+.. tip::
+
+    1.  不同型号的电脑进入 BIOS 的方法可能不同，请自行查询。
+    2.  若计算机无法从 USB 盘启动，则可能是由于计算机的“安全启动”设置导致的，
+        可以尝试进入 BIOS 设置，并在 BIOS 设置内关闭“安全启动”。
+    3.  如果尝试多次都无法正确从 USB 启动，则可能是 USB 启动盘制作失败，请尝试重新制作启动盘。
 
 开始安装
 ^^^^^^^^
-
-进入引导加载程序之后，选择“Ubuntu”。
 
 安装程序会首先要你选择安装过程中的语言，可以选择“中文（简体）”
 或 “English”，然后点击“Install Ubuntu” 即开始安装。接着选择键盘布局
@@ -66,7 +77,7 @@ Ubuntu 配置指南
 其他媒体格式安装第三方软件”。
 
 在“安装类型”中，选择“清除整个硬盘并安装 Ubuntu”。
-也可以点击“高级功能”选择启用和配置整个磁盘加密，使用 LVM，
+也可以点击“高级功能”选择启用和配置整个硬盘加密，使用 LVM，
 或使用 ZFS 文件系统。用户可选择“其他选项”自定义分区，但需要你了解 Linux 的分区操作。
 对于大多数人来说，默认选项可能会很好。
 
@@ -243,14 +254,14 @@ Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功
 Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
 ``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
-后方可通过双击 ``.rar`` 文件直接解压::
+即方可通过双击 ``.rar`` 文件直接解压::
 
     $ sudo apt install unar
 
 终端
 ^^^^^
 
-Ubuntu 自带的终端模拟器是 Terminal，使用起来中规中矩。
+Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 日常科研经常需要开好几个终端，切换和管理起来比较麻烦。
 
 `Terminator <https://gnome-terminator.org/>`__
