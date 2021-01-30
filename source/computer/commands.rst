@@ -2,7 +2,7 @@
 ========
 
 :本节贡献者: |姚家园|\（作者）、
-             |田冬冬|\（审稿）
+             |田冬冬|\（作者）
 :最近更新日期: 2021-01-29
 :预计花费时间: 120 分钟
 
@@ -302,7 +302,7 @@ rsync
     # 将源目录同步到目标目录下。~/workspace/destination/source 成为源目录的一个镜像
     $ rsync -av --delete ~/Downloads/source ~/workspace/destination
 
-    # 将源目录下的 **文件和目录** 同步到目标目录下。~/workspace/destination 成为源目录的一个镜像
+    # 将源目录下的文件和目录同步到目标目录下。~/workspace/destination 成为源目录的一个镜像
     # 该命令与上一命令相比，在源目录的结尾多了一个反斜杠 "/"
     $ rsync -av --delete ~/Downloads/source/ ~/workspace/destination
 
@@ -327,7 +327,7 @@ rsync
 scp
 ---
 
-``scp`` 命令的命名来源于 **s**\ ecure **c**\ o\ **p**\ y，可用于本地和远程电脑之间传输文件。
+``scp`` 命令的命名来源于 **s**\ ecure **c**\ o\ **p**\ y（安全复制），可用于本地和远程计算机之间传输文件。
 该命令基于 `ssh`_ 进行安全的远程文件传输，因此传输是加密的。虽然 ``scp`` 传输速度不如 `rsync`_
 命令，但是它不占系统资源。当需要传输大量小文件时，使用 `rsync`_ 命名会导致
 硬盘 I/O（输入/输出）非常高，而 ``scp`` 基本不影响系统正常使用。
@@ -353,10 +353,10 @@ sed
     # 将 file 中每一行的所有的 book 都替换成 books
     $ sed 's/book/books/g' file
 
-    # 以上命令只是将转换后的文本内容输出出来，并为改变文件本身。可以使用 -i 选项直接改变文件
+    # 以上命令只是将转换后的文本内容输出出来，并未改变文件本身。可以使用 -i 选项直接改变文件
     $ sed -i 's/book/books/g' file
 
-    # 以上命令使用斜杠 / 当定界符，也可以使用任意定界符
+    # 以上命令使用斜杠 / 当定界符，也可以使用任意定界符，比如 #
     $ sed 's#book#books#' file
     $ sed 's#book#books#g' file
     $ sed -i 's#book#books#g' file
@@ -395,6 +395,9 @@ sort
     # 按第三列的数值大小进行升序排列
     $ sort -k3,3n seismo-learn-sort.txt
 
+     # 按第三列的数值大小进行降序排列
+     $ sort -k3,3nr seismo-learn-sort.txt
+     
 ssh
 ---
 
