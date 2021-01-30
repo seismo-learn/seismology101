@@ -100,7 +100,7 @@ Ubuntu 使用包管理器 ``apt`` 来安装、卸载和管理软件包。
 ``apt`` 的详细用法请阅读 `apt 帮助文档 <http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html>`__\ ，
 这里只介绍一些常用命令::
 
-    # 更新软件包索引文件
+    # 更新本地软件包元数据
     $ sudo apt update
 
     # 检查并升级所有已经安装的软件
