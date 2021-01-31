@@ -6,6 +6,10 @@
 :最近更新日期: 2021-01-30
 :预计阅读时间: 20 分钟
 
+.. warning::
+
+   本章正在编写中，尚未完成。
+
 ----
 
 **备份！备份！备份！**
@@ -45,20 +49,19 @@
 在不同设备之间同步文件。例如，可以把一份文件传到网盘上，在不同操作系统的客户端下都可以操作文件，
 且文件一直保持同步。
 
-目前比较流行的网盘有：
+.. table:: 近几年比较流行的网盘
+   :align: center
 
-- `坚果云 <https://www.jianguoyun.com>`__\ ：国内最好的全平台网盘。不限空间，
-  但限制流量，每月上传流量 1 GB，下载流量 3 GB。有需要的可以考虑购买高级版。
-- `百度网盘 <https://pan.baidu.com>`__\ ：全平台网盘，免费空间可以有 2 TB。
-- `Dropbox <https://www.dropbox.com/>`__\ ：国外最好用的全平台网盘，熟练掌握
-  科学上网技巧的人可以使用。免费用户只有 2 GB 容量，最大可扩容到 18 GB 以上。
-  付费用户容量为 1 TB。
-- `MEGA <https://mega.io/>`__\ ：全平台网盘，免费空间 50 GB。
-- `Google Drive <https://www.google.com/drive/>`__\ ：Google 云端硬盘。免费容量 15 GB，由 Google 云端网盘、
-  `Google 相册 <https://www.google.com/photos/>`__ \ 、Gmail 共用。
-- `OneDrive <https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage>`__\ ：
-  微软的云存储服务，初始免费容量 5 GB。Word、Excel、PowerPoint 以及 Onenote 等微软软件的文件
-  都可以直接保存到 OneDrive 中。
+   ============================================================================================= ======================================================================================== ========================================= ==============
+     网盘名称                                                                                      网盘空间                                                                                 适用平台                                  国内是否可用
+   ============================================================================================= ======================================================================================== ========================================= ==============
+    `坚果云 <https://www.jianguoyun.com>`__                                                        免费空间受限于上传流量，每月上传流量 1 GB，下载流量 3 GB；专业版有 42 GB（200 元/年）   Linux、macOS、Windows、Android、iPhone           是
+    `百度网盘 <https://pan.baidu.com>`__                                                           免费空间 2 TB                                                                           Linux、macOS、Windows、Android、iPhone     是 
+    `Dropbox <https://www.dropbox.com/>`__                                                        免费空间 2 GB；Plus 版有 1 TB（120 美金/年）                                            Linux、macOS、Windows、Android、iPhone      否
+    `OneDrive <https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage>`__    免费空间 5 GB；单购 100 GB（15 元/年）；Microsoft 365 有 1 TB（398 元/年）                macOS、Windows、Android、iPhone         网页版不可以、客户端可以
+    `Google Drive <https://www.google.com/drive/>`__                                              免费空间 15 GB（Google 云端网盘、相册、邮箱共用）；单购 100 GB（2 美金/月）                  macOS、Windows、Android、iPhone        否
+    `MEGA <https://mega.io/>`__                                                                   免费空间 50 GB；Pro Lite 有 400 GB（8 美金/月）；Pro III 有 16 TB（48 美金/月）            Linux、macOS、Windows、Android、iPhone   网页版不可以、客户端可以
+   ============================================================================================= ======================================================================================== ========================================= ==============
 
 用户可以根据自己的需求（即是同步文件还是备份文件）和资金，选择适合的网盘。国内用户
 推荐使用坚果云在不同设备之间进行文件传输和同步。
@@ -83,16 +86,10 @@ rysnc
 DejaDup
 ^^^^^^^
 
-.. warning::
-
-   本段正在编写中，尚未完成。
 
 btrfs
 ^^^^^
 
-.. warning::
-
-   本段正在编写中，尚未完成。
 
 macOS
 -----
@@ -102,16 +99,11 @@ macOS 下最好用的备份工具当属 Time Machine，当然也可以使用 ``r
 Time Machine
 ^^^^^^^^^^^^^
 
-.. warning::
-
-   本段正在编写中，尚未完成。
 
 rysnc
 ^^^^^^
 
-.. warning::
 
-   本段正在编写中，尚未完成。
 
 Windows
 -------
@@ -119,13 +111,7 @@ Windows
 robocopy
 ^^^^^^^^
 
-.. warning::
-
-   本段正在编写中，尚未完成。
 
 Backup
 ^^^^^^
 
-.. warning::
-
-   本段正在编写中，尚未完成。
