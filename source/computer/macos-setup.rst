@@ -334,7 +334,9 @@ macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。�
 
 macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但不支持 ``.rar`` 格式。
 推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__\ ，其支持
-几乎所有压缩格式。通过双击 ``.rar`` 文件直接解压::
+几乎所有压缩格式。安装后即可通过双击 ``.rar`` 文件直接解压。
+
+安装 The Unarchiver::
 
     $ brew install --cask the-unarchiver
 
