@@ -105,7 +105,7 @@
 
    .. code-tab:: bash macOS
 
-      # brew install --cask nutstore
+      $ brew install --cask nutstore
 
 本文主要总结如何使用移动硬盘来备份文件。
 
