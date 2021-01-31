@@ -50,64 +50,12 @@
 无法再次获取的数据、经过长时间处理得到的资料。如果拥有更多硬盘存储空间且备份时间能够接受，
 可以进一步选择备份家目录，甚至全盘备份。
 
-备份的介质
-----------
+备份的存储设备
+--------------
 
-我们需要一定的存储空间来备份电脑里的文件，常用的备份介质有\ **移动硬盘**\ 和\ **网盘**\ 。
-
-移动硬盘是最常见的备份介质，其特点是携带方便、价格便宜。近几年，移动硬盘发展迅速，市场上
-常见的存储空间大小有 4TB 和 5TB，基本可以满足日常科研的备份需求。
-
-现在网盘越来越流行，如\ `坚果云 <https://www.jianguoyun.com>`__\ 、\ `百度网盘 <https://pan.baidu.com>`__\ 。
-网盘本质上是云端的硬盘，通过网络连接使用。大多数网盘都有客户端，本地客户端里的文件跟云端实时同步，
-用户基本不要做额外操作。因此，网盘的主要用途便是备份文件以及在不同设备之间（不同系统的电脑以及手机）同步文件。
-例如，可以把一份文件传到网盘上，在不同操作系统的客户端下都可以操作文件，且文件一直保持同步。
-
-.. table:: 近几年比较流行的网盘
-   :align: center
-
-   ============================================================================================= ======================================================================================== ========================================= ==============
-     网盘名称                                                                                      网盘空间                                                                                 适用平台                                  国内是否可用
-   ============================================================================================= ======================================================================================== ========================================= ==============
-    `坚果云 <https://www.jianguoyun.com>`__                                                        免费空间受限于上传流量，每月上传流量 1 GB，下载流量 3 GB；专业版有 42 GB（200 元/年）   Linux、macOS、Windows、Android、iPhone           是
-    `百度网盘 <https://pan.baidu.com>`__                                                           免费空间 2 TB                                                                           Linux、macOS、Windows、Android、iPhone     是 
-    `Dropbox <https://www.dropbox.com/>`__                                                        免费空间 2 GB；Plus 版有 1 TB（120 美金/年）                                            Linux、macOS、Windows、Android、iPhone      否
-    `OneDrive <https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage>`__    免费空间 5 GB；单购 100 GB（15 元/年）；Microsoft 365 有 1 TB（398 元/年）                macOS、Windows、Android、iPhone         网页版不可以、客户端可以
-    `Google Drive <https://www.google.com/drive/>`__                                              免费空间 15 GB（Google 云端网盘、相册、邮箱共用）；单购 100 GB（2 美金/月）                  macOS、Windows、Android、iPhone        否
-    `MEGA <https://mega.io/>`__                                                                   免费空间 50 GB；Pro Lite 有 400 GB（8 美金/月）；Pro III 有 16 TB（48 美金/月）            Linux、macOS、Windows、Android、iPhone   网页版不可以、客户端可以
-   ============================================================================================= ======================================================================================== ========================================= ==============
-
-用户可以根据自身需求（即是同步文件还是备份文件）和资金，选择适合的网盘。国内用户
-推荐使用坚果云在不同设备之间进行文件传输和同步：
-
-.. tabs::
-
-   .. code-tab:: bash Fedora
-
-      # 下载 64 位 RPM 包
-      $ wget https://www.jianguoyun.com/static/exe/installer/fedora/nautilus_nutstore_amd64.rpm
-      # 安装坚果云
-      $ sudo dnf install nautilus_nutstore_amd64.rpm
-
-   .. code-tab:: bash CentOS
-
-      # 下载 64 位 RPM 包
-      $ wget https://www.jianguoyun.com/static/exe/installer/fedora/nautilus_nutstore_amd64.rpm
-      # 安装坚果云
-      $ sudo yum install nautilus_nutstore_amd64.rpm
-
-   .. code-tab:: bash Ubuntu/Debian
-
-      # 下载 64 位 deb 包
-      $ wget https://www.jianguoyun.com/static/exe/installer/ubuntu/nautilus_nutstore_amd64.deb
-      # 安装坚果云
-      $ sudo apt install ./nautilus_nutstore_amd64.deb
-
-   .. code-tab:: bash macOS
-
-      $ brew install --cask nutstore
-
-本文主要总结如何使用移动硬盘来备份文件。
+我们需要一定的存储设备来备份电脑里的文件。移动硬盘是最常见的备份设备，其特点是携带方便、
+价格便宜。近几年，移动硬盘发展迅速，市场上常见的存储空间大小有 4TB 和 5TB，单价不到 1000 块，
+基本可以满足日常科研的备份需求。
 
 Linux
 ------
