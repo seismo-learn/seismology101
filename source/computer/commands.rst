@@ -395,8 +395,8 @@ sort
     # 按第三列的数值大小进行升序排列
     $ sort -k3,3n seismo-learn-sort.txt
 
-     # 按第三列的数值大小进行降序排列
-     $ sort -k3,3nr seismo-learn-sort.txt
+    # 按第三列的数值大小进行降序排列
+    $ sort -k3,3nr seismo-learn-sort.txt
      
 ssh
 ---
