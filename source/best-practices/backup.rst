@@ -103,6 +103,10 @@
       # 安装坚果云
       $ sudo apt install ./nautilus_nutstore_amd64.deb
 
+   .. code-tab:: bash macOS
+
+      # brew install --cask nutstore
+
 本文主要总结如何使用移动硬盘来备份文件。
 
 Linux
