@@ -2,6 +2,9 @@
 #
 # 使用 rsync 命令备份指定目录
 #
+#        作者： 姚家园、田冬冬
+# 最近修改日期： 2021年2月1日
+#
 
 source="${HOME}/workspace/source"  # 源目录
 backup="${HOME}/workspace/backup"  # 备份目录
