@@ -24,7 +24,7 @@ echo "## backup begins at ${start}" >> "${log}"
 for dir in "${dirs[@]}"; do
     echo -e "------------------------------------------\nbackup ${dir}"
     now=`date +%F-%H:%M:%S`
-	echo "backup ${dir} at ${now}" >> "${log}"
+    echo "backup ${dir} at ${now}" >> "${log}"
     rsync -av --delete "${dir}" "${backup}"
 done
 
