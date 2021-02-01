@@ -35,7 +35,7 @@ done
 end=`date +%F-%H:%M:%S`;
 echo -e "## backup ends at ${end}\n\n" >> "${log}"
 
-# 检查备份目录下是否存在源目录已删除的目录
+# 检查备份目录下是否存在源目录下已删除的目录
 echo -e "\n++++++++++++++++++++++++++++++++++++\nBackup is finished! Begin to check!\n"
 flag=1
 dirs_backup=( ${backup}/* )
