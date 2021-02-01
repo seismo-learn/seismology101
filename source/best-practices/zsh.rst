@@ -64,6 +64,15 @@ Zsh 稍作配置会更加方便好用。`Oh My Zsh <https://ohmyz.sh/>`__ 是由
 该命令会下载 Oh My Zsh 到 :file:`~/.oh-my-zsh` 目录下，生成默认的 Zsh 配置文件 :file:`~/.zshrc`\ ，
 并备份老的配置到类似 :file:`~/.zshrc.pre-oh-my-zsh` 的文件中。
 
+.. note::
+
+   GitHub 在国内访问不畅，以上安装命令可能会由于网络问题而失败。若以上命令失败，
+   可直接打开脚本链接 https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh，
+   复制脚本内容到文本编辑器中（如 Visual Studio Code），并保存。然后直接运行本地保存的脚本
+   即可::
+
+       $ sh install.sh
+
 之后可以根据个人习惯修改配置文件 :file:`~/.zshrc`\ ，如\
 `设置主题 <https://github.com/ohmyzsh/ohmyzsh#themes>`__\
 、\ `启用插件 <https://github.com/ohmyzsh/ohmyzsh#plugins>`__\
