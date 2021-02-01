@@ -7,14 +7,14 @@ source="${HOME}/workspace/source"  # 源目录
 backup="${HOME}/workspace/backup"  # 备份目录
 log="${backup}/backup.log"         # 备份目录下的备份日志
 
-mkdir -p "${backup}"      # 若备份目录不存在，则新建
-
-dirs=( ${source}/* )      # 备份家目录下所有子目录（不含隐藏目录和文件）
-# dirs=(                  # 仅备份部分目录
+dirs=( ${source}/* )      # 备份源目录下所有子目录（不含隐藏目录和文件）
+# dirs=(                  # 仅备份源目录下部分子目录
 #     "${source}/src"
 #     "${source}/software"
 #     "${source}/codes"
 # )
+
+mkdir -p "${backup}"      # 若备份目录不存在，则新建
 
 # 备份开始时间
 start=`date +%F-%H:%M:%S`
