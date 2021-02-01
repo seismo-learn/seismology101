@@ -45,6 +45,7 @@ extensions = [
     "sphinx.ext.githubpages",
     "sphinx.ext.intersphinx",
     "sphinx_cjkspace.cjkspace",
+    "sphinx_copybutton",
     "sphinx_tabs.tabs",
 ]
 
@@ -71,6 +72,12 @@ intersphinx_mapping = {
     "software": ("https://seismo-learn.org/software/", None),
 }
 
+# options for sphinx-copybutton
+# https://sphinx-copybutton.readthedocs.io
+copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
+copybutton_prompt_is_regexp = True
+copybutton_only_copy_prompt_lines = True
+copybutton_remove_prompts = True
 
 # -- Options for HTML output -------------------------------------------------
 import sphinx_rtd_theme
