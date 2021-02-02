@@ -73,8 +73,10 @@ rysnc
 
    # 修改可执行权限
    $ chmod +x backup.sh
+   
    # 移动至 ~/bin/ 目录
    $ mv backup.sh ~/bin
+   
    # 执行命令开始备份
    $ backup.sh
 
