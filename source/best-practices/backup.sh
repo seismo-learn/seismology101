@@ -3,13 +3,23 @@
 # 使用 rsync 命令备份指定目录
 #
 #        作者： 姚家园、田冬冬
-# 最近修改日期： 2021年2月1日
+# 最近修改日期： 2021年2月2日
 #
 
 source="${HOME}/workspace/source"  # 源目录
 backup="${HOME}/workspace/backup"  # 备份目录（通常为移动硬盘的挂载目录）
 log="${backup}/backup.log"         # 备份目录下的备份日志
 
+# 检查源目录
+if [ ! -d "${source}" ]; then                 # 源目录不存在，退出程序
+    echo "[${source}] does not exists!"
+    exit
+elif [[ `ls ${source} | wc -w` =~ 0 ]]; then  # 源目录是空目录，退出程序
+    echo "[${source}] is empty!"
+    exit
+fi
+
+# 列出需要备份的目录
 dirs=( ${source}/* )      # 备份源目录下所有子目录（不含隐藏目录和文件）
 # dirs=(                  # 仅备份源目录下部分子目录
 #     "${source}/src"
@@ -17,24 +27,25 @@ dirs=( ${source}/* )      # 备份源目录下所有子目录（不含隐藏目�
 #     "${source}/codes"
 # )
 
-mkdir -p "${backup}"      # 若备份目录不存在，则新建
+# 若备份目录不存在，则新建
+mkdir -p "${backup}"
 
 # 备份开始时间
-echo "## backup begins at $(date +%F-%H:%M:%S)" >> "${log}"
+echo "## Backup begins at $(date +%F-%H:%M:%S)" >> "${log}"
 
 # 按序备份每个目录
 for dir in "${dirs[@]}"; do
     echo -e "------------------------------------------\n"
-    echo -e "backup ${dir}\n"
-    echo "backup ${dir} at $(date +%F-%H:%M:%S)" >> "${log}"
+    echo -e "Backup ${dir}\n"
+    echo "Backup ${dir} at $(date +%F-%H:%M:%S)" >> "${log}"
     rsync -av --delete "${dir}" "${backup}"
 done
 
 # 备份结束时间
-echo -e "## backup ends at $(date +%F-%H:%M:%S)\n\n" >> "${log}"
+echo -e "## Backup ends at $(date +%F-%H:%M:%S)\n\n" >> "${log}"
 
 # 检查备份目录下是否存在源目录下已删除的目录
-echo -e "\n++++++++++++++++++++++++++++++++++++\n"
+echo -e "\n++++++++++++++++++++++++++++++++++++++++++++\n"
 echo -e "Backup is finished! Begin to check!\n"
 flag=1
 dirs_backup=( ${backup}/* )
