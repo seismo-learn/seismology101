@@ -43,7 +43,7 @@
 只同步改动过的文件，所需时间较短。考虑以上两点因素以及硬盘摔坏带来的精神和身体上的损失，
 我们推荐备份家目录或者至少备份家目录下重要的子目录。有需求的用户可以考虑全盘备份。
 
-建议每隔一段时间（如每周、每月）做一次备份。放假前、出差开会前，也建议备份一下。
+建议每隔一段时间（如每周）做一次备份。放假前、出差开会前，也建议备份一下。
 
 Linux
 ------
@@ -51,16 +51,16 @@ Linux
 rysnc
 ^^^^^^
 
-使用 ``rsync`` 命令进行备份十分简便。假设用户名为 seismo-learn，移动硬盘下的备份目录
+使用 ``rsync`` 命令进行备份十分方便。假设用户名为 seismo-learn，移动硬盘下的备份目录
 为 :file:`/mnt/seismo-learn/backup/` 。使用以下命令可以将家目录下的所有子目录和文件
 完整同步到备份目录下，此时备份目录是家目录的一个镜像::
 
     $ rsync --delete -av /home/seismo-learn/ /mnt/seismo-learn/backup/
 
-.. note::
+.. important::
 
    以上命令中家目录最后的斜杠 :file:`seismo-learn/` 非常重要。若没有这个斜杠
-   （\ :file:`/home/seismo-learn`\ ），则会把家目录本身同步到备份目目录下，
+   （\ :file:`/home/seismo-learn`\ ），则会把家目录本身同步到备份目录下，
    即产生 :file:`/mnt/seismo-learn/backup/seismo-learn` 目录。
 
 ``rsync`` 的特色在于增量备份。这意味着只有第一次备份的时候需要花比较多的时间来
@@ -70,8 +70,12 @@ rysnc
 读者可以参考 Bash 模板脚本 :download:`backup.sh`\ 。点击下载后，修改源目录、
 备份目录以及想要备份的子目录，然后修改文件权限为可执行，并将脚本移至 :file:`~/bin` 目录下::
 
+   # 修改可执行权限
    $ chmod +x backup.sh
+   # 移动至 ~/bin/ 目录
    $ mv backup.sh ~/bin
+   # 执行命令开始备份
+   $ backup.sh
 
 DejaDup
 ^^^^^^^

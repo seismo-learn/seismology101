@@ -20,23 +20,22 @@ dirs=( ${source}/* )      # 备份源目录下所有子目录（不含隐藏目�
 mkdir -p "${backup}"      # 若备份目录不存在，则新建
 
 # 备份开始时间
-start=`date +%F-%H:%M:%S`
-echo "## backup begins at ${start}" >> "${log}"
+echo "## backup begins at $(date +%F-%H:%M:%S)" >> "${log}"
 
 # 按序备份每个目录
 for dir in "${dirs[@]}"; do
-    echo -e "------------------------------------------\nbackup ${dir}"
-    now=`date +%F-%H:%M:%S`
-    echo "backup ${dir} at ${now}" >> "${log}"
+    echo -e "------------------------------------------\n"
+    echo -e "backup ${dir}\n"
+    echo "backup ${dir} at $(date +%F-%H:%M:%S)" >> "${log}"
     rsync -av --delete "${dir}" "${backup}"
 done
 
 # 备份结束时间
-end=`date +%F-%H:%M:%S`;
-echo -e "## backup ends at ${end}\n\n" >> "${log}"
+echo -e "## backup ends at $(date +%F-%H:%M:%S)\n\n" >> "${log}"
 
 # 检查备份目录下是否存在源目录下已删除的目录
-echo -e "\n++++++++++++++++++++++++++++++++++++\nBackup is finished! Begin to check!\n"
+echo -e "\n++++++++++++++++++++++++++++++++++++\n"
+echo -e "Backup is finished! Begin to check!\n"
 flag=1
 dirs_backup=( ${backup}/* )
 for dir_backup in "${dirs_backup[@]}"; do
