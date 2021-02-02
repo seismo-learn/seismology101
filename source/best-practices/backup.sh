@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #
-# 使用 rsync 命令备份指定目录
-#
+#        目的： 使用 rsync 命令备份指定目录
 #        作者： 姚家园、田冬冬
 # 最近修改日期： 2021年2月2日
 #
@@ -11,10 +10,10 @@ backup="${HOME}/workspace/backup"  # 备份目录（通常为移动硬盘的挂�
 log="${backup}/backup.log"         # 备份目录下的备份日志
 
 # 检查源目录
-if [ ! -d "${source}" ]; then                 # 源目录不存在，退出程序
+if [ ! -d "${source}" ]; then        # 源目录不存在，退出程序
     echo "[${source}] does not exist!"
     exit
-elif [ -z $(ls "${source}") ]; then  # 源目录是空目录，退出程序
+elif [ -z "$(ls ${source})" ]; then  # 源目录是空目录，退出程序
     echo "[${source}] is empty!"
     exit
 fi
@@ -57,7 +56,7 @@ for dir_backup in "${dirs_backup[@]}"; do
     fi
 
     # 备份目录下存在源目录下已删除的目录
-    if [ $(echo "${dirs[@]}" | grep -wq "${source}/${dir_name}" &&  echo "Yes" || echo "No") == "No" ]; then
+    if [ ! -d "${source}/${dir_name}" ]; then
         echo "[${dir_name}] is deleted in [${source}] but is still in [${backup}]."
         flag=0
     fi
