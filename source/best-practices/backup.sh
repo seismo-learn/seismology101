@@ -14,7 +14,7 @@ log="${backup}/backup.log"         # 备份目录下的备份日志
 if [ ! -d "${source}" ]; then                 # 源目录不存在，退出程序
     echo "[${source}] does not exist!"
     exit
-elif [[ `ls ${source} | wc -w` =~ 0 ]]; then  # 源目录是空目录，退出程序
+elif [ -z $(ls "${source}") ]; then  # 源目录是空目录，退出程序
     echo "[${source}] is empty!"
     exit
 fi
