@@ -55,7 +55,7 @@ rysnc
 为 :file:`/mnt/seismo-learn/backup/` 。使用以下命令可以将家目录下的所有子目录和文件
 完整同步到备份目录下，此时备份目录是家目录的一个镜像::
 
-    $ rsync --delete -av /home/seismo-learn/ /mnt/seismo-learn/backup/
+    $ rsync -av --delete /home/seismo-learn/ /mnt/seismo-learn/backup/
 
 .. important::
 
