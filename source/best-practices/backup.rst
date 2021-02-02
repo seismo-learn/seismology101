@@ -3,7 +3,7 @@
 
 :本节贡献者: |姚家园|\（作者）、
              |田冬冬|\（作者）
-:最近更新日期: 2021-01-31
+:最近更新日期: 2021-02-02
 :预计阅读时间: 20 分钟
 
 .. warning::
@@ -43,20 +43,42 @@
 只同步改动过的文件，所需时间较短。考虑以上两点因素以及硬盘摔坏带来的精神和身体上的损失，
 我们推荐备份家目录或者至少备份家目录下重要的子目录。有需求的用户可以考虑全盘备份。
 
+建议每隔一段时间（如每周）做一次备份。放假前、出差开会前，也建议备份一下。
+
 Linux
 ------
 
 rysnc
 ^^^^^^
 
-至少每周将工作电脑中的文件备份到移动硬盘中。推荐使用 ``rsync`` 命令进行备份，其用法为::
+使用 ``rsync`` 命令进行备份十分方便。假设用户名为 seismo-learn，移动硬盘下的备份目录
+为 :file:`/mnt/seismo-learn/backup/` 。使用以下命令可以将家目录下的所有子目录和文件
+完整同步到备份目录下，此时备份目录是家目录的一个镜像::
 
-    $ rsync --delete -av /home/seismo-learn/ /mnt/seismo-learn/backup/
+    $ rsync -av --delete /home/seismo-learn/ /mnt/seismo-learn/backup/
 
-该命令作用是将 :file:`/home/seismo-learn/` 目录完整同步到 :file:`/mnt/seismo-learn/backup/` 目录下。
+.. important::
 
-``rsync`` 的特色在于增量备份。这意味着只有第一次备份的时候需要花比较多的时间，
-以后再使用该命令进行备份时只会同步改动过的文件。假如你一周只修改了一个文件，那么同步的过程会在瞬间完成。
+   以上命令中家目录最后的斜杠 :file:`seismo-learn/` 非常重要。若没有这个斜杠
+   （\ :file:`/home/seismo-learn`\ ），则会把家目录本身同步到备份目录下，
+   即产生 :file:`/mnt/seismo-learn/backup/seismo-learn` 目录。
+
+``rsync`` 的特色在于增量备份。这意味着只有第一次备份的时候需要花比较多的时间来
+同步文件，之后再使用该命令进行备份只会同步有改动的文件。假如一周只修改了一个文件，
+那么同步的过程会在瞬间完成。
+
+读者可以参考 Bash 模板脚本 :download:`backup.sh`\ 。点击下载后，修改源目录、
+备份目录以及想要备份的子目录。然后按以下命令，修改文件权限为可执行，
+并将脚本移至 :file:`~/bin` 目录下，就可以运行了::
+
+   # 修改可执行权限
+   $ chmod +x backup.sh
+   
+   # 移动至 ~/bin/ 目录
+   $ mv backup.sh ~/bin
+   
+   # 执行命令开始备份
+   $ backup.sh
 
 DejaDup
 ^^^^^^^
@@ -69,16 +91,11 @@ btrfs
 macOS
 -----
 
-macOS 下最好用的备份工具当属 Time Machine，当然也可以使用 ``rsync`` 命令进行备份。
+macOS 下最好用的备份工具当属 Time Machine，推荐使用 Time Machine 进行备份。
+当然也可以选择使用 ``rsync`` 命令进行备份，与 Linux 下相同。
 
 Time Machine
 ^^^^^^^^^^^^^
-
-
-rysnc
-^^^^^^
-
-
 
 Windows
 -------
