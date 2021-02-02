@@ -49,7 +49,7 @@ WSL 的安装方式可以参考官方文档：
 WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
 推荐使用 WSL 安装 Ubuntu 20.04 LTS。
 
-WSL 默认以 root 启动，在管理员权限的 PowerShell 中
+如果安装后 WSL 总是以 root 用户登录，在管理员权限的 PowerShell 中
 输入如下命令即可改为非 root 用户，其中 UbuntuName 为发行版的名称::
   
    Get-ItemProperty Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*\ DistributionName | Where-Object -Property DistributionName -eq UbuntuName  | Set-ItemProperty -Name DefaultUid -Value 1000
