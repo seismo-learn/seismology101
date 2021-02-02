@@ -7,7 +7,7 @@
 #
 
 source="${HOME}/workspace/source"  # 源目录
-backup="${HOME}/workspace/backup"  # 备份目录
+backup="${HOME}/workspace/backup"  # 备份目录（通常为移动硬盘的挂载目录）
 log="${backup}/backup.log"         # 备份目录下的备份日志
 
 dirs=( ${source}/* )      # 备份源目录下所有子目录（不含隐藏目录和文件）
