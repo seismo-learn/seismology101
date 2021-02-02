@@ -57,12 +57,6 @@ for dir_backup in "${dirs_backup[@]}"; do
     fi
 
     # 备份目录下存在源目录下已删除的目录
-    # if [[ ! "${dirs[@]}"  =~ "${source}/${dir_name}" ]]; then
-    #     echo "[${dir_name}] is deleted in [${source}] but is still in [${backup}]."
-    #     flag=0
-    # fi
-
-    # 备份目录下存在源目录下已删除的目录
     if [ $(echo "${dirs[@]}" | grep -wq "${source}/${dir_name}" &&  echo "Yes" || echo "No") == "No" ]; then
         echo "[${dir_name}] is deleted in [${source}] but is still in [${backup}]."
         flag=0
