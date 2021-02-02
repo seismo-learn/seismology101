@@ -5,8 +5,8 @@
 # 最近修改日期： 2021年2月2日
 #
 
-source="${HOME}/workspace/source"  # 源目录
-backup="${HOME}/workspace/backup"  # 备份目录（通常为移动硬盘的挂载目录）
+source="${HOME}"                   # 源目录
+backup="/mnt/seismo-learn/backup"  # 备份目录（通常为移动硬盘的挂载目录）
 log="${backup}/backup.log"         # 备份目录下的备份日志
 
 # 检查源目录
