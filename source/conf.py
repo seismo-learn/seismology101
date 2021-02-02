@@ -80,9 +80,7 @@ copybutton_only_copy_prompt_lines = True
 copybutton_remove_prompts = True
 
 # -- Options for HTML output -------------------------------------------------
-import sphinx_rtd_theme
-
-html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_book_theme"
 html_static_path = ["_static"]
 html_extra_path = []
 html_last_updated_fmt = "%Y 年 %m 月 %d 日"
