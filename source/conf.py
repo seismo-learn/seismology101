@@ -88,6 +88,13 @@ html_last_updated_fmt = "%Y 年 %m 月 %d 日"
 html_title = project
 html_css_files = ["custom.css"]
 
+html_theme_options = {
+    "repository_url": f"{github_url}",
+    "use_edit_page_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+}
+
 html_context = {
     "favicon": "favicon.ico",
     "display_github": True,
