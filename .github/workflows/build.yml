@@ -30,6 +30,9 @@ jobs:
       - name: Build sphinx document
         run: make dirhtml
 
+      - name: Debug
+        run: echo ${{ github.event_name }}
+
       - name: Deploy documentation
         if: success() && github.event_name == 'push'
         # peaceiris/actions-gh-pages@v3.7.3
