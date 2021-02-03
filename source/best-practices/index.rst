@@ -9,12 +9,3 @@
     **实践是检验真理的唯一标准！**
 
     **整理和总结是提高科研生产率的有效催化剂！**
-
-
-.. toctree::
-   :maxdepth: 1
-
-   file-organization
-   software-installation
-   backup
-   zsh
