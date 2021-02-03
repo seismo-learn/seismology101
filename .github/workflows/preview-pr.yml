@@ -1,11 +1,12 @@
-name: CI
+#
+# Build and preview documentation in PRs
+#
+name: Preview PR
 
-# Run for PRs and the main branch
+# Runs for 'pull_request_target', not 'pull_request',
+# so that it also works for PRs from external contributors
 on:
   pull_request_target:
-  push:
-    branches:
-      - main
 
 jobs:
   deploy:
@@ -14,10 +15,6 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.7.0
 
-      - name: Checkout
-        uses: actions/checkout@v2
-        if: github.event_name == 'push'
-
       # pull_request_target checks out codes in the base repository
       # so we have to explicitly specify PR head repository and sha
       - name: Checkout
@@ -25,36 +22,19 @@ jobs:
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
-        if: github.event_name == 'pull_request_target'
 
       - name: Set up Python
         uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build sphinx document
+      - name: Build documentation
         run: make dirhtml
 
-      - name: Deploy documentation
-        if: success() && github.event_name == 'push'
-        # peaceiris/actions-gh-pages@v3.7.3
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/dirhtml
-          # Only keep the latest commit to avoid bloating the repository
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-
       - name: Deploy for preview
-        if: success() && github.event_name == 'pull_request_target'
         # peaceiris/actions-gh-pages@v3.7.3
         # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
         uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
@@ -73,7 +53,6 @@ jobs:
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
-        if: github.event_name == 'pull_request_target'
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -81,18 +60,18 @@ jobs:
           body-includes: This comment was written by the Continuous Documentation bot!
 
       - name: Create comment
-        if: steps.fc.outputs.comment-id == 0 && github.event_name == 'pull_request_target'
+        if: steps.fc.outputs.comment-id == 0
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             This comment was written by the Continuous Documentation bot!
 
-            - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}
+            - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}/index.html
             - **Commit hash**: ${{ github.event.pull_request.head.sha }}
 
       - name: Update comment
-        if: steps.fc.outputs.comment-id != 0 && github.event_name == 'pull_request_target'
+        if: steps.fc.outputs.comment-id != 0
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
@@ -100,5 +79,5 @@ jobs:
           body: |
             This comment was written by the Continuous Documentation bot!
 
-            - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}
+            - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}/index.html
             - **Commit hash**: ${{ github.event.pull_request.head.sha }}
