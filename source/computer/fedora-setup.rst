@@ -264,9 +264,9 @@ Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
 以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
 
-- :kbd:`Ctrl + Shift + O`\ : 水平分隔终端
-- :kbd:`Ctrl + Shift + E`\ :  垂直分隔终端
-- :kbd:`Alt + 上下左右`\ :  切换子终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分隔终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分隔终端
+- :kbd:`Alt` + :kbd:`上下左右`\ :  切换子终端
 
 Google Earth
 ^^^^^^^^^^^^
