@@ -39,6 +39,7 @@ Linux 入门
 
    # 使用 echo（回声）命令输出 Hello World!
    $ echo "Hello World"
+   
    # 退出终端
    $ exit
 
