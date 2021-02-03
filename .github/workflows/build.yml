@@ -2,6 +2,7 @@ name: CI
 
 # Run for PRs and the main branch
 on:
+  pull_request:
   pull_request_target:
   push:
     branches:
@@ -13,6 +14,11 @@ jobs:
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.7.0
+
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
       - name: Checkout
         uses: actions/checkout@v2
