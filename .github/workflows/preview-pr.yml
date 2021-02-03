@@ -1,12 +1,11 @@
 #
 # Build and preview documentation in PRs
+# DO NOT WORK FOR FORKS.
 #
 name: Preview PR
 
-# Runs for 'pull_request_target', not 'pull_request',
-# so that it also works for PRs from external contributors
 on:
-  pull_request_target:
+  pull_request:
 
 jobs:
   deploy:
@@ -15,13 +14,8 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.7.0
 
-      # pull_request_target checks out codes in the base repository
-      # so we have to explicitly specify PR head repository and sha
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Set up Python
         uses: actions/setup-python@v2
