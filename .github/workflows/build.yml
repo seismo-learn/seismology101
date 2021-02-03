@@ -44,7 +44,7 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
 
       - name: Deploy for preview
-        if: success() && github.event_name == 'pull_request'
+        if: success() && github.event_name == 'pull_request_target'
         # peaceiris/actions-gh-pages@v3.7.3
         # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
         uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
@@ -63,7 +63,7 @@ jobs:
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request_target'
         id: fc
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -71,7 +71,7 @@ jobs:
           body-includes: This comment was written by the Continuous Documentation bot!
 
       - name: Create comment
-        if: steps.fc.outputs.comment-id == 0 && github.event_name == 'pull_request'
+        if: steps.fc.outputs.comment-id == 0 && github.event_name == 'pull_request_target'
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -82,7 +82,7 @@ jobs:
             - **Commit hash**: ${{ github.event.pull_request.head.sha }}
 
       - name: Update comment
-        if: steps.fc.outputs.comment-id != 0 && github.event_name == 'pull_request'
+        if: steps.fc.outputs.comment-id != 0 && github.event_name == 'pull_request_target'
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
