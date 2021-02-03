@@ -1,0 +1,43 @@
+#
+# Build and deploy the documentation
+#
+name: Deploy
+
+# Run on main branch only
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.7.0
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build documentation
+        run: make dirhtml
+
+      - name: Deploy documentation
+        # peaceiris/actions-gh-pages@v3.7.3
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/dirhtml
+          # Only keep the latest commit to avoid bloating the repository
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
