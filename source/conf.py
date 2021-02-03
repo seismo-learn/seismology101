@@ -46,7 +46,6 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_cjkspace.cjkspace",
     "sphinx_copybutton",
-    "sphinx_tabs.tabs",
     "sphinx_panels",
 ]
 
