@@ -20,7 +20,8 @@ REM   /log+:file  : 将备份状态以追加的方式输出到日志文件 file 
 REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy 了解 robocopy 命令更多用法
 
 REM 注意事项：
-REM   1. 如果命令中有中文，需要将脚本另存为成 ANSI 编码格式，而不是 UTF-8 格式
+REM   1. 如果命令中有中文，需要将脚本另存为成 ANSI 编码格式，这也是 Windows 的默认编码格式。
+REM      本脚本是 Linux 下采用 UTF-8 格式编写的。
 REM   2. 如果文件夹的名字有空格，必须加引号
 
 robocopy "d:\directory1" "e:\backup\directory1\" /mir /mt /log+:"e:\backup.txt"
