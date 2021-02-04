@@ -30,11 +30,15 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
    而 WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。
 
    已开启 WSL2 功能的用户若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，
-   然后使用管理员模式打开 PowerShell，输入 ``bcdedit /set hypervisorlaunchtype off``
-   关闭 Hyper-V，重启后方能生效。此时 Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用。
-   用户可以在 PowerShell 中输入 ``bcdedit /set hypervisorlaunchtype auto``
-   开启 Hyper-V，重启后方能生效。此时 Hyper-V 功能开启，WSL2 可用，
-   VMware/VirtualBox 不可用。
+   然后使用管理员模式打开 PowerShell，使用以下命令关闭 Hyper-V，重启后方能生效。
+   此时 Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用::
+
+      $ bcdedit /set hypervisorlaunchtype off
+
+   用户可以在 PowerShell 使用以下命令开启 Hyper-V，重启后方能生效。此时 Hyper-V 功能开启，
+   WSL2 可用，VMware/VirtualBox 不可用::
+
+      $  bcdedit /set hypervisorlaunchtype auto
 
 安装 WSL
 --------
