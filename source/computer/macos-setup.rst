@@ -277,10 +277,6 @@ tldr
 
     $ brew install tldr
 
-用法::
-
-    $ tldr tar
-
 GNU 实用工具
 ^^^^^^^^^^^^
 
