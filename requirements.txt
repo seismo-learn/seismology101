@@ -1,5 +1,5 @@
 sphinx
 sphinx-cjkspace
 sphinx-copybutton
-sphinx_rtd_theme
 sphinx-panels
+sphinx_rtd_theme
