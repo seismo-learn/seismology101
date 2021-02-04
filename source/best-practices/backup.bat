@@ -8,12 +8,14 @@ REM    本脚本完全基于编写者在自己的计算机上备份文件的经�
 REM    并不具备普遍适用性，仅供读者参考。
 REM
 
-echo Check if the source and backup paths exist
-pause
 
-REM d:\directory1 和 d:\directory2 : 要备份的源目录
-REM e:\backup      : 备份目录
-REM e:\backup.txt  : 备份目录下的备份日志
+robocopy "d:\directory1" "e:\backup\directory1\" /mir /mt /log+:"e:\backup.txt"
+robocopy "d:\directory2" "e:\backup\directory2\" /mir /mt /log+:"e:\backup.txt"
+
+REM 源目录和备份目录
+REM   d:\directory1 和 d:\directory2 : 要备份的源目录
+REM   e:\backup\      : 备份目录
+REM   e:\backup.txt   : 备份目录下的备份日志
 
 REM robocopy 命令常用选项：
 REM   /mir        : 备份目录成为镜像 （复制子目录；删除备份目录下源目录中不存在的文件和目录）
@@ -21,5 +23,6 @@ REM   /mt[:n]     : 使用 n 个线程进行多线程复制（默认值为 8）�
 REM   /log+:file  : 将备份状态以追加的方式输出到日志文件 file 中
 REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy 了解 robocopy 命令更多用法
 
-robocopy d:\directory1 e:\backup\directory1 /mir /mt /log+:e:\backup.txt
-robocopy d:\directory2 e:\backup\directory2 /mir /mt /log+:e:\backup.txt
+REM 注意事项：
+REM   1. 如果命令中有中文，需要将脚本另存为成 ANSI 编码格式，而不是 UTF-8 格式
+REM   2. 如果文件夹的名字有空格，需要加引号
