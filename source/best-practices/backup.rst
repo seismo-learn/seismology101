@@ -60,7 +60,7 @@ rsync
 
 .. important::
 
-   以上命令中家目录最后的斜杠 :file:`/home/seismo-learn/` 非常重要。若没有这个斜杠
+   以上命令中家目录 :file:`/home/seismo-learn/` 最后的斜杠非常重要。若没有这个斜杠
    （\ :file:`/home/seismo-learn`\ ），则会把家目录本身同步到备份目录下，
    即产生 :file:`/mnt/seismo-learn/backup/seismo-learn` 目录。
 
