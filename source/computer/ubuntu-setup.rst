@@ -233,10 +233,6 @@ tldr
 
     $ sudo apt install tldr
 
-用法::
-
-    $ tldr tar
-
 日常软件
 --------
 
