@@ -18,5 +18,5 @@ REM   /log+:file  : 将备份状态以追加的方式输出到日志文件 file 
 REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy 了解 robocopy 命令更多用法
 
 
-robocopy d:\directory1 e:\backup\directory1 /mir /mt:16 /log+:e:\backup.txt
-robocopy d:\directory2 e:\backup\directory2 /mir /mt:16 /log+:e:\backup.txt
+robocopy d:\directory1 e:\backup\directory1 /mir /mt /log+:e:\backup.txt
+robocopy d:\directory2 e:\backup\directory2 /mir /mt /log+:e:\backup.txt
