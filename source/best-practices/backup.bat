@@ -8,10 +8,6 @@ REM    本脚本完全基于编写者在自己的计算机上备份文件的经�
 REM    并不具备普遍适用性，仅供读者参考。
 REM
 
-
-robocopy "d:\directory1" "e:\backup\directory1\" /mir /mt /log+:"e:\backup.txt"
-robocopy "d:\directory2" "e:\backup\directory2\" /mir /mt /log+:"e:\backup.txt"
-
 REM 源目录和备份目录
 REM   d:\directory1 和 d:\directory2 : 要备份的源目录
 REM   e:\backup\      : 备份目录
@@ -26,3 +22,6 @@ REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/
 REM 注意事项：
 REM   1. 如果命令中有中文，需要将脚本另存为成 ANSI 编码格式，而不是 UTF-8 格式
 REM   2. 如果文件夹的名字有空格，必须加引号
+
+robocopy "d:\directory1" "e:\backup\directory1\" /mir /mt /log+:"e:\backup.txt"
+robocopy "d:\directory2" "e:\backup\directory2\" /mir /mt /log+:"e:\backup.txt"
