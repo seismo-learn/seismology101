@@ -116,7 +116,8 @@ Windows
 robocopy
 ^^^^^^^^
 
-使用 ``robocopy`` 命令进行备份。读者可以参考 Batch 脚本 :download:`backup.bat`\ 。点击下载后，
+使用 `robocopy <https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy>`__
+命令进行备份。读者可以参考 Batch 脚本 :download:`backup.bat`\ 。点击下载后，
 修改源目录、备份目录以及想要备份的子目录。然后双击该 Batch 脚本即可直接运行，也可以打开 CMD 窗口，
 再输入 Batch 脚本名以运行脚本。
 
