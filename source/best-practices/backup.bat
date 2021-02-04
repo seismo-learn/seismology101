@@ -25,4 +25,4 @@ REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/
 
 REM 注意事项：
 REM   1. 如果命令中有中文，需要将脚本另存为成 ANSI 编码格式，而不是 UTF-8 格式
-REM   2. 如果文件夹的名字有空格，需要加引号
+REM   2. 如果文件夹的名字有空格，必须加引号

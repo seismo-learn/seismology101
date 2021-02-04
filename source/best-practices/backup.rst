@@ -2,8 +2,9 @@
 ==========
 
 :本节贡献者: |姚家园|\（作者）、
-             |田冬冬|\（作者）
-:最近更新日期: 2021-02-02
+             |田冬冬|\（作者）、
+             |赵志远|\（审稿）
+:最近更新日期: 2021-02-04
 :预计阅读时间: 20 分钟
 
 .. warning::
@@ -59,7 +60,7 @@ rsync
 
 .. important::
 
-   以上命令中家目录最后的斜杠 :file:`seismo-learn/` 非常重要。若没有这个斜杠
+   以上命令中家目录最后的斜杠 :file:`/home/seismo-learn/` 非常重要。若没有这个斜杠
    （\ :file:`/home/seismo-learn`\ ），则会把家目录本身同步到备份目录下，
    即产生 :file:`/mnt/seismo-learn/backup/seismo-learn` 目录。
 
@@ -112,7 +113,7 @@ robocopy
 ^^^^^^^^
 
 使用 `robocopy <https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy>`__
-命令进行增量备份，只同步有改动的文件。假设要备份 D 盘，移动硬盘下的备份目录为 :file:`/mnt/seismo-learn/backup/` 。
+命令进行增量备份，只同步有改动的文件。假设要备份是整个 D 盘，移动硬盘下的备份目录为 :file:`/mnt/seismo-learn/backup/` 。
 使用以下命令可以将 D 盘里的所有子目录和文件完整同步到备份目录下，此时备份目录是 D 盘的一个镜像::
 
     $ robocopy "d:" "/mnt/seismo-learn/backup/" /mir /mt
