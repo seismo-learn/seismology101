@@ -18,18 +18,20 @@ REM   /mir        : 备份目录成为镜像 （复制子目录；删除备份�
 REM   /mt[:n]     : 使用 n 个线程进行多线程复制（默认值为 8）。n 至少为 1，但不得大于 128。
 REM                 例如，/mt 表示 8 个线程，/mt:4 表示 4 个线程
 REM   /log+:file  : 将备份状态以追加的方式输出到日志文件 file 中
-REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy 了解 robocopy 命令更多用法
+REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy
+REM 了解 robocopy 命令的更多用法
 
 REM 注意事项：
 REM   1. 如果命令中有中文，脚本需要是 ANSI 编码格式（Windows 下的默认编码格式）。
 REM      若不确定脚本编码格式，可以选择文件另存为查看，并保存为 ANSI 编码。
-REM   2. 目录名可以不加引号（如 D:\directory1）。但若路径中存在空格，则必须加引号（如 "D:\direc tory1"）。
+REM   2. 目录名可以不加引号（如 D:\directory1）。但若路径中存在空格，则必须加引号，
+REM      并在目录名最后加空格 "D:\direc tory1 "）。
 REM   3. 使用 /log+:file 选项时，file（如 F:\backup\backup.txt）中的目录（即 F:\backup）必须存在
 
 # 备份 D:\directory1 到 F:\backup\directory1
-robocopy "D:\directory1" "F:\backup\directory1" /mir /mt /log+:"F:\backup\backup.txt"
+robocopy "D:\directory1 " "F:\backup\directory1 " /mir /mt /log+:"F:\backup\backup.txt"
 
 # 备份 D:\directory2 到 F:\backup\directory2
-robocopy "D:\directory2" "F:\backup\directory2" /mir /mt /log+:"F:\backup\backup.txt"
+robocopy "D:\directory2 " "F:\backup\directory2 " /mir /mt /log+:"F:\backup\backup.txt"
 
 pause
