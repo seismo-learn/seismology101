@@ -216,6 +216,8 @@ Intel 软件开发工具包
 
 更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macos/>`__\ 。
 
+.. include:: intel-oneAPI-warning.rst_
+
 Java
 ^^^^
 
@@ -276,6 +278,14 @@ tldr
 安装 ``tldr``::
 
     $ brew install tldr
+
+ack
+^^^
+
+`ack <https://beyondgrep.com/>`__ 是一个字符搜索工具，与 ``grep`` 命令类似。
+其专为搜索源代码设计，因而在日常编程中更加简单易用。安装 ``ack``::
+
+    $ brew install ack
 
 GNU 实用工具
 ^^^^^^^^^^^^
