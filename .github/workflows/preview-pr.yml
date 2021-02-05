@@ -1,6 +1,6 @@
 #
 # Build and preview documentation in PRs
-# DO NOT WORK FOR FORKS.
+# DOES NOT WORK FOR FORKS.
 #
 name: Preview PR
 
@@ -44,6 +44,7 @@ jobs:
           force_orphan: false
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+        if: github.event.pull_request.head.repo.full_name == github.repository
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
@@ -52,9 +53,9 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'github-actions[bot]'
           body-includes: This comment was written by the Continuous Documentation bot!
+        if: github.event.pull_request.head.repo.full_name == github.repository
 
       - name: Create comment
-        if: steps.fc.outputs.comment-id == 0
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -63,9 +64,9 @@ jobs:
 
             - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}/index.html
             - **Commit hash**: ${{ github.event.pull_request.head.sha }}
+        if: github.event.pull_request.head.repo.full_name == github.repository && steps.fc.outputs.comment-id == 0
 
       - name: Update comment
-        if: steps.fc.outputs.comment-id != 0
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
@@ -75,3 +76,4 @@ jobs:
 
             - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}/index.html
             - **Commit hash**: ${{ github.event.pull_request.head.sha }}
+        if: github.event.pull_request.head.repo.full_name == github.repository && steps.fc.outputs.comment-id != 0
