@@ -112,8 +112,8 @@ Windows
 robocopy
 ^^^^^^^^
 
-使用 `robocopy <https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy>`__
-命令进行增量备份，只同步有改动的文件。假设要备份是整个 D 盘，移动硬盘下的备份目录为 :file:`/mnt/seismo-learn/backup/` 。
+使用 Windows 自带的 `robocopy <https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy>`__
+命令进行增量备份，只同步有改动的文件。假设要备份整个 D 盘，移动硬盘下的备份目录为 :file:`/mnt/seismo-learn/backup/` 。
 使用以下命令可以将 D 盘里的所有子目录和文件完整同步到备份目录下，此时备份目录是 D 盘的一个镜像::
 
     $ robocopy "d:" "/mnt/seismo-learn/backup/" /mir /mt

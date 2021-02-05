@@ -29,3 +29,5 @@ robocopy "d:\directory1" "e:\backup\directory1\" /mir /mt /log+:"e:\backup.txt"
 
 # 备份 d:\directory2 到 e:\backup\directory2\
 robocopy "d:\directory2" "e:\backup\directory2\" /mir /mt /log+:"e:\backup.txt"
+
+pause
