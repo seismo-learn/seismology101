@@ -196,7 +196,7 @@ Intel 软件开发工具包
 
 更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
 
-.. include:: /computer/intel-oneAPI-warning.rst_
+.. include:: intel-oneAPI-warning.rst_
 
 Java
 ^^^^
