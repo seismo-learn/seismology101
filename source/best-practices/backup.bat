@@ -28,10 +28,10 @@ REM   2. 目录名可以不加引号（如 D:\directory1）。但若路径中存
 REM      并在目录名最后加空格 "D:\direc tory1 "）。
 REM   3. 使用 /log+:file 选项时，file（如 F:\backup\backup.txt）中的目录（即 F:\backup）必须存在
 
-# 备份 D:\directory1 到 F:\backup\directory1
+REM 备份 D:\directory1 到 F:\backup\directory1
 robocopy "D:\directory1 " "F:\backup\directory1 " /mir /mt /log+:"F:\backup\backup.txt"
 
-# 备份 D:\directory2 到 F:\backup\directory2
+REM 备份 D:\directory2 到 F:\backup\directory2
 robocopy "D:\directory2 " "F:\backup\directory2 " /mir /mt /log+:"F:\backup\backup.txt"
 
 pause
