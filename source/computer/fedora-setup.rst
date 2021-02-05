@@ -188,7 +188,7 @@ Intel 软件开发工具包
 
 更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` 警告
+.. dropdown:: :fa:`exclamation-circle,mr-1` Intel oneAPI 与 Anaconda 兼容性警告
     :container: + shadow
     :title: bg-warning text-red font-weight-bold
 
