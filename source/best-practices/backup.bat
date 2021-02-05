@@ -15,7 +15,7 @@ REM   F:\backup\backup.txt            : 备份目录下的备份日志
 
 REM robocopy 命令常用选项：
 REM   /mir        : 备份目录成为镜像 （复制子目录；删除备份目录下源目录中不存在的文件和目录）
-REM   /mt[:n]     : 使用 n 个线程进行多线程复制（默认值为 8）。n 至少为 1，但不得大于 128
+REM   /mt[:n]     : 使用 n 个线程进行多线程复制（默认值为 8）。n 至少为 1，但不得大于 128。例如 /mt:4 表示 4 个线程
 REM   /log+:file  : 将备份状态以追加的方式输出到日志文件 file 中
 REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy 了解 robocopy 命令更多用法
 
