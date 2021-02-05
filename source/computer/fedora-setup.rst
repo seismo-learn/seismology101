@@ -228,7 +228,7 @@ tldr
 ack
 ^^^
 
-`ack <https://beyondgrep.com/>`__ 与 ``grep`` 类似，是一个字符搜索工具。
+`ack <https://beyondgrep.com/>`__ 是一个字符搜索工具，与 ``grep`` 命令类似。
 其专为搜索源代码设计，因而在日常编程中更加简单易用。安装 ``ack``::
 
     $ sudo dnf install ack
