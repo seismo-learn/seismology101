@@ -216,27 +216,7 @@ Intel 软件开发工具包
 
 更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macos/>`__\ 。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Intel oneAPI 与 Anaconda 兼容性警告
-    :container: + shadow
-    :title: bg-warning text-red font-weight-bold
-
-    同时安装 Intel oneAPI Toolkits 和 Anaconda 的用户需要注意：
-
-    -  安装 Intel oneAPI Toolkits 时也会安装 Intel 的 conda 和 Python。
-       笔者目前不清楚 Intel 和 Anaconda 的 conda 和 Python 有何区别。
-       可以使用以下命令查询 conda 和 Python 的路径和版本::
-
-           $ which conda
-           $ conda -- version
-           $ which python
-           $ python --version
-
-    -  配置文件（如 ``~/.bashrc``）中，若 Intel oneAPI Toolkits 位于 Anaconda 之后，则
-       无法使用 Anaconda 的环境。若 Intel oneAPI Toolkits 位于 Anaconda 之前，可以
-       使用 Anaconda 的环境，但不清楚是否有其他未知影响。
-
-    可以参考 `seismology101 issues #176 <https://github.com/seismo-learn/seismology101/issues/176>`__
-    了解更多详情，并欢迎提供反馈和解决方案。
+.. include:: /computer/intel-oneAPI-warning.rst_
 
 Java
 ^^^^
