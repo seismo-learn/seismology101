@@ -24,5 +24,8 @@ REM   1. 如果命令中有中文，需要将脚本另存为成 ANSI 编码格�
 REM      本脚本是 Linux 下采用 UTF-8 格式编写的。
 REM   2. 如果文件夹的名字有空格，必须加引号
 
+# 备份 d:\directory1 到 e:\backup\directory1\
 robocopy "d:\directory1" "e:\backup\directory1\" /mir /mt /log+:"e:\backup.txt"
+
+# 备份 d:\directory2 到 e:\backup\directory2\
 robocopy "d:\directory2" "e:\backup\directory2\" /mir /mt /log+:"e:\backup.txt"
