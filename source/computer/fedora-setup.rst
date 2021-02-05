@@ -207,7 +207,7 @@ Intel 软件开发工具包
        无法使用 Anaconda 的环境。若 Intel oneAPI Toolkits 位于 Anaconda 之前，可以
        使用 Anaconda 的环境，但不清楚是否有其他未知影响。
 
-    可以参考 `seismology101 issues/176 <https://github.com/seismo-learn/seismology101/issues/176>`__
+    可以参考 `seismology101 issues #176 <https://github.com/seismo-learn/seismology101/issues/176>`__
     了解更多详情，并欢迎提供反馈和解决方案。
 
 Java
