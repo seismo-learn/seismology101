@@ -56,7 +56,6 @@ jobs:
         if: github.event.pull_request.head.repo.full_name == github.repository
 
       - name: Create comment
-        if: steps.fc.outputs.comment-id == 0
         uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: ${{ github.event.pull_request.number }}
@@ -65,10 +64,9 @@ jobs:
 
             - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}/index.html
             - **Commit hash**: ${{ github.event.pull_request.head.sha }}
-        if: github.event.pull_request.head.repo.full_name == github.repository
+        if: github.event.pull_request.head.repo.full_name == github.repository && steps.fc.outputs.comment-id == 0
 
       - name: Update comment
-        if: steps.fc.outputs.comment-id != 0
         uses: peter-evans/create-or-update-comment@v1
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
@@ -78,4 +76,4 @@ jobs:
 
             - **Preview**: https://seismo-learn.org/sitepreview/${{ github.repository }}/${{ github.head_ref }}/index.html
             - **Commit hash**: ${{ github.event.pull_request.head.sha }}
-        if: github.event.pull_request.head.repo.full_name == github.repository
+        if: github.event.pull_request.head.repo.full_name == github.repository && steps.fc.outputs.comment-id != 0
