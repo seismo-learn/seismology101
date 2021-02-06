@@ -49,14 +49,37 @@ Linux 入门
 熟悉 Linux 文件系统
 ^^^^^^^^^^^^^^^^^^^
 
+Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特殊的目录称为根目录。
+一般情况下，根目录下一般有 :file:`/home`\ 、\ :file:`/root`\ 、\ :file:`/bin`\ 、
+:file:`/usr`\ 、\ :file:`/lib`\ 、\ :file:`/opt` 等目录。根目录下的这些目录的具体含义
+由文件系统层次结构标准决定，大部分 Linux 发行版遵循此标准，或由此标准做了细小的调整。
+
+其中，\ :file:`/home` 目录是用户的家目录，存储用户自己的信息；\ :file:`/bin` 目录下
+存储必须的程序和命令，所有用户都可用；\ :file:`/usr` 目录是大多数软件的安装位置；
+某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）默认将软件安装到
+:file:`/opt` 目录下。
+
+日常科研中，我们大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
+该用户的家目录便是 :file:`/home/seismo-learn`。在 Linux 系统下，可用 :file:`~` 代表
+家目录。Linux 系统安装后自动创建的家目录下的目录有 :file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、
+:file:`~/Documents` 等。熟悉 Linux 系统后可以参考\ :doc:`/best-practices/file-organization`\
+进一步组织与管理家目录，以提高工作效率。
+
+
 操作文件与目录
 ^^^^^^^^^^^^^^
+
+
 
 文件路径
 ^^^^^^^^^
 
+
+
 文件权限
 ^^^^^^^^
+
+
 
 Shell 基础
 ----------
