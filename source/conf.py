@@ -112,7 +112,7 @@ html_context = {
         ),
         (
             '<i class="fa fa-edit fa-fw"></i> 贡献指南',
-            f"{github_url}/blob/main/CONTRIBUTING.md",
+            "https://seismo-learn.org/contributing/",
         ),
         (
             '<i class="fa fa-comments fa-fw"></i> 参与讨论',

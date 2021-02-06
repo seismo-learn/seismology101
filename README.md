@@ -3,36 +3,19 @@
 [![Deploy](https://github.com/seismo-learn/seismology101/workflows/Deploy/badge.svg)](https://github.com/seismo-learn/seismology101/actions?query=workflow%3ADeploy)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 
+本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
+其他刚接触地震学的科研人员。
 
-本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及其他刚接触地震学的科研人员。
-
-本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以作为地震学新手的入门自学材料，也可以作为各个研究组的入门培训材料。
+本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以
+作为地震学新手的入门自学材料，也可以作为各个研究组的入门培训材料。
 
 - 项目主页：https://github.com/seismo-learn/seismology101
 - 网页版：https://seismo-learn.org/seismology101/
 
-## 构建文档
-
-本文档使用 [Sphinx](http://www.sphinx-doc.org/) 构建得到。Sphinx 是基于 Python 的
-文档生成工具。
-
-1.  下载文档源码
-
-        git clone --depth=50 https://github.com/seismo-learn/seismology101.git
-
-2.  安装文档所需依赖
-
-        cd seismology101/
-        pip install -r requirements.txt
-
-3.  编译生成HTML格式的文档。生成的文档位于 `build/html/` 目录下
-
-        make html
-
 ## 文档维护
 
-本文档尚有很多不完善之处，欢迎使用这些软件的用户参与到教程的维护与更新中。
-详情见 [维护指南](CONTRIBUTING.md)。
+本文档尚有很多不完善之处，欢迎读者参与到文档的维护与更新中。
+详情见[贡献指南](https://seismo-learn.org/contributing/)。
 
 ## 许可协议
 
