@@ -62,14 +62,29 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 日常科研中，我们大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
 该用户的家目录便是 :file:`/home/seismo-learn`。在 Linux 系统下，可用 :file:`~` 代表
 家目录。Linux 系统安装后自动创建的家目录下的目录有 :file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、
-:file:`~/Documents` 等。熟悉 Linux 系统后可以参考\ :doc:`/best-practices/file-organization`\
+:file:`~/Documents` 等。熟悉 Linux 系统后可以参考\
+:doc:`《文件管理实践经验》<best-practices/file-organization>`\ 和\
+:doc:`《软件安装实践经验》<best-practices/software-installation>`\
 进一步组织与管理家目录，以提高工作效率。
-
 
 操作文件与目录
 ^^^^^^^^^^^^^^
 
+打开终端，使用以下命令熟悉 Linux 系统下文件和目录的操作::
 
+    $ pwd
+
+
+pwd, 
+ls,
+cd, 
+mkdir, 
+rmdir, 
+cp, 
+mv, 
+rm, 
+touch, 
+ln
 
 文件路径
 ^^^^^^^^^
