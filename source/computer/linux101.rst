@@ -70,21 +70,58 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 操作文件与目录
 ^^^^^^^^^^^^^^
 
-打开终端，使用以下命令熟悉 Linux 系统下文件和目录的操作::
+打开终端，使用以下命令熟悉和掌握 Linux 系统下文件和目录的常用操作::
 
+    # 使用 pwd（print working directory，即打印当前工作目录）命令查看当前所在目录
+    # 可以看出启动终端后，默认进入家目录
     $ pwd
+    /home/seismo-learn
 
+    # 使用 ls（list files，即列出文件）命令显示当前目录中的内容，即家目录含有的子目录和文件
+    $ ls
+    Desktop    Documents    Downloads
 
-pwd, 
-ls,
-cd, 
-mkdir, 
-rmdir, 
-cp, 
-mv, 
-rm, 
-touch, 
-ln
+    # 使用 cd（change directory，即切换目录）命令进入根目录
+    $ cd /
+    # 查看根目录中的子目录和文件
+    $ ls
+    # 切换回家目录（以下任一操作均可）
+    $ cd /home/seismo-learn
+    $ cd ~
+    $ cd
+
+    # 回到家目录后，使用 mkdir（make directory，即创建目录）命令在家目录下新建以下常用目录
+    $ mkdir bin codes data opt projects src software workspace
+
+    # 进入 workspace 目录
+    $ cd workspace
+    # 使用 touch 命令创建一个新文件 hello-world.md
+    $ touch hello-world.md
+    # 创建 source 和 destination 目录
+    $ mkdir source destination
+
+    # 使用 cp（copy，即复制）命令复制 hello-world.md 文件到 source 目录下
+    $ cp hello-world.md source
+    # 复制 hello-world.md 文件到 source 目录下，并重命名为 hello-world-cp.md
+    $ cp hello-world.md source/hello-world-cp.md
+    # 复制 source 目录到 destination 目录中
+    $ cp -r source destination
+    # 复制 source 目录到 destination 目录中，并重命名为 source-cp
+    $ cp -r source destination/source-cp
+    
+    # 使用 mv（move，即移动）命令移动 hello-world.md 文件到 destination 目录中
+    $ mv hello-workspace.md destination
+    # 移动 source 目录下的 hello-world.md 文件到 destination 目录中，并重命名为 hello-world-mv.md
+    $ mv source/hello-workspace.md destination/hello-world-mv.md
+    # 移动 destination 目录中 source-cp 目录到当前目录中，并重命名为 source-mv
+    $ mv destination/source-cp source-mv
+
+    # 使用 rmdir（remove directory，即删除目录）命令删除空目录 source
+    $ rmdir source
+    # 使用 rm（remove，即删除）命令删除 source-cp 目录下的 hello-world.md 文件
+    $ rm source-cp/hello-world.md
+    # 删除 source-cp 目录
+    $ rm -r source-cp
 
 文件路径
 ^^^^^^^^^
