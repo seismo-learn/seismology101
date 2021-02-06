@@ -15,7 +15,7 @@
 ## 文档维护
 
 本文档尚有很多不完善之处，欢迎读者参与到文档的维护与更新中。
-详情见 [贡献指南](https://seismo-learn.org/contributing/)。
+详情见[贡献指南](https://seismo-learn.org/contributing/)。
 
 ## 许可协议
 
