@@ -230,7 +230,54 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 文件权限
 ^^^^^^^^
 
+Linux 下每个文件和目录都有自己的权限，使用以下命令查看文件或目录的权限::
 
+    # 进入 ~/workspace 目录，并新建 hello-world.sh 文加和 source 目录
+    $ cd ~/workspace
+    $ touch hello-world.sh
+    $ mkdir source
+
+    # 使用 ls 命令的 -l 选项可以查看 ~/workspace 目录下的所有文件和目录的详细信息
+    $ ls -l
+    total 0
+    -rw-r--r-- 1 seismo-learn seismo-learn 0 Feb  7 22:07 hello-world.sh
+    drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
+
+第一列字符串（如 ``-rw-r--r--``\ ）从左到右意义分别是：
+
+-  第一位：文件类型，其中\ ``-`` 表示普通文件，\ ``d`` 表示目录
+-  第二到第四位：文件所属用户的权限
+-  第五到第七位：文件所属用户组的权限
+-  第八到第十位：其他人的权限
+
+第三和第四列分别表示文件所属用户和用户组（如 ``seismo-learn seismo-learn``\ ）
+
+可以看出 :file:`hello-world.md` 是一个普通文件，所属用户权限（即 seismo-learn）是
+``rw-``\ （可读、可写、不可执行），所属用户组（即 seismo-learn）的权限是 ``r--``
+（可读、不可写、不可执行），其他人的权限是 ``r--``\ （可读、不可写、不可执行）。
+
+每个权限，第一位 ``r`` 代表可读取 (read)，第二位 ``w`` 代表可写入（write），
+第三位 ``x`` 代表可执行（execute），\ ``-`` 代表没有对应的权限。例如，seismo-learn 用户
+对 :file:`hello-world.sh` 文件拥有可读、可写、不可执行的权限，对 :file:`source` 目录
+拥有可读、可写、可执行的权限。目录的可执行权限代表可以进入该目录。
+
+还可以用数字表示权限，4 代表可读，2 代表可写，1 代表可执行。因为 :math:`4+2+1=7`\ ，所以 7
+代表可读、可写、可执行。以此类推，6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
+4 代表可读、不可写、不可执行。
+
+使用 ``chmod``\ （change mode，即变更模式）命令可以修改文件或目录的权限，可以参考
+`Linux chmod命令 <https://www.runoob.com/linux/linux-comm-chmod.html>`__ 了解该命令
+详细用法。以下只展示常用用法::
+
+    # 修改 hello-world.sh 权限
+    # 所属用户可读可写不可执行、所属用户组可读可写不可执行、其他人所属用户可读不可写不可执行
+    $ chmod 664 hello-world.sh
+    $ ls -l hello-world.sh
+    -rw-rw-r-- 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
+
+    # 增加 hello-world.sh 的可执行属性
+    $ chmod +x hello-world.sh
+    -rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
 
 Shell 基础
 ----------
