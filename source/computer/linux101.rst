@@ -52,16 +52,17 @@ Linux 入门
 Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特殊的目录称为根目录。
 一般情况下，根目录下一般有 :file:`/home`\ 、\ :file:`/root`\ 、\ :file:`/bin`\ 、
 :file:`/usr`\ 、\ :file:`/lib`\ 、\ :file:`/opt` 等目录。根目录下的这些目录的具体含义
-由文件系统层次结构标准决定，大部分 Linux 发行版遵循此标准，或由此标准做了细小的调整。
+由文件系统层次结构标准决定，大部分 Linux 发行版遵循此标准，或由此标准做了细小的调整。例如，
 
-其中，\ :file:`/home` 目录是用户的家目录，存储用户自己的信息；\ :file:`/bin` 目录下
-存储必须的程序和命令，所有用户都可用；\ :file:`/usr` 目录是大多数软件的安装位置；
-某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）默认将软件安装到
-:file:`/opt` 目录下。
+-  :file:`/home` 目录：用户的家目录，存储用户自己的信息
+-  :file:`/bin` 目录：存储必须的程序和命令，所有用户都可用
+-  :file:`/usr` 目录：大多数软件的安装位置
+-  :file:`/opt` 目录：某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）
+   默认将软件安装到此目录下
 
 日常科研中，我们大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
 该用户的家目录便是 :file:`/home/seismo-learn`。在 Linux 系统下，可用 :file:`~` 代表
-家目录。Linux 系统安装后自动创建的家目录下的目录有 :file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、
+家目录。Linux 系统安装后，自动创建的家目录下的目录有 :file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、
 :file:`~/Documents` 等。熟悉 Linux 系统后可以参考\
 :doc:`《文件管理实践经验》<best-practices/file-organization>`\ 和\
 :doc:`《软件安装实践经验》<best-practices/software-installation>`\
@@ -70,58 +71,119 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 操作文件与目录
 ^^^^^^^^^^^^^^
 
-打开终端，使用以下命令熟悉和掌握 Linux 系统下文件和目录的常用操作::
+打开终端，使用以下命令熟悉和掌握 Linux 系统下文件和目录的常用操作。假设用户名是 seismo-learn。
+
+查看文件和目录::
 
     # 使用 pwd（print working directory，即打印当前工作目录）命令查看当前所在目录
     # 可以看出启动终端后，默认进入家目录
     $ pwd
     /home/seismo-learn
 
-    # 使用 ls（list files，即列出文件）命令显示当前目录中的内容，即家目录含有的子目录和文件
+    # 使用 ls（list，即列表）命令显示当前所在目录（即家目录）含有的子目录和文件
     $ ls
     Desktop    Documents    Downloads
+    # 查看 ~/Desktop 目录和 /etc/passwd 文件
+    $ ls Desktop
+    $ ls /etc/passwd
+
+切换目录::
 
     # 使用 cd（change directory，即切换目录）命令进入根目录
     $ cd /
     # 查看根目录中的子目录和文件
     $ ls
+    bin   etc   lib    mnt  proc  run   srv  tmp  var
+    boot  dev   home  lib64  media   opt  root  sbin  sys  usr
     # 切换回家目录（以下任一操作均可）
     $ cd /home/seismo-learn
     $ cd ~
     $ cd
 
-    # 回到家目录后，使用 mkdir（make directory，即创建目录）命令在家目录下新建以下常用目录
-    $ mkdir bin codes data opt projects src software workspace
+新建文件和目录::
+
+    # 进入家目录
+    $ cd ~
+    # 使用 mkdir（make directory，即创建目录）命令新建以下目录
+    $ mkdir codes software workspace
+    # 在 workspace 目录中新建 source 目录
+    $ mkdir workspace/source
 
     # 进入 workspace 目录
     $ cd workspace
-    # 使用 touch 命令创建一个新文件 hello-world.md
-    $ touch hello-world.md
-    # 创建 source 和 destination 目录
-    $ mkdir source destination
+    # 使用 touch 命令创建新文件 hello-world.md 和 seiso-learn.md
+    $ touch hello-world.md seiso-learn.md
 
-    # 使用 cp（copy，即复制）命令复制 hello-world.md 文件到 source 目录下
-    $ cp hello-world.md source
-    # 复制 hello-world.md 文件到 source 目录下，并重命名为 hello-world-cp.md
-    $ cp hello-world.md source/hello-world-cp.md
-    # 复制 source 目录到 destination 目录中
+以下所有操作都假设读者都已先切换到 :file:`~/workspace` 目录下了，即::
+
+    # 进入 ~/workspace 目录
+    $ cd ~/workspace
+
+复制文件和目录::
+
+    # 使用 cp（copy，即复制）命令复制 hello-world.md 文件到同一目录下，并重命名为 hello-world-cp.md
+    $ cp hello-world.md hello-world-cp.md
+    # 复制 hello-world.md 和 seiso-learn.md 文件到 source 目录下
+    $ cp hello-world.md seiso-learn.md source
+
+    # 复制 source 目录为同一目录下的 destination 目录（目标目录不存在）
     $ cp -r source destination
-    # 复制 source 目录到 destination 目录中，并重命名为 source-cp
-    $ cp -r source destination/source-cp
-    
-    # 使用 mv（move，即移动）命令移动 hello-world.md 文件到 destination 目录中
-    $ mv hello-workspace.md destination
-    # 移动 source 目录下的 hello-world.md 文件到 destination 目录中，并重命名为 hello-world-mv.md
-    $ mv source/hello-workspace.md destination/hello-world-mv.md
-    # 移动 destination 目录中 source-cp 目录到当前目录中，并重命名为 source-mv
-    $ mv destination/source-cp source-mv
+    # 复制 source 目录到同一目录下的 destination 目录下（目标目录已存在）
+    $ cp -r source destination
 
-    # 使用 rmdir（remove directory，即删除目录）命令删除空目录 source
-    $ rmdir source
-    # 使用 rm（remove，即删除）命令删除 source-cp 目录下的 hello-world.md 文件
-    $ rm source-cp/hello-world.md
-    # 删除 source-cp 目录
-    $ rm -r source-cp
+移动文件和目录::
+
+    # 使用 mv（move，即移动）命令移动 hello-world.md 文件同一目录下，并重命名为 hello-world-mv.md
+    $ mv hello-world.md hello-world-mv.md
+    # 移动 hello-world-cp.md 和 hello-world-mv.md 文件到 source 目录下
+    $ mv hello-world-cp.md hello-world-mv.md source
+
+    # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
+    $ mv source source-mv
+    # 移动 source-mv 目录到同一目录下的 destination 目录下
+    $ mv source-mv destination
+
+删除文件和目录::
+
+    # 使用 rm（remove，即删除）命令删除 seiso-learn.md 文件
+    $ rm seiso-learn.md
+    # 删除 destination 目录
+    $ rm -r destination
+
+    # 新建 tmp 目录
+    $ mkdir tmp
+    # 使用 rmdir（remove directory，即删除目录）命令删除空目录 tmp。目录不为空时则不删除
+    $ rmdir tmp
+
+.. warning::
+
+   使用 ``rm`` 命令时一定要小心再小心，不要误删重要文件。可以先把要删除的文件移动到
+   某目录下（如 :file:`~/trash`\ ），再删除。
+
+建立文件和目录的链接::
+
+    # 新建 hello-world.md 文件和 source 目录
+    $ touch hello-world.md
+    $ mkdir source
+
+    # 使用 ln（link，即链接）命令建立 hello-world.md 的硬链接 hello-world-hard.md
+    $ ln hello-world.md hello-world-hard.md
+    # 建立 hello-world.md 的软链接（也叫符号链接）hello-world-soft.md
+    $ ln -s hello-world.md hello-world-soft.md
+
+    # 建立 source 目录的软链接。
+    $ ln -s source source-soft
+
+.. note::
+
+   硬链接和源文件指向的是同一存储区。删除硬链接，仍可通过源文件访问；删除源文件，
+   仍可通过硬链接访问。只有同时删除硬链接和源文件，文件实体才会被删除。因此，其实
+   本质上硬链接和源文件互为对方的硬链接。通过给文件设置硬链接，可以防止重要文件被误删。
+   目录无法建立硬链接。
+
+   软链接（也叫符号链接）类似 Windows 系统的快捷方式，其存放的是源文件（或目录）的路径。
+   删除软链接，对源文件（或目录）没有任何影响。删除源文件（或目录），软链接依然存在，但无法
+   通过其访问源文件了。
 
 文件路径
 ^^^^^^^^^
