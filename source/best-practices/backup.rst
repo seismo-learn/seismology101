@@ -113,17 +113,15 @@ robocopy
 ^^^^^^^^
 
 使用 Windows 自带的 `robocopy <https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy>`__
-命令进行增量备份，只同步有改动的文件。假设要备份整个 D 盘，移动硬盘下的备份目录为 :file:`F:\\backup` 。
-使用以下命令可以将 D 盘里的所有子目录和文件完整同步到备份目录下，此时备份目录是 D 盘的一个镜像::
+命令进行增量备份。这意味着只有第一次备份的时候需要花比较多的时间来同步文件，之后再使用该命令进行备份
+只会同步有改动的文件。假设要备份整个 D 盘，移动硬盘下的备份目录为 :file:`F:\\backup` 。
+使用以下命令可以将 D 盘同步到备份目录下，此时备份目录是 D 盘的一个镜像::
 
-    $ robocopy "D:\ " "F:\backup " /mir /mt
+    $ robocopy D:\ F:\backup /mir /mt /XD Config.Msi $RECYCLE.BIN WSLDIR /A-:H
 
 .. important::
 
-   以上命令中目录的引号、最后的斜杠和最后的空格非常重要。
-   若没有斜杠和空格（\ :file:`"D:"` 和 :file:`"F:\\backup"`\ ），备份的是脚本所在目录，并非 D 盘。
-   若有引号同时没有空格（\ :file:`"D:\\"` 和 :file:`"F:\\backup"`\ ），会报错。
-   若路径中存在空格（如 :file:`"F:\\back up "`\ ），必须加引号。
+   以上命令中 D 盘盘符后的斜杠非常重要，省略的话可能无法备份整个 D 盘。
 
 读者可以参考 Batch 脚本 :download:`backup.bat`\ 。点击下载后，修改源目录、备份目录以及想要
 备份的子目录。然后，双击该 Batch 脚本即可直接运行。也可以打开 CMD 或 PowerShell，
