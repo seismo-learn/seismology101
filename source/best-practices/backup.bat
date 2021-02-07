@@ -9,7 +9,7 @@ REM    并不具备普遍适用性，仅供读者参考。
 REM
 
 REM 源目录和备份目录
-REM   D:\directory1 和 D:\directory2  : 要备份的源目录
+REM   D:\directory、D:\代码、D:\项 目  : 要备份的源目录
 REM   F:\backup                       : 备份目录
 
 REM robocopy 命令常用选项：
@@ -20,13 +20,17 @@ REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/wind
 REM 了解 robocopy 命令的更多用法
 
 REM 注意事项：
-REM   1. 如果命令中有中文，脚本需要采用 ANSI 编码格式（Windows 下的默认编码格式）。
-REM   2. 若目录名存在空格，必须加引号，如 "D:\direc tory1"
+REM   1. 如果命令中有中文，脚本需要采用 ANSI 编码格式（Windows 下含有中文时的默认编码格式）。
+REM   2. 若目录名存在空格，必须加引号，如 "D:\项 目"
 
-echo "备份 D:\directory1 到 F:\backup\directory1"
-robocopy D:\directory1 F:\backup\directory1 /mir /mt
+echo "备份 D:\directory 到 F:\backup\directory"
+robocopy D:\directory F:\backup\directory /mir /mt
 pause
 
-echo "备份 D:\directory2 到 F:\backup\directory2"
-robocopy D:\directory2 F:\backup\directory2 /mir /mt
+echo "备份 D:\代码 到 F:\backup\代码"
+robocopy D:\代码 F:\backup\代码 /mir /mt
+pause
+
+echo "备份 D:\项 目 到 F:\backup\项 目"
+robocopy "D:\项 目" "F:\backup\项 目" /mir /mt
 pause
