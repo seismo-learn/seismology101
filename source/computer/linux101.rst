@@ -188,7 +188,44 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 文件路径
 ^^^^^^^^^
 
+访问文件或目录需要指定文件或目录的路径，Linux 下有两种表示路径的方式：绝对路径和相对路径。
 
+顾名思义，绝对路径是从根目录 :file:`/` 开始算起的路径。例如，家目录是 :file:`/home`，
+用户 seismo-learn 的家目录是 :file:`/home/seismo-learn`，该用户的桌面目录的路径是
+:file:`/home/seismo-learn/Desktop`\ 。日常科研中，用户的计算机一般只有用户自己在使用，
+因此提到家目录是其时特指 :file:`/home/seismo-learn`\，而不是指 :file:`/home`。
+因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
+:file:`~`，其和 :file:`/home/seismo-learn` 是一回事。
+
+当我们进入到某个目录中时，有时使用绝对路径并不方便。例如，我们现在位于 :file:`~/projects/NorthChina-MTZ/data`
+目录中，如果想进入 :file:`~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
+输入很多字母。在当前目录下，Linux 文件系统定义了两个特殊的路径：
+
+-  :file:`.`\ ：当前路径
+-  :file:`..`\ ：当前目录的上一级目录
+
+利用这两个特殊路径，可以使用相对路径访问其他目录下的文件和目录。例如，
+
+-  :file:`./Beijing`\ ：当前目录下的 :file:`Beijing` 目录，即 :file:`~/projects/NorthChina-MTZ/data/Beijing`\ 。
+   当前路径也可以省略，即 :file:`Beijing`
+-  :file:`./Beijing/IC-BJI.sac`\ ：当前目录下的 :file:`Beijing` 目录下的 :file:`IC-BJI.sac` 文件，
+   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJI.sac`\ 。
+   当前路径也可以省略，即 :file:`Beijing/IC-BJI.sac`
+-  :file:`..`\ ：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
+-  :file:`../..`\ ：上一层的上一层目录，即 :file:`~/projects` 目录
+-  :file:`../figures`\ ：上一层目录下的 :file:`figure` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
+-  :file:`../figures/fig1.pdf`\ ：上一层目录下的 :file:`figure` 目录下的 :file:`fig1.pdf` 文件，
+   即 :file:`~/projects/NorthChina-MTZ/figures/fig1.pdf`
+
+.. note::
+
+   可以使用 ``ls`` 命令的 ``-a`` 选项查看某目录下的所有文件和目录（含以 ``.`` 开头的隐藏文件和目录）。例如，查看家目录::
+
+       $ ls -a ~
+       .     .bash_profile    Downloads   .vscode
+       ..    Desktop          Documents
+
+   可以看出，其实家目录下存在 :file:`.` 和 :file:`..` 这两个特殊的路径。
 
 文件权限
 ^^^^^^^^
