@@ -115,7 +115,7 @@ robocopy
 使用 Windows 自带的 `robocopy <https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy>`__
 命令进行增量备份。这意味着只有第一次备份的时候需要花比较多的时间来同步文件，之后再使用该命令进行备份
 只会同步有改动的文件。假设要备份整个 D 盘，移动硬盘下的备份目录为 :file:`F:\\backup` 。
-使用以下命令可以将 D 盘同步到备份目录下，此时备份目录是 D 盘的一个镜像::
+打开 CMD 或 PowerShell，使用以下命令可以将 D 盘同步到备份目录下，此时备份目录是 D 盘的一个镜像::
 
     $ robocopy D:\ F:\backup /mir /mt /XD Config.Msi $RECYCLE.BIN WSLDIR /A-:H
 
