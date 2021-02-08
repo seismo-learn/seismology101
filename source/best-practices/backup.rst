@@ -117,7 +117,7 @@ robocopy
 只会同步有改动的文件。假设要备份整个 D 盘，移动硬盘下的备份目录为 :file:`F:\\backup` 。
 打开 CMD 或 PowerShell，使用以下命令可以将 D 盘同步到备份目录下，此时备份目录是 D 盘的一个镜像::
 
-    $ robocopy D:\ F:\backup /mir /mt /XD Config.Msi $RECYCLE.BIN WSLDIR /A-:H
+    $ robocopy D:\ F:\backup /mir /mt /A-:H /XD Config.Msi $RECYCLE.BIN WSLDIR
 
 .. important::
 
@@ -125,6 +125,7 @@ robocopy
 
    ``/XD`` 选项后的目录（如 :file:`Config.Msi`\ 、\ :file:`$RECYCLE.BIN`\ 、\ :file:`WSLDIR`\ ）
    在备份时被忽略。读者可以根据自己的实际情况把无法备份或者不想备份的目录添加到此选项后。
+   需要注意的是，若存在无法备份的目录，命令可能会卡死。
 
 读者可以参考 Batch 脚本 :download:`backup.bat`\ 。点击下载后，修改源目录、备份目录以及想要
 备份的子目录。然后，双击该 Batch 脚本即可直接运行。也可以打开 CMD 或 PowerShell，

@@ -20,7 +20,7 @@ REM 可以参考 https://docs.microsoft.com/zh-cn/windows-server/administration/wind
 REM 了解 robocopy 命令的更多用法
 
 REM 注意事项：
-REM   1. 如果命令中有中文，脚本需要采用 ANSI 编码格式（Windows 下含有中文时的默认编码格式）。
+REM   1. 如果脚本中存在中文，需要采用 ANSI 编码格式，否则会乱码。
 REM   2. 若目录名存在空格，必须加引号，如 "D:\项 目"
 
 echo "备份 D:\directory 到 F:\backup\directory"
