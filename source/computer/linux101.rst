@@ -73,25 +73,33 @@ Bash 的 shell，此外还有Zsh、csh、ksh 等 Shell。熟悉 Linux 系统后�
 
    [seismo-learn@earth ~] $
 
-在不同的 Linux 发行版或不同的用户设置下，该提示符的样式有所不同。上例中的提示符由
-seismo-learn（用户名）、@、earth（主机名）、家目录以及美元符号组成。
+上例中的提示符由 seismo-learn（用户名）、@、earth（主机名）、家目录以及美元符号组成。
+在不同的 Linux 发行版或不同的用户设置下，该提示符的样式有所不同。
 
-然后我们就可以像上文所示，在终端中输入各种命令，Shell 会获取命令并交给系统执行。
-借助向上向下箭头按键可以获得之前输入的命令。如果按下鼠标左键沿着文本拖动鼠标
-选中一些文本，或者直接双击一个单词，那么这些选中的文本或单词就被拷贝了。
-随后然后按下鼠标中键，就可以粘贴拷贝到光标所在的位置。
+接着我们就可以像上文所示，在终端中输入各种命令，Shell 会获取命令并交给系统执行::
+
+    # 查看当前 Shell 路径
+    [seismo-learn@earth ~] $ echo $SHELL
+    /bin/bash
+
+.. tip::
+
+   借助向上向下箭头按键可以获得之前输入的命令。如果按下鼠标左键沿着文本拖动鼠标
+   选中一些文本，或者直接双击一个单词，那么这些选中的文本或单词就被拷贝了。
+   随后然后按下鼠标中键，就可以粘贴拷贝到光标所在的位置。
 
 重定向
 ^^^^^^
 
-一般情况下，命令从标准输入（stdin）读取输入，并输出到标准输出（stdout），
-标准输入和标准输出默认都是终端。使用重定向可以让命令从文件读取输入（\ ``<``\ ），
+一般情况下，命令从标准输入（stdin）读取输入，输出到标准输出（stdout），
+标准输入和标准输出默认都是终端。使用重定向可以从文件中读取输入（\ ``<``\ ），
 以及输出到文件（\ ``>``\ 、\ ``>>``\ ）。
 
 以 ``echo`` 命令为例的重定向输出到文件::
 
     # 使用 echo 命令输出 Hello World 到终端
     $ echo "Hello World"
+    Hello World
     # 输出 Hello World 到 output_file 文件中（文件不存在则新建该文件）
     $ echo "Hello World" > output_file
     # 使用 cat 命令查看 output_file 的内容
@@ -109,23 +117,36 @@ seismo-learn（用户名）、@、earth（主机名）、家目录以及美元�
     Rewrite it
     Append it
 
-以 ``wc`` 命令为例的从文件中读取输入::
+以 ``cat`` 命令为例的从文件中读取输入::
 
-    # 显示 output_file 文件的行数
-    $ wc -l < output_file
-    1
+    # 键入 cat 命令
+    $ cat
+
+    # 没指定任何参数时，该命令会从标准输入读入数据，即正在等待我们从终端输入中
+    # 在终端输入 Hello World 并按 Enter键，最后按 Ctrl + D 结束输入
+    $ cat
+    Hello World
+    Hello World
+
+    # 重定向标准输入从 output_file 读如内容
+    $ cat < output_file
+    Rewrite it
+    Append it
 
 从文件中读如输入，并输出到文件::
 
-    # 显示 output_file 文件的行数
-    $ wc -l < output_file > output_file2
+    # 查看 output_file 文件内容，并输出到 output_file2 文件中
+    $ cat < output_file > output_file2
     $ cat output_file2
-    1
+    Rewrite it
+    Append it
 
-除了标准输入和标准输出之外，还有标准错误（stderr），用于输出命令运行的错误信息，
+上例子中 ``cat`` 命令后面直接跟文件名时，跟加 ``<`` 和文件名，结果一样。
+
+除了标准输入和标准输出之外，还有标准错误（stderr），用于输出命令运行的状态和错误信息，
 其默认也是终端。一般用 0、1、2 分别表示标准输入、标准输出和标准错误。
-标准错误可以用 ``2>`` 和 ``2>> `` 重定向输出到文件中，数字 2 和 ``>`` 与 ``>>``
-之前没有空格。
+标准错误可以用 ``2>`` 和 ``2>>`` 重定向输出到文件中，数字 2 和 ``>`` 与 ``>>``
+之间没有空格。
 
 ::
 
@@ -144,7 +165,8 @@ seismo-learn（用户名）、@、earth（主机名）、家目录以及美元�
     cat: out_file: No such file or directory
     cat: out_file: No such file or directory
 
-使用 ``2>&1`` 可以将标准错误合并到标准输出::
+使用 ``2>&1`` 可以将标准错误合并到标准输出（注意重定向的顺序非常重要，标准错误的重定向
+``2>&1``\ 必须总是出现在标准输出重定向之后，否则不起作用）::
 
     # 将命令输出和出错信息都写入到 out_err_file 文件中
     $ cat out_file > out_err_file 2>&1
@@ -153,6 +175,23 @@ seismo-learn（用户名）、@、earth（主机名）、家目录以及美元�
     $ cat out_file >> out_err_file 2>&1
     cat: out_file: No such file or directory
     cat: out_file: No such file or directory
+
+可以使用 ``&>`` 和 ``&>>`` 这以精简方法来执行这种联合的重定向::
+
+    # 将命令输出和出错信息都写入到 out_err_file 文件中
+    $ cat out_file &> out_err_file
+    cat: out_file: No such file or directory
+    # 将命令输出和出错信息以追加的形式都写入到 out_err_file 文件中
+    $ cat out_file &>> out_err_file
+    cat: out_file: No such file or directory
+    cat: out_file: No such file or directory
+
+.. tip::
+
+   有时，我们不想要命令的输出结果。此时可以将输出重定向到 :file:`/dev/null` 文件。
+   此文件是系统设备，叫做位存储桶，可以接受输入，并且对输入不做任何处理::
+
+       $ cat out_file 2> /dev/null
 
 管道
 ^^^^
