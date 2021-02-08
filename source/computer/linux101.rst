@@ -99,19 +99,29 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     $ cd ~
     $ cd
 
+    # 检查当前所在目录
+    $ pwd
+    /home/seismo-learn
+
 新建文件和目录::
 
     # 进入家目录
     $ cd ~
     # 使用 mkdir（make directory，即创建目录）命令新建以下目录
     $ mkdir codes software workspace
+    $ ls
+    codes  Desktop  Documents  Downloads  software  workspace
     # 在 workspace 目录中新建 source 目录
     $ mkdir workspace/source
+    $ ls workspace/source
+    source
 
     # 进入 workspace 目录
     $ cd workspace
     # 使用 touch 命令创建新文件 hello-world.md 和 seiso-learn.md
     $ touch hello-world.md seiso-learn.md
+    $ ls
+    hello-world.md  seiso-learn.md  source
 
 以下所有操作都假设读者都已先切换到 :file:`~/workspace` 目录下了，即::
 
@@ -122,37 +132,65 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 使用 cp（copy，即复制）命令复制 hello-world.md 文件到同一目录下，并重命名为 hello-world-cp.md
     $ cp hello-world.md hello-world-cp.md
+    $ ls
+    hello-world-cp.md  hello-world.md  seiso-learn.md  source
     # 复制 hello-world.md 和 seiso-learn.md 文件到 source 目录下
     $ cp hello-world.md seiso-learn.md source
+    $ ls source
+    hello-world.md  seiso-learn.md
 
     # 复制 source 目录为同一目录下的 destination 目录（目标目录不存在）
     $ cp -r source destination
+    $ ls
+    destination  hello-world-cp.md  hello-world.md  seiso-learn.md  source
+    $ ls destination
+    hello-world.md  seiso-learn.md
     # 复制 source 目录到同一目录下的 destination 目录下（目标目录已存在）
     $ cp -r source destination
+    $ ls destination
+    hello-world.md  seiso-learn.md  source
 
 移动文件和目录::
 
     # 使用 mv（move，即移动）命令移动 hello-world.md 文件同一目录下，并重命名为 hello-world-mv.md
     $ mv hello-world.md hello-world-mv.md
+    $ ls
+    destination  hello-world-cp.md  hello-world-mv.md  seiso-learn.md  source
     # 移动 hello-world-cp.md 和 hello-world-mv.md 文件到 source 目录下
     $ mv hello-world-cp.md hello-world-mv.md source
+    ls
+    destination  seiso-learn.md  source
+    $ ls source
+    hello-world-cp.md  hello-world.md  hello-world-mv.md  seiso-learn.md
 
     # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
     $ mv source source-mv
+    ls
+    destination  seiso-learn.md  source-mv
     # 移动 source-mv 目录到同一目录下的 destination 目录下
     $ mv source-mv destination
+    $ ls
+    destination  seiso-learn.md
+    $ ls destination
+    hello-world.md  seiso-learn.md  source  source-mv
 
 删除文件和目录::
 
     # 使用 rm（remove，即删除）命令删除 seiso-learn.md 文件
     $ rm seiso-learn.md
+    $ ls
+    destination
     # 删除 destination 目录
     $ rm -r destination
+    $ ls
 
     # 新建 tmp 目录
     $ mkdir tmp
+    $ ls
+    tmp
     # 使用 rmdir（remove directory，即删除目录）命令删除空目录 tmp。目录不为空时则不删除
     $ rmdir tmp
+    $ ls
 
 .. warning::
 
@@ -164,25 +202,63 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     # 新建 hello-world.md 文件和 source 目录
     $ touch hello-world.md
     $ mkdir source
+    $ ls
+    hello-world.md  source
 
     # 使用 ln（link，即链接）命令建立 hello-world.md 的硬链接 hello-world-hard.md
     $ ln hello-world.md hello-world-hard.md
+    $ ls
+    hello-world-hard.md  hello-world.md  source
+    # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
+    $ ls -l
+    total 0
+    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world-hard.md
+    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world.md
+    drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  8 14:55 source
+
     # 建立 hello-world.md 的软链接（也叫符号链接）hello-world-soft.md
     $ ln -s hello-world.md hello-world-soft.md
+    $ ls -l
+    total 0
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.md
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.md
+    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.md -> hello-world.md
+    drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
 
-    # 建立 source 目录的软链接。
+    # 建立 source 目录的软链接
     $ ln -s source source-soft
+    $ ls -l
+    total 0
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.md
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.md
+    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.md -> hello-world.md
+    drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
+    lrwxrwxrwx 1 seismo-learn seismo-learn  6 Feb  8 14:58 source-soft -> source
+
+    # 删除 source 目录的软链接
+    $ rm source-soft
+    $ ls
+    hello-world-hard.md  hello-world.md  hello-world-soft.md  source
+    # 删除 hello-world.md 文件的软链接
+    $ rm hello-world-soft.md
+    $ ls
+    hello-world-hard.md  hello-world.md  source
+    # 删除 hello-world.md 文件的硬链接
+    $ rm hello-world-hard.md
+    $ ls
+    hello-world.md  source
 
 .. note::
 
    硬链接和源文件指向的是同一存储区。删除硬链接，仍可通过源文件访问；删除源文件，
    仍可通过硬链接访问。只有同时删除硬链接和源文件，文件实体才会被删除。因此，其实
    本质上硬链接和源文件互为对方的硬链接。通过给文件设置硬链接，可以防止重要文件被误删。
-   目录无法建立硬链接。
+   目录无法建立硬链接。一般设置硬链接后，源文件和硬链接都会高亮显示。
 
-   软链接（也叫符号链接）类似 Windows 系统的快捷方式，其存放的是源文件（或目录）的路径。
-   删除软链接，对源文件（或目录）没有任何影响。删除源文件（或目录），软链接依然存在，但无法
-   通过其访问源文件了。
+   软链接（也叫符号链接）类似 Windows 系统的快捷方式，是一个\ **文件**\ ，里面存放的
+   是源文件（或目录）的路径。删除软链接，对源文件（或目录）没有任何影响。
+   删除源文件（或目录），软链接依然存在，但无法通过其访问源文件（或目录）了。
+   软链接一般会高亮显示。
 
 文件路径
 ^^^^^^^^^
