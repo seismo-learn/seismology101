@@ -61,8 +61,98 @@ Linux 入门
 Shell 基础
 ----------
 
+什么是 Shell
+^^^^^^^^^^^^^
+
+Shell（壳）其实就是一个程序，它可以接受键盘输入的命令，然后把命令交给系统执行。上面所说的命令行
+实际上指的就是 Shell，终端就是用户和 Shell 交互的程序。几乎所有的 Linux 发行版都提供了一个叫
+Bash 的 shell，此外还有Zsh、csh、ksh 等 Shell。熟悉 Linux 系统后可以参考\
+:doc:`《Zsh 及其配置实践经验》<best-practices/zsh>`\ 安装和使用 Zsh。
+
+打开终端后，会看到类似以下的 Shell 提示符::
+
+   [seismo-learn@earth ~] $
+
+在不同的 Linux 发行版或不同的用户设置下，该提示符的样式有所不同。上例中的提示符由
+seismo-learn（用户名）、@、earth（主机名）、家目录以及美元符号组成。
+
+然后我们就可以像上文所示，在终端中输入各种命令，Shell 会获取命令并交给系统执行。
+借助向上向下箭头按键可以获得之前输入的命令。如果按下鼠标左键沿着文本拖动鼠标
+选中一些文本，或者直接双击一个单词，那么这些选中的文本或单词就被拷贝了。
+随后然后按下鼠标中键，就可以粘贴拷贝到光标所在的位置。
+
 重定向
 ^^^^^^
+
+一般情况下，命令从标准输入（stdin）读取输入，并输出到标准输出（stdout），
+标准输入和标准输出默认都是终端。使用重定向可以让命令从文件读取输入（\ ``<``\ ），
+以及输出到文件（\ ``>``\ 、\ ``>>``\ ）。
+
+以 ``echo`` 命令为例的重定向输出到文件::
+
+    # 使用 echo 命令输出 Hello World 到终端
+    $ echo "Hello World"
+    # 输出 Hello World 到 output_file 文件中（文件不存在则新建该文件）
+    $ echo "Hello World" > output_file
+    # 使用 cat 命令查看 output_file 的内容
+    $ cat output_file
+    Hello World
+
+    # 输出 Rewrite it 到 output_file 文件中（文件存在则覆盖该文件原有内容）
+    $ echo "Rewrite it" > output_file
+    $ cat output_file
+    Rewrite it
+
+    # 输出 Append it 到 output_file 文件中（文件不存在则新建该文件；存在则添加到文件末尾）
+    $ echo "append it" >> output_file
+    $ cat output_file
+    Rewrite it
+    Append it
+
+以 ``wc`` 命令为例的从文件中读取输入::
+
+    # 显示 output_file 文件的行数
+    $ wc -l < output_file
+    1
+
+从文件中读如输入，并输出到文件::
+
+    # 显示 output_file 文件的行数
+    $ wc -l < output_file > output_file2
+    $ cat output_file2
+    1
+
+除了标准输入和标准输出之外，还有标准错误（stderr），用于输出命令运行的错误信息，
+其默认也是终端。一般用 0、1、2 分别表示标准输入、标准输出和标准错误。
+标准错误可以用 ``2>`` 和 ``2>> `` 重定向输出到文件中，数字 2 和 ``>`` 与 ``>>``
+之前没有空格。
+
+::
+
+    # 使用 cat 命令查看 out_file 的内容。该文件不存在，因此会输出出错信息到终端
+    $ cat out_file
+    cat: out_file: No such file or directory
+
+    # 输出出错信息到 err_file（文件不存在则新建该文件；存在则覆盖该文件原有内容）
+    $ cat out_file 2> err_file
+    $ cat err_file
+    cat: out_file: No such file or directory
+
+    # 输出出错信息到 err_file（文件不存在则新建该文件；存在则添加到文件末尾）
+    $ cat out_file 2>> err_file
+    $ cat err_file
+    cat: out_file: No such file or directory
+    cat: out_file: No such file or directory
+
+使用 ``2>&1`` 可以将标准错误合并到标准输出::
+
+    # 将命令输出和出错信息都写入到 out_err_file 文件中
+    $ cat out_file > out_err_file 2>&1
+    cat: out_file: No such file or directory
+    # 将命令输出和出错信息以追加的形式都写入到 out_err_file 文件中
+    $ cat out_file >> out_err_file 2>&1
+    cat: out_file: No such file or directory
+    cat: out_file: No such file or directory
 
 管道
 ^^^^
