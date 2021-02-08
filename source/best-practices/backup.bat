@@ -17,7 +17,8 @@ REM   /mir        : ±¸·ÝÄ¿Â¼³ÉÎª¾µÏñ £¨¸´ÖÆ×ÓÄ¿Â¼£»É¾³ý±¸·ÝÄ¿Â¼ÏÂÔ´Ä¿Â¼ÖÐ²»´æÔÚµ
 REM   /mt[:n]     : Ê¹ÓÃ n ¸öÏß³Ì½øÐÐ¶àÏß³Ì¸´ÖÆ£¨Ä¬ÈÏÖµÎª 8£©¡£n ÖÁÉÙÎª 1£¬µ«²»µÃ´óÓÚ 128¡£
 REM                 ÀýÈç£¬/mt ±íÊ¾ 8 ¸öÏß³Ì£¬/mt:4 ±íÊ¾ 4 ¸öÏß³Ì
 REM ¿ÉÒÔ²Î¿¼ https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy
-REM ÁË½â robocopy ÃüÁîµÄ¸ü¶àÓÃ·¨
+REM ÁË½â robocopy ÃüÁîµÄ¸ü¶àÓÃ·¨¡£ÀýÈç£¬Ò²¿ÉÒÔÊ¹ÓÃÕýÎÄÖÐ±¸·Ý D ÅÌÊÇËùÓÃµÄ
+REM Ò»Ð©Ñ¡Ïî /R:10 /W:10 /A-:H /XD Config.Msi $RECYCLE.BIN
 
 REM ×¢ÒâÊÂÏî£º
 REM   1. Èç¹û½Å±¾ÖÐ´æÔÚÖÐÎÄ£¬ÐèÒª²ÉÓÃ ANSI ±àÂë¸ñÊ½£¬·ñÔò»áÂÒÂë¡£
