@@ -354,6 +354,12 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
     $ chmod +x hello-world.sh
     -rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
 
+有时候我们使用 Linux 的命令或安装程序时，可能由于没有读写某些文件的权限，而无法运行命令或
+安装程序。这时可以使用 ``sudo`` 命令临时获得 root 用户的权限。例如，在 Fedora 下安装
+GNU fortran::
+
+    $ sudo dnf install gcc-gfortran
+
 Shell 基础
 ----------
 
