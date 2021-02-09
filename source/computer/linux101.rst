@@ -118,10 +118,10 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 进入 workspace 目录
     $ cd workspace
-    # 使用 touch 命令创建新文件 hello-world.md 和 seiso-learn.md
-    $ touch hello-world.md seiso-learn.md
+    # 使用 touch 命令创建新文件 hello-world.txt 和 seiso-learn.txt
+    $ touch hello-world.txt seiso-learn.txt
     $ ls
-    hello-world.md  seiso-learn.md  source
+    hello-world.txt  seiso-learn.txt  source
 
 以下所有操作都假设读者都已先切换到 :file:`~/workspace` 目录下了，即::
 
@@ -130,54 +130,54 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 复制文件和目录::
 
-    # 使用 cp（copy，即复制）命令复制 hello-world.md 文件到同一目录下，并重命名为 hello-world-cp.md
-    $ cp hello-world.md hello-world-cp.md
+    # 使用 cp（copy，即复制）命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
+    $ cp hello-world.txt hello-world-cp.txt
     $ ls
-    hello-world-cp.md  hello-world.md  seiso-learn.md  source
-    # 复制 hello-world.md 和 seiso-learn.md 文件到 source 目录下
-    $ cp hello-world.md seiso-learn.md source
+    hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
+    # 复制 hello-world.txt 和 seiso-learn.txt 文件到 source 目录下
+    $ cp hello-world.txt seiso-learn.txt source
     $ ls source
-    hello-world.md  seiso-learn.md
+    hello-world.txt  seiso-learn.txt
 
     # 复制 source 目录为同一目录下的 destination 目录（目标目录不存在）
     $ cp -r source destination
     $ ls
-    destination  hello-world-cp.md  hello-world.md  seiso-learn.md  source
+    destination  hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
     $ ls destination
-    hello-world.md  seiso-learn.md
+    hello-world.txt  seiso-learn.txt
     # 复制 source 目录到同一目录下的 destination 目录下（目标目录已存在）
     $ cp -r source destination
     $ ls destination
-    hello-world.md  seiso-learn.md  source
+    hello-world.txt  seiso-learn.txt  source
 
 移动文件和目录::
 
-    # 使用 mv（move，即移动）命令移动 hello-world.md 文件同一目录下，并重命名为 hello-world-mv.md
-    $ mv hello-world.md hello-world-mv.md
+    # 使用 mv（move，即移动）命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
+    $ mv hello-world.txt hello-world-mv.txt
     $ ls
-    destination  hello-world-cp.md  hello-world-mv.md  seiso-learn.md  source
-    # 移动 hello-world-cp.md 和 hello-world-mv.md 文件到 source 目录下
-    $ mv hello-world-cp.md hello-world-mv.md source
+    destination  hello-world-cp.txt  hello-world-mv.txt  seiso-learn.txt  source
+    # 移动 hello-world-cp.txt 和 hello-world-mv.txt 文件到 source 目录下
+    $ mv hello-world-cp.txt hello-world-mv.txt source
     ls
-    destination  seiso-learn.md  source
+    destination  seiso-learn.txt  source
     $ ls source
-    hello-world-cp.md  hello-world.md  hello-world-mv.md  seiso-learn.md
+    hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seiso-learn.txt
 
     # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
     $ mv source source-mv
     ls
-    destination  seiso-learn.md  source-mv
+    destination  seiso-learn.txt  source-mv
     # 移动 source-mv 目录到同一目录下的 destination 目录下
     $ mv source-mv destination
     $ ls
-    destination  seiso-learn.md
+    destination  seiso-learn.txt
     $ ls destination
-    hello-world.md  seiso-learn.md  source  source-mv
+    hello-world.txt  seiso-learn.txt  source  source-mv
 
 删除文件和目录::
 
-    # 使用 rm（remove，即删除）命令删除 seiso-learn.md 文件
-    $ rm seiso-learn.md
+    # 使用 rm（remove，即删除）命令删除 seiso-learn.txt 文件
+    $ rm seiso-learn.txt
     $ ls
     destination
     # 删除 destination 目录
@@ -199,54 +199,54 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 建立文件和目录的链接::
 
-    # 新建 hello-world.md 文件和 source 目录
-    $ touch hello-world.md
+    # 新建 hello-world.txt 文件和 source 目录
+    $ touch hello-world.txt
     $ mkdir source
     $ ls
-    hello-world.md  source
+    hello-world.txt  source
 
-    # 使用 ln（link，即链接）命令建立 hello-world.md 的硬链接 hello-world-hard.md
-    $ ln hello-world.md hello-world-hard.md
+    # 使用 ln（link，即链接）命令建立 hello-world.txt 的硬链接 hello-world-hard.txt
+    $ ln hello-world.txt hello-world-hard.txt
     $ ls
-    hello-world-hard.md  hello-world.md  source
+    hello-world-hard.txt  hello-world.txt  source
     # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
     $ ls -l
     total 0
-    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world-hard.md
-    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world.md
+    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world-hard.txt
+    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world.txt
     drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  8 14:55 source
 
-    # 建立 hello-world.md 的软链接（也叫符号链接）hello-world-soft.md
-    $ ln -s hello-world.md hello-world-soft.md
+    # 建立 hello-world.txt 的软链接（也叫符号链接）hello-world-soft.txt
+    $ ln -s hello-world.txt hello-world-soft.txt
     $ ls -l
     total 0
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.md
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.md
-    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.md -> hello-world.md
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.txt
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.txt
+    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.txt -> hello-world.txt
     drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
 
     # 建立 source 目录的软链接
     $ ln -s source source-soft
     $ ls -l
     total 0
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.md
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.md
-    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.md -> hello-world.md
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.txt
+    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.txt
+    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.txt -> hello-world.txt
     drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
     lrwxrwxrwx 1 seismo-learn seismo-learn  6 Feb  8 14:58 source-soft -> source
 
     # 删除 source 目录的软链接
     $ rm source-soft
     $ ls
-    hello-world-hard.md  hello-world.md  hello-world-soft.md  source
-    # 删除 hello-world.md 文件的软链接
-    $ rm hello-world-soft.md
+    hello-world-hard.txt  hello-world.txt  hello-world-soft.txt  source
+    # 删除 hello-world.txt 文件的软链接
+    $ rm hello-world-soft.txt
     $ ls
-    hello-world-hard.md  hello-world.md  source
-    # 删除 hello-world.md 文件的硬链接
-    $ rm hello-world-hard.md
+    hello-world-hard.txt  hello-world.txt  source
+    # 删除 hello-world.txt 文件的硬链接
+    $ rm hello-world-hard.txt
     $ ls
-    hello-world.md  source
+    hello-world.txt  source
 
 .. note::
 
@@ -327,7 +327,7 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
 
 第三和第四列分别表示文件所属用户和用户组（如 ``seismo-learn seismo-learn``\ ）
 
-可以看出 :file:`hello-world.md` 是一个普通文件，所属用户权限（即 seismo-learn）是
+可以看出 :file:`hello-world.txt` 是一个普通文件，所属用户权限（即 seismo-learn）是
 ``rw-``\ （可读、可写、不可执行），所属用户组（即 seismo-learn）的权限是 ``r--``
 （可读、不可写、不可执行），其他人的权限是 ``r--``\ （可读、不可写、不可执行）。
 
