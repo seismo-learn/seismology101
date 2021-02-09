@@ -50,7 +50,7 @@ Linux 入门
 ^^^^^^^^^^^^^^^^^^^
 
 Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特殊的目录称为根目录。
-一般情况下，根目录下一般有 :file:`/home`\ 、\ :file:`/root`\ 、\ :file:`/bin`\ 、
+根目录下一般有 :file:`/home`\ 、\ :file:`/root`\ 、\ :file:`/bin`\ 、
 :file:`/usr`\ 、\ :file:`/lib`\ 、\ :file:`/opt` 等目录。
 
 -  :file:`/home` 目录：用户的家目录，存储用户自己的信息
@@ -99,7 +99,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     $ cd ~
     $ cd
 
-    # 检查当前所在目录
+    # 确认已经切换回家目录下
     $ pwd
     /home/seismo-learn
 
@@ -113,7 +113,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     codes  Desktop  Documents  Downloads  software  workspace
     # 在 workspace 目录中新建 source 目录
     $ mkdir workspace/source
-    $ ls workspace/source
+    $ ls workspace/
     source
 
     # 进入 workspace 目录
