@@ -60,9 +60,9 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    默认将软件安装到此目录下
 
 日常科研中，我们大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
-该用户的家目录便是 :file:`/home/seismo-learn`。在 Linux 系统下，可用 :file:`~` 代表
-家目录。Linux 系统安装后，自动创建的家目录下的目录有 :file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、
-:file:`~/Documents` 等。熟悉 Linux 系统后可以参考\
+该用户的家目录便是 :file:`/home/seismo-learn`\ 。macOS 下的家目录是 :file:`/Users/seismo-learn`\ 。
+在 Linux 系统下，可用 :file:`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
+:file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、\ :file:`~/Documents` 等。熟悉 Linux 系统后可以参考\
 :doc:`《文件管理实践经验》<best-practices/file-organization>`\ 和\
 :doc:`《软件安装实践经验》<best-practices/software-installation>`\
 进一步组织与管理家目录，以提高工作效率。
