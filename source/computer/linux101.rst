@@ -391,6 +391,13 @@ Shell 变量、Shell 函数和别名等组成，这一节我们主要介绍环�
 加入可执行程序的搜索目录列表。这也是之前示例中我们直接在终端输入命令后，Shell 能正确找到命令所在位置的原因。
 若某一可执行程序所在目录不在 ``PATH`` 中，则 Shell 无法将其找到交给系统执行。
 
+可以使用 ``which`` 或 ``whereis`` 命令查询命令所在目录::
+
+    $ which cd
+    /usr/bin/cd
+    $ whereis cd
+    cd: /usr/bin/cd /usr/share/man/man1/cd.1.gz /usr/share/man/man1p/cd.1p.gz /usr/share/man/mann/cd.n.gz
+
 可以使用以下命令查看环境变量::
 
     # 使用 printenv 命令查看 SHELL 变量，即 Shell 程序的名字
