@@ -223,18 +223,8 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
     lrwxrwxrwx 1 seismo-learn seismo-learn  6 Feb  8 14:58 source-soft -> source
 
-    # 删除 source 目录的软链接
-    $ rm source-soft
-    $ ls
-    hello-world-hard.txt  hello-world.txt  hello-world-soft.txt  source
-    # 删除 hello-world.txt 文件的软链接
-    $ rm hello-world-soft.txt
-    $ ls
-    hello-world-hard.txt  hello-world.txt  source
-    # 删除 hello-world.txt 文件的硬链接
-    $ rm hello-world-hard.txt
-    $ ls
-    hello-world.txt  source
+    # 可以像删除文件一样删除硬链接和软链接
+    $ rm hello-world-hard.txt hello-world-soft.txt source-soft
 
 .. admonition:: 硬链接与软链接的区别
 
