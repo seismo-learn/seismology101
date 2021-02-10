@@ -207,26 +207,14 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 使用 ln（link，即链接）命令建立 hello-world.txt 的硬链接 hello-world-hard.txt
     $ ln hello-world.txt hello-world-hard.txt
-    $ ls
-    hello-world-hard.txt  hello-world.txt  source
-    # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
-    $ ls -l
-    total 0
-    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world-hard.txt
-    -rw-r--r-- 2 seismo-learn seismo-learn 0 Feb  8 14:55 hello-world.txt
-    drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  8 14:55 source
 
     # 建立 hello-world.txt 的软链接（也叫符号链接）hello-world-soft.txt
     $ ln -s hello-world.txt hello-world-soft.txt
-    $ ls -l
-    total 0
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.txt
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.txt
-    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.txt -> hello-world.txt
-    drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
 
     # 建立 source 目录的软链接
     $ ln -s source source-soft
+    
+    # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
     $ ls -l
     total 0
     -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.txt
