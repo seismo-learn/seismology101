@@ -53,7 +53,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 根目录下一般有 :file:`/home`\ 、\ :file:`/root`\ 、\ :file:`/bin`\ 、
 :file:`/usr`\ 、\ :file:`/lib`\ 、\ :file:`/opt` 等目录。
 
--  :file:`/home` 目录：用户的家目录，存储用户自己的信息
+-  :file:`/home` 目录：用户的家目录，存储用户自己的文件
 -  :file:`/bin` 目录：存储必须的程序和命令，所有用户都可用
 -  :file:`/usr` 目录：大多数软件的安装位置
 -  :file:`/opt` 目录：某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）
@@ -61,8 +61,8 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 日常科研中，我们大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
 该用户的家目录便是 :file:`/home/seismo-learn`\ 。macOS 下的家目录是 :file:`/Users/seismo-learn`\ 。
-在 Linux 系统下，可用 :file:`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
-:file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、\ :file:`~/Documents` 等。熟悉 Linux 系统后可以参考\
+在 Linux/macOS 系统下，可用 :file:`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
+:file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、\ :file:`~/Documents` 等。熟悉 Linux 文件系统后可以参考\
 :doc:`《文件管理实践经验》<best-practices/file-organization>`\ 和\
 :doc:`《软件安装实践经验》<best-practices/software-installation>`\
 进一步组织与管理家目录，以提高工作效率。
@@ -123,7 +123,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     $ ls
     hello-world.txt  seiso-learn.txt  source
 
-以下所有操作都假设读者都已先切换到 :file:`~/workspace` 目录下了，即::
+以下所有操作都假设读者已经切换到 :file:`~/workspace` 目录下了，即::
 
     # 进入 ~/workspace 目录
     $ cd ~/workspace
@@ -248,7 +248,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     $ ls
     hello-world.txt  source
 
-.. note::
+.. admonition:: 硬链接与软链接的区别
 
    硬链接和源文件指向的是同一存储区。删除硬链接，仍可通过源文件访问；删除源文件，
    仍可通过硬链接访问。只有同时删除硬链接和源文件，文件实体才会被删除。因此，其实
@@ -263,7 +263,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 文件路径
 ^^^^^^^^^
 
-访问文件或目录需要指定文件或目录的路径，Linux 下有两种表示路径的方式：绝对路径和相对路径。
+访问文件或目录需要指定文件或目录的路径。Linux 下有两种表示路径的方式：绝对路径和相对路径。
 
 顾名思义，绝对路径是从根目录 :file:`/` 开始算起的路径。例如，家目录是 :file:`/home`，
 用户 seismo-learn 的家目录是 :file:`/home/seismo-learn`，该用户的桌面目录的路径是
@@ -307,7 +307,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 Linux 下每个文件和目录都有自己的权限，使用以下命令查看文件或目录的权限::
 
-    # 进入 ~/workspace 目录，并新建 hello-world.sh 文加和 source 目录
+    # 进入 ~/workspace 目录，并新建 hello-world.sh 文件和 source 目录
     $ cd ~/workspace
     $ touch hello-world.sh
     $ mkdir source
@@ -356,7 +356,7 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
 
 有时候我们使用 Linux 的命令或安装程序时，可能由于没有读写某些文件的权限，而无法运行命令或
 安装程序。这时可以使用 ``sudo`` 命令临时获得 root 用户的权限。例如，在 Fedora 下安装
-GNU fortran::
+GNU Fortran::
 
     $ sudo dnf install gcc-gfortran
 
