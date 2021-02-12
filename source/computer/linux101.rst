@@ -7,7 +7,7 @@ Linux 入门
    :maxdepth: 2
 
    command-line 
-   file-management
+   file-operations
 
 Shell 基础
 ----------
