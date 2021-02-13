@@ -87,7 +87,7 @@ Remote - SSH，使用 VS Code 来编辑，这会极大地提高编辑效率。�
 接下来需要设置远程计算机的 SSH 主机。远程计算机一般已安装 SSH 服务器，本地计算机一般也已安装 SSH 客户端。
 我们还需要配置基于密钥的认证，这也是 VS Code 官方推荐的认证方式。本地计算机下，运行以下命令::
 
-    $ ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa-remote-ssh
+    $ ssh-keygen -t rsa -f ~/.ssh/id_rsa-remote-ssh
 
 该命令会产生一对 SSH 密钥，分别位于 :file:`~/.ssh/id_rsa-remote-ssh` 和 :file:`~/.ssh/id_rsa-remote-ssh.pub` 文件中。
 前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。假设远程计算机的系统是 Linux 或 macOS，
@@ -124,6 +124,12 @@ IP 地址是 192.168.1.100，用户名是 seismo-learn，运行以下命令:::
 
    然后点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，点击“seismology”就可以登录远程计算机了。
    也可以通过“远程资源管理器”，点击“seismology”登录远程计算机。
+
+.. tip::
+
+   如果远程计算机使用的 Shell 是 Bash，本地计算机是 Zsh，则可能无法启动 VS Code 的终端，
+   需要修改一下配置文件。打开命令面板，输入 Remote-SSH: Settings 后，搜索 terminal.integrated.shell.linux。
+   然后将 "/bin/zsh" 改为 "/bin/bash" 即可。详情请参考 `microsoft/vscode-remote-release issues #38 <https://github.com/microsoft/vscode-remote-release/issues/38>`__
 
 vim
 ----
