@@ -100,11 +100,11 @@ Remote - SSH，使用 VS Code 来编辑，这会极大地提高编辑效率。�
 
 该命令会产生一对 SSH 密钥，分别位于 :file:`~/.ssh/id_rsa-remote-ssh` 和 :file:`~/.ssh/id_rsa-remote-ssh.pub` 文件中。
 前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。假设远程计算机的系统是 Linux 或 macOS，
-IP 地址是 192.168.1.100，用户名是 seismo-learn，运行以下命令:::
+IP 地址是 192.168.1.100，用户名是 seismo-learn，运行以下命令::
 
     $ ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub seismo-learn@192.168.1.100
 
-以上命令要求输入用户在远程计算机的密码，然后就会把本地的公钥以追加的方式复制到远程计算机的 :file:`~/.ssh/authorized_keys` 文件中，
+以上命令要求用户输入远程计算机的密码，然后就会把本地的公钥以追加的方式复制到远程计算机的 :file:`~/.ssh/authorized_keys` 文件中，
 并给远程计算机中的用户家目录、:file:`~/.ssh` 目录以及 :file:`~/.ssh/authorized_keys` 设置合适的权限。
 若远程计算机或本地计算机是 Windows 系统，请参考 `Quick start: Using SSH keys <https://code.visualstudio.com/docs/remote/troubleshooting#_quick-start-using-ssh-keys>`__
 进行配置。
