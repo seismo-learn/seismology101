@@ -36,16 +36,17 @@ Shell 变量、Shell 函数和别名等组成，这一节我们主要介绍环�
 加入可执行程序的搜索目录列表。这也是之前示例中我们直接在终端输入命令后，Shell 能正确找到命令所在位置的原因。
 若某一可执行程序所在目录不在 ``PATH`` 所包含的目录中，则 Shell 无法将其找到交给系统执行。
 
-可以使用 ``which`` 或 ``whereis`` 命令查询命令所在目录::
+使用  echo 命令查看环境变量::
 
-    $ which cd
-    /usr/bin/cd
-    $ whereis cd
-    cd: /usr/bin/cd /usr/share/man/man1/cd.1.gz /usr/share/man/man1p/cd.1p.gz /usr/share/man/mann/cd.n.gz
-
-可以使用以下命令查看环境变量::
-
-    # 使用 echo 命令查看 SHELL 变量，即 Shell 程序的名字
+    # 查看 SHELL 变量，即 Shell 程序的名字
     $ echo ${SHELL}
 
-日常科研中，我们一般修改 :file:`~/.bashrc` 文件来修改环境变量以配置个人的 Shell 环境。
+使用 ``which`` 或 ``whereis`` 命令查询命令所在目录::
+
+    $ which cat
+    /usr/bin/cat
+    $ whereis cat
+    cat: /usr/bin/cat /usr/share/man/man1/cat.1.gz /usr/share/man/man1p/cat.1p.gz
+
+日常科研中，我们需要修改环境变量来配置个人的 Shell 环境。例如，使用 Bash 的读者可以修改 :file:`~/.bashrc`，
+使用 Zsh（macOS Catalina（10.15）以后的默认 Shell）的读者可以修改 :file:`~/.zshrc`\ 。
