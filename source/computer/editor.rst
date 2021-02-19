@@ -59,15 +59,14 @@ vim 是最流行的基于命令行的编辑器，有时候可能是用户唯一�
 Visual Studio Code
 -------------------
 
-安装和使用
-^^^^^^^^^^
-
 可以参考\ :doc:`setup`\ 中相应操作系统下的“日常软件”安装 VS Code。
 
 刚接触 VS Code 的用户可以参考 VS Code 官方入门教程 `Get Started <https://code.visualstudio.com/docs/getstarted/introvideos>`__
-学习常用用法。使用过程中，可以根据个人习惯配置 VS Code，还可以安装和使用扩展包。
+学习常用用法。
 
-日常科研使用 VS Code 编辑文档和代码遇到疑问时，可以随时查阅，如以下方式：
+日常科研中，随时根据个人习惯配置 VS Code、安装和使用扩展包等。
+
+使用 VS Code 编辑文档和代码遇到疑问时，可通过以下方式随时查阅：
 
 - 点击菜单栏“帮助”，选择相关选项。例如，“交互式演练场”、“文档”（Visual Studio Code 官方文档）、“键盘快捷键参考”等
 - 使用 Google 搜索
@@ -82,83 +81,101 @@ Visual Studio Code
    即“Chinese (Simplified) Language Pack for Visual Studio Code”，点击安装就行了。
    安装完之后自动重启，界面就变成中文了。
 
-编辑远程计算机文件
-^^^^^^^^^^^^^^^^^^
+.. dropdown:: :fa:`exclamation-circle,mr-1` 远程计算机中使用 VS Code
+   :container: +shadow
+   :title: bg-info text-white font-weight-bold
 
-一般编辑远程计算机中的文件，都是先登录到远程计算机，然后用 vim 编辑。现在，我们也可以借助 VS Code 扩展包
-Remote - SSH，使用 VS Code 来编辑，这会极大地提高编辑效率。可以参考VS Code 官方文档
-`ssh <https://code.visualstudio.com/docs/remote/ssh>`__
-了解详细用法，本文简要介绍如何安装和使用该扩展包。
+   编辑远程计算机文件的传统方法是先登录到远程计算机，然后用 vim 编辑器编辑文件。
 
-在“扩展”中，搜索“Remote - SSH”，点击安装。安装完之后，左下角导航栏会多一个类似 ``><`` 的远程连接图标。
-之后可以通过点击该图标来使用该扩展包。
+   现在，我们可以借助 VS Code 扩展包 Remote - SSH，使用 VS Code 编辑远程文件，这极大地提高编辑效率。
+   这里简要介绍如何安装和使用该扩展包，可以参考VS Code 官方文档 `ssh <https://code.visualstudio.com/docs/remote/ssh>`__
+   了解详细用法。
 
-接下来需要设置远程计算机的 SSH 主机。远程计算机一般已安装 SSH 服务器，本地计算机一般也已安装 SSH 客户端。
-我们还需要配置基于密钥的认证，这也是 VS Code 官方推荐的认证方式。本地计算机下，运行以下命令::
+   1.  安装 Remote - SSH 扩展包
 
-    $ ssh-keygen -t rsa -f ~/.ssh/id_rsa-remote-ssh
+       在“扩展”中，搜索“Remote - SSH”，点击安装。
 
-该命令会产生一对 SSH 密钥，分别位于 :file:`~/.ssh/id_rsa-remote-ssh` 和 :file:`~/.ssh/id_rsa-remote-ssh.pub` 文件中。
-前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。假设远程计算机的系统是 Linux 或 macOS，
-IP 地址是 192.168.1.100，用户名是 seismo-learn，运行以下命令::
+       安装完之后，左下角导航栏会多一个类似 ``><`` 的远程连接图标。之后可以通过点击该图标来使用该扩展包。
 
-    $ ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub seismo-learn@192.168.1.100
+   2.  配置远程计算机的 SSH 主机
 
-以上命令要求用户输入远程计算机的密码，然后就会把本地的公钥以追加的方式复制到远程计算机的 :file:`~/.ssh/authorized_keys` 文件中，
-并给远程计算机中的用户家目录、:file:`~/.ssh` 目录以及 :file:`~/.ssh/authorized_keys` 设置合适的权限。
-若远程计算机或本地计算机是 Windows 系统，请参考 `Quick start: Using SSH keys <https://code.visualstudio.com/docs/remote/troubleshooting#_quick-start-using-ssh-keys>`__
-进行配置。
+       一般情况下，远程计算机已安装 SSH 服务器，本地计算机已安装 SSH 客户端。我们还需要配置基于密钥的认证，
+       这也是 VS Code 官方推荐的认证方式。以下命令假设本地和远程计算机都是 Linux 或 macOS 系统，
+       远程计算机的 IP 地址是 192.168.1.100，用户在远程计算机中的用户名是 seismo-learn。
 
-在终端中输入以下命令，验证是否配置是否成功，即可以登录远程计算机（用户需替换自己的用户名和远程计算机 IP 地址）::
+       本地计算机下，运行以下命令生成 SSH 密钥::
 
-    $ ssh seismo-learn@192.168.1.100
+           $ ssh-keygen -t rsa -f ~/.ssh/id_rsa-remote-ssh
 
-点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，输入 seismo-learn@192.168.1.100 便可
-使用 VS Code 编辑远程计算机中的文件了。
+       该命令产生的一对 SSH 密钥分别位于 :file:`~/.ssh/id_rsa-remote-ssh` 和 :file:`~/.ssh/id_rsa-remote-ssh.pub` 文件中。
+       前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。
+      
+       运行以下命令将公钥复制到远程计算机中（需用户输入远程计算机的密码）::
 
-文件编辑完毕后，选择菜单栏“文件”中的“关闭远程连接”，或者直接关闭 VS Code，就可以退出远程连接。
+           $ ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub seismo-learn@192.168.1.100
 
-.. tip::
+       该命令会把本地的公钥以追加的方式复制到远程计算机的 :file:`~/.ssh/authorized_keys` 文件中，并给远程计算机
+       中的用户家目录、:file:`~/.ssh` 目录以及 :file:`~/.ssh/authorized_keys` 设置合适的权限。
+       若远程计算机或本地计算机是 Windows 系统，请参考
+       ` Quick start: Using SSH keys <https://code.visualstudio.com/docs/remote/troubleshooting#_quick-start-using-ssh-keys>`__
+       进行配置。
 
-   如果需要经常连接远程计算机，可以使用 SSH 配置文件。在活动栏，选择“远程资源管理器”，点击“配置”选择
-   :file:`~/.ssh/config` 配置文件，按照以下格式添加相关信息到该文件中::
+       在终端中输入以下命令，验证是否配置是否成功，即可以登录远程计算机（用户需替换自己的远程计算机用户名和 IP 地址）::
 
-       Host seismology
-           User seismo-learn
-           HostName 192.168.1.100
-           IdentityFile ~/.ssh/id_rsa-remote-ssh
+           $ ssh seismo-learn@192.168.1.100
 
-   其中，第一列是关键词，如 Host、User、HostName、IdentityFile，第二列是对应的值。seismology 是
-   用户自定义的远程主机标识，其他三个值同上文。可以按照该格式，向该文件中添加多个远程计算机。
+   3.  编辑远程文件
 
-   然后点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，点击“seismology”就可以登录远程计算机了。
-   也可以通过“远程资源管理器”，点击“seismology”登录远程计算机。
+       点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，输入 seismo-learn@192.168.1.100
+       便可使用 VS Code 编辑远程计算机中的文件了。
 
-.. tip::
+   4.  退出远程连接
 
-   如果远程计算机使用的 Shell 是 Bash，本地计算机是 Zsh，则可能无法启动 VS Code 的终端，
-   需要修改一下配置文件。打开命令面板，输入 Remote-SSH: Settings 后，搜索 terminal.integrated.shell.linux。
-   然后将 "/bin/zsh" 改为 "/bin/bash" 即可。详情请参考 `microsoft/vscode-remote-release issues #38 <https://github.com/microsoft/vscode-remote-release/issues/38>`__
+       文件编辑完毕后，选择菜单栏“文件”中的“关闭远程连接”，或者直接关闭 VS Code，就可以退出远程连接。
+
+   .. tip::
+
+      如果需要经常连接远程计算机，可以使用 SSH 配置文件。
+      
+      在活动栏中选择“远程资源管理器”，点击“配置”后选择 :file:`~/.ssh/config` 配置文件，按照以下格式
+      添加相关信息到该文件中::
+
+          Host seismology
+              User seismo-learn
+              HostName 192.168.1.100
+              IdentityFile ~/.ssh/id_rsa-remote-ssh
+
+      第一列是关键词，如 Host、User、HostName、IdentityFile，第二列是对应的值。seismology
+      是用户自定义的远程主机标识，其他三个值同上文。可以按照该格式，向该文件中添加多个远程计算机。
+
+      点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，点击“seismology”就可以登录远程计算机了。
+      也可以通过“远程资源管理器”，点击“seismology”登录远程计算机。
+
+   .. tip::
+
+      如果远程计算机使用的 Shell 是 Bash，本地计算机是 Zsh，可能遇到无法启动 VS Code 的终端的问题。
+      此时，需要修改一下配置文件以正确启动终端。
+      
+      打开命令面板，输入 Remote-SSH: Settings，搜索 terminal.integrated.shell.linux，将 "/bin/zsh"
+      改为 "/bin/bash" 即可。详情请参考
+      `microsoft/vscode-remote-release issues #38 <https://github.com/microsoft/vscode-remote-release/issues/38>`__
 
 vim
 ----
 
 vim 是一款基于命令行的编辑器，拥有以下特点：
 
-- vim 的快捷键和插件配置，可以让我们使用键盘快速地完成文本编辑。vim 避免了使用鼠标，甚至避免用上下左右键，
-  因为这些需要太多的手指移动
-- vim 轻量级且执行快。对于许多简单任务，启动 vim 比使用图形化编辑器要快地多
-- vim 在很多 Linux 发行版都预装了，某些时候可能是我们唯一能使用的编辑器，比如使用远程计算机
+- 使用键盘快速完成文本编辑。vim 避免了使用鼠标，甚至避免用上下左右键，因为这些需要太多的手指移动
+- 轻量级且执行快。对于许多简单任务，启动 vim 比使用图形化编辑器要快地多
+- 很多 Linux 发行版都预装了 vim，某些时候可能是我们唯一能使用的编辑器，比如使用远程计算机
 
 在大多数 Linux 发行版中，vim 也可以用 vi 替代。可以使用以下命令查看::
 
     $ which vim
     /usr/bin/vim
+
     $ which vi                          
     vi=vim
-
-本文只介绍 vim 的一些基本用法，可以参考\ `简明 VIM 练级攻略 <https://coolshell.cn/articles/5426.html>`__\
-学习更多用法。
 
 操作模式
 ^^^^^^^^^
@@ -213,3 +230,12 @@ Vim 的设计以大多数时间都花在阅读、浏览和进行少量编辑改�
 - :kbd:`dd` 删除当前行
 - :kbd:`u` 撤销上一次修改
 - :kbd:`Ctrl` + :kbd:`r` 重做上一次修改
+
+扩展阅读
+^^^^^^^^^
+
+本文只介绍了 vim 的一些常见用法，日常科研中需要经常使用 vim 的用户可以参考以下教程，
+学习和掌握更多用法，配置 vim 以便更高效地编辑文件：
+
+- `简明 VIM 练级攻略 <https://coolshell.cn/articles/5426.html>`__
+- `Vim 配置入门 <http://www.ruanyifeng.com/blog/2018/09/vimrc.html>`__
