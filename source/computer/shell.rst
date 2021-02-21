@@ -217,6 +217,7 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
     # 将命令输出和出错信息都写入到 out_err_file 文件中
     $ cat out_file > out_err_file 2>&1
     cat: out_file: No such file or directory
+
     # 将命令输出和出错信息以追加的形式都写入到 out_err_file 文件中
     $ cat out_file >> out_err_file 2>&1
     cat: out_file: No such file or directory
@@ -227,6 +228,7 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
     # 将命令输出和出错信息都写入到 out_err_file 文件中
     $ cat out_file &> out_err_file
     cat: out_file: No such file or directory
+
     # 将命令输出和出错信息以追加的形式都写入到 out_err_file 文件中
     $ cat out_file &>> out_err_file
     cat: out_file: No such file or directory
