@@ -10,6 +10,7 @@
    computer/setup
    computer/linux101
    computer/commands
+   computer/editor
 
 .. toctree::
    :maxdepth: 3

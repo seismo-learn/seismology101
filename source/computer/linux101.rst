@@ -8,7 +8,6 @@ Linux 入门
 
    command-line 
    file-operations
-   editor
 
 Shell 基础
 ----------
