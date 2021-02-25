@@ -9,10 +9,4 @@ Linux 入门
    command-line 
    file-operations
    shell
-
-环境变量
---------
-
-
-编辑器
-------
+   environment-variable
