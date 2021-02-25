@@ -8,6 +8,7 @@ Linux 入门
 
    command-line 
    file-operations
+   environment-variable
 
 Shell 基础
 ----------
@@ -23,9 +24,6 @@ Shell 基础
 
 正则表达式
 ^^^^^^^^^^
-
-环境变量
---------
 
 
 编辑器
