@@ -1,16 +1,16 @@
 #
 # Build and deploy the documentation
 #
-name: Build
+name: Deploy
 
+# Run on main branch only
 on:
-  pull_request:
   push:
     branches:
       - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
@@ -30,11 +30,6 @@ jobs:
       - name: Build documentation
         run: make dirhtml
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: docs
-          path: build/dirhtml
-
       - name: Deploy documentation
         # peaceiris/actions-gh-pages@v3.7.3
         # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
@@ -46,4 +41,3 @@ jobs:
           force_orphan: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-        if: github.event_name == 'push'
