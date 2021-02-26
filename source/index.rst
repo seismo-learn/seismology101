@@ -1,6 +1,8 @@
 地震“学”科研入门教程
 ####################
 
+This is a tiny change for test.
+
 .. toctree::
    :maxdepth: 3
    :caption: 计算机基础
