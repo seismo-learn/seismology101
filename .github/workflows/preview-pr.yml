@@ -1,11 +1,13 @@
 #
 # Build and preview documentation in PRs
-# DOES NOT WORK FOR FORKS.
 #
 name: Preview PR
 
 on:
-  pull_request:
+  workflow_run:
+    workflows: ["Build"]
+    types:
+      - completed
 
 jobs:
   deploy:
@@ -14,19 +16,13 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.8.0
 
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Build documentation
-        run: make dirhtml
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: build.yml
+          workflow_conclusion: success
+          name: docs
+          path: build/dirhtml
 
       - name: Deploy for preview
         # peaceiris/actions-gh-pages@v3.7.3
