@@ -40,6 +40,3 @@ VS Code 编辑器的 Markdown 语言扩展支持实时预览 Markdown 文档。�
 - https://daringfireball.net/projects/markdown/dingus
 
 推荐使用 `pandoc <https://pandoc.org/>`__ 将 Markdown 文档转成其他格式，如 PDF、LaTeX。
-
-推荐使用浏览器插件 `Markdown Here <https://markdown-here.com/>`__\ ，以便使用 Markdown
-语法写优美的邮件。
