@@ -1,6 +1,13 @@
 Markdown
 ========
 
+:本节贡献者: |姚家园|\（作者）、
+             |田冬冬|\（审稿）
+:最近更新日期: 2021-02-26
+:预计花费时间: 30 分钟
+
+----
+
 `Markdown <https://daringfireball.net/projects/markdown/>`__ 是一种轻量级标记语言，
 使用语法简单的纯文本格式来编写文档，帮助人们专注于写作本身而不用关注文档格式。
 
@@ -33,3 +40,6 @@ VS Code 编辑器的 Markdown 语言扩展支持实时预览 Markdown 文档。�
 - https://daringfireball.net/projects/markdown/dingus
 
 推荐使用 `pandoc <https://pandoc.org/>`__ 将 Markdown 文档转成其他格式，如 PDF、LaTeX。
+
+推荐使用浏览器插件 `Markdown Here <https://markdown-here.com/>`__\ ，以便使用 Markdown
+语法写优美的邮件。
