@@ -5,7 +5,7 @@
 
 对于编译型语言，我们主要介绍 C 语言和 Fortran 语言。
 
-我们还推荐学习 Markdown 标记语言。
+我们推荐学习 Markdown 标记语言。
 
 .. toctree::
 
