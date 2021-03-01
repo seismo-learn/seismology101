@@ -48,9 +48,6 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
    [...]           匹配方括号中的任意一个字符                               [abc].txt 匹配 a.txt、b.txt 以及 c.txt 文件名
    [start-end]     方括号扩展的简写模式，匹配一个连续的范围                   [a-z] 表示所有小写字母，[0-9] 等同于 [0123456789]
    [^...]          匹配不在方括号里面的任意一个字符                          [^ab]c.txt 匹配 cc.txt、dc.txt 等文件名
-   [!...]          与 [^...] 等价                                         [!ab]c.txt 匹配 cc.txt、dc.txt 等文件名
-   {...}           扩展大括号里面的所有值，各个值之间使用逗号分隔              s{e,i,s}m 扩展成 sem sim ssm
-   {start..end}    大括号扩展的简写模式，扩展一个连续的范围                   s{a..c}m 扩展成 sam sbm scm
    =============== ===================================================== ============
 
 
@@ -90,20 +87,6 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
     # 若当前目录下存在文件 aaa.txt bbb.txt aba.txt
     $ ls ?[^a]?.txt
     aba.txt bbb.txt
-
-使用大括号匹配字符（大括号内部的逗号前后不能有空格）::
-
-    $ echo s{e,i,s}m
-    sem sim ssm
-    # 逗号前面可以没有值，表示扩展的第一项为空
-    $ echo seismo-learn{,.md,.txt}
-    seismo-learn seismo-learn.md seismo-learn.txt
-
-    $ echo d{a..d}g
-    dag dbg dcg ddg
-
-    $ echo {3..1}
-    3 2 1
 
 .. warning::
 
