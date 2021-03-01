@@ -66,13 +66,12 @@ VS Code
 
 安装 VS Code 可以参考\ :doc:`setup`\ 中相应操作系统下的“日常软件”一节。
 
-刚接触 VS Code 的用户可以参考 VS Code 官方入门教程 `Get Started <https://code.visualstudio.com/docs/getstarted/introvideos>`__
-学习常用用法。日常科研中，随时根据个人习惯配置 VS Code、安装和使用扩展包等。
-
-使用 VS Code 编辑文本和代码遇到疑问时，可随时通过以下方式查阅：
+刚接触 VS Code 的用户在编辑文本和代码遇到疑问时，可随时通过以下方式查阅：
 
 - 点击 VS Code 菜单栏“帮助”，选择相关选项。例如，“交互式演练场”、“文档”（Visual Studio Code 官方文档）、“键盘快捷键参考”等
 - 使用 Google 搜索
+
+建议在日常科研中随时根据个人习惯，去配置 VS Code、安装和使用扩展包等。
 
 .. dropdown:: :fa:`exclamation-circle,mr-1` 安装 VS Code 中文语言包
    :container: + shadow
