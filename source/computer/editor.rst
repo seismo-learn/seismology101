@@ -122,7 +122,7 @@ VS Code
        `Quick start: Using SSH keys <https://code.visualstudio.com/docs/remote/troubleshooting#_quick-start-using-ssh-keys>`__
        进行配置。
 
-       在终端中输入以下命令，验证是否配置是否成功，即可以登录远程计算机（用户需替换自己的远程计算机用户名和 IP 地址）::
+       在终端中输入以下命令，验证是否配置是否成功（即可以登录远程计算机）::
 
            $ ssh seismo-learn@192.168.1.100
 
@@ -180,8 +180,6 @@ Vim 是一款基于命令行的编辑器，拥有以下特点：
     $ which vi                          
     vi=vim
 
-本文只介绍了 vim 的一些常见用法。
-
 操作模式
 ^^^^^^^^^
 
@@ -238,7 +236,8 @@ Vim 的设计以大多数时间都花在阅读、浏览和进行少量编辑改�
 扩展阅读
 ^^^^^^^^^
 
-日常科研中需要经常使用 vim 的用户可以参考以下教程，学习和掌握更多用法、配置 vim 来更高效地编辑文本：
+本文只介绍了 vim 的一些常见用法。日常科研中需要经常使用 vim 的用户可以参考以下教程，
+学习和掌握更多用法、配置 vim 来更高效地编辑文本：
 
 - `简明 VIM 练级攻略 <https://coolshell.cn/articles/5426.html>`__
 - `Vim 配置入门 <http://www.ruanyifeng.com/blog/2018/09/vimrc.html>`__
