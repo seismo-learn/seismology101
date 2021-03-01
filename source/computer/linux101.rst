@@ -9,22 +9,3 @@ Linux 入门
    command-line 
    file-operations
    environment-variable
-
-Shell 基础
-----------
-
-重定向
-^^^^^^
-
-管道
-^^^^
-
-通配符
-^^^^^^
-
-正则表达式
-^^^^^^^^^^
-
-
-编辑器
-------
