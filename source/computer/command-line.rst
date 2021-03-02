@@ -39,16 +39,37 @@
 Shell
 ------
 
-上文所说的命令行实际上指的是 Shell，用户则通过终端程序与 Shell 交互。Shell（壳）其实就是一个程序，
-它可以接受键盘输入的命令，然后把命令交给系统执行。几乎所有的 Linux 发行版都提供了一个叫
-Bash 的 shell，此外还有 Zsh、csh、ksh 等 Shell。熟悉 Linux 系统后可以参考\
-:doc:`《Zsh 及其配置实践经验》<best-practices/zsh>`\ 安装和使用 Zsh。
+命令行实际上指的是 Shell（壳），它是一个用于接收键盘输入的命令，然后把命令交给系统执行的程
+序。用户通过终端程序输入命令时，其实是在与 Shell 交互，与系统直接交互的是 Shell。因此，
+终端和 Shell 都是程序，前者用于输入命令，后者则是接收命令然后交给系统执行。
+
+几乎所有的 Linux 发行版都提供了一个叫 Bash 的 Shell，此外还有 Zsh、csh、ksh 等 Shell。
+熟悉 Linux 系统之后，推荐参考\ :doc:`《Zsh 及其配置实践经验》<best-practices/zsh>`\
+安装和使用 Zsh。
+
+.. dropdown:: :fa:`exclamation-circle,mr-1` Linux 内核
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold 
+
+   有壳（Shell）必有核（kernel）。kernel 的常用翻译有核、内核、核心等。内核才是操作系
+   统本体，是真正负责调度程序、管理硬件的部分。日常所说的 Linux 其实指的是内核。
+   
+   我们无法直接使用内核，日常使用的 Linux 操作系统其实是一个包含内核和一批有用程序
+   （如 Shell、终端）的集合体，即 Linux 发行版。Linux 发行版本身只是一个套装，把内核
+   用不同的程序包装起来。不同发行版的差异体现了他们之间不同的理念。
+   
+   `www.kernel.org <https://www.kernel.org/>`__ 网站负责存储和发布内核。使用以下命令
+   可以查询当前使用的 kernel 版本号::
+
+       # 不同 Linux 发行版显示略有区别
+       $ uname -r
+       5.6.19-300.fc32.x86_64
 
 打开终端后，通常会看到类似如下 Shell 提示符::
 
    [seismo-learn@earth ~] $
 
-上例中的提示符由 seismo-learn（用户名）、@、earth（主机名）、家目录以及美元符号组成。
+上例中的提示符由 seismo-learn（用户名）、@、earth（主机名）、~（家目录）以及美元符号组成。
 在不同的 Linux 发行版或不同的用户设置下，该提示符的样式有所不同。
 
 接着就可以在终端中输入各种命令，Shell 会获取命令并交给系统执行::
@@ -61,10 +82,9 @@ Bash 的 shell，此外还有 Zsh、csh、ksh 等 Shell。熟悉 Linux 系统后
 
 .. tip::
 
-   借助向上向下箭头按键可以获得之前输入的命令。
-   按下鼠标左键拖动选中文本，或直接双击一个单词，那么选中的文本或单词就被拷贝了。
-   随后按下鼠标中键，就可以粘贴拷贝到光标所在的位置。
-   
+   借助向上向下箭头按键可以获取之前输入的命令。按住鼠标左键并拖动选中文本，或直接双击一个
+   单词，就可以拷贝选中的文本或单词。随后按下鼠标中键，就可以粘贴拷贝到光标所在的位置。
+
    .. table:: 键盘快捷键
       :align: center
 
