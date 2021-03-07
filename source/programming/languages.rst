@@ -8,6 +8,7 @@
 我们推荐学习 Markdown 标记语言。
 
 .. toctree::
+   :maxdepth: 2
 
    bash
    python
