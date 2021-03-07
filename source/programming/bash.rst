@@ -4,10 +4,32 @@ Bash 脚本
 Hello World
 -----------
 
-运行脚本
+运行 :file:`hello-world.sh` 脚本：
 
-- 修改权限
-- shebang
+.. panels::
+   :container: container-lg pb-3
+   :column: col-lg-6 col-md-6 col-sm-6 col-xs-6 p-2
+
+   :download:`hello-world.sh`
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   .. include:: hello-world.sh
+
+   ---
+
+   运行结果
+   ^^^^^^^^
+
+   ::
+
+       $ bash hello-world.sh
+       Hello world~
+
+运行脚本
+^^^^^^^^
+
+- 第一行添加 shebang
+- 修改脚本权限
 
 数据结构
 --------
