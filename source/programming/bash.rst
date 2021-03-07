@@ -4,14 +4,14 @@ Bash 脚本
 Hello World
 -----------
 
-运行 :file:`hello-world.sh` 脚本：
+让我们运行第一个 Bash 脚本 :download:`hello-world.sh`\ 。
 
 .. panels::
    :container: container-lg pb-3
    :column: col-lg-6 col-md-6 col-sm-6 col-xs-6 p-2
 
-   :download:`hello-world.sh`
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   脚本源码
+   ^^^^^^^^
 
    .. include:: hello-world.sh
 
@@ -25,8 +25,7 @@ Hello World
        $ bash hello-world.sh
        Hello world~
 
-运行脚本
-^^^^^^^^
+运行脚本：
 
 - 第一行添加 shebang
 - 修改脚本权限
