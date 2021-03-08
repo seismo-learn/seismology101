@@ -98,8 +98,8 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
    :container: + shadow
    :title: bg-info text-white font-weight-bold 
 
-   读者可能以后会常接触到正则表达式（regular expression），需要强调的是 Shell 扩展
-   和正则表达式是有区别：
+   读者可能以后会常接触到正则表达式（regular expression），需要强调的是 Shell 扩展和
+   正则表达式是有区别：
 
    .. table:: Shell 扩展和正则表达式的主要区别
       :align: center
@@ -112,7 +112,10 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
       匹配目录和文件名，而不是文件内容         匹配文件内容（text）
       =================================== ===================================
 
-   此外，Shell 扩展和正则表达式都会用到特殊字符，但是有些特殊字符的含义是完全不同的。
+   Shell 扩展和正则表达式都会用到特殊字符，但是有些特殊字符的含义是完全不同的。
+
+   日常科研中需要使用正则表达式时，可以参考\ `正则表达式 <https://www.bookstack.cn/read/bash-tutorial/docs-archives-regex.md>`__\
+   学习详细用法。
 
 输入输出的重定向
 ----------------
