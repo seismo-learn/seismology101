@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Ubuntu 配置指南 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="macOS 配置指南" href="../macos-setup/" />
+    <link rel="prev" title="Fedora 配置指南" href="../fedora-setup/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../setup/">配置操作系统</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ubuntu 配置指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">安装系统</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">下载系统镜像</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usb">制作 USB 启动盘</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#live">进入 Live 系统</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">开始安装</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">更新系统</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">系统软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">编程开发环境</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#c-c">C/C++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fortran">Fortran</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#intel">Intel 软件开发工具包</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#java">Java</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git">git</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">命令行工具</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tldr">tldr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ack">ack</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">日常软件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9">文本编辑器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">解压软件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">终端</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#google-earth">Google Earth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">浏览器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wps-office">WPS Office</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../setup/">配置操作系统</a> &raquo;</li>
+        
+      <li>Ubuntu 配置指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/computer/ubuntu-setup.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ubuntu">
+<h1>Ubuntu 配置指南<a class="headerlink" href="#ubuntu" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://me.seisman.info/">田冬冬</a>（作者）、
+<a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-01-25</p>
+</dd>
+<dt class="field-odd">预计花费时间</dt>
+<dd class="field-odd"><p>120 分钟</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>本节内容适用于 <strong>Ubuntu Desktop 20.04.1 LTS</strong>，对其他 Ubuntu 版本不一定适用。建议用户安装时总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.1 LTS）或最新版本（目前是 Ubuntu 20.10）。如遇到问题，欢迎反馈。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>安装系统<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>安装 Ubuntu 也可以参考 <a class="reference external" href="https://techz.io/how-to-install-ubuntu/">https://techz.io/how-to-install-ubuntu/</a>
+给出的详细步骤与图解。</p>
+</div>
+<div class="section" id="id2">
+<h3>下载系统镜像<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>访问 <a class="reference external" href="https://ubuntu.com/">Ubuntu 官网</a> 并下载 Ubuntu Desktop 镜像，一般选择 AMD64（x86_64）版本。</p>
+<p><strong>Ubuntu Desktop 20.04.1 LTS AMD64</strong> 的 ISO 文件（约 2.6 GB）下载链接：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-desktop-amd64.iso">官方镜像</a></p></li>
+<li><p><a class="reference external" href="https://mirrors.ustc.edu.cn/ubuntu-releases/20.04.1/ubuntu-20.04.1-desktop-amd64.iso">国内中科大镜像</a> [<strong>推荐国内用户使用</strong>]</p></li>
+</ul>
+</div>
+<div class="section" id="usb">
+<h3>制作 USB 启动盘<a class="headerlink" href="#usb" title="永久链接至标题">¶</a></h3>
+<p>准备一个 4 GB 以上容量的 U 盘，利用 USB 启动盘制作工具和 ISO 镜像文件制作 USB 启动盘。</p>
+<p>USB 启动盘制作工具有很多，推荐使用 <a class="reference external" href="https://rufus.ie/zh_CN.html">Rufus</a>（仅限 Windows）、<a class="reference external" href="https://unetbootin.github.io/">UNetbootin</a>（跨平台）或 <a class="reference external" href="https://www.balena.io/etcher/">balenaEtcher</a>（跨平台）。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！</p>
+</div>
+</div>
+<div class="section" id="live">
+<h3>进入 Live 系统<a class="headerlink" href="#live" title="永久链接至标题">¶</a></h3>
+<p>将制作好的 USB 启动盘插入要安装 Ubuntu 系统的计算机上，开机启动，按下 <kbd class="kbd docutils literal notranslate">F10</kbd> 或 <kbd class="kbd docutils literal notranslate">F12</kbd> 进入 BIOS，并使计算机优先从 USB 盘启动。正确启动后，则会进入 GRUB，按向上向下键选中“Ubuntu”以进入 Ubuntu 的 Live 系统。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Live 系统中进行任何操作以体验该系统。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<ol class="arabic simple">
+<li><p>不同型号的电脑进入 BIOS 的方法可能不同，请自行查询。</p></li>
+<li><p>若计算机无法从 USB 盘启动，则可能是由于计算机的“安全启动”设置导致的，可以尝试进入 BIOS 设置，并在 BIOS 设置内关闭“安全启动”。</p></li>
+<li><p>如果尝试多次都无法正确从 USB 启动，则可能是 USB 启动盘制作失败，请尝试重新制作启动盘。</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>开始安装<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>安装程序会首先要你选择安装过程中的语言，可以选择“中文（简体）”或 “English”，然后点击“Install Ubuntu” 即开始安装。接着选择键盘布局（汉语或 “English(US)”）。</p>
+<p>选择“正常安装”，建议勾选“安装 Ubuntu 时下载更新”和“为图形或无线硬件，以及其他媒体格式安装第三方软件”。</p>
+<p>在“安装类型”中，选择“清除整个硬盘并安装 Ubuntu”。也可以点击“高级功能”选择启用和配置整个硬盘加密，使用 LVM，或使用 ZFS 文件系统。用户可选择“其他选项”自定义分区，但需要你了解 Linux 的分区操作。对于大多数人来说，默认选项可能会很好。</p>
+<p>单击“现在安装”，选择“继续”。</p>
+<p>选择时区（例如“上海”）。</p>
+<p>输入账户信息。注意用户名只能是英文。</p>
+<p>等待安装完成，点击“现在重启”。重启计算机时，记得拔出 USB 启动盘，以免再次进入 USB 安装镜像。</p>
+</div>
+<div class="section" id="id4">
+<h3>更新系统<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>当已安装的软件有可用的更新，或 Ubuntu 系统可升级至新版本时，Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>系统软件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>Ubuntu 使用包管理器 <code class="docutils literal notranslate"><span class="pre">apt</span></code> 来安装、卸载和管理软件包。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>国内用户可以参考 <a class="reference external" href="https://mirrors.ustc.edu.cn/help/ubuntu.html">https://mirrors.ustc.edu.cn/help/ubuntu.html</a> 将软件源镜像替换为中科大镜像，以加快软件下载速度。</p>
+<p>注意，在替换软件源后要执行 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code> 更新本地缓存的软件包元数据。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apt</span></code> 的详细用法请阅读 <a class="reference external" href="http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html">apt 帮助文档</a>，这里只介绍一些常用命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 更新本地软件包元数据
+$ sudo apt update
+
+# 检查并升级所有已经安装的软件
+$ sudo apt upgrade
+
+# 搜索软件
+$ apt search xxx
+
+# 安装或升级软件
+$ sudo apt install xxx
+
+# 卸载软件
+$ sudo apt remove xxx  （保留配置文件）
+$ sudo apt purge xxx  （删除配置文件）
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>Linux 用户也可以访问 <a class="reference external" href="https://pkgs.org/">https://pkgs.org/</a> 网站查询软件包。该网站支持多种 Linux 发行版和多个官方及第三方软件仓库，且为每个软件包提供了丰富的元信息、依赖和被依赖关系、包含的文件、安装方式以及更新历史等信息。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>编程开发环境<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="c-c">
+<h3>C/C++<a class="headerlink" href="#c-c" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://gcc.gnu.org/">GCC</a> 系列的 C/C++ 编译器是 Linux 下最常用的
+C/C++ 编译器，其提供了 <code class="docutils literal notranslate"><span class="pre">gcc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">g++</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install gcc g++
+</pre></div>
+</div>
+<p><a class="reference external" href="https://clang.llvm.org/">Clang</a> 系列是 GCC 系列的一大竞争者。与 GCC
+编译器相比，Clang 编译器提供了更友好的报错信息，方便在报错时尽快找到错误。Clang
+编译器提供了 <code class="docutils literal notranslate"><span class="pre">clang</span></code> 和 <code class="docutils literal notranslate"><span class="pre">clang++</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install clang
+</pre></div>
+</div>
+</div>
+<div class="section" id="fortran">
+<h3>Fortran<a class="headerlink" href="#fortran" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://gcc.gnu.org/fortran/">GNU Fortran</a> 编译器是 Linux 下最常用的
+Fortran 编译器，其提供了 <code class="docutils literal notranslate"><span class="pre">gfortran</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install gfortran
+</pre></div>
+</div>
+</div>
+<div class="section" id="intel">
+<h3>Intel 软件开发工具包<a class="headerlink" href="#intel" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi.html">Intel oneAPI Toolkits</a>
+是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（<code class="docutils literal notranslate"><span class="pre">icc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ifort</span></code> 命令）。此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。</p>
+<p>在 Ubuntu 系统下，官方手册提供了多种<a class="reference external" href="https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html">安装方式</a>，如在线安装、本地安装、使用 <code class="docutils literal notranslate"><span class="pre">apt</span></code> 安装、使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 安装等。这里，我们选择使用 <code class="docutils literal notranslate"><span class="pre">apt</span></code> 安装。</p>
+<p>添加 Intel 仓库公钥:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 下载 Intel 仓库公钥
+$ cd ~/Downloads
+$ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+# 添加到 apt 源密钥环中，以便使用此密钥签名的档案受到信任
+$ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+# 删除公钥
+$ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+</pre></div>
+</div>
+<p>添加 Intel 软件仓库:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo add-apt-repository &quot;deb https://apt.repos.intel.com/oneapi all main&quot;
+$ sudo apt update
+</pre></div>
+</div>
+<p>日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 <code class="file docutils literal notranslate"><span class="pre">/opt/intel/oneapi</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install intel-basekit
+$ sudo apt install intel-hpckit
+</pre></div>
+</div>
+<p>配置环境变量:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;source /opt/intel/oneapi/setvars.sh &gt;/dev/null 2&gt;&amp;1&quot; &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+<p>更多设置可以参考<a class="reference external" href="https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/">官方手册</a>。</p>
+<details class="sphinx-bs dropdown card mb-3 shadow">
+<summary class="summary-title card-header bg-warning text-red font-weight-bold">
+<span class="fa fa-exclamation-circle mr-1"></span> Intel oneAPI 与 Anaconda 兼容性警告<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">同时安装 Intel oneAPI Toolkits 和 Anaconda 的用户需要注意：</p>
+<ul>
+<li><p class="card-text">安装 Intel oneAPI Toolkits 时也会安装 Intel 的 conda 和 Python。笔者目前不清楚 Intel 和 Anaconda 的 conda 和 Python 有何区别。可以使用以下命令查询 conda 和 Python 的路径和版本:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ which conda
+$ conda -- version
+$ which python
+$ python --version
+</pre></div>
+</div>
+</li>
+<li><p class="card-text">配置文件（如 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>）中，若 Intel oneAPI Toolkits 位于 Anaconda 之后，则无法使用 Anaconda 的环境。若 Intel oneAPI Toolkits 位于 Anaconda 之前，可以使用 Anaconda 的环境，但不清楚是否有其他未知影响。</p></li>
+</ul>
+<p class="card-text">可以参考 <a class="reference external" href="https://github.com/seismo-learn/seismology101/issues/176">seismology101 issues #176</a>
+了解更多详情，并欢迎提供反馈和解决方案。</p>
+</div>
+</details></div>
+<div class="section" id="java">
+<h3>Java<a class="headerlink" href="#java" title="永久链接至标题">¶</a></h3>
+<p>运行 Java 程序需要安装 Java 运行环境，即 OpenJDK:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install default-jdk
+</pre></div>
+</div>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h3>
+<p>Ubuntu 20.04.1 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，而建议通过 <a class="reference external" href="https://seismo-learn.org/software/anaconda/" title="(在 地震“学”软件)"><span class="xref std std-doc">Anaconda</span></a> 来安装和管理 Python。</p>
+</div>
+<div class="section" id="git">
+<h3>git<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://git-scm.com/">git</a> 是目前最流行的版本控制工具，是科研过程中编写代码与项目管理推荐使用的软件。一般情况下系统已经安装了该软件。如果没安装，可以使用如下命令安装:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install git
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>命令行工具<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>日常科研所需的大多数命令行工具已经默认安装在 Ubuntu 系统里了。这里额外推荐一些有用的命令行工具。</p>
+<div class="section" id="tldr">
+<h3>tldr<a class="headerlink" href="#tldr" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://tldr.sh/">tldr</a> 是一个提供命令的常用用法和示例的命令行工具，其功能与 UNIX 下的 <code class="docutils literal notranslate"><span class="pre">man</span></code> 命令相似，但其提供的输出更简单、更易读。安装 <code class="docutils literal notranslate"><span class="pre">tldr</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install tldr
+</pre></div>
+</div>
+</div>
+<div class="section" id="ack">
+<h3>ack<a class="headerlink" href="#ack" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://beyondgrep.com/">ack</a> 是一个字符搜索工具，与 <code class="docutils literal notranslate"><span class="pre">grep</span></code> 命令类似。其专为搜索源代码设计，因而在日常编程中更加简单易用。安装 <code class="docutils literal notranslate"><span class="pre">ack</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install ack
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>日常软件<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id9">
+<h3>文本编辑器<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。推荐安装并使用更强大的文本编辑器 <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>。根据<a class="reference external" href="https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions">官方安装说明</a>安装即可。</p>
+</div>
+<div class="section" id="id10">
+<h3>解压软件<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code>、
+<code class="docutils literal notranslate"><span class="pre">.tar.bz2</span></code> 等），也支持 Windows 和 macOS 下的常见压缩格式（如 <code class="docutils literal notranslate"><span class="pre">.zip</span></code> 和 <code class="docutils literal notranslate"><span class="pre">.7z</span></code>），但默认不支持 <code class="docutils literal notranslate"><span class="pre">.rar</span></code> 格式。安装 <a class="reference external" href="https://theunarchiver.com/command-line">unar</a>
+即方可通过双击 <code class="docutils literal notranslate"><span class="pre">.rar</span></code> 文件直接解压:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install unar
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>终端<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。日常科研经常需要开好几个终端，切换和管理起来比较麻烦。</p>
+<p><a class="reference external" href="https://gnome-terminator.org/">Terminator</a>
+是一个功能强大的终端模拟器，最常用的功能应该是终端分割和终端切换。使用如下命令安装:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install terminator
+</pre></div>
+</div>
+<p>以下介绍几个常用快捷键，详细用法见<a class="reference external" href="https://gnome-terminator.readthedocs.io/">官方文档</a>：</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">O</kbd>: 水平分隔终端</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">E</kbd>:  垂直分隔终端</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Alt</kbd> + <kbd class="kbd docutils literal notranslate">上下左右</kbd>:  切换子终端</p></li>
+</ul>
+</div>
+<div class="section" id="google-earth">
+<h3>Google Earth<a class="headerlink" href="#google-earth" title="永久链接至标题">¶</a></h3>
+<p>非重度用户可以直接使用 <a class="reference external" href="https://earth.google.com/web">Google Earth 网页版</a>，重度用户可以按照如下步骤安装桌面版。</p>
+<ol class="arabic simple">
+<li><p>下载 64 位 deb 包：<a class="reference external" href="https://www.google.com/earth/versions/#download-pro">https://www.google.com/earth/versions/#download-pro</a></p></li>
+<li><p>双击下载的 deb 安装包即可安装</p></li>
+</ol>
+</div>
+<div class="section" id="id12">
+<h3>浏览器<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>Ubuntu 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 下载 Google Chrome 的 deb 软件包
+$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# 安装 Google Chrome
+$ sudo apt install ./google-chrome-stable_current_amd64.deb
+</pre></div>
+</div>
+</div>
+<div class="section" id="wps-office">
+<h3>WPS Office<a class="headerlink" href="#wps-office" title="永久链接至标题">¶</a></h3>
+<p>Ubuntu 自带的 LibreOffice 具有简单的文档查看和编辑功能，但其兼容性一般。兼容性更好的是 WPS Office。</p>
+<ol class="arabic simple">
+<li><p>下载 64位 deb 格式的安装包：<a class="reference external" href="https://linux.wps.cn/">WPS Office for Linux 官网</a></p></li>
+<li><p>双击下载的 deb 安装包即可安装</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../macos-setup/" class="btn btn-neutral float-right" title="macOS 配置指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../fedora-setup/" class="btn btn-neutral float-left" title="Fedora 配置指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

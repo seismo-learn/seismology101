@@ -1,0 +1,680 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>macOS 配置指南 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="WSL 配置指南" href="../wsl-setup/" />
+    <link rel="prev" title="Ubuntu 配置指南" href="../ubuntu-setup/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../setup/">配置操作系统</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">macOS 配置指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">安装系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">系统软件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#command-line-tools-for-xcode">Command Line Tools for Xcode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#homebrew">Homebrew</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">编程开发环境</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#c-c">C/C++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fortran">Fortran</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#intel">Intel 软件开发工具包</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#java">Java</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#python">Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#git">git</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">命令行工具</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dos2unix-unix2dos">dos2unix &amp; unix2dos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wget">wget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tldr">tldr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ack">ack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gnu">GNU 实用工具</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">日常软件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#iterm2">iTerm2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">文本编辑器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">解压软件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#google-earth">Google Earth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">浏览器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#quicklook">QuickLook 插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">虚拟机</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../setup/">配置操作系统</a> &raquo;</li>
+        
+      <li>macOS 配置指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/computer/macos-setup.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="macos">
+<h1>macOS 配置指南<a class="headerlink" href="#macos" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/wangliang1989">王亮</a>（作者）、
+<a class="reference external" href="https://me.seisman.info/">田冬冬</a>（作者）、
+<a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-01-25</p>
+</dd>
+<dt class="field-odd">预计花费时间</dt>
+<dd class="field-odd"><p>120 分钟</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x）。对于其他 macOS 版本不一定适用。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>安装系统<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>第一次启动 Mac 电脑后，经过简单的设置，就得到了一个可供日常使用的 macOS 系统。</p>
+<p>macOS 系统的更新也十分简单。当有新版本发布以后，可以直接在“系统偏好设置”的“软件更新”中直接更新即可。</p>
+<table class="docutils align-center" id="id12">
+<caption><span class="caption-text">近几年的 macOS 系统版本号</span><a class="headerlink" href="#id12" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 32%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>版本号</p></th>
+<th class="head"><p>代号</p></th>
+<th class="head"><p>发布日期</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>macOS 10.13</p></td>
+<td><p>High Sierra</p></td>
+<td><p>2017 年 9 月 25 日</p></td>
+</tr>
+<tr class="row-odd"><td><p>macOS 10.14</p></td>
+<td><p>Mojave</p></td>
+<td><p>2018 年 9 月 24 日</p></td>
+</tr>
+<tr class="row-even"><td><p>macOS 10.15</p></td>
+<td><p>Catalina</p></td>
+<td><p>2019 年 10 月 7 日</p></td>
+</tr>
+<tr class="row-odd"><td><p>macOS 11</p></td>
+<td><p>Big Sur</p></td>
+<td><p>2020 年 9 月 12 日</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h2>系统软件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>经过简单设置后的 macOS 系统，尚不能满足日常科研与编程开发的需求，还需要做进一步的配置。</p>
+<div class="section" id="command-line-tools-for-xcode">
+<h3>Command Line Tools for Xcode<a class="headerlink" href="#command-line-tools-for-xcode" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://developer.apple.com/cn/xcode/">Xcode</a> 是 macOS 下的集成开发环境（IDE），类似于 Windows 下的 <a class="reference external" href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a>。Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，比如 C/C++ 编译器（<code class="docutils literal notranslate"><span class="pre">gcc</span></code>、<code class="docutils literal notranslate"><span class="pre">g++</span></code>）、<code class="docutils literal notranslate"><span class="pre">make</span></code>、<code class="docutils literal notranslate"><span class="pre">git</span></code> 等，是 macOS 下编程开发的必需软件。</p>
+<p>按下 <kbd class="kbd docutils literal notranslate">Command</kbd> + <kbd class="kbd docutils literal notranslate">空格</kbd>，搜索“Terminal”并按下 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键以打开 Terminal 应用。在 Terminal 中执行如下命令以安装 Command Line Tools for Xcode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ xcode-select --install
+</pre></div>
+</div>
+<p>在弹出的窗口中点击“Install”即可。</p>
+<p>此处安装的 Command Line Tools for Xcode 可能不是最新版。点击左上角的 Apple 图标，在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Command Line Tools for Xcode 会被安装到 <code class="file docutils literal notranslate"><span class="pre">/Library/Developer/CommandLineTools/</span></code>
+目录，其提供的命令行工具位于 <code class="file docutils literal notranslate"><span class="pre">/Library/Developer/CommandLineTools/usr/bin</span></code> 目录，包括 <code class="docutils literal notranslate"><span class="pre">gcc</span></code>、<code class="docutils literal notranslate"><span class="pre">make</span></code>、<code class="docutils literal notranslate"><span class="pre">git</span></code> 等。</p>
+</div>
+</div>
+<div class="section" id="homebrew">
+<h3>Homebrew<a class="headerlink" href="#homebrew" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://brew.sh/index_zh-cn.html">Homebrew</a> 是 macOS 下最流行的第三方软件包管理器，类似于 Linux 系统下的 <code class="docutils literal notranslate"><span class="pre">apt</span></code>、<code class="docutils literal notranslate"><span class="pre">yum</span></code>、<code class="docutils literal notranslate"><span class="pre">dnf</span></code> 等包管理器。其可以用于安装各种常见的软件包、库文件以及字体。日常及科研工作中所需的大多数软件、库文件以及字体都可以通过 Homebrew 安装。</p>
+<div class="section" id="id3">
+<h4>安装<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h4>
+<p>打开 Terminal，将如下命令复制到 Terminal 中并按下 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键即可安装 Homebrew:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</span>
+</pre></div>
+</div>
+<p>Homebrew 会被安装到 <code class="file docutils literal notranslate"><span class="pre">/usr/local/</span></code> 目录下。通过 Homebrew 安装的所有软件包也都将被安装到该目录下。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>GitHub 在国内访问不畅，以上安装命令可能会由于网络问题而失败。若以上命令失败，可参考 <a class="reference external" href="https://github.com/ineo6/homebrew-install">https://github.com/ineo6/homebrew-install</a> 的解决办法。</p>
+<p>同样由于网络的原因，Homebrew 在国内可能下载速度较慢。建议参照
+<a class="reference external" href="https://github.com/ineo6/homebrew-install">https://github.com/ineo6/homebrew-install</a> 教程设置中科大源或清华大学源。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>使用<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h4>
+<p>安装好 Homebrew 后，即可以使用 Homebrew 提供的 <code class="docutils literal notranslate"><span class="pre">brew</span></code> 命令。
+<code class="docutils literal notranslate"><span class="pre">brew</span></code> 的详细用法见<a class="reference external" href="https://docs.brew.sh/Manpage">官方文档</a>。此处仅列出一些常用的用法:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 模糊搜索与 wget 相关的软件
+$ brew search wget
+
+# 安装 wget 软件包
+$ brew install wget
+
+# 安装 Visual Studio Code
+# 由于 Visual Studio Code 是带图形界面的软件，因而这里需要使用 --cask 选项
+$ brew install --cask visual-studio-code
+
+# 升级某个软件
+$ brew upgrade xxx
+
+# 卸载某个软件
+$ brew uninstall xxx
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>Homebrew 用户也可以访问网站 <a class="reference external" href="https://formulae.brew.sh/">https://formulae.brew.sh/</a> 查看软件包。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>使用 Homebrew 时会碰到很多名词。这里做简单解释，更详细的解释请查看<a class="reference external" href="https://docs.brew.sh/Formula-Cookbook#homebrew-terminology">官方文档</a>。</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">brew</span></code></dt><dd><p>Homebrew 提供的命令，用于查询、安装、卸载、升级以及管理软件包。</p>
+</dd>
+<dt>Formula</dt><dd><p>软件的描述文件，包含了软件的基本信息和编译安装方法。Homebrew 根据 Formula 提供的信息，即可编译或安装软件。每个软件对应一个 Formula。例如，git 对应的 Formula 是
+<code class="file docutils literal notranslate"><span class="pre">/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb</span></code>。</p>
+</dd>
+<dt>Bottle</dt><dd><p>预先编译好的二进制软件包。使用 Bottle 安装软件，比从源码编译和安装更快。如果一个软件仓库包含预编译的软件包，使用 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span></code>
+时会自动使用它。</p>
+</dd>
+<dt>Tap</dt><dd><p>一个含有一系列软件的 git 仓库。使用
+<a class="reference external" href="https://docs.brew.sh/Taps#the-brew-tap-command">brew tap</a>
+命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
+<code class="file docutils literal notranslate"><span class="pre">/usr/local/Homebrew/Library/Taps/homebrew/</span></code> 目录。常见软件仓库有 <a class="reference external" href="https://github.com/Homebrew/homebrew-core">homebrew-core</a>
+和 <a class="reference external" href="https://github.com/Homebrew/homebrew-cask">homebrew-cask</a>。其中，homebrew-core 是内置核心仓库，homebrew-cask 仓库则含有各种 macOS 系统下带图形界面的应用程序。</p>
+</dd>
+<dt>Cask</dt><dd><p>Homebrew 的扩展功能，用于安装 macOS 下的图形界面应用程序。使用 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">list</span> <span class="pre">--cask</span></code> 命令可以查看已安装的 casks。</p>
+</dd>
+<dt>Cellar</dt><dd><p>所有软件的安装目录，即 <code class="file docutils literal notranslate"><span class="pre">/usr/local/Cellar</span></code>。</p>
+</dd>
+<dt>Keg</dt><dd><p>某一软件的安装目录，如 <code class="file docutils literal notranslate"><span class="pre">/usr/local/Cellar/git/2.30.0</span></code>。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>编程开发环境<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="c-c">
+<h3>C/C++<a class="headerlink" href="#c-c" title="永久链接至标题">¶</a></h3>
+<p>Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
+C/C++ 编译器。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
+<a class="reference external" href="https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html">Apple Clang</a> 编译器，其与 <a class="reference external" href="https://gcc.gnu.org/">GCC</a> 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。因而一般用户无需再安装 GCC 编译器。</p>
+<p>由于特殊原因需要安装 GCC 编译器的用户，可以使用如下命令安装:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install gcc
+</pre></div>
+</div>
+<p>通过 Homebrew 安装的 GCC 提供了命令 <code class="docutils literal notranslate"><span class="pre">gcc-10</span></code> 和 <code class="docutils literal notranslate"><span class="pre">g++-10</span></code>
+（<code class="docutils literal notranslate"><span class="pre">10</span></code> 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
+提供的 <code class="docutils literal notranslate"><span class="pre">gcc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">g++</span></code> 命令。为了使用 GCC 编译器，用户可以在编译代码时显式指定使用 <code class="docutils literal notranslate"><span class="pre">gcc-10</span></code> 和 <code class="docutils literal notranslate"><span class="pre">g++-10</span></code>，或者在 <code class="file docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code> 目录下创建软链接:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd /usr/local/bin/
+$ ln -s gcc-10 gcc
+$ ln -s g++-10 g++
+</pre></div>
+</div>
+<p>重开一个终端后，使用 <code class="docutils literal notranslate"><span class="pre">gcc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">g++</span></code> 则默认使用的是 GCC 编译器。删除软连接后，则默认使用的又是 Apple Clang 编译器了。</p>
+</div>
+</div>
+<div class="section" id="fortran">
+<h3>Fortran<a class="headerlink" href="#fortran" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://gcc.gnu.org/fortran/">GNU Fortran</a> 编译器是 macOS 下最常用的
+Fortran 编译器，其提供了 <code class="docutils literal notranslate"><span class="pre">gfortran</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install gfortran
+</pre></div>
+</div>
+</div>
+<div class="section" id="intel">
+<h3>Intel 软件开发工具包<a class="headerlink" href="#intel" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi.html">Intel oneAPI Toolkits</a>
+是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（<code class="docutils literal notranslate"><span class="pre">icc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ifort</span></code> 命令）。此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。</p>
+<p>在 macOS 下，官方手册提供了多种<a class="reference external" href="https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-macos/">安装方式</a>，如在线安装、本地安装、使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 安装等。这里，我们选择本地安装。</p>
+<p>日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。从官网下载<a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html">安装程序</a>。选择 Local Installer，下载 <code class="file docutils literal notranslate"><span class="pre">.dmg</span></code> 文件并安装。默认安装目录是 <code class="file docutils literal notranslate"><span class="pre">/opt/intel/oneapi</span></code>。</p>
+<p>配置环境变量:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;source /opt/intel/oneapi/setvars.sh &gt;/dev/null 2&gt;&amp;1&quot; &gt;&gt; ~/.zshrc
+</pre></div>
+</div>
+<p>更多设置可以参考<a class="reference external" href="https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macos/">官方手册</a>。</p>
+<details class="sphinx-bs dropdown card mb-3 shadow">
+<summary class="summary-title card-header bg-warning text-red font-weight-bold">
+<span class="fa fa-exclamation-circle mr-1"></span> Intel oneAPI 与 Anaconda 兼容性警告<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">同时安装 Intel oneAPI Toolkits 和 Anaconda 的用户需要注意：</p>
+<ul>
+<li><p class="card-text">安装 Intel oneAPI Toolkits 时也会安装 Intel 的 conda 和 Python。笔者目前不清楚 Intel 和 Anaconda 的 conda 和 Python 有何区别。可以使用以下命令查询 conda 和 Python 的路径和版本:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ which conda
+$ conda -- version
+$ which python
+$ python --version
+</pre></div>
+</div>
+</li>
+<li><p class="card-text">配置文件（如 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>）中，若 Intel oneAPI Toolkits 位于 Anaconda 之后，则无法使用 Anaconda 的环境。若 Intel oneAPI Toolkits 位于 Anaconda 之前，可以使用 Anaconda 的环境，但不清楚是否有其他未知影响。</p></li>
+</ul>
+<p class="card-text">可以参考 <a class="reference external" href="https://github.com/seismo-learn/seismology101/issues/176">seismology101 issues #176</a>
+了解更多详情，并欢迎提供反馈和解决方案。</p>
+</div>
+</details></div>
+<div class="section" id="java">
+<h3>Java<a class="headerlink" href="#java" title="永久链接至标题">¶</a></h3>
+<p>运行 Java 程序需要安装 Java 运行环境，即 OpenJDK:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install openjdk
+$ sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+</pre></div>
+</div>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h3>
+<p>macOS 默认的 Python 版本为 Python 2.7，而目前主流的 Python 版本为
+Python 3.x。建议通过 <a class="reference external" href="https://seismo-learn.org/software/anaconda/" title="(在 地震“学”软件)"><span class="xref std std-doc">Anaconda</span></a>
+来安装最新版 Python。</p>
+</div>
+<div class="section" id="git">
+<h3>git<a class="headerlink" href="#git" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://git-scm.com/">git</a> 是目前最流行的版本控制工具，是科研过程中编写代码与项目管理推荐使用的软件。Command Line Tools for Xcode 中已经安装了 Apple 版的 git，其与原版 git 有一些区别。可以用如下命令安装原版的 git:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install git
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Homebrew 安装的 <code class="docutils literal notranslate"><span class="pre">git</span></code> 位于 <code class="file docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code> 目录下，而
+Command Line Tools for Xcode 安装的 <code class="docutils literal notranslate"><span class="pre">git</span></code> 位于 <code class="file docutils literal notranslate"><span class="pre">/usr/bin/</span></code>
+目录下。在环境变量 <strong>PATH</strong> 中，<code class="file docutils literal notranslate"><span class="pre">/usr/local/bin/</span></code> 一般在 <code class="file docutils literal notranslate"><span class="pre">/usr/bin/</span></code> 前。因此，我们使用的 <code class="docutils literal notranslate"><span class="pre">git</span></code> 其实是通过 Homebrew 安装的版本。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>命令行工具<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>这里推荐一些常用的命令行工具。</p>
+<div class="section" id="dos2unix-unix2dos">
+<h3>dos2unix &amp; unix2dos<a class="headerlink" href="#dos2unix-unix2dos" title="永久链接至标题">¶</a></h3>
+<p>Windows 和 Linux/macOS 系统下，<a class="reference external" href="https://www.ruanyifeng.com/blog/2006/04/post_213.html">文本文件的换行符</a>是不同的。
+<code class="docutils literal notranslate"><span class="pre">dos2unix</span></code> 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符。
+<code class="docutils literal notranslate"><span class="pre">unix2dos</span></code> 则反之:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install dos2unix unix2dos
+</pre></div>
+</div>
+</div>
+<div class="section" id="wget">
+<h3>wget<a class="headerlink" href="#wget" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://www.gnu.org/software/wget/">wget</a> 是用于下载文件的命令行工具:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install wget
+</pre></div>
+</div>
+</div>
+<div class="section" id="tldr">
+<h3>tldr<a class="headerlink" href="#tldr" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://tldr.sh/">tldr</a> 是一个提供命令的常用用法和示例的命令行工具，其功能与 UNIX 下的 <code class="docutils literal notranslate"><span class="pre">man</span></code> 命令相似，但其提供的输出更简单、更易读。安装 <code class="docutils literal notranslate"><span class="pre">tldr</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install tldr
+</pre></div>
+</div>
+</div>
+<div class="section" id="ack">
+<h3>ack<a class="headerlink" href="#ack" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://beyondgrep.com/">ack</a> 是一个字符搜索工具，与 <code class="docutils literal notranslate"><span class="pre">grep</span></code> 命令类似。其专为搜索源代码设计，因而在日常编程中更加简单易用。安装 <code class="docutils literal notranslate"><span class="pre">ack</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install ack
+</pre></div>
+</div>
+</div>
+<div class="section" id="gnu">
+<h3>GNU 实用工具<a class="headerlink" href="#gnu" title="永久链接至标题">¶</a></h3>
+<p>macOS 下自带了很多实用工具，如 <code class="docutils literal notranslate"><span class="pre">sed</span></code>、<code class="docutils literal notranslate"><span class="pre">grep</span></code> 等（位于 <code class="file docutils literal notranslate"><span class="pre">/usr/bin/</span></code>目录下）。需要注意，这些实用工具是由 BSD 提供的，而 Linux 系统下的实用工具则是由 GNU 提供的。BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。二者之间的常见差异可以参考此<a class="reference external" href="https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/">博文</a>。由于网络上的大部分文档介绍的都是 GNU 实用工具的用法，因而 macOS 用户在使用网络上的命令时可能会出现错误。这一点可以通过安装 GNU 实用工具来解决:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 此处仅安装常用的 GNU 实用工具
+$ brew install findutils gawk gnu-sed gnu-tar grep
+</pre></div>
+</div>
+<p>Homebrew 将 GNU 实用工具安装在 <code class="file docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> 目录下，但在所有工具的名称前加上了前缀 <code class="docutils literal notranslate"><span class="pre">g</span></code>，以避免替换 macOS 系统自带的 BSD 实用工具，即 <code class="docutils literal notranslate"><span class="pre">sed</span></code> 是 BSD 提供的，而 <code class="docutils literal notranslate"><span class="pre">gsed</span></code> 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 <code class="docutils literal notranslate"><span class="pre">g</span></code>），在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 <code class="docutils literal notranslate"><span class="pre">g</span></code>），但在写脚本时，要额外注意脚本的可移植性。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>日常软件<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>以下软件均为可选，有需要的用户可以根据自己的需求选择是否安装。</p>
+<div class="section" id="iterm2">
+<h3>iTerm2<a class="headerlink" href="#iterm2" title="永久链接至标题">¶</a></h3>
+<p>macOS 系统自带了 Terminal 应用，但 <a class="reference external" href="https://iterm2.com/">iTerm2</a> 相比于自带的
+Terminal 具有更多有用的功能，比如支持水平和垂直分隔窗格、强大的终端搜索功能、更好用的复制粘贴功能等。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask iterm2
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>文本编辑器<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。无法满足日常编程需求。推荐安装并使用更强大的文本编辑器 <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask visual-studio-code
+</pre></div>
+</div>
+<p><a class="reference external" href="https://typora.io/">Typora</a> 是一款<strong>轻便简洁</strong>的 Markdown 编辑器，支持即时渲染技术。与 Visual Studio Code 相比，Typora 启动更快，适合日常临时编写小型 Markdown 文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask typora
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>解压软件<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>macOS 系统自带的解压工具可以支持 <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code>、<code class="docutils literal notranslate"><span class="pre">.zip</span></code> 等格式，但不支持 <code class="docutils literal notranslate"><span class="pre">.rar</span></code> 格式。推荐安装解压软件 <a class="reference external" href="https://theunarchiver.com/">The Unarchiver</a>，其支持几乎所有压缩格式。安装后即可通过双击 <code class="docutils literal notranslate"><span class="pre">.rar</span></code> 文件直接解压。</p>
+<p>安装 The Unarchiver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask the-unarchiver
+</pre></div>
+</div>
+</div>
+<div class="section" id="google-earth">
+<h3>Google Earth<a class="headerlink" href="#google-earth" title="永久链接至标题">¶</a></h3>
+<p>Google Earth 提供了网页版和桌面版应用。非重度用户可以使用 <a class="reference external" href="https://earth.google.com/web">Google Earth 网页版</a>，重度用户可以执行如下命令安装桌面版:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask google-earth-pro
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>浏览器<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>macOS 自带了 Safari 浏览器，用户也可以安装 Google Chrome 浏览器:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask google-chrome
+</pre></div>
+</div>
+<p>或 Microsoft Edge 浏览器:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask microsoft-edge
+</pre></div>
+</div>
+</div>
+<div class="section" id="quicklook">
+<h3>QuickLook 插件<a class="headerlink" href="#quicklook" title="永久链接至标题">¶</a></h3>
+<p>macOS 下空格键具有强大的功能。在文件浏览器 Finder 中，按下空格键，会调用
+QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF 以及图片等格式。可以为 QuickLook 安装更多的插件以支持预览其他文件格式:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 预览源码时加上语法高亮
+$ brew install --cask qlcolorcode
+
+# 预览无后缀的纯文本文件，比如 README，HISTORY 等
+$ brew install --cask qlstephen
+
+# 预览渲染后的 Markdown 文件
+$ brew install --cask qlmarkdown
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开。这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”中点击“总是打开”来使用这些插件。这一操作可能需要重启电脑才会生效。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>虚拟机<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>如果在使用 macOS 的同时，偶尔需要使用 Windows 或 Linux 系统，可以考虑使用虚拟机。macOS 下最常用的虚拟机软件有
+<a class="reference external" href="https://www.parallels.com/">Parallels Desktop</a>、
+<a class="reference external" href="https://www.vmware.com/products/fusion.html">VMware Fusion</a> 和
+<a class="reference external" href="https://www.virtualbox.org/">VirtualBox</a>。其中 VirtualBox 是免费软件；Parallel Desktop 和 VMware Fusion 是收费软件，但 VMware Fusion 为个人用户提供了免费的 License。</p>
+<p>推荐使用 VMware Fusion。安装 VMware Fusion的命令很简单:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask vmware-fusion
+</pre></div>
+</div>
+<p>启动后在弹出的界面有“Get a Free License”按钮，点击跳转到 VMware 网站，注册后即可获取秘钥，输入秘钥则成功注册。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../wsl-setup/" class="btn btn-neutral float-right" title="WSL 配置指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../ubuntu-setup/" class="btn btn-neutral float-left" title="Ubuntu 配置指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

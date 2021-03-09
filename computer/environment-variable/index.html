@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>环境变量 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="常用命令" href="../commands/" />
+    <link rel="prev" title="文件操作" href="../file-operations/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/">配置操作系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../linux101/">Linux 入门</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../command-line/">命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file-operations/">文件操作</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">环境变量</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../linux101/">Linux 入门</a> &raquo;</li>
+        
+      <li>环境变量</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/computer/environment-variable.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>环境变量<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）、
+<a class="reference external" href="https://me.seisman.info/">田冬冬</a>（审稿）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-02-22</p>
+</dd>
+<dt class="field-odd">预计花费时间</dt>
+<dd class="field-odd"><p>10 分钟</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>当用户登录 Linux 系统后，Shell 程序启动并读取一系列配置文件，这些文件设置了可供所有用户共享的 Shell 环境。然后，Shell 会读取一些位于家目录下的配置文件，这些配置文件定义了用户个人的 Shell 环境。这些配置文件的名字和读取顺序在不同的 Shell 中或不同情况的 Shell 会话下，有所区别。Shell 环境由环境变量、Shell 变量、Shell 函数和别名等组成，这一节我们主要介绍常见环境变量及其常用配置方法。</p>
+<table class="docutils align-center" id="id2">
+<caption><span class="caption-text">Shell 的常见环境变量</span><a class="headerlink" href="#id2" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>变量</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HOME</p></td>
+<td><p>当前用户的家目录</p></td>
+</tr>
+<tr class="row-odd"><td><p>LD_LIBRARY_PATH</p></td>
+<td><p>程序加载运行期间，动态链接库的查找路径</p></td>
+</tr>
+<tr class="row-even"><td><p>PATH</p></td>
+<td><p>由冒号分开的用于搜索可执行程序名的目录列表</p></td>
+</tr>
+<tr class="row-odd"><td><p>PS1</p></td>
+<td><p>Shell 提示符</p></td>
+</tr>
+<tr class="row-even"><td><p>PWD</p></td>
+<td><p>当前工作目录</p></td>
+</tr>
+<tr class="row-odd"><td><p>SHELL</p></td>
+<td><p>Shell 程序的名字</p></td>
+</tr>
+<tr class="row-even"><td><p>USER</p></td>
+<td><p>当前用户的用户名</p></td>
+</tr>
+</tbody>
+</table>
+<p>在终端中输入命令名后，Shell 需要先找到该命令，才能交给系统取执行。不同命令所在目录并不相同，常见的命令目录有 <code class="file docutils literal notranslate"><span class="pre">/bin</span></code>、<code class="file docutils literal notranslate"><span class="pre">/usr/bin</span></code>、<code class="file docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> 等。此外，大多数闭源软件或商业软件默认安装在 <code class="file docutils literal notranslate"><span class="pre">/opt</span></code> 目录下，用户也可能会将一些常用工具放在 <code class="file docutils literal notranslate"><span class="pre">~/bin</span></code> 目录下。因此，Shell 需要知道去哪些目录下搜索用户输入的命令。而 <strong>PATH</strong> 环境变量正好定义了用于搜索可执行程序名的目录列表，不同目录由冒号分开的。在终端中输入命令名后，Shell 会通过搜索该目录列表来寻找命令。</p>
+<p>登录系统后，<strong>PATH</strong> 变量已经设置了默认值。前文中，在终端输入命令名后，Shell 正是到这些目录下去搜索并找到命令的。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 echo 命令查看 PATH 环境变量（变量前加美元符号 $ 表示读取变量值）
+$ echo $PATH
+/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+</pre></div>
+</div>
+<details class="sphinx-bs dropdown card mb-3 shadow">
+<summary class="summary-title card-header bg-info text-white font-weight-bold">
+<span class="fa fa-exclamation-circle mr-1"></span> 查看命令所在目录<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">可以使用 <code class="docutils literal notranslate"><span class="pre">which</span></code> 或 <code class="docutils literal notranslate"><span class="pre">whereis</span></code> 命令查询命令所在目录:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ which cat
+/usr/bin/cat
+
+$ whereis cat
+cat: /usr/bin/cat /usr/share/man/man1/cat.1.gz /usr/share/man/man1p/cat.1p.gz
+</pre></div>
+</div>
+</div>
+</details><p>若某命令所在目录不在 <strong>PATH</strong> 变量中，Shell 将无法将其找到交给系统执行。可以通过修改配置文件将目录永久加入到 <strong>PATH</strong> 变量中。Bash 常见的配置文件有 <code class="file docutils literal notranslate"><span class="pre">/etc/profile</span></code>、<code class="file docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>、<code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 等，一般通过修改 <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 文件来设置和更新个人 Shell 环境。使用 Zsh 的读者可以修改 <code class="file docutils literal notranslate"><span class="pre">~/.zshrc</span></code>
+来设置和更新个人 Shell 环境。例如，添加 <code class="file docutils literal notranslate"><span class="pre">~/bin</span></code> 目录到搜索目录列表的末尾:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 在 ~/.bashrc 文件中添加一行命令 export PATH=$PATH:$HOME/bin
+$ echo &#39;export PATH=$PATH:$HOME/bin&#39; &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+<p>以上命令在 <code class="file docutils literal notranslate"><span class="pre">~/.bashrc</span></code> 配置文件最后添加了一行 <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=$PATH:$HOME/bin</span></code>。其中，<code class="docutils literal notranslate"><span class="pre">export</span></code> 命令用于新增、修改或删除环境变量，<strong>HOME</strong> 环境变量表示用户的家目录，即 <code class="file docutils literal notranslate"><span class="pre">~</span></code>。假设用户名是 seismo-learn，家目录便是
+<code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn</span></code>。因此，该行的作用是将 <code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn/bin</span></code> 目录添加到搜索目录列表的末尾，更新 <strong>PATH</strong> 变量:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 打开一个新的终端，查看 PATH 变量
+$ echo $PATH
+/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/seismo-learn/bin
+</pre></div>
+</div>
+<p>修改配置文件后，打开新的终端，Shell 环境就会更新。需要注意的是，当前终端的 Shell 环境并没有更新。可以在当前终端中使用 <code class="docutils literal notranslate"><span class="pre">source</span></code> 命令重新加载（即读取并执行）配置文件，当前 Shell 环境也会更新:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 重新加载 ~/.bashrc
+$ source ~/.bashrc
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../commands/" class="btn btn-neutral float-right" title="常用命令" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../file-operations/" class="btn btn-neutral float-left" title="文件操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

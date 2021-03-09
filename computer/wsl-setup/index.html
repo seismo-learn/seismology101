@@ -1,0 +1,483 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>WSL 配置指南 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="Linux 入门" href="../linux101/" />
+    <link rel="prev" title="macOS 配置指南" href="../macos-setup/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../setup/">配置操作系统</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">WSL 配置指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">安装 WSL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">常用命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">跨系统文件互访</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wsl-windows">WSL 访问 Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows-wsl">Windows 访问 WSL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#linux">配置 Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-server">安装 X Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../setup/">配置操作系统</a> &raquo;</li>
+        
+      <li>WSL 配置指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/computer/wsl-setup.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wsl">
+<h1>WSL 配置指南<a class="headerlink" href="#wsl" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/zhaozhiyuan1989">赵志远</a>（作者）、
+<a class="reference external" href="https://github.com/core-man">姚家园</a>（审稿）、
+<a class="reference external" href="https://me.seisman.info/">田冬冬</a>（审稿）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-01-21</p>
+</dd>
+<dt class="field-odd">预计花费时间</dt>
+<dd class="field-odd"><p>120 分钟</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>本文尚未经过除作者外的其他 Windows 用户测试，欢迎阅读并给与反馈。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数情况下，建议使用 WSL2，因为它提供更快的性能和 100% 的系统调用兼容性。涉及到跨系统的文件互访时（Linux 访问 Windows 里的文件，或 Windows 访问 Linux 里的文件），使用 WSL1 具有更快的性能。WSL1 和 WSL2 的详细对比见<a class="reference external" href="https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions">官方文档</a>。</p>
+<p>官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>由于 Hyper-V 兼容性问题，开启 WSL2 功能后 VMware/VirtualBox 将无法正常使用，而 WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。</p>
+<p>已开启 WSL2 功能的用户若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，然后使用管理员模式打开 PowerShell，使用以下命令关闭 Hyper-V，重启后方能生效。此时 Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bcdedit /set hypervisorlaunchtype off
+</pre></div>
+</div>
+<p>用户可以在 PowerShell 使用以下命令开启 Hyper-V，重启后方能生效。此时 Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$  bcdedit /set hypervisorlaunchtype auto
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>安装 WSL<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>WSL 的安装方式可以参考官方文档：</p>
+<ul class="simple">
+<li><p>中文指南：<a class="reference external" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10</a></p></li>
+<li><p>英文指南：<a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a></p></li>
+</ul>
+<p>官方文档对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。</p>
+<p>WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。推荐使用 WSL 安装 Ubuntu 20.04 LTS。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>想在 WSL 上安装 Fedora 的读者可以参考以下安装指南：</p>
+<ul class="simple">
+<li><p>英文指南：<a class="reference external" href="https://fedoramagazine.org/wsl-fedora-33/">https://fedoramagazine.org/wsl-fedora-33/</a></p></li>
+<li><p>中文指南：<a class="reference external" href="https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/">https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/</a></p></li>
+</ul>
+<p>指南中的 Fedora rootfs 下载地址可能已失效。请访问
+<a class="reference external" href="https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64">https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64</a>
+下载最新版本。</p>
+<p>Fedora 只支持 WSL2。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>常用命令<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>打开 CMD 或 PowerShell，可以运行如下命令来使用 WSL。以下示例命令假定已安装 WSL2 版本的 Ubuntu 20.04 LTS，且其名称为 Ubuntu。</p>
+<p><code class="docutils literal notranslate"><span class="pre">wsl</span></code> 命令用法:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 查看 wsl 命令帮助
+$ wsl -h
+
+# 列出所有已安装的 Linux 发行版的状态，并显示是 WSL1 还是 WSL2
+$ wsl -l -v
+
+# 停止正在运行的 Linux 发行版
+$ wsl -t Ubuntu
+
+# 将 Ubuntu 由 WSL2 更改为 WSL1
+$ wsl --set-version Ubuntu 1
+
+# 将 Ubuntu 由 WSL1 改回 WSL2
+$ wsl --set-version Ubuntu 2
+
+# 设置默认发行版
+$ wsl -s Ubuntu20.04
+
+# 删除某个发行版（如名为 Ubuntu）
+$ wsl --unregister Ubuntu
+</pre></div>
+</div>
+<p>启动、进入和退出 Linux 环境:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 启动并进入 Linux 环境（进入默认发行版）
+$ bash
+
+# 退出 Linux 环境（并不会改变 WSL 的运行状态）
+$ exit
+</pre></div>
+</div>
+<p>开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。为了避免占用 C 盘的大量空间，可以将已安装的 Linux 发行版导出备份，再导入还原到其它盘，最后删除 C 盘上的发行版。这样做的另一个好处是导入时用户就能得到 WSL 的真实路径。</p>
+<p>打开 CMD 或 PowerShell，执行如下命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 导出 Linux 发行版，可做为备份
+# 在 D 盘中新建备份目录，命名为 WSLBAK
+$ mkdir D:\WSLBAK
+# 导出到备份目录下，命名为 20210117bak.tar
+$ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
+
+# 导入并还原之前备份的 Linux 发行版
+# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu20.04
+$ mkdir D:\WSLDIR\Ubuntu20.04
+# 导入并还原之前的备份，将此发行版命名为 Ubuntu20.04
+$ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar
+
+# 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
+$ wsl --unregister Ubuntu
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>跨系统文件互访<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，还是从 Windows 访问 WSL，WSL1 的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件时，建议将 Linux 发行版设置为 WSL1。</p>
+<div class="section" id="wsl-windows">
+<h3>WSL 访问 Windows<a class="headerlink" href="#wsl-windows" title="永久链接至标题">¶</a></h3>
+<p>Windows 系统的硬盘挂载在 WSL 的 <code class="docutils literal notranslate"><span class="pre">/mnt</span></code> 路径下，用户可以在 WSL 终端中输入 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/mnt/d</span></code> 命令进入 Windows 系统的 D 盘，然后便可编辑和运行目录中的文件。</p>
+</div>
+<div class="section" id="windows-wsl">
+<h3>Windows 访问 WSL<a class="headerlink" href="#windows-wsl" title="永久链接至标题">¶</a></h3>
+<p>在 Windows 下搜索、打开和编辑 WSL 下的文件和目录的方式有以下两种：</p>
+<ol class="arabic simple">
+<li><p>在 Windows 资源管理器的地址栏中输入 <code class="docutils literal notranslate"><span class="pre">\\wsl$</span></code>，会显示所有已安装的 WSL 目录，然后根据需要找到文件进行操作</p></li>
+<li><p>进入 WSL，在终端输入 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span> <span class="pre">&amp;&amp;</span> <span class="pre">explorer.exe</span> <span class="pre">.</span></code>，会在 Windows 下打开家目录，根据需要找到文件进行操作</p></li>
+</ol>
+<p>在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：</p>
+<ul class="simple">
+<li><p>真实路径</p></li>
+<li><p>UNC 路径（指类似 <code class="docutils literal notranslate"><span class="pre">\\wsl$</span></code> 这种格式的路径）</p></li>
+</ul>
+<p>WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问，这是因为 WSL2 使用 VHD 虚拟磁盘文件作为 Linux 发行版的根目录。</p>
+<p>Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 PowerShell 时，只能用真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法用真实路径和 UNC 路径访问 WSL2 文件系统。</p>
+<p>Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些支持 UNC 路径的软件（如 MATLAB）还可以通过 UNC 路径访问 WSL1 或 WSL2 文件系统。</p>
+<p>因此，如果想使用 Windows 的 CMD、PowerShell 以及应用程序编译或运行 WSL 中的文件，需要先把 Linux 发行版切换到 WSL1 版本，进入 WSL 后新建一个名字独特的文件夹，然后在 Windows 中对该文件夹进行定位，从而确定其真实的路径。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>推荐在 Windows 中安装 <a class="reference external" href="https://www.voidtools.com/zh-cn/">Everything</a>
+实现文件夹和文件的快速定位。</p>
+<p>推荐使用 <a class="reference external" href="https://docs.microsoft.com/zh-cn/windows/terminal/">Windows Terminal</a>，可直接在 Microsoft Store 中安装。界面美观、操作方便，支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。可完全替代 CMD 和 PowerShell。</p>
+<p>推荐使用 <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>，并安装插件
+<a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL</a>。使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。</p>
+</div>
+</div>
+</div>
+<div class="section" id="linux">
+<h2>配置 Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
+<p>安装 WSL 之后，还需要对 Linux 系统进行配置。</p>
+<p>Ubuntu 和 Fedora 用户可以参考《<a class="reference internal" href="../ubuntu-setup/"><span class="doc">Ubuntu 配置指南</span></a>》和《<a class="reference internal" href="../fedora-setup/"><span class="doc">Fedora 配置指南</span></a>》对系统进行配置，以满足科研工作的需求。</p>
+</div>
+<div class="section" id="x-server">
+<h2>安装 X Server<a class="headerlink" href="#x-server" title="永久链接至标题">¶</a></h2>
+<p>WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
+来接收和显示 Linux 中的图形界面。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗系统，主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接受对图形输出的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。</p>
+</div>
+<p>Windows 下常见的 X Server 有 <a class="reference external" href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>、
+<a class="reference external" href="http://www.straightrunning.com/XmingNotes/">Xming</a>、
+<a class="reference external" href="https://www.xshellcn.com/">Xmanager</a> 等。其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。VcXsrv 的使用方式和界面与 Xming 极为相近。推荐使用 VcXsrv，本文以此软件为例进行介绍。</p>
+<ol class="arabic">
+<li><p>下载 <a class="reference external" href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a>，默认安装即可</p></li>
+<li><p>运行 XLaunch，在 <strong>Extra settings</strong> 界面勾选 <strong>Disable access control</strong>，其他选项无需更改</p></li>
+<li><p>Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化，修改 Linux 的环境变量以保证始终能连接到 X Server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;export DISPLAY=\$(awk &#39;/nameserver / {print \$2; exit}&#39; /etc/resolv.conf 2&gt;/dev/null):0&quot; &gt;&gt; ~/.bashrc
+$ echo &quot;export LIBGL_ALWAYS_INDIRECT=1&quot; &gt;&gt; ~/.bashrc
+$ source ~/.bashrc
+</pre></div>
+</div>
+</li>
+<li><p>打开图形界面进行测试:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># x11-apps 中包含了很多小程序如 xclock、xeyes
+
+# Ubuntu 用户使用如下命令安装
+$ sudo apt install x11-apps
+# Fedora 用户使用如下命令安装
+$ sudo dnf install xorg-x11-apps
+
+# 运行 xclock。若能看到一个时钟窗口，则表示图形界面设置成功
+$ xclock
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../linux101/" class="btn btn-neutral float-right" title="Linux 入门" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../macos-setup/" class="btn btn-neutral float-left" title="macOS 配置指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

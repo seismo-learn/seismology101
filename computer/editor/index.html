@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>编辑器 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="前言" href="../../programming/introduction/" />
+    <link rel="prev" title="常用命令" href="../commands/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup/">配置操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">常用命令</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">编辑器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">学习编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">选择编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vs-code">VS Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vim">Vim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">操作模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">基本操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">扩展阅读</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>编辑器</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/computer/editor.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>编辑器<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）、
+<a class="reference external" href="https://me.seisman.info/">田冬冬</a>（审稿）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-03-01</p>
+</dd>
+<dt class="field-odd">预计花费时间</dt>
+<dd class="field-odd"><p>30 分钟</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>不管是编辑文本文件、脚本还是程序源码，都需使用一个叫做<strong>编辑器</strong>的程序。Windows 自带的编辑器是记事本（Notepad），macOS 自带的编辑器是 TextEdit，Linux 自带的编辑器一般是 Gedit。日常科研中，不建议使用这些编辑器，而建议学习并掌握其他具有更强大、更高效功能的编辑器。</p>
+<div class="section" id="id2">
+<h2>学习编辑器<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>日常科研中，我们大部分时间都花在编写代码和文本文件上。因此，花点时间掌握某个适合自己的编辑器是非常必要的，也是十分值得的。学习和掌握一个新编辑器的步骤通常如下：</p>
+<ul class="simple">
+<li><p>阅读教程：例如，官方文档、本章教程等</p></li>
+<li><p>坚持使用新编辑器来完成所有的编辑工作：刚开始可能会让工作效率降低</p></li>
+<li><p>随时查阅：如果新编辑器的某个操作看起来像是有更方便的实现方法，一般情况下真的会有；如果觉得新编辑器若具有一些功能可能会提高效率，一般情况下真的会有。</p></li>
+</ul>
+<p>按照上述步骤并坚持使用新的编辑器完成所有的编辑任务，则学习一个复杂的编辑器的过程通常是这样的：</p>
+<ul class="simple">
+<li><p>学习编辑器的基本操作（如前两个小时）：例如，打开和编辑文件、保存与退出等</p></li>
+<li><p>学习时间累计达到一定时间后（如 20 个小时），使用新编辑器的效率会和使用老编辑器一样快</p></li>
+<li><p>此后，新编辑器的益处开始显现。因为有了足够的知识和肌肉记忆后，使用新编辑器将大大节省时间</p></li>
+</ul>
+<p>现代编辑器都是一个复杂且强大的工具，永远有新东西可学：<strong>学的越多，效率越高</strong>。</p>
+</div>
+<div class="section" id="id3">
+<h2>选择编辑器<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>当前存在许多优秀的编辑器，该使用哪个呢？这个问题并没有标准答案。选择其中一个一直用下去，遇到需要重复劳动或者不顺心的地方时，就去寻找解决办法，如更新配置和安装插件。有了足够多的知识和经验后，可以选择是否继续使用老编辑器，或尝试和更换新编辑器。</p>
+<p>按照操作方式，编辑器可分为两种类型：基于命令行的和图形化的。基于命令行的编辑器一般启动较快，操作高效；图形化编辑器启动慢一点，但功能更加强大。</p>
+<p>按照功能，编辑器又大致可分为三种类型：文本编辑器、代码编辑器以及集成开发环境（Integrated Development Environment，简称 IDE）。顾名思义，文本编辑器主要用于编写一大段文本，代码编辑器主要用于编写代码，IDE 主要用于开发大型软件。按照功能进行分类主要考虑该编辑器更适用（即更高效、更快捷）做哪种编辑工作，不代表其不能用于其他工作。例如，代码编辑器和 IDE 也可以编辑一大段文本（代码和软件本身也是文本啊），文本编辑器也可以编写代码和软件，代码编辑器一般也有 IDE 的部分集成开发功能。一般而言，文本编辑器启动速度最快，集成开发环境最慢。</p>
+<p>例如，按照以上分类，<a class="reference external" href="https://www.vim.org/">vim</a> 编辑器是一款基于命令行的文本或代码编辑器，
+<a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>（VS Code）是一款图形化的代码编辑器或 IDE，
+<a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a> 是一款图形化的IDE（主要开发 Python 语言写的软件）。</p>
+<p>需要注意的是，编写代码时，经常要在文件间进行切换，并阅读、浏览和修改代码，而不是连续编写一大段文字，因此编写代码和编辑一长段纯文本是很不一样的。编写程序/软件时，还需要进行编译、链接、调试、版本控制等。因此，纯粹的代码编辑器和 IDE 是有所区别的，前者主要是让我们优雅地编写代码，后者集成了诸如编译、链接、调试、版本控制等功能，主要是让我们更高效地开发程序（往往是大型软件）。</p>
+<p>对于刚接触编辑器的读者，我们根据个人经验推荐一些编辑器。熟练掌握这些编辑器后，可以尝试和使用其他更适合自己的编辑器。</p>
+<ul class="simple">
+<li><p>VS Code 是目前最流行的代码编辑器或 IDE。启动较快，编辑文本也非常高效。<strong>推荐</strong>在日常科研中使用 VS Code 编辑文本和代码</p></li>
+<li><p>vim 是目前最流行的基于命令行的文本或代码编辑器，有时候可能是用户唯一可以使用的编辑器。<strong>推荐</strong>掌握 vim 的基本编辑功能，以便在无法使用 VS Code 或编辑简单的文本/代码时使用</p></li>
+</ul>
+</div>
+<div class="section" id="vs-code">
+<h2>VS Code<a class="headerlink" href="#vs-code" title="永久链接至标题">¶</a></h2>
+<p>安装 VS Code 可以参考<a class="reference internal" href="../setup/"><span class="doc">配置操作系统</span></a>中相应操作系统下的“日常软件”一节。</p>
+<p>刚接触 VS Code 的用户在编辑文本和代码遇到疑问时，可随时通过以下方式查阅：</p>
+<ul class="simple">
+<li><p>点击 VS Code 菜单栏“帮助”，选择相关选项。例如，“交互式演练场”、“文档”（Visual Studio Code 官方文档）、“键盘快捷键参考”等</p></li>
+<li><p>使用 Google 搜索</p></li>
+</ul>
+<p>建议在日常科研中随时根据个人习惯，去配置 VS Code、安装和使用扩展包等。</p>
+<details class="sphinx-bs dropdown card mb-3 shadow">
+<summary class="summary-title card-header bg-info text-white font-weight-bold">
+<span class="fa fa-exclamation-circle mr-1"></span> 安装 VS Code 中文语言包<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">VS Code 的界面默认显示语言是英文，可以安装中文语言包。点击菜单栏“查看”后选择“命令面板”（快捷键：<kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">p</kbd>），接着输入“configure display language”并按
+<kbd class="kbd docutils literal notranslate">Enter</kbd> 键，然后选择“安装其他语言”。这时界面会跳转到插件商店并自动搜索其他语言，一般第一个就是中文，即 “Chinese (Simplified) Language Pack for Visual Studio Code”，点击安装就行了。安装完之后自动重启，界面就变成中文了。</p>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow">
+<summary class="summary-title card-header bg-info text-white font-weight-bold">
+<span class="fa fa-exclamation-circle mr-1"></span> 远程计算机中使用 VS Code<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">编辑远程计算机文件的传统方法是先使用 ssh 命令登录到远程计算机，然后在远程计算机中使用 vim 编辑器编辑文件。</p>
+<p class="card-text">现在，我们可以借助 VS Code 扩展包 Remote - SSH，使用 VS Code 编辑远程文件，这极大地提高编辑效率。这里简要介绍如何安装和使用该扩展包，可以参考 VS Code 官方文档 <a class="reference external" href="https://code.visualstudio.com/docs/remote/ssh">ssh</a>
+了解详细用法。</p>
+<ol class="arabic">
+<li><p class="card-text">安装 Remote - SSH 扩展包</p>
+<p class="card-text">在“扩展”中，搜索“Remote - SSH”，点击安装。</p>
+<p class="card-text">安装完之后，左下角导航栏会多一个类似 <code class="docutils literal notranslate"><span class="pre">&gt;&lt;</span></code> 的远程连接图标。之后可以通过点击该图标来使用该扩展包。</p>
+</li>
+<li><p class="card-text">配置远程计算机的 SSH 主机</p>
+<p class="card-text">一般情况下，远程计算机已安装 SSH 服务器，本地计算机已安装 SSH 客户端。我们还需要配置基于密钥的认证，这也是 VS Code 官方推荐的认证方式。以下命令假设本地和远程计算机都是 Linux 或 macOS 系统，远程计算机的 IP 地址是 192.168.1.100，用户在远程计算机中的用户名是 seismo-learn。</p>
+<p class="card-text">本地计算机下，运行以下命令生成 SSH 密钥:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen -t rsa -f ~/.ssh/id_rsa-remote-ssh
+</pre></div>
+</div>
+<p class="card-text">该命令产生的一对 SSH 密钥分别位于 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/id_rsa-remote-ssh</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/id_rsa-remote-ssh.pub</span></code> 文件中。前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。</p>
+<p class="card-text">运行以下命令将公钥复制到远程计算机中（需用户输入远程计算机的密码）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub seismo-learn@192.168.1.100
+</pre></div>
+</div>
+<p class="card-text">该命令会把本地的公钥以追加的方式复制到远程计算机的 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> 文件中，并给远程计算机中的用户家目录、<code class="file docutils literal notranslate"><span class="pre">~/.ssh</span></code> 目录以及 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> 设置合适的权限。若远程计算机或本地计算机是 Windows 系统，请参考
+<a class="reference external" href="https://code.visualstudio.com/docs/remote/troubleshooting#_quick-start-using-ssh-keys">Quick start: Using SSH keys</a>
+进行配置。</p>
+<p class="card-text">在终端中输入以下命令，验证是否配置是否成功（即可以登录远程计算机）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh seismo-learn@192.168.1.100
+</pre></div>
+</div>
+</li>
+<li><p class="card-text">编辑远程文件</p>
+<p class="card-text">点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，输入 <a class="reference external" href="mailto:seismo-learn&#37;&#52;&#48;192&#46;168&#46;1&#46;100">seismo-learn<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>1<span>&#46;</span>100</a>
+便可使用 VS Code 编辑远程计算机中的文件了。</p>
+</li>
+<li><p class="card-text">退出远程连接</p>
+<p class="card-text">文件编辑完毕后，选择菜单栏“文件”中的“关闭远程连接”，或者直接关闭 VS Code，就可以退出远程连接。</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p class="card-text">如果需要经常连接远程计算机，可以使用 SSH 配置文件。</p>
+<p class="card-text">在活动栏中选择“远程资源管理器”，点击“配置”后选择 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> 配置文件，按照以下格式添加相关信息到该文件中:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">seismology</span>
+    <span class="n">User</span> <span class="n">seismo</span><span class="o">-</span><span class="n">learn</span>
+    <span class="n">HostName</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.100</span>
+    <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">ssh</span>
+</pre></div>
+</div>
+<p class="card-text">第一列是关键词，如 Host、User、HostName、IdentityFile，第二列是对应的值。seismology
+是用户自定义的远程主机标识，其他三个值同上文。可以按照该格式，向该文件中添加多个远程计算机。</p>
+<p class="card-text">点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，点击“seismology”就可以登录远程计算机了。也可以通过“远程资源管理器”，点击“seismology”登录远程计算机。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p class="card-text">如果远程计算机使用的 Shell 是 Bash，本地计算机是 Zsh，可能遇到无法启动 VS Code 的终端的问题。此时，需要修改一下配置文件以正确启动终端。</p>
+<p class="card-text">打开命令面板，输入 Remote-SSH: Settings，搜索 terminal.integrated.shell.linux，将 “/bin/zsh”改为 “/bin/bash” 即可。详情请参考
+<a class="reference external" href="https://github.com/microsoft/vscode-remote-release/issues/38">microsoft/vscode-remote-release issues #38</a></p>
+</div>
+</div>
+</details></div>
+<div class="section" id="vim">
+<h2>Vim<a class="headerlink" href="#vim" title="永久链接至标题">¶</a></h2>
+<p>Vim 是一款基于命令行的编辑器，拥有以下特点：</p>
+<ul class="simple">
+<li><p>使用键盘快速完成文本编辑。Vim 避免了使用鼠标，甚至避免用上下左右键，因为这些需要太多的手指移动。所有需要用鼠标的操作都可以用键盘完成</p></li>
+<li><p>轻量级且执行快。对于许多简单任务，启动 vim 比使用图形化编辑器要快地多</p></li>
+<li><p>很多 Linux 发行版都预装了 vim，某些时候可能是我们唯一能使用的编辑器，比如使用远程计算机</p></li>
+</ul>
+<p>在大多数 Linux 发行版中，vim 也可以用 vi 替代。可以使用以下命令查看:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ which vim
+/usr/bin/vim
+
+$ which vi
+vi=vim
+</pre></div>
+</div>
+<div class="section" id="id4">
+<h3>操作模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>Vim 的设计以大多数时间都花在阅读、浏览和进行少量编辑改动为基础。因此，它具有多种操作模式，以下只介绍几种常用模式：</p>
+<ul class="simple">
+<li><p>正常模式：移动光标、复制、粘贴、删除等</p></li>
+<li><p>插入模式：插入文本</p></li>
+<li><p>命令模式：执行一些指令</p></li>
+</ul>
+<p>在不同的操作模式下，键盘敲击的含义不同。Vim 默认会在左下角显示当前的操作模式。启动时的默认模式是正常模式，可以使用以下方式，在不同模式之间进行切换：</p>
+<ul class="simple">
+<li><p>按下 <kbd class="kbd docutils literal notranslate">Esc</kbd> 键可以从任何其他模式返回正常模式</p></li>
+<li><p>在正常模式下，按 <kbd class="kbd docutils literal notranslate">i</kbd> 键进入插入模式</p></li>
+<li><p>在正常模式下，按 <kbd class="kbd docutils literal notranslate">:</kbd> 键进入命令模式</p></li>
+</ul>
+<p>日常科研使用 vim 编辑器时，大部分时间处于正常模式和插入模式中。</p>
+</div>
+<div class="section" id="id5">
+<h3>基本操作<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>使用 vim 编辑器打开 <code class="file docutils literal notranslate"><span class="pre">hello-world.txt</span></code> 文件，若文件不存在则创建该文件。使用以上按键在不同操作模式之间进行切换，并观察左下角的显示:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 若 vim 后面没有文件名，也会进入 vim
+$ vim hello-world.txt
+</pre></div>
+</div>
+<p>按 <kbd class="kbd docutils literal notranslate">i</kbd> 键进入插入模式，输入 Hello World，然后按 <kbd class="kbd docutils literal notranslate">Esc</kbd> 键回到正常模式。假设文本输入完毕且处于正常模式，按下 <kbd class="kbd docutils literal notranslate">:</kbd> 键进入命令模式，这时光标会立即跳到屏幕下方的命令行，然后输入 <kbd class="kbd docutils literal notranslate">wq</kbd> 即可保存文件并退出 vim。</p>
+<p>命令模式的常用功能包括保存文件、退出 vim 等：</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">:q</kbd> 退出 vim 并关闭窗口</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">:w</kbd> 保存文件</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">:wq</kbd> 保存文件并退出 vim</p></li>
+</ul>
+<p>在正常模式下，可以使用以下常用移动命令在文本中快速移动：</p>
+<ul class="simple">
+<li><p>行： <kbd class="kbd docutils literal notranslate">0</kbd>（行初）、<kbd class="kbd docutils literal notranslate">^</kbd>（第一个非空格字符）、<kbd class="kbd docutils literal notranslate">$</kbd>（行尾）</p></li>
+<li><p>文件：<kbd class="kbd docutils literal notranslate">gg</kbd>（文件头）、<kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">g</kbd>（文件尾）</p></li>
+<li><p>行数：number + <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">g</kbd> 会移动至行号为 number（如 20）的行（即第 20 行）</p></li>
+</ul>
+<p>在正常模式下，可以使用以下常用编辑命令修改文本：</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">i</kbd> 进入插入模式，可以输入文本</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">o</kbd> 和 <kbd class="kbd docutils literal notranslate">o</kbd> 分别在当前行之上和之下插入一行，并进入插入模式</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">yy</kbd> 复制当前行</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">p</kbd> 把复制内容粘贴到当前行的下面</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">dd</kbd> 删除当前行</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">u</kbd> 撤销上一次修改</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">r</kbd> 重做上一次修改</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>扩展阅读<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>本文只介绍了 vim 的一些常见用法。日常科研中需要经常使用 vim 的用户可以参考以下教程，学习和掌握更多用法，配置 vim，以便更高效地编辑文本：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://coolshell.cn/articles/5426.html">简明 VIM 练级攻略</a></p></li>
+<li><p><a class="reference external" href="http://www.ruanyifeng.com/blog/2018/09/vimrc.html">Vim 配置入门</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../../programming/introduction/" class="btn btn-neutral float-right" title="前言" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../commands/" class="btn btn-neutral float-left" title="常用命令" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

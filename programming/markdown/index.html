@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Markdown &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="编译与链接" href="../compile/" />
+    <link rel="prev" title="Fortran 语言" href="../fortran/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/operating-system/">选择操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/setup/">配置操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">前言</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../languages/">编程语言</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bash/">Bash 脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/">C 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fortran/">Fortran 语言</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Markdown</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../languages/">编程语言</a> &raquo;</li>
+        
+      <li>Markdown</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/programming/markdown.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="markdown">
+<h1>Markdown<a class="headerlink" href="#markdown" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）、
+<a class="reference external" href="https://me.seisman.info/">田冬冬</a>（审稿）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-02-26</p>
+</dd>
+<dt class="field-odd">预计花费时间</dt>
+<dd class="field-odd"><p>30 分钟</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p><a class="reference external" href="https://daringfireball.net/projects/markdown/">Markdown</a> 是一种轻量级标记语言，使用语法简单的纯文本格式来编写文档，帮助人们专注于写作本身而不用关注文档格式。</p>
+<p>Markdown 编写的文档易于转成 HTML、PDF、LaTeX、Word 等多种格式，且大多数编辑器支持实时渲染。因此，其常用于写 README、记笔记、写论文、写书、写网页等。Markdown 编写的文档后缀为一般为
+<code class="file docutils literal notranslate"><span class="pre">.md</span></code>。</p>
+<p>Markdown 有很多特色语法，如以下常用语法：</p>
+<ul class="simple">
+<li><p>标题</p></li>
+<li><p>格式化文字：斜体、加粗、斜体加粗等</p></li>
+<li><p>超链接</p></li>
+<li><p>列表</p></li>
+<li><p>代码</p></li>
+<li><p>表格</p></li>
+<li><p>图片</p></li>
+<li><p>数学公式</p></li>
+</ul>
+<p>网上有很多优秀的 Markdown 教程，因此本教程对 Markdown 语法不做详细介绍。推荐参考以下资料中的一个学习以上常用语法：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://help.coding.net/docs/management/markdown.html">Markdown 语法</a></p></li>
+<li><p><a class="reference external" href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></p></li>
+<li><p><a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown Cheatsheet</a></p></li>
+</ul>
+<p>VS Code 编辑器的 Markdown 语言扩展支持实时预览 Markdown 文档。也可以使用 Markdown
+在线编辑器熟悉和测试其语法：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dillinger.io/">https://dillinger.io/</a></p></li>
+<li><p><a class="reference external" href="https://daringfireball.net/projects/markdown/dingus">https://daringfireball.net/projects/markdown/dingus</a></p></li>
+</ul>
+<p>推荐使用 <a class="reference external" href="https://pandoc.org/">pandoc</a> 将 Markdown 文档转成其他格式，如 PDF、LaTeX。</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../compile/" class="btn btn-neutral float-right" title="编译与链接" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../fortran/" class="btn btn-neutral float-left" title="Fortran 语言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>地震仪 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="地震图" href="../seismogram/" />
+    <link rel="prev" title="地震波" href="../seismic-wave/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/operating-system/">选择操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/setup/">配置操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seismic-wave/">地震波</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">地震仪</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">距离和角度</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">震中距</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">方位角和反方位角</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">出射角和入射角</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">参考文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>地震仪</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/seismology/seismograph/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>地震仪<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://me.seisman.info/">田冬冬</a>（作者）、
+<a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-01-09</p>
+</dd>
+<dt class="field-odd">预计阅读时间</dt>
+<dd class="field-odd"><p>10 分钟</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2>距离和角度<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>震中距<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>一般来说，球面上任意两点都可以和球心确定唯一的大圆（<em>great circle</em>）。在大圆上，连接这两点的弧有两条，较短的叫优弧（<em>minor arc</em>），较长的叫劣弧（<em>major arc</em>）。</p>
+<p>震中距指连接震中和地面上任意一点的优弧的长度。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>震中距的单位一般为 km 或度（°）。km 常用于近震，度常用于远震。</p>
+<p>假设地球是完美球体，半径 <span class="math notranslate nohighlight">\(R_0\)</span> 为 6371 km：</p>
+<div class="math notranslate nohighlight">
+\[1° = \frac{\pi*R_0}{180} km \approx 111.19492 km\]</div>
+<div class="math notranslate nohighlight">
+\[1 km = \frac{180}{\pi*R_0}° \approx 0.00899°\]</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>方位角和反方位角<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>方位角（azimuth，常简写为 azi）是震中到台站的连线与地理北向的夹角，而反方位角（back azimuth，常简写为 baz）指台站到震中的连线与地理北向的夹角。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>方位角和反方位角一般并不是相差 180°。例如，地震和台站分别位于（0°N，0°E）和（40°N，120°E）时，方位角约为 46°，反方位角约为 290°，相差 244°。</p>
+</div>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/az_baz.png"><img alt="震中距、方位角、反方位角示意图" src="../../_images/az_baz.png" style="width: 50.0%;" /></a>
+<p class="caption"><span class="caption-text">震中距、方位角、反方位角示意图</span><a class="headerlink" href="#id7" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>出射角和入射角<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>射线从震源出射时，与垂直方向的角度。例如，从震源正下方出射的射线的出射角为 0°。</p>
+<p>射线入射到台站时，与垂直方向的角度。例如，从台站正下方入射的射线的入射角为 0°。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>不同软件对出射角和入射角的定义可能会有区别。例如，<code class="docutils literal notranslate"><span class="pre">taup_time</span></code> 定义出射角为射线从震源出射时与<strong>垂直向下</strong>方向的夹角，而入射角为射线入射到台站时与<strong>垂直向上</strong>方向的夹角。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>参考文档<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://service.iris.edu/irisws/rotation/docs/1/help/">https://service.iris.edu/irisws/rotation/docs/1/help/</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../seismogram/" class="btn btn-neutral float-right" title="地震图" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../seismic-wave/" class="btn btn-neutral float-left" title="地震波" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

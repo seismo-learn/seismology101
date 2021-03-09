@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>备份与还原 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="Zsh 及其配置" href="../zsh/" />
+    <link rel="prev" title="软件安装" href="../software-installation/" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/operating-system/">选择操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/setup/">配置操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software-installation/">软件安装</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">备份与还原</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">备份！备份！备份！</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">备份策略</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linux">Linux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rsync">rsync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dejadup">DejaDup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#macos">macOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#robocopy">robocopy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup">Backup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>备份与还原</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/best-practices/backup.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>备份与还原<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）、
+<a class="reference external" href="https://me.seisman.info/">田冬冬</a>（作者）、
+<a class="reference external" href="https://github.com/zhaozhiyuan1989">赵志远</a>（作者）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-02-08</p>
+</dd>
+<dt class="field-odd">预计阅读时间</dt>
+<dd class="field-odd"><p>30 分钟</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>本章正在编写中，尚未完成。</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2>备份！备份！备份！<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>尽管不经常发生，但电脑随时可能会坏掉或被盗，电脑硬盘也随时可能会出问题，也可能不小心使用一个命令（如 <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">*</span></code>）把几个月的工作误删了。所以，备份非常重要，不进行必要的备份是十分危险的。笔者和一些同行多次体验过数据误删或硬盘损坏又未备份带来的痛苦。</p>
+<p>如果<strong>文件非常重要</strong>，丢失后<strong>恢复难度极大</strong>，或<strong>恢复时间极长</strong>，强烈推荐备份一下。例如，毕业论文、脚本、代码、电脑配置文件、无法再次获取的数据、经过长时间处理得到的资料。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>日常科研工作中，电脑硬盘经常进行大量的读写操作，直接影响硬盘的寿命。我们的经验表明，电脑硬盘的平均寿命大约为 5 年。当然，硬盘的品质和使用情况不同，其寿命也有所不同。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>备份策略<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>备份策略简单概括有两种：备份家目录或其部分子目录；全盘备份。</p>
+<p>不同备份策略的主要区别是所需的备份硬盘空间和备份时间，以及电脑硬盘摔坏带来的损失。移动硬盘是最常见的备份设备，其特点是携带方便、价格便宜。近几年，移动硬盘发展迅速，市场上常见的移动硬盘，其存储空间大小有 1 TB 到 5 TB（单价从 300 到 800 块左右），基本可以满足日常科研的备份需求。一般而言，第一次备份需要较长时间，后续的备份往往只同步改动过的文件，所需时间较短。考虑以上两点因素以及硬盘摔坏带来的精神和身体上的损失，我们推荐备份家目录或者至少备份家目录下重要的子目录。有需求的用户可以考虑全盘备份。</p>
+<p>有效的文件备份并不是简单的复制和同步文件。复制存储在同一个硬盘中的文件不是备份，硬盘一但出现问题所有的文件都可能丢失。和计算机放在一块的移动硬盘可能因为火灾、盗窃等原因一起丢失。有效备份方案的几个核心特性是：版本控制、删除重复文件、安全性。对备份实施版本控制保证了用户可以从任何备份过的历史版本中恢复文件。删除源文件中的重复文件，可以减少存储开销。在安全性方面，应该考虑他人需要什么工具和信息或者发生什么意外才会完全删除源文件和备份。此外，不要盲目信任备份方案，应该经常检查备份是否可以用来恢复文件。</p>
+<p>除了使用移动硬盘备份文件以外，还可以将部分文件同时备份到云端，多一份保障。例如，将程序和脚本等推送到 <a class="reference external" href="https://github.com/">GitHub</a> 上，将部分文件同步到网盘（如百度网盘、OneDrive、Google Drive、Dropbox、iCloud 等）。需要小心的是，若文件在本地被误删或者损坏，云端可能会同步这些“更改”，并且考虑到可能无法登录这些应用，在云端存储的文件可能会随之丢失。所以最好把云端备份当作本地移动硬盘备份的补充，而不是重要文件的唯一备份。</p>
+<p>建议每隔一段时间（如每周）做一次备份。放假前、出差开会前，也建议备份一下。</p>
+</div>
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
+<p>新买的移动硬盘的文件系统一般是 <code class="docutils literal notranslate"><span class="pre">NTFS</span></code> 或 <code class="docutils literal notranslate"><span class="pre">exFAT</span></code>。推荐将移动硬盘文件系统设置为 Linux 系统的常见格式 <code class="docutils literal notranslate"><span class="pre">ext4</span></code>，用于 Linux 下的文件备份。该格式在 Ubuntu、Debian、Fedora、CentOS 等 Linux 发行版下，可以保持文件权限。在 Linux 系统下，可以使用 <code class="docutils literal notranslate"><span class="pre">mkfs</span></code> 命令将移动硬盘设置为 Linux 文件系统。还可以使用 <code class="docutils literal notranslate"><span class="pre">e2label</span></code> 命令为移动硬盘设置卷标。</p>
+<div class="section" id="rsync">
+<h3>rsync<a class="headerlink" href="#rsync" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">rsync</span></code> 命令进行备份十分方便。假设用户名为 seismo-learn，移动硬盘下的备份目录为 <code class="file docutils literal notranslate"><span class="pre">/mnt/seismo-learn/backup/</span></code> 。使用以下命令可以将家目录下的所有子目录和文件完整同步到备份目录下，此时备份目录是家目录的一个镜像:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rsync -av --delete /home/seismo-learn/ /mnt/seismo-learn/backup/
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>以上命令中家目录 <code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn/</span></code> 最后的斜杠非常重要。若没有这个斜杠（<code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn</span></code>），则会把家目录本身同步到备份目录下，即产生 <code class="file docutils literal notranslate"><span class="pre">/mnt/seismo-learn/backup/seismo-learn</span></code> 目录。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">rsync</span></code> 命令的特色在于增量备份。这意味着只有第一次备份的时候需要花比较多的时间来同步文件，之后再使用该命令进行备份只会同步有改动的文件。假如一周只修改了一个文件，那么同步的过程会在瞬间完成。</p>
+<p>读者可以参考 Bash 脚本 <a class="reference download internal" download="" href="../../_downloads/6229be9f124258df1996707054f6100a/backup.sh"><code class="xref download docutils literal notranslate"><span class="pre">backup.sh</span></code></a>。点击下载后，修改源目录、备份目录以及想要备份的子目录。然后按以下命令，修改文件权限为可执行，并将脚本移至 <code class="file docutils literal notranslate"><span class="pre">~/bin</span></code> 目录下，就可以运行了:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 修改可执行权限
+$ chmod +x backup.sh
+
+# 移动至 ~/bin/ 目录
+$ mv backup.sh ~/bin
+
+# 执行命令开始备份
+$ backup.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="dejadup">
+<h3>DejaDup<a class="headerlink" href="#dejadup" title="永久链接至标题">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>本节尚未开始编写。读者可以参考 <a class="reference external" href="https://www.howtoing.com/ubuntu-backup-deja-dup">https://www.howtoing.com/ubuntu-backup-deja-dup</a>
+使用 DejaDup，欢迎提供反馈。</p>
+</div>
+<p><a class="reference external" href="https://wiki.gnome.org/Apps/DejaDup">DejaDup</a> 是一款很好的图形界面备份工具。</p>
+<p>安装 DejaDup：</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="57ad3d3a-7f52-4956-a5ed-70bf04703164" name="71b6d458-b15e-4475-b44f-1fd3377af7cb" type="radio">
+</input><label class="tabbed-label" for="57ad3d3a-7f52-4956-a5ed-70bf04703164">
+Fedora</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install deja-dup
+</pre></div>
+</div>
+</div>
+<input id="1de4d6fd-cbfc-443d-a68e-1165152bd2f3" name="71b6d458-b15e-4475-b44f-1fd3377af7cb" type="radio">
+</input><label class="tabbed-label" for="1de4d6fd-cbfc-443d-a68e-1165152bd2f3">
+CentOS</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo yum install deja-dup
+</pre></div>
+</div>
+</div>
+<input id="c8a71dd0-71c7-485a-ac00-c23c0ca22c5a" name="71b6d458-b15e-4475-b44f-1fd3377af7cb" type="radio">
+</input><label class="tabbed-label" for="c8a71dd0-71c7-485a-ac00-c23c0ca22c5a">
+Ubuntu/Debian</label><div class="tabbed-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt update
+$ sudo apt install deja-dup
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="macos">
+<h2>macOS<a class="headerlink" href="#macos" title="永久链接至标题">¶</a></h2>
+<p>macOS 下最好用的备份工具当属 Time Machine（时间机器），其可以增量备份 macOS 下的文件，能恢复到之前任意备份时刻的状态，并且操作简单。当然也可以使用 <a class="reference internal" href="#rsync">rsync</a> 命令进行备份，与 Linux 下相同。推荐使用 Time Machine 进行备份。</p>
+<p>首先插入一块备用硬盘，按下 <kbd class="kbd docutils literal notranslate">Command</kbd> + <kbd class="kbd docutils literal notranslate">空格</kbd>，搜索“Disk Utility”并按下
+<kbd class="kbd docutils literal notranslate">Enter</kbd> 键以打开磁盘工具。将移动硬盘格式化成 APFS（加密）格式，这也是 macOS Big Sur（11.x）的默认格式。读者可以根据自身情况选择分区大小，推荐至少是 macOS 本身硬盘空间的两倍。</p>
+<p>点击左上角的 Apple 图标，在“系统偏好设置”中，打开“时间机器”。选中“在菜单栏中显示时间机器”。点击“选择备份磁盘”，从可用磁盘列表中选择之前格式化的硬盘分区，然后选择“使用磁盘”即可。时间机器会立即开始备份。首次备份可能需要很长时间，之后只会同步有改动的文件。下次插入备份硬盘，直接从菜单栏的时间机器菜单中选择“立即备份”即开始增量备份。可以选择“进入时间机器”，查看备份内容。如需还原备份文件，请参考官方支持<a class="reference external" href="https://support.apple.com/zh-cn/HT203981">从备份恢复 Mac</a>。</p>
+</div>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
+<div class="section" id="robocopy">
+<h3>robocopy<a class="headerlink" href="#robocopy" title="永久链接至标题">¶</a></h3>
+<p>使用 Windows 自带的 <a class="reference external" href="https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy">robocopy</a>
+命令进行增量备份。这意味着只有第一次备份的时候需要花比较多的时间来同步文件，之后再使用该命令进行备份只会同步有改动的文件。假设要备份整个 D 盘，移动硬盘下的备份目录为 <code class="file docutils literal notranslate"><span class="pre">F:\backup</span></code> 。打开 CMD 或 PowerShell，使用以下命令可以将 D 盘同步到备份目录下，此时备份目录是 D 盘的一个镜像:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ robocopy D:\ F:\backup /mir /mt /R:10 /W:10 /A-:H /XD Config.Msi $RECYCLE.BIN
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>以上命令中 D 盘盘符后的反斜杠（<code class="file docutils literal notranslate"><span class="pre">D:\</span></code>）非常重要，省略的话可能无法备份整个 D 盘。</p>
+<p><code class="docutils literal notranslate"><span class="pre">/XD</span></code> 选项后的目录（如 <code class="file docutils literal notranslate"><span class="pre">Config.Msi</span></code>、<code class="file docutils literal notranslate"><span class="pre">$RECYCLE.BIN</span></code>）在备份时被忽略。读者可以根据自己的实际情况把无法备份或者不想备份的目录添加到此选项后。</p>
+</div>
+<p>读者可以参考 Batch 脚本 <a class="reference download internal" download="" href="../../_downloads/fd344f99eea0ea4fffd8cb2335867dd1/backup.bat"><code class="xref download docutils literal notranslate"><span class="pre">backup.bat</span></code></a>。点击下载后，修改源目录、备份目录以及想要备份的子目录。然后，双击该 Batch 脚本即可直接运行。也可以打开 CMD 或 PowerShell，再输入 Batch 脚本名以运行脚本。</p>
+</div>
+<div class="section" id="backup">
+<h3>Backup<a class="headerlink" href="#backup" title="永久链接至标题">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>本节尚未开始编写。读者可以参考 <a class="reference external" href="https://www.portableone.com/Tech-News/Microsoft-Windows-10-PCs-have-their-own-Apple-Time-Machine-feature">https://www.portableone.com/Tech-News/Microsoft-Windows-10-PCs-have-their-own-Apple-Time-Machine-feature</a>
+使用 Windows 10 Backup，欢迎提供反馈。</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../zsh/" class="btn btn-neutral float-right" title="Zsh 及其配置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../software-installation/" class="btn btn-neutral float-left" title="软件安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

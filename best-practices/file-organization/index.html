@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>文件管理 &mdash; 地震“学”科研入门教程</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../../genindex/" />
+    <link rel="search" title="搜索" href="../../search/" />
+    <link rel="next" title="软件安装" href="../software-installation/" />
+    <link rel="prev" title="前言" href="../" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../" class="icon icon-home"> 地震“学”科研入门教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">计算机基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/operating-system/">选择操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/setup/">配置操作系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/linux101/">Linux 入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/commands/">常用命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/editor/">编辑器</a></li>
+</ul>
+<p class="caption"><span class="caption-text">编程基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/languages/">编程语言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/compile/">编译与链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/version-control/">版本控制</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学基础</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/introduction/">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/software/">常用软件</a></li>
+</ul>
+<p class="caption"><span class="caption-text">地震学实践</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/waveform-fetch/">波形数据下载</a></li>
+</ul>
+<p class="caption"><span class="caption-text">实践经验</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../">前言</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">文件管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">基本原则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">目录结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">目录用途</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#software">software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#src">src</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#codes">codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#opt">opt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bin">bin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data">data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#projects">projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documents">Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downloads">Downloads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#desktop">Desktop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workspace">workspace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../software-installation/">软件安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../backup/">备份与还原</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zsh/">Zsh 及其配置</a></li>
+</ul>
+
+            
+          
+
+    
+        <p class="caption">
+            <span class="caption-text">外部链接</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/"><i class="fa fa-home"></i> 地震“学”主站</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101"><i class="fa fa-github fa-fw"></i> 网站源码</a></li>
+            
+                <li class="toctree-l1"><a href="https://seismo-learn.org/contributing/"><i class="fa fa-edit fa-fw"></i> 贡献指南</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/seismo-learn/seismology101/discussions"><i class="fa fa-comments fa-fw"></i> 参与讨论</a></li>
+            
+        </ul>
+    
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">地震“学”科研入门教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>文件管理</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/seismo-learn/seismology101/blob/main/source/best-practices/file-organization.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>文件管理<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">本节贡献者</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://me.seisman.info/">田冬冬</a>（作者）、
+<a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）</p>
+</dd>
+<dt class="field-even">最近更新日期</dt>
+<dd class="field-even"><p>2021-01-12</p>
+</dd>
+<dt class="field-odd">预计阅读时间</dt>
+<dd class="field-odd"><p>20 分钟</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>正确管理电脑文件是非常重要的。错误的文件管理方式会使你花费更多的时间去寻找文件，拖慢你的科研进度，还可能导致文件的大量冗余与误删。这一节，我们总结了自己在科研工作中关于文件组织与管理的经验，供读者参考。</p>
+<p>本文主要面向 Linux 和 macOS 用户，下面提到的<strong>家目录</strong>在 Linux 下指的是 <code class="file docutils literal notranslate"><span class="pre">/home/用户名</span></code>，在 macOS 下指的是 <code class="file docutils literal notranslate"><span class="pre">/Users/用户名</span></code>。</p>
+<div class="section" id="id2">
+<h2>基本原则<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>本文的文件组织与管理遵循如下几条基本原则：</p>
+<ol class="arabic simple">
+<li><p>保持家目录干净整洁</p></li>
+<li><p>所有科研相关的文档、代码、图片等均放在家目录的子目录下</p></li>
+<li><p>家目录下的每个子目录都有特定的用途，用于放置特定的文件</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>目录结构<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>根据以上原则，我们推荐在家目录下建立如下子目录：</p>
+<ul class="simple">
+<li><p>Linux 或 macOS 系统在安装后自动创建的常见目录：</p>
+<ul>
+<li><p><code class="file docutils literal notranslate"><span class="pre">Documents</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">Downloads</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">Desktop</span></code></p></li>
+</ul>
+</li>
+<li><p>为了满足日常科研需求，在家目录下新建的、用于存储科研相关文件的目录</p>
+<ul>
+<li><p><code class="file docutils literal notranslate"><span class="pre">software</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">src</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">codes</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">opt</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">bin</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">data</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">projects</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">workspace</span></code></p></li>
+</ul>
+</li>
+<li><p>根据需求创建的其他目录</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>目录用途<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>根据原则 3，家目录下的每个子目录应有特定的用途。下面将详细阐述每个子目录的用途，以及哪些文件应该放在哪个子目录下。</p>
+<div class="section" id="software">
+<h3>software<a class="headerlink" href="#software" title="永久链接至标题">¶</a></h3>
+<p>该目录用于放置从网络上下载的软件包（如 SAC、GMT、TauP 等）的原始压缩包，相当于一个备份。若压缩包数目较少，则所有软件压缩包都放在该目录下；若压缩包数目很多，可以考虑根据软件的用途对软件进行分类，放在该目录的不同子目录下。同时建议在该目录下建一个 README 文件，记录软件的名称、用途、官方下载地址以及下载日期等。</p>
+</div>
+<div class="section" id="src">
+<h3>src<a class="headerlink" href="#src" title="永久链接至标题">¶</a></h3>
+<p>该目录用于放置别人提供的科研相关的软件源码，每个软件对应 <code class="file docutils literal notranslate"><span class="pre">~/src</span></code> 目录下的一个子目录。比如 fk、gCAP、distaz、GMT 等软件的源码都放在这里。</p>
+</div>
+<div class="section" id="codes">
+<h3>codes<a class="headerlink" href="#codes" title="永久链接至标题">¶</a></h3>
+<p>该目录用于放置自己写的具有<strong>通用性</strong>的软件包。这些软件包可以实现某类特定的功能，且不局限于某一个特定的科研项目。</p>
+</div>
+<div class="section" id="opt">
+<h3>opt<a class="headerlink" href="#opt" title="永久链接至标题">¶</a></h3>
+<p>我们推荐将地震学相关软件安装到 <code class="file docutils literal notranslate"><span class="pre">~/opt</span></code> 目录下，而不要安装到
+<code class="file docutils literal notranslate"><span class="pre">/opt/</span></code> 或 <code class="file docutils literal notranslate"><span class="pre">/usr/local</span></code> 下。</p>
+<p>该目录下可放置两类科研相关软件：</p>
+<ol class="arabic simple">
+<li><p>无需编译即可直接使用的软件，如 SAC、TauP、SOD 等</p></li>
+<li><p>需要编译并指定安装位置的软件，如 GMT</p></li>
+</ol>
+</div>
+<div class="section" id="bin">
+<h3>bin<a class="headerlink" href="#bin" title="永久链接至标题">¶</a></h3>
+<p><code class="file docutils literal notranslate"><span class="pre">~/bin</span></code> 目录用于存放一些简单的可执行文件和工具型脚本。将该目录的路径加入到环境变量 <strong>PATH</strong> 中，则可以在终端或脚本中直接调用这些可执行文件与脚本。</p>
+<p>可以基于如下原则决定是否要将某个可执行文件或脚本放在该目录下：</p>
+<ol class="arabic simple">
+<li><p>若某个软件包只提供了单个可执行文件，则可放在该目录下</p></li>
+<li><p>若某个软件包的源码经过编译得到了单个可执行文件，则可将源码置于 <code class="file docutils literal notranslate"><span class="pre">~/src</span></code>
+目录下，而将可执行文件复制到 <code class="file docutils literal notranslate"><span class="pre">~/bin</span></code> 目录下，如 <code class="docutils literal notranslate"><span class="pre">distaz</span></code></p></li>
+<li><p>自己写的一些常用工具型脚本，可放在该目录下，如定时备份脚本</p></li>
+<li><p>某些软件安装在其他路径，但只需要用到其中一个命令，此时可以在该目录下创建指向该命令的软链接。这样就不需要将该软件的安装路径添加到环境变量中了，如 Matlab。</p></li>
+</ol>
+</div>
+<div class="section" id="data">
+<h3>data<a class="headerlink" href="#data" title="永久链接至标题">¶</a></h3>
+<p>顾名思义，该目录主要用于保存一些基本不会改变的“数据”文件，比如地震波形数据、中国国界线数据、中国断层数据、地震目录等。这些数据可以被多个不同的科研项目共用。</p>
+</div>
+<div class="section" id="projects">
+<h3>projects<a class="headerlink" href="#projects" title="永久链接至标题">¶</a></h3>
+<p>该目录用于放置科研项目相关的文件，每个子目录对应一个科研项目。子目录下包含一个科研项目相关的数据、代码、脚本、图片、结果等。例如：</p>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina_MTZ</span></code> 是一个关于华北地区地幔过渡带的科研项目</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">~/projects/GlobalICB</span></code> 是一个关于全球内核边界结构的科研项目</p></li>
+</ul>
+</div>
+<div class="section" id="documents">
+<h3>Documents<a class="headerlink" href="#documents" title="永久链接至标题">¶</a></h3>
+<p>用于存放个人文档。可自行根据自己的需求进一步创建子目录。</p>
+<p>考虑到其他软件，如 Matlab、Zoom 等，也会在 <code class="file docutils literal notranslate"><span class="pre">~/Documents</span></code> 目录里创建子目录并写文件，读者也可以考虑不使用 <code class="file docutils literal notranslate"><span class="pre">~/Documents</span></code> 目录，而自行在家目录下建立其他用于存放个人文档的目录，比如目录 <code class="file docutils literal notranslate"><span class="pre">~/research</span></code> 用于存放科研相关的文档，目录 <code class="file docutils literal notranslate"><span class="pre">~/life</span></code> 用于存放私人文档。</p>
+</div>
+<div class="section" id="downloads">
+<h3>Downloads<a class="headerlink" href="#downloads" title="永久链接至标题">¶</a></h3>
+<p>这是浏览器下载的默认目录。该目录仅作为临时存放文件的地方。应不定期（比如每隔几天）清理不需要的文件，并将需要的文件（文章、软件包、图片等）移动到相应的目录下。</p>
+</div>
+<div class="section" id="desktop">
+<h3>Desktop<a class="headerlink" href="#desktop" title="永久链接至标题">¶</a></h3>
+<p>很多人习惯于将大量文件或当前在做的科研项目目录放在桌面上，这些都是不建议的方式。</p>
+<p>桌面可以认为是另一个临时的文件夹。桌面上可以放置自己当前正在处理的一些文件，比如正在做的幻灯片、正在填写的表格，完成后应移动到其他目录下。</p>
+<p>为了方便快速打开自己的科研项目目录，可以在桌面上建立一个指向当前在研项目（位于 <code class="file docutils literal notranslate"><span class="pre">~/projects</span></code> 目录的子目录下）的软链接/快捷方式。当这一科研项目已经做完后，即可从桌面上删除该软链接/快捷方式，而 <code class="file docutils literal notranslate"><span class="pre">~/projects</span></code> 目录下的项目目录则可以保持不动。</p>
+</div>
+<div class="section" id="workspace">
+<h3>workspace<a class="headerlink" href="#workspace" title="永久链接至标题">¶</a></h3>
+<p>用于做临时测试或做一些实验的目录。</p>
+<p>日常科研中，有时忘了某个语法或某个命令，需要做一些测试检查自己的代码是否正确；或者需要试某个命令的不同参数，看看结果上有什么差异；或者新下载了某个软件包，想要随便跑一跑看看是否是自己所需要的。此时，可以到专门的目录 <code class="file docutils literal notranslate"><span class="pre">~/workspace</span></code>
+做这些实验。这样的好处在于，避免向自己的家目录、科研项目目录或其他目录下写入临时测试文件，同时在清理临时文件时也更加方便且不必担心误删其他重要文件。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../software-installation/" class="btn btn-neutral float-right" title="软件安装" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../" class="btn btn-neutral float-left" title="前言" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020–2021, seismo-learn.
+      <span class="lastupdated">
+        最后更新于 2021 年 03 月 09 日.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
