@@ -21,10 +21,6 @@ Fedora 配置指南
    安装 Fedora 也可以参考 https://techz.io/how-to-install-fedora/
    给出的详细步骤与图解。
 
-.. note::
-
-   经常重装系统的用户（如每半年一次），建议编写 Bash 脚本来自动安装需要的软件。
-
 下载系统镜像
 ^^^^^^^^^^^^
 
