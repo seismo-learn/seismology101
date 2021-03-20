@@ -28,7 +28,7 @@ Ubuntu 配置指南
 访问 `Ubuntu 官网 <https://ubuntu.com/>`__ 并下载 Ubuntu Desktop 镜像，
 一般选择 AMD64（x86_64）版本。
 
-**Ubuntu Desktop 20.04.1 LTS AMD64** 的 ISO 文件（约 2.6 GB）下载链接：
+**Ubuntu Desktop 20.04.2 LTS AMD64** 的 ISO 文件（约 2.9 GB）下载链接：
 
 - `官方镜像 <https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__
 - `国内中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso>`__ [**推荐国内用户使用**]
