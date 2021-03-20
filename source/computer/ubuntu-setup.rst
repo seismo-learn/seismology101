@@ -213,7 +213,7 @@ Java
 Python
 ^^^^^^
 
-Ubuntu 20.04.1 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
+Ubuntu 20.04.2 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
 而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
 
 git
