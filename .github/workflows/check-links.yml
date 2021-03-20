@@ -31,10 +31,8 @@ jobs:
         # 429: Too many requests
         args: >
           --accept 429
-          --exclude "^http://www.seis.sc.edu/software/distaz/distaz.c/n$"
-          --exclude "^http://www.seis.sc.edu/software/distaz/distaz.c/n/n#$"
-          --exclude "^https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb/n$"
-          --exclude "^https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB/n#$"
+          --exclude "*/n$"
+          --exclude "*/n#$"
           --exclude "https://apt.repos.intel.com/oneapi"
           --exclude "https://man.linuxde.net/"
           --exclude "https://pkgs.org/"
