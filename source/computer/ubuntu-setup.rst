@@ -8,8 +8,8 @@ Ubuntu 配置指南
 
 .. note::
 
-   本节内容适用于 **Ubuntu Desktop 20.04.1 LTS**\，对其他 Ubuntu 版本不一定适用。
-   建议用户安装时总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.1 LTS）或最新版本（目前是 Ubuntu 20.10）。
+   本节内容适用于 **Ubuntu Desktop 20.04.2 LTS**\，对其他 Ubuntu 版本不一定适用。
+   建议用户安装时总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.2 LTS）或最新版本（目前是 Ubuntu 20.10）。
    如遇到问题，欢迎反馈。
 
 ----
@@ -28,10 +28,10 @@ Ubuntu 配置指南
 访问 `Ubuntu 官网 <https://ubuntu.com/>`__ 并下载 Ubuntu Desktop 镜像，
 一般选择 AMD64（x86_64）版本。
 
-**Ubuntu Desktop 20.04.1 LTS AMD64** 的 ISO 文件（约 2.6 GB）下载链接：
+**Ubuntu Desktop 20.04.2 LTS AMD64** 的 ISO 文件（约 2.9 GB）下载链接：
 
-- `官方镜像 <https://releases.ubuntu.com/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__
-- `国内中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04.1/ubuntu-20.04.1-desktop-amd64.iso>`__ [**推荐国内用户使用**]
+- `官方镜像 <https://releases.ubuntu.com/focal/ubuntu-20.04.2.0-desktop-amd64.iso>`__
+- `国内中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso>`__ [**推荐国内用户使用**]
 
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
@@ -213,7 +213,7 @@ Java
 Python
 ^^^^^^
 
-Ubuntu 20.04.1 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
+Ubuntu 20.04.2 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
 而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
 
 git
