@@ -219,7 +219,8 @@ gawk
 
 ``awk`` 命令的命名起源于其三位作者的姓氏首字母。该命令可以选择标准输入、其他命令的输出或文件中
 的特定字段并进行操作。它依次扫描每一行，并读取里面的每一个字段。可以参考
-`awk 入门教程 <https://www.ruanyifeng.com/blog/2018/11/awk.html>`__ 学习其更多用法。
+`Bash 脚本教程: awk <https://www.bookstack.cn/read/bash-tutorial/docs-archives-commands-awk.md>`__
+学习其更多用法。
 
 ``gawk`` 是 GNU 版本的 ``awk`` 命令。通常建议直接使用 ``gawk`` 而非 ``awk``，
 尽管在 Linux 系统下，``awk`` 命令一般是指向 ``gawk`` 命令的软链接。
@@ -316,7 +317,7 @@ rsync
 ``rsync`` 命令的命名来自 **r**\ emote **sync**\ hronization（远程同步）。该命名可以用于同步文件，
 可以是两个本地目录之间，也可以是本地计算机与远程计算机之间。与其他文件传输工具（如 `scp`_\ ）不同，
 ``rsync`` 命令仅传输有变动的部分。因此，同步速度更快，常用于文件备份。可以参考
-`rsync 用法教程 <https://www.ruanyifeng.com/blog/2020/08/rsync.html>`__
+`SSH 教程：rsync 命令 <https://wangdoc.com/ssh/rsync.html>`__
 进一步学习其用法。
 
 以下示例假设源目录是 :file:`~/Downloads/source`\，目标目录是 :file:`~/workspace/destination`\ ，
@@ -355,7 +356,9 @@ scp
 ``scp`` 命令的命名来源于 **s**\ ecure **c**\ o\ **p**\ y（安全复制），可用于本地和远程计算机之间传输文件。
 该命令基于 `ssh`_ 进行安全的远程文件传输，因此传输是加密的。虽然 ``scp`` 传输速度不如 `rsync`_
 命令，但是它不占系统资源。当需要传输大量小文件时，使用 `rsync`_ 命名会导致
-硬盘 I/O（输入/输出）非常高，而 ``scp`` 基本不影响系统正常使用。
+硬盘 I/O（输入/输出）非常高，而 ``scp`` 基本不影响系统正常使用。可以参考
+`SSH 教程：scp 命令 <https://wangdoc.com/ssh/scp.html>`__
+进一步学习其用法。
 
 以下命令假定远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn::
 
@@ -428,6 +431,8 @@ ssh
 
 ``ssh`` 命令的命名源于 **S**\ ecure **Sh**\ ell（安全外壳协议，简称 SSH），该协议是
 一种加密的网络传输协议。使用 ``ssh`` 命令可以登录到远程计算机中。常用于登录服务器提交计算任务。
+可以参考 `SSH 教程：SSH 基本知识 <https://wangdoc.com/ssh/key.html>`__
+进一步学习其用法。
 
 若远程计算机的 IP 地址是 192.168.1.100，用户名是 seismo-learn::
 
