@@ -74,7 +74,7 @@ Shell
 
 接着就可以在终端中输入各种命令，Shell 会获取命令并交给系统执行::
 
-    # 查看当前 Shell 路径
+    # 查看当前 Shell 的名字
     [seismo-learn@earth ~] $ echo $SHELL
     /bin/bash
 
