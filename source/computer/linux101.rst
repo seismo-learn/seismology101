@@ -24,15 +24,15 @@ Linux 入门
 2.  Linux 101
 
     - 主页：https://101.lug.ustc.edu.cn/
-    - 作者：中国科学技术大学 Linux 用户协会
-    - 内容：系统地介绍 Linux 基础
+    - 作者：`中国科学技术大学 Linux 用户协会 <https://github.com/ustclug>`__
+    - 内容：系统地介绍了 Linux 基础
 
 3.  Bash 脚本教程
 
-    - 主页：目前存在两个网站，尚不确定哪个是未来主要维护版本
+    - 主页：目前存在两个网站，建议首先使用网道网站版本
 
-      - https://www.bookstack.cn/books/bash-tutorial：书栈网版本，内容似乎更全
-      - https://wangdoc.com/bash/：网道网站，正在建设中
+      - https://wangdoc.com/bash/：网道网站（正在建设和维护中）
+      - https://www.bookstack.cn/books/bash-tutorial：书栈网（已完成的第一版，不清楚是否还在维护）
 
-    - 作者：阮一峰
-    - 内容：系统地介绍 Bash 脚本以及部分 Linux 基础
+    - 作者：`阮一峰 <https://github.com/ruanyf>`__
+    - 内容：系统地介绍了 Bash 脚本以及部分 Linux 基础
