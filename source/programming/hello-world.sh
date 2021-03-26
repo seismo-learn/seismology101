@@ -6,4 +6,4 @@
    #
 
    # 使用 echo 命令输出 Hello world!
-   echo "Hello world~"
+   echo "Hello world~"  # 这也是注释
