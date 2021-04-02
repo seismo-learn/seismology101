@@ -88,7 +88,7 @@ Linux 或 macOS 系统下安装软件通常有如下几种方式：
 -   某些包管理器使用了这些目录，比如非 ARM 架构 macOS 下的 Homebrew 的软件安装路径是 :file:`/usr/local/`\ ，
     macOS 的 MacPorts 的软件安装路径是 :file:`/opt/local/`
 -   某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）默认将软件安装到
-    :file:`/opt/` 目录下。ARM 架构的 macOS 下的 Homebrew 也被安装到该目录下
+    :file:`/opt/` 目录下。ARM 架构 macOS 下的 Homebrew 也被安装到该目录下
 -   地震学科研软件与其他软件属于不同的两类软件，因而将二者放在不同的目录下更合理
 -   对于使用服务器的用户而言，通常没有权限在 :file:`/opt/` 或 :file:`/usr/local/` 等
     目录安装软件，因而服务器用户必须在家目录下安装软件。设定软件安装在 :file:`~/opt/`
