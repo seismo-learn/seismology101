@@ -44,7 +44,8 @@ Linux 或 macOS 系统下安装软件通常有如下几种方式：
 - :file:`~/src/`\ ：需源码编译的软件（含需源码编译并安装软件的源码目录）
 - :file:`~/bin/`\ ：简单的小工具软件，如单个源码文件编译链接后生成的可执行文件、
   单个可执行文件以及工具型脚本
-- :file:`/opt/`\ ：大多数闭源软件或商业软件、某些与地震学科研无关的软件
+- :file:`/opt/`\ ：大多数闭源软件或商业软件、某些与地震学科研无关的软件、ARM 架构 macOS
+  下的 Homebrew
 
 软件包
 ^^^^^^^
@@ -84,11 +85,12 @@ Linux 或 macOS 系统下安装软件通常有如下几种方式：
 这里推荐将科研相关软件安装到 :file:`~/opt/` 目录下，而不是更常见的 :file:`/opt/`
 或 :file:`/usr/local/` 目录，主要是基于如下几点考虑：
 
--   某些包管理器使用了这些目录，比如 macOS 下的 Homebrew 的软件安装路径是 :file:`/usr/local/`\ ，
+-   某些包管理器使用了这些目录，比如非 ARM 架构 macOS 下的 Homebrew 的软件安装路径是 :file:`/usr/local/`\ ，
     macOS 的 MacPorts 的软件安装路径是 :file:`/opt/local/`\ 。历史上，该目录主要用于放置在本地编译
     并另行安装的程序，避免和 :file:`/usr/` 目录下的系统自带版本冲突
 -   :file:`/opt/` 目录一般用于安装非系统自带的、第三方预先编译并发行的独立软件包。例如，某些闭源或商业软件
-    （如 Matlab、Google Chrome、Google Earth）默认将软件安装到 :file:`/opt/` 目录下
+    （如 Matlab、Google Chrome、Google Earth）默认将软件安装到 :file:`/opt/` 目录下。
+    ARM 架构 macOS 下的 Homebrew 也被安装到该目录下
 -   地震学科研软件与其他软件属于不同的两类软件，因而将二者放在不同的目录下更合理
 -   对于使用服务器的用户而言，通常没有权限在 :file:`/opt/` 或 :file:`/usr/local/` 等
     目录安装软件，因而服务器用户必须在家目录下安装软件。设定软件安装在 :file:`~/opt/`
