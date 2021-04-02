@@ -85,9 +85,10 @@ Linux 或 macOS 系统下安装软件通常有如下几种方式：
 或 :file:`/usr/local/` 目录，主要是基于如下几点考虑：
 
 -   某些包管理器使用了这些目录，比如 macOS 下的 Homebrew 的软件安装路径是 :file:`/usr/local/`\ ，
-    macOS 的 MacPorts 的软件安装路径是 :file:`/opt/local/`
--   某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）默认将软件安装到
-    :file:`/opt/` 目录下
+    macOS 的 MacPorts 的软件安装路径是 :file:`/opt/local/`\ 。历史上，该目录主要用于放置在本地编译
+    并另行安装的程序，避免和 :file:`/usr/` 目录下的系统自带版本冲突
+-   :file:`/opt/` 目录一般用于安装非系统自带的、第三方预先编译并发行的独立软件包。例如，某些闭源或商业软件
+    （如 Matlab、Google Chrome、Google Earth）默认将软件安装到 :file:`/opt/` 目录下
 -   地震学科研软件与其他软件属于不同的两类软件，因而将二者放在不同的目录下更合理
 -   对于使用服务器的用户而言，通常没有权限在 :file:`/opt/` 或 :file:`/usr/local/` 等
     目录安装软件，因而服务器用户必须在家目录下安装软件。设定软件安装在 :file:`~/opt/`
