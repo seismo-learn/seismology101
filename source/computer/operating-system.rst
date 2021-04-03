@@ -18,7 +18,7 @@
 3. Linux 和 macOS 自带了可以对数据做基本处理的命令行工具
 4. 高性能计算服务器几乎都只使用 Linux 系统
 
-对于初学者，我们\ **建议使用 Linux 或 macOS 系统**\ ，除非你非常确定自己的科研
+对于初学者，\ **建议使用 Linux 或 macOS 系统**\ ，除非你非常确定自己的科研
 工作并不需要用到别人提供的代码，或者你有足够的知识和能力在 Windows 系统下
 编译和使用别人的代码。
 
@@ -33,7 +33,7 @@ Linux 有很多不同的发行版，几乎所有 Linux 发行版都可以免费�
 `CentOS <https://www.centos.org/>`__ 等。
 读者可以根据自己的喜好自行选择合适的 Linux 发行版。
 
-对于不了解 Linux 的用户，我们\ **推荐安装和使用 Fedora 或 Ubuntu 系统**\ 。
+对于不了解 Linux 的用户，\ **推荐安装和使用 Fedora 或 Ubuntu 系统**\ 。
 Fedora 和 Ubuntu 用户可以分别参考 《\ :doc:`/computer/fedora-setup`\ 》和
 《\ :doc:`/computer/ubuntu-setup`\ 》对系统进行安装和配置，以满足科研工作的需求。
 
@@ -49,9 +49,9 @@ macOS
 -----
 
 Mac 笔记本或台式机（如 MacBook Air、MacBook Pro、iMac）自带的 macOS 系统
-可以满足科研工作的大部分需求。对于拥有 macOS 系统的用户，我们建议直接使用
-macOS 系统。可以参考《\ :doc:`/computer/macos-setup`\ 》对 macOS 系统进行
-进一步配置，以满足科研工作的需求。
+可以满足科研工作的大部分需求。对于拥有 macOS 系统的用户，建议直接使用 macOS 系统。
+可以参考《\ :doc:`/computer/macos-setup`\ 》对 macOS 系统进行进一步配置，
+以满足科研工作的需求。
 
 Microsoft Windows
 -----------------
