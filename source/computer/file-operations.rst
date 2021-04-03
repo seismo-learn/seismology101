@@ -21,7 +21,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 -  :file:`/opt` 目录：某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）
    默认将软件安装到此目录下
 
-日常科研中，我们大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
+日常科研中，大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
 该用户的家目录便是 :file:`/home/seismo-learn`\ 。macOS 下的家目录是 :file:`/Users/seismo-learn`\ 。
 在 Linux/macOS 系统下，可用 :file:`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
 :file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、\ :file:`~/Documents` 等。熟悉 Linux 文件系统后可以参考\
@@ -212,7 +212,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
 :file:`~`，其和 :file:`/home/seismo-learn` 是一回事。
 
-当我们进入到某个目录中时，有时使用绝对路径并不方便。例如，我们现在位于 :file:`~/projects/NorthChina-MTZ/data`
+有时进入到某个目录中，使用绝对路径并不方便。例如，当前位于 :file:`~/projects/NorthChina-MTZ/data`
 目录中，如果想进入 :file:`~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
 输入很多字母。在当前目录下，Linux 文件系统定义了两个特殊的路径：
 
@@ -294,7 +294,7 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
     $ chmod +x hello-world.sh
     -rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
 
-有时候我们使用 Linux 的命令或安装程序时，可能由于没有读写某些文件的权限，而无法运行命令或
+有时候使用 Linux 的命令或安装程序，可能由于没有读写某些文件的权限，而无法运行命令或
 安装程序。这时可以使用 ``sudo`` 命令临时获得 root 用户的权限。例如，在 Fedora 下安装
 GNU Fortran::
 
