@@ -95,6 +95,11 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
    同样由于网络的原因，Homebrew 在国内可能下载速度较慢。建议参照
    https://github.com/ineo6/homebrew-install 教程设置中科大源或清华大学源。
 
+.. note::
+
+   在最新 ARM 架构的 macOS 下，Homebrew 会被安装到 :file:`/opt/homebrew/` 目录下。
+   通过 Homebrew 安装的所有软件包也都将被安装到该目录下。
+
 使用
 """"
 
