@@ -7,6 +7,7 @@ Linux 入门
 
    command-line 
    file-operations
+   shell
    environment-variable
 
 :本节贡献者: |姚家园|\（作者）、
