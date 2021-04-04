@@ -10,12 +10,12 @@
 
 个人电脑有三种常见的操作系统：Microsoft Windows、macOS 和 Linux。
 从市场占有率上看，Microsoft Windows 用户数目远远多于 macOS 和 Linux 用户。
-然而，大多数地震学科研工作者都选择 Linux 或 macOS 作为日常研究的主要操作系统。
+然而，大多数地震学科研工作者都选择 Linux 或 macOS 作为日常科研的主要操作系统。
 主要原因有如下几点：
 
 1. Linux 和 macOS 上可以更容易地获取和使用编程所需的开发工具
 2. 大多数地震学相关的程序/代码都是在 Linux 上编写的，且仅在 Linux 和 macOS 下可以使用
-3. Linux 和 macOS 自带了可以对数据做基本处理的命令行工具
+3. Linux 和 macOS 自带了对数据做基本处理的命令行工具
 4. 高性能计算服务器几乎都只使用 Linux 系统
 
 对于地震学初学者，\ **建议使用 Linux 或 macOS 系统**\ ，除非非常确定自己的科研工作并不需要用到
@@ -24,7 +24,7 @@
 Linux
 -----
 
-Linux 有很多不同的发行版，几乎可以免费获取与安装所有 Linux 发行版。比较流行的发行版有
+Linux 有很多不同的发行版，绝大多数都可以免费获取与安装。比较流行的发行版有
 `Ubuntu <https://ubuntu.com/>`__\ 、\
 `Debian <https://www.debian.org/>`__\ 、\
 `Fedora <https://getfedora.org/>`__\ 、\
@@ -47,7 +47,8 @@ macOS
 -----
 
 Mac 笔记本（MacBook Air、MacBook Pro）或台式机（iMac）自带的 macOS 系统
-可以满足科研工作的大部分需求。对于拥有 macOS 系统的读者，建议直接使用 macOS 系统。
+可以满足科研工作的大部分需求。
+**对于拥有 macOS 系统的读者，建议直接使用 macOS 系统**\ 。
 可以参考《\ :doc:`/computer/macos-setup`\ 》对 macOS 系统进行进一步配置，
 以满足科研工作的需求。
 
@@ -63,7 +64,7 @@ WSL 是一个在 Windows 10 上运行原生 Linux 二进制可执行文件的兼
 WSL 可以同时安装多个不同的 Linux 发行版，并且可以随时切换。
 与安装双系统相比，WSL 安装简便、切换方便。
 与使用虚拟机相比，WSL 在启动速度、消耗资源以及性能利用上有较大优势。
-因此，对于不想安装双系统或者虚拟机的读者来说，WSL 是个不错的选择。
+因此，对于绝大多数使用 Windows 的读者，WSL 是比双系统和虚拟机更好的选择。
 
-推荐 Windows 10 用户使用 WSL 方式安装 Linux 系统。
+**推荐 Windows 10 用户使用 WSL 方式安装 Linux 系统**\ 。
 可以参考《\ :doc:`/computer/wsl-setup`\ 》来安装并配置 WSL，以满足科研工作的需求。
