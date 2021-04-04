@@ -1,6 +1,6 @@
 # 地震“学”科研入门教程
 
-[![Deploy](https://github.com/seismo-learn/seismology101/workflows/Deploy/badge.svg)](https://github.com/seismo-learn/seismology101/actions?query=workflow%3ADeploy)
+[![Deploy](https://github.com/seismo-learn/seismology101/actions/workflows/deploy.yml/badge.svg)](https://github.com/seismo-learn/seismology101/actions/workflows/deploy.yml)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
 
 本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
