@@ -3,7 +3,7 @@
 
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）
-:最近更新日期: 2021-01-10
+:最近更新日期: 2021-04-04
 :预计阅读时间: 5 分钟
 
 ----
@@ -37,7 +37,7 @@ Linux 有很多不同的发行版，几乎可以免费获取与安装所有 Linu
 
 .. note::
 
-   选择 **CentOS** 的用户推荐使用 `CentOS Stream <https://www.centos.org/centos-stream/>`__，
+   推荐 **CentOS** 用户使用 `CentOS Stream <https://www.centos.org/centos-stream/>`__，
    而非 `CentOS Linux <https://www.centos.org/centos-linux/>`__。
    Red Hat 在 2020 年 12 月宣布将停止 CentOS Linux 项目。CentOS Linux 8 和
    CentOS Linux 7 将分别于 2021 年末和 2024 年 6 月 30 日停止更新。
