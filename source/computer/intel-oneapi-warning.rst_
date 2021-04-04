@@ -9,7 +9,7 @@
        可以使用以下命令查询 conda 和 Python 的路径和版本::
 
            $ which conda
-           $ conda -- version
+           $ conda --version
            $ which python
            $ python --version
 
