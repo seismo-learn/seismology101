@@ -13,7 +13,7 @@
            $ which python
            $ python --version
 
-    -  配置文件（如 ``~/.bashrc``）中，若 Intel oneAPI Toolkits 位于 Anaconda 之后，则
+    -  配置文件（如 ``~/.bashrc``\ 、\ ``~/.zshrc``\ ）中，若 Intel oneAPI Toolkits 位于 Anaconda 之后，则
        无法使用 Anaconda 的环境。若 Intel oneAPI Toolkits 位于 Anaconda 之前，可以
        使用 Anaconda 的环境，但不清楚是否有其他未知影响。
 

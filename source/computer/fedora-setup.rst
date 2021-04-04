@@ -38,7 +38,7 @@ Fedora 配置指南
 准备一个 4 GB 以上容量的 U 盘，利用 USB 启动盘制作工具和 ISO 镜像文件
 制作 USB 启动盘。
 
-USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh_CN.html>`__\ （仅限 Windows）、\
+USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh/>`__\ （仅限 Windows）、\
 `UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）
 或 `balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）。
 
