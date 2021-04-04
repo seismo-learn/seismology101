@@ -220,7 +220,7 @@ git
 命令行工具
 ----------
 
-日常科研所需的大多数命令行工具已经默认安装在 Fedora 系统里了。这里额外推荐一些
+Fedora 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它
 有用的命令行工具。
 
 tldr
@@ -257,7 +257,7 @@ Fedora 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功
 Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
 ``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
-后即可通过双击 ``.rar`` 文件直接解压::
+后即可通过双击直接解压 ``.rar`` 文件::
 
     $ sudo dnf install unar
 
@@ -273,10 +273,10 @@ Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
     $ sudo dnf install terminator
 
-以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
+以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__\：
 
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分隔终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分隔终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分割终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分割终端
 - :kbd:`Alt` + :kbd:`上下左右`\ :  切换子终端
 
 Google Earth
