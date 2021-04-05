@@ -180,7 +180,7 @@ Intel 软件开发工具包
 
 下载 :file:`.repo` 文件 :download:`oneapi.repo`\ ，并将其放在 :file:`/etc/yum.repos.d` 目录下::
 
-    $ sudo mv oneAPI.repo /etc/yum.repos.d/
+    $ sudo mv oneapi.repo /etc/yum.repos.d/
 
 日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
 
