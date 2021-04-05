@@ -31,7 +31,7 @@ Ubuntu 配置指南
 **Ubuntu Desktop 20.04.2 LTS AMD64** 的 ISO 文件（约 2.9 GB）下载链接：
 
 - `官方镜像 <https://releases.ubuntu.com/focal/ubuntu-20.04.2.0-desktop-amd64.iso>`__
-- `国内中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso>`__ [**推荐国内用户使用**]
+- `中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso>`__ [**推荐国内用户使用**]
 
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
@@ -98,8 +98,8 @@ Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件�
 
 .. warning::
 
-    更新系统前，最好先备份一下（可以参考\ :doc:`/best-practices/backup`\ ），特别是
-    大版本更新（如 11.3.2 更新为 12.0.0）。系统更新出现问题无法解决时，可以选择重装系统。
+    更新系统前，特别是大版本更新（如 Ubuntu 20.04 更新为 Ubuntu 20.10），
+    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`\ ）。
 
 系统软件
 --------
@@ -127,6 +127,9 @@ Ubuntu 使用包管理器 ``apt`` 来安装、卸载和管理软件包。
 
     # 安装或升级软件
     $ sudo apt install xxx
+
+    # 检查并升级某软件
+    $ sudo apt --only-upgrade install xxx
 
     # 卸载软件
     $ sudo apt remove xxx  （保留配置文件）
@@ -228,8 +231,7 @@ git
 命令行工具
 ----------
 
-日常科研所需的大多数命令行工具已经默认安装在 Ubuntu 系统里了。这里额外推荐一些
-有用的命令行工具。
+Ubuntu 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它有用的命令行工具。
 
 tldr
 ^^^^
@@ -265,7 +267,7 @@ Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功
 Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
 ``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
-即方可通过双击 ``.rar`` 文件直接解压::
+后即可通过双击直接解压 .rar 文件::
 
     $ sudo apt install unar
 
@@ -283,8 +285,8 @@ Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
 以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
 
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分隔终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分隔终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分割终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分割终端
 - :kbd:`Alt` + :kbd:`上下左右`\ :  切换子终端
 
 Google Earth
