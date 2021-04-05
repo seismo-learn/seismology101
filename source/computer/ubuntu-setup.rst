@@ -267,7 +267,7 @@ Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功
 Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
 ``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
-后即可通过双击直接解压 .rar 文件::
+后即可通过双击直接解压 ``.rar`` 文件::
 
     $ sudo apt install unar
 
