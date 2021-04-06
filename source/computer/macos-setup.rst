@@ -82,9 +82,6 @@ Homebrew
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装的所有软件包
-也都将被安装到该目录下。
-
 .. note::
 
    GitHub 在国内访问不畅，以上安装命令可能会由于网络问题而失败。
@@ -96,8 +93,9 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 
 .. note::
 
-   在最新 ARM 架构的 macOS 下，Homebrew 会被安装到 :file:`/opt/homebrew/` 目录下。
-   通过 Homebrew 安装的所有软件包也都将被安装到该目录下。
+   Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下。
+   通常这一目录是 :file:`/usr/local/`\ ，而最新的 Apple M1 芯片的 Mac 下
+   这一目录为 :file:`/opt/homebrew/`\ 。
 
 使用
 """"
