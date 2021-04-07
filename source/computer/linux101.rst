@@ -5,17 +5,10 @@ Linux 入门
    :maxdepth: 2
    :hidden:
 
-   command-line 
+   command-line
    file-operations
    shell
    environment-variable
-
-:本节贡献者: |姚家园|\（作者）、
-             |田冬冬|\（审稿）
-:最近更新日期: 2021-03-22
-:预计花费时间: 2 分钟
-
-----
 
 本章主要介绍 Linux 系统的入门基础。熟悉和掌握本章内容后，基本就可以在 Linux/macOS 系统上
 开展日常研究工作了。若想深入了解 Linux，可以参考一些较系统的资料进行学习。工作中若遇到问题，
