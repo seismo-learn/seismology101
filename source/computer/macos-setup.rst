@@ -12,6 +12,17 @@ macOS 配置指南
    本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x）。
    对于其他 macOS 版本不一定适用。
 
+.. table:: 近几年的 macOS 系统版本号
+   :align: center
+
+   ==================== ====================  ======================
+   版本号                代号                   发布日期
+   ==================== ====================  ======================
+   macOS 10.14          Mojave                2018 年 9 月 24 日
+   macOS 10.15          Catalina              2019 年 10 月 7 日
+   macOS 11             Big Sur               2020 年 9 月 12 日
+   ==================== ====================  ======================
+
 ----
 
 安装系统
@@ -25,17 +36,6 @@ macOS 系统的更新也十分简单。当有新版本发布以后，可以直�
 
    更新系统前，特别是大版本更新（如 10.15 更新为 11.0），
    最好先备份一下（可以参考\ :doc:`/best-practices/backup`\ ）。
-
-.. table:: 近几年的 macOS 系统版本号
-   :align: center
-
-   ==================== ====================  ======================
-   版本号                代号                   发布日期
-   ==================== ====================  ======================
-   macOS 10.14          Mojave                2018 年 9 月 24 日
-   macOS 10.15          Catalina              2019 年 10 月 7 日
-   macOS 11             Big Sur               2020 年 9 月 12 日
-   ==================== ====================  ======================
 
 系统软件
 --------
@@ -123,7 +123,9 @@ Homebrew
 
     Homebrew 用户也可以访问网站 https://formulae.brew.sh/ 查看软件包。
 
-.. note::
+.. dropdown:: :fa:`exclamation-circle,mr-1` Homebrew 相关名词解释
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
    使用 Homebrew 时会碰到很多名词。这里做简单解释，
    更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__\ 。
@@ -186,9 +188,9 @@ C/C++ 编译器。
     （``10`` 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
     提供的 ``gcc`` 和 ``g++`` 命令。
     为了使用 GCC 编译器，用户可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10``\ ，
-    或者在 :file:`/usr/local/bin/` 目录下创建软链接::
+    或者在 Homebrew 的 bin 目录下创建软链接::
 
-        $ cd /usr/local/bin/
+        $ cd $(brew --prefix)
         $ ln -s gcc-10 gcc
         $ ln -s g++-10 g++
 
@@ -248,13 +250,6 @@ git
 的 git，其与原版 git 有一些区别。可以用如下命令安装原版的 git::
 
     $ brew install git
-
-.. note::
-
-   Homebrew 安装的 ``git`` 位于 :file:`/usr/local/bin/` 目录下，而
-   Command Line Tools for Xcode 安装的 ``git`` 位于 :file:`/usr/bin/`
-   目录下。在环境变量 **PATH** 中，:file:`/usr/local/bin/` 一般在 :file:`/usr/bin/` 前。
-   因此，我们使用的 ``git`` 其实是通过 Homebrew 安装的版本。
 
 命令行工具
 ----------
