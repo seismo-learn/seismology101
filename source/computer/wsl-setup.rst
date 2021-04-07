@@ -40,8 +40,8 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
        $ bcdedit /set hypervisorlaunchtype auto
 
-安装 WSL
---------
+安装
+-----
 
 WSL 的安装方式可以参考官方文档：
 
