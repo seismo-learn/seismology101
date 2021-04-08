@@ -25,7 +25,7 @@ macOS 配置指南
 
 .. note::
 
-   本节大部分软件都是通过命令行安装。在 macOS 系统下，按下 :kbd:`Command` + :kbd:`空格`\ ，
+   本节大部分软件都通过命令行安装。在 macOS 系统下，按下 :kbd:`Command` + :kbd:`空格`\ ，
    搜索 “Terminal” 并按下 :kbd:`Enter` 键以打开 Terminal 应用。
    然后在 Terminal 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
 
