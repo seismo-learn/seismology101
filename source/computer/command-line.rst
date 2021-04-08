@@ -28,7 +28,7 @@
 ----
 
 命令行一般需使用终端（Terminal）输入指令。日常使用的终端更确切的称谓应该是终端模拟器（Terminal Emulator）。
-在桌面或菜单栏中找到并点击“Terminal”图标以启动终端，然后输入命令并按下 :kbd:`Enter` 键即可执行该命令::
+在桌面或菜单栏中找到并点击 “Terminal” 图标以启动终端，然后输入命令并按下 :kbd:`Enter` 键即可执行该命令::
 
    # 使用 echo 命令输出 Hello World~
    $ echo "Hello World~"
