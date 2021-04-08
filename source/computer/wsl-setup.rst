@@ -17,10 +17,10 @@ WSL 配置指南
    使用 Windows 系统时，可以通过 CMD 或 PowerShell 运行命令：
    同时按下 :kbd:`win` + :kbd:`R` 键，在打开的运行对话框中输入 “cmd” 以启动 CMD；
    在搜索栏中键入 “PowerShell” 并点击搜索到的图标以启动 PowerShell。
-   在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。 
+   在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
 
    使用 Linux 系统时，在桌面或菜单栏中找到并点击 “Terminal” 图标以启动终端，
-   然后输入命令并按下 :kbd:`Enter` 键即可执行该命令。 
+   然后输入命令并按下 :kbd:`Enter` 键即可执行该命令。
 
 ----
 
@@ -35,9 +35,11 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
-.. warning::
+.. dropdown:: :fa:`exclamation-circle,mr-1` Hyper-V 与 VMware/VirtualBox 兼容性警告
+   :container: + shadow
+   :title: bg-warning text-red font-weight-bold
 
-   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，VMware/VirtualBox 将无法正常使用。
+   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，老版本 VMware/VirtualBox 将无法正常使用。
    WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。因此，已开启 WSL2 功能的用户
    若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，然后执行以下操作。
 
@@ -50,6 +52,9 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
    此时，Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用::
 
        $ bcdedit /set hypervisorlaunchtype auto
+
+   新版本 VMware (>=15.5.5) 和 VirtualBox (>=6.0) 在最新 Windows 系统上
+   （build number >= 19041）可以正常使用，无兼容性问题。
 
 安装
 -----
@@ -182,7 +187,7 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 
    推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
    实现文件夹和文件的快速定位。
-   
+
    推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__\ ，
    可直接在 Microsoft Store 中安装。界面美观、操作方便，
    支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。
