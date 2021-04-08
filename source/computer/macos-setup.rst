@@ -57,11 +57,9 @@ Command Line Tools for Xcode
 Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，
 比如 C/C++ 编译器（\ ``gcc``\ 、\ ``g++``\ ）、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
 
-执行如下命令以安装 Command Line Tools for Xcode::
+执行如下命令，并在弹出的窗口中点击 “Install” 以安装 Command Line Tools for Xcode::
 
    $ xcode-select --install
-
-在弹出的窗口中点击“Install”即可。
 
 此处安装的 Command Line Tools for Xcode 可能不是最新版。点击桌面左上角的 Apple 图标，
 在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。macOS 系统更新后，有时需重新安装
