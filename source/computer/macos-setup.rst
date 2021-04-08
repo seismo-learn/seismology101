@@ -23,6 +23,12 @@ macOS 配置指南
    macOS 11             Big Sur               2020 年 9 月 12 日
    ==================== ====================  ======================
 
+.. note::
+
+   本节大部分软件都是通过命令行安装。在 macOS 系统下，按下 :kbd:`Command` + :kbd:`空格`\ ，
+   搜索 “Terminal” 并按下 :kbd:`Enter` 键以打开 Terminal 应用。
+   然后在 Terminal 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+
 ----
 
 安装系统
@@ -51,8 +57,7 @@ Command Line Tools for Xcode
 Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，
 比如 C/C++ 编译器（\ ``gcc``\ 、\ ``g++``\ ）、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
 
-按下 :kbd:`Command` + :kbd:`空格`\ ，搜索“Terminal”并按下 :kbd:`Enter` 键以打开 Terminal 应用。
-在 Terminal 中执行如下命令以安装 Command Line Tools for Xcode::
+执行如下命令以安装 Command Line Tools for Xcode::
 
    $ xcode-select --install
 
@@ -78,7 +83,7 @@ Homebrew
 安装
 """"
 
-打开 Terminal，将如下命令复制到 Terminal 中并按下 :kbd:`Enter` 键即可安装 Homebrew::
+执行如下命令以安装 Homebrew::
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
