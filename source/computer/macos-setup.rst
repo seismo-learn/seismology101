@@ -59,7 +59,8 @@ Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命�
 在弹出的窗口中点击“Install”即可。
 
 此处安装的 Command Line Tools for Xcode 可能不是最新版。点击桌面左上角的 Apple 图标，
-在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
+在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。macOS 系统更新后，有时需重新安装
+Command Line Tools for Xcode，再次执行以上命令即可。
 
 .. note::
 
