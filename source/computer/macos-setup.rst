@@ -59,7 +59,8 @@ Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命�
 在弹出的窗口中点击“Install”即可。
 
 此处安装的 Command Line Tools for Xcode 可能不是最新版。点击桌面左上角的 Apple 图标，
-在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
+在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。macOS 系统更新后，有时需重新安装
+Command Line Tools for Xcode，再次执行以上命令即可。
 
 .. note::
 
@@ -80,14 +81,14 @@ Homebrew
 
 打开 Terminal，将如下命令复制到 Terminal 中并按下 :kbd:`Enter` 键即可安装 Homebrew::
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 .. note::
 
    GitHub 在国内访问不畅，以上安装命令可能由于网络问题而失败。
    若以上命令失败，国内用户可以使用如下命令安装 Homebrew::
 
-        /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+        $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
 
    该安装脚本同时还将默认源设置为中科大源以加速 Homebrew 包的下载。
    详情见 https://github.com/ineo6/homebrew-install 和 https://brew.idayer.com/\ 。
