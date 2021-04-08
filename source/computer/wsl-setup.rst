@@ -15,7 +15,7 @@ WSL 配置指南
 
    本节大部分命令是在命令行中执行的。
    使用 Windows 系统时，可以通过 CMD 或 PowerShell 运行命令：
-   同时按下 :kbd:`win` 和 :kbd:`R` 键，在打开的运行对话框中输入 “cmd” 以启动 CMD；
+   同时按下 :kbd:`win` + :kbd:`R` 键，在打开的运行对话框中输入 “cmd” 以启动 CMD；
    在搜索栏中键入 “PowerShell” 并点击搜索到的图标以启动 PowerShell。
    在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。 
 
