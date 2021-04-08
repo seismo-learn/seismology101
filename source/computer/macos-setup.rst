@@ -81,14 +81,14 @@ Homebrew
 
 打开 Terminal，将如下命令复制到 Terminal 中并按下 :kbd:`Enter` 键即可安装 Homebrew::
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 .. note::
 
    GitHub 在国内访问不畅，以上安装命令可能由于网络问题而失败。
    若以上命令失败，国内用户可以使用如下命令安装 Homebrew::
 
-        /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+        $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
 
    该安装脚本同时还将默认源设置为中科大源以加速 Homebrew 包的下载。
    详情见 https://github.com/ineo6/homebrew-install 和 https://brew.idayer.com/\ 。
