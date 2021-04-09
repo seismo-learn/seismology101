@@ -175,7 +175,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 建立 source 目录的软链接
     $ ln -s source source-soft
-    
+
     # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
     $ ls -l
     total 0
@@ -228,8 +228,8 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    当前路径也可以省略，即 :file:`Beijing/IC-BJI.sac`
 -  :file:`..`\ ：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
 -  :file:`../..`\ ：上一层的上一层目录，即 :file:`~/projects` 目录
--  :file:`../figures`\ ：上一层目录下的 :file:`figure` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
--  :file:`../figures/fig1.pdf`\ ：上一层目录下的 :file:`figure` 目录下的 :file:`fig1.pdf` 文件，
+-  :file:`../figures`\ ：上一层目录下的 :file:`figures` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
+-  :file:`../figures/fig1.pdf`\ ：上一层目录下的 :file:`figures` 目录下的 :file:`fig1.pdf` 文件，
    即 :file:`~/projects/NorthChina-MTZ/figures/fig1.pdf`
 
 .. note::
@@ -265,7 +265,7 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
 -  第五到第七位：文件所属用户组的权限
 -  第八到第十位：其他人的权限
 
-第三和第四列分别表示文件所属用户和用户组（如 ``seismo-learn seismo-learn``\ ）
+第三和第四列分别表示文件所属用户和用户组（如 ``seismo-learn seismo-learn``\ ）。
 
 可以看出 :file:`hello-world.txt` 是一个普通文件，所属用户权限（即 seismo-learn）是
 ``rw-``\ （可读、可写、不可执行），所属用户组（即 seismo-learn）的权限是 ``r--``
