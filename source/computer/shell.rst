@@ -26,17 +26,8 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
 
 .. note::
 
-   Shell 扩展在网上有很多教程和说明，但是一些名词的定义和说法不一。比如有人将扩展称为模式扩展，
-   有人将扩展的英文写为 globbing 并称通配符叫 globbing patterns，有人将扩展和通配符等价，
-   有人将扩展特指文件名扩展，有人将通配符特指为 ``?``\ 、\ ``*``\ 以及\ ``[]``\ 等等。
-
-   笔者使用 ``man sh`` 命令在 CentOS 7 系统下查看了 Bash 这一常见 Shell 的手册，并未搜索到
-   wildcards 和 globbing 这两个单词。可能由于多种原因（历史原因、不同程序原因等），这些名词被保留下来
-   并常使用。在本教程中，我们不想（其实也是不能）区分这些名词的详细定义，而是参考
-   `GNU Bash Reference Manual: 3.5 Shell Expansions <https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Expansions>`__
-   直接使用“扩展”这一词语指代 Shell 扩展特殊字符的全部过程，并将这些特殊字符都广义地称为通配符（wildcards）。
-   毕竟日常科研中，我们主要是使用这些功能，而不是去深究这些功能背后的历史和定义。
-   但是需要注意，这些特殊字符作用的顺序是不同的；狭义的通配符一般可能只指 ``?``\ 、\ ``*``\ 以及\ ``[]``\ 。
+   在网络上的部分教程或文档中，Shell 扩展（expansion）也被称为模式匹配（pattern matching），
+   通配符（wildcards 或 globbing）。通常来说，这些名词指代的都是这一节所介绍的内容。
 
 .. table:: Bash 常见特殊字符（本教程也称为通配符）
    :align: center
@@ -96,7 +87,7 @@ Shell 接收到用户输入的命令以后，会根据空格将用户的输入�
 
 .. dropdown:: :fa:`exclamation-circle,mr-1` Shell 扩展和正则表达式的区别
    :container: + shadow
-   :title: bg-info text-white font-weight-bold 
+   :title: bg-info text-white font-weight-bold
 
    读者可能以后会常接触到正则表达式（regular expression），需要强调的是 Shell 扩展和
    正则表达式是有区别：
