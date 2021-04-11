@@ -33,7 +33,7 @@ jobs:
       - name: Deploy documentation
         # peaceiris/actions-gh-pages@v3.7.3
         # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/dirhtml
