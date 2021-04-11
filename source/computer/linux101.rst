@@ -29,3 +29,8 @@ Linux 入门
 
     - 作者：`阮一峰 <https://github.com/ruanyf>`__
     - 内容：系统地介绍了 Bash 脚本以及部分 Linux 基础
+
+3.  Shell 教程
+
+    - 主页：https://www.runoob.com/linux/linux-shell.html
+    - 作者：`菜鸟教程 <https://www.runoob.com/>`__
