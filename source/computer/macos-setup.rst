@@ -88,7 +88,7 @@ Homebrew
 
 .. note::
 
-   M1 Mac 在安装完毕后，需要添加环境变量::
+   在最新的 Apple M1 芯片的 macOS 下安装 Homebrew 后，还需要设置环境变量::
 
        $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
        $ source ~/.zshrc
