@@ -102,6 +102,14 @@ Homebrew
    通常是 :file:`/usr/local/`\ 目录。而在最新的 Apple M1 芯片的 Mac 下，
    这一目录为 :file:`/opt/homebrew/`\ 。
 
+.. note::
+
+   在最新的 Apple M1 芯片的 macOS 下安装 Homebrew 后，还需要设置环境变量
+   （Homebrew 安装脚本执行完毕后，也会提示这一点）::
+
+       $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+       $ source ~/.zshrc
+
 使用
 """"
 
