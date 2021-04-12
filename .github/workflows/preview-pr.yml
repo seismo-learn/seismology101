@@ -29,8 +29,6 @@ jobs:
         run: make dirhtml
 
       - name: Deploy for preview
-        # peaceiris/actions-gh-pages@v3.7.3
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
           # personal token can be generated at https://github.com/settings/tokens,
