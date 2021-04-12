@@ -86,6 +86,11 @@ Homebrew
 
     $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+M1 Mac 在安装完毕后，需要添加环境变量：
+
+    $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+    $ source ~/.zshrc
+
 .. note::
 
    GitHub 在国内访问不畅，以上安装命令可能由于网络问题而失败。
