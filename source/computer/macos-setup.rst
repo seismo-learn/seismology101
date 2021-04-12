@@ -98,8 +98,8 @@ Homebrew
 
 .. note::
 
-   Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下。
-   通常这一目录是 :file:`/usr/local/`\ ，而最新的 Apple M1 芯片的 Mac 下
+   Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，
+   通常是 :file:`/usr/local/`\ 目录。而在最新的 Apple M1 芯片的 macOS 下，
    这一目录为 :file:`/opt/homebrew/`\ 。
 
 使用
