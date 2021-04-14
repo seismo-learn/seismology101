@@ -113,7 +113,7 @@ VS Code
 
        该命令产生的一对 SSH 密钥分别位于 :file:`~/.ssh/id_rsa-remote-ssh` 和 :file:`~/.ssh/id_rsa-remote-ssh.pub` 文件中。
        前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。
-      
+
        运行以下命令将公钥复制到远程计算机中（需用户输入远程计算机的密码）::
 
            $ ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub seismo-learn@192.168.1.100
@@ -140,7 +140,7 @@ VS Code
    .. tip::
 
       如果需要经常连接远程计算机，可以使用 SSH 配置文件。
-      
+
       在活动栏中选择“远程资源管理器”，点击“配置”后选择 :file:`~/.ssh/config` 配置文件，按照以下格式
       添加相关信息到该文件中::
 
@@ -159,7 +159,7 @@ VS Code
 
       如果远程计算机使用的 Shell 是 Bash，本地计算机是 Zsh，可能遇到无法启动 VS Code 的终端的问题。
       此时，需要修改一下配置文件以正确启动终端。
-      
+
       打开命令面板，输入 Remote-SSH: Settings，搜索 terminal.integrated.shell.linux，将 "/bin/zsh"
       改为 "/bin/bash" 即可。详情请参考
       `microsoft/vscode-remote-release issues #38 <https://github.com/microsoft/vscode-remote-release/issues/38>`__
@@ -173,14 +173,6 @@ Vim 是一款基于命令行的编辑器，拥有以下特点：
   所有需要用鼠标的操作都可以用键盘完成
 - 轻量级且执行快。对于许多简单任务，启动 vim 比使用图形化编辑器要快地多
 - 很多 Linux 发行版都预装了 vim，某些时候可能是我们唯一能使用的编辑器，比如使用远程计算机
-
-在大多数 Linux 发行版中，vim 也可以用 vi 替代。可以使用以下命令查看::
-
-    $ which vim
-    /usr/bin/vim
-
-    $ which vi                          
-    vi=vim
 
 操作模式
 ^^^^^^^^^
