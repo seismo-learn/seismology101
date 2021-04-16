@@ -9,8 +9,8 @@ macOS 配置指南
 
 .. note::
 
-   本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x）。
-   对于其他 macOS 版本不一定适用。
+   本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x），
+   不一定适用于其他 macOS 版本。
 
    .. table:: 近几年的 macOS 系统版本号
       :align: center
@@ -25,9 +25,9 @@ macOS 配置指南
 
 .. note::
 
-   本节大部分软件都通过命令行安装。在 macOS 系统下，按下 :kbd:`Command` + :kbd:`空格`\ ，
-   搜索 “Terminal” 并按下 :kbd:`Enter` 键以打开 Terminal 应用。
-   然后在 Terminal 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+   本节大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`\ ，
+   输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
+   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
 
 ----
 
