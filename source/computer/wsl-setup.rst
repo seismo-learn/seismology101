@@ -18,10 +18,10 @@ WSL 配置指南
    使用 Windows 系统时，可以通过 CMD 或 PowerShell 执行命令：
    同时按下 :kbd:`win` + :kbd:`R` 键，在打开的运行对话框中输入 “cmd” 以启动 CMD；
    在搜索栏中键入 “PowerShell” 并点击搜索到的图标以启动 PowerShell。
-   在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+   在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
    使用 Linux 系统时，在桌面或菜单栏中找到并点击 “Terminal” 图标以启动终端，
-   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
 ----
 
@@ -36,7 +36,7 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Hyper-V 与 VMware/VirtualBox 兼容性警告
+.. dropdown:: :fa:`exclamation-circle,mr-1` WSL2 与 VMware/VirtualBox 兼容性警告
    :container: + shadow
    :title: bg-warning text-red font-weight-bold
 
@@ -54,8 +54,8 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
        $ bcdedit /set hypervisorlaunchtype auto
 
-   新版本 VMware (>=15.5.5) 和 VirtualBox (>=6.0) 在最新 Windows 系统上
-   （build number >= 19041）可以正常使用，无兼容性问题。
+   新版本 VMware (≥15.5.5) 和 VirtualBox (≥6.0) 在最新 Windows 系统上
+   （build number ≥19041）可以正常使用，无兼容性问题。
 
 安装
 -----
@@ -201,9 +201,8 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 配置 Linux
 -----------
 
-安装 WSL 之后，还需要对 Linux 系统进行配置。
-
-Ubuntu 和 Fedora 用户可以参考《\ :doc:`/computer/ubuntu-setup`\ 》和
+安装 WSL 后，还需要对 Linux 系统进行配置。
+Ubuntu 和 Fedora 用户可以分别参考《\ :doc:`/computer/ubuntu-setup`\ 》和
 《\ :doc:`/computer/fedora-setup`\ 》对系统进行配置，以满足科研工作的需求。
 
 安装 X Server
@@ -215,7 +214,7 @@ WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
 .. note::
 
    X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗系统，
-   主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接受对图形输出
+   主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接收对图形输出
    的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
 
 Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ 、
