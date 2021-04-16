@@ -88,8 +88,8 @@ Homebrew
 
 .. note::
 
-   Homebrew 的安装脚本托管在 `GitHub <https://github.com/>`__ 上。GitHub 在国内访问不畅，
-   以上安装命令可能由于网络问题而失败。
+   Homebrew 的安装脚本托管在 `GitHub <https://github.com/>`__ 上，
+   国内可能由于网络问题导致 GitHub 访问不畅，因而以上安装命令可能失败。
    若以上命令失败，国内用户可以使用如下命令安装 Homebrew::
 
         $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
@@ -200,15 +200,15 @@ C/C++ 编译器。
     通过 Homebrew 安装的 GCC 提供了命令 ``gcc-10`` 和 ``g++-10``
     （``10`` 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
     提供的 ``gcc`` 和 ``g++`` 命令。
-    为了使用 GCC 编译器，用户可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10``\ ，
+    用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10`` 命令，
     或者在 Homebrew 的 bin 目录下创建软链接::
 
         $ cd $(brew --prefix)/bin/
         $ ln -s gcc-10 gcc
         $ ln -s g++-10 g++
 
-    重开一个终端后，使用 ``gcc`` 和 ``g++`` 则默认使用的是 GCC 编译器。
-    删除软链接后，则默认使用的又是 Apple Clang 编译器了。
+    打开一个新终端后，使用的 ``gcc`` 和 ``g++`` 命令则默认是 GCC 编译器。
+    删除软链接后，默认使用的又是 Apple Clang 编译器了。
 
 Fortran
 ^^^^^^^
