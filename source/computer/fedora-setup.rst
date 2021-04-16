@@ -171,7 +171,7 @@ Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc``\，``i++`` 和 ``ifort`` 命令）。
+是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
 在 Fedora 系统下，官方手册提供了多种\
