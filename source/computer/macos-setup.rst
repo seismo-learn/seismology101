@@ -27,7 +27,7 @@ macOS 配置指南
 
    本节大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`\ ，
    输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
-   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
 ----
 
@@ -88,7 +88,8 @@ Homebrew
 
 .. note::
 
-   GitHub 在国内访问不畅，以上安装命令可能由于网络问题而失败。
+   Homebrew 的安装脚本托管在 `GitHub <https://github.com/>`__ 上，
+   国内可能由于网络问题导致 GitHub 访问不畅，因而以上安装命令可能失败。
    若以上命令失败，国内用户可以使用如下命令安装 Homebrew::
 
         $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
@@ -199,15 +200,15 @@ C/C++ 编译器。
     通过 Homebrew 安装的 GCC 提供了命令 ``gcc-10`` 和 ``g++-10``
     （``10`` 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
     提供的 ``gcc`` 和 ``g++`` 命令。
-    为了使用 GCC 编译器，用户可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10``\ ，
+    用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10`` 命令，
     或者在 Homebrew 的 bin 目录下创建软链接::
 
-        $ cd $(brew --prefix)
+        $ cd $(brew --prefix)/bin/
         $ ln -s gcc-10 gcc
         $ ln -s g++-10 g++
 
-    重开一个终端后，使用 ``gcc`` 和 ``g++`` 则默认使用的是 GCC 编译器。
-    删除软连接后，则默认使用的又是 Apple Clang 编译器了。
+    打开一个新终端后，使用的 ``gcc`` 和 ``g++`` 命令则默认是 GCC 编译器。
+    删除软链接后，默认使用的又是 Apple Clang 编译器了。
 
 Fortran
 ^^^^^^^
@@ -221,7 +222,7 @@ Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
+是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
 在 macOS 下，官方手册提供了多种\
@@ -257,8 +258,8 @@ Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/index>`
 git
 ^^^
 
-`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，是科研过程中编写代码
-与项目管理推荐使用的软件。Command Line Tools for Xcode 中已经安装了 Apple 版
+`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，推荐在科研过程中使用
+git 管理自己编写的代码和文件。Command Line Tools for Xcode 中已经安装了 Apple 版
 的 git，其与原版 git 有一些区别。可以用如下命令安装原版的 git::
 
     $ brew install git
@@ -356,7 +357,8 @@ macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式�
 Google Earth
 ^^^^^^^^^^^^
 
-Google Earth 提供了网页版和桌面版应用。
+Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
+并允许用户添加 KML 或 KMZ 格式的自定义数据。
 非重度用户可以使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
 重度用户可以执行如下命令安装桌面版::
 
