@@ -35,6 +35,7 @@ jobs:
           --exclude ".*/n#$"
           --exclude "https://apt.repos.intel.com/oneapi"
           --exclude "https://man.linuxde.net/"
+          --exclude "https://www.virtualbox.org/"
           --exclude "https://pkgs.org/"
           --exclude "https://www.fdsn.org/xml/station/"
           --exclude "seismo-learn@192.168.1.100"
