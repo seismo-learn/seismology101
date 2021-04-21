@@ -8,14 +8,9 @@ Ubuntu 配置指南
 
 .. note::
 
-   本节内容适用于 **Ubuntu Desktop 20.04.2 LTS**\，对其他 Ubuntu 版本不一定适用。
-   建议用户安装时总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.2 LTS）或最新版本（目前是 Ubuntu 20.10）。
-   如遇到问题，欢迎反馈。
-
-.. note::
-
-   本节大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击 “Terminal” 图标以启动终端，
-   然后输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+   本节内容适用于 **Ubuntu Desktop 20.04.2 LTS**\，不一定适用于其他 Ubuntu 版本。
+   建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.2 LTS）或最新版本
+   （目前是 Ubuntu 20.10）。如遇到问题，欢迎反馈。
 
 ----
 
@@ -30,10 +25,10 @@ Ubuntu 配置指南
 下载系统镜像
 ^^^^^^^^^^^^
 
-访问 `Ubuntu 官网 <https://ubuntu.com/>`__ 并下载 Ubuntu Desktop 镜像，
+访问 `Ubuntu 官网 <https://ubuntu.com/>`__ 并下载 Ubuntu Desktop 镜像文件，
 一般选择 AMD64（x86_64）版本。
 
-**Ubuntu Desktop 20.04.2 LTS AMD64** 的 ISO 文件（约 2.9 GB）下载链接：
+**Ubuntu Desktop 20.04.2 LTS AMD64** 的 ISO 镜像文件（约 2.9 GB）下载链接：
 
 - `官方镜像 <https://releases.ubuntu.com/focal/ubuntu-20.04.2.0-desktop-amd64.iso>`__
 - `中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso>`__ [**推荐国内用户使用**]
@@ -106,17 +101,25 @@ Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件�
     更新系统前，特别是大版本更新（如 Ubuntu 20.04 更新为 Ubuntu 20.10），
     最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`\ ）。
 
+.. note::
+
+   本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击
+   “Terminal” 图标以启动终端，然后在终端中输入命令并按下 :kbd:`Enter` 键
+   即可执行相应的命令。
+
 系统软件
 --------
 
-Ubuntu 使用包管理器 ``apt`` 来安装、卸载和管理软件包。
+Ubuntu 系统自带了“软件中心”，可用于查找、安装、卸载和管理软件包，但一般建议使用
+命令行工具 ``apt`` 安装和管理软件。
 
 .. note::
 
-   国内用户可以参考 https://mirrors.ustc.edu.cn/help/ubuntu.html 将软件源镜像替换
-   为中科大镜像，以加快软件下载速度。
+   ``apt`` 会从 Ubuntu 软件源下载软件包。
+   国内用户可以参考 https://mirrors.ustc.edu.cn/help/ubuntu.html 将默认软件源镜像
+   替换为中科大镜像，以加快软件下载速度。
 
-   注意，在替换软件源后要执行 ``sudo apt update`` 更新本地缓存的软件包元数据。
+   注意：在替换软件源镜像后要执行 ``sudo apt update`` 更新本地缓存的软件包元数据。
 
 ``apt`` 的详细用法请阅读 `apt 帮助文档 <http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html>`__\ ，
 这里只介绍一些常用命令::
@@ -158,12 +161,6 @@ C/C++ 编译器，其提供了 ``gcc`` 和 ``g++`` 命令::
 
     $ sudo apt install gcc g++
 
-`Clang <https://clang.llvm.org/>`__ 系列是 GCC 系列的一大竞争者。与 GCC
-编译器相比，Clang 编译器提供了更友好的报错信息，方便在报错时尽快找到错误。Clang
-编译器提供了 ``clang`` 和 ``clang++`` 命令::
-
-    $ sudo apt install clang
-
 Fortran
 ^^^^^^^
 
@@ -176,7 +173,7 @@ Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
+是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
 在 Ubuntu 系统下，官方手册提供了多种\
@@ -227,8 +224,8 @@ Ubuntu 20.04.2 自带了 Python 3.8，足够日常使用，但强烈建议不要
 git
 ^^^
 
-`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，是科研过程中编写代码
-与项目管理推荐使用的软件。一般情况下系统已经安装了该软件。如果没安装，
+`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，推荐在科研过程中
+使用 git 管理自己编写的代码和文件。一般情况下系统已经安装了该软件。如果没安装，
 可以使用如下命令安装::
 
     $ sudo apt install git
@@ -283,7 +280,7 @@ Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 日常科研经常需要开好几个终端，切换和管理起来比较麻烦。
 
 `Terminator <https://gnome-terminator.org/>`__
-是一个功能强大的终端模拟器，最常用的功能应该是终端分割和终端切换。
+是一个功能强大的终端模拟器，最常用的功能是终端分割和终端切换。
 使用如下命令安装::
 
     $ sudo dnf install terminator
@@ -297,14 +294,16 @@ Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 Google Earth
 ^^^^^^^^^^^^
 
+Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
+并允许用户添加 KML 或 KMZ 格式的自定义数据。
 非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
 重度用户可以按照如下步骤安装桌面版。
 
 1. 下载 64 位 deb 包：https://www.google.com/earth/versions/#download-pro
 2. 双击下载的 deb 安装包即可安装
 
-浏览器
-^^^^^^
+网页浏览器
+^^^^^^^^^^
 
 Ubuntu 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
 

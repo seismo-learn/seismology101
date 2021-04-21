@@ -35,6 +35,7 @@ jobs:
           --exclude ".*/n#$"
           --exclude "https://apt.repos.intel.com/oneapi"
           --exclude "https://man.linuxde.net/"
+          --exclude "https://www.virtualbox.org/"
           --exclude "https://pkgs.org/"
           --exclude "https://www.fdsn.org/xml/station/"
           --exclude "seismo-learn@192.168.1.100"
@@ -45,7 +46,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create Issue From File
-      uses: peter-evans/create-issue-from-file@v2.3.2
+      uses: peter-evans/create-issue-from-file@v3
       with:
         title: Link Checker Report
         content-filepath: ./lychee/out.md

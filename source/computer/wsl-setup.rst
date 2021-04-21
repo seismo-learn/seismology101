@@ -14,13 +14,14 @@ WSL 配置指南
 .. note::
 
    本节大部分命令是在命令行中执行的。
-   使用 Windows 系统时，可以通过 CMD 或 PowerShell 运行命令：
+
+   使用 Windows 系统时，可以通过 CMD 或 PowerShell 执行命令：
    同时按下 :kbd:`win` + :kbd:`R` 键，在打开的运行对话框中输入 “cmd” 以启动 CMD；
    在搜索栏中键入 “PowerShell” 并点击搜索到的图标以启动 PowerShell。
-   在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+   在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
    使用 Linux 系统时，在桌面或菜单栏中找到并点击 “Terminal” 图标以启动终端，
-   然后输入命令并按下 :kbd:`Enter` 键即可执行该命令。
+   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
 ----
 
@@ -35,7 +36,7 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Hyper-V 与 VMware/VirtualBox 兼容性警告
+.. dropdown:: :fa:`exclamation-circle,mr-1` WSL2 与 VMware/VirtualBox 兼容性警告
    :container: + shadow
    :title: bg-warning text-red font-weight-bold
 
@@ -53,8 +54,8 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
        $ bcdedit /set hypervisorlaunchtype auto
 
-   新版本 VMware (>=15.5.5) 和 VirtualBox (>=6.0) 在最新 Windows 系统上
-   （build number >= 19041）可以正常使用，无兼容性问题。
+   新版本 VMware (≥15.5.5) 和 VirtualBox (≥6.0) 在最新 Windows 系统上
+   （build number ≥19041）可以正常使用，无兼容性问题。
 
 安装
 -----
@@ -166,8 +167,8 @@ Windows 访问 WSL
 
 在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：
 
-- 真实路径
-- UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）
+1. 真实路径
+2. UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）
 
 WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问，这是因为 WSL2 使用 VHD 虚拟磁盘文件
 作为 Linux 发行版的根目录。
@@ -200,9 +201,8 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 配置 Linux
 -----------
 
-安装 WSL 之后，还需要对 Linux 系统进行配置。
-
-Ubuntu 和 Fedora 用户可以参考《\ :doc:`/computer/ubuntu-setup`\ 》和
+安装 WSL 后，还需要对 Linux 系统进行配置。
+Ubuntu 和 Fedora 用户可以分别参考《\ :doc:`/computer/ubuntu-setup`\ 》和
 《\ :doc:`/computer/fedora-setup`\ 》对系统进行配置，以满足科研工作的需求。
 
 安装 X Server
@@ -214,7 +214,7 @@ WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
 .. note::
 
    X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗系统，
-   主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接受对图形输出
+   主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接收对图形输出
    的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
 
 Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ 、
@@ -229,7 +229,7 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
 2.  运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**\，其他选项无需更改
 
-3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化，修改 Linux 的
+3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化。需要修改 Linux 的
     环境变量以保证始终能连接到 X Server::
 
         $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
