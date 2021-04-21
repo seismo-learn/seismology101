@@ -27,12 +27,10 @@
    :caption: 地震学基础
    :hidden:
 
-   seismology/introduction/index
-   seismology/seismic-source/index
-   seismology/seismic-wave/index
-   seismology/seismograph/index
-   seismology/seismogram/index
-   seismology/software/index
+   seismology/introduction
+   seismology/basis
+   seismology/data
+   seismology/software
 
 .. toctree::
    :maxdepth: 3
