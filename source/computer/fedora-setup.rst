@@ -37,12 +37,13 @@ Fedora 配置指南
 制作 USB 启动盘。
 
 USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh/>`__\ （仅限 Windows）、\
-`UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）
-或 `balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）。
+`balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）
+或 `UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）。
 
 .. warning::
 
-   制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
+   1. 制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
+   2. 如果制作工具无法识别 U 盘，请尝试先将 U 盘格式化为 FAT32 格式。
 
 进入 Live 系统
 ^^^^^^^^^^^^^^
