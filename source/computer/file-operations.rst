@@ -288,7 +288,7 @@ Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可
 4 代表可读、不可写、不可执行。
 
 使用 ``chmod``\ （change mode，即变更模式）命令可以修改文件或目录的权限，可以参考
-`Linux chmod命令 <https://www.runoob.com/linux/linux-comm-chmod.html>`__ 了解该命令
+`Linux chmod 命令 <https://www.runoob.com/linux/linux-comm-chmod.html>`__ 了解该命令
 详细用法。以下只展示常用用法::
 
     # 修改 hello-world.sh 权限
