@@ -59,11 +59,6 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材
 本教程只是地震学初学者的入门读物，入门后还需参考一些系统和全面的学习资料进行深入学习，
 推荐以下参考资料：
 
-- :doc:`地震“学”参考书 <seis:index>`
-
-  - 作者：\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__
-  - 难度：正在缓慢编写中，难度未知
-
 - `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ ：
 
   - 作者：\ `Peter Shearer <https://igppweb.ucsd.edu/~shearer/mahi/>`__
