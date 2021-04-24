@@ -31,8 +31,6 @@ jobs:
         # 429: Too many requests
         args: >
           --accept 429
-          --exclude ".*/n$"
-          --exclude ".*/n#$"
           --exclude "https://apt.repos.intel.com/oneapi"
           --exclude "https://man.linuxde.net/"
           --exclude "https://www.virtualbox.org/"
