@@ -32,7 +32,9 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 操作文件与目录
 --------------
 
-打开终端，使用以下命令熟悉和掌握 Linux 系统下文件和目录的常用操作。假设用户名是 seismo-learn。
+接下来将通过一系列命令熟悉和掌握 Linux 系统下文件和目录的常用操作。
+读者应打开终端，根据下面的教程自行输入命令（不要复制粘贴！），记住并理解每个
+命令的作用。这一部分中，假设用户名是 seismo-learn，读者根据自己的情况自行修改。
 
 查看文件和目录::
 
@@ -80,10 +82,10 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 进入 workspace 目录
     $ cd workspace
-    # 使用 touch 命令创建新文件 hello-world.txt 和 seiso-learn.txt
-    $ touch hello-world.txt seiso-learn.txt
+    # 使用 touch 命令创建新文件 hello-world.txt 和 seismo-learn.txt
+    $ touch hello-world.txt seismo-learn.txt
     $ ls
-    hello-world.txt  seiso-learn.txt  source
+    hello-world.txt  seismo-learn.txt  source
 
 以下所有操作都假设读者已经切换到 :file:`~/workspace` 目录下了，即::
 
@@ -95,51 +97,51 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     # 使用 cp（copy，即复制）命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
     $ cp hello-world.txt hello-world-cp.txt
     $ ls
-    hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
-    # 复制 hello-world.txt 和 seiso-learn.txt 文件到 source 目录下
-    $ cp hello-world.txt seiso-learn.txt source
+    hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
+    # 复制 hello-world.txt 和 seismo-learn.txt 文件到 source 目录下
+    $ cp hello-world.txt seismo-learn.txt source
     $ ls source
-    hello-world.txt  seiso-learn.txt
+    hello-world.txt  seismo-learn.txt
 
     # 复制 source 目录为同一目录下的 destination 目录（目标目录不存在）
     $ cp -r source destination
     $ ls
-    destination  hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
+    destination  hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
     $ ls destination
-    hello-world.txt  seiso-learn.txt
+    hello-world.txt  seismo-learn.txt
     # 复制 source 目录到同一目录下的 destination 目录下（目标目录已存在）
     $ cp -r source destination
     $ ls destination
-    hello-world.txt  seiso-learn.txt  source
+    hello-world.txt  seismo-learn.txt  source
 
 移动文件和目录::
 
     # 使用 mv（move，即移动）命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
     $ mv hello-world.txt hello-world-mv.txt
     $ ls
-    destination  hello-world-cp.txt  hello-world-mv.txt  seiso-learn.txt  source
+    destination  hello-world-cp.txt  hello-world-mv.txt  seismo-learn.txt  source
     # 移动 hello-world-cp.txt 和 hello-world-mv.txt 文件到 source 目录下
     $ mv hello-world-cp.txt hello-world-mv.txt source
     ls
-    destination  seiso-learn.txt  source
+    destination  seismo-learn.txt  source
     $ ls source
-    hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seiso-learn.txt
+    hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seismo-learn.txt
 
     # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
     $ mv source source-mv
     ls
-    destination  seiso-learn.txt  source-mv
+    destination  seismo-learn.txt  source-mv
     # 移动 source-mv 目录到同一目录下的 destination 目录下
     $ mv source-mv destination
     $ ls
-    destination  seiso-learn.txt
+    destination  seismo-learn.txt
     $ ls destination
-    hello-world.txt  seiso-learn.txt  source  source-mv
+    hello-world.txt  seismo-learn.txt  source  source-mv
 
 删除文件和目录::
 
-    # 使用 rm（remove，即删除）命令删除 seiso-learn.txt 文件
-    $ rm seiso-learn.txt
+    # 使用 rm（remove，即删除）命令删除 seismo-learn.txt 文件
+    $ rm seismo-learn.txt
     $ ls
     destination
     # 删除 destination 目录
