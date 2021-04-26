@@ -12,22 +12,21 @@
 --------------
 
 Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材
-《Quantitative Seismology: Theory and Methods》对地震学的定义如下：
+《Quantitative Seismology》（第二版）对地震学的定义如下：
 
-  **Seismology is a science based on data called seismograms,
-  which are records of mechanical vibrations of the Earth.**
+  **Seismology** is the scientific study of mechanical vibrations of the Earth.
+  Quantitative seismology is based on data called seismograms,
+  which are recordings of the vibrations,
+  which in turn may be caused artificially by man-made explosions,
+  or caused naturally by earthquakes and volcanic eruptions.
 
-  地震学是一门基于记录着地球机械振动的地震图的科学。
+  地震学是研究地球机械振动的科学。定量地震学基于记录着这些振动的观测资料，即地震图。
+  这些振动可能是由人工爆炸等人为因素引起的，也可能是地震和火山喷发等自然活动造成的。
 
-  **These vibrations may be caused artificially by man-made explosions,
-  or they may be caused naturally by earthquakes and volcanic eruptions.**
-
-  振动可能是人工爆炸造成的，也可能是地震和火山喷发造成的。
-
-可以看出，地震学的研究工具是地震图，即地震仪记录的地球机械振动，而产生这些振动的源
-（一般称为\ **震源**\ ）可能是人工爆炸、地震和火山喷发等。震源激发的地球机械振动
-（一般称为\ **地震波**\ ）传播到地球内部，并最终被布设在地表或地下的地震仪
-（一般称为\ **地震台站**\ 或简称\ **台站**\ ） 记录下来。
+可以看出，地震学是研究地球机械振动的科学。地震学的研究工具是地震图，即仪器记录的地球机械振动，
+而产生这些振动的源（一般称为\ **震源**\ ）可能是人工爆炸、地震以及火山喷发等。
+震源激发的地球机械振动（一般称为\ **地震波**\ ）传播到地球内部，并最终被布设在地表或地下的
+地震仪（一般称为\ **地震台站**\ 或简称\ **台站**\ ） 记录下来。
 
 1994 年 1 月 17 日，美国加利福尼亚州 Northridge 附近发生了 `6.7 级地震 <https://earthquake.usgs.gov/earthquakes/eventpage/ci3144585/>`__，
 其释放出的能量相当于将近 20 亿千克高爆炸药。该地震产生的地震波经过地球内部传播后，
