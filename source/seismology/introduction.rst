@@ -72,9 +72,9 @@ Seismology 源自古希腊语，原意的确是地震的科学，但现代地震
 胡克定律（Hooke，1660 年）和弹性介质的一般性平衡和运动方程（Navier，1821 年）。
 随后，弹性波传播理论（the theory of elastic wave propagation）从十八世纪早期开始由
 Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展。
-Love 在 1892 年出版的经典教材《A Treatise on the Mathematical Theory of Elasticity》
-的简介中详细描述了弹性理论的发展历史
-（\ `1927 年第四版 <https://www.cambridge.org/us/academic/subjects/mathematics/historical-mathematical-texts/treatise-mathematical-theory-elasticity-4th-edition?format=PB&isbn=9781107618091>`__\ ）。
+1892 年，Love 出版了经典教材《A Treatise on the Mathematical Theory of Elasticity》（第一版），
+简介中详细描述了弹性理论的发展历史
+（1927 年出版了 `第四版 <https://www.cambridge.org/us/academic/subjects/mathematics/historical-mathematical-texts/treatise-mathematical-theory-elasticity-4th-edition?format=PB&isbn=9781107618091>`__\ ）。
 这时期，理论的发展领先地震学观测。
 
 1875 年，Filippo Cecchi 制作了第一个带时间记录的地震仪。随后，地震仪器不断改善和发展。
