@@ -91,20 +91,15 @@ rsync
 
    # 修改可执行权限
    $ chmod +x backup.sh
-   
+
    # 移动至 ~/bin/ 目录
    $ mv backup.sh ~/bin
-   
+
    # 执行命令开始备份
    $ backup.sh
 
 DejaDup
 ^^^^^^^
-
-.. warning::
-
-   本节尚未开始编写。读者可以参考 https://www.howtoing.com/ubuntu-backup-deja-dup
-   使用 DejaDup，欢迎提供反馈。
 
 `DejaDup <https://wiki.gnome.org/Apps/DejaDup>`__ 是一款很好的图形界面备份工具。
 
