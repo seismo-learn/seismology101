@@ -78,7 +78,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材
 
 - 《\ `Quantitative Seismology <https://www.ldeo.columbia.edu/~richards/Aki_Richards.html>`__\ 》
 
-  - 作者：\ `Keiiti Aki <https://www.nature.com/articles/4351176a>`__
+  - 作者：\ `Keiiti Aki <https://doi.org/10.1785/gssrl.76.5.551>`__
     和 `Paul G. Richards <https://www.ldeo.columbia.edu/user/richards>`__
   - 难度：很难，大量公式推导，被称为地震学圣经，适合高年级研究生以及地震学学者
 
