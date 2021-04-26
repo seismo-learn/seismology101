@@ -84,10 +84,10 @@ Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展。
 
 - 1906 年，Richard Oldham 报道地球存在地核。
 - 1909 年，Andrija Mohorovičić 报道地壳和地幔存在速度间断面（即现在称为的 Moho 面）。
-- 1914 年，Beno Gutenberg 报道地幔和液态地核的边界深度为 2900 公里。
+- 1914 年，Beno Gutenberg 报道地幔和液态地核的边界深度为 2900 公里，非常接近当今的估计值 2889 公里。
 - 1936 年，Inge Lehmann 发现固态内核（之前认为地核全是液态的）。
 - 1940 年，Harold Jeffreys 和 K. E. Bullen 发表了他们最终版本的地震波走时表，简称 JB 走时表。
-  该走时表至今仍然被使用，与当今模型只差几秒。
+  该走时表至今仍然在使用，与当今模型只差几秒。
 
 推荐学习资料
 ------------
