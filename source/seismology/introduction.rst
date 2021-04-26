@@ -59,6 +59,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材
 推荐以下参考资料：
 
 - 《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》
+  （第三版）
 
   - 作者：\ `Peter Shearer <https://igppweb.ucsd.edu/~shearer/mahi/>`__
   - 难度：浅显易懂，非常适合初学者，如大三、大四本科生
@@ -75,7 +76,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材
     和 Terry Wallace
   - 难度：较难，适合有一定地震学和数理基础的研究生
 
-- 《\ `Quantitative Seismology <https://www.ldeo.columbia.edu/~richards/Aki_Richards.html>`__\ 》
+- 《\ `Quantitative Seismology <https://www.ldeo.columbia.edu/~richards/Aki_Richards.html>`__\ 》（第二版）
 
   - 作者：\ `Keiiti Aki <https://doi.org/10.1785/gssrl.76.5.551>`__
     和 `Paul G. Richards <https://www.ldeo.columbia.edu/user/richards>`__
