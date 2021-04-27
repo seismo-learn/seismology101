@@ -9,8 +9,8 @@
 体波
 -----
 
-分类
-^^^^^
+P 波与 S 波
+^^^^^^^^^^^^
 
 体波分为 P 波（\ **p**\ rimary wave 或 P-wave）和 S 波（\ **s**\ econdary wave 或 S-wave）。
 P 波比其他地震波传播速度快，最先传播到达台站；S 波的传播速度比 P 波慢，在 P 波后传播到台站。
@@ -30,14 +30,44 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
    :align: center
 
    体波的介质运动方向以及波传播方向。
-   引自 `Introduction to Seismology（第三版） <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__
+   引自《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
    图 3.2。
 
-波速
+地球分层与体波波速
+^^^^^^^^^^^^^^^^^^
+
+固体地球最外层是较薄的地壳（crust），大洋地壳的平均厚度约为 6 公里，大陆地壳则约为 30-50 公里。
+根据地震波速度，地球深部可以分成三层：地幔（mantle）、外核（outer core）、内核（inner core）。
+固态地幔的深度约为2891 公里，大约占地球体积的 84%，占地球质量的 68%。
+内核半径约 1221 公里，是固态的，由液态外核固化形成。
+一般地壳与地幔的边界称为莫霍洛维奇间断面（Mohorovičić discontinuity），或简称 Moho 面，
+地幔和外核的边界称为核幔边界（\ **c**\ ore-\ **m**\ antle **b**\ oundary，简写 CMB），
+外核与内核的边界称为内核边界（\ **i**\ nner-\ **c**\ ore **b**\ oundary，即 ICB）。
+
+体波的传播速度在地球内部随深部而变化。P 波和 S 波的传播速度也不同，S 波速度大约是 P 波速度的一半。
+
+在 Moho 面附近，地震波猛然增加。
+在地幔中，410 公里和 660 公里附近存在两个速度间断面，地震波速度在间断面附近突然增加。
+一般分别称这两个间断面为 410 间断面（410-km discontinuity）和 660 间断面（660-km discontinuity），
+他们之间的区域称为地幔转换带（mantle transition zone）。
+在 660 公里至地幔底部的深部区域，地震波速度平缓增加。
+在核幔边界，P 波速度从大约 14 km/s 骤降至大约 8 km/s，S 波速度从大约 7 km/s 降为零，
+因为外核是液态的。在外核中，P 波速度再次随着深度逐渐增加。在内核边界，P 波速度突然增加，
+同时内核中 S 波速度也不为零了。
+
+.. figure:: prem.jpg
+   :alt: 地球内部 P 波速度、S 波速度和密度
+   :width: 50%
+   :align: center
+
+   地球内部 P 波速度、S 波速度和密度（来自 Preliminary Reference Earth Model (PREM)）。
+   引自《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
+   图 1.1。
+
+震相
 ^^^^^
 
-尽管地震波是一起产生的，但它们以不同的速度传播。例如，剪切波（S 波）以大约一半的压缩波（P 波）
-速度行进地球。地震发生后不久，台站就连续快速关闭了强 P，S 和地面波记录。
+地震发生后不久，台站就连续快速关闭了强 P，S 和地面波记录。
 较远的台站会在几分钟后记录这些电波的到来，两次到达之间的时间更长。
 
 距地震大约 100 度的距离，P 波和 S 波的传播路径开始接触地球外核的边缘。
@@ -48,15 +78,11 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
 但是，我们确实看到，波以P波的形式穿过外核，然后在穿过内核时转变为S波。
 因为内核确实传递了剪切能，所以我们假设它是固体。
 
-震相
-^^^^^
-
-
 面波
 -----
 
-分类
-^^^^^
+Rayleigh 波和 Love 波
+^^^^^^^^^^^^^^^^^^^^^^
 
 沿着地球表面附近传播的面波也有两种，即瑞利波（Rayleigh wave）和勒夫波（Love wave）。
 Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同或相反的分量，又有与波传播方向垂直
@@ -69,10 +95,11 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
    :align: center
 
    基阶 Love 波（上）和 Rayleigh 波（下）的介质运动方向（假设面波沿着页面从左向右传播）。
-   引自 `Introduction to Seismology（第三版） <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__
+   引自《\ `Introduction to Seismology（第三版） <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
    图 8.5。
 
-波速
-^^^^^
+相速度与群速度
+^^^^^^^^^^^^^^
+
 
 
