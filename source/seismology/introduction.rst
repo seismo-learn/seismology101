@@ -81,7 +81,7 @@ Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展。这时期，理论�
 1875 年，Filippo Cecchi 制作了第一个带时间记录的地震仪。随后，地震仪器不断改善和发展。
 20 世纪初，B. B. Galitzen 制作了第一台电磁地震仪。
 现代地震仪均是电磁地震仪，相比于早期的纯力学设计的仪器，其有很多优势。
-1961 年，全球标准化地震台网（world-wide standardized seismograph network）建立。
+1961 年，全球标准化地震台网（world-wide standardized seismograph network，WWSSN）建立。
 1969 年至 1972 年间，阿波罗登月计划还陆续在月球上部设了一些地震仪。
 20 世纪 60 年代开始，计算机的来临极大地改变了地震学研究。
 1976 年开始，地震学观测资料开始以数字形式存储和获取。
