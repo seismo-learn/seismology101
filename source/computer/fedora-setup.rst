@@ -29,7 +29,7 @@ Fedora 配置指南
 
 - `官方镜像 <https://download.fedoraproject.org/pub/fedora/linux/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__
 - `中科大镜像 <http://mirrors.ustc.edu.cn/fedora/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__ [**推荐国内用户使用**]
-
+             
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
 
