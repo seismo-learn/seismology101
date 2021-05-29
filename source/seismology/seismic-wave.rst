@@ -90,23 +90,29 @@ P 波和 S 波传播速度也随深部而变化：
 震相
 ^^^^^
 
-地球的不同层（地壳、地幔、外核、内核等）以及两种类型的体波（P 波和 S 波）导致了
+地球内部不同的分层（地壳、地幔、外核、内核等）以及两种体波类型（P 波和 S 波）会产生许多
+可能的几何射线（geometric ray），也称震相（seismic phase）。地震学领域有统一的震相的
+命名规则。其中，地壳震相的命名规则相对复杂，且部分震相的命名并未统一。因此，本教程不做介绍，
+读者可以参考\ :doc:`seis:ray-theory-travel-times/ray-nomenclature/crustal-phases`\
+学习相关震相定义。以下介绍全球尺度下的震相命名规则。
 
-地震发生后不久，近震台站便会记录到 P 波、S 波和面波。较远的台站要在几分钟后才能记录地震波。
-一般而言，不同地震波之间的到时差随着台站和震源的距离增加而更大。
+为了方便命名震相，我们用以下特殊简写表示地壳、地幔、外核以及内核中的 P 波和 S 波路径：
 
-由于地幔的体波波速整体上随着深度增加而增加，在大约 100° 震中距时，最早到达台站的 P 波
-和 S 波（也称 P 波初至、S 波初至）的射线路径才刚好经过核幔边界。超过这个距离后，P 波和
-S 波初至振幅较少，并逐渐消失。在大约 145° 震中距时，经过外核的 P 波才会出现。因此，100° 
-到 145° 的震中距范围常称为影区（Shadow zone）
+- **P**\ ：地壳和地幔中的 P 波
+- **K**\ ：外核中的 P 波
+- **I**\ ：内核中的 P 波
+- **S**\ ：地壳和地幔中的 S 波
+- **J**\ ：内核中的 S 波
+- **c**\ ：核幔边界的反射波
+- **i**\ ：内核边界的反射波
 
-距地震大约 100 度的距离，P 波和 S 波的传播路径开始接触地球外核的边缘。
-超过此距离，第一个到达的波，即 P 波，大小减小，然后消失。穿过外部的 P 波称为 PKP 波。
-它们开始出现在 140 度以上。 100 至 140 度之间的距离通常称为“阴影区域”。
+地震波从震源传播到台站的过程中，我们可以多次使用以上简写来表示射线路径，也就命名了相关震相。
+例如，PcP 震相表示震源激发的 P 波在核幔边界处反射，然后再传播至台站；SKS 表示震源激发的
+S 波在核幔边界处转换为 P 波传播至外核中，然后再次在核幔边界处转换回 S 波传播回地幔，最后
+传播到台站。
 
-我们看不到剪切波（S）穿过外核。因为液体不能被剪切，所以我们推断外核是熔融的。
-但是，我们确实看到，波以P波的形式穿过外核，然后在穿过内核时转变为S波。
-因为内核确实传递了剪切能，所以我们假设它是固体。
+我们以地震与台站之间的距离为 x 轴，以台站观测到的地震震相走时为 y 轴，将全球地震的震相走时
+画出来，便得到了\ **走时曲线**\ 。这是我们认识和研究地球深部的速度结构最简单和根本的资料。
 
 .. figure:: travel-time-curve.jpg
    :alt: 地球内部
@@ -134,11 +140,73 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
    :align: center
 
    基阶 Love 波（上）和 Rayleigh 波（下）的介质运动方向（假设面波沿着页面从左向右传播）。
-   引自《\ `Introduction to Seismology（第三版） <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
+   引自《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
    图 8.5。
 
-相速度与群速度
-^^^^^^^^^^^^^^
+面波频散
+^^^^^^^^
 
+不同频率的面波传播速度不同，即频散（dispersion）。面波的传播速度与频率的函数关系称为
+频散曲线（dispersion curve）。面波有两种传播速度：
 
+- 相速度（phase velocity）：波峰或波谷的传播速度，常用 :math:`c` 表示
+- 群速度（group velocity）：波包的传播速度，常用 :math:`U` 表示
 
+.. dropdown:: :fa:`exclamation-circle,mr-1` 相速度和群速度的示意图
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold 
+
+   如下图所示，波峰的传播速度是相速度；波包的传播速度是群速度。
+
+   波包指台站记录到的振动的包络线，代表了波的能量。下图绘制了第一个台站和最后台站的波包，
+   需要注意的是下图的包络线只是为了形象化表示波包而刻意描绘出来的，台站处的介质实际运动还是振动曲线。
+
+   如下图所示，在波传播过程中，波峰的形状并不是固定的，而会在包络线的约束下改变。
+
+   .. figure:: dispersion-cartoon.jpg
+      :alt: 相速度和群速度的示意图
+      :width: 50%
+      :align: center
+
+      相速度和群速度的示意图。修改自
+      《\ `An Introduction to the Theory of Seismology <https://academic.oup.com/gji/article/86/1/215/636222>`__\ 》（第四版）
+      图 8.7。
+
+下图是全球一维模型 PREM 的理论面波频散曲线。对于地球而言，面波的相速度一般随着周期的增加
+而增加，并且群速度一般比相速度小。
+
+.. figure:: surface-wave-dispersion.jpg
+   :alt: 面波理论频散曲线
+   :width: 70%
+   :align: center
+
+   基阶 Love 波（左）和 Rayleigh 波（右）的理论频散曲线
+   （来自 Preliminary Reference Earth Model (PREM)）。修改自
+   《\ `An Introduction to the Theory of Seismology <https://academic.oup.com/gji/article/86/1/215/636222>`__\ 》（第四版）
+   图 8.8。
+
+下图是大陆和大洋下传播面波的群速度频散曲线，横坐标采用了对数，这为了更好地显示短周期的频散。
+可以看出大陆和大洋路径的面波群速度有以下区别：
+
+- 大陆路径的面波频散比海洋路径弱，即频散曲线更平缓。
+  例如，大洋路径的 Rayleigh 波在 10-20 秒周期内，频散极强，群速度从 1 km/s 骤增至
+  3.5 km/s；而大陆路径的 Rayleigh 波在 3-50 秒周期内，群速度也只从 2 km/s 增加至
+  约 3.8 km/s。这主要是因为大洋地壳厚度比大陆地壳厚度小很多，前者约为 5-8 公里，
+  后者约为 25-50 公里，大陆高山区地壳还会更厚。
+- 大陆路径的面波频散比海洋路径更持久，即群速度随周期而变化的周期区间更大。
+  例如，大洋路径的 Love 波在 10 秒周期后，群速度几乎保持不变，大约 4.5 km/s；
+  而大陆路径的 Love 波的频散一直持续到约 100 秒周期。
+
+.. figure:: surface-wave-group-velocity.png
+   :alt: 大陆和大洋的面波群速度
+   :width: 60%
+   :align: center
+
+   大陆和大洋的面波群速度。修改自
+   《\ `An Introduction to the Theory of Seismology <https://academic.oup.com/gji/article/86/1/215/636222>`__\ 》（第四版）
+   图 11.1。
+
+.. 该图实际上是利用 WebPlotDigitizer 软件（https://automeris.io/WebPlotDigitizer/）
+.. 从《Earthquakes and Geological Discovery》的第五章中抠的数据绘制而成的。
+.. 也可以从《New Manual of Seismological Observatory Practice》第二章的图 2.10 抠数据:
+.. https://doi.org/10.2312/GFZ.NMSOP-2_ch2
