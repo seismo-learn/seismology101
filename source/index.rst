@@ -37,7 +37,7 @@
    :caption: 地震学实践
    :hidden:
 
-   exercises/waveform-fetch
+   exercises/introduction
 
 .. toctree::
    :maxdepth: 3
