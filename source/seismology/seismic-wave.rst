@@ -205,5 +205,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 
 .. 该图实际上是利用 WebPlotDigitizer 软件（https://automeris.io/WebPlotDigitizer/）
 .. 从《Earthquakes and Geological Discovery》的第五章中抠的数据绘制而成的。
-.. 也可以从《New Manual of Seismological Observatory Practice》第二章的图 2.10 抠数据:
+.. 《New Manual of Seismological Observatory Practice》第二章的图 2.10 也有类似的图:
 .. https://doi.org/10.2312/GFZ.NMSOP-2_ch2
+.. MIT OCW (Introduction to Seismology) 的 Lecture 12 的图 12 也类似:
+.. https://ocw.mit.edu/courses/earth-atmospheric-and-planetary-sciences/12-510-introduction-to-seismology-spring-2010/
