@@ -66,11 +66,8 @@ P 波和 S 波传播速度也随深部而变化：
 
 - 在 Moho 面附近，地震波猛然增加
 - 在地幔中，410 公里和 660 公里附近存在两个速度间断面，地震波速度在间断面附近突然增加
-
-  .. note::
-  
-     这两个间断面分别称为 410 间断面（410-km discontinuity）和 660 间断面（660-km discontinuity），
-     他们之间的区域称为地幔转换带（mantle transition zone）。
+  这两个间断面分别称为 410 间断面（410-km discontinuity）和 660 间断面（660-km discontinuity），
+  他们之间的区域称为地幔转换带（mantle transition zone）。
 
 - 在 660 公里至地幔底部的深部区域，地震波速度平缓增加
 - 在核幔边界，P 波速度从大约 14 km/s 骤降至大约 8 km/s，S 波速度从大约 7 km/s 降为零，
@@ -154,7 +151,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 
 .. dropdown:: :fa:`exclamation-circle,mr-1` 相速度和群速度的示意图
    :container: + shadow
-   :title: bg-info text-white font-weight-bold 
+   :title: bg-info text-white font-weight-bold
 
    如下图所示，波峰的传播速度是相速度；波包的传播速度是群速度。
 
