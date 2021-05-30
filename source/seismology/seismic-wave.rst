@@ -35,9 +35,9 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
    :width: 80%
    :align: center
 
-   体波的介质运动方向以及波传播方向。
-   引自《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
-   图 3.2。
+   体波的介质运动方向以及波传播方向。引自《\ `Introduction to Seismology`_\ 》（第三版）图 3.2。
+   
+.. _Introduction to Seismology: https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742
 
 地球分层
 ^^^^^^^^
@@ -62,8 +62,7 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
    :align: center
 
    地球内部 P 波速度、S 波速度和密度（来自 Preliminary Reference Earth Model (PREM)）。
-   引自《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
-   图 1.1。
+   引自《\ `Introduction to Seismology`_\ 》（第三版）图 1.1。
 
 体波波速
 ^^^^^^^^
@@ -88,8 +87,7 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
    :align: center
 
    全球震相的射线路径及其震相名。实线表示 P 波路径，摆动线表示 S 波路径。
-   引自《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
-   图 4.16。
+   引自《\ `Introduction to Seismology`_\ 》（第三版）图 4.16。
 
 震相
 ^^^^^
@@ -144,8 +142,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
    :align: center
 
    基阶 Love 波（上）和 Rayleigh 波（下）的介质运动方向（假设面波沿着页面从左向右传播）。
-   引自《\ `Introduction to Seismology <https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742>`__\ 》（第三版）
-   图 8.5。
+   引自《\ `Introduction to Seismology`_\ 》（第三版）图 8.5。
 
 面波频散
 ^^^^^^^^
@@ -172,9 +169,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
       :width: 50%
       :align: center
 
-      相速度和群速度的示意图。修改自
-      《\ `An Introduction to the Theory of Seismology <https://academic.oup.com/gji/article/86/1/215/636222>`__\ 》（第四版）
-      图 8.7。
+      相速度和群速度的示意图。修改自《\ `Introduction to Seismology`_\ 》（第三版）图 8.7。
 
 下图是全球一维模型 PREM 的理论面波频散曲线。对于地球而言，面波的相速度一般随着周期的增加
 而增加，并且群速度一般比相速度小。
@@ -184,10 +179,8 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
    :width: 70%
    :align: center
 
-   基阶 Love 波（左）和 Rayleigh 波（右）的理论频散曲线
-   （来自 Preliminary Reference Earth Model (PREM)）。修改自
-   《\ `An Introduction to the Theory of Seismology <https://academic.oup.com/gji/article/86/1/215/636222>`__\ 》（第四版）
-   图 8.8。
+   基阶 Love 波（左）和 Rayleigh 波（右）的理论频散曲线（来自 Preliminary Reference Earth Model (PREM)）。
+   修改自《\ `Introduction to Seismology`_\ 》（第三版）图 8.8。
 
 下图是大陆和大洋下传播面波的群速度频散曲线，横坐标采用了对数，这为了更好地显示短周期的频散。
 可以看出大陆和大洋路径的面波群速度有以下区别：
