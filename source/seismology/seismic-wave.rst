@@ -36,8 +36,6 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
    :align: center
 
    体波的介质运动方向以及波传播方向。引自《\ `Introduction to Seismology`_\ 》（第三版）图 3.2。
-   
-.. _Introduction to Seismology: https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742
 
 地球分层
 ^^^^^^^^
@@ -122,7 +120,7 @@ S 波在核幔边界处转换为 P 波传播至外核中，然后再次在核幔
    :align: center
 
    不同体波震相的走时曲线，数据来至 `Kennett and Engdahl (1991) <https://doi.org/10.1111/j.1365-246X.1991.tb06724.x>`__\ 。
-   引自《\ `An Introduction to Seismology, Earthquakes, and Earth Structure <https://www.wiley.com/en-us/An+Introduction+to+Seismology%2C+Earthquakes%2C+and+Earth+Structure-p-9780865420786>`__\ 》
+   引自《\ `An Introduction to Seismology, Earthquakes, and Earth Structure`_\ 》
    图 3.5-3。
 
 面波
@@ -199,9 +197,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
    :width: 60%
    :align: center
 
-   大陆和大洋的面波群速度。修改自
-   《\ `An Introduction to the Theory of Seismology <https://academic.oup.com/gji/article/86/1/215/636222>`__\ 》（第四版）
-   图 11.1。
+   大陆和大洋的面波群速度。修改自《\ `An Introduction to the Theory of Seismology`_\ 》（第四版）图 11.1。
 
 .. 该图实际上是利用 WebPlotDigitizer 软件（https://automeris.io/WebPlotDigitizer/）
 .. 从《Earthquakes and Geological Discovery》的第五章中抠的数据绘制而成的。
@@ -209,3 +205,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 .. https://doi.org/10.2312/GFZ.NMSOP-2_ch2
 .. MIT OCW (Introduction to Seismology) 的 Lecture 12 的图 12 也类似:
 .. https://ocw.mit.edu/courses/earth-atmospheric-and-planetary-sciences/12-510-introduction-to-seismology-spring-2010/
+
+.. _Introduction to Seismology: https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742
+.. _An Introduction to Seismology, Earthquakes, and Earth Structure: https://www.wiley.com/en-us/An+Introduction+to+Seismology%2C+Earthquakes%2C+and+Earth+Structure-p-9780865420786
+.. _An Introduction to the Theory of Seismology: https://academic.oup.com/gji/article/86/1/215/636222
