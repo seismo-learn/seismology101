@@ -8,9 +8,20 @@
 
 ----
 
-地震波（seismic wave）是在地球内部传播的机械波，由地震、火山喷发、山体滑坡或人为爆炸等震源激发。
-地震波分为体波（body wave）和面波（surface wave）。体波是指在地球内部传播的地震波，
-而面波指在地球表面附近传播的地震波。本节将介绍最基础的地震波理论。
+地震波（seismic wave）是在地球内部传播的机械波，由地震、火山喷发、山体滑坡或
+人为爆炸等震源激发。地震波分为体波（body wave）和面波（surface wave）。
+体波是指在地球内部传播的地震波，而面波指在地球表面附近传播的地震波。
+如下图所示意，体波（如 P、pP、S、ScS 等）一般先于面波到台站，
+而面波(如 Rayleigh)振幅一般比体波要大。本节将介绍最基础的地震波理论。
+
+.. figure:: seismic-waveform.png
+   :alt: 体波和面波的波形和传播路径实例
+   :width: 95%
+   :align: center
+
+   体波和面波的波形和传播路径实例。
+   引自《\ `An Introduction to Seismology, Earthquakes, and Earth Structure`_\ 》
+   图 1.1-3。
 
 体波
 -----
