@@ -51,14 +51,13 @@
 震级越大的地震，数目越少。震级增加一级，地震释放的能量增加 32 倍。
 一般 4 级以下的地震破坏能力较小，一些重要的全球地震目录也只收录 5 级以上的地震。
 
-.. figure:: earthquake-energe.jpg
+.. figure:: earthquake-energy.jpg
    :alt: 地震的震级、频率以及释
    :width: 90%
    :align: center
 
    地震的震级、频率以及释放能量的经验关系。
    引自 `How Often Do Earthquakes Occur? <https://www.iris.edu/hq/inclass/fact-sheet/how_often_do_earthquakes_occur>`__\ 。
-
 
 
 
