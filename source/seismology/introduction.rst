@@ -69,26 +69,32 @@ Seismology 源自古希腊语，原意的确是地震的科学，但现代地震
 ----------------
 
 地震学是一个相对年轻的学科，从二十世纪初才逐渐开始定量化的研究。
+可以查阅 `History of Seismology <https://www.iris.edu/hq/inclass/poster/history_of_seismology>`__
+了解更多地震学历史，以下仅简要介绍部分重要历史事件。
 
-弹性理论（elasticity theory）的两个重要发现是
-胡克定律（Hooke，1660 年）和弹性介质的一般性平衡和运动方程（Navier，1821 年）。
-随后，弹性波传播理论（the theory of elastic wave propagation）从十八世纪早期开始由
-Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展。这时期，理论的发展领先地震学观测。
-1892 年，Love 出版了经典教材《A Treatise on the Mathematical Theory of Elasticity》（第一版），
-简介中详细描述了弹性理论的发展历史
-（1927 年出版了 `第四版 <https://www.cambridge.org/us/academic/subjects/mathematics/historical-mathematical-texts/treatise-mathematical-theory-elasticity-4th-edition?format=PB&isbn=9781107618091>`__\ ）。
+在早期，理论发展领先地震学观测。1892 年，Love 出版了经典教材《A Treatise on the Mathematical Theory of Elasticity》（第一版），
+简介中详细描述了弹性理论的发展历史（1927 年出版了 `第四版 <https://www.cambridge.org/us/academic/subjects/mathematics/historical-mathematical-texts/treatise-mathematical-theory-elasticity-4th-edition?format=PB&isbn=9781107618091>`__\ ）。
+以下介绍地震波理论的早期进展：
 
-1875 年，Filippo Cecchi 制作了第一个带时间记录的地震仪。随后，地震仪器不断改善和发展。
-20 世纪初，B. B. Galitzen 制作了第一台电磁地震仪。
-现代地震仪均是电磁地震仪，相比于早期的纯力学设计的仪器，其有很多优势。
-1961 年，全球标准化地震台网（world-wide standardized seismograph network，WWSSN）建立。
-1969 年至 1972 年间，阿波罗登月计划还陆续在月球上部设了一些地震仪。
-20 世纪 60 年代开始，计算机的来临极大地改变了地震学研究。
-1976 年开始，地震学观测资料开始以数字形式存储和获取。
-20 世纪 80 和 90 年代，全球台站空白区域新增加了地震台，全球许多地震台升级为
-宽频带地震仪。地震仪的改进与观测资料的长期积累使得地震学得以快速发展。
+- 弹性理论（elasticity theory）的两个重要发现：胡克定律（Hooke，1660 年）、
+  弹性介质的一般性平衡和运动方程（Navier，1821 年）
+- 从十八世纪早期开始，弹性波传播理论（the theory of elastic wave propagation）
+  由 Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展
 
-地球内部结构在早期的一系列重大突破：
+从十九世纪后期开始，地震学观测开始逐渐发展起来，极大地促进了地震学的发展。
+以下介绍地震学观测的早期进展：
+
+- 1875 年，Filippo Cecchi 制作了第一个带时间记录的地震仪。随后，地震仪器不断改善和发展
+- 20 世纪初，B. B. Galitzen 制作了第一台电磁地震仪。现代地震仪均是电磁地震仪，
+  相比于早期的纯力学设计的仪器，其有很多优势
+- 1961 年，全球标准化地震台网（world-wide standardized seismograph network，WWSSN）建立
+- 1969 年至 1972 年间，阿波罗登月计划还陆续在月球上部设了一些地震仪
+- 20 世纪 60 年代开始，计算机的来临极大地改变了地震学研究
+- 1976 年开始，地震学观测资料开始以数字形式存储和获取
+- 20 世纪 80 和 90 年代，全球台站空白区域新增加了地震台，全球许多地震台升级为宽频带地震仪。
+  地震仪的改进与观测资料的长期积累使得地震学得以快速发展
+
+在地震学理论和观测的早期发展过程中，地球内部结构也取得了一系列重大突破：
 
 - 1906 年，Richard Oldham 报道地球存在地核
 - 1909 年，Andrija Mohorovičić 报道地壳和地幔存在速度间断面（现在称为 Moho 面）
@@ -98,7 +104,7 @@ Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展。这时期，理论�
 - 1940 年，Harold Jeffreys 和 K. E. Bullen 发表了他们最终版本的地震波走时表，
   简称 JB 走时表。该走时表至今仍在使用，并且与当今模型仅差几秒
 
-这里列出部分其他的早期进展：
+此外，这里列出部分其他的早期进展：
 
 - 20 世纪 20 和 30 年代，爆炸等人工震源开始应用在石油勘探行业。
   1956 年，如今地震勘探常用的共中心点叠加（common-midpoint stacking）技术获取专利
