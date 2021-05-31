@@ -31,12 +31,12 @@ jobs:
         # 429: Too many requests
         args: >
           --accept 429
+          --exclude-all-private
           --exclude "https://apt.repos.intel.com/oneapi"
           --exclude "https://man.linuxde.net/"
           --exclude "https://www.virtualbox.org/"
           --exclude "https://pkgs.org/"
           --exclude "https://www.fdsn.org/xml/station/"
-          --exclude "seismo-learn@192.168.1.100"
           --verbose
           "repository/README.md"
           "website/**/*.html"
@@ -45,6 +45,7 @@ jobs:
 
     - name: Create Issue From File
       uses: peter-evans/create-issue-from-file@v3
+      if: github.event_name != 'pull_request'
       with:
         title: Link Checker Report
         content-filepath: ./lychee/out.md
