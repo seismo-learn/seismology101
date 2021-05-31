@@ -25,7 +25,7 @@
 
 - 时间：地震发生时间（origin time），常采用协调世界时（即 Coordinated Universal Time，简写 UTC）
 - 地点：地震发生位置（hypocenter），其向上垂直投影到地面的位置称为震中（epicenter）
-- 强度：地震的大小（magnitude）
+- 强度：地震的大小，常用震级（magnitude）表示
 
 横向上看，地震大部分发生在不同板块的边界处。板块内部也有一些地震发生。
 
@@ -58,6 +58,5 @@
 
    地震的震级、频率以及释放能量的经验关系。
    引自 `How Often Do Earthquakes Occur? <https://www.iris.edu/hq/inclass/fact-sheet/how_often_do_earthquakes_occur>`__\ 。
-
 
 
