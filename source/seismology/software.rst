@@ -41,7 +41,7 @@ SOD，全称是 Standing Order for Data，可以自动筛选并下载地震目�
 并对波形数据做预处理。其具有高度可定制化的特点，可以满足日常科研中地震学数据下载的大部分需求。
 
 - 主页：http://www.seis.sc.edu/sod/
-- 中文教程：https://seismo-learn.org/software/sac/
+- 中文教程：https://seismo-learn.org/software/sod/
 
 .. note::
 
