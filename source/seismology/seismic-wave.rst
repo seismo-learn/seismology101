@@ -61,7 +61,7 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
 
 固体地球各层的分界面命名如下：
 
-- 地壳与地幔的边界：莫霍洛维奇间断面（\ **Moho**\ rovičić discontinuity），或简称莫霍面（Moho 面）
+- 地壳与地幔的边界：莫霍洛维奇间断面（\ **Moho**\ rovičić discontinuity），或简称莫霍面（Moho discontinuity）
 - 地幔和外核的边界：核幔边界（\ **c**\ ore-\ **m**\ antle **b**\ oundary，简写 CMB）
 - 外核与内核的边界：内核边界（\ **i**\ nner-\ **c**\ ore **b**\ oundary，简写 ICB）
 
