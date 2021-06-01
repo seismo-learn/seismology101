@@ -39,7 +39,7 @@
 
    exercises/introduction
    exercises/catalog
-   exercises/metadata
+   exercises/station
    exercises/waveform
 
 .. toctree::
