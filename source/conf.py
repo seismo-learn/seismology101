@@ -80,6 +80,18 @@ copybutton_prompt_is_regexp = True
 copybutton_only_copy_prompt_lines = True
 copybutton_remove_prompts = True
 
+# options for nbsphinx
+nbsphinx_prolog = r"""
+{% set docname = env.doc2path(env.docname, base=None) %}
+
+.. raw:: html
+
+    <div class="admonition note">
+      Download Jupyter notebook:
+      <a class="reference external" href="https://seismo-learn.org/seismology101/{{ docname }}">{{ docname }}</a>
+    </div>
+"""
+
 # -- Options for HTML output -------------------------------------------------
 import sphinx_rtd_theme
 
