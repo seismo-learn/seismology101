@@ -38,6 +38,7 @@
    :hidden:
 
    exercises/introduction
+   exercises/distaz.ipynb
 
 .. toctree::
    :maxdepth: 3
