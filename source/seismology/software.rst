@@ -1,9 +1,18 @@
 常用软件
 ========
 
-日常地震学科研工作中，经常需要使用软件来完成数据处理与分析、绘图以及科学计算等。除非特殊情况，
-大部分我们可以直接使用他人开发好的软件。本节介绍一些地震学常用软件，读者需要在后面的练习
-以及日常的科研工作中，反复使用和熟悉方能完全掌握这些软件。
+日常地震学科研工作中，经常需要使用软件来完成数据处理与分析、绘图以及科学计算等。
+除非特殊情况，大部分我们可以直接使用他人开发好的软件。本节介绍一些地震学常用软件，
+读者需要在后面的练习以及日常的科研工作中，反复使用和思考方能完全掌握这些软件。
+
+.. note::
+
+   建议地震学新手参考中文教程安装和学习以下软件。一般而言，只需阅读中文教程中的入门教程，
+   即可入门和开展科研工作。上手之后，可以进一步阅读中文教程中的进阶教程和官方教程，
+   深入学习和掌握这些软件。
+
+   推荐地震学新手阅读本教程时，仅参考中文教程安装这些软件。《\ :doc:`地震学实践 </exercises/introduction>`\ 》
+   这一章会通过简单实例展示一些基本用法。可以阅读完本教程后，再详细阅读各软件中文和官方教程。
 
 ObsPy
 ------
@@ -13,28 +22,75 @@ ObsPy 是地震学数据处理的 Python 软件包，极大促进了地震学应
 满足了日常科研中与地震学数据相关的大部分需求。
 
 - 主页：https://www.obspy.org/
+- 官方教程：https://docs.obspy.org/
 - 中文教程：https://seismo-learn.org/software/obspy/
+
+可以说正是因为 ObsPy 的出世，地震学科研工作者才可以喊出“\ **人生苦短，我用 Python！**\ ”。
 
 SOD
 ---
 
-主页：
-中文教程：
+SOD，全称是 Standing Order for Data，可以自动筛选并下载地震目录、台站元数据和波形数据，
+并对波形数据做预处理。其具有高度可定制化的特点，可以满足日常科研中地震学数据下载的大部分需求。
+
+- 主页：http://www.seis.sc.edu/sod/
+- 中文教程：https://seismo-learn.org/software/sac/
+
+.. note::
+
+   ObsPy 和 SOD 都可以用于下载数据。这里之所以推荐读者使用 SOD 主要有两方面原因：
+
+   - SOD 功能相对较多。例如，SOD 可以设置根据震相到时下载数据，如从 P 波到时前的 50 秒到
+     P 到时后的 300 秒下载波形，而 ObsPy 暂时并未实现此功能
+   - 虽然从零开始学习 SOD 的语法较难，但目前有很多开源且易懂的 SOD 脚本，读者一般只需
+     复制并做简单修改即可使用
 
 SAC
 ---
 
-主页：
-中文教程：
+SAC，全称 Seismic Analysis Code，是天然地震学领域使用最广泛的数据分析软件包之一。
+我们推荐使用中文手册学习 SAC。至少在某些章节，中文手册比官方手册更好。
+中文手册提供了更多有关数据处理的详细说明，以帮助初学者正确使用 SAC 和学习地震学数据处理基础。
+
+- 主页：http://ds.iris.edu/ds/nodes/dmc/software/downloads/sac/
+- 官方教程：https://ds.iris.edu/files/sac-manual/
+- 中文教程：https://seisman.github.io/SAC_Docs_zh/
+
+.. note::
+
+   日常地震学科研工作中，ObsPy 几乎可以满足大部分地震学数据处理和分析的需求。这里之所以
+   推荐读者使用 SAC 主要有两方面原因：
+
+   - SAC 拥有图形界面，方便实时查看结果
+   - SAC 历史悠久，仍然许多开源代码和用户使用 SAC
 
 GMT
 ---
 
-主页：
-中文教程：
+GMT，全称 Generic Mapping Tools，中文一般译为“通用制图工具”，
+是地球科学最广泛使用的制图软件之一，其具有强大的绘图功能和数据处理功能。
+
+- 主页：https://www.generic-mapping-tools.org/
+- 官方教程：https://docs.generic-mapping-tools.org/
+- 中文教程：https://docs.gmt-china.org/
+
+.. note::
+
+   GMT 是基于 Linux 命令行的软件，日常科研中需要编写脚本调用 GMT 命令绘图，如 Python 脚本、
+   Bash 脚本等。**推荐安装、学习并掌握** `PyGMT <https://www.pygmt.org/latest/>`__
+   来绘制图片，其是 GMT 官方维护的 GMT 的 Python 接口。
 
 TauP
 ----
 
-主页：
-中文教程：
+TauP 用于计算一维球状分层模型下地震震相的走时和路径。
+
+- 主页：https://www.seis.sc.edu/taup/
+- 官方教程：http://www.seis.sc.edu/downloads/TauP/taup.pdf
+- 中文教程：https://seismo-learn.org/software/taup/
+
+.. note::
+
+   TauP 是基于 Linux 命令行的软件，用户直接在终端执行一条命令即可得到结果。
+   ObsPy 提供了 `TauP 的 Python 接口 <https://docs.obspy.org/packages/obspy.taup.html>`__\ ，
+   方便用户在自己的 Python 代码中调用。
