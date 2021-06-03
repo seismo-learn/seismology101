@@ -28,11 +28,11 @@ ObsPy 是地震学数据处理的 Python 软件包，极大促进了地震学应
 其可以用来读写多种地震学数据格式，下载地震目录、台站元数据和波形数据，以及处理和分析波形数据等，
 满足了日常科研中与地震学数据相关的大部分需求。
 
+可以说正是因为 ObsPy 的出世，地震学科研工作者才可以喊出“\ **人生苦短，我用 Python！**\ ”。
+
 - 主页：https://www.obspy.org/
 - 官方教程：https://docs.obspy.org/
 - 中文教程：https://seismo-learn.org/software/obspy/
-
-可以说正是因为 ObsPy 的出世，地震学科研工作者才可以喊出“\ **人生苦短，我用 Python！**\ ”。
 
 SOD
 ---
@@ -40,11 +40,11 @@ SOD
 SOD，全称是 Standing Order for Data，可以自动筛选并下载地震目录、台站元数据和波形数据，
 并对波形数据做预处理。其具有高度可定制化的特点，可以满足日常科研中地震学数据下载的大部分需求。
 
-- 主页：http://www.seis.sc.edu/sod/
-- 中文教程：https://seismo-learn.org/software/sod/
-
 虽然从零开始学习 SOD 的语法较难，但中文教程将持续维护开源且易懂的 SOD 脚本，读者一般只需
 复制并做简单修改即可使用。
+
+- 主页：http://www.seis.sc.edu/sod/
+- 中文教程：https://seismo-learn.org/software/sod/
 
 SAC
 ---
@@ -53,12 +53,12 @@ SAC，全称 Seismic Analysis Code，是天然地震学领域使用最广泛的�
 我们推荐使用中文手册学习 SAC。至少在某些章节，中文手册比官方手册更好。
 中文手册提供了更多有关数据处理的详细说明，以帮助初学者正确使用 SAC 和学习地震学数据处理基础。
 
+SAC 拥有图形界面，方便实时查看结果。SAC 历史悠久，仍有许多开源代码和用户使用 SAC。
+推荐用户学习和掌握 SAC 的基础用法。
+
 - 主页：http://ds.iris.edu/ds/nodes/dmc/software/downloads/sac/
 - 官方教程：https://ds.iris.edu/files/sac-manual/
 - 中文教程：https://seisman.github.io/SAC_Docs_zh/
-
-SAC 拥有图形界面，方便实时查看结果。SAC 历史悠久，仍有许多开源代码和用户使用 SAC。
-推荐用户学习和掌握 SAC 的基础用法。
 
 GMT
 ---
@@ -66,12 +66,12 @@ GMT
 GMT，全称 Generic Mapping Tools，中文一般译为“通用制图工具”，
 是地球科学最广泛使用的制图软件之一，其具有强大的绘图功能和数据处理功能。
 
+`PyGMT <https://www.pygmt.org/latest/>`__ 是 GMT 官方维护的 GMT 的 Python 接口，
+目前仍在快速开发中。
+
 - 主页：https://www.generic-mapping-tools.org/
 - 官方教程：https://docs.generic-mapping-tools.org/
 - 中文教程：https://docs.gmt-china.org/
-
-`PyGMT <https://www.pygmt.org/latest/>`__ 是 GMT 官方维护的 GMT 的 Python 接口，
-目前仍在快速开发中。
 
 TauP
 ----
