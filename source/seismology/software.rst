@@ -57,13 +57,8 @@ SAC，全称 Seismic Analysis Code，是天然地震学领域使用最广泛的�
 - 官方教程：https://ds.iris.edu/files/sac-manual/
 - 中文教程：https://seisman.github.io/SAC_Docs_zh/
 
-.. note::
-
-   日常地震学科研工作中，ObsPy 几乎可以满足大部分地震学数据处理和分析的需求。这里之所以
-   推荐读者使用 SAC 主要有两方面原因：
-
-   - SAC 拥有图形界面，方便实时查看结果
-   - SAC 历史悠久，仍然许多开源代码和用户使用 SAC
+SAC 拥有图形界面，方便实时查看结果。SAC 历史悠久，仍有许多开源代码和用户使用 SAC。
+推荐用户学习和掌握 SAC 的基础用法。
 
 GMT
 ---
