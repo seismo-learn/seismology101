@@ -70,11 +70,8 @@ GMT，全称 Generic Mapping Tools，中文一般译为“通用制图工具”�
 - 官方教程：https://docs.generic-mapping-tools.org/
 - 中文教程：https://docs.gmt-china.org/
 
-.. note::
-
-   GMT 是基于 Linux 命令行的软件，日常科研中需要编写脚本调用 GMT 命令绘图，如 Python 脚本、
-   Bash 脚本等。**推荐安装、学习并掌握** `PyGMT <https://www.pygmt.org/latest/>`__
-   来绘制图片，其是 GMT 官方维护的 GMT 的 Python 接口。
+`PyGMT <https://www.pygmt.org/latest/>`__ 是 GMT 官方维护的 GMT 的 Python 接口，
+目前仍在快速开发中。
 
 TauP
 ----
