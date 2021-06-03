@@ -38,6 +38,9 @@
    :hidden:
 
    exercises/introduction
+   exercises/catalog
+   exercises/station
+   exercises/waveform
 
 .. toctree::
    :maxdepth: 3
