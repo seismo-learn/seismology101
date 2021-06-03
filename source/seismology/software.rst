@@ -43,14 +43,8 @@ SOD，全称是 Standing Order for Data，可以自动筛选并下载地震目�
 - 主页：http://www.seis.sc.edu/sod/
 - 中文教程：https://seismo-learn.org/software/sod/
 
-.. note::
-
-   ObsPy 和 SOD 都可以用于下载数据。这里之所以推荐读者使用 SOD 主要有两方面原因：
-
-   - SOD 功能相对较多。例如，SOD 可以设置根据震相到时下载数据，如从 P 波到时前的 50 秒到
-     P 到时后的 300 秒下载波形，而 ObsPy 暂时并未实现此功能
-   - 虽然从零开始学习 SOD 的语法较难，但目前有很多开源且易懂的 SOD 脚本，读者一般只需
-     复制并做简单修改即可使用
+虽然从零开始学习 SOD 的语法较难，但中文教程将持续维护开源且易懂的 SOD 脚本，读者一般只需
+复制并做简单修改即可使用。
 
 SAC
 ---
