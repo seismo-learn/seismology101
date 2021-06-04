@@ -12,6 +12,8 @@ Ubuntu 配置指南
    建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.2 LTS）或最新版本
    （目前是 Ubuntu 20.10）。如遇到问题，欢迎反馈。
 
+.. include:: setup-note.rst_
+
 ----
 
 安装系统

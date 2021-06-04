@@ -11,6 +11,8 @@ Fedora 配置指南
    本节内容适用于 **Fedora 33 Workstation**\，不一定适用于其他 Fedora 版本。
    建议用户总是选择 Fedora 最新版本。如遇到问题，欢迎反馈。
 
+.. include:: setup-note.rst_
+
 安装系统
 --------
 
