@@ -12,6 +12,11 @@ Ubuntu 配置指南
    建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.2 LTS）或最新版本
    （目前是 Ubuntu 20.10）。如遇到问题，欢迎反馈。
 
+.. note::
+
+   本配置指南仅\ **安装系统**\ 部分是必需的，读者可以选择是否执行其他配置。
+   对于地震学新手，\ **推荐**\ 至少配置\ **编程开发环境**\ 。
+
 ----
 
 安装系统
@@ -177,35 +182,41 @@ Intel 软件开发工具包
 是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
-在 Ubuntu 系统下，官方手册提供了多种\
-`安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
-如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
+地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
-添加 Intel 仓库公钥::
+.. dropdown:: :fa:`exclamation-circle,mr-1` 安装 Intel 软件开发工具包
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
-    # 下载 Intel 仓库公钥
-    $ cd ~/Downloads
-    $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-    # 添加到 apt 源密钥环中，以便使用此密钥签名的档案受到信任
-    $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-    # 删除公钥
-    $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+   在 Ubuntu 系统下，官方手册提供了多种\
+   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
+   如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
 
-添加 Intel 软件仓库::
+   添加 Intel 仓库公钥::
 
-    $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
-    $ sudo apt update
+       # 下载 Intel 仓库公钥
+       $ cd ~/Downloads
+       $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+       # 添加到 apt 源密钥环中，以便使用此密钥签名的档案受到信任
+       $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+       # 删除公钥
+       $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
 
-日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
+   添加 Intel 软件仓库::
 
-    $ sudo apt install intel-basekit
-    $ sudo apt install intel-hpckit
+       $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
+       $ sudo apt update
 
-配置环境变量::
+   日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
 
-    $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+       $ sudo apt install intel-basekit
+       $ sudo apt install intel-hpckit
 
-更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
+   配置环境变量::
+
+       $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+
+   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
 
 .. include:: intel-oneapi-warning.rst_
 
