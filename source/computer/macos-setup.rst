@@ -191,7 +191,9 @@ C/C++
 Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
 C/C++ 编译器。
 
-.. note::
+.. dropdown:: :fa:`exclamation-circle,mr-1` GCC 编译器
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
     Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
     `Apple Clang <https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html>`__ 编译器，
