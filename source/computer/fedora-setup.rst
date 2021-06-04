@@ -176,32 +176,34 @@ Fortran 编译器，其提供了 ``gfortran`` 命令::
 Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-
-   地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
-
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
 是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
-在 Fedora 系统下，官方手册提供了多种\
-`安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
-如在线安装、本地安装、使用 ``dnf`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``dnf`` 安装。
+地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
-下载 :file:`.repo` 文件 :download:`oneapi.repo`\ ，并将其放在 :file:`/etc/yum.repos.d` 目录下::
+.. dropdown:: :fa:`exclamation-circle,mr-1` 安装 Intel 软件开发工具包
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
-    $ sudo mv oneapi.repo /etc/yum.repos.d/
+   在 Fedora 系统下，官方手册提供了多种\
+   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
+   如在线安装、本地安装、使用 ``dnf`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``dnf`` 安装。
 
-日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
+   下载 :file:`.repo` 文件 :download:`oneapi.repo`\ ，并将其放在 :file:`/etc/yum.repos.d` 目录下::
 
-    $ sudo dnf install intel-basekit
-    $ sudo dnf install intel-hpckit
+       $ sudo mv oneapi.repo /etc/yum.repos.d/
 
-配置环境变量::
+   日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
 
-    $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+       $ sudo dnf install intel-basekit
+       $ sudo dnf install intel-hpckit
 
-更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
+   配置环境变量::
+
+       $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+
+   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
 
 .. include:: intel-oneapi-warning.rst_
 
