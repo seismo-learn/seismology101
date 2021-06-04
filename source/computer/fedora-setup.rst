@@ -173,6 +173,10 @@ Fortran 编译器，其提供了 ``gfortran`` 命令::
 Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+
+   地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
+
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
 是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
