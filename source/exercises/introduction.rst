@@ -15,7 +15,7 @@
 情况下，地震学科研工作者直接可以从数据中心下载到公开的波形数据（time series data）。
 此外，一些数据中心也会提供地震目录（catalog）和台站元数据（medadata）。
 目前全球比较知名的数据中心有 `Incorporated Research Institutions for Seismology (IRIS) <https://www.iris.edu/hq/>`__\ 、
-`Observatories & Research Facilities for European Seismology <http://www.orfeus-eu.org/>`__\ 、
+`Observatories & Research Facilities for European Seismology (ORFEUS) <http://www.orfeus-eu.org/>`__\ 、
 `Hi-net <https://hinetwww11.bosai.go.jp/auth/?LANG=en>`__ 等。
 
 .. figure:: workflow.jpg
