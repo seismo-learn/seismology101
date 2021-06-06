@@ -51,16 +51,6 @@
    best-practices/file-organization
    best-practices/software-installation
    best-practices/backup
-
-.. toctree::
-   :maxdepth: 3
-   :caption: 实践经验
-   :hidden:
-
-   best-practices/introduction
-   best-practices/file-organization
-   best-practices/software-installation
-   best-practices/backup
    best-practices/zsh
 
 
