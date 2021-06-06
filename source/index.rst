@@ -38,9 +38,19 @@
    :hidden:
 
    exercises/introduction
-   exercises/catalog
-   exercises/station
-   exercises/waveform
+   exercises/download
+   exercises/process
+   exercises/analysis
+
+.. toctree::
+   :maxdepth: 3
+   :caption: 实践经验
+   :hidden:
+
+   best-practices/introduction
+   best-practices/file-organization
+   best-practices/software-installation
+   best-practices/backup
 
 .. toctree::
    :maxdepth: 3
