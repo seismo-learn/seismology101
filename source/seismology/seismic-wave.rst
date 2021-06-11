@@ -210,12 +210,15 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 
    大陆和大洋的面波群速度。修改自《\ `An Introduction to the Theory of Seismology`_\ 》（第四版）图 11.1。
 
-.. 该图实际上是利用 WebPlotDigitizer 软件（https://automeris.io/WebPlotDigitizer/）
-.. 从《Earthquakes and Geological Discovery》的第五章中抠的数据绘制而成的。
+.. 该图实际上来自《Earthquakes and Geological Discovery》第五章的一张图，
+.. 我们利用 WebPlotDigitizer 软件（https://automeris.io/WebPlotDigitizer/）抠出数据，用 GMT 绘制而成的。
 .. 《New Manual of Seismological Observatory Practice》第二章的图 2.10 也有类似的图:
 .. https://doi.org/10.2312/GFZ.NMSOP-2_ch2
 .. MIT OCW (Introduction to Seismology) 的 Lecture 12 的图 12 也类似:
 .. https://ocw.mit.edu/courses/earth-atmospheric-and-planetary-sciences/12-510-introduction-to-seismology-spring-2010/
+.. 这些频散曲线均来自 Oliver, J. (1962). A summary of observed seismic surface wave dispersion.
+.. Bulletin of the Seismological Society of America, 52(1), 81-86.
+.. https://pubs.geoscienceworld.org/ssa/bssa/article-abstract/52/1/81/101314/A-summary-of-observed-seismic-surface-wave?redirectedFrom=fulltext
 
 .. _Introduction to Seismology: https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742
 .. _An Introduction to Seismology, Earthquakes, and Earth Structure: https://www.wiley.com/en-us/An+Introduction+to+Seismology%2C+Earthquakes%2C+and+Earth+Structure-p-9780865420786
