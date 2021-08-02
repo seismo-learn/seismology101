@@ -1,0 +1,14 @@
+msgid "Edit on GitHub"
+msgstr "编辑本页"
+
+msgid "Docs"
+msgstr "首页"
+
+msgid "Built with %(sphinx_web)s using a"
+msgstr "利用 %(sphinx_web)s 构建，使用的 "
+
+msgid "theme"
+msgstr "sphinx_rtd_theme 主题"
+
+msgid "provided by %(readthedocs_web)s"
+msgstr "由 %(readthedocs_web)s 开发"
