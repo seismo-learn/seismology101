@@ -6,18 +6,24 @@ Ubuntu 配置指南
 :最近更新日期: 2021-01-25
 :预计花费时间: 120 分钟
 
-.. note::
-
-   本节内容适用于 **Ubuntu Desktop 20.04.2 LTS**\，不一定适用于其他 Ubuntu 版本。
-   建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.2 LTS）或最新版本
-   （目前是 Ubuntu 20.10）。如遇到问题，欢迎反馈。
-
-.. note::
-
-   本配置指南仅\ **安装系统**\ 部分是必需的，读者可以选择是否执行其他配置。
-   对于地震学新手，\ **推荐**\ 至少配置\ **编程开发环境**\ 。
-
 ----
+
+.. note::
+
+   本节内容适用于 **Ubuntu Desktop 20.04.2 LTS**，不一定适用于其他 Ubuntu 版本。
+   建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04 LTS）或最新版本
+   （目前是 Ubuntu 21.04），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
+
+.. note::
+
+   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+   相关配置。
+
+   #. `安装系统`_ [**必须**]
+   #. `系统软件`_ [**必须**]
+   #. `编程开发环境`_ [**强力推荐**]
+   #. `命令行工具`_ [**推荐**]
+   #. `日常软件`_ [**可选**]
 
 安装系统
 --------
@@ -105,7 +111,7 @@ Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件�
 .. warning::
 
     更新系统前，特别是大版本更新（如 Ubuntu 20.04 更新为 Ubuntu 20.10），
-    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`\ ）。
+    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`）。
 
 .. note::
 
@@ -127,7 +133,7 @@ Ubuntu 系统自带了“软件中心”，可用于查找、安装、卸载和�
 
    注意：在替换软件源镜像后要执行 ``sudo apt update`` 更新本地缓存的软件包元数据。
 
-``apt`` 的详细用法请阅读 `apt 帮助文档 <http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html>`__\ ，
+``apt`` 的详细用法请阅读 `apt 帮助文档 <http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html>`__，
 这里只介绍一些常用命令::
 
     # 更新本地软件包元数据
@@ -189,7 +195,7 @@ Intel 软件开发工具包
    :title: bg-info text-white font-weight-bold
 
    在 Ubuntu 系统下，官方手册提供了多种\
-   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
+   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__，
    如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
 
    添加 Intel 仓库公钥::
@@ -216,7 +222,7 @@ Intel 软件开发工具包
 
        $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
-   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/top.html>`__\ 。
+   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/top.html>`__。
 
 .. include:: intel-oneapi-warning.rst_
 
@@ -271,15 +277,15 @@ ack
 ^^^^^^^^^^
 
 Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
+推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__。
 根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions>`__\
 安装即可。
 
 解压软件
 ^^^^^^^^
 
-Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
-``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
+Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``、
+``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
 后即可通过双击直接解压 ``.rar`` 文件::
 
@@ -299,16 +305,16 @@ Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
 以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
 
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分割终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分割终端
-- :kbd:`Alt` + :kbd:`上下左右`\ :  切换子终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`：水平分割终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`：垂直分割终端
+- :kbd:`Alt` + :kbd:`上下左右`：切换子终端
 
 Google Earth
 ^^^^^^^^^^^^
 
 Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
 并允许用户添加 KML 或 KMZ 格式的自定义数据。
-非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
+非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
 重度用户可以按照如下步骤安装桌面版。
 
 1. 下载 64 位 deb 包：https://www.google.com/earth/versions/#download-pro
