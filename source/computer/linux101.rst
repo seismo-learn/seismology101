@@ -22,15 +22,10 @@ Linux 入门
 
 2.  Bash 脚本教程
 
-    - 主页：目前存在两个网站，建议首先使用网道网站版本
+    - 主页：
 
-      - https://wangdoc.com/bash/：网道网站（正在建设和维护中）
-      - https://www.bookstack.cn/books/bash-tutorial：书栈网（已完成的第一版，不清楚是否还在维护）
+      - https://wangdoc.com/bash/ （仅包含 Bash 脚本部分）
+      - https://www.bookstack.cn/books/bash-tutorial （包含 Bash 脚本和 Linux 基础）
 
     - 作者：`阮一峰 <https://github.com/ruanyf>`__
     - 内容：系统地介绍了 Bash 脚本以及部分 Linux 基础
-
-3.  Shell 教程
-
-    - 主页：https://www.runoob.com/linux/linux-shell.html
-    - 作者：`菜鸟教程 <https://www.runoob.com/>`__
