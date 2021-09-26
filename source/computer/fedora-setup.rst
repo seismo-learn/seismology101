@@ -6,15 +6,24 @@ Fedora 配置指南
 :最近更新日期: 2021-01-25
 :预计花费时间: 120 分钟
 
-.. note::
-
-   本节内容适用于 **Fedora 33 Workstation**\，不一定适用于其他 Fedora 版本。
-   建议用户总是选择 Fedora 最新版本。如遇到问题，欢迎反馈。
+----
 
 .. note::
 
-   本配置指南仅\ **安装系统**\ 部分是必需的，读者可以选择是否执行其他配置。
-   对于地震学新手，\ **推荐**\ 至少配置\ **编程开发环境**\ 。
+   本节内容适用于 **Fedora 33 Workstation**，不一定适用于其他 Fedora 版本。
+   建议用户访问 `Fedora 官网 <https://getfedora.org/>`__ 下载并安装 Fedora
+   最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
+
+.. note::
+
+   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+   相关配置。
+
+   #. `安装系统`_ [**必须**]
+   #. `系统软件`_ [**必须**]
+   #. `编程开发环境`_ [**强力推荐**]
+   #. `命令行工具`_ [**推荐**]
+   #. `日常软件`_ [**可选**]
 
 安装系统
 --------
@@ -75,8 +84,8 @@ USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh/>`
 
 进入 Live 系统之后，选择 “Install to Hard Drive” 即开始安装。
 
-安装程序会首先要你选择安装过程中的语言，可以选择“中文”->“简体中文（中国）”
-或 “English”->“English (Unite States)”，然后点击下方的“继续”按钮。
+安装程序会首先要你选择安装过程中的语言，可以选择“中文”→“简体中文（中国）”
+或 “English”→“English (Unite States)”，然后点击下方的“继续”按钮。
 接着选择键盘布局（汉语或 “English(US)”）、时区和时间（例如“亚洲-上海”）。
 
 点击“安装目的地”，选择要将系统安装到哪一块硬盘以及如何分区。
@@ -104,7 +113,7 @@ Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软�
 .. warning::
 
    更新系统前，特别是大版本更新（如 Fedora 33 更新为 Fedora 34），
-   最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`\ ）。
+   最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`）。
 
 .. note::
 
@@ -126,7 +135,7 @@ Fedora 系统自带了“软件中心”，可用于查找、安装、卸载和�
 
    注意：在替换软件源镜像后要执行 ``sudo dnf makecache`` 更新本地缓存的软件包元数据。
 
-``dnf`` 的详细用法请阅读 `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__\ ，
+``dnf`` 的详细用法请阅读 `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__，
 这里只介绍一些常用命令::
 
     # 更新本地软件包元数据缓存
@@ -187,10 +196,10 @@ Intel 软件开发工具包
    :title: bg-info text-white font-weight-bold
 
    在 Fedora 系统下，官方手册提供了多种\
-   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
+   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__，
    如在线安装、本地安装、使用 ``dnf`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``dnf`` 安装。
 
-   下载 :file:`.repo` 文件 :download:`oneapi.repo`\ ，并将其放在 :file:`/etc/yum.repos.d` 目录下::
+   下载 :file:`.repo` 文件 :download:`oneapi.repo`，并将其放在 :file:`/etc/yum.repos.d` 目录下::
 
        $ sudo mv oneapi.repo /etc/yum.repos.d/
 
@@ -203,7 +212,7 @@ Intel 软件开发工具包
 
        $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
-   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/top.html>`__\ 。
+   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/top.html>`__。
 
 .. include:: intel-oneapi-warning.rst_
 
@@ -232,7 +241,7 @@ git
 命令行工具
 ----------
 
-Fedora 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它
+Fedora 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其他
 有用的命令行工具。
 
 tldr
@@ -259,15 +268,15 @@ ack
 ^^^^^^^^^^
 
 Fedora 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
+推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__。
 根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions>`__\
 安装即可。
 
 解压软件
 ^^^^^^^^
 
-Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
-``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
+Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``、
+``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
 后即可通过双击直接解压 ``.rar`` 文件::
 
@@ -285,18 +294,18 @@ Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
     $ sudo dnf install terminator
 
-以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__\：
+以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
 
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分割终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分割终端
-- :kbd:`Alt` + :kbd:`上下左右`\ :  切换子终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`：水平分割终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`：垂直分割终端
+- :kbd:`Alt` + :kbd:`上下左右`：切换子终端
 
 Google Earth
 ^^^^^^^^^^^^
 
 Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
 并允许用户添加 KML 或 KMZ 格式的自定义数据。
-非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
+非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
 重度用户可以按照如下步骤安装桌面版。
 
 1. 下载 64 位 RPM 包：https://www.google.com/earth/versions/#download-pro
