@@ -7,6 +7,8 @@ WSL 配置指南
 :最近更新日期: 2021-01-21
 :预计花费时间: 120 分钟
 
+----
+
 .. warning::
 
    本文尚未经过除作者外的其他 Windows 用户测试，欢迎阅读并给与反馈。
@@ -23,8 +25,6 @@ WSL 配置指南
    使用 Linux 系统时，在桌面或菜单栏中找到并点击 “Terminal” 图标以启动终端，
    然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
-----
-
 简介
 ----
 
@@ -32,7 +32,7 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 因为它提供更快的性能和 100% 的系统调用兼容性。涉及到跨系统的文件互访时
 （Linux 访问 Windows 里的文件，或 Windows 访问 Linux 里的文件），使用 WSL1 具有
 更快的性能。WSL1 和 WSL2 的详细对比见\
-`官方文档 <https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions>`__\ 。
+`官方文档 <https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions>`__。
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
@@ -77,9 +77,10 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
    - 英文指南：https://fedoramagazine.org/wsl-fedora-33/
    - 中文指南：https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/
 
-   指南中的 Fedora rootfs 下载地址可能已失效。请访问
-   https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64
-   下载最新版本。
+   指南中的 Fedora rootfs 下载地址可能已失效。请访问 Fedora 官方仓库下载
+   `Fedora 33 <https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64>`__\ （安装指南中使用的版本）
+   或 `Fedora 34 <https://github.com/fedora-cloud/docker-brew-fedora/tree/34/x86_64>`__\ （Fedora 最新版本）
+   镜像文件。
 
    Fedora 只支持 WSL2。
 
@@ -159,10 +160,10 @@ Windows 访问 WSL
 
 在 Windows 下搜索、打开和编辑 WSL 下的文件和目录的方式有以下两种：
 
-1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$``\ ，会显示所有已安装的 WSL 目录，
+1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$``，会显示所有已安装的 WSL 目录，
    然后根据需要找到文件进行操作
 
-2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``\ ，会在 Windows 下打开
+2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``，会在 Windows 下打开
    家目录，根据需要找到文件进行操作
 
 在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：
@@ -189,21 +190,21 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
    推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
    实现文件夹和文件的快速定位。
 
-   推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__\ ，
+   推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__，
    可直接在 Microsoft Store 中安装。界面美观、操作方便，
    支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。
    可完全替代 CMD 和 PowerShell。
 
-   推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__\ ，并安装插件
-   `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__\ 。
+   推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__，并安装插件
+   `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__。
    使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
 
 配置 Linux
 -----------
 
 安装 WSL 后，还需要对 Linux 系统进行配置。
-Ubuntu 和 Fedora 用户可以分别参考《\ :doc:`/computer/ubuntu-setup`\ 》和
-《\ :doc:`/computer/fedora-setup`\ 》对系统进行配置，以满足科研工作的需求。
+Ubuntu 和 Fedora 用户可以分别参考《:doc:`/computer/ubuntu-setup`》和
+《:doc:`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
 
 安装 X Server
 --------------
@@ -217,18 +218,16 @@ WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
    主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接收对图形输出
    的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
 
-Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ 、
-`Xming <http://www.straightrunning.com/XmingNotes/>`__\ 、
+Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__、
+`Xming <http://www.straightrunning.com/XmingNotes/>`__、
 `Xmanager <https://www.xshellcn.com/>`__ 等。
 其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。
 Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
 VcXsrv 的使用方式和界面与 Xming 极为相近。
 推荐使用 VcXsrv，本文以此软件为例进行介绍。
 
-1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__\ ，默认安装即可
-
-2.  运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**\，其他选项无需更改
-
+1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__，默认安装即可
+2.  运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**，其他选项无需更改
 3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化。需要修改 Linux 的
     环境变量以保证始终能连接到 X Server::
 
