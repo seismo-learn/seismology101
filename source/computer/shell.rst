@@ -269,4 +269,4 @@ Here 文档（here document）是一种输入多行字符串的方法，格式�
     2
 
     # 可以无限多次使用管道。使用 cat 命令将上例的输出重定向写入 pipe.dat 文件中
-    echo "Hello World" | wc -w | cat > pipe.dat
+    $ echo "Hello World" | wc -w | cat > pipe.dat
