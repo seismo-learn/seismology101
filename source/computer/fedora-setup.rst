@@ -244,6 +244,15 @@ git
 Fedora 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其他
 有用的命令行工具。
 
+dos2unix & unix2dos
+^^^^^^^^^^^^^^^^^^^
+
+Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
+``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符。
+``unix2dos`` 则反之::
+
+    $ sudo dnf install dos2unix
+
 tldr
 ^^^^
 
