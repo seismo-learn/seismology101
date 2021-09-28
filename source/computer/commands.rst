@@ -242,7 +242,7 @@ gawk
     $ gawk -F ':' '{print $1,$3}' /etc/passwd
 
     # 同上，并输出每一行的行号
-    $ gawk -F ':' '{print NR, $1,$3}' /etc/passwd
+    $ gawk -F ':' '{print NR,$1,$3}' /etc/passwd
 
 grep
 ----
