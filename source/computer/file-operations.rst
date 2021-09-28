@@ -3,7 +3,7 @@
 
 :本节贡献者: |姚家园|\（作者）、
              |田冬冬|\（审稿）
-:最近更新日期: 2021-02-10
+:最近更新日期: 2021-04-23
 :预计花费时间: 30 分钟
 
 ----
@@ -32,7 +32,9 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 操作文件与目录
 --------------
 
-打开终端，使用以下命令熟悉和掌握 Linux 系统下文件和目录的常用操作。假设用户名是 seismo-learn。
+接下来将通过一系列命令熟悉和掌握 Linux 系统下文件和目录的常用操作。
+读者应打开终端，根据下面的教程自行输入命令（不要复制粘贴！），记住并理解每个
+命令的作用。这一部分中，假设用户名是 seismo-learn，读者根据自己的情况自行修改。
 
 查看文件和目录::
 
@@ -80,10 +82,10 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 进入 workspace 目录
     $ cd workspace
-    # 使用 touch 命令创建新文件 hello-world.txt 和 seiso-learn.txt
-    $ touch hello-world.txt seiso-learn.txt
+    # 使用 touch 命令创建新文件 hello-world.txt 和 seismo-learn.txt
+    $ touch hello-world.txt seismo-learn.txt
     $ ls
-    hello-world.txt  seiso-learn.txt  source
+    hello-world.txt  seismo-learn.txt  source
 
 以下所有操作都假设读者已经切换到 :file:`~/workspace` 目录下了，即::
 
@@ -95,51 +97,51 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     # 使用 cp（copy，即复制）命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
     $ cp hello-world.txt hello-world-cp.txt
     $ ls
-    hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
-    # 复制 hello-world.txt 和 seiso-learn.txt 文件到 source 目录下
-    $ cp hello-world.txt seiso-learn.txt source
+    hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
+    # 复制 hello-world.txt 和 seismo-learn.txt 文件到 source 目录下
+    $ cp hello-world.txt seismo-learn.txt source
     $ ls source
-    hello-world.txt  seiso-learn.txt
+    hello-world.txt  seismo-learn.txt
 
     # 复制 source 目录为同一目录下的 destination 目录（目标目录不存在）
     $ cp -r source destination
     $ ls
-    destination  hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
+    destination  hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
     $ ls destination
-    hello-world.txt  seiso-learn.txt
+    hello-world.txt  seismo-learn.txt
     # 复制 source 目录到同一目录下的 destination 目录下（目标目录已存在）
     $ cp -r source destination
     $ ls destination
-    hello-world.txt  seiso-learn.txt  source
+    hello-world.txt  seismo-learn.txt  source
 
 移动文件和目录::
 
     # 使用 mv（move，即移动）命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
     $ mv hello-world.txt hello-world-mv.txt
     $ ls
-    destination  hello-world-cp.txt  hello-world-mv.txt  seiso-learn.txt  source
+    destination  hello-world-cp.txt  hello-world-mv.txt  seismo-learn.txt  source
     # 移动 hello-world-cp.txt 和 hello-world-mv.txt 文件到 source 目录下
     $ mv hello-world-cp.txt hello-world-mv.txt source
     ls
-    destination  seiso-learn.txt  source
+    destination  seismo-learn.txt  source
     $ ls source
-    hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seiso-learn.txt
+    hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seismo-learn.txt
 
     # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
     $ mv source source-mv
     ls
-    destination  seiso-learn.txt  source-mv
+    destination  seismo-learn.txt  source-mv
     # 移动 source-mv 目录到同一目录下的 destination 目录下
     $ mv source-mv destination
     $ ls
-    destination  seiso-learn.txt
+    destination  seismo-learn.txt
     $ ls destination
-    hello-world.txt  seiso-learn.txt  source  source-mv
+    hello-world.txt  seismo-learn.txt  source  source-mv
 
 删除文件和目录::
 
-    # 使用 rm（remove，即删除）命令删除 seiso-learn.txt 文件
-    $ rm seiso-learn.txt
+    # 使用 rm（remove，即删除）命令删除 seismo-learn.txt 文件
+    $ rm seismo-learn.txt
     $ ls
     destination
     # 删除 destination 目录
@@ -156,8 +158,11 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 .. warning::
 
-   使用 ``rm`` 命令时一定要小心再小心，不要误删重要文件。可以先把要删除的文件移动到
-   某目录下（如 :file:`~/trash`\ ），再删除。
+   使用 ``rm`` 命令删除的文件会被直接删除，并不会被放在回收站里。
+   因而执行 ``rm`` 命令时一定要小心再小心，不要误删重要文件。
+   可以先把要删除的文件移动到某目录下（如 :file:`~/trash`\ ），之后统一删除；
+   也可以考虑使用其他命令行工具管理回收站
+   （如 `trash-cli <https://github.com/andreafrancia/trash-cli>`__）。
 
 建立文件和目录的链接::
 
@@ -175,7 +180,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 建立 source 目录的软链接
     $ ln -s source source-soft
-    
+
     # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
     $ ls -l
     total 0
@@ -228,8 +233,8 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    当前路径也可以省略，即 :file:`Beijing/IC-BJI.sac`
 -  :file:`..`\ ：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
 -  :file:`../..`\ ：上一层的上一层目录，即 :file:`~/projects` 目录
--  :file:`../figures`\ ：上一层目录下的 :file:`figure` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
--  :file:`../figures/fig1.pdf`\ ：上一层目录下的 :file:`figure` 目录下的 :file:`fig1.pdf` 文件，
+-  :file:`../figures`\ ：上一层目录下的 :file:`figures` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
+-  :file:`../figures/fig1.pdf`\ ：上一层目录下的 :file:`figures` 目录下的 :file:`fig1.pdf` 文件，
    即 :file:`~/projects/NorthChina-MTZ/figures/fig1.pdf`
 
 .. note::
@@ -245,7 +250,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 文件权限
 ---------
 
-Linux 下每个文件和目录都有自己的权限，使用以下命令查看文件或目录的权限::
+Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可以查看文件或目录的权限::
 
     # 进入 ~/workspace 目录，并新建 hello-world.sh 文件和 source 目录
     $ cd ~/workspace
@@ -258,30 +263,32 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
     -rw-r--r-- 1 seismo-learn seismo-learn 0 Feb  7 22:07 hello-world.sh
     drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
 
-第一列字符串（如 ``-rw-r--r--``\ ）从左到右意义分别是：
+``ls -l`` 的输出中，第一列为文件权限位，第三列和第四列分别表示文件所属用户和用户组。
+此处，文件 :file:`hello-world.txt` 和目录 :file:`source` 属于用户 seismo-learn，
+且属于用户组 seismo-learn（对于个人计算机而言，用户组通常有且仅有一个用户，
+因而用户组与用户同名）。
 
--  第一位：文件类型，其中\ ``-`` 表示普通文件，\ ``d`` 表示目录
+第一列文件权限位总共包含了 10 位信息（如 ``-rw-r--r--``\ ），从左到右的含义分别是：
+
+-  第一位：文件类型（例如，\ ``-`` 表示普通文件，\ ``d`` 表示目录）
 -  第二到第四位：文件所属用户的权限
 -  第五到第七位：文件所属用户组的权限
 -  第八到第十位：其他人的权限
 
-第三和第四列分别表示文件所属用户和用户组（如 ``seismo-learn seismo-learn``\ ）
+每种权限（即文件所属用户的权限、文件所属用户组的权限、其他人的权限）
+包含三位信息，第一位 ``r`` 代表可读取（read），第二位 ``w`` 代表可写入（write），
+第三位 ``x`` 代表可执行（execute，对于目录而言表示可以进去该目录），\ ``-`` 代表没有对应的权限。
 
-可以看出 :file:`hello-world.txt` 是一个普通文件，所属用户权限（即 seismo-learn）是
-``rw-``\ （可读、可写、不可执行），所属用户组（即 seismo-learn）的权限是 ``r--``
-（可读、不可写、不可执行），其他人的权限是 ``r--``\ （可读、不可写、不可执行）。
+从文件的权限位可以看出，用户 seismo-learn 可以读写文件 :file:`hello-world.sh`\ ，
+但不可直接执行该文件，对 :file:`source` 目录拥有可读、可写、可执行的权限。
 
-每个权限，第一位 ``r`` 代表可读取 (read)，第二位 ``w`` 代表可写入（write），
-第三位 ``x`` 代表可执行（execute），\ ``-`` 代表没有对应的权限。例如，seismo-learn 用户
-对 :file:`hello-world.sh` 文件拥有可读、可写、不可执行的权限，对 :file:`source` 目录
-拥有可读、可写、可执行的权限。目录的可执行权限代表可以进入该目录。
-
-还可以用数字表示权限，4 代表可读，2 代表可写，1 代表可执行。因为 :math:`4+2+1=7`\ ，所以 7
-代表可读、可写、可执行。以此类推，6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
+除了用字母 ``rwx`` 表示权限外，还可以用数字表示权限。4 代表可读，2 代表可写，
+1 代表可执行。因为 :math:`4+2+1=7`\ ，所以 7 代表可读、可写、可执行。以此类推，
+6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
 4 代表可读、不可写、不可执行。
 
 使用 ``chmod``\ （change mode，即变更模式）命令可以修改文件或目录的权限，可以参考
-`Linux chmod命令 <https://www.runoob.com/linux/linux-comm-chmod.html>`__ 了解该命令
+`Linux chmod 命令 <https://www.runoob.com/linux/linux-comm-chmod.html>`__ 了解该命令
 详细用法。以下只展示常用用法::
 
     # 修改 hello-world.sh 权限
@@ -293,6 +300,9 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
     # 增加 hello-world.sh 的可执行属性
     $ chmod +x hello-world.sh
     -rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
+
+    # 当文件有可执行权限后，即可通过 ./文件名 的方式直接执行该文件
+    $ ./hello-world.sh
 
 有时候使用 Linux 的命令或安装程序，可能由于没有读写某些文件的权限，而无法运行命令或
 安装程序。这时可以使用 ``sudo`` 命令临时获得 root 用户的权限。例如，在 Fedora 下安装

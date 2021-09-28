@@ -51,9 +51,9 @@
 
 除了使用移动硬盘备份文件以外，还可以将部分文件同时备份到云端，多一份保障。例如，将程序和脚本等
 推送到 `GitHub <https://github.com/>`__ 上，将部分文件同步到网盘（如百度网盘、
-OneDrive、Google Drive、Dropbox、iCloud 等）。需要小心的是，若文件在本地被误删或者损坏，
-云端可能会同步这些“更改”。此外还存在无法登录这些应用的可能，云端存储的文件也可能会随之丢失。
-所以最好把云端备份当作本地移动硬盘备份的补充，而不是重要文件的唯一备份。
+OneDrive、Google Drive、Dropbox、iCloud 等）。需要注意，若误删本地文件，
+云端可能会同步这些“更改”；一些应用可能有时或永久无法登录，造成云端备份文件暂时或永久性丢失。
+因此，最好把云端备份当作本地移动硬盘备份的补充，而不是重要文件的唯一备份。
 
 建议每隔一段时间（如每周）做一次备份。放假前、出差开会前，也建议备份一下。
 
@@ -91,20 +91,15 @@ rsync
 
    # 修改可执行权限
    $ chmod +x backup.sh
-   
+
    # 移动至 ~/bin/ 目录
    $ mv backup.sh ~/bin
-   
+
    # 执行命令开始备份
    $ backup.sh
 
 DejaDup
 ^^^^^^^
-
-.. warning::
-
-   本节尚未开始编写。读者可以参考 https://www.howtoing.com/ubuntu-backup-deja-dup
-   使用 DejaDup，欢迎提供反馈。
 
 `DejaDup <https://wiki.gnome.org/Apps/DejaDup>`__ 是一款很好的图形界面备份工具。
 

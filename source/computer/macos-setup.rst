@@ -7,10 +7,40 @@ macOS 配置指南
 :最近更新日期: 2021-01-25
 :预计花费时间: 120 分钟
 
+----
+
 .. note::
 
-   本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x）。
-   对于其他 macOS 版本不一定适用。
+   本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x），
+   不一定适用于其他 macOS 版本。
+
+   .. table:: 近几年的 macOS 系统版本号
+      :align: center
+
+      ==================== ====================  ======================
+      版本号                代号                   发布日期
+      ==================== ====================  ======================
+      macOS 10.14          Mojave                2018 年 9 月 24 日
+      macOS 10.15          Catalina              2019 年 10 月 7 日
+      macOS 11             Big Sur               2020 年 9 月 12 日
+      ==================== ====================  ======================
+
+.. note::
+
+   本节大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`，
+   输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
+   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
+
+.. note::
+
+   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+   相关配置。
+
+   #. `安装系统`_ [**必须**]
+   #. `系统软件`_ [**必须**]
+   #. `编程开发环境`_ [**强力推荐**]
+   #. `命令行工具`_ [**推荐**]
+   #. `日常软件`_ [**可选**]
 
 ----
 
@@ -19,24 +49,13 @@ macOS 配置指南
 
 第一次启动 Mac 电脑后，经过简单的设置，就得到了一个可供日常使用的 macOS 系统。
 
-macOS 系统的更新也十分简单。当有新版本发布以后，可以直接在“系统偏好设置”的“软件更新”中直接更新即可。
+macOS 系统的更新也十分简单。当有新版本发布以后，可以直接在“系统偏好设置”的
+“软件更新”中直接更新即可。
 
 .. warning::
 
-   更新系统前，最好先备份一下（可以参考\ :doc:`/best-practices/backup`\ ），特别是
-   大版本更新（如 11.3.2 更新为 12.0.0）。系统更新出现问题无法解决时，可以选择重装系统。   
-
-.. table:: 近几年的 macOS 系统版本号
-   :align: center
-
-   ==================== ====================  ======================
-   版本号                代号                   发布日期
-   ==================== ====================  ======================
-   macOS 10.13          High Sierra           2017 年 9 月 25 日
-   macOS 10.14          Mojave                2018 年 9 月 24 日
-   macOS 10.15          Catalina              2019 年 10 月 7 日
-   macOS 11             Big Sur               2020 年 9 月 12 日
-   ==================== ====================  ======================
+   更新系统前，特别是大版本更新（如 10.15 更新为 11.0），
+   最好先备份一下（可以参考\ :doc:`/best-practices/backup`）。
 
 系统软件
 --------
@@ -48,19 +67,17 @@ Command Line Tools for Xcode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Xcode <https://developer.apple.com/cn/xcode/>`__ 是 macOS 下的集成开发环境（IDE），
-类似于 Windows 下的 `Microsoft Visual Studio <https://visualstudio.microsoft.com/>`__\ 。
+类似于 Windows 下的 `Microsoft Visual Studio <https://visualstudio.microsoft.com/>`__。
 Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命令行开发工具，
-比如 C/C++ 编译器（\ ``gcc``\ 、\ ``g++``\ ）、\ ``make``\ 、\ ``git`` 等，是 macOS 下编程开发的必需软件。
+比如 C/C++ 编译器（``gcc``、``g++``）、``make``、``git`` 等，是 macOS 下编程开发的必需软件。
 
-按下 :kbd:`Command` + :kbd:`空格`\ ，搜索“Terminal”并按下 :kbd:`Enter` 键以打开 Terminal 应用。
-在 Terminal 中执行如下命令以安装 Command Line Tools for Xcode::
+执行如下命令，并在弹出的窗口中点击 “Install” 以安装 Command Line Tools for Xcode::
 
    $ xcode-select --install
 
-在弹出的窗口中点击“Install”即可。
-
-此处安装的 Command Line Tools for Xcode 可能不是最新版。点击左上角的 Apple 图标，
+此处安装的 Command Line Tools for Xcode 可能不是最新版。点击桌面左上角的 Apple 图标，
 在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
+macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再次执行以上命令即可。
 
 .. note::
 
@@ -79,32 +96,39 @@ Homebrew
 安装
 """"
 
-打开 Terminal，将如下命令复制到 Terminal 中并按下 :kbd:`Enter` 键即可安装 Homebrew::
+执行如下命令以安装 Homebrew::
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装的所有软件包
-也都将被安装到该目录下。
+    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 .. note::
 
-   GitHub 在国内访问不畅，以上安装命令可能会由于网络问题而失败。
-   若以上命令失败，可参考 https://github.com/ineo6/homebrew-install 的
-   解决办法。
+   Homebrew 的安装脚本托管在 `GitHub <https://github.com/>`__ 上，
+   国内可能由于网络问题导致 GitHub 访问不畅，因而以上安装命令可能失败。
+   若以上命令失败，国内用户可以使用如下命令安装 Homebrew::
 
-   同样由于网络的原因，Homebrew 在国内可能下载速度较慢。建议参照
-   https://github.com/ineo6/homebrew-install 教程设置中科大源或清华大学源。
+        $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+
+   该安装脚本同时还将默认源设置为中科大源以加速 Homebrew 包的下载。
+   详情见 https://github.com/ineo6/homebrew-install 和 https://brew.idayer.com/。
 
 .. note::
 
-   在最新 ARM 架构的 macOS 下，Homebrew 会被安装到 :file:`/opt/homebrew/` 目录下。
-   通过 Homebrew 安装的所有软件包也都将被安装到该目录下。
+   Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，
+   通常是 :file:`/usr/local/` 目录。而在最新的 Apple M1 芯片的 Mac 下，
+   这一目录为 :file:`/opt/homebrew/`。
+
+.. note::
+
+   在最新的 Apple M1 芯片的 Mac 下安装 Homebrew 后，还需要设置环境变量::
+
+       $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+       $ source ~/.zshrc
 
 使用
 """"
 
 安装好 Homebrew 后，即可以使用 Homebrew 提供的 ``brew`` 命令。
-``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__\ 。此处仅列出一些常用的用法::
+``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__。此处仅列出一些常用的用法::
 
     # 模糊搜索与 wget 相关的软件
     $ brew search wget
@@ -126,10 +150,12 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
 
     Homebrew 用户也可以访问网站 https://formulae.brew.sh/ 查看软件包。
 
-.. note::
+.. dropdown:: :fa:`exclamation-circle,mr-1` Homebrew 相关名词解释
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
    使用 Homebrew 时会碰到很多名词。这里做简单解释，
-   更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__\ 。
+   更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__。
 
    ``brew``
       Homebrew 提供的命令，用于查询、安装、卸载、升级以及管理软件包。
@@ -138,7 +164,7 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
       软件的描述文件，包含了软件的基本信息和编译安装方法。
       Homebrew 根据 Formula 提供的信息，即可编译或安装软件。
       每个软件对应一个 Formula。例如，git 对应的 Formula 是
-      :file:`/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb`\ 。
+      :file:`/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb`。
 
    Bottle
       预先编译好的二进制软件包。使用 Bottle 安装软件，
@@ -160,10 +186,10 @@ Homebrew 会被安装到 :file:`/usr/local/` 目录下。通过 Homebrew 安装�
       使用 ``brew list --cask`` 命令可以查看已安装的 casks。
 
    Cellar
-      所有软件的安装目录，即 :file:`/usr/local/Cellar`\ 。
+      所有软件的安装目录，即 :file:`/usr/local/Cellar`。
 
    Keg
-      某一软件的安装目录，如 :file:`/usr/local/Cellar/git/2.30.0`\ 。
+      某一软件的安装目录，如 :file:`/usr/local/Cellar/git/2.30.0`。
 
 编程开发环境
 ------------
@@ -174,7 +200,9 @@ C/C++
 Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
 C/C++ 编译器。
 
-.. note::
+.. dropdown:: :fa:`exclamation-circle,mr-1` GCC 编译器
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
     Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
     `Apple Clang <https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html>`__ 编译器，
@@ -188,15 +216,15 @@ C/C++ 编译器。
     通过 Homebrew 安装的 GCC 提供了命令 ``gcc-10`` 和 ``g++-10``
     （``10`` 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
     提供的 ``gcc`` 和 ``g++`` 命令。
-    为了使用 GCC 编译器，用户可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10``\ ，
-    或者在 :file:`/usr/local/bin/` 目录下创建软链接::
+    用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10`` 命令，
+    或者在 Homebrew 的 bin 目录下创建软链接::
 
-        $ cd /usr/local/bin/
+        $ cd $(brew --prefix)/bin/
         $ ln -s gcc-10 gcc
         $ ln -s g++-10 g++
 
-    重开一个终端后，使用 ``gcc`` 和 ``g++`` 则默认使用的是 GCC 编译器。
-    删除软连接后，则默认使用的又是 Apple Clang 编译器了。
+    打开一个新终端后，使用的 ``gcc`` 和 ``g++`` 命令则默认是 GCC 编译器。
+    删除软链接后，默认使用的又是 Apple Clang 编译器了。
 
 Fortran
 ^^^^^^^
@@ -210,21 +238,27 @@ Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
+是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
-在 macOS 下，官方手册提供了多种\
-`安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-macos/>`__\ ，
-如在线安装、本地安装、使用 ``conda`` 安装等。这里，我们选择本地安装。
+地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
-日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。从官网下载\ `安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__\ 。
-选择 Local Installer，下载 :file:`.dmg` 文件并安装。默认安装目录是 :file:`/opt/intel/oneapi`。
+.. dropdown:: :fa:`exclamation-circle,mr-1` 安装 Intel 软件开发工具包
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
-配置环境变量::
+   在 macOS 下，官方手册提供了多种\
+   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-macos/>`__，
+   如在线安装、本地安装、使用 ``conda`` 安装等。这里，我们选择本地安装。
 
-    $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
+   日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。从官网下载\ `安装程序 <https://software.intel.com/content/www/us/en/develop/tools/oneapi/all-toolkits.html>`__。
+   选择 Local Installer，下载 :file:`.dmg` 文件并安装。默认安装目录是 :file:`/opt/intel/oneapi`。
 
-更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macos/>`__\ 。
+   配置环境变量::
+
+       $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
+
+   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macos/top.html>`__。
 
 .. include:: intel-oneapi-warning.rst_
 
@@ -246,23 +280,16 @@ Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/index>`
 git
 ^^^
 
-`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，是科研过程中编写代码
-与项目管理推荐使用的软件。Command Line Tools for Xcode 中已经安装了 Apple 版
+`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，推荐在科研过程中使用
+git 管理自己编写的代码和文件。Command Line Tools for Xcode 中已经安装了 Apple 版
 的 git，其与原版 git 有一些区别。可以用如下命令安装原版的 git::
 
     $ brew install git
 
-.. note::
-
-   Homebrew 安装的 ``git`` 位于 :file:`/usr/local/bin/` 目录下，而
-   Command Line Tools for Xcode 安装的 ``git`` 位于 :file:`/usr/bin/`
-   目录下。在环境变量 **PATH** 中，:file:`/usr/local/bin/` 一般在 :file:`/usr/bin/` 前。
-   因此，我们使用的 ``git`` 其实是通过 Homebrew 安装的版本。
-
 命令行工具
 ----------
 
-这里推荐一些常用的命令行工具。
+macOS 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它有用的命令行工具。
 
 dos2unix & unix2dos
 ^^^^^^^^^^^^^^^^^^^
@@ -300,10 +327,10 @@ ack
 GNU 实用工具
 ^^^^^^^^^^^^
 
-macOS 下自带了很多实用工具，如 ``sed``、``grep`` 等（位于 :file:`/usr/bin/`\ 目录下）。
+macOS 下自带了很多实用工具，如 ``sed``、``grep`` 等（位于 :file:`/usr/bin/` 目录下）。
 需要注意，这些实用工具是由 BSD 提供的，而 Linux 系统下的实用工具则是由 GNU 提供的。
 BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。二者之间的常见差异可以参考
-此\ `博文 <https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/>`__\ 。
+此\ `博文 <https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/>`__。
 由于网络上的大部分文档介绍的都是 GNU 实用工具的用法，因而 macOS 用户在使用网络上的
 命令时可能会出现错误。这一点可以通过安装 GNU 实用工具来解决::
 
@@ -325,7 +352,7 @@ iTerm2
 ^^^^^^
 
 macOS 系统自带了 Terminal 应用，但 `iTerm2 <https://iterm2.com/>`__ 相比于自带的
-Terminal 具有更多有用的功能，比如支持水平和垂直分隔窗格、强大的终端搜索功能、
+Terminal 具有更多有用的功能，比如支持水平和垂直分割窗格、强大的终端搜索功能、
 更好用的复制粘贴功能等。
 
 ::
@@ -340,27 +367,21 @@ macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。�
 
     $ brew install --cask visual-studio-code
 
-`Typora <https://typora.io/>`__ 是一款\ **轻便简洁**\ 的 Markdown 编辑器，支持即时渲染技术。
-与 Visual Studio Code 相比，Typora 启动更快，适合日常临时编写小型 Markdown 文件::
-
-    $ brew install --cask typora
-
 解压软件
 ^^^^^^^^
 
-macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但不支持 ``.rar`` 格式。
-推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__\ ，其支持
-几乎所有压缩格式。安装后即可通过双击 ``.rar`` 文件直接解压。
-
-安装 The Unarchiver::
+macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但默认不支持 ``.rar`` 格式。
+推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__，其支持
+几乎所有压缩格式。安装后即可通过双击直接解压 ``.rar`` 文件::
 
     $ brew install --cask the-unarchiver
 
 Google Earth
 ^^^^^^^^^^^^
 
-Google Earth 提供了网页版和桌面版应用。
-非重度用户可以使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
+Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
+并允许用户添加 KML 或 KMZ 格式的自定义数据。
+非重度用户可以使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
 重度用户可以执行如下命令安装桌面版::
 
     $ brew install --cask google-earth-pro
@@ -403,9 +424,9 @@ QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF �
 
 如果在使用 macOS 的同时，偶尔需要使用 Windows 或 Linux 系统，可以考虑使用虚拟机。
 macOS 下最常用的虚拟机软件有
-`Parallels Desktop <https://www.parallels.com/>`__\、
+`Parallels Desktop <https://www.parallels.com/>`__、
 `VMware Fusion <https://www.vmware.com/products/fusion.html>`__ 和
-`VirtualBox <https://www.virtualbox.org/>`__\ 。
+`VirtualBox <https://www.virtualbox.org/>`__。
 其中 VirtualBox 是免费软件；Parallel Desktop 和 VMware Fusion 是收费软件，
 但 VMware Fusion 为个人用户提供了免费的 License。
 

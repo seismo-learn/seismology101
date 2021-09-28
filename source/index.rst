@@ -27,26 +27,27 @@
    :caption: 地震学基础
    :hidden:
 
-   seismology/introduction/index
-   seismology/seismic-source/index
-   seismology/seismic-wave/index
-   seismology/seismograph/index
-   seismology/seismogram/index
-   seismology/software/index
+   seismology/introduction
+   seismology/basis
+   seismology/data
+   seismology/software
 
 .. toctree::
    :maxdepth: 3
    :caption: 地震学实践
    :hidden:
 
-   exercises/waveform-fetch
+   exercises/introduction
+   exercises/download
+   exercises/process
+   exercises/analysis
 
 .. toctree::
    :maxdepth: 3
    :caption: 实践经验
    :hidden:
 
-   best-practices/index
+   best-practices/introduction
    best-practices/file-organization
    best-practices/software-installation
    best-practices/backup
@@ -68,11 +69,11 @@
 
 本教程主要包括五部分内容：
 
-1. **计算机基础**\ （**编写中**）：Linux 或 macOS 操作系统的基础知识和常用操作
-2. **编程基础**\ （**编写中**）：需要掌握的编程语言和编程技能
-3. **地震学基础**\ （**编写中**）：开展科研工作前必须了解的地震学基础知识
-4. **地震学实践**\ （**编写中**）：通过实践掌握地震学数据的基本处理
-5. **实践经验**\ （**编写中**）：日常科研工作中总结的一些实践经验
+1. **计算机基础**：Linux 或 macOS 操作系统的基础知识和常用操作
+2. **编程基础**：需要掌握的编程语言和编程技能 [**缓慢编写中**]
+3. **地震学基础**：开展科研工作前必须了解的地震学基础知识 [**全力编写中**]
+4. **地震学实践**：通过实践掌握基本的地震学数据处理 [**全力编写中**]
+5. **实践经验**：日常科研工作中的一些实践经验 [**缓慢编写中**]
 
 欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
 这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。

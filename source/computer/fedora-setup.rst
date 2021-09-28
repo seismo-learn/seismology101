@@ -6,12 +6,24 @@ Fedora 配置指南
 :最近更新日期: 2021-01-25
 :预计花费时间: 120 分钟
 
+----
+
 .. note::
 
-   本节内容适用于 **Fedora 33 Workstation**\，对其他 Fedora 版本不一定适用。
-   建议用户安装时总是选择 Fedora 最新版本。如遇到问题，欢迎反馈。
+   本节内容适用于 **Fedora 33 Workstation**，不一定适用于其他 Fedora 版本。
+   建议用户访问 `Fedora 官网 <https://getfedora.org/>`__ 下载并安装 Fedora
+   最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
 
-----
+.. note::
+
+   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+   相关配置。
+
+   #. `安装系统`_ [**必须**]
+   #. `系统软件`_ [**必须**]
+   #. `编程开发环境`_ [**强力推荐**]
+   #. `命令行工具`_ [**推荐**]
+   #. `日常软件`_ [**可选**]
 
 安装系统
 --------
@@ -24,10 +36,10 @@ Fedora 配置指南
 下载系统镜像
 ^^^^^^^^^^^^
 
-访问 `Fedora 官网 <https://getfedora.org/>`__ 并下载 Fedora Workstation 镜像，
+访问 `Fedora 官网 <https://getfedora.org/>`__ 并下载 Fedora Workstation 镜像文件，
 一般选择 x86_64 版本。
 
-**Fedora 33 Workstation x86_64** 的 ISO 文件（约 2 GB）下载链接：
+**Fedora 33 Workstation x86_64** 的 ISO 镜像文件（约 2 GB）下载链接：
 
 - `官方镜像 <https://download.fedoraproject.org/pub/fedora/linux/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__
 - `中科大镜像 <http://mirrors.ustc.edu.cn/fedora/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__ [**推荐国内用户使用**]
@@ -38,13 +50,14 @@ Fedora 配置指南
 准备一个 4 GB 以上容量的 U 盘，利用 USB 启动盘制作工具和 ISO 镜像文件
 制作 USB 启动盘。
 
-USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh_CN.html>`__\ （仅限 Windows）、\
-`UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）
-或 `balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）。
+USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh/>`__\ （仅限 Windows）、\
+`balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）
+或 `UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）。
 
 .. warning::
 
-   制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
+   1. 制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
+   2. 如果制作工具无法识别 U 盘，请尝试先将 U 盘格式化为 FAT32 格式。
 
 进入 Live 系统
 ^^^^^^^^^^^^^^
@@ -71,8 +84,8 @@ USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh_CN
 
 进入 Live 系统之后，选择 “Install to Hard Drive” 即开始安装。
 
-安装程序会首先要你选择安装过程中的语言，可以选择“中文”->“简体中文（中国）”
-或 “English”->“English (Unite States)”，然后点击下方的“继续”按钮。
+安装程序会首先要你选择安装过程中的语言，可以选择“中文”→“简体中文（中国）”
+或 “English”→“English (Unite States)”，然后点击下方的“继续”按钮。
 接着选择键盘布局（汉语或 “English(US)”）、时区和时间（例如“亚洲-上海”）。
 
 点击“安装目的地”，选择要将系统安装到哪一块硬盘以及如何分区。
@@ -99,22 +112,30 @@ Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软�
 
 .. warning::
 
-   更新系统前，最好先备份一下（可以参考\ :doc:`/best-practices/backup`\ ），特别是
-   大版本更新（如 11.3.2 更新为 12.0.0）。系统更新出现问题无法解决时，可以选择重装系统。
+   更新系统前，特别是大版本更新（如 Fedora 33 更新为 Fedora 34），
+   最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`）。
+
+.. note::
+
+   本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击
+   “Terminal” 图标以启动终端，然后在终端中输入命令并按下 :kbd:`Enter` 键
+   即可执行相应的命令。
 
 系统软件
 --------
 
-Fedora 使用包管理器 ``dnf`` 来安装、卸载和管理软件包。
+Fedora 系统自带了“软件中心”，可用于查找、安装、卸载和管理软件包，但一般建议使用
+命令行工具 ``dnf`` 安装和管理软件。
 
 .. note::
 
-   国内用户可以参考 http://mirrors.ustc.edu.cn/help/fedora.html 将软件源镜像替换
-   为中科大镜像，以加快软件下载速度。
+   ``dnf`` 会从 Fedora 软件源下载软件包。
+   国内用户可以参考 http://mirrors.ustc.edu.cn/help/fedora.html 将默认软件源镜像
+   替换为中科大镜像，以加快软件下载速度。
 
-   注意：在替换软件源后要执行 ``sudo dnf makecache`` 更新本地缓存的软件包元数据。
+   注意：在替换软件源镜像后要执行 ``sudo dnf makecache`` 更新本地缓存的软件包元数据。
 
-``dnf`` 的详细用法请阅读 `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__\ ，
+``dnf`` 的详细用法请阅读 `dnf 参考文档 <https://dnf.readthedocs.io/en/latest/index.html>`__，
 这里只介绍一些常用命令::
 
     # 更新本地软件包元数据缓存
@@ -153,12 +174,6 @@ C/C++ 编译器，其提供了 ``gcc`` 和 ``g++`` 命令::
 
     $ sudo dnf install gcc gcc-c++
 
-`Clang <https://clang.llvm.org/>`__ 系列是 GCC 系列的一大竞争者。与 GCC
-编译器相比，Clang 编译器提供了更友好的报错信息，方便在报错时尽快找到错误。Clang
-编译器提供了 ``clang`` 和 ``clang++`` 命令::
-
-    $ sudo dnf install clang
-
 Fortran
 ^^^^^^^
 
@@ -171,27 +186,33 @@ Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是英特尔最新的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
+是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
 此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
 
-在 Fedora 系统下，官方手册提供了多种\
-`安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
-如在线安装、本地安装、使用 ``dnf`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``dnf`` 安装。
+地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
-下载 :file:`.repo` 文件 :download:`oneapi.repo`\ ，并将其放在 :file:`/etc/yum.repos.d` 目录下::
+.. dropdown:: :fa:`exclamation-circle,mr-1` 安装 Intel 软件开发工具包
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
-    $ sudo mv oneAPI.repo /etc/yum.repos.d/
+   在 Fedora 系统下，官方手册提供了多种\
+   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__，
+   如在线安装、本地安装、使用 ``dnf`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``dnf`` 安装。
 
-日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
+   下载 :file:`.repo` 文件 :download:`oneapi.repo`，并将其放在 :file:`/etc/yum.repos.d` 目录下::
 
-    $ sudo dnf install intel-basekit
-    $ sudo dnf install intel-hpckit
+       $ sudo mv oneapi.repo /etc/yum.repos.d/
 
-配置环境变量::
+   日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
 
-    $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+       $ sudo dnf install intel-basekit
+       $ sudo dnf install intel-hpckit
 
-更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
+   配置环境变量::
+
+       $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+
+   更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/top.html>`__。
 
 .. include:: intel-oneapi-warning.rst_
 
@@ -211,8 +232,8 @@ Fedora 33 自带了 Python 3.9，足够日常使用，但强烈建议不要使�
 git
 ^^^
 
-`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，是科研过程中编写代码
-与项目管理推荐使用的软件。一般情况下系统已经安装了该软件。如果没安装，
+`git <https://git-scm.com/>`__ 是目前最流行的版本控制工具，推荐在科研过程中
+使用 git 管理自己编写的代码和文件。一般情况下系统已经安装了该软件。如果没安装，
 可以使用如下命令安装::
 
     $ sudo dnf install git
@@ -220,7 +241,7 @@ git
 命令行工具
 ----------
 
-日常科研所需的大多数命令行工具已经默认安装在 Fedora 系统里了。这里额外推荐一些
+Fedora 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其他
 有用的命令行工具。
 
 tldr
@@ -247,17 +268,17 @@ ack
 ^^^^^^^^^^
 
 Fedora 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
+推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__。
 根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions>`__\
 安装即可。
 
 解压软件
 ^^^^^^^^
 
-Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
-``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
+Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``、
+``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
-后即可通过双击 ``.rar`` 文件直接解压::
+后即可通过双击直接解压 ``.rar`` 文件::
 
     $ sudo dnf install unar
 
@@ -268,28 +289,30 @@ Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 日常科研经常需要开好几个终端，切换和管理起来比较麻烦。
 
 `Terminator <https://gnome-terminator.org/>`__
-是一个功能强大的终端模拟器，最常用的功能应该是终端分割和终端切换。
+是一个功能强大的终端模拟器，最常用的功能是终端分割和终端切换。
 使用如下命令安装::
 
     $ sudo dnf install terminator
 
 以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
 
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分隔终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分隔终端
-- :kbd:`Alt` + :kbd:`上下左右`\ :  切换子终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`：水平分割终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`：垂直分割终端
+- :kbd:`Alt` + :kbd:`上下左右`：切换子终端
 
 Google Earth
 ^^^^^^^^^^^^
 
-非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
+Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
+并允许用户添加 KML 或 KMZ 格式的自定义数据。
+非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
 重度用户可以按照如下步骤安装桌面版。
 
 1. 下载 64 位 RPM 包：https://www.google.com/earth/versions/#download-pro
 2. 双击下载的 RPM 安装包即可安装
 
-浏览器
-^^^^^^
+网页浏览器
+^^^^^^^^^^
 
 Fedora 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
 

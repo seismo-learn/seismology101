@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.8.0
+        uses: styfle/cancel-workflow-action@0.9.1
 
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,9 +31,7 @@ jobs:
         run: make dirhtml
 
       - name: Deploy documentation
-        # peaceiris/actions-gh-pages@v3.7.3
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@bbdfb200618d235585ad98e965f4aafc39b4c501
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/dirhtml
