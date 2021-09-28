@@ -8,8 +8,8 @@
 
 ----
 
-正确管理电脑文件是非常重要的。错误的文件管理方式会使你花费更多的时间去寻找文件，
-拖慢你的科研进度，还可能导致文件的大量冗余与误删。
+采用合理的策略管理电脑文件是非常重要的。不合理的文件管理方式会使你花费更多的时间
+去寻找文件，拖慢你的科研进度，还可能导致文件的大量冗余与误删。
 这一节，我们总结了自己在科研工作中关于文件组织与管理的经验，供读者参考。
 
 本文主要面向 Linux 和 macOS 用户，下面提到的\ **家目录**\ 在 Linux 下指的是 :file:`/home/用户名`，
@@ -31,20 +31,20 @@
 
 -   Linux 或 macOS 系统在安装后自动创建的常见目录：
 
-    - :file:`Documents`
-    - :file:`Downloads`
-    - :file:`Desktop`
+    - `Documents`_
+    - `Downloads`_
+    - `Desktop`_
 
 -   为了满足日常科研需求，在家目录下新建的、用于存储科研相关文件的目录
 
-    - :file:`software`
-    - :file:`src`
-    - :file:`codes`
-    - :file:`opt`
-    - :file:`bin`
-    - :file:`data`
-    - :file:`projects`
-    - :file:`workspace`
+    - `software`_
+    - `src`_
+    - `codes`_
+    - `opt`_
+    - `bin`_
+    - `data`_
+    - `projects`_
+    - `workspace`_
 
 -   根据需求创建的其他目录
 
