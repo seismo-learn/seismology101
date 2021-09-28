@@ -85,7 +85,7 @@ Zsh 稍作配置会更加方便好用。`Oh My Zsh <https://ohmyz.sh/>`__ 是由
 设置主题
 ^^^^^^^^
 
-修改配置文件 :file:`~/.zshrc` 中的变量 ``ZSH_THEME`` 即可使用不同的主题。例如，
+修改配置文件 :file:`~/.zshrc` 中的变量 **ZSH_THEME** 即可使用不同的主题。例如，
 可以设置::
 
     ZSH_THEME="bira"
@@ -99,7 +99,7 @@ Oh My Zsh 自带了很多主题，位于 :file:`~/.oh-my-zsh/themes` 目录下�
 启用插件
 ^^^^^^^^
 
-直接修改配置文件 :file:`~/.zshrc` 中的变量 ``plugins`` 便可启用插件::
+直接修改配置文件 :file:`~/.zshrc` 中的变量 **plugins** 便可启用插件::
 
     plugins=(
       sudo
