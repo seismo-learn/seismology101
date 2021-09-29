@@ -50,7 +50,7 @@
    best-practices/introduction
    best-practices/file-organization
    best-practices/software-installation
-   best-practices/backup
+   best-practices/backup/index
    best-practices/zsh
    best-practices/vscode
 
