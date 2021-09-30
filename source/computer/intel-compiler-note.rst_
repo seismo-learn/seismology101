@@ -1,7 +1,7 @@
 .. note::
 
-    Base Toolkit 和 HPC Toolkit 中除了包含 C/C++ 和 Fortran 编译器，还包含了其他
-    库文件和编程工具。如果想要只安装 C/C++ 和 Fortran 编译器，可以跳过上述
+    Base Toolkit 和 HPC Toolkit 中不仅包含 C/C++ 和 Fortran 编译器，还包含了其他
+    库文件和编程工具。如果只想安装 C/C++ 和 Fortran 编译器，可以跳过上述
     安装步骤，单独下载
-    `C/C++ 编译器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#inpage-nav-5-undefined>`__ 和
-    `Fortran 编译器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#inpage-nav-8-undefined>`__ 独立安装包并安装。
+    `C/C++ 编译器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#compilerclassic>`__ 和
+    `Fortran 编译器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#fortran>`__ 独立安装包并安装。
