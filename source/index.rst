@@ -77,6 +77,11 @@
 
 欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
 这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。
+请通过如下方式给予反馈：
+
+#. `留言参与讨论 <https://github.com/seismo-learn/seismology101/discussions>`__
+#.  在文档源码仓库下\ `提交 Issue <https://github.com/seismo-learn/seismology101/issues>`__
+#.  修改文档并\ `提交 Pull Request <https://github.com/seismo-learn/seismology101/pulls>`__
 
 .. admonition:: 免责声明
 
