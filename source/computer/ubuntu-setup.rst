@@ -111,7 +111,7 @@ Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件�
 .. warning::
 
     更新系统前，特别是大版本更新（如 Ubuntu 20.04 更新为 Ubuntu 20.10），
-    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup/index`）。
+    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`）。
 
 .. note::
 

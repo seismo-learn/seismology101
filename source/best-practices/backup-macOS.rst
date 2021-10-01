@@ -8,6 +8,9 @@ macOS 数据备份
 
 ----
 
+Time Machine
+^^^^^^^^^^^^
+
 macOS 下最好用的备份工具当属 Time Machine（时间机器），其可以增量备份 macOS 下的文件，
 能恢复到之前任意备份时刻的状态，并且操作简单。当然也可以使用 ``rsync`` 命令进行备份，
 与 Linux 下相同。推荐使用 Time Machine 进行备份。

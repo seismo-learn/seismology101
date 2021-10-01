@@ -55,7 +55,7 @@ macOS 系统的更新也十分简单。当有新版本发布以后，可以直�
 .. warning::
 
    更新系统前，特别是大版本更新（如 10.15 更新为 11.0），
-   最好先备份一下（可以参考\ :doc:`/best-practices/backup/index`）。
+   最好先备份一下（可以参考\ :doc:`/best-practices/backup`）。
 
 系统软件
 --------
