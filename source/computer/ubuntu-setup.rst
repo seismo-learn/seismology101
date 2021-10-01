@@ -196,33 +196,33 @@ Intel 软件开发工具包
    :container: + shadow
    :title: bg-info text-white font-weight-bold
 
-    在 Ubuntu 系统下，官方手册提供了多种\
-    `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__，
-    如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
+   在 Ubuntu 系统下，官方手册提供了多种\
+   `安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__，
+   如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
 
-    添加 Intel 软件仓库::
+   添加 Intel 软件仓库::
 
-        # 下载 Intel 仓库公钥并添加到 apt 源密钥环中
-        $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-        $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-        # 删除公钥文件
-        $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+       # 下载 Intel 仓库公钥并添加到 apt 源密钥环中
+       $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+       $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+       # 删除公钥文件
+       $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
 
-        # 添加软件仓库
-        $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
-        $ sudo apt update
+       # 添加软件仓库
+       $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
+       $ sudo apt update
 
-    根据自己的需要安装软件，默认安装目录是 :file:`/opt/intel/oneapi`::
+   根据自己的需要安装软件，默认安装目录是 :file:`/opt/intel/oneapi`::
 
-        # 安装 C/C++ 编译器
-        $ sudo apt-get install intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic
+       # 安装 C/C++ 编译器
+       $ sudo apt-get install intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic
 
-        # 安装 Fortran 编译器
-        $ intel-oneapi-compiler-fortran
+       # 安装 Fortran 编译器
+       $ intel-oneapi-compiler-fortran
 
-    配置环境变量::
+   配置环境变量::
 
-        $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
+       $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
 .. include:: intel-oneapi-warning.rst_
 
