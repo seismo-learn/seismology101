@@ -12,8 +12,8 @@
 -------------------
 
 Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特殊的目录称为根目录。
-根目录下一般有 :file:`/home`\ 、\ :file:`/root`\ 、\ :file:`/bin`\ 、
-:file:`/usr`\ 、\ :file:`/lib`\ 、\ :file:`/opt` 等目录。
+根目录下一般有 :file:`/home`、:file:`/root`、:file:`/bin`、
+:file:`/usr`、:file:`/lib`、:file:`/opt` 等目录。
 
 -  :file:`/home` 目录：用户的家目录，存储用户自己的文件
 -  :file:`/bin` 目录：存储必须的程序和命令，所有用户都可用
@@ -22,9 +22,9 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    默认将软件安装到此目录下
 
 日常科研中，大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
-该用户的家目录便是 :file:`/home/seismo-learn`\ 。macOS 下的家目录是 :file:`/Users/seismo-learn`\ 。
+该用户的家目录便是 :file:`/home/seismo-learn`。macOS 下的家目录是 :file:`/Users/seismo-learn`。
 在 Linux/macOS 系统下，可用 :file:`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
-:file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、\ :file:`~/Documents` 等。熟悉 Linux 文件系统后可以参考\
+:file:`~/Desktop`、:file:`~/Downloads`、:file:`~/Documents` 等。熟悉 Linux 文件系统后可以参考\
 :doc:`《文件管理实践经验》<best-practices/file-organization>`\ 和\
 :doc:`《软件安装实践经验》<best-practices/software-installation>`\
 进一步组织与管理家目录，以提高工作效率。
@@ -34,7 +34,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 接下来将通过一系列命令熟悉和掌握 Linux 系统下文件和目录的常用操作。
 读者应打开终端，根据下面的教程自行输入命令（不要复制粘贴！），记住并理解每个
-命令的作用。这一部分中，假设用户名是 seismo-learn，读者根据自己的情况自行修改。
+命令的作用。这一小节中，假设用户名是 seismo-learn，读者根据自己的情况自行修改。
 
 查看文件和目录::
 
@@ -160,7 +160,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
    使用 ``rm`` 命令删除的文件会被直接删除，并不会被放在回收站里。
    因而执行 ``rm`` 命令时一定要小心再小心，不要误删重要文件。
-   可以先把要删除的文件移动到某目录下（如 :file:`~/trash`\ ），之后统一删除；
+   可以先把要删除的文件移动到某目录下（如 :file:`~/trash`），之后统一删除；
    也可以考虑使用其他命令行工具管理回收站
    （如 `trash-cli <https://github.com/andreafrancia/trash-cli>`__）。
 
@@ -200,7 +200,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    本质上硬链接和源文件互为对方的硬链接。通过给文件设置硬链接，可以防止重要文件被误删。
    目录无法建立硬链接。一般设置硬链接后，源文件和硬链接都会高亮显示。
 
-   软链接（也叫符号链接）类似 Windows 系统的快捷方式，是一个\ **文件**\ ，里面存放的
+   软链接（也叫符号链接）类似 Windows 系统的快捷方式，是一个\ **文件**，里面存放的
    是源文件（或目录）的路径。删除软链接，对源文件（或目录）没有任何影响。
    删除源文件（或目录），软链接依然存在，但无法通过其访问源文件（或目录）了。
    软链接一般会高亮显示。
@@ -212,8 +212,8 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 顾名思义，绝对路径是从根目录 :file:`/` 开始算起的路径。例如，家目录是 :file:`/home`，
 用户 seismo-learn 的家目录是 :file:`/home/seismo-learn`，该用户的桌面目录的路径是
-:file:`/home/seismo-learn/Desktop`\ 。日常科研中，用户的计算机一般只有用户自己在使用，
-因此提到家目录是其时特指 :file:`/home/seismo-learn`\，而不是指 :file:`/home`。
+:file:`/home/seismo-learn/Desktop`。日常科研中，用户的计算机一般只有用户自己在使用，
+因此提到家目录是其时特指 :file:`/home/seismo-learn`，而不是指 :file:`/home`。
 因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
 :file:`~`，其和 :file:`/home/seismo-learn` 是一回事。
 
@@ -221,20 +221,20 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 目录中，如果想进入 :file:`~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
 输入很多字母。在当前目录下，Linux 文件系统定义了两个特殊的路径：
 
--  :file:`.`\ ：当前路径
--  :file:`..`\ ：当前目录的上一级目录
+-  :file:`.`：当前路径
+-  :file:`..`：当前目录的上一级目录
 
 利用这两个特殊路径，可以使用相对路径访问其他目录下的文件和目录。例如，
 
--  :file:`./Beijing`\ ：当前目录下的 :file:`Beijing` 目录，即 :file:`~/projects/NorthChina-MTZ/data/Beijing`\ 。
+-  :file:`./Beijing`：当前目录下的 :file:`Beijing` 目录，即 :file:`~/projects/NorthChina-MTZ/data/Beijing`。
    当前路径也可以省略，即 :file:`Beijing`
--  :file:`./Beijing/IC-BJI.sac`\ ：当前目录下的 :file:`Beijing` 目录下的 :file:`IC-BJI.sac` 文件，
-   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJI.sac`\ 。
+-  :file:`./Beijing/IC-BJI.sac`：当前目录下的 :file:`Beijing` 目录下的 :file:`IC-BJI.sac` 文件，
+   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJI.sac`。
    当前路径也可以省略，即 :file:`Beijing/IC-BJI.sac`
--  :file:`..`\ ：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
--  :file:`../..`\ ：上一层的上一层目录，即 :file:`~/projects` 目录
--  :file:`../figures`\ ：上一层目录下的 :file:`figures` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
--  :file:`../figures/fig1.pdf`\ ：上一层目录下的 :file:`figures` 目录下的 :file:`fig1.pdf` 文件，
+-  :file:`..`：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
+-  :file:`../..`：上一层的上一层目录，即 :file:`~/projects` 目录
+-  :file:`../figures`：上一层目录下的 :file:`figures` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
+-  :file:`../figures/fig1.pdf`：上一层目录下的 :file:`figures` 目录下的 :file:`fig1.pdf` 文件，
    即 :file:`~/projects/NorthChina-MTZ/figures/fig1.pdf`
 
 .. note::
@@ -248,7 +248,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    可以看出，其实家目录下存在 :file:`.` 和 :file:`..` 这两个特殊的路径。
 
 文件权限
----------
+--------
 
 Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可以查看文件或目录的权限::
 
@@ -268,22 +268,22 @@ Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可
 且属于用户组 seismo-learn（对于个人计算机而言，用户组通常有且仅有一个用户，
 因而用户组与用户同名）。
 
-第一列文件权限位总共包含了 10 位信息（如 ``-rw-r--r--``\ ），从左到右的含义分别是：
+第一列文件权限位总共包含了 10 位信息（如 ``-rw-r--r--``），从左到右的含义分别是：
 
--  第一位：文件类型（例如，\ ``-`` 表示普通文件，\ ``d`` 表示目录）
+-  第一位：文件类型（例如，``-`` 表示普通文件，``d`` 表示目录）
 -  第二到第四位：文件所属用户的权限
 -  第五到第七位：文件所属用户组的权限
 -  第八到第十位：其他人的权限
 
 每种权限（即文件所属用户的权限、文件所属用户组的权限、其他人的权限）
 包含三位信息，第一位 ``r`` 代表可读取（read），第二位 ``w`` 代表可写入（write），
-第三位 ``x`` 代表可执行（execute，对于目录而言表示可以进去该目录），\ ``-`` 代表没有对应的权限。
+第三位 ``x`` 代表可执行（execute，对于目录而言表示可以进去该目录），``-`` 代表没有对应的权限。
 
-从文件的权限位可以看出，用户 seismo-learn 可以读写文件 :file:`hello-world.sh`\ ，
+从文件的权限位可以看出，用户 seismo-learn 可以读写文件 :file:`hello-world.sh`，
 但不可直接执行该文件，对 :file:`source` 目录拥有可读、可写、可执行的权限。
 
 除了用字母 ``rwx`` 表示权限外，还可以用数字表示权限。4 代表可读，2 代表可写，
-1 代表可执行。因为 :math:`4+2+1=7`\ ，所以 7 代表可读、可写、可执行。以此类推，
+1 代表可执行。因为 :math:`4+2+1=7`，所以 7 代表可读、可写、可执行。以此类推，
 6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
 4 代表可读、不可写、不可执行。
 
