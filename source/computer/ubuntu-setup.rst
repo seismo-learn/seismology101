@@ -224,7 +224,6 @@ Intel 软件开发工具包
 
        $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
-.. include:: intel-oneapi-warning.rst_
 
 Java
 ^^^^
