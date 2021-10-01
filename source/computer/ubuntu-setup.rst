@@ -192,8 +192,6 @@ Intel 软件开发工具包
 
    地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
-.. include:: intel-compiler-note.rst_
-
 .. dropdown:: :fa:`exclamation-circle,mr-1` 安装 Intel 软件开发工具包
    :container: + shadow
    :title: bg-info text-white font-weight-bold
@@ -214,10 +212,13 @@ Intel 软件开发工具包
         $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
         $ sudo apt update
 
-    日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
+    根据自己的需要安装软件，默认安装目录是 :file:`/opt/intel/oneapi`::
 
-        $ sudo apt install intel-basekit
-        $ sudo apt install intel-hpckit
+        # C/C++ 编译器
+        $ sudo apt-get install intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic
+
+        # Fortran 编译器
+        $ intel-oneapi-compiler-fortran
 
     配置环境变量::
 
