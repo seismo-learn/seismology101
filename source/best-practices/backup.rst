@@ -1,21 +1,7 @@
-备份与还原
-==========
+数据备份
+========
 
-:本节贡献者: |姚家园|\（作者）、
-             |田冬冬|\（作者）、
-             |赵志远|\（作者）
-:最近更新日期: 2021-02-08
-:预计阅读时间: 30 分钟
-
-.. warning::
-
-   本章正在编写中，尚未完成。
-
-----
-
-
-备份！备份！备份！
-------------------
+**备份！备份！备份！**
 
 尽管不经常发生，但电脑随时可能会坏掉或被盗，电脑硬盘也随时可能会出问题，
 也可能不小心使用一个命令（如 ``rm -r *``）把几个月的工作误删了。所以，备份非常重要，
@@ -31,9 +17,6 @@
    日常科研工作中，电脑硬盘经常进行大量的读写操作，直接影响硬盘的寿命。我们的
    经验表明，电脑硬盘的平均寿命大约为 5 年。当然，硬盘的品质和使用情况不同，
    其寿命也有所不同。
-
-备份策略
----------
 
 备份策略简单概括有两种：（1）备份家目录或其部分子目录；（2）全盘备份。
 
@@ -59,118 +42,25 @@ OneDrive、Google Drive、Dropbox、iCloud 等）。需要注意，若误删本�
 
 建议每隔一段时间（如每周）做一次备份。放假前、出差开会前，也建议备份一下。
 
-Linux
------
+.. panels::
+    :container: container-lg pb-3
+    :column: col-lg-4 col-md-4 col-sm-4 col-xs-6 p-2
 
-新买的移动硬盘的文件系统一般是 NTFS 或 exFAT。推荐将移动硬盘文件系统
-设置为 Linux 系统的常见格式 ext4，用于 Linux 下的文件备份。
-该格式在 Ubuntu、Debian、Fedora、CentOS 等 Linux 发行版下，可以保持文件权限。
-在 Linux 系统下，可以使用 ``mkfs`` 命令将移动硬盘设置为 Linux 文件系统。还可以
-使用 ``e2label`` 命令为移动硬盘设置卷标。
+    .. toctree::
+        :maxdepth: 2
 
-rsync
-^^^^^^
+        backup-Linux
 
-使用 ``rsync`` 命令进行备份十分方便。假设用户名为 seismo-learn，移动硬盘下的备份目录
-为 :file:`/mnt/seismo-learn/backup/` 。使用以下命令可以将家目录下的所有子目录和文件
-完整同步到备份目录下，此时备份目录是家目录的一个镜像::
+    ---
 
-    $ rsync -av --delete /home/seismo-learn/ /mnt/seismo-learn/backup/
+    .. toctree::
+        :maxdepth: 2
 
-.. important::
+        backup-macOS
 
-   以上命令中家目录 :file:`/home/seismo-learn/` 最后的斜杠非常重要。若没有这个斜杠
-   （:file:`/home/seismo-learn`），则会把家目录本身同步到备份目录下，
-   即产生 :file:`/mnt/seismo-learn/backup/seismo-learn` 目录。
+    ---
 
-``rsync`` 命令的特色在于增量备份。这意味着只有第一次备份的时候需要花比较多的时间来
-同步文件，之后再使用该命令进行备份只会同步有改动的文件。假如一周只修改了一个文件，
-那么同步的过程会在瞬间完成。
+    .. toctree::
+        :maxdepth: 2
 
-读者可以参考 Bash 脚本 :download:`backup.sh`。点击下载后，修改源目录、
-备份目录以及想要备份的子目录。然后按以下命令，修改文件权限为可执行，
-并将脚本移至 :file:`~/bin` 目录下，就可以运行了::
-
-   # 修改可执行权限
-   $ chmod +x backup.sh
-
-   # 移动至 ~/bin/ 目录
-   $ mv backup.sh ~/bin
-
-   # 执行命令开始备份
-   $ backup.sh
-
-DejaDup
-^^^^^^^
-
-`DejaDup <https://wiki.gnome.org/Apps/DejaDup>`__ 是一款很好的图形界面备份工具。
-
-安装 DejaDup：
-
-.. tabbed:: Fedora
-
-   ::
-
-       $ sudo dnf install deja-dup
-
-.. tabbed:: CentOS
-
-   ::
-
-       $ sudo yum install deja-dup
-
-.. tabbed:: Ubuntu/Debian
-
-   ::
-
-       $ sudo apt update
-       $ sudo apt install deja-dup
-
-macOS
------
-
-macOS 下最好用的备份工具当属 Time Machine（时间机器），其可以增量备份 macOS 下的文件，
-能恢复到之前任意备份时刻的状态，并且操作简单。当然也可以使用 `rsync`_ 命令进行备份，
-与 Linux 下相同。推荐使用 Time Machine 进行备份。
-
-首先插入一块备用硬盘，按下 :kbd:`Command` + :kbd:`空格`，搜索“Disk Utility”并按下
-:kbd:`Enter` 键以打开磁盘工具。将移动硬盘格式化成 APFS（加密）格式，这也是 macOS Big Sur（11.x）
-的默认格式。读者可以根据自身情况选择分区大小，推荐至少是 macOS 本身硬盘空间的两倍。
-
-点击左上角的 Apple 图标，在“系统偏好设置”中，打开“时间机器”。选中“在菜单栏中显示时间机器”。
-点击“选择备份磁盘”，从可用磁盘列表中选择之前格式化的硬盘分区，然后选择“使用磁盘”即可。
-时间机器会立即开始备份。首次备份可能需要很长时间，之后只会同步有改动的文件。下次插入备份硬盘，
-直接从菜单栏的时间机器菜单中选择“立即备份”即开始增量备份。可以选择“进入时间机器”，查看备份内容。
-如需还原备份文件，请参考官方支持\ `从备份恢复 Mac <https://support.apple.com/zh-cn/HT203981>`__。
-
-Windows
--------
-
-robocopy
-^^^^^^^^
-
-使用 Windows 自带的 `robocopy <https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/robocopy>`__
-命令进行增量备份。这意味着只有第一次备份的时候需要花比较多的时间来同步文件，之后再使用该命令进行备份
-只会同步有改动的文件。假设要备份整个 D 盘，移动硬盘下的备份目录为 :file:`F:\\backup`。
-打开 CMD 或 PowerShell，使用以下命令可以将 D 盘同步到备份目录下，此时备份目录是 D 盘的一个镜像::
-
-    $ robocopy D:\ F:\backup /mir /mt /R:10 /W:10 /A-:H /XD Config.Msi $RECYCLE.BIN
-
-.. important::
-
-   以上命令中 D 盘盘符后的反斜杠（:file:`D:\\`）非常重要，省略的话可能无法备份整个 D 盘。
-
-   ``/XD`` 选项后的目录（如 :file:`Config.Msi`、:file:`$RECYCLE.BIN`）
-   在备份时被忽略。读者可以根据自己的实际情况把无法备份或者不想备份的目录添加到此选项后。
-
-读者可以参考 Batch 脚本 :download:`backup.bat`。点击下载后，修改源目录、备份目录以及想要
-备份的子目录。然后，双击该 Batch 脚本即可直接运行。也可以打开 CMD 或 PowerShell，
-再输入 Batch 脚本名以运行脚本。
-
-Backup
-^^^^^^
-
-.. warning::
-
-   本节尚未开始编写。读者可以参考 https://www.portableone.com/Tech-News/Microsoft-Windows-10-PCs-have-their-own-Apple-Time-Machine-feature
-   使用 Windows 10 Backup，欢迎提供反馈。
+        backup-Windows
