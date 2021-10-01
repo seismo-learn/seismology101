@@ -214,10 +214,10 @@ Intel 软件开发工具包
 
     根据自己的需要安装软件，默认安装目录是 :file:`/opt/intel/oneapi`::
 
-        # C/C++ 编译器
+        # 安装 C/C++ 编译器
         $ sudo apt-get install intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic
 
-        # Fortran 编译器
+        # 安装 Fortran 编译器
         $ intel-oneapi-compiler-fortran
 
     配置环境变量::
