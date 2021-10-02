@@ -224,7 +224,7 @@ Intel 软件开发工具包
     :container: + shadow
     :title: bg-info text-white font-weight-bold
 
-    使用如下命令可以列出 Intel 软件仓库提供的所有软件包列表::
+    使用如下命令可以列出 Intel 软件仓库提供的所有软件包::
 
         sudo -E apt-cache pkgnames intel
 
