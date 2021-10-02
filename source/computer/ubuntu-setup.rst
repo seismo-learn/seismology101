@@ -186,7 +186,7 @@ Intel 软件开发工具包
 
 `Intel oneAPI <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
 是 Intel 公司开发的软件开发工具包。其提供了 C/C++ 编译器（``icc`` 命令）和 Fortran 编译器（``ifort`` 命令），
-以及 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
+以及 MKL 数学库、MPI 并行库等众多软件开发工具。该工具包是免费的，不需要许可证。
 
 .. note::
 
@@ -226,7 +226,7 @@ Intel 软件开发工具包
 
     使用如下命令可以列出 Intel 软件仓库提供的所有软件包::
 
-        sudo -E apt-cache pkgnames intel
+        $ sudo -E apt-cache pkgnames intel
 
 Java
 ^^^^
