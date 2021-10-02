@@ -264,7 +264,7 @@ Intel 软件开发工具包
 
    Intel oneAPI 提供了众多软件开发工具，用户可以根据需要到
    `Intel 官网 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html>`__
-   下载 macOS 离线安装包并下载安装。
+   下载其他 macOS 离线安装包并安装。
 
 Java
 ^^^^
