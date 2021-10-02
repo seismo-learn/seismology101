@@ -251,8 +251,8 @@ Intel 软件开发工具包
 
 根据自己的需要，从官网下载
 `C/C++ 编辑器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#compilerclassic>`__
-或 `Fortran 编译器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#fortran>`__，
-的离线安装包（Offline），直接双击安装。默认安装目录是 :file:`/opt/intel/oneapi`。
+或 `Fortran 编译器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#fortran>`__
+的离线安装包（Offline），然后直接双击安装。默认安装目录是 :file:`/opt/intel/oneapi`。
 
 安装完成后还需要配置环境变量::
 
