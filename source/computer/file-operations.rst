@@ -145,6 +145,10 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     $ ls
     destination
     # 删除 destination 目录
+    ## rm 命令无法直接删除文件夹，直接使用 rm 命令删除文件夹会出现如下报错
+    $ rm destination/
+    rm: destination/: is a directory
+    ## 需要使用 -r 选项（recursive，表示递归）
     $ rm -r destination
     $ ls
 
