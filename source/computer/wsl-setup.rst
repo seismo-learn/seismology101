@@ -218,6 +218,12 @@ WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
    主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接收对图形输出
    的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
 
+.. note::
+
+   Windows 10 内测版本号大于 21362 或 Windows 11 用户，可以直接跳过以下内容，
+   直接试用 Windows 官方正在开发的 WSL 图形界面软件
+   `WSLg <https://github.com/microsoft/wslg>`__。
+
 Windows 下常见的 X Server 有 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__、
 `Xming <http://www.straightrunning.com/XmingNotes/>`__、
 `Xmanager <https://www.xshellcn.com/>`__ 等。
