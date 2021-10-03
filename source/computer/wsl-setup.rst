@@ -28,6 +28,9 @@ WSL 配置指南
 简介
 ----
 
+`WSL <https://docs.microsoft.com/zh-cn/windows/wsl/>`__
+（Windows Subsystem for Linux，适用于 Linux 的 Windows 子系统）是一个在
+Windows 10/11 上运行原生 Linux 二进制可执行文件的兼容层。
 WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数情况下，建议使用 WSL2，
 因为它提供更快的性能和 100% 的系统调用兼容性。涉及到跨系统的文件互访时
 （Linux 访问 Windows 里的文件，或 Windows 访问 Linux 里的文件），使用 WSL1 具有
@@ -60,23 +63,17 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 安装
 -----
 
-WSL 的安装方式可以参考官方文档：
-
-- 中文指南：https://docs.microsoft.com/zh-cn/windows/wsl/install-win10
-- 英文指南：https://docs.microsoft.com/en-us/windows/wsl/install-win10
-
-官方文档对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。
+WSL 的安装可以参考\ `官方安装指南 <https://docs.microsoft.com/zh-cn/windows/wsl/install>`__。
+其对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。
 
 WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
 推荐使用 WSL 安装 Ubuntu 20.04 LTS。
 
 .. note::
 
-   想在 WSL 上安装 Fedora 的读者可以参考以下安装指南：
-
-   - 英文指南：https://fedoramagazine.org/wsl-fedora-33/
-   - 中文指南：https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/
-
+   想在 WSL 上安装 Fedora 的读者可以参考\
+   `英文指南 <https://fedoramagazine.org/wsl-fedora-33/>`__\
+   或\ `中文指南 <https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/>`__。
    指南中的 Fedora rootfs 下载地址可能已失效。请访问 Fedora 官方仓库下载
    `Fedora 33 <https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64>`__\ （安装指南中使用的版本）
    或 `Fedora 34 <https://github.com/fedora-cloud/docker-brew-fedora/tree/34/x86_64>`__\ （Fedora 最新版本）
