@@ -220,7 +220,7 @@ WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
 
 .. note::
 
-   Windows 10 内测版本号大于 21362 或 Windows 11 用户，可以直接跳过以下内容，
+   Windows 11 用户或 Windows 10 内测版本号大于 21362 的用户，可以直接跳过以下内容，
    直接试用 Windows 官方正在开发的 WSL 图形界面软件
    `WSLg <https://github.com/microsoft/wslg>`__。
 
