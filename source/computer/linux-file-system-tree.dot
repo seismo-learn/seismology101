@@ -1,7 +1,7 @@
 # .dot file for graphviz
 #
 # Run the following command to convert it to PNG
-#	dot linux-file-system-tree.dot -Tpng -Gdpi=300 -o linux-file-system-tree.png
+#	dot linux-file-system-tree.dot -Tpng -Gdpi=200 -o linux-file-system-tree.png
 #
 digraph UnixFileSystem {
     # global properties
