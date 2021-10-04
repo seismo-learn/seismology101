@@ -168,46 +168,35 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    也可以考虑使用其他命令行工具管理回收站
    （如 `trash-cli <https://github.com/andreafrancia/trash-cli>`__）。
 
-建立文件和目录的链接::
+软链接，也叫符号链接，类似于 Windows 下的快捷方式。Linux 下可以使用 ``ln`` （link，即链接）
+命令为文件和目录建立软链接。
 
-    # 新建 hello-world.txt 文件和 source 目录
-    $ touch hello-world.txt
-    $ mkdir source
-    $ ls
-    hello-world.txt  source
-
-    # 使用 ln（link，即链接）命令建立 hello-world.txt 的硬链接 hello-world-hard.txt
-    $ ln hello-world.txt hello-world-hard.txt
-
-    # 建立 hello-world.txt 的软链接（也叫符号链接）hello-world-soft.txt
-    $ ln -s hello-world.txt hello-world-soft.txt
-
-    # 建立 source 目录的软链接
-    $ ln -s source source-soft
-
-    # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
+    # 在当前目录下，为文件 /etc/passwd 建立软链接
+    $ ln -s /etc/passwd
+    # 使用 ls -l 命令查看，会发现，在当前目录下生成了一个 passwd 文件
+    # 其指向源文件 /etc/passwd
     $ ls -l
     total 0
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.txt
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.txt
-    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.txt -> hello-world.txt
-    drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
-    lrwxrwxrwx 1 seismo-learn seismo-learn  6 Feb  8 14:58 source-soft -> source
+    lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -> /etc/passwd
+    # 默认情况下，软链接与源文件同名。可以单独指定软链接的文件名
+    $ ln -s /etc/passwd mylocalpasswd
+    $ ls -l
+    total 0
+    lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:59 mylocalpasswd -> /etc/passwd
+    lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -> /etc/passwd
 
-    # 可以像删除文件一样删除硬链接和软链接
-    $ rm hello-world-hard.txt hello-world-soft.txt source-soft
+    # 在当前目录下，为文件夹 /usr/lib 建立软链接
+    $ ln -s /usr/lib mylibdir
+    $ ls -l
+    total 0
+    lrwxr-xr-x  1 seismo-learn  seismo-learn     8B Oct  4 22:04 mylibdir -> /usr/lib
+    lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:59 mylocalpasswd -> /etc/passwd
+    lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:55 passwd -> /etc/passwd
+    # 可以直接对软链接进行各种操作
+    $ ls mylibdir/
 
-.. admonition:: 硬链接与软链接的区别
-
-   硬链接和源文件指向的是同一存储区。删除硬链接，仍可通过源文件访问；删除源文件，
-   仍可通过硬链接访问。只有同时删除硬链接和源文件，文件实体才会被删除。因此，其实
-   本质上硬链接和源文件互为对方的硬链接。通过给文件设置硬链接，可以防止重要文件被误删。
-   目录无法建立硬链接。一般设置硬链接后，源文件和硬链接都会高亮显示。
-
-   软链接（也叫符号链接）类似 Windows 系统的快捷方式，是一个\ **文件**，里面存放的
-   是源文件（或目录）的路径。删除软链接，对源文件（或目录）没有任何影响。
-   删除源文件（或目录），软链接依然存在，但无法通过其访问源文件（或目录）了。
-   软链接一般会高亮显示。
+    # 删除软链接。源文件不受影响
+    $ rm mylibdir passwd mylocalpasswd
 
 文件路径
 --------
