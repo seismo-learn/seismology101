@@ -169,7 +169,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    （如 `trash-cli <https://github.com/andreafrancia/trash-cli>`__）。
 
 软链接，也叫符号链接，类似于 Windows 下的快捷方式。Linux 下可以使用 ``ln`` （link，即链接）
-命令为文件和目录建立软链接。
+命令为文件和目录建立软链接::
 
     # 在当前目录下，为文件 /etc/passwd 建立软链接
     $ ln -s /etc/passwd
