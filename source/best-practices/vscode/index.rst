@@ -120,19 +120,6 @@ VS code 执行GMT脚本过程
 我们可以查询或自定义众多快捷键，包括但不限于行注释（Add Line Comment/Remove Line Comment）、
 窗口分割（View: Split Editor Down/Right/Up/Left）、窗口关闭（View：Close Editor）等。
 
-代码高亮设置
-------------
-
-Windows用户下载 :download:`replace_vscode.bat`\ 以及 :download:`batchfile.tmLanguage.json`\ 到任意目录，
-直接双击 ``replace_vscode.bat`` 重新启动 VS code 即可。
-
-如果提示错误，请手动复制 ``batchfile.tmLanguage.json`` 文件到以下路径替换原文件：
-``C:\Users\用户名\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\bat\syntaxes`` 
-
-Linux 和 Mac 用户与 Windows 类似，
-找到 ``Microsoft VS Code\resources\app\extensions\shellscript\syntaxes`` 文件夹，
-将 :download:`shell-unix-bash.tmLanguage.json` 文件替换原文件后重启 VScode 即可。
-
 安装中文语言包
 --------------
 
