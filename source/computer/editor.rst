@@ -84,7 +84,7 @@ VS Code
 - 使用 Google 搜索
 
 建议在日常科研中随时根据个人习惯，去配置 VS Code、安装和使用扩展包等。更多的配置和使用技巧见
-:doc:`/best-practices/vscode`。
+:doc:`/best-practices/vscode/index`。
 
 Vim
 ----
