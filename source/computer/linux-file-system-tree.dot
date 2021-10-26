@@ -12,20 +12,20 @@ digraph UnixFileSystem {
     "~/opt/" [label="opt/"];
     # connections
     "/" -> "bin/";
-    "/" -> "lib/";
     "/" -> "etc/"
-    "/" -> "usr/";
+    "/" -> "lib/";
     "/" -> "opt/";
+    "/" -> "usr/";
     "/" -> "home/";
     "home/" -> "seismo-learn/";
     "home/" -> "another-user/";
     "seismo-learn/" -> "~/bin/";
-    "seismo-learn/" -> "~/opt/";
-    "seismo-learn/" -> "software/";
-    "seismo-learn/" -> "src/";
     "seismo-learn/" -> "codes/";
     "seismo-learn/" -> "data/";
+    "seismo-learn/" -> "~/opt/";
     "seismo-learn/" -> "projects/";
+    "seismo-learn/" -> "software/";
+    "seismo-learn/" -> "src/";
     "seismo-learn/" -> "Documents/";
     "seismo-learn/" -> "Desktop/";
     "seismo-learn/" -> "Downloads/";
