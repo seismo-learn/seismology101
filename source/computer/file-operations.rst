@@ -72,11 +72,12 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     # 进入家目录
     $ cd ~
     # 使用 mkdir（make directory，即创建目录）命令新建以下目录
-    $ mkdir codes software workspace
+    $ mkdir codes software
     $ ls
-    codes  Desktop  Documents  Downloads  software  workspace
-    # 在 workspace 目录中新建 source 目录
-    $ mkdir workspace/source
+    codes  Desktop  Documents  Downloads  software
+    # 建立 workspace 目录，并在该目录下建立 source 目录
+    # 需要使用 -p 选项，表示自动创建不存在的中间层目录
+    $ mkdir -p workspace/source
     $ ls workspace/
     source
 
