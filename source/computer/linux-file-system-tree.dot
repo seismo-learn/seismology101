@@ -1,0 +1,31 @@
+# .dot file for graphviz
+#
+# Run the following command to convert it to PNG
+#	dot linux-file-system-tree.dot -Tpng -Gdpi=200 -o linux-file-system-tree.png
+#
+digraph UnixFileSystem {
+    # global properties
+    size="10,10";
+    node [color=lightblue2, style=filled, shape=folder, fontname="Courier New"];
+    # connections
+    "/" -> "bin/";
+    "/" -> "etc/"
+    "/" -> "home/";
+    "/" -> "lib/";
+    "/" -> "opt/";
+    "/" -> "usr/";
+    "home/" -> "seismo-learn/";
+    "home/" -> "another-user/";
+    "seismo-learn/" -> "~/bin/";
+    "~/bin/" [label="bin/"];
+    "seismo-learn/" -> "codes/";
+    "seismo-learn/" -> "data/";
+    "seismo-learn/" -> "~/opt/";
+    "~/opt/" [label="opt/"];
+    "seismo-learn/" -> "projects/";
+    "seismo-learn/" -> "software/";
+    "seismo-learn/" -> "src/";
+    "seismo-learn/" -> "Desktop/";
+    "seismo-learn/" -> "Documents/";
+    "seismo-learn/" -> "Downloads/";
+}
