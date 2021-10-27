@@ -11,6 +11,11 @@
 熟悉 Linux 文件系统
 -------------------
 
+.. figure:: linux-file-system-tree.*
+   :align: center
+
+   Linux 文件系统树
+
 Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特殊的目录称为根目录。
 根目录下一般有 :file:`/home`、:file:`/root`、:file:`/bin`、
 :file:`/usr`、:file:`/lib`、:file:`/opt` 等目录。
