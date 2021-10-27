@@ -10,10 +10,10 @@ digraph UnixFileSystem {
     # connections
     "/" -> "bin/";
     "/" -> "etc/"
+    "/" -> "home/";
     "/" -> "lib/";
     "/" -> "opt/";
     "/" -> "usr/";
-    "/" -> "home/";
     "home/" -> "seismo-learn/";
     "home/" -> "another-user/";
     "seismo-learn/" -> "~/bin/";
