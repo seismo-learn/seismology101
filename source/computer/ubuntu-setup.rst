@@ -193,7 +193,8 @@ Intel 软件开发工具包
    地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
 在 Ubuntu 系统下，官方手册提供了\
-`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/>`__。这里，我们推荐使用 ``apt`` 安装。
+`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/>`__。
+这里，我们推荐使用 ``apt`` 安装。
 
 添加 Intel 软件仓库::
 

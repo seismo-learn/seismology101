@@ -246,7 +246,8 @@ Intel 软件开发工具包
    地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
 在 macOS 下，官方手册提供了\
-`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-macos/>`__。这里，我们下载离线安装包进行安装。
+`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-macos/>`__。
+这里，我们下载离线安装包进行安装。
 
 根据自己的需要，从官网下载
 `C/C++ 编辑器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#compilerclassic>`__
