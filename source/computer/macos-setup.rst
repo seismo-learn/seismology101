@@ -114,12 +114,12 @@ Homebrew
 .. note::
 
    Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，
-   通常是 :file:`/usr/local/` 目录。而在最新的 Apple M1 芯片的 Mac 下，
+   通常是 :file:`/usr/local/` 目录。而在 Apple M1 芯片的 Mac 下，
    这一目录为 :file:`/opt/homebrew/`。
 
 .. note::
 
-   在最新的 Apple M1 芯片的 Mac 下安装 Homebrew 后，还需要设置环境变量::
+   在 Apple M1 芯片的 Mac 下安装 Homebrew 后，还需要执行如下命令以配置 Homebrew::
 
        $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
        $ source ~/.zshrc
@@ -209,19 +209,19 @@ C/C++ 编译器。
     其与 `GCC <https://gcc.gnu.org/>`__ 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
     因而一般用户无需再安装 GCC 编译器。
 
-    由于特殊原因需要安装 GCC 编译器的用户，可以使用如下命令安装::
+    由于特殊原因需要安装 GCC 编译器的用户（例如需要使用 GCC 特有的功能和选项），
+    可以使用如下命令安装::
 
         $ brew install gcc
 
-    通过 Homebrew 安装的 GCC 提供了命令 ``gcc-10`` 和 ``g++-10``
-    （``10`` 是 GCC 的主版本号），以避免替换 Command Line Tools for Xcode
-    提供的 ``gcc`` 和 ``g++`` 命令。
-    用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 ``gcc-10`` 和 ``g++-10`` 命令，
+    通过 Homebrew 安装的 GCC 提供了命令 ``gcc-11`` 和 ``g++-11``
+    （``11`` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 ``gcc`` 和 ``g++`` 命令。
+    用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 ``gcc-11`` 和 ``g++-11`` 命令，
     或者在 Homebrew 的 bin 目录下创建软链接::
 
         $ cd $(brew --prefix)/bin/
-        $ ln -s gcc-10 gcc
-        $ ln -s g++-10 g++
+        $ ln -s gcc-11 gcc
+        $ ln -s g++-11 g++
 
     打开一个新终端后，使用的 ``gcc`` 和 ``g++`` 命令则默认是 GCC 编译器。
     删除软链接后，默认使用的又是 Apple Clang 编译器了。

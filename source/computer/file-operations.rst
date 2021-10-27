@@ -11,6 +11,11 @@
 熟悉 Linux 文件系统
 -------------------
 
+.. figure:: linux-file-system-tree.*
+   :align: center
+
+   Linux 文件系统树
+
 Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特殊的目录称为根目录。
 根目录下一般有 :file:`/home`、:file:`/root`、:file:`/bin`、
 :file:`/usr`、:file:`/lib`、:file:`/opt` 等目录。
@@ -24,7 +29,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 日常科研中，大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
 该用户的家目录便是 :file:`/home/seismo-learn`。macOS 下的家目录是 :file:`/Users/seismo-learn`。
 在 Linux/macOS 系统下，可用 :file:`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
-:file:`~/Desktop`、:file:`~/Downloads`、:file:`~/Documents` 等。熟悉 Linux 文件系统后可以参考\
+:file:`~/Desktop`、:file:`~/Documents`、:file:`~/Downloads` 等。熟悉 Linux 文件系统后可以参考\
 :doc:`《文件管理实践经验》<best-practices/file-organization>`\ 和\
 :doc:`《软件安装实践经验》<best-practices/software-installation>`\
 进一步组织与管理家目录，以提高工作效率。
@@ -72,11 +77,12 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     # 进入家目录
     $ cd ~
     # 使用 mkdir（make directory，即创建目录）命令新建以下目录
-    $ mkdir codes software workspace
+    $ mkdir codes software
     $ ls
-    codes  Desktop  Documents  Downloads  software  workspace
-    # 在 workspace 目录中新建 source 目录
-    $ mkdir workspace/source
+    codes  Desktop  Documents  Downloads  software
+    # 建立 workspace 目录，并在该目录下建立 source 目录
+    # 需要使用 -p 选项，表示自动创建不存在的中间层目录
+    $ mkdir -p workspace/source
     $ ls workspace/
     source
 

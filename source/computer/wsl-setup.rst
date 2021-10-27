@@ -139,63 +139,6 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
     # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
     $ wsl --unregister Ubuntu
 
-跨系统文件互访
---------------
-
-WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，
-还是从 Windows 访问 WSL，WSL1 的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
-时，建议将 Linux 发行版设置为 WSL1。
-
-WSL 访问 Windows
-^^^^^^^^^^^^^^^^
-
-Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WSL 终端中
-输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后便可编辑和运行目录中的文件。
-
-Windows 访问 WSL
-^^^^^^^^^^^^^^^^
-
-在 Windows 下搜索、打开和编辑 WSL 下的文件和目录的方式有以下两种：
-
-1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$``，会显示所有已安装的 WSL 目录，
-   然后根据需要找到文件进行操作
-
-2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``，会在 Windows 下打开
-   家目录，根据需要找到文件进行操作
-
-在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：
-
-1. 真实路径
-2. UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）
-
-WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问，这是因为 WSL2 使用 VHD 虚拟磁盘文件
-作为 Linux 发行版的根目录。
-
-Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 PowerShell 时，只能用
-真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法用真实路径
-和 UNC 路径访问 WSL2 文件系统。
-
-Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些支持 UNC 路径的
-软件（如 MATLAB）还可以通过 UNC 路径访问 WSL1 或 WSL2 文件系统。
-
-因此，如果想使用 Windows 的 CMD、PowerShell 以及应用程序编译或运行 WSL 中的文件，
-需要先把 Linux 发行版切换到 WSL1 版本，进入 WSL 后新建一个名字独特的文件夹，
-然后在 Windows 中对该文件夹进行定位，从而确定其真实的路径。
-
-.. note::
-
-   推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
-   实现文件夹和文件的快速定位。
-
-   推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__，
-   可直接在 Microsoft Store 中安装。界面美观、操作方便，
-   支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。
-   可完全替代 CMD 和 PowerShell。
-
-   推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__，并安装插件
-   `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__。
-   使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
-
 配置 Linux
 -----------
 
@@ -253,3 +196,60 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 .. note::
 
    安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。
+
+跨系统文件互访
+--------------
+
+WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，
+还是从 Windows 访问 WSL，WSL1 的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
+时，建议将 Linux 发行版设置为 WSL1。
+
+WSL 访问 Windows
+^^^^^^^^^^^^^^^^
+
+Windows 系统的硬盘挂载在 WSL 的 ``/mnt`` 路径下，用户可以在 WSL 终端中
+输入 ``cd /mnt/d`` 命令进入 Windows 系统的 D 盘，然后便可编辑和运行目录中的文件。
+
+Windows 访问 WSL
+^^^^^^^^^^^^^^^^
+
+在 Windows 下搜索、打开和编辑 WSL 下的文件和目录的方式有以下两种：
+
+1. 在 Windows 资源管理器的地址栏中输入 ``\\wsl$``，会显示所有已安装的 WSL 目录，
+   然后根据需要找到文件进行操作
+
+2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``，会在 Windows 下打开
+   家目录，根据需要找到文件进行操作
+
+在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：
+
+1. 真实路径
+2. UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）
+
+WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问，这是因为 WSL2 使用 VHD 虚拟磁盘文件
+作为 Linux 发行版的根目录。
+
+Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 PowerShell 时，只能用
+真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法用真实路径
+和 UNC 路径访问 WSL2 文件系统。
+
+Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些支持 UNC 路径的
+软件（如 MATLAB）还可以通过 UNC 路径访问 WSL1 或 WSL2 文件系统。
+
+因此，如果想使用 Windows 的 CMD、PowerShell 以及应用程序编译或运行 WSL 中的文件，
+需要先把 Linux 发行版切换到 WSL1 版本，进入 WSL 后新建一个名字独特的文件夹，
+然后在 Windows 中对该文件夹进行定位，从而确定其真实的路径。
+
+.. note::
+
+   推荐在 Windows 中安装 `Everything <https://www.voidtools.com/zh-cn/>`__
+   实现文件夹和文件的快速定位。
+
+   推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__，
+   可直接在 Microsoft Store 中安装。界面美观、操作方便，
+   支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。
+   可完全替代 CMD 和 PowerShell。
+
+   推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__，并安装插件
+   `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__。
+   使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
