@@ -41,6 +41,7 @@
    exercises/download
    exercises/process
    exercises/analysis
+   exercises/distaz.ipynb
 
 .. toctree::
    :maxdepth: 3

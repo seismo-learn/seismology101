@@ -47,6 +47,7 @@ extensions = [
     "sphinx_cjkspace.cjkspace",
     "sphinx_copybutton",
     "sphinx_panels",
+    "myst_nb",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
