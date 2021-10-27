@@ -25,7 +25,7 @@ digraph UnixFileSystem {
     "seismo-learn/" -> "projects/";
     "seismo-learn/" -> "software/";
     "seismo-learn/" -> "src/";
-    "seismo-learn/" -> "Documents/";
     "seismo-learn/" -> "Desktop/";
+    "seismo-learn/" -> "Documents/";
     "seismo-learn/" -> "Downloads/";
 }
