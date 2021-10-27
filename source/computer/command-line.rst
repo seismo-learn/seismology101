@@ -62,7 +62,7 @@ Shell
 为了简洁，本教程中的所有命令行只使用 ``$`` 符号表示 Shell 提示符。因而上面的示例
 在本教程中会写作::
 
-    # 查看 Shell 变量，即当前 Shell 程序的名字
+    # 查看 SHELL 变量，即当前 Shell 程序的名字
     $ echo $SHELL
     /bin/bash
 
