@@ -38,9 +38,9 @@
    :hidden:
 
    exercises/introduction
-   exercises/catalog
-   exercises/station
-   exercises/waveform
+   exercises/download
+   exercises/process
+   exercises/analysis
    exercises/distaz.ipynb
 
 .. toctree::
@@ -53,6 +53,7 @@
    best-practices/software-installation
    best-practices/backup
    best-practices/zsh
+   best-practices/vscode
 
 
 欢迎阅读由\ `地震“学”小组 <https://github.com/orgs/seismo-learn/people>`__\
@@ -70,14 +71,19 @@
 
 本教程主要包括五部分内容：
 
-1. **计算机基础**\ ：Linux 或 macOS 操作系统的基础知识和常用操作
-2. **编程基础**\ ：需要掌握的编程语言和编程技能 [**缓慢编写中**]
-3. **地震学基础**\ ：开展科研工作前必须了解的地震学基础知识 [**全力编写中**]
-4. **地震学实践**\ ：通过实践掌握基本的地震学数据处理 [**全力编写中**]
-5. **实践经验**\ ：日常科研工作中的一些实践经验 [**缓慢编写中**]
+1. **计算机基础**：Linux 或 macOS 操作系统的基础知识和常用操作
+2. **编程基础**：需要掌握的编程语言和编程技能 [**缓慢编写中**]
+3. **地震学基础**：开展科研工作前必须了解的地震学基础知识 [**全力编写中**]
+4. **地震学实践**：通过实践掌握基本的地震学数据处理 [**全力编写中**]
+5. **实践经验**：日常科研工作中的一些实践经验 [**缓慢编写中**]
 
 欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
 这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。
+请通过如下方式给予反馈：
+
+#. `留言参与讨论 <https://github.com/seismo-learn/seismology101/discussions>`__
+#.  在文档源码仓库下\ `提交 Issue <https://github.com/seismo-learn/seismology101/issues>`__
+#.  修改文档并\ `提交 Pull Request <https://github.com/seismo-learn/seismology101/pulls>`__
 
 .. admonition:: 免责声明
 

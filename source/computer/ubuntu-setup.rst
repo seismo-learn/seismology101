@@ -3,16 +3,27 @@ Ubuntu 配置指南
 
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）
-:最近更新日期: 2021-01-25
+:最近更新日期: 2021-10-02
 :预计花费时间: 120 分钟
+
+----
 
 .. note::
 
-   本节内容适用于 **Ubuntu Desktop 20.04.2 LTS**\，不一定适用于其他 Ubuntu 版本。
-   建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04.2 LTS）或最新版本
-   （目前是 Ubuntu 20.10）。如遇到问题，欢迎反馈。
+   本节内容适用于 **Ubuntu Desktop 20.04.3 LTS**，不一定适用于其他 Ubuntu 版本。
+   建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04 LTS）或最新版本
+   （目前是 Ubuntu 21.10），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
 
-----
+.. note::
+
+   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+   相关配置。
+
+   #. `安装系统`_ [**必须**]
+   #. `系统软件`_ [**必须**]
+   #. `编程开发环境`_ [**强力推荐**]
+   #. `命令行工具`_ [**推荐**]
+   #. `日常软件`_ [**可选**]
 
 安装系统
 --------
@@ -28,10 +39,10 @@ Ubuntu 配置指南
 访问 `Ubuntu 官网 <https://ubuntu.com/>`__ 并下载 Ubuntu Desktop 镜像文件，
 一般选择 AMD64（x86_64）版本。
 
-**Ubuntu Desktop 20.04.2 LTS AMD64** 的 ISO 镜像文件（约 2.9 GB）下载链接：
+**Ubuntu Desktop 20.04.3 LTS AMD64** 的 ISO 镜像文件（约 2.9 GB）下载链接：
 
-- `官方镜像 <https://releases.ubuntu.com/focal/ubuntu-20.04.2.0-desktop-amd64.iso>`__
-- `中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.2.0-desktop-amd64.iso>`__ [**推荐国内用户使用**]
+- `官方镜像 <https://releases.ubuntu.com/focal/ubuntu-20.04.3-desktop-amd64.iso>`__
+- `中科大镜像 <https://mirrors.ustc.edu.cn/ubuntu-releases/20.04/ubuntu-20.04.3-desktop-amd64.iso>`__ [**推荐国内用户使用**]
 
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
@@ -100,7 +111,7 @@ Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件�
 .. warning::
 
     更新系统前，特别是大版本更新（如 Ubuntu 20.04 更新为 Ubuntu 20.10），
-    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`\ ）。
+    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`）。
 
 .. note::
 
@@ -122,7 +133,7 @@ Ubuntu 系统自带了“软件中心”，可用于查找、安装、卸载和�
 
    注意：在替换软件源镜像后要执行 ``sudo apt update`` 更新本地缓存的软件包元数据。
 
-``apt`` 的详细用法请阅读 `apt 帮助文档 <http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html>`__\ ，
+``apt`` 的详细用法请阅读 `apt 帮助文档 <http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html>`__，
 这里只介绍一些常用命令::
 
     # 更新本地软件包元数据
@@ -173,41 +184,49 @@ Fortran 编译器，其提供了 ``gfortran`` 命令::
 Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
-`Intel oneAPI Toolkits <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是 Intel 公司开发的软件开发工具包。它也提供了 C/C++ 编译器和 Fortran 编译器（``icc`` 和 ``ifort`` 命令）。
-此外还有 MKL 数学库、MPI 并行库等。该工具包是免费的，不需要许可证。
+`Intel oneAPI <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
+是 Intel 公司提供的免费软件开发工具包。该工具包中包含了 C/C++ 编译器（``icc`` 命令）
+和 Fortran 编译器（``ifort`` 命令），以及 MKL 数学库、MPI 并行库等众多软件开发工具。
 
-在 Ubuntu 系统下，官方手册提供了多种\
-`安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/top.html>`__\ ，
-如在线安装、本地安装、使用 ``apt`` 安装、使用 ``conda`` 安装等。这里，我们选择使用 ``apt`` 安装。
+.. note::
 
-添加 Intel 仓库公钥::
+   地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
-    # 下载 Intel 仓库公钥
-    $ cd ~/Downloads
-    $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-    # 添加到 apt 源密钥环中，以便使用此密钥签名的档案受到信任
-    $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
-    # 删除公钥
-    $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+在 Ubuntu 系统下，官方手册提供了\
+`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/>`__。
+这里，我们推荐使用 ``apt`` 安装。
 
 添加 Intel 软件仓库::
 
+    # 下载 Intel 仓库公钥并添加到 apt 源密钥环中
+    $ wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+    $ sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+    # 删除公钥文件
+    $ rm GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
+
+    # 添加软件仓库
     $ sudo add-apt-repository "deb https://apt.repos.intel.com/oneapi all main"
     $ sudo apt update
 
-日常科研安装 Base Toolkit 和 HPC Toolkit 两个工具包即可。默认安装目录是 :file:`/opt/intel/oneapi`::
+根据自己的需要安装 C/C++ 或 Fortran 编译器，默认安装目录是 :file:`/opt/intel/oneapi`::
 
-    $ sudo apt install intel-basekit
-    $ sudo apt install intel-hpckit
+    # 安装 C/C++ 编译器
+    $ sudo apt install intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic
 
-配置环境变量::
+    # 安装 Fortran 编译器
+    $ sudo apt install intel-oneapi-compiler-fortran
+
+安装完成后还需要配置环境变量::
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
-更多设置可以参考\ `官方手册 <https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-linux/>`__\ 。
+.. dropdown:: :fa:`exclamation-circle,mr-1` 查看 Intel 软件仓库提供的软件列表
+    :container: + shadow
+    :title: bg-info text-white font-weight-bold
 
-.. include:: intel-oneapi-warning.rst_
+    使用如下命令可以列出 Intel 软件仓库提供的所有软件包::
+
+        $ sudo -E apt-cache pkgnames intel
 
 Java
 ^^^^
@@ -219,7 +238,7 @@ Java
 Python
 ^^^^^^
 
-Ubuntu 20.04.2 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
+Ubuntu 20.04 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
 而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
 
 git
@@ -235,6 +254,15 @@ git
 ----------
 
 Ubuntu 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它有用的命令行工具。
+
+dos2unix & unix2dos
+^^^^^^^^^^^^^^^^^^^
+
+Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
+``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符，
+``unix2dos`` 则反之::
+
+    $ sudo apt install dos2unix
 
 tldr
 ^^^^
@@ -260,15 +288,15 @@ ack
 ^^^^^^^^^^
 
 Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__\ 。
+推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__。
 根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions>`__\
 安装即可。
 
 解压软件
 ^^^^^^^^
 
-Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``\ 、
-``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``\ ），
+Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``、
+``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``），
 但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
 后即可通过双击直接解压 ``.rar`` 文件::
 
@@ -288,16 +316,16 @@ Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
 以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
 
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`\ : 水平分割终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`\ :  垂直分割终端
-- :kbd:`Alt` + :kbd:`上下左右`\ :  切换子终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`：水平分割终端
+- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`：垂直分割终端
+- :kbd:`Alt` + :kbd:`上下左右`：切换子终端
 
 Google Earth
 ^^^^^^^^^^^^
 
 Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
 并允许用户添加 KML 或 KMZ 格式的自定义数据。
-非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__\，
+非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
 重度用户可以按照如下步骤安装桌面版。
 
 1. 下载 64 位 deb 包：https://www.google.com/earth/versions/#download-pro
