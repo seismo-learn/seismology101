@@ -173,11 +173,11 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 在当前目录下，为文件 /etc/passwd 建立软链接
     $ ln -s /etc/passwd
-    # 使用 ls -l 命令查看，会发现，在当前目录下生成了一个 passwd 文件，其指向源文件 /etc/passwd
+    # 使用 ls -l 命令查看，会发现在当前目录下生成了一个 passwd 文件，其指向源文件 /etc/passwd
     $ ls -l
     total 0
     lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -> /etc/passwd
-    # 默认情况下，软链接与源文件同名。可以单独指定软链接的文件名
+    # 默认情况下，软链接与源文件同名。可以重新指定软链接的文件名
     $ ln -s /etc/passwd mylocalpasswd
     $ ls -l
     total 0
