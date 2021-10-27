@@ -186,16 +186,16 @@ Intel 软件开发工具包
 ^^^^^^^^^^^^^^^^^^^^
 
 `Intel oneAPI <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是 Intel 公司开发的软件开发工具包。其提供了 C/C++ 编译器（``icc`` 命令）和 Fortran 编译器（``ifort`` 命令），
-以及 MKL 数学库、MPI 并行库等众多软件开发工具。该工具包是免费的，不需要许可证。
+是 Intel 公司提供的免费软件开发工具包。该工具包中包含了 C/C++ 编译器（``icc`` 命令）
+和 Fortran 编译器（``ifort`` 命令），以及 MKL 数学库、MPI 并行库等众多软件开发工具。
 
 .. note::
 
    地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
 
 在 Fedora 系统下，官方手册提供了\
-`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/>`__，
-如在线安装、本地安装、使用 ``dnf`` 安装、使用 ``conda`` 安装等。这里，我们推荐使用 ``dnf`` 安装。
+`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/>`__。
+这里，我们推荐使用 ``dnf`` 安装。
 
 下载 :file:`.repo` 文件 :download:`oneapi.repo`，并将其放在 :file:`/etc/yum.repos.d` 目录下::
 
