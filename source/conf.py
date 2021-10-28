@@ -80,6 +80,9 @@ copybutton_prompt_is_regexp = True
 copybutton_only_copy_prompt_lines = True
 copybutton_remove_prompts = True
 
+# options for myst-nb
+jupyter_execute_notebooks = "off"
+
 # -- Options for HTML output -------------------------------------------------
 import sphinx_rtd_theme
 
