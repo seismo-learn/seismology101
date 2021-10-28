@@ -89,7 +89,7 @@ Shell 接收到用户输入的命令后，会以空格为分隔符将输入的�
    :container: + shadow
    :title: bg-info text-white font-weight-bold
 
-   读者可能以后会常接触到正则表达式（regular expression），需要强调的是 Shell 扩展和
+   读者可能以后会常接触到正则表达式（regular expression）。需要强调的是 Shell 扩展和
    正则表达式是不同的：
 
    .. table:: Shell 扩展和正则表达式的主要区别
@@ -104,7 +104,6 @@ Shell 接收到用户输入的命令后，会以空格为分隔符将输入的�
       =================================== =========================================
 
    Shell 扩展和正则表达式都会用到特殊字符，但是有些特殊字符的含义是完全不同的。
-
    日常科研中需要使用正则表达式时，可以参考\
    `正则表达式 <https://www.bookstack.cn/read/bash-tutorial/docs-archives-regex.md>`__\
    学习详细用法。
