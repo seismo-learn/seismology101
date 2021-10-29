@@ -32,8 +32,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          mamba install sphinx sphinx-cjkspace sphinx-copybutton sphinx-panels \
-                        sphinx_rtd_theme myst-nb obspy
+          mamba install sphinx sphinx-copybutton sphinx-panels sphinx_rtd_theme myst-nb obspy
+          pip install sphinx-cjkspace
 
       - name: Build documentation
         run: make dirhtml
