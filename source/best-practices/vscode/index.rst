@@ -16,7 +16,7 @@ VSCode 使用教程
 Visual Studio Code，简称 VS Code ，是微软推出的一款免费、轻量且功能强大的编辑器。
 VS Code 拥有一键执行、语法高亮、分屏显示等功能，是目前用于代码编程的主流编辑器。
 
-VS Code 是跨平台软件，支持linux/Mac/Windows平台。本文以windows下编写GMT绘图脚本为例介绍其使用方法。
+VS Code 是跨平台软件，支持 linux/macOS/Windows 平台。本文以 windows 下编写 GMT 绘图脚本为例介绍其使用方法。
 
 VS Code 安装
 --------------
