@@ -38,14 +38,14 @@ jobs:
           mamba install sphinx sphinx-copybutton sphinx-panels sphinx_rtd_theme myst-nb obspy
           pip install sphinx-cjkspace
 
-      - name: Build documentation
-        run: make dirhtml
-
       - uses: actions/cache@v2
         id: cache
         with:
           path: build/.jupyter_cache
           key: notebooks
+
+      - name: Build documentation
+        run: make dirhtml
 
       - name: Deploy for preview
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
