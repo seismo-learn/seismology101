@@ -16,7 +16,8 @@ VSCode 使用教程
 Visual Studio Code，简称 VS Code ，是微软推出的一款免费、轻量且功能强大的编辑器。
 VS Code 拥有一键执行、语法高亮、分屏显示等功能，是目前用于代码编程的主流编辑器。
 
-VS Code 是跨平台软件，支持 linux/macOS/Windows 平台。本文以 windows 下编写 GMT 绘图脚本为例介绍其使用方法。
+VS Code 是跨平台软件，支持 linux/macOS/Windows 平台。本文以 windows 下编写 GMT 绘图脚本为例介绍其安装使用方法。
+linux/macOS 下的安装过程则较为简单，可以参考\ :doc:`../../computer/setup`\ 中相应操作系统下的“日常软件”一节。
 
 VS Code 安装
 --------------
@@ -34,8 +35,8 @@ VS Code下载地址为： https://code.visualstudio.com/Download
 1. 开始菜单中，直接找到 Visual Studio Code 应用程序打开。
 2. 直接在对应脚本或工作文件夹点击右键，选择 ``通过Code打开（Open with Code)`` 。
 
-我们建议使用第二种方法，因为这样终端的工作目录会自动选定为代码文件所在的目录。
-使用第一种方法打开代码文件后，还需要用户手动切换终端的工作目录，对于初学者来说十分麻烦。
+对于 windows 我们建议使用第二种方法，因为这样终端的工作目录会自动选定为代码文件所在的目录。
+在 windows 中使用第一种方法打开代码文件后，还需要用户手动切换终端的工作目录，对于初学者来说十分麻烦。
 
 插件安装
 --------
