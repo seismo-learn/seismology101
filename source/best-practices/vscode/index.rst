@@ -103,6 +103,7 @@ VS code 执行脚本程序过程
    :align: center
    
 .. warning::
+
     请注意，在使用脚本进行GMT绘图时，如果你运行的是 Batch 脚本，请一定要在上图的“切换终端”中选择 cmd，绝对不要使用 PowerShell。
     PowerShell 运行 Batch 绘图脚本会出现无法使用远程数据、中文乱码等错误。
     
