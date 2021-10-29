@@ -27,6 +27,10 @@ jobs:
 
       - name: Build documentation
         run: make dirhtml
+        continue-on-error: true
+
+      - name: Debug
+        run: cat /home/runner/work/seismology101/seismology101/build/dirhtml/reports/distaz.log
 
       - name: Deploy for preview
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
