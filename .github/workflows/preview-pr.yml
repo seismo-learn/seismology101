@@ -40,7 +40,12 @@ jobs:
 
       - name: Build documentation
         run: make dirhtml
-        continue-on-error: true
+
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: _build/.jupyter_cache
+          key: notebooks
 
       - name: Deploy for preview
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
