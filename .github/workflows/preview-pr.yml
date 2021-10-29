@@ -44,7 +44,7 @@ jobs:
       - uses: actions/cache@v2
         id: cache
         with:
-          path: _build/.jupyter_cache
+          path: build/.jupyter_cache
           key: notebooks
 
       - name: Deploy for preview
