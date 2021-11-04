@@ -26,7 +26,7 @@ jobs:
           #activate-environment: seismo-learn
           environment-file: environment.yml
           #channels: conda-forge,nodefaults
-          #channel-priority: strict
+          channel-priority: strict
           #miniforge-version: latest
           miniforge-variant: Mambaforge
           #mamba-version: "*"
