@@ -3,12 +3,13 @@ channels:
     - conda-forge
     - nodefaults
 dependencies:
+    - python=3.9
     - pip
     - sphinx
     - sphinx-copybutton
     - sphinx-panels
     - sphinx_rtd_theme
-    - obspy
     - myst-nb
+    - obspy=1.2.2
     - pip:
       - sphinx-cjkspace
