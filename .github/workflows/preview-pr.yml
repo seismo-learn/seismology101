@@ -30,7 +30,7 @@ jobs:
           #miniforge-version: latest
           #miniforge-variant: Mambaforge
           #mamba-version: "*"
-          #use-mamba: true
+          use-mamba: true
 
       #- name: Install dependencies
       #  run: |
