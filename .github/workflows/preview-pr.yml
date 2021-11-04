@@ -28,7 +28,7 @@ jobs:
           #channels: conda-forge,nodefaults
           #channel-priority: strict
           #miniforge-version: latest
-          #miniforge-variant: Mambaforge
+          miniforge-variant: Mambaforge
           #mamba-version: "*"
           use-mamba: true
 
