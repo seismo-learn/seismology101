@@ -1,0 +1,14 @@
+name: seismology101
+channels:
+    - conda-forge
+    - nodefaults
+dependencies:
+    - pip
+    - sphinx
+    - sphinx-copybutton
+    - sphinx-panels
+    - sphinx_rtd_theme
+    - obspy
+    - myst-nb
+    - pip:
+      - sphinx-cjkspace
