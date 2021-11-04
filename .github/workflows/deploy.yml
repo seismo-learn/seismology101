@@ -27,17 +27,8 @@ jobs:
         with:
           activate-environment: seismo-learn
           environment-file: environment.yml
-          channels: conda-forge,nodefaults
-          channel-priority: strict
-          miniforge-version: latest
           miniforge-variant: Mambaforge
-          mamba-version: "*"
           use-mamba: true
-
-      #- name: Install dependencies
-      #  run: |
-      #    mamba install sphinx sphinx-copybutton sphinx-panels sphinx_rtd_theme myst-nb obspy
-      #    pip install sphinx-cjkspace
 
       - uses: actions/cache@v2
         id: cache
