@@ -8,6 +8,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # Run weekly at 00:00 on Sunday
+    - cron: '0 0 * * 0'
 
 jobs:
   deploy:
@@ -35,6 +38,10 @@ jobs:
         with:
           path: build/.jupyter_cache
           key: notebooks
+
+      - name: Disable notebook cache for scheduled jobs
+        if: github.event_name == 'schedule'
+        run: sed -i"" 's/jupyter_execute_notebooks = "cache"/jupyter_execute_notebooks = "force"/' source/conf.py
 
       - name: Build documentation
         run: make dirhtml
