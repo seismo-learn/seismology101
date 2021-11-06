@@ -31,6 +31,7 @@
    seismology/basis
    seismology/data
    seismology/software
+   seismology/resources
 
 .. toctree::
    :maxdepth: 3
