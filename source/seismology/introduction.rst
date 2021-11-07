@@ -70,9 +70,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 可以查阅 `History of Seismology <https://www.iris.edu/hq/inclass/poster/history_of_seismology>`__
 了解更多地震学历史，以下仅简要介绍部分重要历史事件。
 
-在早期，理论发展领先地震学观测。1892 年，Love 出版了经典教材《A Treatise on the Mathematical Theory of Elasticity》（第一版），
-简介中详细描述了弹性理论的发展历史。
-以下介绍地震波理论的早期进展：
+在早期，地震波理论发展领先地震学观测。以下介绍地震波理论的早期进展：
 
 - 弹性理论（elasticity theory）的两个重要发现：胡克定律（Hooke，1660 年）、
   弹性介质的一般性平衡和运动方程（Navier，1821 年）
