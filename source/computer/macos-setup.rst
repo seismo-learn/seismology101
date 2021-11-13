@@ -11,7 +11,7 @@ macOS 配置指南
 
 .. note::
 
-   本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x），
+   本节内容适用于 macOS Catalina（10.15）、Big Sur（11.x）和 Monterey （12.x）
    不一定适用于其他 macOS 版本。
 
    .. table:: 近几年的 macOS 系统版本号
@@ -23,6 +23,7 @@ macOS 配置指南
       macOS 10.14          Mojave                2018 年 9 月 24 日
       macOS 10.15          Catalina              2019 年 10 月 7 日
       macOS 11             Big Sur               2020 年 9 月 12 日
+      macOS 12             Monterey              2021 年 10 月 25 日
       ==================== ====================  ======================
 
 .. note::
@@ -122,10 +123,17 @@ Homebrew
    在 Apple M1 芯片的 Mac 下安装 Homebrew 后，还需要执行如下命令以配置 Homebrew::
 
        $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-       $ source ~/.zshrc
+       $ eval "$(/opt/homebrew/bin/brew shellenv)"
 
-使用
-""""
+添加其他仓库
+""""""""""""
+
+::
+
+    brew tap homebrew/cask
+
+使用说明
+""""""""
 
 安装好 Homebrew 后，即可以使用 Homebrew 提供的 ``brew`` 命令。
 ``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__。此处仅列出一些常用的用法::
