@@ -52,6 +52,30 @@ Linux 用户可以使用如下命令安装 Zsh：
 用户的默认 Shell 就从 Bash 变成 Zsh 了。打开新的终端并键入
 ``echo $SHELL``，查看当前 Shell，会显示 :file:`/bin/zsh`。
 
+.. dropdown:: :fa:`exclamation-circle,mr-1` chsh: command not found 错误
+    :container: + shadow
+    :title: bg-info text-white font-weight-bold
+
+    若出现 ``chsh: command not found`` 错误，则需要安装 util-linux-user:
+
+    .. tabbed:: Fedora
+
+        ::
+
+            $ sudo dnf install util-linux-user
+
+    .. tabbed:: CentOS
+
+        ::
+
+            $ sudo yum install util-linux-user
+
+    也可以直接修改 :file:`/etc/passwd` 文件来改变登陆 Shell，找到含有用户名的那一行，
+    将 Shell 路径修改为 ``which zsh`` 命令显示的路径。例如，假设用户名为 seismo-learn，
+    Zsh 路径为 **/bin/zsh**::
+
+        seism-learn:x:1000:1000:seism-learn:/home/seism-learn:/bin/zsh
+
 Zsh 的配置文件为 :file:`~/.zshrc`。因而切换到 Zsh 后，
 所有的 Shell 配置都不用写到 :file:`~/.bashrc`，而要写到 :file:`~/.zshrc` 中。
 
