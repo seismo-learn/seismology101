@@ -47,17 +47,13 @@ Ubuntu 配置指南
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
 
-准备一个 4 GB 以上容量的 U 盘，利用 USB 启动盘制作工具和 ISO 镜像文件
-制作 USB 启动盘。
-
-USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh/>`__\ （仅限 Windows）、\
-`balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）
-或 `UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）。
+准备一个 4 GB 以上容量的 U 盘。使用 `Ventoy <https://ventoy.net/cn/>`__ 制作
+USB 启动盘，并将 ISO 镜像文件复制到 U 盘的镜像分区中。Ventoy 可以在
+Windows 和 Linux 使用，详细用法见 `官方文档 <https://ventoy.net/cn/doc_start.html>`__。
 
 .. warning::
 
-   1. 制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
-   2. 如果制作工具无法识别 U 盘，请尝试先将 U 盘格式化为 FAT32 格式。
+   制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
 
 进入 Live 系统
 ^^^^^^^^^^^^^^
