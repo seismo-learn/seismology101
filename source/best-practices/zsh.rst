@@ -70,12 +70,6 @@ Linux 用户可以使用如下命令安装 Zsh：
 
             $ sudo yum install util-linux-user
 
-    也可以直接修改 :file:`/etc/passwd` 文件来改变登陆 Shell，找到含有用户名的那一行，
-    将 Shell 路径修改为 ``which zsh`` 命令显示的路径。例如，假设用户名为 seismo-learn，
-    Zsh 路径为 **/bin/zsh**::
-
-        seism-learn:x:1000:1000:seism-learn:/home/seism-learn:/bin/zsh
-
 Zsh 的配置文件为 :file:`~/.zshrc`。因而切换到 Zsh 后，
 所有的 Shell 配置都不用写到 :file:`~/.bashrc`，而要写到 :file:`~/.zshrc` 中。
 
