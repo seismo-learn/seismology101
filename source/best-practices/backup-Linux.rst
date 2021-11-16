@@ -53,21 +53,27 @@ DejaDup
 
 安装 DejaDup：
 
-.. tabbed:: Fedora
 
-   ::
+.. tab-set::
 
-       $ sudo dnf install deja-dup
+    .. tab-item:: Fedora
+        :sync: fedora
 
-.. tabbed:: CentOS
+        ::
 
-   ::
+            $ sudo dnf install deja-dup
 
-       $ sudo yum install deja-dup
+    .. tab-item:: CentOS
+        :sync: centos
 
-.. tabbed:: Ubuntu/Debian
+        ::
 
-   ::
+            $ sudo yum install deja-dup
 
-       $ sudo apt update
-       $ sudo apt install deja-dup
+    .. tab-item:: Ubuntu/Debian
+       :sync: ubuntu-debian
+
+       ::
+
+           $ sudo apt update
+           $ sudo apt install deja-dup

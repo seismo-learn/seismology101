@@ -209,9 +209,9 @@ Intel 软件开发工具包
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` 查看 Intel 软件仓库提供的软件列表
-    :container: + shadow
-    :title: bg-info text-white font-weight-bold
+.. dropdown:: 查看 Intel 软件仓库提供的软件列表
+    :color: info
+    :icon: info
 
     使用如下命令可以列出 Intel 软件仓库提供的所有软件包::
 

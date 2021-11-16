@@ -85,9 +85,9 @@ Shell 接收到用户输入的命令后，会以空格为分隔符将输入的�
 
    其他 Shell （如 Zsh, csh, ksh）的扩展语法可能稍微不同，以上示例可能不适用。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Shell 扩展和正则表达式的区别
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: Shell 扩展和正则表达式的区别
+   :color: info
+   :icon: info
 
    读者可能以后会常接触到正则表达式（regular expression）。需要强调的是 Shell 扩展和
    正则表达式是不同的：
