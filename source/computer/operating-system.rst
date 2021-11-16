@@ -49,7 +49,7 @@ macOS
 
 Mac 笔记本（MacBook Air、MacBook Pro）或台式机（iMac）自带的 macOS 系统
 可以满足科研工作的大部分需求。
-**对于拥有 macOS 系统的读者，建议直接使用 macOS 系统**。
+**对于以 Mac 笔记本或台式机作为科研主力机器的读者，建议直接使用 macOS 系统**。
 可以参考《:doc:`/computer/macos-setup`》对 macOS 系统进行进一步配置，
 以满足科研工作的需求。
 
