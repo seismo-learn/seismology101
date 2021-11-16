@@ -24,19 +24,23 @@ VS Code 安装
 
 VS Code下载地址为： https://code.visualstudio.com/Download
 
-安装中建议勾选下图中两项，目的是添加右键打开的快捷方式。
+windows 下安装中建议勾选下图中两项，目的是添加右键打开的快捷方式。
 
 .. image:: vscode_pic1.png
    :width: 80%
    :align: center
 
-安装完成之后有两种打开 VS Code的方式：
+.. dropdown:: :fa:`exclamation-circle,mr-1` windows 下打开 VS Code 的注意事项
+   :container: + shadow
+   :title: bg-info text-white font-weight-bold
 
-1. 开始菜单中，直接找到 Visual Studio Code 应用程序打开。
-2. 直接在对应脚本或工作文件夹点击右键，选择 ``通过Code打开（Open with Code)`` 。
+   windows 下安装完成之后有两种打开 VS Code的方式：
 
-对于 windows 我们建议使用第二种方法，因为这样终端的工作目录会自动选定为代码文件所在的目录。
-在 windows 中使用第一种方法打开代码文件后，还需要用户手动切换终端的工作目录，对于初学者来说十分麻烦。
+   1. 开始菜单中，直接找到 Visual Studio Code 应用程序打开。
+   2. 直接在对应脚本或工作文件夹点击右键，选择 ``通过Code打开（Open with Code)`` 。
+
+   对于 windows 我们建议使用第二种方法，因为这样终端的工作目录会自动选定为代码文件所在的目录。
+   在 windows 中使用第一种方法打开代码文件后，还需要用户手动切换终端的工作目录，对于初学者来说十分麻烦。
 
 插件安装
 --------
@@ -77,11 +81,7 @@ VS code 执行脚本程序过程
    :width: 80%
    :align: center
 
-- 或者，在文件夹上右键，选择 ``通过Code打开`` ：
-
-.. image:: vscode_gif1.gif
-   :width: 80%
-   :align: center
+- 在文件夹的空白区域中点击右键，选择 ``通过Code打开`` (windows)，或者打开终端窗口，执行 ``code`` 命令 (Linux/MacOS)：
 
 含有中文的脚本需要设置编码为 ``GB2312`` ，否则会出现乱码：点击右下角的编码按钮，
 再选择“ **重新打开编码（Reopen with Encoding）** ”，选择 ``中文简体GB2312`` 编码。
