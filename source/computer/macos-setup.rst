@@ -409,28 +409,6 @@ macOS 自带了 Safari 浏览器，用户也可以安装 Google Chrome 浏览器
 
     $ brew install --cask microsoft-edge
 
-QuickLook 插件
-^^^^^^^^^^^^^^
-
-macOS 下空格键具有强大的功能。在文件浏览器 Finder 中，按下空格键，会调用
-QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF 以及图片等格式。
-可以为 QuickLook 安装更多的插件以支持预览其他文件格式::
-
-    # 预览源码时加上语法高亮
-    $ brew install --cask qlcolorcode
-
-    # 预览无后缀的纯文本文件，比如 README，HISTORY 等
-    $ brew install --cask qlstephen
-
-    # 预览渲染后的 Markdown 文件
-    $ brew install --cask qlmarkdown
-
-.. note::
-
-   安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开。
-   这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”
-   中点击“总是打开”来使用这些插件。这一操作可能需要重启电脑才会生效。
-
 虚拟机
 ^^^^^^
 
