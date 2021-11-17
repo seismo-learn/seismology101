@@ -4,44 +4,25 @@ macOS 配置指南
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）、
              |王亮|\（作者）
-:最近更新日期: 2021-10-02
+:最近更新日期: 2021-11-17
 :预计花费时间: 120 分钟
 
 ----
 
-.. note::
+.. warning::
 
-   本节内容适用于 macOS Catalina（10.15）、Big Sur（11.x）和 Monterey （12.x）
-   不一定适用于其他 macOS 版本。
+   本节内容基于作者在 macOS Monterey (12) 上的配置经验，
+   其可能也适用于 macOS Catalina (10.15) 和 macOS Big Sur (11)，
+   但不一定适用于更老的 macOS 版本。
 
-   .. table:: 近几年的 macOS 系统版本号
-      :align: center
+本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+相关配置。
 
-      ==================== ====================  ======================
-      版本号                代号                   发布日期
-      ==================== ====================  ======================
-      macOS 10.14          Mojave                2018 年 9 月 24 日
-      macOS 10.15          Catalina              2019 年 10 月 7 日
-      macOS 11             Big Sur               2020 年 9 月 12 日
-      macOS 12             Monterey              2021 年 10 月 25 日
-      ==================== ====================  ======================
-
-.. note::
-
-   本节大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`，
-   输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
-   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
-
-.. note::
-
-   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
-   相关配置。
-
-   #. `安装系统`_ [**必须**]
-   #. `系统软件`_ [**必须**]
-   #. `编程开发环境`_ [**强力推荐**]
-   #. `命令行工具`_ [**推荐**]
-   #. `日常软件`_ [**可选**]
+#. `安装系统`_ [**必须**]
+#. `系统软件`_ [**必须**]
+#. `编程开发环境`_ [**强力推荐**]
+#. `命令行工具`_ [**推荐**]
+#. `日常软件`_ [**可选**]
 
 ----
 
@@ -50,16 +31,22 @@ macOS 配置指南
 
 第一次启动 Mac 电脑后，经过简单的设置，就得到了一个可供日常使用的 macOS 系统。
 
-macOS 系统的更新也十分简单。当有新版本发布以后，可以直接在“系统偏好设置”的
-“软件更新”中直接更新即可。
+macOS 系统的更新也十分简单。当有新版本发布以后，在“系统偏好设置”的“软件更新”中
+直接更新即可。
 
 .. warning::
 
-   更新系统前，特别是大版本更新（如 10.15 更新为 11.0），
+   更新系统前，特别是大版本更新（如 macOS 11 更新为 macOS 12），
    最好先备份一下（可以参考\ :doc:`/best-practices/backup`）。
 
 系统软件
 --------
+
+.. note::
+
+   本节接下来介绍的大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`，
+   输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
+   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
 经过简单设置后的 macOS 系统，尚不能满足日常科研与编程开发的需求，还需要做
 进一步的配置。
@@ -83,34 +70,54 @@ macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再
 .. note::
 
    Command Line Tools for Xcode 会被安装到 :file:`/Library/Developer/CommandLineTools/`
-   目录，其提供的命令行工具位于 :file:`/Library/Developer/CommandLineTools/usr/bin` 目录，
+   目录下，其提供的命令行工具位于 :file:`/Library/Developer/CommandLineTools/usr/bin` 目录，
    包括 ``gcc``、``make``、``git`` 等。
 
 Homebrew
 ^^^^^^^^
 
 `Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器，
-类似于 Linux 系统下的 ``apt``、``yum``、``dnf`` 等包管理器。
-其可以用于安装各种常见的软件包、库文件以及字体。日常及科研工作中所需的大多数软件、
-库文件以及字体都可以通过 Homebrew 安装。
+类似于 Linux 系统下的 ``apt``、``yum``、``dnf`` 等包管理器。安装 Homebrew 后，
+即可通过命令行的方式安装日常使用及科研工作中所需的大多数软件和库文件。
 
-安装
-""""
+安装 Homebrew
+"""""""""""""
 
-执行如下命令以安装 Homebrew::
+Homebrew 的安装脚本及相关资源托管在 `GitHub <https://github.com/>`__ 上。
+国内可能由于网络问题无法访问 GitHub，进而导致无法安装 Homebrew 或安装
+其他软件速度太慢。因而，Homebrew 的安装说明分为国内和国外两个版本。
+读者应根据自己所处的地理位置使用相应的安装说明。
 
-    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+.. tabbed:: 国内用户
 
-.. note::
+    .. note::
 
-   Homebrew 的安装脚本托管在 `GitHub <https://github.com/>`__ 上，
-   国内可能由于网络问题导致 GitHub 访问不畅，因而以上安装命令可能失败。
-   若以上命令失败，国内用户可以使用如下命令安装 Homebrew::
+       针对国内用户的 Homebrew 安装和配置指南来自于 https://brew.idayer.com/。
+
+    安装 Homebrew::
 
         $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
 
-   该安装脚本同时还将默认源设置为中科大源以加速 Homebrew 包的下载。
-   详情见 https://github.com/ineo6/homebrew-install 和 https://brew.idayer.com/。
+    启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
+    安装带有图形界面的软件（如 QQ）::
+
+        $ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
+
+    设置从中科大镜像下载 bottles （二进制安装包）::
+
+        $ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
+        $ source ~/.zshrc
+
+.. tabbed:: 国外用户
+
+    安装 Homebrew::
+
+        $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
+    安装带有图形界面的软件（如 QQ）::
+
+        $ brew tap homebrew/cask
 
 .. note::
 
@@ -125,15 +132,8 @@ Homebrew
        $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
        $ eval "$(/opt/homebrew/bin/brew shellenv)"
 
-添加其他仓库
-""""""""""""
-
-::
-
-    brew tap homebrew/cask
-
-使用说明
-""""""""
+使用 Homebrew
+"""""""""""""
 
 安装好 Homebrew 后，即可以使用 Homebrew 提供的 ``brew`` 命令。
 ``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__。此处仅列出一些常用的用法::
