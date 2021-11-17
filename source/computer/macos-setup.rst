@@ -258,9 +258,9 @@ Intel 软件开发工具包
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Intel 软件开发工具列表
-   :class-container: shadow
-   :class-title: bg-info text-white font-weight-bold
+.. dropdown:: Intel 软件开发工具列表
+   :color: info
+   :icon: info
 
    Intel oneAPI 提供了众多软件开发工具，用户可以根据需要到
    `Intel 官网 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html>`__
