@@ -3,7 +3,7 @@ Fedora 配置指南
 
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（审稿）
-:最近更新日期: 2021-10-02
+:最近更新日期: 2021-11-17
 :预计花费时间: 120 分钟
 
 ----
@@ -222,7 +222,7 @@ Java
 
 运行 Java 程序需要安装 Java 运行环境，即 OpenJDK::
 
-    $ sudo dnf install java-latest-openjdk
+    $ sudo dnf install java-11-openjdk
 
 Python
 ^^^^^^
