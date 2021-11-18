@@ -7,9 +7,9 @@ dependencies:
     - pip
     - sphinx
     - sphinx-copybutton
-    - sphinx_design
     - sphinx_rtd_theme
     - myst-nb
     - obspy=1.2.2
     - pip:
       - sphinx-cjkspace
+      - sphinx_design
