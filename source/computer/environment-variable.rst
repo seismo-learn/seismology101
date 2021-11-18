@@ -42,9 +42,9 @@ Shell 环境由环境变量、Shell 变量、Shell 函数和别名等组成，�
     $ echo $PATH
     /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` 查看命令所在目录
-   :container: +shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: 查看命令所在目录
+   :color: info
+   :icon: info
 
    可以使用 ``which`` 或 ``whereis`` 命令查询命令所在目录::
 

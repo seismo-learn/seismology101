@@ -3,7 +3,7 @@ Fedora 配置指南
 
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（审稿）
-:最近更新日期: 2021-10-02
+:最近更新日期: 2021-11-17
 :预计花费时间: 120 分钟
 
 ----
@@ -47,17 +47,13 @@ Fedora 配置指南
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
 
-准备一个 4 GB 以上容量的 U 盘，利用 USB 启动盘制作工具和 ISO 镜像文件
-制作 USB 启动盘。
-
-USB 启动盘制作工具有很多，推荐使用 `Rufus <https://rufus.ie/zh/>`__\ （仅限 Windows）、\
-`balenaEtcher <https://www.balena.io/etcher/>`__\ （跨平台）
-或 `UNetbootin <https://unetbootin.github.io/>`__\ （跨平台）。
+准备一个 4 GB 以上容量的 U 盘。使用 `Ventoy <https://ventoy.net/cn/>`__ 制作
+USB 启动盘，并将 ISO 镜像文件复制到 U 盘的镜像分区中。Ventoy 可以在
+Windows 和 Linux 使用，详细用法见 `官方文档 <https://ventoy.net/cn/doc_start.html>`__。
 
 .. warning::
 
-   1. 制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
-   2. 如果制作工具无法识别 U 盘，请尝试先将 U 盘格式化为 FAT32 格式。
+   制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
 
 进入 Live 系统
 ^^^^^^^^^^^^^^
@@ -213,9 +209,9 @@ Intel 软件开发工具包
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` 查看 Intel 软件仓库提供的软件列表
-    :container: + shadow
-    :title: bg-info text-white font-weight-bold
+.. dropdown:: 查看 Intel 软件仓库提供的软件列表
+    :color: info
+    :icon: info
 
     使用如下命令可以列出 Intel 软件仓库提供的所有软件包::
 
@@ -226,7 +222,7 @@ Java
 
 运行 Java 程序需要安装 Java 运行环境，即 OpenJDK::
 
-    $ sudo dnf install java-latest-openjdk
+    $ sudo dnf install java-11-openjdk
 
 Python
 ^^^^^^

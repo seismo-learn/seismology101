@@ -39,9 +39,9 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
 
 官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` WSL2 与 VMware/VirtualBox 兼容性警告
-   :container: + shadow
-   :title: bg-warning text-red font-weight-bold
+.. dropdown:: WSL2 与 VMware/VirtualBox 兼容性警告
+   :color: info
+   :icon: info
 
    由于 Hyper-V 兼容性问题，开启 WSL2 功能后，老版本 VMware/VirtualBox 将无法正常使用。
    WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。因此，已开启 WSL2 功能的用户

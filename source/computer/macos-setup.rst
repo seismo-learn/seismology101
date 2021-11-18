@@ -1,46 +1,28 @@
 macOS 配置指南
 ==============
 
-:本节贡献者: |王亮|\（作者）、
-             |田冬冬|\（作者）、
-             |姚家园|\（作者）
-:最近更新日期: 2021-10-02
+:本节贡献者: |田冬冬|\（作者）、
+             |姚家园|\（作者）、
+             |王亮|\（作者）
+:最近更新日期: 2021-11-17
 :预计花费时间: 120 分钟
 
 ----
 
-.. note::
+.. warning::
 
-   本节内容适用于 macOS Catalina（10.15）和 macOS Big Sur（11.x），
-   不一定适用于其他 macOS 版本。
+   本节内容基于作者在 macOS Monterey (12) 上的配置经验，
+   可能也适用于 macOS Big Sur (11) 和 macOS Catalina (10.15)，
+   但不一定适用于更老的 macOS 版本。
 
-   .. table:: 近几年的 macOS 系统版本号
-      :align: center
+本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+相关配置。
 
-      ==================== ====================  ======================
-      版本号                代号                   发布日期
-      ==================== ====================  ======================
-      macOS 10.14          Mojave                2018 年 9 月 24 日
-      macOS 10.15          Catalina              2019 年 10 月 7 日
-      macOS 11             Big Sur               2020 年 9 月 12 日
-      ==================== ====================  ======================
-
-.. note::
-
-   本节大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`，
-   输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
-   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
-
-.. note::
-
-   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
-   相关配置。
-
-   #. `安装系统`_ [**必须**]
-   #. `系统软件`_ [**必须**]
-   #. `编程开发环境`_ [**强力推荐**]
-   #. `命令行工具`_ [**推荐**]
-   #. `日常软件`_ [**可选**]
+#. `安装系统`_ [**必须**]
+#. `系统软件`_ [**必须**]
+#. `编程开发环境`_ [**强力推荐**]
+#. `命令行工具`_ [**推荐**]
+#. `日常软件`_ [**可选**]
 
 ----
 
@@ -49,13 +31,19 @@ macOS 配置指南
 
 第一次启动 Mac 电脑后，经过简单的设置，就得到了一个可供日常使用的 macOS 系统。
 
-macOS 系统的更新也十分简单。当有新版本发布以后，可以直接在“系统偏好设置”的
-“软件更新”中直接更新即可。
+macOS 系统的更新也十分简单。当有新版本发布以后，在“系统偏好设置”的“软件更新”中
+直接更新即可。
 
 .. warning::
 
-   更新系统前，特别是大版本更新（如 10.15 更新为 11.0），
+   更新系统前，特别是大版本更新（如 macOS 11 更新为 macOS 12），
    最好先备份一下（可以参考\ :doc:`/best-practices/backup`）。
+
+.. note::
+
+   本节接下来介绍的大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`，
+   输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
+   然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
 系统软件
 --------
@@ -82,34 +70,56 @@ macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再
 .. note::
 
    Command Line Tools for Xcode 会被安装到 :file:`/Library/Developer/CommandLineTools/`
-   目录，其提供的命令行工具位于 :file:`/Library/Developer/CommandLineTools/usr/bin` 目录，
+   目录下，其提供的命令行工具位于 :file:`/Library/Developer/CommandLineTools/usr/bin` 目录，
    包括 ``gcc``、``make``、``git`` 等。
 
 Homebrew
 ^^^^^^^^
 
 `Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器，
-类似于 Linux 系统下的 ``apt``、``yum``、``dnf`` 等包管理器。
-其可以用于安装各种常见的软件包、库文件以及字体。日常及科研工作中所需的大多数软件、
-库文件以及字体都可以通过 Homebrew 安装。
+类似于 Linux 系统下的 ``apt``、``yum``、``dnf`` 等包管理器。安装 Homebrew 后，
+即可通过命令行的方式安装日常使用及科研工作中所需的大多数软件和库文件。
 
-安装
-""""
+安装 Homebrew
+"""""""""""""
 
-执行如下命令以安装 Homebrew::
+Homebrew 的安装脚本及相关资源托管在 `GitHub <https://github.com/>`__ 上。
+国内可能由于网络问题无法访问 GitHub，进而导致无法安装 Homebrew 或安装
+其他软件速度太慢。因而，Homebrew 的安装说明分为国内和国外两个版本。
+读者应根据自己所处的地理位置使用相应的安装说明。
 
-    $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+.. tab-set::
 
-.. note::
+    .. tab-item:: 国内用户
 
-   Homebrew 的安装脚本托管在 `GitHub <https://github.com/>`__ 上，
-   国内可能由于网络问题导致 GitHub 访问不畅，因而以上安装命令可能失败。
-   若以上命令失败，国内用户可以使用如下命令安装 Homebrew::
+        .. note::
 
-        $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+            针对国内用户的 Homebrew 安装和配置指南来自于 https://brew.idayer.com/。
 
-   该安装脚本同时还将默认源设置为中科大源以加速 Homebrew 包的下载。
-   详情见 https://github.com/ineo6/homebrew-install 和 https://brew.idayer.com/。
+        安装 Homebrew::
+
+            $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+
+        启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
+        安装带有图形界面的软件（如 VS Code、QQ）::
+
+            $ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
+
+        设置从中科大镜像下载 bottles （二进制安装包）::
+
+            $ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
+            $ source ~/.zshrc
+
+    .. tab-item:: 国外用户
+
+        安装 Homebrew::
+
+            $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+        启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
+        安装带有图形界面的软件（如  VS Code、QQ）::
+
+            $ brew tap homebrew/cask
 
 .. note::
 
@@ -122,10 +132,10 @@ Homebrew
    在 Apple M1 芯片的 Mac 下安装 Homebrew 后，还需要执行如下命令以配置 Homebrew::
 
        $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-       $ source ~/.zshrc
+       $ eval "$(/opt/homebrew/bin/brew shellenv)"
 
-使用
-""""
+使用 Homebrew
+"""""""""""""
 
 安装好 Homebrew 后，即可以使用 Homebrew 提供的 ``brew`` 命令。
 ``brew`` 的详细用法见\ `官方文档 <https://docs.brew.sh/Manpage>`__。此处仅列出一些常用的用法::
@@ -150,9 +160,9 @@ Homebrew
 
     Homebrew 用户也可以访问网站 https://formulae.brew.sh/ 查看软件包。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Homebrew 相关名词解释
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: Homebrew 相关名词解释
+   :color: info
+   :icon: info
 
    使用 Homebrew 时会碰到很多名词。这里做简单解释，
    更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__。
@@ -200,9 +210,9 @@ C/C++
 Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
 C/C++ 编译器。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` GCC 编译器
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: GCC 编译器
+   :color: info
+   :icon: info
 
     Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
     `Apple Clang <https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html>`__ 编译器，
@@ -258,9 +268,9 @@ Intel 软件开发工具包
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Intel 软件开发工具列表
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: Intel 软件开发工具列表
+   :color: info
+   :icon: info
 
    Intel oneAPI 提供了众多软件开发工具，用户可以根据需要到
    `Intel 官网 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html>`__
@@ -400,28 +410,6 @@ macOS 自带了 Safari 浏览器，用户也可以安装 Google Chrome 浏览器
 或 Microsoft Edge 浏览器::
 
     $ brew install --cask microsoft-edge
-
-QuickLook 插件
-^^^^^^^^^^^^^^
-
-macOS 下空格键具有强大的功能。在文件浏览器 Finder 中，按下空格键，会调用
-QuickLook 以预览文件的内容，非常方便。QuickLook 默认支持 PDF 以及图片等格式。
-可以为 QuickLook 安装更多的插件以支持预览其他文件格式::
-
-    # 预览源码时加上语法高亮
-    $ brew install --cask qlcolorcode
-
-    # 预览无后缀的纯文本文件，比如 README，HISTORY 等
-    $ brew install --cask qlstephen
-
-    # 预览渲染后的 Markdown 文件
-    $ brew install --cask qlmarkdown
-
-.. note::
-
-   安装这些插件以后，调用 QuickLook 预览文件时，可能会显示这些插件无法打开。
-   这是因为系统默认不信任这些第三方插件。可以在“系统偏好设置”的“安全性与隐私”
-   中点击“总是打开”来使用这些插件。这一操作可能需要重启电脑才会生效。
 
 虚拟机
 ^^^^^^
