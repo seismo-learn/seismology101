@@ -88,36 +88,38 @@ Homebrew 的安装脚本及相关资源托管在 `GitHub <https://github.com/>`_
 其他软件速度太慢。因而，Homebrew 的安装说明分为国内和国外两个版本。
 读者应根据自己所处的地理位置使用相应的安装说明。
 
-.. tabbed:: 国内用户
+.. tab-set::
 
-    .. note::
+    .. tab-item:: 国内用户
 
-       针对国内用户的 Homebrew 安装和配置指南来自于 https://brew.idayer.com/。
+        .. note::
 
-    安装 Homebrew::
+            针对国内用户的 Homebrew 安装和配置指南来自于 https://brew.idayer.com/。
 
-        $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+        安装 Homebrew::
 
-    启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
-    安装带有图形界面的软件（如 VS Code、QQ）::
+            $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
 
-        $ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
+        启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
+        安装带有图形界面的软件（如 VS Code、QQ）::
 
-    设置从中科大镜像下载 bottles （二进制安装包）::
+            $ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
 
-        $ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
-        $ source ~/.zshrc
+        设置从中科大镜像下载 bottles （二进制安装包）::
 
-.. tabbed:: 国外用户
+            $ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
+            $ source ~/.zshrc
 
-    安装 Homebrew::
+    .. tab-item:: 国外用户
 
-        $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        安装 Homebrew::
 
-    启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
-    安装带有图形界面的软件（如  VS Code、QQ）::
+            $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-        $ brew tap homebrew/cask
+        启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
+        安装带有图形界面的软件（如  VS Code、QQ）::
+
+            $ brew tap homebrew/cask
 
 .. note::
 
