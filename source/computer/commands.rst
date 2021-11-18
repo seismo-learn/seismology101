@@ -33,78 +33,52 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。一�
 
 .. rubric:: 命令目录
 
-.. panels::
-    :container: container-lg pb-3
-    :column: col-lg-3 col-md-3 col-sm-4 col-xs-6 p-2
+.. grid:: 1 2 2 3
 
-    文件查看
-    ^^^^^^^^
+    .. grid-item-card:: 文件查看
 
-    - `cat`_
-    - `head`_
-    - `less`_
-    - `tail`_
+        - `cat`_
+        - `head`_
+        - `less`_
+        - `tail`_
 
-    ---
+    .. grid-item-card:: 文件处理
 
-    文件处理
-    ^^^^^^^^
+        - `diff`_
+        - `gawk`_
+        - `grep`_
+        - `sed`_
+        - `sort`_
+        - `uniq`_
+        - `wc`_
 
-    - `diff`_
-    - `gawk`_
-    - `grep`_
-    - `sed`_
-    - `sort`_
-    - `uniq`_
-    - `wc`_
+    .. grid-item-card:: 文件搜索
 
-    ---
+        - `find`_
+        - `locate`_
 
-    文件搜索
-    ^^^^^^^^
+    .. grid-item-card:: 文件传输
 
-    - `find`_
-    - `locate`_
+        - `rsync`_
+        - `scp`_
 
-    ---
+    .. grid-item-card:: 文件下载
 
-    文件传输
-    ^^^^^^^^
+        - `wget`_
 
-    - `rsync`_
-    - `scp`_
+    .. grid-item-card:: 压缩与解压
 
-    ---
+        - `tar`_
 
-    文件下载
-    ^^^^^^^^
+    .. grid-item-card:: 系统管理
 
-    - `wget`_
+        - `df`_
+        - `du`_
+        - `top`_
 
-    ---
+    .. grid-item-card:: 远程登录
 
-    压缩与解压
-    ^^^^^^^^^^
-
-    - `tar`_
-
-    ---
-
-    系统管理
-    ^^^^^^^^
-
-    - `df`_
-    - `du`_
-    - `top`_
-
-    ---
-
-    远程登录
-    ^^^^^^^^
-
-    - `ssh`_
-
-----
+        - `ssh`_
 
 cat
 ---

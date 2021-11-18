@@ -42,25 +42,25 @@ OneDrive、Google Drive、Dropbox、iCloud 等）。需要注意，若误删本�
 
 建议每隔一段时间（如每周）做一次备份。放假前、出差开会前，也建议备份一下。
 
-.. panels::
-    :container: container-lg pb-3
-    :column: col-lg-4 col-md-4 col-sm-4 col-xs-6 p-2
+.. grid:: 1 2 2 4
 
-    .. toctree::
-        :maxdepth: 2
+    .. grid-item-card::
 
-        backup-Linux
+        .. toctree::
+            :maxdepth: 2
 
-    ---
+            backup-Linux
 
-    .. toctree::
-        :maxdepth: 2
+    .. grid-item-card::
 
-        backup-macOS
+        .. toctree::
+            :maxdepth: 2
 
-    ---
+            backup-macOS
 
-    .. toctree::
-        :maxdepth: 2
+    .. grid-item-card::
 
-        backup-Windows
+        .. toctree::
+            :maxdepth: 2
+
+            backup-Windows

@@ -150,9 +150,9 @@ Homebrew
 
     Homebrew 用户也可以访问网站 https://formulae.brew.sh/ 查看软件包。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Homebrew 相关名词解释
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: Homebrew 相关名词解释
+   :color: info
+   :icon: info
 
    使用 Homebrew 时会碰到很多名词。这里做简单解释，
    更详细的解释请查看\ `官方文档 <https://docs.brew.sh/Formula-Cookbook#homebrew-terminology>`__。
@@ -200,9 +200,9 @@ C/C++
 Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
 C/C++ 编译器。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` GCC 编译器
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: GCC 编译器
+   :color: info
+   :icon: info
 
     Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
     `Apple Clang <https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html>`__ 编译器，
@@ -258,9 +258,9 @@ Intel 软件开发工具包
 
     $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` Intel 软件开发工具列表
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: Intel 软件开发工具列表
+   :color: info
+   :icon: info
 
    Intel oneAPI 提供了众多软件开发工具，用户可以根据需要到
    `Intel 官网 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html>`__
