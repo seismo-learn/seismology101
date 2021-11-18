@@ -11,6 +11,9 @@ kernelspec:
   name: python3
 ---
 
+This notebook can be downloaded as
+            **{nb-download}`distaz.ipynb`** and {download}`distaz.md`.
+
 # 距离和角度
 
 ```{code-cell} ipython3
