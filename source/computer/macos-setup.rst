@@ -12,7 +12,7 @@ macOS 配置指南
 .. warning::
 
    本节内容基于作者在 macOS Monterey (12) 上的配置经验，
-   其可能也适用于 macOS Catalina (10.15) 和 macOS Big Sur (11)，
+   可能也适用于 macOS Big Sur (11) 和 macOS Catalina (10.15)，
    但不一定适用于更老的 macOS 版本。
 
 本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
@@ -39,14 +39,14 @@ macOS 系统的更新也十分简单。当有新版本发布以后，在“系�
    更新系统前，特别是大版本更新（如 macOS 11 更新为 macOS 12），
    最好先备份一下（可以参考\ :doc:`/best-practices/backup`）。
 
-系统软件
---------
-
 .. note::
 
    本节接下来介绍的大部分软件都通过命令行安装。按下 :kbd:`Command` + :kbd:`空格`，
    输入 “Terminal” 并按下 :kbd:`Enter` 键以启动终端，
    然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
+
+系统软件
+--------
 
 经过简单设置后的 macOS 系统，尚不能满足日常科研与编程开发的需求，还需要做
 进一步的配置。
@@ -99,7 +99,7 @@ Homebrew 的安装脚本及相关资源托管在 `GitHub <https://github.com/>`_
         $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
 
     启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
-    安装带有图形界面的软件（如 QQ）::
+    安装带有图形界面的软件（如 VS Code、QQ）::
 
         $ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
 
@@ -115,7 +115,7 @@ Homebrew 的安装脚本及相关资源托管在 `GitHub <https://github.com/>`_
         $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
-    安装带有图形界面的软件（如 QQ）::
+    安装带有图形界面的软件（如  VS Code、QQ）::
 
         $ brew tap homebrew/cask
 
