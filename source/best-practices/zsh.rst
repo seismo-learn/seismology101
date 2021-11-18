@@ -26,23 +26,28 @@ Zsh 有如下特点：
 
 Linux 用户可以使用如下命令安装 Zsh：
 
-.. tabbed:: Fedora
+.. tab-set::
 
-    ::
+    .. tab-item:: Fedora
+        :sync: fedora
 
-        $ sudo dnf install zsh
+        ::
 
-.. tabbed:: CentOS
+            $ sudo dnf install zsh
 
-    ::
+    .. tab-item:: CentOS
+        :sync: centos
 
-        $ sudo yum install zsh
+        ::
 
-.. tabbed:: Ubuntu/Debian
+            $ sudo yum install zsh
 
-    ::
+    .. tab-item:: Ubuntu/Debian
+        :sync: ubuntu-debian
 
-        $ sudo apt install zsh
+        ::
+
+            $ sudo apt install zsh
 
 通过如下命令设置默认 Shell 为 Zsh::
 
@@ -52,23 +57,27 @@ Linux 用户可以使用如下命令安装 Zsh：
 用户的默认 Shell 就从 Bash 变成 Zsh 了。打开新的终端并键入
 ``echo $SHELL``，查看当前 Shell，会显示 :file:`/bin/zsh`。
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` chsh: command not found 错误
-    :container: + shadow
-    :title: bg-info text-white font-weight-bold
+.. dropdown:: chsh: command not found 错误
+    :color: info
+    :icon: info
 
     若出现 ``chsh: command not found`` 错误，则需要安装 util-linux-user:
 
-    .. tabbed:: Fedora
+    .. tab-set::
 
-        ::
+        .. tab-item:: Fedora
+            :sync: fedora
 
-            $ sudo dnf install util-linux-user
+            ::
 
-    .. tabbed:: CentOS
+                $ sudo dnf install util-linux-user
 
-        ::
+        .. tab-item:: CentOS
+            :sync: centos
 
-            $ sudo yum install util-linux-user
+            ::
+
+                $ sudo yum install util-linux-user
 
 Zsh 的配置文件为 :file:`~/.zshrc`。因而切换到 Zsh 后，
 所有的 Shell 配置都不用写到 :file:`~/.bashrc`，而要写到 :file:`~/.zshrc` 中。
@@ -156,31 +165,37 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins` 目录下�
 
     启用 autojump 插件前，需提前安装 `autojump <https://github.com/wting/autojump>`__:
 
-    .. tabbed:: Fedora
 
-        ::
+    .. tab-set::
 
-            $ sudo dnf install autojump-zsh
+        .. tab-item:: Fedora
+            :sync: fedora
 
-    .. tabbed:: CentOS
+            ::
 
-        ::
+                $ sudo dnf install autojump-zsh
 
-            $ sudo yum install autojump-zsh
+        .. tab-item:: CentOS
+            :sync: centos
 
-    .. tabbed:: Ubuntu/Debian
+            ::
 
-        ::
+                $ sudo yum install autojump-zsh
 
-            # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
-            $ sudo apt install autojump
+        .. tab-item:: Ubuntu/Debian
+            :sync: ubuntu-debian
 
+            ::
 
-    .. tabbed:: macOS
+                # 安装后，还要根据 /usr/share/doc/autojump/README.Debian 里的要求做进一步设置
+                $ sudo apt install autojump
 
-        ::
+        .. tab-item:: macOS
+            :sync: macos
 
-            $ brew install autojump
+            ::
+
+                $ brew install autojump
 
 除了 Oh My Zsh 自带的插件，还可以使用第三方插件，只需提前安装即可。这里推荐几个常用的。
 
