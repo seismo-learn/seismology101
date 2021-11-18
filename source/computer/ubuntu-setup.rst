@@ -14,16 +14,14 @@ Ubuntu 配置指南
    建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04 LTS）或最新版本
    （目前是 Ubuntu 21.10），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
 
-.. note::
+本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+相关配置。
 
-   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
-   相关配置。
-
-   #. `安装系统`_ [**必须**]
-   #. `系统软件`_ [**必须**]
-   #. `编程开发环境`_ [**强力推荐**]
-   #. `命令行工具`_ [**推荐**]
-   #. `日常软件`_ [**可选**]
+#. `安装系统`_ [**必须**]
+#. `系统软件`_ [**必须**]
+#. `编程开发环境`_ [**强力推荐**]
+#. `命令行工具`_ [**推荐**]
+#. `日常软件`_ [**可选**]
 
 安装系统
 --------
@@ -49,7 +47,7 @@ Ubuntu 配置指南
 
 准备一个 4 GB 以上容量的 U 盘。使用 `Ventoy <https://ventoy.net/cn/>`__ 制作
 USB 启动盘，并将 ISO 镜像文件复制到 U 盘的镜像分区中。Ventoy 可以在
-Windows 和 Linux 使用，详细用法见 `官方文档 <https://ventoy.net/cn/doc_start.html>`__。
+Windows 和 Linux 下使用，详细用法见 `官方文档 <https://ventoy.net/cn/doc_start.html>`__。
 
 .. warning::
 
@@ -309,12 +307,6 @@ Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 使用如下命令安装::
 
     $ sudo dnf install terminator
-
-以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
-
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`：水平分割终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`：垂直分割终端
-- :kbd:`Alt` + :kbd:`上下左右`：切换子终端
 
 Google Earth
 ^^^^^^^^^^^^
