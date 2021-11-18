@@ -43,6 +43,7 @@ OneDrive、Google Drive、Dropbox、iCloud 等）。需要注意，若误删本�
 建议每隔一段时间（如每周）做一次备份。放假前、出差开会前，也建议备份一下。
 
 .. grid:: 1 2 2 4
+    :gutter: 4 4 3 3
 
     .. grid-item-card::
 

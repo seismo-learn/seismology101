@@ -33,7 +33,8 @@ Linux/macOS 下有成百上千个命令，每个命令都有众多选项。一�
 
 .. rubric:: 命令目录
 
-.. grid:: 1 2 2 3
+.. grid:: 2 2 2 4
+    :gutter: 4 4 3 3
 
     .. grid-item-card:: 文件查看
 
