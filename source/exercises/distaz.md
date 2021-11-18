@@ -12,7 +12,7 @@ kernelspec:
 ---
 
 This notebook can be downloaded as
-            **{nb-download}`distaz.ipynb`** and {download}`distaz.md`.
+{nb-download}`distaz.ipynb` and {download}`distaz.md`.
 
 # 距离和角度
 
