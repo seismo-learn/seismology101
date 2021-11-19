@@ -67,12 +67,6 @@ Command Line Tools for Xcode 是 Xcode 的一部分，其包含了常用的命�
 在“系统偏好设置”的“软件更新”中查看是否有相关更新。如果有，则升级到最新版。
 macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再次执行以上命令即可。
 
-.. note::
-
-   Command Line Tools for Xcode 会被安装到 :file:`/Library/Developer/CommandLineTools/`
-   目录下，其提供的命令行工具位于 :file:`/Library/Developer/CommandLineTools/usr/bin` 目录，
-   包括 ``gcc``、``make``、``git`` 等。
-
 Homebrew
 ^^^^^^^^
 
