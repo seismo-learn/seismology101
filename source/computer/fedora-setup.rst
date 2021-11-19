@@ -3,27 +3,25 @@ Fedora 配置指南
 
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（审稿）
-:最近更新日期: 2021-11-17
+:最近更新日期: 2021-11-18
 :预计花费时间: 120 分钟
 
 ----
 
 .. note::
 
-   本节内容适用于 **Fedora 33 Workstation**，不一定适用于其他 Fedora 版本。
+   本节内容适用于 **Fedora 35 Workstation**，不一定适用于其他 Fedora 版本。
    建议用户访问 `Fedora 官网 <https://getfedora.org/>`__ 下载并安装 Fedora
    最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
 
-.. note::
+本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
+相关配置。
 
-   本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
-   相关配置。
-
-   #. `安装系统`_ [**必须**]
-   #. `系统软件`_ [**必须**]
-   #. `编程开发环境`_ [**强力推荐**]
-   #. `命令行工具`_ [**推荐**]
-   #. `日常软件`_ [**可选**]
+#. `安装系统`_ [**必须**]
+#. `系统软件`_ [**必须**]
+#. `编程开发环境`_ [**强力推荐**]
+#. `命令行工具`_ [**推荐**]
+#. `日常软件`_ [**可选**]
 
 安装系统
 --------
@@ -39,17 +37,17 @@ Fedora 配置指南
 访问 `Fedora 官网 <https://getfedora.org/>`__ 并下载 Fedora Workstation 镜像文件，
 一般选择 x86_64 版本。
 
-**Fedora 33 Workstation x86_64** 的 ISO 镜像文件（约 2 GB）下载链接：
+**Fedora 35 Workstation x86_64** 的 ISO 镜像文件（约 2 GB）下载链接：
 
-- `官方镜像 <https://download.fedoraproject.org/pub/fedora/linux/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__
-- `中科大镜像 <http://mirrors.ustc.edu.cn/fedora/releases/33/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-33-1.2.iso>`__ [**推荐国内用户使用**]
+- `官方镜像 <https://download.fedoraproject.org/pub/fedora/linux/releases/35/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-35-1.2.iso>`__
+- `中科大镜像 <http://mirrors.ustc.edu.cn/fedora/releases/35/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-35-1.2.iso>`__ [**推荐国内用户使用**]
 
 制作 USB 启动盘
 ^^^^^^^^^^^^^^^
 
 准备一个 4 GB 以上容量的 U 盘。使用 `Ventoy <https://ventoy.net/cn/>`__ 制作
 USB 启动盘，并将 ISO 镜像文件复制到 U 盘的镜像分区中。Ventoy 可以在
-Windows 和 Linux 使用，详细用法见 `官方文档 <https://ventoy.net/cn/doc_start.html>`__。
+Windows 和 Linux 下使用，详细用法见 `官方文档 <https://ventoy.net/cn/doc_start.html>`__。
 
 .. warning::
 
@@ -60,7 +58,7 @@ Windows 和 Linux 使用，详细用法见 `官方文档 <https://ventoy.net/cn/
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 :kbd:`F10` 或 :kbd:`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
-正确启动后，则会进入 GRUB，按向上向下键选中“Start Fedora-Workstation-Live 33”
+正确启动后，则会进入 GRUB，按向上向下键选中“Start Fedora-Workstation-Live 35”
 以进入 Fedora 的 Live 系统。
 
 .. note::
@@ -90,8 +88,8 @@ Windows 和 Linux 使用，详细用法见 `官方文档 <https://ventoy.net/cn/
 将多个硬盘都选中，被选中的硬盘会有一个“对号”符号。需要注意，不要选中 USB 启动盘。
 
 在“存储设置”中，选择“自动”让安装程序进行自动分区。也可以选择“自定义”，
-但需要你了解 Linux 的分区操作。由于 Fedora 33 采用了最新的 btrfs 文件系统，
-所以对于 Fedora 33 而言，使用默认的“自动”分区即可。
+但需要你了解 Linux 的分区操作。分区时可以选择最新的 btrfs 文件系统或传统的 ext4
+文件系统。
 
 点击“开始安装”即进入正式安装过程。
 
@@ -108,7 +106,7 @@ Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软�
 
 .. warning::
 
-   更新系统前，特别是大版本更新（如 Fedora 33 更新为 Fedora 34），
+   更新系统前，特别是大版本更新（如 Fedora 34 更新为 Fedora 35），
    最好先进行一次备份（可以参考\ :doc:`/best-practices/backup`）。
 
 .. note::
@@ -227,7 +225,7 @@ Java
 Python
 ^^^^^^
 
-Fedora 33 自带了 Python 3.9，足够日常使用，但强烈建议不要使用系统自带的 Python，
+Fedora 35 自带了 Python 3.9，足够日常使用，但强烈建议不要使用系统自带的 Python，
 而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
 
 git
@@ -303,12 +301,6 @@ Fedora 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 使用如下命令安装::
 
     $ sudo dnf install terminator
-
-以下介绍几个常用快捷键，详细用法见\ `官方文档 <https://gnome-terminator.readthedocs.io/>`__：
-
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`O`：水平分割终端
-- :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`E`：垂直分割终端
-- :kbd:`Alt` + :kbd:`上下左右`：切换子终端
 
 Google Earth
 ^^^^^^^^^^^^
