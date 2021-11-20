@@ -330,17 +330,6 @@ Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在
 
 以下软件均为可选，有需要的用户可以根据自己的需求选择是否安装。
 
-iTerm2
-^^^^^^
-
-macOS 系统自带了 Terminal 应用，但 `iTerm2 <https://iterm2.com/>`__ 相比于自带的
-Terminal 具有更多有用的功能，比如支持水平和垂直分割窗格、强大的终端搜索功能、
-更好用的复制粘贴功能等。
-
-::
-
-    $ brew install --cask iterm2
-
 虚拟机
 ^^^^^^
 

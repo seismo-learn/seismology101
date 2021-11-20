@@ -131,6 +131,39 @@ Fedora/Ubuntu/macOS 系统自带的压缩解压工具可以识别并打开 Linux
 
             $ brew install --cask the-unarchiver
 
+终端
+^^^^
+
+Fedora/Ubuntu/macOS 自带了终端模拟器 Terminal，使用起来中规中矩。
+日常科研经常需要开好几个终端，切换和管理起来比较麻烦。
+
+Linux 下的 `Terminator <https://gnome-terminator.org/>`__ 和
+macOS 下的 `iTerm2 <https://iterm2.com/>`__ 相比于自带 Terminal 具有更多的功能，
+比如支持水平和垂直分割窗格以及终端快速切换。
+
+.. tab-set::
+
+    .. tab-item:: Fedora
+        :sync: fedora
+
+        ::
+
+            $ sudo dnf install terminator
+
+    .. tab-item:: Ubuntu
+        :sync: ubuntu
+
+        ::
+
+            $ sudo apt install terminator
+
+    .. tab-item:: macOS
+        :sync: macos
+
+        ::
+
+            $ brew install --cask iterm2
+
 VS Code
 -------
 
