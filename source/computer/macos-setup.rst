@@ -358,16 +358,6 @@ macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式�
 
     $ brew install --cask the-unarchiver
 
-Google Earth
-^^^^^^^^^^^^
-
-Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
-并允许用户添加 KML 或 KMZ 格式的自定义数据。
-非重度用户可以使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
-重度用户可以执行如下命令安装桌面版::
-
-    $ brew install --cask google-earth-pro
-
 虚拟机
 ^^^^^^
 

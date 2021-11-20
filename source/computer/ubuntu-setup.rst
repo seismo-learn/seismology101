@@ -276,17 +276,6 @@ Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
 
     $ sudo dnf install terminator
 
-Google Earth
-^^^^^^^^^^^^
-
-Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
-并允许用户添加 KML 或 KMZ 格式的自定义数据。
-非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
-重度用户可以按照如下步骤安装桌面版。
-
-1. 下载 64 位 deb 包：https://www.google.com/earth/versions/#download-pro
-2. 双击下载的 deb 安装包即可安装
-
 WPS Office
 ^^^^^^^^^^
 
