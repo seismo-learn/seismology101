@@ -41,7 +41,7 @@ Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruany
             $ brew install dos2unix unix2dos
 
 tldr
-^^^^
+----
 
 `tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
 其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
@@ -69,3 +69,32 @@ tldr
         ::
 
             $ brew install tldr
+
+ack
+---
+
+`ack <https://beyondgrep.com/>`__ 是一个字符搜索工具，与 ``grep`` 命令类似。
+其专为搜索源代码设计，因而在日常编程中更加简单易用。使用如下命令安装 ``ack``。
+
+.. tab-set::
+
+    .. tab-item:: Fedora
+        :sync: fedora
+
+        ::
+
+            $ sudo dnf install ack
+
+    .. tab-item:: Ubuntu
+        :sync: ubuntu
+
+        ::
+
+            $ sudo apt install ack
+
+    .. tab-item:: macOS
+        :sync: macos
+
+        ::
+
+            $ brew install ack
