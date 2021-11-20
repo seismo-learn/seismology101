@@ -99,6 +99,37 @@ ack
 
             $ brew install ack
 
+解压软件
+--------
+
+Fedora/Ubuntu/macOS 系统自带的压缩解压工具可以识别并打开 Linux 下的常见压缩格式
+（如 ``.tar.gz``、``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式
+（如 ``.zip`` 和 ``.7z``），但默认不支持 ``.rar`` 格式。
+推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__，其支持几乎
+所有压缩格式。安装后即可通过双击直接解压 ``.rar`` 文件。
+
+.. tab-set::
+
+    .. tab-item:: Fedora
+        :sync: fedora
+
+        ::
+
+            $ sudo dnf install unar
+
+    .. tab-item:: Ubuntu
+        :sync: ubuntu
+
+        ::
+
+            $ sudo apt install unar
+
+    .. tab-item:: macOS
+        :sync: macos
+
+        ::
+
+            $ brew install --cask the-unarchiver
 
 VS Code
 -------
@@ -106,3 +137,4 @@ VS Code
 Fedora/Ubuntu/macOS 系统自带的文本编辑器只具有最基本的文本编辑功能，无法满足日常编程需求。
 推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__。
 VS Code 的安装与配置见 :doc:`vscode`。
+

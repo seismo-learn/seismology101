@@ -239,16 +239,6 @@ git
 日常软件
 --------
 
-解压软件
-^^^^^^^^
-
-Fedora 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``、
-``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``），
-但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
-后即可通过双击直接解压 ``.rar`` 文件::
-
-    $ sudo dnf install unar
-
 终端
 ^^^^^
 

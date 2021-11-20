@@ -341,15 +341,6 @@ Terminal 具有更多有用的功能，比如支持水平和垂直分割窗格�
 
     $ brew install --cask iterm2
 
-解压软件
-^^^^^^^^
-
-macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但默认不支持 ``.rar`` 格式。
-推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__，其支持
-几乎所有压缩格式。安装后即可通过双击直接解压 ``.rar`` 文件::
-
-    $ brew install --cask the-unarchiver
-
 虚拟机
 ^^^^^^
 
