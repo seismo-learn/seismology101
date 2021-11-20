@@ -298,13 +298,6 @@ git 管理自己编写的代码和文件。Command Line Tools for Xcode 中已�
 
 macOS 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它有用的命令行工具。
 
-wget
-^^^^
-
-`wget <https://www.gnu.org/software/wget/>`__ 是用于下载文件的命令行工具::
-
-    $ brew install wget
-
 GNU 实用工具
 ^^^^^^^^^^^^
 
