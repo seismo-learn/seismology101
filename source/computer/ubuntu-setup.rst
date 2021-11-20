@@ -287,16 +287,6 @@ Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了�
 1. 下载 64 位 deb 包：https://www.google.com/earth/versions/#download-pro
 2. 双击下载的 deb 安装包即可安装
 
-网页浏览器
-^^^^^^^^^^
-
-Ubuntu 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
-
-    # 下载 Google Chrome 的 deb 软件包
-    $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    # 安装 Google Chrome
-    $ sudo apt install ./google-chrome-stable_current_amd64.deb
-
 WPS Office
 ^^^^^^^^^^
 

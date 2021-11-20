@@ -368,17 +368,6 @@ Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了�
 
     $ brew install --cask google-earth-pro
 
-浏览器
-^^^^^^
-
-macOS 自带了 Safari 浏览器，用户也可以安装 Google Chrome 浏览器::
-
-    $ brew install --cask google-chrome
-
-或 Microsoft Edge 浏览器::
-
-    $ brew install --cask microsoft-edge
-
 虚拟机
 ^^^^^^
 

@@ -280,18 +280,6 @@ Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了�
 1. 下载 64 位 RPM 包：https://www.google.com/earth/versions/#download-pro
 2. 双击下载的 RPM 安装包即可安装
 
-网页浏览器
-^^^^^^^^^^
-
-Fedora 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
-
-    # 添加第三方源
-    $ sudo dnf install fedora-workstation-repositories
-    # 启用 google-chrome 源
-    $ sudo dnf config-manager --set-enabled google-chrome
-    # 安装 Google Chrome
-    $ sudo dnf install google-chrome-stable
-
 WPS Office
 ^^^^^^^^^^
 
