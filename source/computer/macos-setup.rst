@@ -341,14 +341,6 @@ Terminal 具有更多有用的功能，比如支持水平和垂直分割窗格�
 
     $ brew install --cask iterm2
 
-文本编辑器
-^^^^^^^^^^
-
-macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
-
-    $ brew install --cask visual-studio-code
-
 解压软件
 ^^^^^^^^
 
