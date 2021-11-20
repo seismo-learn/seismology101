@@ -306,15 +306,6 @@ wget
 
     $ brew install wget
 
-tldr
-^^^^
-
-`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
-其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
-安装 ``tldr``::
-
-    $ brew install tldr
-
 ack
 ^^^
 

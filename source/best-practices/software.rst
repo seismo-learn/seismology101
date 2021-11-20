@@ -39,3 +39,33 @@ Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruany
         ::
 
             $ brew install dos2unix unix2dos
+
+tldr
+^^^^
+
+`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
+其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
+使用如下命令安装 ``tldr``：
+
+.. tab-set::
+
+    .. tab-item:: Fedora
+        :sync: fedora
+
+        ::
+
+            $ sudo dnf install tldr
+
+    .. tab-item:: Ubuntu
+        :sync: ubuntu
+
+        ::
+
+            $ sudo apt install tldr
+
+    .. tab-item:: macOS
+        :sync: macos
+
+        ::
+
+            $ brew install tldr
