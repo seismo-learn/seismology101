@@ -52,6 +52,7 @@
    best-practices/file-organization
    best-practices/software-installation
    best-practices/backup
+   best-practices/software
    best-practices/zsh
    best-practices/vscode
 
