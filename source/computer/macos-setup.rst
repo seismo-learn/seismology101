@@ -4,7 +4,7 @@ macOS 配置指南
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）、
              |王亮|\（作者）
-:最近更新日期: 2021-11-17
+:最近更新日期: 2021-11-20
 :预计花费时间: 120 分钟
 
 ----
@@ -14,15 +14,6 @@ macOS 配置指南
    本节内容基于作者在 macOS Monterey (12) 上的配置经验，
    可能也适用于 macOS Big Sur (11) 和 macOS Catalina (10.15)，
    但不一定适用于更老的 macOS 版本。
-
-本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
-相关配置。
-
-#. `安装系统`_ [**必须**]
-#. `系统软件`_ [**必须**]
-#. `编程开发环境`_ [**强力推荐**]
-#. `命令行工具`_ [**推荐**]
-#. `日常软件`_ [**可选**]
 
 ----
 
@@ -294,44 +285,6 @@ git 管理自己编写的代码和文件。Command Line Tools for Xcode 中已�
 
     $ brew install git
 
-命令行工具
-----------
-
-macOS 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它有用的命令行工具。
-
-dos2unix & unix2dos
-^^^^^^^^^^^^^^^^^^^
-
-Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
-``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符，
-``unix2dos`` 则反之::
-
-    $ brew install dos2unix unix2dos
-
-wget
-^^^^
-
-`wget <https://www.gnu.org/software/wget/>`__ 是用于下载文件的命令行工具::
-
-    $ brew install wget
-
-tldr
-^^^^
-
-`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
-其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
-安装 ``tldr``::
-
-    $ brew install tldr
-
-ack
-^^^
-
-`ack <https://beyondgrep.com/>`__ 是一个字符搜索工具，与 ``grep`` 命令类似。
-其专为搜索源代码设计，因而在日常编程中更加简单易用。安装 ``ack``::
-
-    $ brew install ack
-
 GNU 实用工具
 ^^^^^^^^^^^^
 
@@ -350,75 +303,3 @@ Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在
 而 ``gsed`` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 ``g``），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 ``g``），但在写脚本时，
 要额外注意脚本的可移植性。
-
-日常软件
---------
-
-以下软件均为可选，有需要的用户可以根据自己的需求选择是否安装。
-
-iTerm2
-^^^^^^
-
-macOS 系统自带了 Terminal 应用，但 `iTerm2 <https://iterm2.com/>`__ 相比于自带的
-Terminal 具有更多有用的功能，比如支持水平和垂直分割窗格、强大的终端搜索功能、
-更好用的复制粘贴功能等。
-
-::
-
-    $ brew install --cask iterm2
-
-文本编辑器
-^^^^^^^^^^
-
-macOS 系统自带的文本编辑器只具有最基本的文本编辑功能。无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__::
-
-    $ brew install --cask visual-studio-code
-
-解压软件
-^^^^^^^^
-
-macOS 系统自带的解压工具可以支持 ``.tar.gz``、``.zip`` 等格式，但默认不支持 ``.rar`` 格式。
-推荐安装解压软件 `The Unarchiver <https://theunarchiver.com/>`__，其支持
-几乎所有压缩格式。安装后即可通过双击直接解压 ``.rar`` 文件::
-
-    $ brew install --cask the-unarchiver
-
-Google Earth
-^^^^^^^^^^^^
-
-Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
-并允许用户添加 KML 或 KMZ 格式的自定义数据。
-非重度用户可以使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
-重度用户可以执行如下命令安装桌面版::
-
-    $ brew install --cask google-earth-pro
-
-浏览器
-^^^^^^
-
-macOS 自带了 Safari 浏览器，用户也可以安装 Google Chrome 浏览器::
-
-    $ brew install --cask google-chrome
-
-或 Microsoft Edge 浏览器::
-
-    $ brew install --cask microsoft-edge
-
-虚拟机
-^^^^^^
-
-如果在使用 macOS 的同时，偶尔需要使用 Windows 或 Linux 系统，可以考虑使用虚拟机。
-macOS 下最常用的虚拟机软件有
-`Parallels Desktop <https://www.parallels.com/>`__、
-`VMware Fusion <https://www.vmware.com/products/fusion.html>`__ 和
-`VirtualBox <https://www.virtualbox.org/>`__。
-其中 VirtualBox 是免费软件；Parallel Desktop 和 VMware Fusion 是收费软件，
-但 VMware Fusion 为个人用户提供了免费的 License。
-
-推荐使用 VMware Fusion。安装 VMware Fusion的命令很简单::
-
-    $ brew install --cask vmware-fusion
-
-启动后在弹出的界面有“Get a Free License”按钮，点击跳转到 VMware 网站，注册后
-即可获取秘钥，输入秘钥则成功注册。

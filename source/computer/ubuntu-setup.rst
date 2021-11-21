@@ -3,7 +3,7 @@ Ubuntu 配置指南
 
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）
-:最近更新日期: 2021-10-02
+:最近更新日期: 2021-11-20
 :预计花费时间: 120 分钟
 
 ----
@@ -13,15 +13,6 @@ Ubuntu 配置指南
    本节内容适用于 **Ubuntu Desktop 20.04.3 LTS**，不一定适用于其他 Ubuntu 版本。
    建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 20.04 LTS）或最新版本
    （目前是 Ubuntu 21.10），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
-
-本配置指南包含如下五小节。部分小节的配置是非必须的，读者可以自行选择是否执行
-相关配置。
-
-#. `安装系统`_ [**必须**]
-#. `系统软件`_ [**必须**]
-#. `编程开发环境`_ [**强力推荐**]
-#. `命令行工具`_ [**推荐**]
-#. `日常软件`_ [**可选**]
 
 安装系统
 --------
@@ -243,97 +234,3 @@ git
 可以使用如下命令安装::
 
     $ sudo apt install git
-
-命令行工具
-----------
-
-Ubuntu 系统默认安装了日常科研所需的大多数命令行工具。这里推荐一些其它有用的命令行工具。
-
-dos2unix & unix2dos
-^^^^^^^^^^^^^^^^^^^
-
-Windows 和 Linux/macOS 系统下，`文本文件的换行符 <https://www.ruanyifeng.com/blog/2006/04/post_213.html>`__\ 是不同的。
-``dos2unix`` 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符，
-``unix2dos`` 则反之::
-
-    $ sudo apt install dos2unix
-
-tldr
-^^^^
-
-`tldr <https://tldr.sh/>`__ 是一个提供命令的常用用法和示例的命令行工具，
-其功能与 UNIX 下的 ``man`` 命令相似，但其提供的输出更简单、更易读。
-安装 ``tldr``::
-
-    $ sudo apt install tldr
-
-ack
-^^^
-
-`ack <https://beyondgrep.com/>`__ 是一个字符搜索工具，与 ``grep`` 命令类似。
-其专为搜索源代码设计，因而在日常编程中更加简单易用。安装 ``ack``::
-
-    $ sudo apt install ack
-
-日常软件
---------
-
-文本编辑器
-^^^^^^^^^^
-
-Ubuntu 系统自带的文本编辑器 Gedit 只具有最基本的文本编辑功能，无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 `Visual Studio Code <https://code.visualstudio.com/>`__。
-根据\ `官方安装说明 <https://code.visualstudio.com/docs/setup/linux#_debian-and-ubuntu-based-distributions>`__\
-安装即可。
-
-解压软件
-^^^^^^^^
-
-Ubuntu 的归档管理器可以识别并打开 Linux 下的常见压缩格式（如 ``.tar.gz``、
-``.tar.bz2`` 等），也支持 Windows 和 macOS 下的常见压缩格式（如 ``.zip`` 和 ``.7z``），
-但默认不支持 ``.rar`` 格式。安装 `unar <https://theunarchiver.com/command-line>`__
-后即可通过双击直接解压 ``.rar`` 文件::
-
-    $ sudo apt install unar
-
-终端
-^^^^^
-
-Ubuntu 自带的终端模拟器是 GNOME Terminal，使用起来中规中矩。
-日常科研经常需要开好几个终端，切换和管理起来比较麻烦。
-
-`Terminator <https://gnome-terminator.org/>`__
-是一个功能强大的终端模拟器，最常用的功能是终端分割和终端切换。
-使用如下命令安装::
-
-    $ sudo dnf install terminator
-
-Google Earth
-^^^^^^^^^^^^
-
-Google Earth 是 Google 公司开发的虚拟三维地球软件，其提供了高精度的卫星图像，
-并允许用户添加 KML 或 KMZ 格式的自定义数据。
-非重度用户可以直接使用 `Google Earth 网页版 <https://earth.google.com/web>`__，
-重度用户可以按照如下步骤安装桌面版。
-
-1. 下载 64 位 deb 包：https://www.google.com/earth/versions/#download-pro
-2. 双击下载的 deb 安装包即可安装
-
-网页浏览器
-^^^^^^^^^^
-
-Ubuntu 自带了 Firefox 浏览器，用户也可以安装 Google Chrome 浏览器::
-
-    # 下载 Google Chrome 的 deb 软件包
-    $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    # 安装 Google Chrome
-    $ sudo apt install ./google-chrome-stable_current_amd64.deb
-
-WPS Office
-^^^^^^^^^^
-
-Ubuntu 自带的 LibreOffice 具有简单的文档查看和编辑功能，但其兼容性一般。
-兼容性更好的是 WPS Office。
-
-1.  下载 64位 deb 格式的安装包：`WPS Office for Linux 官网 <https://linux.wps.cn/>`__
-2.  双击下载的 deb 安装包即可安装
