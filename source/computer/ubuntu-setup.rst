@@ -220,12 +220,6 @@ Java
 
     $ sudo apt install default-jdk
 
-Python
-^^^^^^
-
-Ubuntu 20.04 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
-而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
-
 git
 ^^^
 
@@ -234,3 +228,10 @@ git
 可以使用如下命令安装::
 
     $ sudo apt install git
+
+Python
+^^^^^^
+
+Ubuntu 20.04 自带了 Python 3.8，足够日常使用，但强烈建议不要使用系统自带的 Python，
+而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
+
