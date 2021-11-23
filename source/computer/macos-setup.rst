@@ -269,13 +269,6 @@ Java
     $ brew install openjdk
     $ sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
-Python
-^^^^^^
-
-macOS 默认的 Python 版本为 Python 2.7，而目前主流的 Python 版本为
-Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/index>`
-来安装最新版 Python。
-
 git
 ^^^
 
@@ -303,3 +296,10 @@ Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在
 而 ``gsed`` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 ``g``），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 ``g``），但在写脚本时，
 要额外注意脚本的可移植性。
+
+Python
+^^^^^^
+
+macOS 默认的 Python 版本为 Python 2.7，而目前主流的 Python 版本为
+Python 3.x。建议通过 :doc:`Anaconda <software:anaconda/index>`
+来安装最新版 Python。

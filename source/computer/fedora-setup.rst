@@ -213,12 +213,6 @@ Java
 
     $ sudo dnf install java-11-openjdk
 
-Python
-^^^^^^
-
-Fedora 35 自带了 Python 3.9，足够日常使用，但强烈建议不要使用系统自带的 Python，
-而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
-
 git
 ^^^
 
@@ -227,3 +221,9 @@ git
 可以使用如下命令安装::
 
     $ sudo dnf install git
+
+Python
+^^^^^^
+
+Fedora 35 自带了 Python 3.10，足够日常使用，但强烈建议不要使用系统自带的 Python，
+而建议通过 :doc:`Anaconda <software:anaconda/index>` 来安装和管理 Python。
