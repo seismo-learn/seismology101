@@ -220,3 +220,20 @@ Oh My Zsh 自带了很多插件，位于 :file:`~/.oh-my-zsh/plugins` 目录下�
     .. note::
 
         某些主题下，一些插件可能无法正常使用。
+
+从 Bash 迁移到 Zsh
+------------------
+
+Linux 下通常使用 Bash 作为默认 Shell，因而很多软件的配置信息都会写在
+Bash 配置文件 ``~/.bashrc`` 中。将默认 Shell 切换到 Zsh 后，还需要将 Bash
+配置文件中的软件配置迁移到 Zsh 中。
+
+由于 Zsh 兼容 Bash 语法，对于大多数软件的配置，都可以直接从 ``~/.bashrc``
+复制粘贴到 ``~/.zshrc`` 中。
+
+对于 Anaconda 用户，需要在 Bash 环境中重新执行 ``conda`` 初始化设置，即::
+
+    # 进入 bash 环境
+    $ bash
+    # 在 bash 环境下执行 conda 初始化
+    $ conda init zsh
