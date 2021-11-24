@@ -10,6 +10,13 @@ VS Code 使用教程
 
    本节正在编写中，尚未完成。
 
+安装 VS Code
+------------
+
+VS Code 下载地址： https://code.visualstudio.com/download
+
+根据当前操作系统，下载对应的安装包，双击安装即可。
+
 安装中文语言包
 --------------
 
