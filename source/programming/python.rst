@@ -12,3 +12,7 @@ Python 语言
     - `X 分钟速成 Python <https://learnxinyminutes.com/docs/zh-cn/python-cn/>`__\ （简要）
     - `A Visual Intro to NumPy and Data Representation <https://jalammar.github.io/visual-numpy/>`__\
       （简要、形象地介绍 NumPy 数据结构）
+
+Linux/macOS 都内置了 Python，足够日常使用，但强烈建议不要使用系统内置的 Python，
+而建议安装 `Anaconda <https://www.anaconda.com/products/individual>`__，并使用
+``conda`` 管理 Python 环境。详情请参考 :doc:`Anaconda <software:anaconda/index>`。

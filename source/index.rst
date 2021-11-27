@@ -39,6 +39,7 @@
    :hidden:
 
    exercises/introduction
+   exercises/prerequisite
    exercises/download
    exercises/process
    exercises/analysis
