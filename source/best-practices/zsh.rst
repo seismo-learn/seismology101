@@ -237,3 +237,5 @@ Bash 配置文件 ``~/.bashrc`` 中。将默认 Shell 切换到 Zsh 后，还需
     $ bash
     # 在 bash 环境下执行 conda 初始化
     $ conda init zsh
+    # 返回 zsh 环境
+    $ exit
