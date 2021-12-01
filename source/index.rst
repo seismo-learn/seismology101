@@ -43,6 +43,7 @@
    exercises/download
    exercises/process
    exercises/analysis
+   exercises/distaz
 
 .. toctree::
    :maxdepth: 3
