@@ -42,7 +42,7 @@ Linux 有\ `上百个不同的发行版 <https://distrowatch.com/>`__，
    而非 `CentOS Linux <https://www.centos.org/centos-linux/>`__。
    Red Hat 在 2020 年 12 月宣布将停止 CentOS Linux 项目。
    CentOS Linux 8 已于 2021 年末停止维护；
-   CentOS Linux 7 也将于2024 年 6 月 30 日停止更新。
+   CentOS Linux 7 也将于 2024 年 6 月 30 日停止更新。
    详情请阅读 `CentOS 博客 <https://blog.centos.org/2020/12/future-is-centos-stream/>`__。
 
 macOS
