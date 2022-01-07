@@ -291,7 +291,8 @@ BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。�
     # 此处仅安装常用的 GNU 实用工具
     $ brew install findutils gawk gnu-sed gnu-tar grep
 
-Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在所有工具的名称前
+Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 或 :file:`/opt/homebrew/bin` 目录下，
+但在所有工具的名称前
 加上了前缀 ``g``，以避免替换 macOS 系统自带的 BSD 实用工具，即 ``sed`` 是 BSD 提供的，
 而 ``gsed`` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 ``g``），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 ``g``），但在写脚本时，
