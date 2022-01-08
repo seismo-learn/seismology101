@@ -43,7 +43,8 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
    :color: info
    :icon: info
 
-   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，老版本 VMware/VirtualBox 将无法正常使用。
+   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，虚拟机软件 VMware/VirtualBox 的老版本
+   将无法正常使用。
    WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。因此，已开启 WSL2 功能的用户
    若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，然后执行以下操作。
 
@@ -76,7 +77,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
    或\ `中文指南 <https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/>`__。
    指南中的 Fedora rootfs 下载地址可能已失效。请访问 Fedora 官方仓库下载
    `Fedora 33 <https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64>`__\ （安装指南中使用的版本）
-   或 `Fedora 34 <https://github.com/fedora-cloud/docker-brew-fedora/tree/34/x86_64>`__\ （Fedora 最新版本）
+   或 `Fedora 35 <https://github.com/fedora-cloud/docker-brew-fedora/tree/35/x86_64>`__\ （Fedora 最新版本）
    镜像文件。
 
    Fedora 只支持 WSL2。
@@ -160,7 +161,7 @@ WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
 
 .. note::
 
-   Windows 11 用户或 Windows 10 内测版本号大于 21362 的用户，可以直接跳过以下内容，
+   Windows 11 用户或 Windows 10 内测版本号大于 21362 的用户，可以跳过以下内容，
    直接试用 Windows 官方正在开发的 WSL 图形界面软件
    `WSLg <https://github.com/microsoft/wslg>`__。
 
