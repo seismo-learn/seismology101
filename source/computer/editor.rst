@@ -55,7 +55,7 @@ Linux 自带的编辑器一般是 Gedit。日常科研中，不建议使用这�
 例如，按照以上分类，`vim <https://www.vim.org/>`__ 编辑器是一款基于命令行的文本
 或代码编辑器，`Visual Studio Code <https://code.visualstudio.com/>`__\ （VS Code）
 是一款图形化的代码编辑器或 IDE，`PyCharm <https://www.jetbrains.com/pycharm/>`__
-是一款图形化的IDE（主要开发 Python 语言写的软件）。
+是一款图形化的 IDE（主要开发 Python 语言写的软件）。
 
 需要注意的是，编写代码时，经常要在文件间进行切换，并阅读、浏览和修改代码，而不是
 连续编写一大段文字，因此编写代码和编辑一长段纯文本是很不一样的。编写程序/软件时，
