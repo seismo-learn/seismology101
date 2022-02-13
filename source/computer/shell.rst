@@ -156,7 +156,7 @@ Shell 接收到用户输入的命令后，会以空格为分隔符将输入的�
     $ cat
 
     # 没指定任何参数时，该命令会从标准输入读入数据，即正在等待我们从终端输入中
-    # 在终端输入 Hello World 并按 Enter键，最后按 Ctrl + D 结束输入
+    # 在终端输入 Hello World 并按 Enter 键，最后按 Ctrl + D 结束输入
     $ cat
     Hello World
     Hello World
