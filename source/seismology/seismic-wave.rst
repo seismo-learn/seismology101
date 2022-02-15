@@ -162,9 +162,9 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 - 相速度（phase velocity）：波峰或波谷的传播速度，常用 :math:`c` 表示
 - 群速度（group velocity）：波包的传播速度，常用 :math:`U` 表示
 
-.. dropdown:: :fa:`exclamation-circle,mr-1` 相速度和群速度的示意图
-   :container: + shadow
-   :title: bg-info text-white font-weight-bold
+.. dropdown:: 相速度和群速度的示意图
+   :color: info
+   :icon: info
 
    如下图所示，波峰的传播速度是相速度；波包的传播速度是群速度。
 

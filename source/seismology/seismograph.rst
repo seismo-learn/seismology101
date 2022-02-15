@@ -21,7 +21,7 @@
 鼓面记录到的运动轨迹代表了地面质点运动，即地震图（seismogram）。可以看出，地震仪的基本原理
 是惯性定律。
 
-.. figure:: seismograph.jpg
+.. figure:: seismograph.*
    :alt: 地震仪的原理示意图
    :width: 50%
    :align: center

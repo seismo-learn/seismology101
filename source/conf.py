@@ -46,7 +46,8 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_cjkspace.cjkspace",
     "sphinx_copybutton",
-    "sphinx_panels",
+    "sphinx_design",
+    "myst_nb",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -78,6 +79,9 @@ copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: 
 copybutton_prompt_is_regexp = True
 copybutton_only_copy_prompt_lines = True
 copybutton_remove_prompts = True
+
+# options for myst-nb
+jupyter_execute_notebooks = "cache"
 
 # -- Options for HTML output -------------------------------------------------
 html_theme = "sphinx_book_theme"
