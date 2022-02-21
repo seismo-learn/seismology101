@@ -75,7 +75,7 @@ Linux 自带的编辑器一般是 Gedit。日常科研中，不建议使用这�
 VS Code
 -------
 
-安装 VS Code 可以参考 :doc:`vscode`。
+安装 VS Code 可以参考 :doc:`/best-practices/vscode`。
 
 刚接触 VS Code 的用户在编辑文本和代码遇到疑问时，可随时通过以下方式查阅：
 
