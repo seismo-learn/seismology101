@@ -246,8 +246,7 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 
    推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__，
    可直接在 Microsoft Store 中安装。界面美观、操作方便，
-   支持同时开启多个 CMD 以及 WSL，随意切换无卡顿。
-   可完全替代 CMD。
+   支持同时开启多个 CMD 以及 WSL，随意切换无卡顿。可完全替代 CMD。
 
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__。
