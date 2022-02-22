@@ -173,8 +173,14 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
 1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__，默认安装即可
 2.  运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**，其他选项无需更改
-3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化。需要修改 Linux 的
-    环境变量以保证始终能连接到 X Server::
+3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化，因而需要配置 Linux
+    下的环境变量以保证始终能连接到 X Server。
+
+    启动并进入 Linux 系统::
+
+        $ bash
+
+    在 Linux 系统中执行如下命令::
 
         $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
         $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
