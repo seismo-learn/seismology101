@@ -147,7 +147,7 @@ Ubuntu 和 Fedora 用户可以分别参考《:doc:`/computer/ubuntu-setup`》和
 
 .. warning::
 
-   配置 Linux 系统时，切忌不要安装 Linux 系统，只需配置系统软件和编程开发环境。
+   配置 Linux 系统时，切记要跳过“安装系统”一节，只需配置\ **系统软件**\ 和\ **编程开发环境**\。
    否则，整个电脑的 Windows 系统将会被覆盖。
 
 安装 X Server
