@@ -145,6 +145,11 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 Ubuntu 和 Fedora 用户可以分别参考《:doc:`/computer/ubuntu-setup`》和
 《:doc:`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
 
+.. warning::
+
+   配置 Linux 系统时，切忌不要安装 Linux 系统，只需配置系统软件和编程开发环境。
+   否则，整个电脑的 Windows 系统将会被覆盖。
+
 安装 X Server
 --------------
 
