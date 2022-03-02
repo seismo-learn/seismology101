@@ -66,6 +66,13 @@ Windows 和 Linux 下使用，详细用法见 `官方文档 <https://ventoy.net/
 开始安装
 ^^^^^^^^
 
+.. warning::
+
+   以下安装步骤假定用户想要将 Ubuntu 系统作为电脑的\ **唯一**\ 系统，
+   电脑中原有的 Windows 或其它 Linux 系统会被彻底覆盖。
+   如果用户想要安装双系统（即同时安装 Windows + Linux），请参考网络上的
+   其他文档。
+
 安装程序会首先要你选择安装过程中的语言，可以选择“中文（简体）”
 或 “English”，然后点击“Install Ubuntu” 即开始安装。接着选择键盘布局
 （汉语或 “English(US)”）。
