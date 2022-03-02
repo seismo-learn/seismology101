@@ -86,3 +86,12 @@ TauP 用于计算一维球状分层模型下地震震相的走时和路径。
    TauP 是基于 Linux 命令行的软件，用户直接在终端执行一条命令即可得到结果。
    ObsPy 提供了 `TauP 的 Python 接口 <https://docs.obspy.org/packages/obspy.taup.html>`__\ ，
    方便用户在自己的 Python 代码中调用。
+   
+   
+HypoDD
+----
+
+HypoDD 用于地震的相对精定位。
+
+- 主页: https://www.ldeo.columbia.edu/~felixw/hypoDD.html
+- 使用手册：https://www.ldeo.columbia.edu/~felixw/papers/Waldhauser_OFR2001.pdf
