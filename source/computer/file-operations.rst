@@ -217,7 +217,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 有时进入到某个目录中，使用绝对路径并不方便。例如，当前位于 :file:`~/projects/NorthChina-MTZ/data`
 目录中，如果想进入 :file:`~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
-输入很多字母。在当前目录下，Linux 文件系统定义了两个特殊的路径：
+输入很多字母。为了解决这个问题，Linux 文件系统定义了两个特殊的路径：
 
 -  :file:`.`：当前路径
 -  :file:`..`：当前目录的上一级目录
