@@ -211,7 +211,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 顾名思义，绝对路径是从根目录 :file:`/` 开始算起的路径。例如，家目录是 :file:`/home`，
 用户 seismo-learn 的家目录是 :file:`/home/seismo-learn`，该用户的桌面目录的路径是
 :file:`/home/seismo-learn/Desktop`。日常科研中，用户的计算机一般只有用户自己在使用，
-因此提到家目录是其时特指 :file:`/home/seismo-learn`，而不是指 :file:`/home`。
+因此提到家目录时一般特指 :file:`/home/seismo-learn`，而不是指 :file:`/home`。
 因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
 :file:`~`，其和 :file:`/home/seismo-learn` 是一回事。
 
