@@ -227,8 +227,8 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 -  :file:`./Beijing`：当前目录下的 :file:`Beijing` 目录，即 :file:`~/projects/NorthChina-MTZ/data/Beijing`。
    当前路径也可以省略，即 :file:`Beijing`
 -  :file:`./Beijing/IC-BJI.sac`：当前目录下的 :file:`Beijing` 目录下的 :file:`IC-BJI.sac` 文件，
-   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJI.sac`。
-   当前路径也可以省略，即 :file:`Beijing/IC-BJI.sac`
+   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJT.sac`。
+   当前路径也可以省略，即 :file:`Beijing/IC-BJT.sac`
 -  :file:`..`：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
 -  :file:`../..`：上一层的上一层目录，即 :file:`~/projects` 目录
 -  :file:`../figures`：上一层目录下的 :file:`figures` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
