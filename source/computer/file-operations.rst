@@ -135,7 +135,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
     $ mv source source-mv
-    ls
+    $ ls
     destination  seismo-learn.txt  source-mv
     # 移动 source-mv 目录到同一目录下的 destination 目录下
     $ mv source-mv destination
