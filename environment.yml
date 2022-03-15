@@ -10,6 +10,6 @@ dependencies:
   - sphinx-design
   - sphinx_rtd_theme
   - myst-nb
-  - obspy=1.2.2
+  - obspy=1.3.0
   - pip:
     - sphinx-cjkspace
