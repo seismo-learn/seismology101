@@ -8,5 +8,4 @@
    bash
    python
    c
-   fortran
    markdown
