@@ -299,9 +299,3 @@ Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可
 
     # 当文件有可执行权限后，即可通过 ./文件名 的方式直接执行该文件
     $ ./hello-world.sh
-
-有时候使用 Linux 的命令或安装程序，可能由于没有读写某些文件的权限，而无法运行命令或
-安装程序。这时可以使用 ``sudo`` 命令临时获得 root 用户的权限。例如，在 Fedora 下安装
-GNU Fortran::
-
-    $ sudo dnf install gcc-gfortran
