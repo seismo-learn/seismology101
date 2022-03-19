@@ -4,7 +4,7 @@ macOS 配置指南
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）、
              |王亮|\（作者）
-:最近更新日期: 2021-11-20
+:最近更新日期: 2021-03-19
 :预计花费时间: 120 分钟
 
 ----
@@ -61,9 +61,8 @@ macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再
 Homebrew
 ^^^^^^^^
 
-`Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器，
-类似于 Linux 系统下的 ``apt``、``yum``、``dnf`` 等包管理器。安装 Homebrew 后，
-即可通过命令行的方式安装日常使用及科研工作中所需的大多数软件和库文件。
+`Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器。
+安装 Homebrew 后，即可通过命令行安装日常使用及科研工作中所需的大多数软件和库文件。
 
 安装 Homebrew
 """""""""""""
@@ -83,10 +82,10 @@ Homebrew 的安装脚本及相关资源托管在 `GitHub <https://github.com/>`_
 
         安装 Homebrew::
 
-            $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+            $ /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
 
         启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
-        安装带有图形界面的软件（如 VS Code、QQ）::
+        安装带有图形界面的软件（如 VS Code、QQ）并设置使用中科大镜像::
 
             $ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
 
