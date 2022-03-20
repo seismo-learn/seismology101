@@ -20,7 +20,7 @@
    programming/introduction
    programming/languages
    programming/compile
-   programming/version-control
+   programming/git
 
 .. toctree::
    :maxdepth: 3
