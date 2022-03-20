@@ -73,18 +73,18 @@
 
 本教程主要包括五部分内容：
 
-1. **计算机基础**：Linux 或 macOS 操作系统的基础知识和常用操作
-2. **编程基础**：科研工作中可能需要用到的编程语言和编程技能 [:octicon:`hourglass` **缓慢编写中**]
-3. **地震学基础**：开展科研工作前必须了解的地震学基础知识 [:octicon:`rocket` **全力编写中**]
-4. **地震学实践**：通过实践掌握基本的地震学数据处理 [:octicon:`rocket` **全力编写中**]
-5. **实践经验**：日常科研工作中的一些实践经验 [:octicon:`hourglass` **缓慢编写中**]
+1. **计算机基础**：Linux 操作系统的基础知识和常用操作
+2. **编程基础**：科研工作中常用的编程语言和编程技能
+3. **地震学基础**：开展科研工作前必须了解的地震学基础知识
+4. **地震学实践**：通过实践掌握基本的地震学数据处理
+5. **实践经验**：日常科研工作中的一些实践经验
 
 欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
 这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。
 请通过如下方式给予反馈：
 
 #. :octicon:`comment-discussion` `留言参与讨论 <https://github.com/seismo-learn/seismology101/discussions>`__
-#. :octicon:`issue-opened` 在文档源码仓库下\ `提交 Issue <https://github.com/seismo-learn/seismology101/issues>`__
+#. :octicon:`issue-opened` 在教程源码仓库下\ `提交 Issue <https://github.com/seismo-learn/seismology101/issues>`__
 #. :octicon:`git-pull-request` 修改文档并\ `提交 Pull Request <https://github.com/seismo-learn/seismology101/pulls>`__
 
 .. admonition:: 免责声明
