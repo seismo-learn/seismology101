@@ -62,7 +62,7 @@ Homebrew
 ^^^^^^^^
 
 `Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器。
-安装 Homebrew 后，即可通过命令行安装日常使用及科研工作中所需的大多数软件和库文件。
+安装 Homebrew 后，即可通过命令行安装日常与科研工作所需的大多数软件和库文件。
 
 安装 Homebrew
 """""""""""""
