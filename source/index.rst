@@ -10,7 +10,6 @@
    computer/setup
    computer/linux101
    computer/commands
-   computer/editor
 
 .. toctree::
    :maxdepth: 3
@@ -18,6 +17,7 @@
    :hidden:
 
    programming/introduction
+   programming/editor
    programming/languages
    programming/version-control
 
