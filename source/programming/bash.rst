@@ -20,11 +20,9 @@ Bash（全称 **B**\ ourne-\ **A**\ gain **SH**\ ell）是 GNU 开发的一个 S
 Bash 脚本
 ---------
 
-脚本（script）是包含一系列命令的文本文件。解释器（Bash 脚本的解释器即 Bash）读取这个文件，
-依次执行里面的所有命令、函数以及表达式等，就好像他们直接输入到命令行一样。
-所有在命令行执行的操作，都能够用脚本完成。
-脚本的好处是可以重复使用，也可以指定在特定场合自动调用（如系统启动或关闭时自动执行脚本）。
-按照 Bash 语法编写的脚本即是 Bash 脚本。
+按照 Bash 语法编写的脚本即是 Bash 脚本。所有在命令行执行的操作，都能够用脚本完成。
+Bash 脚本的解释器（即 Bash）读取脚本，并立即依次执行里面的所有命令、函数以及表达式等，
+就好像他们直接输入到命令行一样。
 
 让我们编写第一个 Bash 脚本 :file:`hello-world.sh`。
 
@@ -67,14 +65,6 @@ Shebang 行不是必需的，但是建议加上这行。
 
     # 如果有 Shebang 行，同时脚本文件具有可执行权限，可以直接调用执行该脚本
     $ ./hello-world.sh
-
-    # 查看脚本权限
-    $ ls -l hello-world.sh
-    -rw-rw-r-- 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
-    # 若脚本没有可执行权限（即第四位不为 ``x``，而为``-``），可以执行以下命令增加可执行属性
-    $ chmod +x hello-world.sh
-    $ ls -l hello-world.sh
-    -rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
 
 执行结果::
 
