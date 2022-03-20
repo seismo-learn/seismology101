@@ -19,7 +19,6 @@
    programming/introduction
    programming/editor
    programming/languages
-   programming/compile
    programming/version-control
 
 .. toctree::
