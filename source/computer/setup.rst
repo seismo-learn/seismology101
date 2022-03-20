@@ -1,12 +1,35 @@
 配置操作系统
 ============
 
-这一节介绍如何安装和配置一些常用的操作系统，以满足日常科研工作的需求。
+这一节介绍如何安装和配置一些常见的操作系统，以满足日常科研工作的需求。
 
-.. toctree::
-   :maxdepth: 2
+.. grid:: 1 2 2 4
+    :gutter: 4 4 3 3
 
-   fedora-setup
-   ubuntu-setup
-   macos-setup
-   wsl-setup
+    .. grid-item-card::
+
+        .. toctree::
+           :maxdepth: 2
+
+           fedora-setup
+
+    .. grid-item-card::
+
+        .. toctree::
+           :maxdepth: 2
+
+           ubuntu-setup
+
+    .. grid-item-card::
+
+        .. toctree::
+           :maxdepth: 2
+
+           macos-setup
+
+    .. grid-item-card::
+
+        .. toctree::
+           :maxdepth: 2
+
+           wsl-setup

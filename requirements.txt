@@ -1,5 +1,0 @@
-sphinx
-sphinx-cjkspace
-sphinx-copybutton
-sphinx-panels
-sphinx_rtd_theme

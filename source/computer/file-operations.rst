@@ -3,7 +3,7 @@
 
 :本节贡献者: |姚家园|\（作者）、
              |田冬冬|\（审稿）
-:最近更新日期: 2021-02-10
+:最近更新日期: 2021-04-23
 :预计花费时间: 30 分钟
 
 ----
@@ -11,9 +11,14 @@
 熟悉 Linux 文件系统
 -------------------
 
+.. figure:: linux-file-system-tree.*
+   :align: center
+
+   Linux 文件系统树
+
 Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特殊的目录称为根目录。
-根目录下一般有 :file:`/home`\ 、\ :file:`/root`\ 、\ :file:`/bin`\ 、
-:file:`/usr`\ 、\ :file:`/lib`\ 、\ :file:`/opt` 等目录。
+根目录下一般有 :file:`/home`、:file:`/root`、:file:`/bin`、
+:file:`/usr`、:file:`/lib`、:file:`/opt` 等目录。
 
 -  :file:`/home` 目录：用户的家目录，存储用户自己的文件
 -  :file:`/bin` 目录：存储必须的程序和命令，所有用户都可用
@@ -22,9 +27,9 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    默认将软件安装到此目录下
 
 日常科研中，大多数情况下只在 :file:`/home` 目录下工作。假设用户名是 seismo-learn，
-该用户的家目录便是 :file:`/home/seismo-learn`\ 。macOS 下的家目录是 :file:`/Users/seismo-learn`\ 。
+该用户的家目录便是 :file:`/home/seismo-learn`。macOS 下的家目录是 :file:`/Users/seismo-learn`。
 在 Linux/macOS 系统下，可用 :file:`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
-:file:`~/Desktop`\ 、\ :file:`~/Downloads`\ 、\ :file:`~/Documents` 等。熟悉 Linux 文件系统后可以参考\
+:file:`~/Desktop`、:file:`~/Documents`、:file:`~/Downloads` 等。熟悉 Linux 文件系统后可以参考\
 :doc:`《文件管理实践经验》<best-practices/file-organization>`\ 和\
 :doc:`《软件安装实践经验》<best-practices/software-installation>`\
 进一步组织与管理家目录，以提高工作效率。
@@ -32,7 +37,9 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 操作文件与目录
 --------------
 
-打开终端，使用以下命令熟悉和掌握 Linux 系统下文件和目录的常用操作。假设用户名是 seismo-learn。
+接下来将通过一系列命令熟悉和掌握 Linux 系统下文件和目录的常用操作。
+读者应打开终端，根据下面的教程自行输入命令（不要复制粘贴！），记住并理解每个
+命令的作用。这一小节中，假设用户名是 seismo-learn，读者根据自己的情况自行修改。
 
 查看文件和目录::
 
@@ -70,20 +77,21 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     # 进入家目录
     $ cd ~
     # 使用 mkdir（make directory，即创建目录）命令新建以下目录
-    $ mkdir codes software workspace
+    $ mkdir codes software
     $ ls
-    codes  Desktop  Documents  Downloads  software  workspace
-    # 在 workspace 目录中新建 source 目录
-    $ mkdir workspace/source
+    codes  Desktop  Documents  Downloads  software
+    # 建立 workspace 目录，并在该目录下建立 source 目录
+    # 需要使用 -p 选项，表示自动创建不存在的中间层目录
+    $ mkdir -p workspace/source
     $ ls workspace/
     source
 
     # 进入 workspace 目录
     $ cd workspace
-    # 使用 touch 命令创建新文件 hello-world.txt 和 seiso-learn.txt
-    $ touch hello-world.txt seiso-learn.txt
+    # 使用 touch 命令创建新文件 hello-world.txt 和 seismo-learn.txt
+    $ touch hello-world.txt seismo-learn.txt
     $ ls
-    hello-world.txt  seiso-learn.txt  source
+    hello-world.txt  seismo-learn.txt  source
 
 以下所有操作都假设读者已经切换到 :file:`~/workspace` 目录下了，即::
 
@@ -95,54 +103,58 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
     # 使用 cp（copy，即复制）命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
     $ cp hello-world.txt hello-world-cp.txt
     $ ls
-    hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
-    # 复制 hello-world.txt 和 seiso-learn.txt 文件到 source 目录下
-    $ cp hello-world.txt seiso-learn.txt source
+    hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
+    # 复制 hello-world.txt 和 seismo-learn.txt 文件到 source 目录下
+    $ cp hello-world.txt seismo-learn.txt source
     $ ls source
-    hello-world.txt  seiso-learn.txt
+    hello-world.txt  seismo-learn.txt
 
     # 复制 source 目录为同一目录下的 destination 目录（目标目录不存在）
     $ cp -r source destination
     $ ls
-    destination  hello-world-cp.txt  hello-world.txt  seiso-learn.txt  source
+    destination  hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
     $ ls destination
-    hello-world.txt  seiso-learn.txt
+    hello-world.txt  seismo-learn.txt
     # 复制 source 目录到同一目录下的 destination 目录下（目标目录已存在）
     $ cp -r source destination
     $ ls destination
-    hello-world.txt  seiso-learn.txt  source
+    hello-world.txt  seismo-learn.txt  source
 
 移动文件和目录::
 
     # 使用 mv（move，即移动）命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
     $ mv hello-world.txt hello-world-mv.txt
     $ ls
-    destination  hello-world-cp.txt  hello-world-mv.txt  seiso-learn.txt  source
+    destination  hello-world-cp.txt  hello-world-mv.txt  seismo-learn.txt  source
     # 移动 hello-world-cp.txt 和 hello-world-mv.txt 文件到 source 目录下
     $ mv hello-world-cp.txt hello-world-mv.txt source
     ls
-    destination  seiso-learn.txt  source
+    destination  seismo-learn.txt  source
     $ ls source
-    hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seiso-learn.txt
+    hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seismo-learn.txt
 
     # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
     $ mv source source-mv
-    ls
-    destination  seiso-learn.txt  source-mv
+    $ ls
+    destination  seismo-learn.txt  source-mv
     # 移动 source-mv 目录到同一目录下的 destination 目录下
     $ mv source-mv destination
     $ ls
-    destination  seiso-learn.txt
+    destination  seismo-learn.txt
     $ ls destination
-    hello-world.txt  seiso-learn.txt  source  source-mv
+    hello-world.txt  seismo-learn.txt  source  source-mv
 
 删除文件和目录::
 
-    # 使用 rm（remove，即删除）命令删除 seiso-learn.txt 文件
-    $ rm seiso-learn.txt
+    # 使用 rm（remove，即删除）命令删除 seismo-learn.txt 文件
+    $ rm seismo-learn.txt
     $ ls
     destination
     # 删除 destination 目录
+    ## rm 命令无法直接删除文件夹，直接使用 rm 命令删除文件夹会出现如下报错
+    $ rm destination/
+    rm: destination/: is a directory
+    ## 需要使用 -r 选项（recursive，表示递归）
     $ rm -r destination
     $ ls
 
@@ -156,49 +168,40 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 .. warning::
 
-   使用 ``rm`` 命令时一定要小心再小心，不要误删重要文件。可以先把要删除的文件移动到
-   某目录下（如 :file:`~/trash`\ ），再删除。
+   使用 ``rm`` 命令删除的文件会被直接删除，并不会被放在回收站里。
+   因而执行 ``rm`` 命令时一定要小心再小心，不要误删重要文件。
+   可以先把要删除的文件移动到某目录下（如 :file:`~/trash`），之后统一删除；
+   也可以考虑使用其他命令行工具管理回收站
+   （如 `trash-cli <https://github.com/andreafrancia/trash-cli>`__）。
 
-建立文件和目录的链接::
+软链接，也叫符号链接，类似于 Windows 下的快捷方式。Linux 下可以使用 ``ln`` （link，即链接）
+命令为文件和目录建立软链接::
 
-    # 新建 hello-world.txt 文件和 source 目录
-    $ touch hello-world.txt
-    $ mkdir source
-    $ ls
-    hello-world.txt  source
-
-    # 使用 ln（link，即链接）命令建立 hello-world.txt 的硬链接 hello-world-hard.txt
-    $ ln hello-world.txt hello-world-hard.txt
-
-    # 建立 hello-world.txt 的软链接（也叫符号链接）hello-world-soft.txt
-    $ ln -s hello-world.txt hello-world-soft.txt
-
-    # 建立 source 目录的软链接
-    $ ln -s source source-soft
-    
-    # 使用 ls 命令的 -l 选项可以查看文件和目录的详细信息
+    # 在当前目录下，为文件 /etc/passwd 建立软链接
+    $ ln -s /etc/passwd
+    # 使用 ls -l 命令查看，会发现在当前目录下生成了一个 passwd 文件，其指向源文件 /etc/passwd
     $ ls -l
     total 0
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world-hard.txt
-    -rw-r--r-- 2 seismo-learn seismo-learn  0 Feb  8 14:55 hello-world.txt
-    lrwxrwxrwx 1 seismo-learn seismo-learn 14 Feb  8 14:57 hello-world-soft.txt -> hello-world.txt
-    drwxr-xr-x 2 seismo-learn seismo-learn  6 Feb  8 14:55 source
-    lrwxrwxrwx 1 seismo-learn seismo-learn  6 Feb  8 14:58 source-soft -> source
+    lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -> /etc/passwd
+    # 默认情况下，软链接与源文件同名。可以重新指定软链接的文件名
+    $ ln -s /etc/passwd mylocalpasswd
+    $ ls -l
+    total 0
+    lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:59 mylocalpasswd -> /etc/passwd
+    lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -> /etc/passwd
 
-    # 可以像删除文件一样删除硬链接和软链接
-    $ rm hello-world-hard.txt hello-world-soft.txt source-soft
+    # 在当前目录下，为文件夹 /usr/lib 建立软链接
+    $ ln -s /usr/lib mylibdir
+    $ ls -l
+    total 0
+    lrwxr-xr-x  1 seismo-learn  seismo-learn     8B Oct  4 22:04 mylibdir -> /usr/lib
+    lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:59 mylocalpasswd -> /etc/passwd
+    lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:55 passwd -> /etc/passwd
+    # 可以直接对软链接进行各种操作
+    $ ls mylibdir/
 
-.. admonition:: 硬链接与软链接的区别
-
-   硬链接和源文件指向的是同一存储区。删除硬链接，仍可通过源文件访问；删除源文件，
-   仍可通过硬链接访问。只有同时删除硬链接和源文件，文件实体才会被删除。因此，其实
-   本质上硬链接和源文件互为对方的硬链接。通过给文件设置硬链接，可以防止重要文件被误删。
-   目录无法建立硬链接。一般设置硬链接后，源文件和硬链接都会高亮显示。
-
-   软链接（也叫符号链接）类似 Windows 系统的快捷方式，是一个\ **文件**\ ，里面存放的
-   是源文件（或目录）的路径。删除软链接，对源文件（或目录）没有任何影响。
-   删除源文件（或目录），软链接依然存在，但无法通过其访问源文件（或目录）了。
-   软链接一般会高亮显示。
+    # 删除软链接。源文件不受影响
+    $ rm mylibdir passwd mylocalpasswd
 
 文件路径
 --------
@@ -207,29 +210,29 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
 顾名思义，绝对路径是从根目录 :file:`/` 开始算起的路径。例如，家目录是 :file:`/home`，
 用户 seismo-learn 的家目录是 :file:`/home/seismo-learn`，该用户的桌面目录的路径是
-:file:`/home/seismo-learn/Desktop`\ 。日常科研中，用户的计算机一般只有用户自己在使用，
-因此提到家目录是其时特指 :file:`/home/seismo-learn`\，而不是指 :file:`/home`。
+:file:`/home/seismo-learn/Desktop`。日常科研中，用户的计算机一般只有用户自己在使用，
+因此提到家目录时一般特指 :file:`/home/seismo-learn`，而不是指 :file:`/home`。
 因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
 :file:`~`，其和 :file:`/home/seismo-learn` 是一回事。
 
 有时进入到某个目录中，使用绝对路径并不方便。例如，当前位于 :file:`~/projects/NorthChina-MTZ/data`
 目录中，如果想进入 :file:`~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
-输入很多字母。在当前目录下，Linux 文件系统定义了两个特殊的路径：
+输入很多字母。为了解决这个问题，Linux 文件系统定义了两个特殊的路径：
 
--  :file:`.`\ ：当前路径
--  :file:`..`\ ：当前目录的上一级目录
+-  :file:`.`：当前目录
+-  :file:`..`：当前目录的上一级目录
 
 利用这两个特殊路径，可以使用相对路径访问其他目录下的文件和目录。例如，
 
--  :file:`./Beijing`\ ：当前目录下的 :file:`Beijing` 目录，即 :file:`~/projects/NorthChina-MTZ/data/Beijing`\ 。
+-  :file:`./Beijing`：当前目录下的 :file:`Beijing` 目录，即 :file:`~/projects/NorthChina-MTZ/data/Beijing`。
    当前路径也可以省略，即 :file:`Beijing`
--  :file:`./Beijing/IC-BJI.sac`\ ：当前目录下的 :file:`Beijing` 目录下的 :file:`IC-BJI.sac` 文件，
-   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJI.sac`\ 。
-   当前路径也可以省略，即 :file:`Beijing/IC-BJI.sac`
--  :file:`..`\ ：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
--  :file:`../..`\ ：上一层的上一层目录，即 :file:`~/projects` 目录
--  :file:`../figures`\ ：上一层目录下的 :file:`figure` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
--  :file:`../figures/fig1.pdf`\ ：上一层目录下的 :file:`figure` 目录下的 :file:`fig1.pdf` 文件，
+-  :file:`./Beijing/IC-BJI.sac`：当前目录下的 :file:`Beijing` 目录下的 :file:`IC-BJI.sac` 文件，
+   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJT.sac`。
+   当前路径也可以省略，即 :file:`Beijing/IC-BJT.sac`
+-  :file:`..`：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
+-  :file:`../..`：上一层的上一层目录，即 :file:`~/projects` 目录
+-  :file:`../figures`：上一层目录下的 :file:`figures` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
+-  :file:`../figures/fig1.pdf`：上一层目录下的 :file:`figures` 目录下的 :file:`fig1.pdf` 文件，
    即 :file:`~/projects/NorthChina-MTZ/figures/fig1.pdf`
 
 .. note::
@@ -243,9 +246,9 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
    可以看出，其实家目录下存在 :file:`.` 和 :file:`..` 这两个特殊的路径。
 
 文件权限
----------
+--------
 
-Linux 下每个文件和目录都有自己的权限，使用以下命令查看文件或目录的权限::
+Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可以查看文件或目录的权限::
 
     # 进入 ~/workspace 目录，并新建 hello-world.sh 文件和 source 目录
     $ cd ~/workspace
@@ -258,31 +261,31 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
     -rw-r--r-- 1 seismo-learn seismo-learn 0 Feb  7 22:07 hello-world.sh
     drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
 
-第一列字符串（如 ``-rw-r--r--``\ ）从左到右意义分别是：
+``ls -l`` 的输出中，第一列为文件权限位，第三列和第四列分别表示文件所属用户和用户组。
+此处，文件 :file:`hello-world.txt` 和目录 :file:`source` 属于用户 seismo-learn，
+且属于用户组 seismo-learn（对于个人计算机而言，用户组通常有且仅有一个用户，
+因而用户组与用户同名）。
 
--  第一位：文件类型，其中\ ``-`` 表示普通文件，\ ``d`` 表示目录
+第一列文件权限位总共包含了 10 位信息（如 ``-rw-r--r--``），从左到右的含义分别是：
+
+-  第一位：文件类型（例如，``-`` 表示普通文件，``d`` 表示目录）
 -  第二到第四位：文件所属用户的权限
 -  第五到第七位：文件所属用户组的权限
 -  第八到第十位：其他人的权限
 
-第三和第四列分别表示文件所属用户和用户组（如 ``seismo-learn seismo-learn``\ ）
+每种权限（即文件所属用户的权限、文件所属用户组的权限、其他人的权限）
+包含三位信息，第一位 ``r`` 代表可读取（read），第二位 ``w`` 代表可写入（write），
+第三位 ``x`` 代表可执行（execute，对于目录而言表示可以进入该目录），``-`` 代表没有对应的权限。
 
-可以看出 :file:`hello-world.txt` 是一个普通文件，所属用户权限（即 seismo-learn）是
-``rw-``\ （可读、可写、不可执行），所属用户组（即 seismo-learn）的权限是 ``r--``
-（可读、不可写、不可执行），其他人的权限是 ``r--``\ （可读、不可写、不可执行）。
+从文件的权限位可以看出，用户 seismo-learn 可以读写文件 :file:`hello-world.sh`，
+但不可直接执行该文件，对 :file:`source` 目录拥有可读、可写、可执行的权限。
 
-每个权限，第一位 ``r`` 代表可读取 (read)，第二位 ``w`` 代表可写入（write），
-第三位 ``x`` 代表可执行（execute），\ ``-`` 代表没有对应的权限。例如，seismo-learn 用户
-对 :file:`hello-world.sh` 文件拥有可读、可写、不可执行的权限，对 :file:`source` 目录
-拥有可读、可写、可执行的权限。目录的可执行权限代表可以进入该目录。
-
-还可以用数字表示权限，4 代表可读，2 代表可写，1 代表可执行。因为 :math:`4+2+1=7`\ ，所以 7
-代表可读、可写、可执行。以此类推，6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
+除了用字母 ``rwx`` 表示权限外，还可以用数字表示权限。4 代表可读，2 代表可写，
+1 代表可执行。因为 :math:`4+2+1=7`，所以 7 代表可读、可写、可执行。以此类推，
+6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
 4 代表可读、不可写、不可执行。
 
-使用 ``chmod``\ （change mode，即变更模式）命令可以修改文件或目录的权限，可以参考
-`Linux chmod命令 <https://www.runoob.com/linux/linux-comm-chmod.html>`__ 了解该命令
-详细用法。以下只展示常用用法::
+使用 ``chmod``\ （change mode，即变更模式）命令可以修改文件或目录的权限::
 
     # 修改 hello-world.sh 权限
     # 所属用户可读可写不可执行、所属用户组可读可写不可执行、其他人所属用户可读不可写不可执行
@@ -294,8 +297,5 @@ Linux 下每个文件和目录都有自己的权限，使用以下命令查看�
     $ chmod +x hello-world.sh
     -rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
 
-有时候使用 Linux 的命令或安装程序，可能由于没有读写某些文件的权限，而无法运行命令或
-安装程序。这时可以使用 ``sudo`` 命令临时获得 root 用户的权限。例如，在 Fedora 下安装
-GNU Fortran::
-
-    $ sudo dnf install gcc-gfortran
+    # 当文件有可执行权限后，即可通过 ./文件名 的方式直接执行该文件
+    $ ./hello-world.sh
