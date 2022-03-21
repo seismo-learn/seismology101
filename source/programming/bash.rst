@@ -9,7 +9,7 @@ Bash 简介
 ---------
 
 Bash（全称 **B**\ ourne-\ **A**\ gain **SH**\ ell）是 GNU 开发的一个 Shell，
-它是 Bourne Shell 的扩展。Bash 是目前绝大多数 Linux 发行版的默认 Shell。
+Bash 是目前绝大多数 Linux 发行版的默认 Shell。
 查看本机的 Bash 版本::
 
     $ bash --version
