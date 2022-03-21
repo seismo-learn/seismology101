@@ -1,16 +1,16 @@
 Bash 脚本
 =========
 
-.. warning::
-
-    本节正在编写中。
+:本节作者: |姚家园|\（作者）、
+           |田冬冬|\（审稿）
+:最近更新日期: 2022-03-21
+:预计阅读时间: 15 分钟
 
 Bash 简介
 ---------
 
 Bash（全称 **B**\ ourne-\ **A**\ gain **SH**\ ell）是 GNU 开发的一个 Shell，
-Bash 是目前绝大多数 Linux 发行版的默认 Shell。
-查看本机的 Bash 版本::
+Bash 是目前绝大多数 Linux 发行版的默认 Shell。查看本机的 Bash 版本::
 
     $ bash --version
     GNU bash，version 5.0.3(1)-release (x86_64-pc-linux-gnu)
@@ -47,13 +47,14 @@ Bash 脚本的解释器（即 Bash）读取脚本，并立即依次执行里面�
 脚本的第一行通常是指定解释器，即这个脚本必须通过什么解释器执行。
 这一行以 ``#!`` 字符开头，该字符称为 Shebang，所以这一行就叫做 Shebang 行。
 ``#!`` 后面就是脚本解释器的位置，二者之间有没有空格都可以。
-Shebang 行之后的行都是 Bash 脚本的实际代码，其中 # 表示注释，可以放在行首，也可以放在行尾。
+Shebang 行之后的行都是 Bash 脚本的实际代码，其中 # 表示注释，可以放在行首，
+也可以放在行尾。
 
 Bash 脚本的解释器一般是 :file:`/bin/bash`。但如果 Bash 解释器不在目录
 :file:`/bin` 中，而 Shebang 行却是 :file:`#!/bin/bash`，脚本就无法执行了。
 所以为了保险起见，一般按照 :file:`hello-world.sh` 中的方式来写 Shebang 行，
-即使用 ``env`` 命令（此命令总在 :file:`/usr/bin` 目录中）返回 ``bash`` 可执行文件的位置。
-Shebang 行不是必需的，但是建议加上这行。
+即使用 ``env`` 命令（此命令总在 :file:`/usr/bin` 目录中）返回 ``bash``
+可执行文件的位置。Shebang 行不是必需的，但是建议加上这行。
 
 执行 Bash 脚本
 --------------
@@ -73,10 +74,11 @@ Shebang 行不是必需的，但是建议加上这行。
     world
     Hello world~ This is seismo-learn.
 
-拥有 Shebang 行和可执行权限的脚本，在调用时还需要指定脚本的路径，如 ``./hello-world.sh``
-代表该脚本位于当前目录。如果将脚本放在环境变量 **PATH** 指定的目录中，就不需要指定路径了，
-因为 Bash 会自动到这些目录中寻找是否存在同名的可执行文件。
-可以参考\ :doc:`/computer/environment-variable`\ 一节设置环境变量 **PATH**\ 。
+拥有 Shebang 行和可执行权限的脚本，在调用时还需要指定脚本的路径，
+如 ``./hello-world.sh`` 代表该脚本位于当前目录。如果将脚本放在环境变量 **PATH**
+指定的目录中，就不需要指定路径了，因为 Bash 会自动到这些目录中寻找是否存在同名的
+可执行文件。可以参考\ :doc:`/computer/environment-variable`\ 一节
+设置环境变量 **PATH**\ 。
 
 学习资源
 --------
