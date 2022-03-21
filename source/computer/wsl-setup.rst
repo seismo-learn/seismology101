@@ -17,10 +17,8 @@ WSL 配置指南
 
    本节大部分命令是在命令行中执行的。
 
-   使用 Windows 系统时，可以通过 CMD 或 PowerShell 执行命令：
-   同时按下 :kbd:`win` + :kbd:`R` 键，在打开的运行对话框中输入 “cmd” 以启动 CMD；
-   在搜索栏中键入 “PowerShell” 并点击搜索到的图标以启动 PowerShell。
-   在 CMD 或 PowerShell 中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
+   使用 Windows 系统时，同时按下 :kbd:`win` + :kbd:`R` 键，在打开的运行对话框中
+   输入 “cmd” 以启动 CMD。在 CMD 中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
 
    使用 Linux 系统时，在桌面或菜单栏中找到并点击 “Terminal” 图标以启动终端，
    然后在终端中输入命令并按下 :kbd:`Enter` 键即可执行相应的命令。
@@ -43,16 +41,17 @@ WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数�
    :color: info
    :icon: info
 
-   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，老版本 VMware/VirtualBox 将无法正常使用。
+   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，虚拟机软件 VMware/VirtualBox 的老版本
+   将无法正常使用。
    WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。因此，已开启 WSL2 功能的用户
    若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，然后执行以下操作。
 
-   使用管理员模式打开 CMD 或 PowerShell，使用以下命令关闭 Hyper-V（重启后方能生效）。
+   使用管理员模式打开 CMD，使用以下命令关闭 Hyper-V（重启后方能生效）。
    此时，Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用::
 
        $ bcdedit /set hypervisorlaunchtype off
 
-   使用管理员模式打开 CMD 或 PowerShell，使用以下命令开启 Hyper-V（重启后方能生效）。
+   使用管理员模式打开 CMD，使用以下命令开启 Hyper-V（重启后方能生效）。
    此时，Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用::
 
        $ bcdedit /set hypervisorlaunchtype auto
@@ -76,7 +75,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
    或\ `中文指南 <https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/>`__。
    指南中的 Fedora rootfs 下载地址可能已失效。请访问 Fedora 官方仓库下载
    `Fedora 33 <https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64>`__\ （安装指南中使用的版本）
-   或 `Fedora 34 <https://github.com/fedora-cloud/docker-brew-fedora/tree/34/x86_64>`__\ （Fedora 最新版本）
+   或 `Fedora 35 <https://github.com/fedora-cloud/docker-brew-fedora/tree/35/x86_64>`__\ （Fedora 最新版本）
    镜像文件。
 
    Fedora 只支持 WSL2。
@@ -84,7 +83,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 常用命令
 --------
 
-打开 CMD 或 PowerShell，可以运行如下命令来使用 WSL。以下示例命令假定已
+打开 CMD，可以运行如下命令来使用 WSL。以下示例命令假定已
 安装 WSL2 版本的 Ubuntu 20.04 LTS，且其名称为 Ubuntu。
 
 ``wsl`` 命令用法::
@@ -122,7 +121,7 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 可以将已安装的 Linux 发行版导出备份，再导入还原到其它盘，最后删除 C 盘上的发行版。
 这样做的另一个好处是导入时用户就能得到 WSL 的真实路径。
 
-打开 CMD 或 PowerShell，执行如下命令::
+打开 CMD，执行如下命令::
 
     # 导出 Linux 发行版，可做为备份
     # 在 D 盘中新建备份目录，命名为 WSLBAK
@@ -146,6 +145,11 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 Ubuntu 和 Fedora 用户可以分别参考《:doc:`/computer/ubuntu-setup`》和
 《:doc:`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
 
+.. warning::
+
+   配置 Linux 系统时，切记要跳过“安装系统”一节，只需配置\ **系统软件**\ 和\ **编程开发环境**\。
+   否则，整个电脑的 Windows 系统将会被覆盖。
+
 安装 X Server
 --------------
 
@@ -160,7 +164,7 @@ WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
 
 .. note::
 
-   Windows 11 用户或 Windows 10 内测版本号大于 21362 的用户，可以直接跳过以下内容，
+   Windows 11 用户或 Windows 10 内测版本号大于 21362 的用户，可以跳过以下内容，
    直接试用 Windows 官方正在开发的 WSL 图形界面软件
    `WSLg <https://github.com/microsoft/wslg>`__。
 
@@ -174,8 +178,14 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
 1.  下载 `VcXsrv <https://sourceforge.net/projects/vcxsrv/>`__，默认安装即可
 2.  运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**，其他选项无需更改
-3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化。需要修改 Linux 的
-    环境变量以保证始终能连接到 X Server::
+3.  Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化，因而需要配置 Linux
+    下的环境变量以保证始终能连接到 X Server。
+
+    启动并进入 Linux 系统::
+
+        $ bash
+
+    在 Linux 系统中执行如下命令::
 
         $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
         $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
@@ -221,22 +231,19 @@ Windows 访问 WSL
 2. 进入 WSL，在终端输入 ``cd ~ && explorer.exe .``，会在 Windows 下打开
    家目录，根据需要找到文件进行操作
 
-在 Windows 下访问 WSL 文件系统时，文件和目录的路径有以下两种表示方式：
+在 Windows 下访问 WSL 文件系统时，文件和目录的路径有两种表示方式：
+真实路径和 UNC 路径，后者指类似 ``\\wsl$`` 这种格式的路径。
 
-1. 真实路径
-2. UNC 路径（指类似 ``\\wsl$`` 这种格式的路径）
+WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问。
 
-WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问，这是因为 WSL2 使用 VHD 虚拟磁盘文件
-作为 Linux 发行版的根目录。
-
-Windows 的 CMD 和 PowerShell 不支持 UNC 路径，所以使用 CMD 和 PowerShell 时，只能用
+Windows 的 CMD 不支持 UNC 路径，所以使用 CMD 时，只能用
 真实路径访问 WSL1 文件系统，无法用 UNC 路径访问 WSL1 文件系统，也无法用真实路径
 和 UNC 路径访问 WSL2 文件系统。
 
 Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些支持 UNC 路径的
 软件（如 MATLAB）还可以通过 UNC 路径访问 WSL1 或 WSL2 文件系统。
 
-因此，如果想使用 Windows 的 CMD、PowerShell 以及应用程序编译或运行 WSL 中的文件，
+因此，如果想使用 Windows 的 CMD 以及应用程序编译或运行 WSL 中的文件，
 需要先把 Linux 发行版切换到 WSL1 版本，进入 WSL 后新建一个名字独特的文件夹，
 然后在 Windows 中对该文件夹进行定位，从而确定其真实的路径。
 
@@ -247,8 +254,7 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 
    推荐使用 `Windows Terminal <https://docs.microsoft.com/zh-cn/windows/terminal/>`__，
    可直接在 Microsoft Store 中安装。界面美观、操作方便，
-   支持同时开启多个 CMD、PowerShell 以及 WSL，随意切换无卡顿。
-   可完全替代 CMD 和 PowerShell。
+   支持同时开启多个 CMD 以及 WSL，随意切换无卡顿。可完全替代 CMD。
 
    推荐使用 `Visual Studio Code <https://code.visualstudio.com/>`__，并安装插件
    `Remote - WSL <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl>`__。

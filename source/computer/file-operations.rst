@@ -135,7 +135,7 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 
     # 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
     $ mv source source-mv
-    ls
+    $ ls
     destination  seismo-learn.txt  source-mv
     # 移动 source-mv 目录到同一目录下的 destination 目录下
     $ mv source-mv destination
@@ -211,15 +211,15 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 顾名思义，绝对路径是从根目录 :file:`/` 开始算起的路径。例如，家目录是 :file:`/home`，
 用户 seismo-learn 的家目录是 :file:`/home/seismo-learn`，该用户的桌面目录的路径是
 :file:`/home/seismo-learn/Desktop`。日常科研中，用户的计算机一般只有用户自己在使用，
-因此提到家目录是其时特指 :file:`/home/seismo-learn`，而不是指 :file:`/home`。
+因此提到家目录时一般特指 :file:`/home/seismo-learn`，而不是指 :file:`/home`。
 因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
 :file:`~`，其和 :file:`/home/seismo-learn` 是一回事。
 
 有时进入到某个目录中，使用绝对路径并不方便。例如，当前位于 :file:`~/projects/NorthChina-MTZ/data`
 目录中，如果想进入 :file:`~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
-输入很多字母。在当前目录下，Linux 文件系统定义了两个特殊的路径：
+输入很多字母。为了解决这个问题，Linux 文件系统定义了两个特殊的路径：
 
--  :file:`.`：当前路径
+-  :file:`.`：当前目录
 -  :file:`..`：当前目录的上一级目录
 
 利用这两个特殊路径，可以使用相对路径访问其他目录下的文件和目录。例如，
@@ -227,8 +227,8 @@ Linux 文件系统就像一颗树一样，从 :file:`/` 目录开始，这个特
 -  :file:`./Beijing`：当前目录下的 :file:`Beijing` 目录，即 :file:`~/projects/NorthChina-MTZ/data/Beijing`。
    当前路径也可以省略，即 :file:`Beijing`
 -  :file:`./Beijing/IC-BJI.sac`：当前目录下的 :file:`Beijing` 目录下的 :file:`IC-BJI.sac` 文件，
-   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJI.sac`。
-   当前路径也可以省略，即 :file:`Beijing/IC-BJI.sac`
+   即 :file:`~/projects/NorthChina-MTZ/data/Beijing/IC-BJT.sac`。
+   当前路径也可以省略，即 :file:`Beijing/IC-BJT.sac`
 -  :file:`..`：上一层目录，即 :file:`~/projects/NorthChina-MTZ` 目录
 -  :file:`../..`：上一层的上一层目录，即 :file:`~/projects` 目录
 -  :file:`../figures`：上一层目录下的 :file:`figures` 目录，即 :file:`~/projects/NorthChina-MTZ/figures` 目录
@@ -285,9 +285,7 @@ Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可
 6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
 4 代表可读、不可写、不可执行。
 
-使用 ``chmod``\ （change mode，即变更模式）命令可以修改文件或目录的权限，可以参考
-`Linux chmod 命令 <https://www.runoob.com/linux/linux-comm-chmod.html>`__ 了解该命令
-详细用法。以下只展示常用用法::
+使用 ``chmod``\ （change mode，即变更模式）命令可以修改文件或目录的权限::
 
     # 修改 hello-world.sh 权限
     # 所属用户可读可写不可执行、所属用户组可读可写不可执行、其他人所属用户可读不可写不可执行
@@ -301,9 +299,3 @@ Linux 下每个文件和目录都有自己的权限，使用 ``ls -l`` 命令可
 
     # 当文件有可执行权限后，即可通过 ./文件名 的方式直接执行该文件
     $ ./hello-world.sh
-
-有时候使用 Linux 的命令或安装程序，可能由于没有读写某些文件的权限，而无法运行命令或
-安装程序。这时可以使用 ``sudo`` 命令临时获得 root 用户的权限。例如，在 Fedora 下安装
-GNU Fortran::
-
-    $ sudo dnf install gcc-gfortran

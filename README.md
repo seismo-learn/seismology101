@@ -9,8 +9,8 @@
 本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以
 作为地震学新手的入门自学材料，也可以作为各个研究组的入门培训材料。
 
-- 项目主页：https://github.com/seismo-learn/seismology101
-- 网页版：https://seismo-learn.org/seismology101/
+- 教程主页：https://seismo-learn.org/seismology101/
+- 教程源码：https://github.com/seismo-learn/seismology101
 
 ## 文档维护
 

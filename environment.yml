@@ -1,15 +1,15 @@
 name: seismology101
 channels:
-    - conda-forge
-    - nodefaults
+  - conda-forge
+  - nodefaults
 dependencies:
-    - python=3.9
-    - pip
-    - sphinx
-    - sphinx-copybutton
-    - sphinx_rtd_theme
-    - myst-nb
-    - obspy=1.2.2
-    - pip:
-      - sphinx-cjkspace
-      - sphinx_design
+  - python=3.9
+  - pip
+  - sphinx
+  - sphinx-copybutton
+  - sphinx-design
+  - sphinx_rtd_theme
+  - myst-nb
+  - obspy=1.3.0
+  - pip:
+    - sphinx-cjkspace

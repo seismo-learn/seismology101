@@ -67,6 +67,13 @@ Windows 和 Linux 下使用，详细用法见 `官方文档 <https://ventoy.net/
 开始安装
 ^^^^^^^^
 
+.. warning::
+
+   以下安装步骤假定用户想要将 Fedora 系统作为电脑的\ **唯一**\ 系统，
+   电脑中原有的 Windows 或其它 Linux 系统会被彻底覆盖。
+   如果用户想要安装双系统（即同时安装 Windows + Linux），请参考网络上的
+   其他文档。
+
 进入 Live 系统之后，选择 “Install to Hard Drive” 即开始安装。
 
 安装程序会首先要你选择安装过程中的语言，可以选择“中文”→“简体中文（中国）”
@@ -166,45 +173,6 @@ Fortran
 Fortran 编译器，其提供了 ``gfortran`` 命令::
 
     $ sudo dnf install gcc-gfortran
-
-Intel 软件开发工具包
-^^^^^^^^^^^^^^^^^^^^
-
-`Intel oneAPI <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是 Intel 公司提供的免费软件开发工具包。该工具包中包含了 C/C++ 编译器（``icc`` 命令）
-和 Fortran 编译器（``ifort`` 命令），以及 MKL 数学库、MPI 并行库等众多软件开发工具。
-
-.. note::
-
-   地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
-
-在 Fedora 系统下，官方手册提供了\
-`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-linux/>`__。
-这里，我们推荐使用 ``dnf`` 安装。
-
-下载 :file:`.repo` 文件 :download:`oneapi.repo`，并将其放在 :file:`/etc/yum.repos.d` 目录下::
-
-    $ sudo mv oneapi.repo /etc/yum.repos.d/
-
-根据自己的需要安装 C/C++ 或 Fortran 编译器，默认安装目录是 :file:`/opt/intel/oneapi`::
-
-    # 安装 C/C++ 编译器
-    $ sudo dnf install intel-oneapi-compiler-dpcpp-cpp-and-cpp-classic
-
-    # 安装 Fortran 编译器
-    $ sudo dnf install intel-oneapi-compiler-fortran
-
-安装完成后还需要配置环境变量::
-
-    $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.bashrc
-
-.. dropdown:: 查看 Intel 软件仓库提供的软件列表
-    :color: info
-    :icon: info
-
-    使用如下命令可以列出 Intel 软件仓库提供的所有软件包::
-
-        $ sudo -E dnf --disablerepo="*" --enablerepo="oneAPI" list available
 
 Java
 ^^^^

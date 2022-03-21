@@ -4,7 +4,7 @@ macOS 配置指南
 :本节贡献者: |田冬冬|\（作者）、
              |姚家园|\（作者）、
              |王亮|\（作者）
-:最近更新日期: 2021-11-20
+:最近更新日期: 2021-03-19
 :预计花费时间: 120 分钟
 
 ----
@@ -61,9 +61,8 @@ macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再
 Homebrew
 ^^^^^^^^
 
-`Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器，
-类似于 Linux 系统下的 ``apt``、``yum``、``dnf`` 等包管理器。安装 Homebrew 后，
-即可通过命令行的方式安装日常使用及科研工作中所需的大多数软件和库文件。
+`Homebrew <https://brew.sh/index_zh-cn.html>`__ 是 macOS 下最流行的第三方软件包管理器。
+安装 Homebrew 后，即可通过命令行安装日常与科研工作所需的大多数软件和库文件。
 
 安装 Homebrew
 """""""""""""
@@ -83,10 +82,10 @@ Homebrew 的安装脚本及相关资源托管在 `GitHub <https://github.com/>`_
 
         安装 Homebrew::
 
-            $ /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
+            $ /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
 
         启用 `Homebrew Cask <https://github.com/Homebrew/homebrew-cask>`__ 以通过命令行
-        安装带有图形界面的软件（如 VS Code、QQ）::
+        安装带有图形界面的软件（如 VS Code、QQ）并设置使用中科大镜像::
 
             $ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
 
@@ -229,38 +228,6 @@ Fortran 编译器，其提供了 ``gfortran`` 命令::
 
     $ brew install gfortran
 
-Intel 软件开发工具包
-^^^^^^^^^^^^^^^^^^^^
-
-`Intel oneAPI <https://software.intel.com/content/www/us/en/develop/tools/oneapi.html>`__
-是 Intel 公司提供的免费软件开发工具包。该工具包中包含了 C/C++ 编译器（``icc`` 命令）
-和 Fortran 编译器（``ifort`` 命令），以及 MKL 数学库、MPI 并行库等众多软件开发工具。
-
-.. note::
-
-   地震学新手可以先不安装此工具包，等日常科研中确实需要使用时再安装。
-
-在 macOS 下，官方手册提供了\
-`多种安装方式 <https://software.intel.com/content/www/us/en/develop/documentation/installation-guide-for-intel-oneapi-toolkits-macos/>`__。
-这里，我们下载离线安装包进行安装。
-
-根据自己的需要，从官网下载
-`C/C++ 编辑器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#compilerclassic>`__
-或 `Fortran 编译器 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html#fortran>`__
-的离线安装包（Offline），然后直接双击安装。默认安装目录是 :file:`/opt/intel/oneapi`。
-
-安装完成后还需要配置环境变量::
-
-    $ echo "source /opt/intel/oneapi/setvars.sh >/dev/null 2>&1" >> ~/.zshrc
-
-.. dropdown:: Intel 软件开发工具列表
-   :color: info
-   :icon: info
-
-   Intel oneAPI 提供了众多软件开发工具，用户可以根据需要到
-   `Intel 官网 <https://software.intel.com/content/www/us/en/develop/articles/oneapi-standalone-components.html>`__
-   下载其他 macOS 离线安装包并安装。
-
 Java
 ^^^^
 
@@ -291,7 +258,8 @@ BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。�
     # 此处仅安装常用的 GNU 实用工具
     $ brew install findutils gawk gnu-sed gnu-tar grep
 
-Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 目录下，但在所有工具的名称前
+Homebrew 将 GNU 实用工具安装在 :file:`/usr/local/bin` 或 :file:`/opt/homebrew/bin` 目录下，
+但在所有工具的名称前
 加上了前缀 ``g``，以避免替换 macOS 系统自带的 BSD 实用工具，即 ``sed`` 是 BSD 提供的，
 而 ``gsed`` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 ``g``），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 ``g``），但在写脚本时，
