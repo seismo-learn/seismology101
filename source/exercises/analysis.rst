@@ -8,4 +8,5 @@
    :maxdepth: 2
 
    cross-correlation
+   distaz
 
