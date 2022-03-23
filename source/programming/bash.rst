@@ -15,14 +15,14 @@ Bash 是目前绝大多数 Linux 发行版的默认 Shell。查看本机的 Bash
     $ bash --version
     GNU bash，version 5.0.3(1)-release (x86_64-pc-linux-gnu)
 
-我们已经在 :doc:`/computer/linux101` 一节中简要介绍了 Bash，本节不在赘述。
+我们已经在 :doc:`/computer/linux101` 一节中简要介绍了 Bash，本节不再赘述。
 
 Bash 脚本
 ---------
 
-按照 Bash 语法编写的脚本即是 Bash 脚本。所有在命令行执行的操作，都能够用脚本完成。
-Bash 脚本的解释器（即 Bash）读取脚本，并立即依次执行里面的所有命令、函数以及表达式等，
-就好像他们直接输入到命令行一样。
+按照 Bash 语法编写的脚本即是 Bash 脚本。所有在命令行执行的操作，都能够用 Bash 脚本完成。
+Bash 脚本的解释器就是 Bash 本身， 解释器会读取脚本，并立即依次执行里面的所有命令、
+函数以及表达式等，就好像他们直接输入到命令行一样。
 
 让我们编写第一个 Bash 脚本 :file:`hello-world.sh`。
 
