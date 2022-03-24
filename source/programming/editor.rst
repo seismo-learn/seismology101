@@ -18,16 +18,15 @@ macOS 下是 TextEdit，Linux 一般是 Gedit。这些文本编辑器只有最�
 `Visual Studio Code <https://code.visualstudio.com/>`__ （一般写作 VS Code），
 其具有强大的功能且支持丰富的插件以扩展更多功能，是目前最流行的代码编辑器。
 
-VS Code
--------
+安装 VS Code
+------------
 
-安装 VS Code 可以参考 :doc:`/best-practices/vscode`。
+VS Code 下载地址： https://code.visualstudio.com/download
 
-刚接触 VS Code 的用户在编辑文本和代码遇到疑问时，可随时通过以下方式查阅：
+根据当前操作系统，下载对应的安装包，双击安装即可。
 
-- 点击 VS Code 菜单栏“帮助”，选择相关选项。例如，“交互式演练场”、
-  “文档”（Visual Studio Code 官方文档）、“键盘快捷键参考”等
-- 使用 Google 搜索
+使用 VS Code
+------------
 
-建议在日常科研中随时根据个人习惯，去配置 VS Code、安装和使用扩展包等。更多的配置和使用技巧见
-:doc:`/best-practices/vscode`。
+建议在日常科研中随时根据个人习惯，去配置 VS Code、安装和使用扩展包等。
+更多的配置和使用技巧见 :doc:`/best-practices/vscode`。
