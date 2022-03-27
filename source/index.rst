@@ -40,6 +40,7 @@
    exercises/introduction
    exercises/prerequisite
    exercises/download
+   exercises/preprocessing
    exercises/process
    exercises/analysis
 
