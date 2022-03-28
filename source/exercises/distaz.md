@@ -65,3 +65,7 @@ dist /= 1000.0  # 距离单位默认是 m，转换为 km
 gcarc = kilometers2degrees(dist)  # 转换为角度
 print(dist, gcarc, az, baz)
 ```
+
+## 参考文档
+
+- https://service.iris.edu/irisws/rotation/docs/1/help/
