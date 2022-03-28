@@ -9,4 +9,3 @@
    seismic-source
    seismic-wave
    seismograph
-   distance-angle
