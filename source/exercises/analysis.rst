@@ -7,6 +7,7 @@
 .. toctree::
    :maxdepth: 2
 
+   particle-motion
    cross-correlation
    distaz
 
