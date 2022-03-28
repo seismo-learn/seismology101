@@ -60,8 +60,8 @@ from obspy.geodetics import gps2dist_azimuth, kilometers2degrees
 # 事件和台站的经纬度
 evla, evlo, stla, stlo = 0, 0, 20, 10
 # 计算事件和台站的距离、方位角以及反方位角
-dist, az, baz = gps2dist_azimuth(evla, evlo, stla, stlo)  # 距离单位默认是 m
-dist /= 1000.0  # 距离单位为 km
+dist, az, baz = gps2dist_azimuth(evla, evlo, stla, stlo)
+dist /= 1000.0  # 距离单位默认是 m，转换为 km
 gcarc = kilometers2degrees(dist)  # 转换为角度
 print(dist, gcarc, az, baz)
 ```
