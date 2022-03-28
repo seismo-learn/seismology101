@@ -51,7 +51,7 @@ $$
 :align: center
 ```
 
-## 计算震中距、方位角和反方位角
+## 理论计算
 
 点击链接下载源代码：{nb-download}`distaz.ipynb` 或 {download}`distaz.md`.
 
