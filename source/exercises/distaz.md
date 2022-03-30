@@ -68,4 +68,4 @@ print(dist, gcarc, az, baz)
 
 ## 参考文档
 
-- https://service.iris.edu/irisws/rotation/docs/1/help/
+- [https://service.iris.edu/irisws/rotation/docs/1/help/](https://service.iris.edu/irisws/rotation/docs/1/help/)
