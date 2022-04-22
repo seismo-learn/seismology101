@@ -30,6 +30,13 @@ Jupyter Notebook
 科学计算相关模块
 ----------------
 
+以下是日常科研中经常需要使用的基础 Python 科学计算模块：
+
+- `NumPy <https://numpy.org/>`__
+- `Matplotlib <https://matplotlib.org/>`__
+- `pandas <https://pandas.pydata.org/>`__
+- `SciPy <https://scipy.org/>`__
+
 学习资源
 --------
 
