@@ -1,13 +1,10 @@
----
-"\u6700\u8FD1\u66F4\u65B0\u65E5\u671F": '2021-04-04'
-"\u672C\u8282\u8D21\u732E\u8005": "{{ \u59DA\u5BB6\u56ED }}\uFF08\u4F5C\u8005\uFF09\
-  \u3001\n{{ \u7530\u51AC\u51AC }}\uFF08\u4F5C\u8005\uFF09"
-"\u9884\u8BA1\u82B1\u8D39\u65F6\u95F4": "120 \u5206\u949F"
----
-
 # Linux 常用命令
 
-______________________________________________________________________
+- 本节贡献者: {{姚家园}}（作者）、{{田冬冬}}（作者）
+- 最近更新日期: 2021-04-04
+- 预计花费时间: 120 分钟
+
+---
 
 Linux/macOS 下有成百上千个命令，每个命令都有众多选项。一开始上手 Linux/macOS，
 如果要学习这么多命令会让人发狂，而且根本记不住。其实，**命令不是背出来的而是用出来的**。
@@ -39,52 +36,53 @@ ______________________________________________________________________
 :gutter: 4 4 3 3
 
 :::{grid-item-card} 文件查看
-- [cat]
-- [head]
-- [less]
-- [tail]
+- [](cat)
+- [](head)
+- [](less)
+- [](tail)
 :::
 
 :::{grid-item-card} 文件处理
-- [diff]
-- [gawk]
-- [grep]
-- [sed]
-- [sort]
-- [uniq]
-- [wc]
+- [](diff)
+- [](gawk)
+- [](grep)
+- [](sed)
+- [](sort)
+- [](uniq)
+- [](wc)
 :::
 
 :::{grid-item-card} 文件搜索
-- [find]
-- [locate]
+- [](find)
+- [](locate)
 :::
 
 :::{grid-item-card} 文件传输
-- [rsync]
-- [scp]
+- [](rsync)
+- [](scp)
 :::
 
 :::{grid-item-card} 文件下载
-- [wget]
+- [](wget)
 :::
 
 :::{grid-item-card} 压缩与解压
-- [tar]
+- [](tar)
 :::
 
 :::{grid-item-card} 系统管理
-- [df]
-- [du]
-- [sudo]
-- [top]
+- [](df)
+- [](du)
+- [](sudo)
+- [](top)
 :::
 
 :::{grid-item-card} 远程登录
-- [ssh]
+- [](ssh)
 :::
 ::::
 
+(cat)=
 ## cat
 
 `cat` 命令的命名来源于 con**cat**enate（拼接）。该命令可以输出某个文件的
@@ -101,6 +99,7 @@ $ cat -n file
 $ cat file1 file2 > target_file
 ```
 
+(diff)=
 ## diff
 
 `diff` 命令的命名来自 **diff**erence。该命令可以用来逐行比较两个文件的异同。
@@ -129,6 +128,7 @@ $ diff file1 file2
 > seismology101
 ```
 
+(df)=
 ## df
 
 `df` 命令的命名来自 **d**isk **f**ree（可使用的硬盘空间）。
@@ -145,6 +145,7 @@ tmpfs                               7.8G  114M  7.7G   2% /run
 
 从输出中可以得知，{file}`/home` 分区总硬盘空间为 1.1 TB，已使用 904 GB，剩余 149 GB。
 
+(du)=
 ## du
 
 `du` 命令的名字来自 **d**isk **u**sage（硬盘使用情况）。该命令用于查看
@@ -169,6 +170,7 @@ $ du -h -d 1
 $ du -h file1.txt
 ```
 
+(find)=
 ## find
 
 `find` 命令用来查找指定目录下的子目录和文件，并执行一些操作。可以参考
@@ -203,6 +205,7 @@ $ find ~/src -type f -name "*.c" -exec grep seismo-learn {} +
 来代替 `-exec` 选项，二者的区别是 `-ok` 选项在执行后面的命令前会给出提示，
 输入 {kbd}`y` 才会执行，输入 {kbd}`n` 则不执行。
 
+(gawk)=
 ## gawk
 
 `awk` 命令的命名起源于其三位作者的姓氏首字母。该命令可以选择标准输入、其他命令的
@@ -231,6 +234,7 @@ $ gawk -F ':' '{print $1,$3}' /etc/passwd
 $ gawk -F ':' '{print NR,$1,$3}' /etc/passwd
 ```
 
+(grep)=
 ## grep
 
 `grep` 命令的命名来自 **g**lobally search a **re**gular expression and **p**rint
@@ -248,6 +252,7 @@ $ grep -n root /etc/passwd
 $ grep -v root /etc/passwd
 ```
 
+(head)=
 ## head
 
 `head` 命令用于输出文件开头部分的内容:
@@ -260,6 +265,7 @@ $ head /etc/passwd
 $ head -n 5 /etc/passwd
 ```
 
+(less)=
 ## less
 
 `less` 命令可以用来浏览文件内容，比 `more` 命令功能更强大。因此，一个常用的
@@ -275,6 +281,7 @@ $ less /etc/passwd
 $ less -N /etc/passwd
 ```
 
+(locate)=
 ## locate
 
 `locate` 命令可以用于查找目录和文件。该命令比 [find] 命令快得多，原因在于它
@@ -306,6 +313,7 @@ $ sudo updatedb
 $ sudo /usr/libexec/locate.updatedb
 ```
 
+(rsync)=
 ## rsync
 
 `rsync` 命令的命名来自 **r**emote **sync**hronization（远程同步）。该命名
@@ -352,6 +360,7 @@ $ rsync -av --delete seismo-learn@192.168.1.100:~/Downloads/source ~/workspace/d
   实现源目录和目标目录的同步
 - `-n` 选项表示不执行命令，但模拟执行结果，可用于检测命令的运行是否符合预期
 
+(scp)=
 ## scp
 
 `scp` 命令的命名来源于 **s**ecure **c**o**p**y（安全复制），可用于本地
@@ -372,6 +381,7 @@ $ scp -r seismo-learn@192.168.1.100:/home/seismo-learn/file-or-folder ~/Download
 $ scp -r ~/Downloads/file-or-folder seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
 ```
 
+(sed)=
 ## sed
 
 `sed` 命令的名字来源于 **s**tream **ed**itor（流编辑器）。该命令可以用于
@@ -398,6 +408,7 @@ $ sed -i 's#book#books#g' file
 需要注意，macOS 提供的 BSD `sed` 的语法很不同。建议 macOS 用户使用 Homebrew
 安装 `gnu-sed`，并将以上命令替换为 `gsed`。
 
+(sort)=
 ## sort
 
 `sort` 命令可以将文件内容进行排序，并输出排序结果。该命令将文件的每一行作为
@@ -432,6 +443,7 @@ $ sort -k3,3n seismo-learn-sort.txt
 $ sort -k3,3nr seismo-learn-sort.txt
 ```
 
+(ssh)=
 ## ssh
 
 `ssh` 命令的命名源于 **S**ecure **Sh**ell（安全外壳协议，简称 SSH），
@@ -450,6 +462,7 @@ $ ssh seismo-learn@192.168.1.100
 $ ssh -X seismo-learn@192.168.1.100
 ```
 
+(sudo)=
 ## sudo
 
 用户可以随意对家目录下的文件进行任何读、写以及删除等操作，但却无法对根目录下的
@@ -462,6 +475,7 @@ $ ssh -X seismo-learn@192.168.1.100
 $ sudo dnf install gcc-gfortran
 ```
 
+(tail)=
 ## tail
 
 `tail` 命令用于输出文件尾部内容:
@@ -474,6 +488,7 @@ $ tail /etc/passwd
 $ tail -n 5 /etc/passwd
 ```
 
+(tar)=
 ## tar
 
 `tar` 命令的名字来自 **t**ape **ar**chive（磁带存档），因为该命令最初被
@@ -508,6 +523,7 @@ $ tar -xvf seismo-learn.tar.gz -C bak
 
 以上示例使用的 `-v` 选项会显示指令执行过程，若不想显示执行过程，可以不使用该选项。
 
+(top)=
 ## top
 
 `top` 命令的名字来自 **t**able **o**f **p**rocesses（进程表）。
@@ -533,6 +549,7 @@ KiB Swap: 17821692 total, 17444092 free,   377600 used.  8252436 avail Mem
 - `q`：退出命令
 - `1`：显示每个 CPU 的状态
 
+(uniq)=
 ## uniq
 
 `uniq` 命令的命名源于 **uniq**ue（唯一），可以用于忽略或查询文件中的重复行。
@@ -567,6 +584,7 @@ $ sort file | uniq -u
 $ sort file | uniq -d
 ```
 
+(wc)=
 ## wc
 
 `wc` 命令的名字来自 **w**ord **c**ount（字数）。该命令可以输出文件或标准输入的
@@ -587,6 +605,7 @@ $ wc /etc/passwd
 $ wc -l /etc/passwd
 ```
 
+(wget)=
 ## wget
 
 `wget` 命令的名字来自 **W**orld **W**ide **W**eb **get**（万维网获取）。

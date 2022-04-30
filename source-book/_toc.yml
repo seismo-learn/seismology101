@@ -20,6 +20,9 @@ parts:
       - file: computer/file-operations
       - file: computer/shell
       - file: computer/environment-variable
+    - file: computer/commands
+  - caption: Template part
+    chapters:
     - file: markdown
     - file: notebooks
     - file: markdown-notebooks
