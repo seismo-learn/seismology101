@@ -14,6 +14,12 @@ parts:
       - file: computer/ubuntu-setup
       - file: computer/macos-setup
       - file: computer/wsl-setup
+    - file: computer/linux101
+      sections:
+      - file: computer/command-line
+      - file: computer/file-operations
+      - file: computer/shell
+      - file: computer/environment-variable
     - file: markdown
     - file: notebooks
     - file: markdown-notebooks
