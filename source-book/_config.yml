@@ -28,3 +28,8 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Advanced sphinx settings
+sphinx:
+  extra_extensions:
+    - sphinx_design
