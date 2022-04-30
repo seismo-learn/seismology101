@@ -1,0 +1,8 @@
+name: seismology101
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.9
+  - pip
+  - jupyter-book

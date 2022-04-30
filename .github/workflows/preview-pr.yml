@@ -24,7 +24,7 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2.1.1
         with:
           activate-environment: seismo-learn
-          environment-file: environment.yml
+          environment-file: environment-book.yml
           miniforge-variant: Mambaforge
           use-mamba: true
 
@@ -43,7 +43,7 @@ jobs:
           # personal token can be generated at https://github.com/settings/tokens,
           # and added to https://github.com/organizations/seismo-learn/settings/secrets/actions
           personal_token: ${{ secrets.TOKEN_DOCUMENT_DEPLOY }}
-          publish_dir: ./build/dirhtml
+          publish_dir: ./_build/dirhtml
           destination_dir: ${{ github.repository }}/${{ github.head_ref }}
           external_repository: seismo-learn/sitepreview
           keep_files: false
