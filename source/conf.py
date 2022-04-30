@@ -26,16 +26,6 @@ github_repo = "seismology101"
 github_url = f"https://github.com/{github_user}/{github_repo}"
 
 
-# -- Contributor information -------------------------------------------------
-
-rst_prolog = """
-.. |田冬冬| replace:: `田冬冬 <https://me.seisman.info/>`__
-.. |姚家园| replace:: `姚家园 <https://github.com/core-man>`__
-.. |王亮| replace:: `王亮 <https://github.com/wangliang1989>`__
-.. |赵志远| replace:: `赵志远 <https://github.com/zhaozhiyuan1989>`__
-"""
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be

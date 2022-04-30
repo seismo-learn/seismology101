@@ -10,10 +10,25 @@ author: seismo-learn
 execute:
   execute_notebooks: force
 
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
+# Parse and render settings
+parse:
+  myst_enable_extensions:
+    # - amsmath
+    - colon_fence
+    # - deflist
+    - dollarmath
+    # - html_admonition
+    # - html_image
+    - linkify
+    # - replacements
+    # - smartquotes
+    - substitution
+    - tasklist
+  myst_substitutions:
+    田冬冬: "[田冬冬](https://me.seisman.info/)"
+    姚家园: "[姚家园](https://github.com/core-man)"
+    王亮: "[王亮](https://github.com/wangliang1989)"
+    赵志远: "[赵志远](https://github.com/zhaozhiyuan1989)"
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
@@ -28,6 +43,11 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# LaTeX-specific settings
+latex:
+  latex_documents:
+    targetname: book.tex
 
 # Advanced sphinx settings
 sphinx:

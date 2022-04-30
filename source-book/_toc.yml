@@ -1,9 +1,17 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
+
 format: jb-book
 root: index
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: 计算机基础
+    chapters:
+    - file: computer/operating-system
+    - file: markdown
+    - file: notebooks
+    - file: markdown-notebooks
+  #- caption: 编程基础
+  #- caption: 地震学基础
+  #- caption: 地震学实践
+  #- caption: 实践经验
