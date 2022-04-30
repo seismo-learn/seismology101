@@ -8,6 +8,12 @@ parts:
   - caption: 计算机基础
     chapters:
     - file: computer/operating-system
+    - file: computer/setup
+      sections:
+      - file: computer/fedora-setup
+      - file: computer/ubuntu-setup
+      - file: computer/macos-setup
+      - file: computer/wsl-setup
     - file: markdown
     - file: notebooks
     - file: markdown-notebooks
