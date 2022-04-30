@@ -21,12 +21,22 @@ parts:
       - file: computer/shell
       - file: computer/environment-variable
     - file: computer/commands
+  - caption: 编程基础
+    chapters:
+    - file: programming/introduction
+    - file: programming/editor
+    - file: programming/languages
+      sections:
+      - file: programming/bash
+      - file: programming/python
+      - file: programming/c
+      - file: programming/markdown
+    - file: programming/git
   - caption: Template part
     chapters:
     - file: markdown
     - file: notebooks
     - file: markdown-notebooks
-  #- caption: 编程基础
   #- caption: 地震学基础
   #- caption: 地震学实践
   #- caption: 实践经验
