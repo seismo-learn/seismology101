@@ -91,21 +91,4 @@ html_context = {
     "github_version": "main",
     "conf_py_path": "/source/",
     "theme_vcs_pageview_mode": "blob",
-    "menu_links": [
-        (   '<i class="fa fa-home"></i> 地震“学”主站',
-            "https://seismo-learn.org/",
-        ),
-        (
-            '<i class="fa fa-github fa-fw"></i> 网站源码',
-            github_url,
-        ),
-        (
-            '<i class="fa fa-edit fa-fw"></i> 贡献指南',
-            "https://seismo-learn.org/contributing/",
-        ),
-        (
-            '<i class="fa fa-comments fa-fw"></i> 参与讨论',
-            f"{github_url}/discussions",
-        ),
-    ],
 }
