@@ -66,9 +66,16 @@ parts:
       - file: exercises/cross-correlation
       - file: exercises/distaz
       - file: exercises/phases
-  - caption: Template part
+  - caption: 实践经验
     chapters:
-    - file: markdown
-    - file: notebooks
-    - file: markdown-notebooks
-  #- caption: 实践经验
+    - file: best-practices/introduction
+    - file: best-practices/file-organization
+    - file: best-practices/software-installation
+    - file: best-practices/backup
+      sections:
+      - file: best-practices/backup-Linux
+      - file: best-practices/backup-macOS
+      - file: best-practices/backup-Windows
+    - file: best-practices/software
+    - file: best-practices/zsh
+    - file: best-practices/vscode
