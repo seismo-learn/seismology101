@@ -36,7 +36,7 @@ jobs:
       - uses: actions/cache@v3
         id: cache
         with:
-          path: build/.jupyter_cache
+          path: _build/jupyter_execute/
           key: notebooks
 
       - name: Disable notebook cache for scheduled jobs
@@ -50,7 +50,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/dirhtml
+          publish_dir: ./_build/dirhtml
           # Only keep the latest commit to avoid bloating the repository
           force_orphan: true
           user_name: 'github-actions[bot]'
