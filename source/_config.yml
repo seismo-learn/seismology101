@@ -9,7 +9,7 @@ copyright : "2020–2022"
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: auto
+  execute_notebooks: cache
 
 # Parse and render settings
 parse:
@@ -29,7 +29,7 @@ parse:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/seismo-learn/seismology101
-  path_to_book: source-book
+  path_to_book: source
   branch: main
 
 html:

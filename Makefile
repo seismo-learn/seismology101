@@ -1,4 +1,4 @@
-SOURCEDIR	= source-book
+SOURCEDIR	= source
 OUTPUTDIR 	= .
 
 html dirhtml:
