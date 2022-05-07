@@ -46,11 +46,29 @@ parts:
       - file: seismology/seismogram
     - file: seismology/software
     - file: seismology/resources
-
+  - caption: 地震学实践
+    chapters:
+    - file: exercises/introduction
+    - file: exercises/prerequisite
+    - file: exercises/download
+      sections:
+      - file: exercises/catalog
+      - file: exercises/station
+      - file: exercises/waveform
+    - file: exercises/preprocessing
+    - file: exercises/process
+      sections:
+      - file: exercises/rotate
+      - file: exercises/filter
+    - file: exercises/analysis
+      sections:
+      - file: exercises/particle-motion
+      - file: exercises/cross-correlation
+      - file: exercises/distaz
+      - file: exercises/phases
   - caption: Template part
     chapters:
     - file: markdown
     - file: notebooks
     - file: markdown-notebooks
-  #- caption: 地震学实践
   #- caption: 实践经验
