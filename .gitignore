@@ -1,7 +1,5 @@
 # Documentation
-build
 _build
-sphinx.mo
 
 # VS Code
 .vscode
