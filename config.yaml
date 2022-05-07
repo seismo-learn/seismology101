@@ -1,0 +1,17 @@
+language: en
+sphinx: true
+extensions:
+- sphinx_design
+default_domain: py
+consecutive_numbering: true
+colon_fences: true
+dollar_math: true
+conversions:
+  sphinx_design.tabs.TabSetDirective: parse_all
+  sphinx_design.tabs.TabItemDirective: parse_all
+  sphinx_design.dropdown.DropdownDirective: parse_all
+  sphinx_design.grids.GridDirective: parse_all
+  sphinx_design.grids.GridItemDirective: parse_all
+  sphinx_design.grids.GridItemCardDirective: parse_all
+  sphinx_design.icons.OcticonRole: parse_all
+

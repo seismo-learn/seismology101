@@ -1,12 +1,10 @@
-简介
-====
+# 简介
 
-:本节贡献者: |姚家园|\（作者）、
-             |田冬冬|\（作者）
-:最近更新日期: 2021-10-28
-:预计阅读时间: 10 分钟
+- 本节贡献者: {{ 姚家园 }}（作者）、{{ 田冬冬 }}（作者）
+- 最近更新日期: 2021-10-28
+- 预计阅读时间: 10 分钟
 
-----
+______________________________________________________________________
 
 地球科学的研究对象主要包括：
 地球的固体部分（固体地球）、地球表面上下的水（水圈）、生态系统（生物圈）、大气层（大气圈）
@@ -16,39 +14,38 @@
 因此，从整个地球科学研究的角度来看，地震学只是一个
 很窄的专业方向，同时又是非常重要的研究手段。本章将介绍地震学的基础入门知识。
 
-地震学是什么？
---------------
+## 地震学是什么？
 
 Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Seismology》（第二版）
 对地震学的定义如下：
 
-  **Seismology** is the scientific study of mechanical vibrations of the Earth.
-  Quantitative seismology is based on data called seismograms,
-  which are recordings of the vibrations,
-  which in turn may be caused artificially by man-made explosions,
-  or caused naturally by earthquakes and volcanic eruptions.
+> **Seismology** is the scientific study of mechanical vibrations of the Earth.
+> Quantitative seismology is based on data called seismograms,
+> which are recordings of the vibrations,
+> which in turn may be caused artificially by man-made explosions,
+> or caused naturally by earthquakes and volcanic eruptions.
+>
+> 地震学是研究地球机械振动的科学。定量地震学基于记录着这些振动的观测资料，即地震图。
+> 这些振动可能是由人工爆炸等人为因素引起的，也可能是地震和火山喷发等自然活动造成的。
 
-  地震学是研究地球机械振动的科学。定量地震学基于记录着这些振动的观测资料，即地震图。
-  这些振动可能是由人工爆炸等人为因素引起的，也可能是地震和火山喷发等自然活动造成的。
-
-地震学是研究地球机械振动的科学。地震学的研究工具是\ **地震图**\ （seismogram），
-即仪器记录的地球机械振动。产生这些振动的源（seismic source，一般称为\ **震源**\ ）
+地震学是研究地球机械振动的科学。地震学的研究工具是**地震图**（seismogram），
+即仪器记录的地球机械振动。产生这些振动的源（seismic source，一般称为**震源**）
 可能是地震、火山喷发、海浪、台风或飓风、人工爆炸、交通活动等。
-震源也常被称为\ **地震事件**\ （seismic event）或\ **事件**\ （event），
+震源也常被称为**地震事件**（seismic event）或**事件**（event），
 但需要注意，地震事件不一定指代地震，也可以指代其他震源。
-震源激发的地球机械振动（seismic wave，一般称为\ **地震波**\ ）在地球内部传播，
-并被布设在地表或地下的\ **地震仪**\ （seismograph）记录下来。一般常称地震仪为\
-**地震台站**\ （seismic station）或\ **台站**\ （station）。
+震源激发的地球机械振动（seismic wave，一般称为**地震波**）在地球内部传播，
+并被布设在地表或地下的**地震仪**（seismograph）记录下来。一般常称地震仪为**地震台站**（seismic station）或**台站**（station）。
 
-.. figure:: seismic-waves.jpg
-   :alt: 地震激发的地震波路径和波形
-   :width: 95%
-   :align: center
+:::{figure} seismic-waves.jpg
+:align: center
+:alt: "\u5730\u9707\u6FC0\u53D1\u7684\u5730\u9707\u6CE2\u8DEF\u5F84\u548C\u6CE2\u5F62"
+:width: 95%
 
-   1994 年 1 月 17 日，美国加利福尼亚州 Northridge 地震激发的地震波的传播路径和观测波形。
-   引自 `Exploring the Earth Using Seismology <https://www.iris.edu/hq/inclass/fact-sheet/exploring_earth_using_seismology>`__\ 。
+1994 年 1 月 17 日，美国加利福尼亚州 Northridge 地震激发的地震波的传播路径和观测波形。
+引自 [Exploring the Earth Using Seismology](https://www.iris.edu/hq/inclass/fact-sheet/exploring_earth_using_seismology)。
+:::
 
-1994 年 1 月 17 日，美国加利福尼亚州 Northridge 附近发生了 `6.7 级地震 <https://earthquake.usgs.gov/earthquakes/eventpage/ci3144585/>`__，
+1994 年 1 月 17 日，美国加利福尼亚州 Northridge 附近发生了 [6.7 级地震](https://earthquake.usgs.gov/earthquakes/eventpage/ci3144585/)，
 其释放出的能量相当于将近 20 亿千克高爆炸药。该地震产生的地震波经过地球内部传播后，
 被世界各地的地震台站记录到。上图左侧展示了不同地震波在地下的传播路径，右侧展示了地震波到达
 地表后，全球台站记录到的地表振动，即地震图。
@@ -59,15 +56,14 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 许多重大的地球内部发现都是地震学首先研究报道的。
 
 地震学研究的基本原理包括震源和地震波理论两个部分。前者主要关于震源和地震波的激发，
-后者主要关于地震波如何在地下传播。地震学理论背后的大部分物理知识不过是牛顿第二定律 :math:`F=ma`\ ，
+后者主要关于地震波如何在地下传播。地震学理论背后的大部分物理知识不过是牛顿第二定律 $F=ma$，
 当然实际问题的复杂性促使了地震学家利用复杂的数学技巧以及高性能计算机。一般而言，地震学
 是观测驱动的学科，仪器和数据可用性的改进常常会导致地震学理论和地球内部结构研究的重大突破。
 
-地震学早期大事记
-----------------
+## 地震学早期大事记
 
 地震学是一个相对年轻的学科，从二十世纪初才逐渐开始定量化的研究。
-可以查阅 `History of Seismology <https://www.iris.edu/hq/inclass/poster/history_of_seismology>`__
+可以查阅 [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology)
 了解更多地震学历史，以下仅简要介绍部分重要历史事件。
 
 在早期，理论发展领先地震学观测。1892 年，Love 出版了经典教材《A Treatise on the Mathematical Theory of Elasticity》（第一版），
@@ -101,4 +97,3 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - 1936 年，Inge Lehmann 发现固态内核（之前认为地核全是液态的）
 - 1940 年，Harold Jeffreys 和 K. E. Bullen 发表了他们最终版本的地震波走时表，
   简称 JB 走时表。该走时表至今仍在使用，并且与当今模型仅差几秒
-

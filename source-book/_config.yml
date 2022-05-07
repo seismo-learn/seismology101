@@ -53,3 +53,15 @@ latex:
 sphinx:
   extra_extensions:
     - sphinx_design
+    - sphinx.ext.intersphinx
+  config:
+    intersphinx_mapping:
+      seis:
+        - https://seismo-learn.org/seismology/
+        - null
+      seis101:
+        - https://seismo-learn.org/seismology101/
+        - null
+      software:
+        - https://seismo-learn.org/software/
+        - null

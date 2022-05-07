@@ -32,11 +32,25 @@ parts:
       - file: programming/c
       - file: programming/markdown
     - file: programming/git
+  - caption: 地震学基础
+    chapters:
+    - file: seismology/introduction
+    - file: seismology/basis
+      sections:
+      - file: seismology/seismic-source
+      - file: seismology/seismic-wave
+      - file: seismology/seismograph
+    - file: seismology/data
+      sections:
+      - file: seismology/data-format
+      - file: seismology/seismogram
+    - file: seismology/software
+    - file: seismology/resources
+
   - caption: Template part
     chapters:
     - file: markdown
     - file: notebooks
     - file: markdown-notebooks
-  #- caption: 地震学基础
   #- caption: 地震学实践
   #- caption: 实践经验
