@@ -4,7 +4,6 @@
 title: "地震“学”科研入门教程"
 author: seismo-learn
 copyright : "2020–2022"
-#logo: logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
