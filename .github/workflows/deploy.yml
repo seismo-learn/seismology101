@@ -5,6 +5,8 @@ name: Deploy
 
 # Run on main branch only
 on:
+  # uncomment 'pull_request' line to test the workflow in PR
+  # pull_request:
   push:
     branches:
       - main
@@ -41,7 +43,8 @@ jobs:
 
       - name: Disable notebook cache for scheduled jobs
         if: github.event_name == 'schedule'
-        run: sed -i"" 's/execute_notebooks: cache/execute_notebooks: force/' source/_config.yml
+        run: |
+          sed -i"" 's/execute_notebooks: cache/execute_notebooks: force/' source/_config.yml
 
       - name: Build documentation
         run: make dirhtml
