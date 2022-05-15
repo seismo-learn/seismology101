@@ -1,0 +1,60 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: "地震“学”科研入门教程"
+author: seismo-learn
+copyright : "2020–2022"
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: cache
+
+# Parse and render settings
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - deflist
+    - dollarmath
+    - linkify
+    - substitution
+    - tasklist
+  myst_substitutions:
+    田冬冬: "[田冬冬](https://me.seisman.info/)"
+    姚家园: "[姚家园](https://github.com/core-man)"
+    王亮: "[王亮](https://github.com/wangliang1989)"
+    赵志远: "[赵志远](https://github.com/zhaozhiyuan1989)"
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/seismo-learn/seismology101
+  path_to_book: source
+  branch: main
+
+html:
+  favicon: favicon.ico
+  use_edit_page_button: true
+  use_issues_button: true
+  use_repository_button: true
+
+# LaTeX-specific settings
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Advanced sphinx settings
+sphinx:
+  extra_extensions:
+    - sphinx_design
+    - sphinx.ext.intersphinx
+  config:
+    intersphinx_mapping:
+      seis:
+        - https://seismo-learn.org/seismology/
+        - null
+      seis101:
+        - https://seismo-learn.org/seismology101/
+        - null
+      software:
+        - https://seismo-learn.org/software/
+        - null

@@ -1,0 +1,88 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - caption: 计算机基础
+    chapters:
+    - file: computer/operating-system
+    - file: computer/setup
+      sections:
+      - file: computer/fedora-setup
+      - file: computer/ubuntu-setup
+      - file: computer/macos-setup
+      - file: computer/wsl-setup
+    - file: computer/linux101
+      sections:
+      - file: computer/command-line
+      - file: computer/file-operations
+      - file: computer/shell
+      - file: computer/environment-variable
+    - file: computer/commands
+  - caption: 编程基础
+    chapters:
+    - file: programming/introduction
+    - file: programming/editor
+    - file: programming/languages
+      sections:
+      - file: programming/bash
+      - file: programming/python
+      - file: programming/c
+      - file: programming/markdown
+    - file: programming/git
+  - caption: 地震学基础
+    chapters:
+    - file: seismology/introduction
+    - file: seismology/basis
+      sections:
+      - file: seismology/seismic-source
+      - file: seismology/seismic-wave
+      - file: seismology/seismograph
+    - file: seismology/data
+      sections:
+      - file: seismology/data-format
+      - file: seismology/seismogram
+    - file: seismology/software
+    - file: seismology/resources
+  - caption: 地震学实践
+    chapters:
+    - file: exercises/introduction
+    - file: exercises/prerequisite
+    - file: exercises/download
+      sections:
+      - file: exercises/catalog
+      - file: exercises/station
+      - file: exercises/waveform
+    - file: exercises/preprocessing
+    - file: exercises/process
+      sections:
+      - file: exercises/rotate
+      - file: exercises/filter
+    - file: exercises/analysis
+      sections:
+      - file: exercises/particle-motion
+      - file: exercises/cross-correlation
+      - file: exercises/distaz
+      - file: exercises/phases
+  - caption: 实践经验
+    chapters:
+    - file: best-practices/introduction
+    - file: best-practices/file-organization
+    - file: best-practices/software-installation
+    - file: best-practices/backup
+      sections:
+      - file: best-practices/backup-Linux
+      - file: best-practices/backup-macOS
+      - file: best-practices/backup-Windows
+    - file: best-practices/software
+    - file: best-practices/zsh
+    - file: best-practices/vscode
+  - caption: 外部链接
+    chapters:
+    - url: https://seismo-learn.org/
+      title: 地震“学”主站
+    - url: https://seismo-learn.org/contributing/
+      title: 贡献指南
+    - url: https://github.com/seismo-learn/seismology101/discussions
+      title: 参与讨论
