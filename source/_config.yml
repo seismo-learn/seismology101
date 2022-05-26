@@ -58,3 +58,7 @@ sphinx:
       software:
         - https://seismo-learn.org/software/
         - null
+    copybutton_prompt_text: '>>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}:'
+    copybutton_prompt_is_regexp: true
+    copybutton_only_copy_prompt_lines: true
+    copybutton_remove_prompts: true
