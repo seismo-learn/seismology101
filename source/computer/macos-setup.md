@@ -210,31 +210,31 @@ C/C++ 编译器。
 :color: info
 :icon: info
 
-> Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
-> [Apple Clang](https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html) 编译器，
-> 其与 [GCC](https://gcc.gnu.org/) 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
-> 因而一般用户无需再安装 GCC 编译器。
->
-> 由于特殊原因需要安装 GCC 编译器的用户（例如需要使用 GCC 特有的功能和选项），
-> 可以使用如下命令安装:
->
-> ```
-> $ brew install gcc
-> ```
->
-> 通过 Homebrew 安装的 GCC 提供了命令 `gcc-11` 和 `g++-11`
-> （`11` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
-> 用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-11` 和 `g++-11` 命令，
-> 或者在 Homebrew 的 bin 目录下创建软链接:
->
-> ```
-> $ cd $(brew --prefix)/bin/
-> $ ln -s gcc-11 gcc
-> $ ln -s g++-11 g++
-> ```
->
-> 打开一个新终端后，使用的 `gcc` 和 `g++` 命令则默认是 GCC 编译器。
-> 删除软链接后，默认使用的又是 Apple Clang 编译器了。
+Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
+[Apple Clang](https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/docs/UsersManual.html) 编译器，
+其与 [GCC](https://gcc.gnu.org/) 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
+因而一般用户无需再安装 GCC 编译器。
+
+由于特殊原因需要安装 GCC 编译器的用户（例如需要使用 GCC 特有的功能和选项），
+可以使用如下命令安装:
+
+```
+$ brew install gcc
+```
+
+通过 Homebrew 安装的 GCC 提供了命令 `gcc-11` 和 `g++-11`
+（`11` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
+用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-11` 和 `g++-11` 命令，
+或者在 Homebrew 的 bin 目录下创建软链接:
+
+```
+$ cd $(brew --prefix)/bin/
+$ ln -s gcc-11 gcc
+$ ln -s g++-11 g++
+```
+
+打开一个新终端后，使用的 `gcc` 和 `g++` 命令则默认是 GCC 编译器。
+删除软链接后，默认使用的又是 Apple Clang 编译器了。
 :::
 
 ### Fortran
