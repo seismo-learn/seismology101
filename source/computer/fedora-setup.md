@@ -39,6 +39,24 @@ Windows 和 Linux 下使用，详细用法见 [官方文档](https://ventoy.net/
 制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
 :::
 
+::::{card-carousel} 1
+:::{card}
+![](ventoy-1.jpg)
+:::
+:::{card}
+![](ventoy-2.jpg)
+:::
+:::{card}
+![](ventoy-3.jpg)
+:::
+:::{card}
+![](ventoy-4.jpg)
+:::
+:::{card}
+![](ventoy-5.jpg)
+:::
+::::
+
 ### 进入 Live 系统
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
