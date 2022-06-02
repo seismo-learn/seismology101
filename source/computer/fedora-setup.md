@@ -31,31 +31,42 @@
 
 ### 制作 USB 启动盘
 
-准备一个 4 GB 以上容量的 U 盘。使用 [Ventoy](https://ventoy.net/cn/) 制作
-USB 启动盘，并将 ISO 镜像文件复制到 U 盘的镜像分区中。Ventoy 可以在
-Windows 和 Linux 下使用，详细用法见 [官方文档](https://ventoy.net/cn/doc_start.html)。
-
 :::{warning}
 制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！
 :::
 
+准备一个 4 GB 以上容量的 U 盘，并使用 [Ventoy](https://ventoy.net/cn/) 制作 USB 启动盘。
+Ventoy 可以在Windows 和 Linux 下使用，详细用法见 [官方文档](https://ventoy.net/cn/doc_start.html)。
+下面以图解形式演示如何在 Windows 下使用 Ventoy 制作 USB 启动盘。
+
 ::::{card-carousel} 1
-:::{card}
+:::{card} 1. 启动 Ventoy2Disk.exe 程序
 ![](ventoy-1.jpg)
 :::
-:::{card}
+:::{card} 2. 将 Ventoy 写入 USB 盘
 ![](ventoy-2.jpg)
 :::
-:::{card}
+:::{card} 3. USB 启动盘制作成功
 ![](ventoy-3.jpg)
 :::
-:::{card}
+:::{card} 4. 制作成功后的显示界面
 ![](ventoy-4.jpg)
 :::
-:::{card}
+:::{card} 5. 将 Linux ISO 镜像文件复制到 U 盘中
 ![](ventoy-5.jpg)
 :::
 ::::
+
+1. 从 [Ventoy 下载页面](https://ventoy.net/cn/download.html) 下载 Ventoy 软件包。
+   解压后，并执行其中的 {file}`Ventoy2Disk.exe` 程序，程序启动后界面如图 1 所示。
+   Ventoy 程序自动找到了用于制作启动盘的 32 GB U 盘
+2. 点击“安装”会将 Ventoy 安装到 U 盘中，此时 U 盘会被格式化。请务必确保选中的是
+   目标 U 盘，且 U 盘中无其它重要文件
+3. Ventoy 成功安装后，会弹出成功安装的对话框，点击确定
+4. Ventory 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
+   启动盘制作成功
+5. 退出 Ventoy，在我的电脑中找到名为 Ventoy 的 U 盘，并将已下载好的 Linux ISO
+   镜像文件复制到 U 盘中即可
 
 ### 进入 Live 系统
 
