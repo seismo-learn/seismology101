@@ -35,7 +35,7 @@ Linux 文件系统就像一颗树一样，从 {file}`/` 目录开始，这个特
 读者应打开终端，根据下面的教程自行输入命令（不要复制粘贴！），记住并理解每个
 命令的作用。这一小节中，假设用户名是 seismo-learn，读者根据自己的情况自行修改。
 
-查看文件和目录:
+### 查看文件和目录
 
 ```
 # 使用 pwd（print working directory，即打印当前工作目录）命令查看当前所在目录
@@ -51,7 +51,7 @@ $ ls Desktop
 $ ls /etc/passwd
 ```
 
-切换目录:
+### 切换目录
 
 ```
 # 使用 cd（change directory，即切换目录）命令进入根目录
@@ -70,7 +70,7 @@ $ pwd
 /home/seismo-learn
 ```
 
-新建文件和目录:
+### 新建文件和目录
 
 ```
 # 进入家目录
@@ -93,14 +93,16 @@ $ ls
 hello-world.txt  seismo-learn.txt  source
 ```
 
+### 复制文件和目录
+
+:::{note}
 以下所有操作都假设读者已经切换到 {file}`~/workspace` 目录下了，即:
 
 ```
 # 进入 ~/workspace 目录
 $ cd ~/workspace
 ```
-
-复制文件和目录:
+:::
 
 ```
 # 使用 cp（copy，即复制）命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
@@ -124,7 +126,7 @@ $ ls destination
 hello-world.txt  seismo-learn.txt  source
 ```
 
-移动文件和目录:
+### 移动文件和目录
 
 ```
 # 使用 mv（move，即移动）命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
@@ -150,7 +152,7 @@ $ ls destination
 hello-world.txt  seismo-learn.txt  source  source-mv
 ```
 
-删除文件和目录:
+### 删除文件和目录
 
 ```
 # 使用 rm（remove，即删除）命令删除 seismo-learn.txt 文件
@@ -181,6 +183,8 @@ $ ls
 也可以考虑使用其他命令行工具管理回收站
 （如 [trash-cli](https://github.com/andreafrancia/trash-cli)）。
 :::
+
+### 创建软链接
 
 软链接，也叫符号链接，类似于 Windows 下的快捷方式。Linux 下可以使用 `ln` （link，即链接）
 命令为文件和目录建立软链接:
