@@ -45,7 +45,6 @@ latex:
 # Advanced sphinx settings
 sphinx:
   extra_extensions:
-    - sphinx_design
     - sphinx.ext.intersphinx
   config:
     intersphinx_mapping:
