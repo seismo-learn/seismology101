@@ -42,7 +42,7 @@ $ mamba install obspy jupyterlab
 
 ## 检查当前环境
 
-开启一个终端，在终端中键入 `jupyter lab` 命令以启动 JupyterLab。
+开启一个终端，在终端中键入 `jupyter lab` 命令来启动 JupyterLab。
 在 JupyterLab 中新建一个 Notebook，并在 Notebook 中执行如下命令以检查当前环境。
 
 ```{code-cell} ipython3
