@@ -1,14 +1,10 @@
 # WSL 配置指南
 
 - 本节贡献者: {{赵志远}}（作者）、{{姚家园}}（审稿）、{{田冬冬}}（审稿）
-- 最近更新日期: 2021-01-21
+- 最近更新日期: 2022-05-31
 - 预计花费时间: 120 分钟
 
 ---
-
-:::{warning}
-本文尚未经过除作者外的其他 Windows 用户测试，欢迎阅读并给与反馈。
-:::
 
 :::{note}
 本节大部分命令是在命令行中执行的。
@@ -69,9 +65,8 @@ WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora �
 
 :::{note}
 想在 WSL 上安装 Fedora 的读者可以参考[英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
-指南中的 Fedora rootfs 下载地址可能已失效。请访问 Fedora 官方仓库下载
-[Fedora 33](https://github.com/fedora-cloud/docker-brew-fedora/tree/33/x86_64)（安装指南中使用的版本）
-或 [Fedora 35](https://github.com/fedora-cloud/docker-brew-fedora/tree/35/x86_64)（Fedora 最新版本）
+指南中介绍的是已经过时的 Fedora 33。用户请访问 Fedora 官方仓库下载
+[Fedora 36](https://github.com/fedora-cloud/docker-brew-fedora/tree/36/x86_64)（Fedora 最新版本）
 镜像文件。
 
 Fedora 只支持 WSL2。
