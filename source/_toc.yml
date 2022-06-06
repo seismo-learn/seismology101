@@ -22,7 +22,7 @@ parts:
     - file: computer/commands
   - caption: 编程基础
     chapters:
-    - file: programming/introduction
+    - file: programming/intro
     - file: programming/editor
     - file: programming/languages
       sections:
@@ -33,7 +33,7 @@ parts:
     - file: programming/git
   - caption: 地震学基础
     chapters:
-    - file: seismology/introduction
+    - file: seismology/intro
     - file: seismology/basis
       sections:
       - file: seismology/seismic-source
@@ -47,7 +47,7 @@ parts:
     - file: seismology/resources
   - caption: 地震学实践
     chapters:
-    - file: exercises/introduction
+    - file: exercises/intro
     - file: exercises/prerequisite
     - file: exercises/download
       sections:
@@ -67,7 +67,7 @@ parts:
       - file: exercises/phases
   - caption: 实践经验
     chapters:
-    - file: best-practices/introduction
+    - file: best-practices/intro
     - file: best-practices/file-organization
     - file: best-practices/software-installation
     - file: best-practices/backup
