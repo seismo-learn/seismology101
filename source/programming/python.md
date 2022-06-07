@@ -87,23 +87,28 @@ Miniconda
 
 ## 初识 Python
 
-不管是学习还是使用 Python，首先必须的是 Python 解释器。Linux/macOS 操作系统都
-内置了 Python 解释器。
-
-打开终端，键入命令 `python` 则会进入 Python 解释器的交互模式：
+打开终端，键入命令 `python` 就会进入 Python 解释器的交互模式：
 
 ```
 $ python
-Python 3.10 (default, June 4 2019, 09:25:04)
-[GCC 4.8.2] on linux
+Python 3.9.12 (main, Apr  5 2022, 01:53:17)
+[GCC 7.5.0] :: Anaconda, Inc. on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-进入解释器时，首先显示欢迎信息、版本信息、版权声明。
-交互模式下 `>>>` 是主提示符，提示输入下一条指令；
-输入连续行时，显示次要提示符，默认是三个点（`...`）。
-用户可以在提示符后输入任意的 Python 指令。
+进入 Python 解释器后，首先会显示 Python 版本信息、版权声明以及帮助信息，
+然后会显示符号 `>>>`。`>>>` 是 Python 解释器在交互模式下的主提示符，提示用户
+可以在 `>>>` 后输入 Python 指令。
+
+在 `>>>` 提示符后输入 `1 + 2` 并按下 {kbd}`Enter` 键将指令 `1 + 2` 传给 Python
+解释器。解释器在接收到指令后会执行指令，并输出结果 `3`。最后会再次显示主提示符
+`>>>` 并等待用户的下一次输入。效果如下所示：
+```
+>>> 1 + 2
+3
+>>>
+```
 
 ## Python 脚本
 
