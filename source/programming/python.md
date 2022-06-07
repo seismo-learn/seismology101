@@ -66,8 +66,9 @@ Miniconda
 
    安装通常只需要十几秒，在安装的最后会出现：
 
-        Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no]
-        [yes] >>>
+        Do you wish the installer to initialize Miniconda3 
+        by running conda init? [yes|no]
+        [no] >>>
 
    输入 `yes` 则安装包会向当前 SHELL 的配置文件写入 `conda` 初始化语句。
 
@@ -78,7 +79,7 @@ Miniconda
 
         $ python
         Python 3.9.12 (main, Apr  5 2022, 01:53:17)
-        [Clang 12.0.0 ] :: Anaconda, Inc. on darwin
+        [GCC 7.5.0] :: Anaconda, Inc. on linux
         Type "help", "copyright", "credits" or "license" for more information.
         >>>
 
