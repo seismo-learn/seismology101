@@ -13,10 +13,10 @@
 
 ## 安装 Miniconda
 
-Python 是一门解释型语言，因而需要专门的解释器去执行 Python 指令。
-尽管 Linux/macOS 系统已经内置了 Python 解释器，但是建议用户不要使用它，
-以免误操作破坏系统内置 Python 造成系统出现问题。
-**建议用户安装 Miniconda 并使用其提供的 `conda` 命令管理和安装 Python 及其模块。**
+Python 是一种解释型语言，需要专门的解释器去执行 Python 代码。
+尽管 Linux/macOS 系统内置了 Python 解释器，但是建议用户不要使用它，
+以免误操作破坏系统内置 Python， 造成系统出现问题。
+**建议用户安装 Miniconda， 使用其提供的 `conda` 命令管理和安装 Python 及其模块。**
 
 :::{dropdown} Python vs Anaconda vs Miniconda
 :color: info
@@ -28,14 +28,14 @@ Python 是一门解释型语言，因而需要专门的解释器去执行 Python
 Python 解释器
 : 从 [Python 官方网站](https://www.python.org/downloads/) 下载的 Python 安装包
   只提供了一个 Python 解释器，仅包含 Python 的核心模块和库，是运行 Python
-  脚本所必需的。
+  脚本所必需的。安装 Python 解释器相当于安装了 Python 解释器 + 核心模块/库。
 
 Anaconda
 : [Anaconda](https://www.anaconda.com/) 是一个 Python **发行版**，不仅提供了
   Python 解释器，还内置了很多 Python 开发工具与众多科学计算相关的库，形成了
   一个可以开箱即用的 Python 科学计算环境，省去了自行配置科学计算环境的麻烦。
   Anaconda 还提供了强大的软件包管理工具 `conda`，可以方便地安装模块和管理环境。
-  安装 Anaconda 相当于安装了 Python 解释器 + 数百个科学计算相关模块 + 包管理器 `conda`。
+  安装 Anaconda 相当于安装了 Python 解释器 + 核心模块/库 + 数百个科学计算相关模块 + 包管理器 `conda`。
 
   尽管 Anaconda 有很多优点，其也有明显的缺点：
   - 安装包非常大（超过 500 MB）
