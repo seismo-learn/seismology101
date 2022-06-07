@@ -18,7 +18,7 @@ Python 是一种解释型语言，需要专门的解释器去执行 Python 代�
 以免误操作破坏系统内置 Python， 造成系统出现问题。
 **建议用户安装 Miniconda， 使用其提供的 `conda` 命令管理和安装 Python 及其模块。**
 
-:::{dropdown} Python vs Anaconda vs Miniconda
+:::{dropdown} Python、Anaconda 和 Miniconda 的区别与联系
 :color: info
 :icon: info
 
@@ -49,7 +49,7 @@ Miniconda
   通常也只需要数十秒。安装 Miniconda 相当于安装了 Python 解释器 + 核心模块/库 + 包管理器 `conda`。
 :::
 
-下面展示了如何在 Linux 系统下安装 Miniconda：
+下面展示了如何在 Linux 系统下安装 Miniconda。其它操作系统下的安装说明以及具体使用方法可以参考 {doc}`Anaconda <software:anaconda/index>`。
 
 1. 下载 Miniconda
 
@@ -69,12 +69,12 @@ Miniconda
         Do you wish the installer to initialize Miniconda3 by running conda init? [yes|no]
         [yes] >>>
 
-   建议输入 `yes`，此时安装包会向当前 SHELL 的配置文件写入 `conda` 初始化语句。
+   输入 `yes` 则安装包会向当前 SHELL 的配置文件写入 `conda` 初始化语句。
 
 3. 测试安装
 
    打开一个新的终端，在终端中输入 `python`，输出中看到 **Anaconda, Inc.**
-   字样即代表安装完成：
+   字样即代表成功安装 Miniconda 并启动了 Python 解释器：
 
         $ python
         Python 3.9.12 (main, Apr  5 2022, 01:53:17)
@@ -82,7 +82,7 @@ Miniconda
         Type "help", "copyright", "credits" or "license" for more information.
         >>>
 
-   在提示符 `>>>` 后输入 `quit()` 后按下 {kbd}`Enter` 键退出 Python。
+   在提示符 `>>>` 后输入 `quit()` 后按下 {kbd}`Enter` 键退出 Python 解释器。
 
 ## Python 脚本
 
