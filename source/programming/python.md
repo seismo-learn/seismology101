@@ -66,7 +66,7 @@ Miniconda
 
    安装通常只需要十几秒，在安装的最后会出现：
 
-        Do you wish the installer to initialize Miniconda3 
+        Do you wish the installer to initialize Miniconda3
         by running conda init? [yes|no]
         [no] >>>
 
@@ -84,6 +84,26 @@ Miniconda
         >>>
 
    在提示符 `>>>` 后输入 `quit()` 后按下 {kbd}`Enter` 键退出 Python 解释器。
+
+## 初识 Python
+
+不管是学习还是使用 Python，首先必须的是 Python 解释器。Linux/macOS 操作系统都
+内置了 Python 解释器。
+
+打开终端，键入命令 `python` 则会进入 Python 解释器的交互模式：
+
+```
+$ python
+Python 3.10 (default, June 4 2019, 09:25:04)
+[GCC 4.8.2] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+进入解释器时，首先显示欢迎信息、版本信息、版权声明。
+交互模式下 `>>>` 是主提示符，提示输入下一条指令；
+输入连续行时，显示次要提示符，默认是三个点（`...`）。
+用户可以在提示符后输入任意的 Python 指令。
 
 ## Python 脚本
 
