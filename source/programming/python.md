@@ -66,7 +66,7 @@ Miniconda
 
    安装通常只需要十几秒，在安装的最后会出现：
 
-        Do you wish the installer to initialize Miniconda3 
+        Do you wish the installer to initialize Miniconda3
         by running conda init? [yes|no]
         [no] >>>
 
@@ -84,6 +84,60 @@ Miniconda
         >>>
 
    在提示符 `>>>` 后输入 `quit()` 后按下 {kbd}`Enter` 键退出 Python 解释器。
+
+## 初识 Python
+
+打开终端，输入 `python` 就会进入 Python 解释器的交互模式：
+
+```
+$ python
+Python 3.9.12 (main, Apr  5 2022, 01:53:17)
+[GCC 7.5.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+进入 Python 解释器后，首先会显示 Python 版本信息、版权声明以及帮助信息，
+然后会显示符号 `>>>`。`>>>` 是 Python 解释器在交互模式下的主提示符，提示用户
+可以在 `>>>` 后输入 Python 指令。
+
+在 `>>>` 提示符后输入 `1 + 2` 并按下 {kbd}`Enter` 键将指令 `1 + 2` 传给 Python
+解释器。解释器接收指令后会执行指令，输出结果 `3`，并再次显示主提示符
+`>>>` 等待用户的下一次输入。
+```python
+>>> 1 + 2
+3
+>>>
+```
+:::{tip}
+Python 解释器可以当做一个快捷的计算器来使用！
+:::
+
+下面继续看一个稍复杂点的例子。给变量 `x` 赋值，然后紧跟着一个判断语句
+“如果 x 的值大于 0，则打印字符串 Hello world!”。
+```python
+>>> x = 5
+>>> if x > 0:
+...     print("Hello world!")
+...
+Hello world!
+>>>
+```
+这个判断语句无法在一行写完，因而需要写成多行语句。
+在主提示符后输入 `if x > 0:` 并按下 {kbd}`Enter` 键，会显示符号 `...`。
+`...` 是 Python 解释器在交互模式下的次提示符，用于表明多行语句还没写完，需要继续输入。
+在次提示符 `...` 后不输入指令而直接键入 {kbd}`Enter`，表示该代码块已结束。
+Python 解释器会对输入的多行语句进行解释，并输出字符串“Hello world!”。
+:::{note}
+C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分代码块！
+因而上面的例子中 `print` 前需要用空格缩进（通常是 4 个空格）。
+:::
+
+在主提示符 `>>>` 后输入 `quit()` 或者按下 {kbd}`Ctrl` + {kbd}`D` 键
+即可退出 Python 解释器的交互模式。
+```python
+>>> quit()
+```
 
 ## Python 脚本
 
