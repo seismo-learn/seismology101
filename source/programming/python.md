@@ -1,7 +1,7 @@
 # Python 语言
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2022-06-06
+- 最近更新日期: 2022-06-11
 - 预计花费时间: 30 分钟
 
 ---
@@ -141,11 +141,9 @@ C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分
 
 ## 安装 Python 包
 
-Python 语言的一大特色是其众多功能丰富的标准库和第三方包（也称为模块或库）。
-Python 解释器中已经内置了所有标准库，因而安装解释器后就可以直接使用所有标准库。
-想要使用第三方包，首先要学会如何安装。
-
-**推荐使用 [`mamba`](https://mamba.readthedocs.org/) 和 [`pip`](https://pip.pypa.io/) 安装 Python 包。**
+Python 语言的一大特色是其功能强大的标准库和第三方包（也称为模块或库）。
+Python 解释器内置了所有标准库，所以安装解释器后就可以直接使用标准库。
+而第三方包，则需要先安装才能使用。
 
 :::{dropdown} pip、conda 与 mamba
 :color: info
@@ -175,6 +173,8 @@ Python 解释器中已经内置了所有标准库，因而安装解释器后就�
   `mamba` 的用法与 `conda` 几乎完全一致，网络上看到的 `conda` 命令，将 `conda`
   替换为 `mamba` 即可直接执行。
 :::
+
+**推荐使用 [`mamba`](https://mamba.readthedocs.org/) 和 [`pip`](https://pip.pypa.io/) 安装 Python 包。**
 
 Miniconda 中提供了 `conda` 命令，所以安装 Miniconda 后就可以直接使用 `conda`
 命令了。先对 `conda` 做一些简单的配置：
