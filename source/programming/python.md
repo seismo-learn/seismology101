@@ -194,12 +194,14 @@ $ mamba init bash
 至此，就可以完全使用 `mamba` 管理和安装 Python 包和环境了。
 
 使用 `mamba` 安装软件很简单，直接 `mamba install` 加上要安装的软件包名称即可。
-`mamba` 可安装的软件包位于 https://anaconda.org/。
+`mamba` 可安装的软件包位于 [Anaconda 网站](https://anaconda.org/)。
 
-读者可以执行如下命令，安装接下来需要用到的几个 Python 包：
+读者可以执行如下命令，安装本节余下内容会用到的几个 Python 包：
 ```
 $ mamba install numpy matplotlib jupyterlab
 ```
+
+对于 [Anaconda 网站](https://anaconda.org/) 没有的包，则只能使用 `pip` 安装。
 
 ## Python 脚本
 
