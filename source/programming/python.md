@@ -145,42 +145,35 @@ Python 语言的一大特色是其功能强大的标准库和第三方包（也�
 Python 解释器内置了所有标准库，所以安装解释器后就可以直接使用标准库。
 而第三方包，则需要先安装才能使用。
 
-:::{dropdown} pip、conda 与 mamba
-:color: info
-:icon: info
+:::{admonition} pip、conda 与 mamba
 
-在学习如何安装 Python 包之前，读者有必要了解 pip、conda 和 mamba 的区别与联系:
+在学习如何安装 Python 包之前，有必要先了解 pip、conda 和 mamba，以及它们之间的
+区别与联系:
 
 [`pip`](https://pip.pypa.io/)
-: `pip` 是 Python 官方提供的包管理器，可以用于安装 [Python 包索引网站 PyPI](https://pypi.org/)
-  上的几十万个 Python 包，也可以从源码安装 Python 包。
+: `pip` 是 Python 官方提供的包管理器，可以安装 [Python 包索引网站](https://pypi.org/) 上的
+  Python 包，也可以从源码安装 Python 包。
 
 [`conda`](https://docs.conda.io/)
-: `conda` 是 Anaconda/Miniconda 提供的包管理器，其不仅可以安装 Python 包，还可以
-  安装非 Python 包（理论上可以安装任何软件！）。
-  `conda` 可安装的包位于 https://anaconda.org/。
-  `pip` 与 `conda` 的详细对比，可以参考
-  [Anaconda 官方博文](https://www.anaconda.com/blog/understanding-conda-and-pip)。
+: `conda` 是 Anaconda/Miniconda 提供的包管理器，其功能强大，不仅可以安装 Python 包，
+  还可以安装其他语言写的包（理论上可以安装任何软件）。同时还可以管理 Python 环境，
+  在一个系统内安装多个不同版本的 Python 解释器或包。
+
+  `conda` 功能强大，但其最大的缺点就是**慢**。安装软件包前需要先解析软件包
+  之间的版本依赖关系，这一步骤很慢，下载、安装软件包的过程很慢。
 
 [`mamba`](https://mamba.readthedocs.org/)
-: `conda` 虽然好用，但有一个最大的缺点：慢
-
-  1. 安装软件前需要先解析软件之间的版本依赖关系，这一步骤很慢
-  2. 下载、安装软件包的过程很慢
-
-  `mamba` 是 `conda` 的替代品，其核心代码是用 C 写的，因而解析软件的版本依赖关系
-  非常快，且可以并行下载和安装软件包，可以极大减少安装软件的等待时间。
+: `mamba` 是 `conda` 的替代品，其核心代码用 C 语言编写，因而解析软件的版本依赖
+  关系非常快，且可以并行下载和安装软件包，大大减少了安装软件的等待时间。
   `mamba` 的用法与 `conda` 几乎完全一致，网络上看到的 `conda` 命令，将 `conda`
   替换为 `mamba` 即可直接执行。
 :::
 
-**推荐使用 [`mamba`](https://mamba.readthedocs.org/) 和 [`pip`](https://pip.pypa.io/) 安装 Python 包。**
+**推荐使用包管理器 [`mamba`](https://mamba.readthedocs.org/) 安装和管理 Python 包。**
 
-Miniconda 中提供了 `conda` 命令，所以安装 Miniconda 后就可以直接使用 `conda`
-命令了。先对 `conda` 做一些简单的配置：
-
+`mamba` 使用的是 `conda` 的配置文件。在使用 `mamba` 前，先对 `conda` 做简单配置：
 ```
-# 增加 conda-forge 通道，可以安装更多的软件
+# 增加 conda-forge 通道，可以安装更多的软件包
 $ conda config --add channels conda-forge
 # 显示通道的 URL
 $ conda config --set show_channel_urls true
@@ -189,20 +182,21 @@ $ conda config --add default_channels https://mirrors.tuna.tsinghua.edu.cn/anaco
 $ conda config --set 'custom_channels.conda-forge' https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
-为了使用 `mamba`，需要通过 `conda` 安装 `mamba`：
+使用 `conda` 安装 `mamba`：
 ```
 $ conda install 'mamba>=0.16'
 ```
 
-安装 `mamba` 后，执行如下初始化命令：
+安装 `mamba` 后，执行如下命令即可在 bash 中使用 `mamba` 的所有功能：
 ```
 $ mamba init bash
 ```
+至此，就可以完全使用 `mamba` 管理和安装 Python 包和环境了。
 
-从此之后，就可以告别 `conda`，只使用 `mamba` 即可完成所有任务了。
-使用 `mamba` 安装软件很简单，直接 `mamba install` 加上一堆软件包的名字即可。
+使用 `mamba` 安装软件很简单，直接 `mamba install` 加上要安装的软件包名称即可。
+`mamba` 可安装的软件包位于 https://anaconda.org/。
 
-读者可以执行如下命令，安装接下来需要用到的几个 Python 包。
+读者可以执行如下命令，安装接下来需要用到的几个 Python 包：
 ```
 $ mamba install numpy matplotlib jupyterlab
 ```
