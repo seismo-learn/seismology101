@@ -141,23 +141,23 @@ C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分
 
 ## 安装 Python 包
 
-Python 语言的一大特色是其功能强大的标准库和第三方包（也称为模块或库）。
-Python 解释器内置了所有标准库，所以安装解释器后就可以直接使用标准库。
-而第三方包，则需要先安装才能使用。
+Python 语言的一大特色是其功能强大的标准库和第三方软件包（也称模块或库）。
+Python 解释器内置了所有标准库，安装解释器后就可以直接使用标准库，
+而第三方包需要先安装才能使用。
 
 :::{admonition} pip、conda 与 mamba
 
-在学习如何安装 Python 包之前，有必要先了解 pip、conda 和 mamba，以及它们之间的
+学习如何安装 Python 包之前，有必要先了解 `pip`、`conda` 和 `mamba`，以及它们之间的
 区别与联系:
 
 [`pip`](https://pip.pypa.io/)
 : `pip` 是 Python 官方提供的包管理器，可以安装 [Python 包索引网站](https://pypi.org/) 上的
-  Python 包，也可以从源码安装 Python 包。
+  Python 包，也可用于从源码安装 Python 包。
 
 [`conda`](https://docs.conda.io/)
-: `conda` 是 Anaconda/Miniconda 提供的包管理器，其功能强大，不仅可以安装 Python 包，
-  还可以安装其他语言写的包（理论上可以安装任何软件）。同时还可以管理 Python 环境，
-  在一个系统内安装多个不同版本的 Python 解释器或包。
+: `conda` 是 Anaconda/Miniconda 提供的包管理器，不仅可以安装 Python 包，
+  还可以安装其他语言写的包（理论上可以安装任何软件）。它的另一个重要功能是管理 Python 环境，
+  可用于在一个系统内安装多个不同版本的 Python 解释器或包。
 
   `conda` 功能强大，但其最大的缺点就是**慢**。安装软件包前需要先解析软件包
   之间的版本依赖关系，这一步骤很慢，下载、安装软件包的过程很慢。
@@ -171,7 +171,7 @@ Python 解释器内置了所有标准库，所以安装解释器后就可以直�
 
 **推荐使用包管理器 [`mamba`](https://mamba.readthedocs.org/) 安装和管理 Python 包。**
 
-`mamba` 使用的是 `conda` 的配置文件。在使用 `mamba` 前，先对 `conda` 做简单配置：
+`mamba` 使用的是 `conda` 的配置文件，因而使用 `mamba` 前，需先对 `conda` 做简单配置：
 ```
 # 增加 conda-forge 通道，可以安装更多的软件包
 $ conda config --add channels conda-forge
