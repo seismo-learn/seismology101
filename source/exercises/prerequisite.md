@@ -14,18 +14,16 @@ kernelspec:
 # 准备工作
 
 - 本节贡献者: {{田冬冬}}（作者）
-- 最近更新日期: 2022-06-04
-- 预计花费时间: 20 分钟
+- 最近更新日期: 2022-06-12
+- 预计花费时间: 10 分钟
 
 ---
 
 这一章，我们将使用 Python 语言和 [ObsPy 软件包](https://docs.obspy.org/)
-学习并掌握地震学数据的获取、处理和分析。读者应：
+学习并掌握地震学数据的获取、处理和分析。在开始本章内容之前，读者应：
 
-- 已阅读 {doc}`/programming/python` 一节
-- 已安装 Miniconda 和 mamba
-- 已掌握基本的 Python 语法
-- 了解如何执行 Python 语句
+- 阅读《{doc}`/programming/python`》一节，并安装 Miniconda 和 `mamba`
+- 已掌握基本的 Python 语法并了解如何执行 Python 代码
 
 ## 安装依赖包
 
