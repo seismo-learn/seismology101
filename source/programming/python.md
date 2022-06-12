@@ -109,9 +109,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 3
 >>>
 ```
-:::{tip}
-Python 解释器可以当做一个快捷的计算器来使用！
-:::
 
 下面继续看一个稍复杂点的例子。给变量 `x` 赋值，然后紧跟着一个判断语句
 “如果 x 的值大于 0，则打印字符串 Hello world!”。
@@ -141,7 +138,32 @@ C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分
 
 ## Python 脚本
 
-## 执行 Python 脚本
+在 Python 解释器的交互模式下，虽然可以执行 Python 代码，但写长代码非常不方便，
+其代码编辑功能很弱，也不具备代码补全功能。更重要的是，当退出交互模式后，
+之前写的 Python 代码都不会被保存，下次想要执行相同的代码时只能重写。
+因而，通常都不会在 Python 解释器的交互模式下写代码，而是将 Python 代码写到一个
+Python 脚本中保存起来。
+:::{tip}
+Python 解释器交互模式可以当做一个快捷的计算器来使用！
+:::
+
+Python 脚本其实就是一个包含了一系列 Python 脚本的纯文本文件，后缀通常是 `.py`，
+在终端中可以通过 `python xxxx.py` 的方式执行 Python 脚本（`xxxx.py` 是 Python
+脚本的文件名）。
+
+下面以一个简单的 Python 脚本作为示例。启动文本编辑器，新建一个文件，将以下
+Python 代码写到文件中：
+```python
+x = 5
+if x > 0:
+    print("Hello world!")
+```
+然后将文件保存为后缀 `.py` 的文件（比如 {file}`first-script.py`），即得到了
+一个可执行的 Python 脚本。打开终端，切换到 Python 脚本所在的目录，然后执行如下命令：
+```
+$ python first-script.py
+```
+Python 脚本会被执行，并在终端输出 `Hello world!`。
 
 ## Jupyter Notebook
 
