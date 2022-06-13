@@ -108,6 +108,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 1 + 2
 3
 >>>
+```
 :::{tip}
 Python 解释器交互模式可以当做一个快捷的计算器来使用！
 :::
@@ -160,6 +161,7 @@ if x > 0:
 ```
 $ python first-script.py
 Hello world!
+```
 
 ## 安装 Python 包
 
