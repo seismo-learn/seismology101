@@ -108,7 +108,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 1 + 2
 3
 >>>
-```
+:::{tip}
+Python 解释器交互模式可以当做一个快捷的计算器来使用！
+:::
 
 下面继续看一个稍复杂点的例子。给变量 `x` 赋值，然后紧跟着一个判断语句
 “如果 x 的值大于 0，则打印字符串 Hello world!”。
@@ -141,9 +143,6 @@ C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分
 其代码编辑功能很弱，也不具备代码补全功能。更重要的是，退出交互模式后，
 之前写的 Python 代码不会保存，下次想要执行相同代码时只能重写。
 因而，通常都不会在 Python 解释器的交互模式下写代码，而是将 Python 代码写到 Python 脚本中。
-:::{tip}
-Python 解释器交互模式可以当做一个快捷的计算器来使用！
-:::
 
 Python 脚本其实就是一个包含了一系列 Python 指令的文本文件，后缀通常是 `.py`，
 在终端中可以通过 `python xxxx.py` 的方式执行 Python 脚本（`xxxx.py` 是 Python
