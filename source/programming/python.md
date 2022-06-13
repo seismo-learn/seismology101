@@ -110,7 +110,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 :::{tip}
-Python 解释器可以当做一个快捷的计算器来使用！
+Python 解释器交互模式可以当做一个快捷的计算器来使用！
 :::
 
 下面继续看一个稍复杂点的例子。给变量 `x` 赋值，然后紧跟着一个判断语句
@@ -137,6 +137,31 @@ C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分
 即可退出 Python 解释器的交互模式。
 ```python
 >>> quit()
+```
+
+## Python 脚本
+
+虽然在 Python 解释器的交互模式下可以执行 Python 代码，但写长代码非常不方便，
+其代码编辑功能很弱，也不具备代码补全功能。更重要的是，退出交互模式后，
+之前写的 Python 代码不会保存，下次想要执行相同代码时只能重写。
+因而，通常都不会在 Python 解释器的交互模式下写代码，而是将 Python 代码写到 Python 脚本中。
+
+Python 脚本其实就是一个包含了一系列 Python 指令的文本文件，后缀通常是 `.py`，
+在终端中可以通过 `python xxxx.py` 的方式执行 Python 脚本（`xxxx.py` 是 Python
+脚本的文件名）。
+
+下面以一个简单的 Python 脚本作为示例。启动文本编辑器，新建一个文件，将以下
+Python 代码写到文件中：
+```python
+x = 5
+if x > 0:
+    print("Hello world!")
+```
+将文件保存为后缀 `.py` 的文件（比如 {file}`first-script.py`），即得到了
+一个可执行的 Python 脚本。打开终端，切换到 Python 脚本所在的目录，执行如下命令来运行脚本：
+```
+$ python first-script.py
+Hello world!
 ```
 
 ## 安装 Python 包
@@ -202,10 +227,6 @@ $ mamba install numpy matplotlib jupyterlab
 ```
 
 对于 [Anaconda 网站](https://anaconda.org/) 没有的包，则只能使用 `pip` 安装。
-
-## Python 脚本
-
-## 执行 Python 脚本
 
 ## Jupyter Notebook
 
