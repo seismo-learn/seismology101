@@ -145,7 +145,7 @@ Python 语言的一大特色是其功能强大的标准库和第三方软件包�
 Python 解释器内置了所有标准库，安装解释器后就可以直接使用标准库，
 而第三方包需要先安装才能使用。
 
-:::{admonition} pip、conda 与 mamba
+:::{admonition} `pip`、`conda` 与 `mamba`
 
 学习如何安装 Python 包之前，有必要先了解 `pip`、`conda` 和 `mamba`，以及它们之间的
 区别与联系:
