@@ -1,7 +1,7 @@
 # Python 语言
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2022-06-06
+- 最近更新日期: 2022-06-11
 - 预计花费时间: 30 分钟
 
 ---
@@ -139,13 +139,75 @@ C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分
 >>> quit()
 ```
 
+## 安装 Python 包
+
+Python 语言的一大特色是其功能强大的标准库和第三方软件包（也称模块或库）。
+Python 解释器内置了所有标准库，安装解释器后就可以直接使用标准库，
+而第三方包需要先安装才能使用。
+
+:::{admonition} `pip`、`conda` 与 `mamba`
+
+学习如何安装 Python 包之前，有必要先了解 `pip`、`conda` 和 `mamba`，以及它们之间的
+区别与联系:
+
+[`pip`](https://pip.pypa.io/)
+: `pip` 是 Python 官方提供的包管理器，可以安装 [Python 包索引网站](https://pypi.org/) 上的
+  Python 包，也可用于从源码安装 Python 包。
+
+[`conda`](https://docs.conda.io/)
+: `conda` 是 Anaconda/Miniconda 提供的包管理器，不仅可以安装 Python 包，
+  还可以安装其他语言写的包（理论上可以安装任何软件）。它的另一个重要功能是管理 Python 环境，
+  可用于在一个系统内安装多个不同版本的 Python 解释器或包。
+
+  `conda` 功能强大，但其最大的缺点就是**慢**。安装软件包前解析软件包之间的版本
+  依赖关系很慢，下载和安装也很慢。
+
+[`mamba`](https://mamba.readthedocs.org/)
+: `mamba` 是 `conda` 的替代品，不仅解析软件的版本依赖关系非常快（其核心代码是用 C 语言编写的），
+  还可以并行下载、安装软件包，大大减少了安装软件的时间。
+  `mamba` 的用法与 `conda` 几乎完全一致，网络上看到的 `conda` 命令，将 `conda`
+  替换为 `mamba` 即可直接执行。
+:::
+
+**推荐使用包管理器 [`mamba`](https://mamba.readthedocs.org/) 安装和管理 Python 包。**
+
+`mamba` 使用的是 `conda` 的配置文件，因而使用 `mamba` 前，需先对 `conda` 做简单配置：
+```
+# 增加 conda-forge 通道，可以安装更多的软件包
+$ conda config --add channels conda-forge
+# 显示通道的 URL
+$ conda config --set show_channel_urls true
+# 配置使用国内清华源以加快软件下载速度
+$ conda config --add default_channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+$ conda config --set 'custom_channels.conda-forge' https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+```
+
+使用 `conda` 安装 `mamba`：
+```
+$ conda install 'mamba>=0.16'
+```
+
+安装 `mamba` 后，执行如下命令即可在 bash 中使用 `mamba` 的所有功能：
+```
+$ mamba init bash
+```
+至此，就可以完全使用 `mamba` 管理和安装 Python 包和环境了。
+
+使用 `mamba` 安装软件很简单，直接 `mamba install` 加上要安装的软件包名称即可。
+`mamba` 可安装的软件包位于 [Anaconda 网站](https://anaconda.org/)。
+
+读者可以执行如下命令，安装本节余下内容会用到的几个 Python 包：
+```
+$ mamba install numpy matplotlib jupyterlab
+```
+
+对于 [Anaconda 网站](https://anaconda.org/) 没有的包，则只能使用 `pip` 安装。
+
 ## Python 脚本
 
 ## 执行 Python 脚本
 
 ## Jupyter Notebook
-
-## 如何安装模块
 
 ## 科学计算相关模块
 
