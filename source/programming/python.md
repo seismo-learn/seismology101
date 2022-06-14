@@ -1,8 +1,8 @@
 # Python 语言
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2022-06-11
-- 预计花费时间: 30 分钟
+- 最近更新日期: 2022-06-14
+- 预计花费时间: 60 分钟
 
 ---
 
@@ -230,19 +230,22 @@ $ mamba install numpy matplotlib jupyterlab
 
 ## Jupyter Notebook
 
-## 科学计算相关模块
+## Python 学习资源
 
-以下是日常科研中经常需要使用的基础 Python 科学计算模块：
+Python 语法丰富，模块众多，我们无法也不打算在这个入门教程中介绍 Python 的所有内容。
+读者可以搜索网络资源，自行学习 Python 以及常用的模块。
+
+地震学日常科研中经常使用的 Python 科学计算模块有：
 
 - [NumPy](https://numpy.org/)
 - [Matplotlib](https://matplotlib.org/)
 - [pandas](https://pandas.pydata.org/)
 - [SciPy](https://scipy.org/)
 
-## 学习资源
+下面是一些不错的 Python 学习资源：
 
-- [官方文档](https://docs.python.org/zh-cn/3/)、[官方入门教程](https://docs.python.org/zh-cn/3/tutorial/index.html)（全面、系统）
-- [Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)（较全面、系统）
-- [Scipy Lecture Notes](https://scipy-lectures.org/index.html)（较全面、系统）
-- [X 分钟速成 Python](https://learnxinyminutes.com/docs/zh-cn/python-cn/)（简要）
-- [A Visual Intro to NumPy and Data Representation](https://jalammar.github.io/visual-numpy/)（简要、形象地介绍 NumPy 数据结构）
+- [Python 官方文档](https://docs.python.org/zh-cn/3/)
+- [Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- [Scipy Lecture Notes](https://scipy-lectures.org/index.html)
+- [X 分钟速成 Python](https://learnxinyminutes.com/docs/zh-cn/python-cn/)
+- [A Visual Intro to NumPy and Data Representation](https://jalammar.github.io/visual-numpy/)
