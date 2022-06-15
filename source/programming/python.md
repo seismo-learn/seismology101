@@ -244,8 +244,8 @@ Python 语法丰富，模块众多，我们无法也不打算在这个入门教�
 
 下面是一些不错的 Python 学习资源：
 
-- [Python 官方文档](https://docs.python.org/zh-cn/3/)
-- [Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
-- [Scipy Lecture Notes](https://scipy-lectures.org/index.html)
-- [X 分钟速成 Python](https://learnxinyminutes.com/docs/zh-cn/python-cn/)
-- [A Visual Intro to NumPy and Data Representation](https://jalammar.github.io/visual-numpy/)
+- [Python 官方文档](https://docs.python.org/zh-cn/3/)（全面、系统）
+- [Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)（较全面、系统）
+- [Scipy Lecture Notes](https://scipy-lectures.org/index.html)（较全面、系统）
+- [X 分钟速成 Python](https://learnxinyminutes.com/docs/zh-cn/python-cn/)（简要）
+- [A Visual Intro to NumPy and Data Representation](https://jalammar.github.io/visual-numpy/)（简要、形象地介绍 NumPy 数据结构）
