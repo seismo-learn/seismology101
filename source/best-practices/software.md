@@ -176,9 +176,3 @@ $ brew install --cask iterm2
 ```
 :::
 ::::
-
-## VS Code
-
-Fedora/Ubuntu/macOS 系统自带的文本编辑器只具有最基本的文本编辑功能，无法满足日常编程需求。
-推荐安装并使用更强大的文本编辑器 [Visual Studio Code](https://code.visualstudio.com/)。
-VS Code 的安装与配置见 {doc}`vscode`。
