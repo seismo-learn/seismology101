@@ -236,39 +236,40 @@ $ mamba install numpy matplotlib jupyterlab
 编写 Python 脚本可以在编辑器中完成，因而写代码更加高效，但执行 Python 脚本时
 只能从头到尾执行，每次修改代码后都需要重新执行脚本里的所有代码，因而调试起来很费时。
 
-[JupyterLab](https://jupyter.org/) 是一个基于网页的交互式开发环境。它将两种方式的
-优点结合起来，不仅可以高效地编辑代码，还可以单步执行代码，且能够随时查看变量值，
-并支持丰富的可视化输出。JupyterLab 对应的文件称之为 Notebook，其文件后缀是 `.ipynb`。
-JupyterLab 已经成为当前最流行的 Python 开发环境。下面将通过实例展示如何使用 JupyterLab。
+[JupyterLab](https://jupyter.org/) 是一个基于网页的交互式开发环境，
+已经成为当前最流行的 Python 开发环境。它将两种方式的优点结合起来，
+可以高效地编辑代码、单步执行代码、随时查看变量值、支持丰富的可视化输出。
+JupyterLab 对应的文件称之为 Notebook，其文件后缀是 `.ipynb`。
+下面将通过实例展示如何使用 JupyterLab。
 
-打开终端，键入命令 `jupyter-lab` 来启动 JupyterLab。
+打开终端，键入命令 `jupyter-lab`，启动 JupyterLab。
 
 ```bash
 $ jupyter-lab
 ```
 
-JupyterLab 会在浏览器中打开一个标签页，并显示启动界面。如下图所示：
+JupyterLab 会在浏览器中打开一个标签页，显示启动界面。如下图所示，
+启动界面有若干图标，可以用于创建 Notebook、纯文本文件、Markdown 文件
+或 Python 文件，还可以在浏览器中打开一个终端。
 ![](jupyter-notebook-1.jpg)
 
-JupyterLab 启动界面中，默认有 7 个图标，可以用于创建 Notebook、纯文本文件、Markdown
-文件或Python 文件，还可以在浏览器中打开一个终端。
-
-点击“Notebook”下的图标创建一个空白的 Notebook。新创建的 Notebook 文件名默认为
-`Untitled.ipynb`。如下图所示，左侧为文件浏览器，右侧为新建的 Notebook，光标所在
-的矩形区域称之为单元格（cell），可以用于输入 Python 代码。在单元格中输入代码，
+点击“Notebook”下的图标创建一个空白的 Notebook，文件名默认为 `Untitled.ipynb`。
+如下图所示，左侧为文件浏览器，右侧为新建的 Notebook，光标所在的矩形区域称之为单元格（cell），
+可以用于输入 Python 代码。在单元格中输入代码，
 按下 {kbd}`Shift` + {kbd}`Enter` 执行单元格中的代码。
 
 ![](jupyter-notebook-2.jpg)
 
-下面的两行代码会导入 Python 的 NumPy 和 Matplotlib 包。将这两行代码复制到 Notebook 的
+下面的两行代码会导入 NumPy 和 Matplotlib 包。将这两行代码复制到 Notebook 的
 单元格中，按下 {kbd}`Shift` + {kbd}`Enter` 执行：
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-下面的代码为函数 {math}`s = \sin(2 \pi t)` 生成了一系列点，其中 t 的取值为 0 到
-2.0，间隔为 0.05。将这两行代码复制到 Notebook 的单元格中，按下
+下面的代码设置 `t` 取值为 0 到 2.0，间隔为 0.05，
+然后利用函数 {math}`s = \sin(2 \pi t)` 生成了一系列点。
+将这两行代码复制到 Notebook 的单元格中，按下
 {kbd}`Shift` + {kbd}`Enter` 执行：
 ```python
 t = np.arange(0.0, 2.0, 0.05)
@@ -289,35 +290,35 @@ ax.plot(t, s)
 plt.show()
 ```
 
-执行效果如下图所示。可以看到，绘图结果直接在 Notebook 里显示，非常直观。
+执行效果如下图所示，绘图结果直接在 Notebook 里显示，非常直观。
 
 ![](jupyter-notebook-4.jpg)
 
 对画出来的图片效果不太满意，想要进一步微调图片的显示效果？下面的两行代码会
-给图片加上网格线，并设置刻度的宽度以及刻度数字的颜色和大小。
+给图片加上网格线，并设置刻度颜色、大小、宽度。
 ```python
 ax.grid(True, linestyle='-.')
 ax.tick_params(labelcolor='r', labelsize='medium', width=3)
 ```
-将上面两行代码复制到前一单元格中的 `plt.show()` 语句之前，按下 {kbd}`Shift` + {kbd}`Enter`。
+将上面两行代码复制到前一单元格中的 `plt.show()` 语句之前，按下 {kbd}`Shift` + {kbd}`Enter` 执行，
 效果如下图所示：
 
 ![](jupyter-notebook-5.jpg)
 
 可以看到，修改后的代码被执行，并显示了修改后的图片。在执行修改后的代码时，
 变量 `t` 和 `s` 依然有效，不需要重新执行之前单元格中的代码。
-实际上，只要 Kernel 没有被重启，Notebook 中的变量就不会被销毁，因而可以很方便地
-对某个单元格的代码做多次修改并调试。
+实际上，只要 Kernel 没有重启，Notebook 中的变量就不会被销毁，因而可以很方便地
+多次修改并调试某个单元格的代码。
 
 :::{tip}
 在 Notebook 中写代码时，可以随时用快捷键 {kbd}`Ctrl` + {kbd}`S` （Linux 或 Windows）
-或 {kbd}`Command` + {kbd}`S` 保存 Notebook。所有代码、输出以及图片都会被保存在
+或 {kbd}`Command` + {kbd}`S` （macOS）保存 Notebook。所有代码、输出以及图片都会被保存在
 `.ipynb` 文件中。
 :::
 
 :::{tip}
-Notebook 在交互式开发代码时很方便。但通常我们会想要将代码保存为 Python 脚本，以
-更加方便地执行。在 JupyterLab 中点击菜单“File”→“Save and export Notebook as”→
+Notebook 在交互式开发代码时很方便。但通常我们会想要将代码保存为 Python 脚本，
+更加方便执行。在 JupyterLab 中点击菜单“File”→“Save and export Notebook as”→
 “Executable Script” 即可将 Notebook 转换为 Python 脚本。
 :::
 
