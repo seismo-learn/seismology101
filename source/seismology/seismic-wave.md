@@ -104,7 +104,7 @@ $\sqrt{3}$ 倍。P 波和 S 波传播速度也随深部而变化：
 地球内部不同的分层（地壳、地幔、外核、内核等）以及两种体波类型（P 波和 S 波）会产生许多
 可能的几何射线（geometric ray），也称震相（seismic phase）。地震学领域有统一的震相的
 命名规则。其中，地壳震相的命名规则相对复杂，且部分震相的命名并未统一。因此，本教程不做介绍，
-读者可以参考{doc}`seis:ray-theory-travel-times/ray-nomenclature/crustal-phases`学习相关震相定义。以下介绍全球尺度下的震相命名规则。
+读者可以参考{doc}`seis:ray-nomenclature/crustal-phases`学习相关震相定义。以下介绍全球尺度下的震相命名规则。
 
 为了方便命名震相，我们用以下特殊简写表示地壳、地幔、外核以及内核中的 P 波和 S 波路径：
 
