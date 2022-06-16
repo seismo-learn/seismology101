@@ -244,7 +244,7 @@ Bash 配置文件 `~/.bashrc` 中。将默认 Shell 切换到 Zsh 后，还需�
 由于 Zsh 兼容 Bash 语法，对于大多数软件的配置，都可以直接从 `~/.bashrc`
 复制粘贴到 `~/.zshrc` 中。
 
-对于 Anaconda 用户，需要在 Bash 环境中重新执行 `conda` 初始化设置，即:
+对于 Anaconda/Miniconda 用户，需要在 Bash 环境中重新执行 `conda` 初始化设置，即:
 
 ```
 # 进入 bash 环境
