@@ -15,7 +15,7 @@
     和 [Michael Wysession](https://eps.wustl.edu/people/michael-e-wysession)
   - 难度：难度适中，有很多简单和实用的公式推导，适合初学者以及地震学研究生
 
-- 《[Foundations of Modern Global Seismology]([https://www.elsevier.com/books/modern-global-seismology/lay/978-0-12-732870-6](https://www.elsevier.com/books/foundations-of-modern-global-seismology/ammon/978-0-12-815679-7))》
+- 《[Foundations of Modern Global Seismology](https://www.elsevier.com/books/foundations-of-modern-global-seismology/ammon/978-0-12-815679-7)》
 
   - 作者：[Charles Ammon](https://www.geosc.psu.edu/directory/charles-ammon)、
     [Aaron Velasco](https://expertise.utep.edu/profiles/aavelasco)、
