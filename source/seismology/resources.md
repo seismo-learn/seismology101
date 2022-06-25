@@ -15,10 +15,11 @@
     和 [Michael Wysession](https://eps.wustl.edu/people/michael-e-wysession)
   - 难度：难度适中，有很多简单和实用的公式推导，适合初学者以及地震学研究生
 
-- 《[Modern Global Seismology](https://www.elsevier.com/books/modern-global-seismology/lay/978-0-12-732870-6)》
+- 《[Foundations of Modern Global Seismology]([https://www.elsevier.com/books/modern-global-seismology/lay/978-0-12-732870-6](https://www.elsevier.com/books/foundations-of-modern-global-seismology/ammon/978-0-12-815679-7))》
 
-  - 作者：[Thorne Lay](https://websites.pmc.ucsc.edu/~seisweb/thorne_lay/)
-    和 Terry Wallace
+  - 作者：[Charles Ammon](https://www.geosc.psu.edu/directory/charles-ammon)、
+    [Aaron Velasco](https://expertise.utep.edu/profiles/aavelasco)、
+    [Thorne Lay](https://websites.pmc.ucsc.edu/~seisweb/thorne_lay/) 和 Terry Wallace
   - 难度：较难，适合有一定地震学和数理基础的研究生
 
 - 《[Quantitative Seismology](https://www.ldeo.columbia.edu/~richards/Aki_Richards.html)》（第二版）
