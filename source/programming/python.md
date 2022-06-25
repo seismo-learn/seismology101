@@ -1,7 +1,7 @@
 # Python 语言
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2022-06-14
+- 最近更新日期: 2022-06-24
 - 预计花费时间: 60 分钟
 
 ---
@@ -10,6 +10,10 @@
 
 [Python](https://www.python.org/) 是一种广泛使用的通用编程语言，其具有语法简单、
 功能强大等优点，是目前地震学科研最常用的编程语言之一。
+
+这一节中，我们不介绍具体的 Python 语法，而是着重介绍如何安装和管理 Python、
+如何编写并执行 Python 脚本等。这一节最后列出了一些免费的 Python 学习资源，
+读者可根据需要自行学习。
 
 ## 安装 Miniconda
 
@@ -327,20 +331,18 @@ JupyterLab 除了可以编辑 Notebook 外，还可以编辑 Markdown 文件，�
 
 ## Python 学习资源
 
-Python 语法丰富，模块众多，我们无法也不打算在这个入门教程中介绍 Python 的所有内容。
-读者可以搜索网络资源，自行学习 Python 以及常用的模块。
+下面列出一些 Python 以及常用科学计算模块的相关学习资源：
 
-地震学日常科研中经常使用的 Python 科学计算模块有：
-
+- [Python](https://www.python.org/)
+  - [Python 官方文档](https://docs.python.org/zh-cn/3/)（全面、系统）
+  - [廖雪峰的 Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)（较全面、系统）
 - [NumPy](https://numpy.org/)
+  - [NumPy 官方文档](https://numpy.org/doc/stable/)
+  - [A Visual Intro to NumPy and Data Representation](https://jalammar.github.io/visual-numpy/)（简要、形象地介绍 NumPy 数据结构）
 - [Matplotlib](https://matplotlib.org/)
+  - [Matplotlib 官方教程](https://matplotlib.org/stable/tutorials/)
+  - [Scientific Visualization: Python + Matplotlib](https://github.com/rougier/scientific-visualization-book)
 - [pandas](https://pandas.pydata.org/)
+  - [Pandas 官方教程](https://pandas.pydata.org/docs/user_guide/)
 - [SciPy](https://scipy.org/)
-
-下面是一些不错的 Python 学习资源：
-
-- [Python 官方文档](https://docs.python.org/zh-cn/3/)（全面、系统）
-- [Python 教程](https://www.liaoxuefeng.com/wiki/1016959663602400)（较全面、系统）
-- [Scipy Lecture Notes](https://scipy-lectures.org/index.html)（较全面、系统）
-- [X 分钟速成 Python](https://learnxinyminutes.com/docs/zh-cn/python-cn/)（简要）
-- [A Visual Intro to NumPy and Data Representation](https://jalammar.github.io/visual-numpy/)（简要、形象地介绍 NumPy 数据结构）
+  - [SciPy 官方教程](https://docs.scipy.org/doc/scipy/tutorial/)
