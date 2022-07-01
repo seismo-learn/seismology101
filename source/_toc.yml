@@ -78,6 +78,8 @@ parts:
     - file: best-practices/software
     - file: best-practices/zsh
     - file: best-practices/vscode
+  - chapters:
+    - file: bibliography
   - caption: 外部链接
     chapters:
     - url: https://seismo-learn.org/

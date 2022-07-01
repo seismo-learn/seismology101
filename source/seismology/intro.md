@@ -90,7 +90,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 
 在地震学理论和观测的早期发展过程中，地球内部结构也取得了一系列重大突破：
 
-- 1906 年，Richard Oldham 报道地球存在地核
+- 1906 年，Richard Oldham 报道地球存在地核 {cite}`Oldham1906`
 - 1909 年，Andrija Mohorovičić 报道地壳和地幔存在速度间断面（现在称为 Moho 面）
 - 1914 年，Beno Gutenberg 报道地幔和液态地核的边界深度为 2900 公里，
   非常接近当今的估计值 2889 公里
