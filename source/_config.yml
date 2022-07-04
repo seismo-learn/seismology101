@@ -65,4 +65,5 @@ sphinx:
     copybutton_prompt_is_regexp: true
     copybutton_only_copy_prompt_lines: true
     copybutton_remove_prompts: true
-    bibtex_reference_style: author_year
+    bibtex_default_style: plain
+    bibtex_reference_style: super
