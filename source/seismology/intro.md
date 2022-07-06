@@ -63,17 +63,21 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 ## 地震学早期大事记
 
 地震学是一个相对年轻的学科，从二十世纪初才逐渐开始定量化的研究。
-可以查阅 [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology)
-了解更多地震学历史，以下仅简要介绍部分重要历史事件。
 
-在早期，理论发展领先地震学观测。1892 年，Love 出版了经典教材《A Treatise on the Mathematical Theory of Elasticity》（第一版），
-简介中详细描述了弹性理论的发展历史。
-以下介绍地震波理论的早期进展：
+在早期，地震波理论的发展领先地震学观测：
 
-- 弹性理论（elasticity theory）的两个重要发现：胡克定律（Hooke，1660 年）、
-  弹性介质的一般性平衡和运动方程（Navier，1821 年）
-- 从十八世纪早期开始，弹性波传播理论（the theory of elastic wave propagation）
-  由 Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展
+- 1660 年，Robert Hooke 提出了著名的胡克定律（Hooke's law），指出
+  弹簧在发生弹性形变时，弹簧的弹力 {math}`F` 和弹簧的伸长量（或压缩量）{math}`x`
+  成正比，即 {math}`F=kx`，其中 {math}`k` 是物质的弹性系数
+- 1687 年，Isaac Newton 在其《自然哲学的数学原理》一书中提出了牛顿第二定律，即 {math}`F=ma`
+- 1821 年，Claude-Louis Navier 和 George Stokes 提出了弹性介质的一般性平衡方程
+  和运动方程
+- 1830 年，Siméon Poisson 提出弹性介质内部存在两种以不同速度传播的波，即横波和纵波
+- 1885 年，Lord Rayleigh 预测弹性介质中会存在沿着固体表面传播的面波，即 Rayleigh 面波 {cite}`rayleigh1885waves`
+- 1911 年，Augustus Love 预测弹性介质中存在另一种沿着固体表面水平偏振的面波，即 Love 波
+
+更详细的弹性理论的发展史，可以阅读 1892 年 Augustus Love 出版的经典教材
+《A Treatise on the Mathematical Theory of Elasticity》（第一版）。
 
 从十九世纪后期开始，地震学观测开始逐渐发展起来，极大地促进了地震学的发展。
 以下介绍地震学观测的早期进展：
@@ -97,3 +101,6 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - 1936 年，Inge Lehmann 发现固态内核（之前认为地核全是液态的）
 - 1940 年，Harold Jeffreys 和 K. E. Bullen 发表了他们最终版本的地震波走时表，
   简称 JB 走时表。该走时表至今仍在使用，并且与当今模型仅差几秒
+
+读者可以查阅 [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology)
+了解更多地震学历史。
