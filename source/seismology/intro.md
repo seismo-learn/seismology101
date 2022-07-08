@@ -67,13 +67,13 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 在早期，地震波理论的发展领先地震学观测：
 
 - 1660 年，Robert Hooke 提出了著名的胡克定律（Hooke's law），指出
-  弹簧在发生弹性形变时，弹簧的弹力 {math}`F` 和弹簧的伸长量（或压缩量）{math}`x`
-  成正比，即 {math}`F=kx`，其中 {math}`k` 是物质的弹性系数
+  弹簧在发生弹性形变时，弹簧的弹力 {math}`F` 和弹簧的长度变化 {math}`x`
+  成正比，即 {math}`F=kx`，其中 {math}`k` 是弹性系数
 - 1687 年，Isaac Newton 在其《自然哲学的数学原理》一书中提出了牛顿第二定律，即 {math}`F=ma`
 - 1821 年，Claude-Louis Navier 和 George Stokes 提出了弹性介质的一般性平衡方程
   和运动方程
 - 1830 年，Siméon Poisson 提出弹性介质内部存在两种以不同速度传播的波，即横波和纵波
-- 1885 年，Lord Rayleigh 预测弹性介质中会存在沿着固体表面传播的面波，即 Rayleigh 面波 {cite}`Rayleigh1885`
+- 1885 年，Lord Rayleigh 预测弹性介质中存在沿着固体表面传播的面波，即 Rayleigh 面波 {cite}`Rayleigh1885`
 - 1911 年，Augustus Love 预测弹性介质中存在另一种沿着固体表面水平偏振的面波，即 Love 波
 
 更详细的弹性理论的发展史，可以阅读 1892 年 Augustus Love 出版的经典教材
