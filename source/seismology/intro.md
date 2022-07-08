@@ -74,7 +74,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
   和运动方程
 - 1830 年，Siméon Poisson 提出弹性介质内部存在两种以不同速度传播的波，即横波和纵波
 - 1885 年，Lord Rayleigh 预测弹性介质中存在沿着固体表面传播的面波，即 Rayleigh 面波 {cite}`Rayleigh1885`
-- 1911 年，Augustus Love 预测弹性介质中存在另一种沿着固体表面水平偏振的面波，即 Love 波
+- 1911 年，Augustus Love 指出在速度随深度变化的弹性介质中存在另一种沿着固体表面传播的面波，即 Love 波
 
 更详细的弹性理论的发展史，可以阅读 1892 年 Augustus Love 出版的经典教材
 《A Treatise on the Mathematical Theory of Elasticity》（第一版）。
