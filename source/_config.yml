@@ -25,6 +25,10 @@ parse:
     王亮: "[王亮](https://github.com/wangliang1989)"
     赵志远: "[赵志远](https://github.com/zhaozhiyuan1989)"
 
+# citation
+bibtex_bibfiles:
+  - references.bib
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/seismo-learn/seismology101
@@ -61,3 +65,5 @@ sphinx:
     copybutton_prompt_is_regexp: true
     copybutton_only_copy_prompt_lines: true
     copybutton_remove_prompts: true
+    bibtex_default_style: plain
+    bibtex_reference_style: super

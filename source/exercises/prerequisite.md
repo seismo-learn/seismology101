@@ -30,12 +30,13 @@ kernelspec:
 本章中的地震学实践需要使用如下 Python 包：
 
 - [ObsPy](https://docs.obspy.org/): 用于地震数据获取、处理和分析
+- [cartopy](https://scitools.org.uk/cartopy/): 用于绘制地图
 - [JupyterLab](https://jupyterlab.readthedocs.io/): 基于浏览器的交互式开发环境
 
 通过如下命令安装所需依赖包：
 
 ```
-$ mamba install obspy jupyterlab
+$ mamba install obspy cartopy jupyterlab
 ```
 
 ## 检查当前环境

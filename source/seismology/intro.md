@@ -1,10 +1,10 @@
 # 简介
 
-- 本节贡献者: {{ 姚家园 }}（作者）、{{ 田冬冬 }}（作者）
+- 本节贡献者: {{姚家园}}（作者）、{{田冬冬}}（作者）
 - 最近更新日期: 2021-10-28
 - 预计阅读时间: 10 分钟
 
-______________________________________________________________________
+---
 
 地球科学的研究对象主要包括：
 地球的固体部分（固体地球）、地球表面上下的水（水圈）、生态系统（生物圈）、大气层（大气圈）
@@ -38,7 +38,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 
 :::{figure} seismic-waves.jpg
 :align: center
-:alt: "\u5730\u9707\u6FC0\u53D1\u7684\u5730\u9707\u6CE2\u8DEF\u5F84\u548C\u6CE2\u5F62"
+:alt: 地震激发的地震波路径和波形
 :width: 95%
 
 1994 年 1 月 17 日，美国加利福尼亚州 Northridge 地震激发的地震波的传播路径和观测波形。
@@ -63,37 +63,48 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 ## 地震学早期大事记
 
 地震学是一个相对年轻的学科，从二十世纪初才逐渐开始定量化的研究。
-可以查阅 [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology)
-了解更多地震学历史，以下仅简要介绍部分重要历史事件。
 
-在早期，理论发展领先地震学观测。1892 年，Love 出版了经典教材《A Treatise on the Mathematical Theory of Elasticity》（第一版），
-简介中详细描述了弹性理论的发展历史。
-以下介绍地震波理论的早期进展：
+在早期，地震波理论的发展领先地震学观测：
 
-- 弹性理论（elasticity theory）的两个重要发现：胡克定律（Hooke，1660 年）、
-  弹性介质的一般性平衡和运动方程（Navier，1821 年）
-- 从十八世纪早期开始，弹性波传播理论（the theory of elastic wave propagation）
-  由 Cauchy、Poisson、Green、Stokes、Rayleigh 等人发展
+- 1660 年，Robert Hooke 提出了著名的胡克定律（Hooke's law），指出
+  弹簧在发生弹性形变时，弹簧的弹力 {math}`F` 和弹簧的长度变化 {math}`x`
+  成正比，即 {math}`F=kx`，其中 {math}`k` 是弹性系数
+- 1687 年，Isaac Newton 在其《自然哲学的数学原理》一书中提出了牛顿第二定律，即 {math}`F=ma`
+- 1821 年，Claude-Louis Navier 和 George Stokes 提出了弹性介质的一般性平衡方程
+  和运动方程
+- 1830 年，Siméon Poisson 提出弹性介质内部存在两种以不同速度传播的波，即横波和纵波
+- 1885 年，Lord Rayleigh 预测弹性介质中存在沿着固体表面传播的面波，即 Rayleigh 面波 {cite}`Rayleigh1885`
+- 1911 年，Augustus Love 指出在速度随深度变化的弹性介质中存在另一种沿着固体表面传播的面波，即 Love 波
+
+更详细的弹性理论的发展史，可以阅读 1892 年 Augustus Love 出版的经典教材
+《A Treatise on the Mathematical Theory of Elasticity》（第一版）。
 
 从十九世纪后期开始，地震学观测开始逐渐发展起来，极大地促进了地震学的发展。
 以下介绍地震学观测的早期进展：
 
 - 1875 年，Filippo Cecchi 制作了第一个带时间记录的地震仪。随后，地震仪器不断改善和发展
+- 1889 年，E. Von Rebeur-Paschwitz 报告了在德国波兹坦记录到的日本地震的波形。这是
+  人类第一个远震记录波形 {cite}`Rebeur-Paschwitz1889`
+- 1898 年，E. Wiechert 研究了第一台有粘滞阻尼的地震计，可提供在整个地震持续时间内
+  有用的记录
 - 20 世纪初，B. B. Galitzen 制作了第一台电磁地震仪。现代地震仪均是电磁地震仪，
   相比于早期的纯力学设计的仪器，其有很多优势
 - 1961 年，全球标准化地震台网（world-wide standardized seismograph network，WWSSN）建立
 - 1969 年至 1972 年间，阿波罗登月计划还陆续在月球上部设了一些地震仪
-- 20 世纪 60 年代开始，计算机的来临极大地改变了地震学研究
-- 1976 年开始，地震学观测资料开始以数字形式存储和获取
+- 20 世纪 60 年代开始，计算机的来临极大地改变了地震学研究。1976 年开始，地震学
+  观测资料开始以数字形式存储和获取
 - 20 世纪 80 和 90 年代，全球台站空白区域新增加了地震台，全球许多地震台升级为宽频带地震仪。
   地震仪的改进与观测资料的长期积累使得地震学得以快速发展
 
 在地震学理论和观测的早期发展过程中，地球内部结构也取得了一系列重大突破：
 
-- 1906 年，Richard Oldham 报道地球存在地核
+- 1906 年，Richard Oldham 报道地球存在地核 {cite}`Oldham1906`
 - 1909 年，Andrija Mohorovičić 报道地壳和地幔存在速度间断面（现在称为 Moho 面）
 - 1914 年，Beno Gutenberg 报道地幔和液态地核的边界深度为 2900 公里，
   非常接近当今的估计值 2889 公里
 - 1936 年，Inge Lehmann 发现固态内核（之前认为地核全是液态的）
 - 1940 年，Harold Jeffreys 和 K. E. Bullen 发表了他们最终版本的地震波走时表，
   简称 JB 走时表。该走时表至今仍在使用，并且与当今模型仅差几秒
+
+读者可以查阅 [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology)
+了解更多地震学历史。
