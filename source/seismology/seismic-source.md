@@ -85,7 +85,7 @@ USGS PDE 地震目录
 
 区域地震目录有很多，通常由各个国家或区域的地震相关机构维护，比如：
 
-- 中国: [中国地震台网正式目录](https://data.earthquake.cn/datashare/report.shtml?PAGEID=earthquake_zhengshi)
+- 中国: [中国台网正式地震目录](https://data.earthquake.cn/datashare/report.shtml?PAGEID=earthquake_zhengshi)
 - 日本: [JMA 地震目录](https://www.data.jma.go.jp/svd/eqev/data/bulletin/hypo_e.html)
 - 美国南加州: [SCEDC 地震目录](https://scedc.caltech.edu/eq-catalogs/)
 - 美国北加州: [NCSN 地震目录](https://ncedc.org/ncedc/catalog-search.html)
