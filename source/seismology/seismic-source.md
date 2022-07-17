@@ -72,9 +72,9 @@
 
 常见的全球地震目录包括：
 
-ISC 地震目录
-: [ISC](http://www.isc.ac.uk/iscbulletin/) (International Seismological Center)
-  地震目录是全球地震的最终版本，其涵盖了 1900 年至今的地震信息。所有的地震信息
+International Seismological Center 地震目录
+: [ISC](http://www.isc.ac.uk/iscbulletin/)
+  地震目录是全球地震的最终版本，涵盖了 1900 年至今的地震信息。所有地震信息
   通过程序自动确定，并由 ISC 的分析人员对其进行人工检查和重定位。经过人工审核的
   ISC 地震目录通常有 24 个月的延迟。
 
@@ -83,7 +83,7 @@ USGS PDE 地震目录
   地震快速定位结果。PDE 地震目录包含了 1960 年至今的地震信息，其确定地震信息是
   全自动且近实时的。
 
-区域地震目录有很多，通常由各个国家或区域的地震相关机构维护。比如：
+区域地震目录有很多，通常由各个国家或区域的地震相关机构维护，比如：
 
 - 中国: [中国地震台网正式目录](https://data.earthquake.cn/datashare/report.shtml?PAGEID=earthquake_zhengshi)
 - 日本: [JMA 地震目录](https://www.data.jma.go.jp/svd/eqev/data/bulletin/hypo_e.html)
