@@ -89,3 +89,5 @@ ANSS ComCat 地震目录
 - 日本: [JMA 地震目录](https://www.data.jma.go.jp/svd/eqev/data/bulletin/hypo_e.html)
 - 美国南加州: [SCSN 地震目录](https://scedc.caltech.edu/eq-catalogs/)
 - 美国北加州: [NCSN 地震目录](https://ncedc.org/ncedc/catalog-search.html)
+
+在使用地震目录时，应根据自己的需求选择合适的地震目录。
