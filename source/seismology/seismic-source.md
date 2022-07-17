@@ -73,15 +73,15 @@
 常见的全球地震目录包括：
 
 International Seismological Center 地震目录
-: [ISC](http://www.isc.ac.uk/iscbulletin/)
-  地震目录是全球地震的最终版本，涵盖了 1900 年至今的地震信息。所有地震信息
-  通过程序自动确定，并由 ISC 的分析人员对其进行人工检查和重定位。经过人工审核的
-  ISC 地震目录通常有 24 个月的延迟。
+: [ISC](http://www.isc.ac.uk/iscbulletin/) 地震目录是全球地震的最终版本，涵盖了
+  1900 年至今的地震信息。所有地震信息通过程序自动确定，并由 ISC 的分析人员对其
+  进行人工检查和重定位。经过人工审核的 ISC 地震目录通常有 24 个月的延迟。
 
-USGS PDE 地震目录
-: PDE 全称是 Preliminary Determination of Epicenters，是由美国地质调查局提供的
-  地震快速定位结果。PDE 地震目录包含了 1960 年至今的地震信息，其确定地震信息是
-  全自动且近实时的。
+ANSS ComCat 地震目录
+: ANSS Comprehensive Earthquake Catalog (ComCat) 是 ANSS (Advanced National Seismic System)
+  制作的地震目录。该目录专注于为全球 5.0 级以上地震事件提供权威和近实时的信息。
+  地震位置和震级的初始报告通常可在地震发生后 10 到 30 分钟内获得，并在几天、几周和
+  几个月后进一步修订。
 
 区域地震目录有很多，通常由各个国家或区域的地震相关机构维护，比如：
 
