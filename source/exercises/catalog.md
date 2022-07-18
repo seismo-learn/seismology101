@@ -26,7 +26,7 @@ kernelspec:
 USGS 网站提供了在线搜索和查看地震目录的功能，既可以手动下载地震目录，也可以
 方便地查看地震分布情况。下面演示如何使用 USGS 网站在线搜索和查看地震目录。
 
-1. 访问 USGS 地震目录网站: https://earthquake.usgs.gov/earthquakes/search/\。
+1. 访问 USGS 地震目录网站: https://earthquake.usgs.gov/earthquakes/search/\，
    会看到如下搜索界面：
 
    :::{figure} usgs-catalog-1.jpg
@@ -52,9 +52,9 @@ USGS 网站提供了在线搜索和查看地震目录的功能，既可以手动
    :width: 100%
    :::
 
-   - **Geographic Region** 可以设置地震震中的范围。设置方式有两种：
-     1. 通过指定经纬度范围限定一个矩形区域。North 必须大于 South，East 必须大于 West
-     2. 通过指定一个中心点的经纬度和一个半径值（单位为 km）限定一个圆形区域
+   - **Geographic Region** 可以设置地震震中的范围，有两种设置方式：
+     1. 指定经纬度范围限定一个矩形区域，North 必须大于 South，East 必须大于 West
+     2. 指定中心点的经纬度和半径值（单位为 km）来限定一个圆形区域
    - **Depth (km)** 用于限定地震的深度范围，深度单位为 km。
    - **Review Status** 用于限定地震信息的审核状态。一般来说，经人工审核的地震信息
      更加准确，但由于人工审核需要一定的时间，因而最近几小时或几天的地震信息可能
