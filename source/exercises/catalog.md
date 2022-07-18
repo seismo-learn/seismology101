@@ -65,6 +65,24 @@ USGS 网站提供了在线搜索和查看地震目录的功能，既可以手动
    除此之外，还可以进一步限制事件类型、事件影响力、地震目录来源、地震信息贡献者以及地震产品
    类型等。读者可以自行探索。
 
+3. 在“输出选项”中可以设置要以什么格式输出地震目录：
+
+   :::{figure} usgs-catalog-3.jpg
+   :align: center
+   :alt: "USGS 地震目录输出选项"
+   :width: 50%
+   :::
+
+   USGS 网站支持输出多种格式的地震目录：
+
+   - **Map & List**：在地图中显示地震目录，适合直观地查看地震分布情况
+   - **CSV**：CSV 格式，可以用 Excel 打开，也可以用 Python 的 [pandas](https://pandas.pydata.org/)
+     模块处理
+   - **KML**：Google Earth KML 格式，可以在 Google Earth 中直接打开
+   - **QuakeML**: 地震学领域定义的标准地震目录格式，ObsPy 可以直接读取
+   - **GeoJSON**: 一种地理空間数据交换格式，多种软件和 Python 模块均可读取
+
+
 ## 使用 ObsPy 下载地震目录
 
 ## 使用地震目录绘图
