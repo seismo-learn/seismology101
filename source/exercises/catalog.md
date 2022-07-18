@@ -27,7 +27,7 @@ USGS 网站提供了在线搜索和查看地震目录的功能，既可以手动
 方便地查看地震目录中的地震分布情况。下面演示如何使用 USGS 网站在线搜索和查看
 地震目录。
 
-1. 访问 USGS 地震目录网站: https://earthquake.usgs.gov/earthquakes/search/。
+1. 访问 USGS 地震目录网站: https://earthquake.usgs.gov/earthquakes/search/\。
    会看到如下搜索界面：
 
    :::{figure} usgs-catalog-1.jpg
