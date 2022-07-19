@@ -8,7 +8,7 @@ copyright : "2020–2022"
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: auto
+  execute_notebooks: force
 
 # Parse and render settings
 parse:
@@ -60,6 +60,15 @@ sphinx:
         - null
       software:
         - https://seismo-learn.org/software/
+        - null
+      matplotlib:
+        - https://matplotlib.org/stable/
+        - null
+      numpy:
+        - https://numpy.org/doc/stable/
+        - null
+      obspy:
+        - https://docs.obspy.org/
         - null
     copybutton_prompt_text: '>>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}:'
     copybutton_prompt_is_regexp: true

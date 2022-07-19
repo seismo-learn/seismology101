@@ -9,3 +9,6 @@ _build
 
 # macOS
 .DS_Store
+
+# Data files
+*.xml
