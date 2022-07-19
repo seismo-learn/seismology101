@@ -1,19 +1,19 @@
 # 震源
 
-- 本节贡献者: {{姚家园}}（作者）、{{田冬冬}}（审稿）
-- 最近更新日期: 2021-05-31
+- 本节贡献者: {{姚家园}}（作者）、{{田冬冬}}（作者）
+- 最近更新日期: 2022-07-17
 - 预计阅读时间: 5 分钟
 
 ---
 
-任何产生能被地震仪记录到的地球机械振动的源都可以称为震源（seismic source），可能是地震、
-火山喷发、海浪、台风或飓风、人工爆炸、交通活动等。本节介绍震源的基础概念。
+任何产生能被地震仪记录到的地球机械振动的源都可以称为震源（seismic source）。
+震源可以是地震、火山喷发、海浪、台风或飓风、人工爆炸、交通活动等。本节介绍震源的基础概念。
 
 ## 地震三要素
 
 对于地震，人们最关心的基本参数有三个（俗称**地震三要素**），即时间、地点、强度（简称**时空强**）：
 
-- 时间：地震发生时间（origin time），常采用协调世界时（即 Coordinated Universal Time，简写 UTC）
+- 时间：地震发生时间（origin time）
 - 地点：地震发生位置（hypocenter），其向上垂直投影到地面的位置称为震中（epicenter）
 - 强度：地震的大小，常用震级（magnitude）表示
 
@@ -41,7 +41,7 @@
 :::
 
 震级越大的地震，数目越少。震级增加一级，地震释放的能量增加 32 倍。
-一般 4 级以下的地震破坏能力较小，一些重要的全球地震目录也只收录 5 级以上的地震。
+一般 4 级以下的地震破坏能力较小。
 
 :::{figure} earthquake-energy.jpg
 :align: center
@@ -51,3 +51,43 @@
 地震的震级、频率以及释放能量的经验关系。
 引自 [How Often Do Earthquakes Occur?](https://www.iris.edu/hq/inclass/fact-sheet/how_often_do_earthquakes_occur)。
 :::
+
+## 地震目录
+
+将大量地震事件的参数进行汇总整理得到的目录资料，称之为地震目录。地震目录对于研究
+地震活动性、地震灾害评估等具有重要的意义。
+
+地震目录至少应包含地震的时空强信息，即：
+
+- 发震时刻
+- 震中经纬度
+- 地震深度
+- 地震震级
+
+除此之外，有些地震目录还提供了地震的破裂时间和震源机制等其他参数。
+
+根据所包含地震的区域范围，地震目录可以分成两类：全球地震目录和区域地震目录。
+顾名思义，全球地震目录包含了全球范围内的地震，但通常只包含比较大的地震，小地震多有遗漏；
+区域地震目录则只关注某个特定区域内的地震，通常包含更多的小地震。
+
+常见的全球地震目录包括：
+
+[International Seismological Center 地震目录](http://www.isc.ac.uk/iscbulletin/)
+: ISC 地震目录是全球地震的最终版本，涵盖了
+  1900 年至今的地震信息。所有地震信息通过程序自动确定，并由 ISC 的分析人员对其
+  进行人工检查和重定位。经过人工审核的 ISC 地震目录通常有 24 个月的延迟。
+
+[ANSS ComCat 地震目录](https://earthquake.usgs.gov/data/comcat/)
+: ANSS Comprehensive Earthquake Catalog (ComCat) 是 ANSS (Advanced National Seismic System)
+  制作的地震目录。该目录专注于提供全球 5.0 级以上地震事件的权威、近实时信息。
+  地震位置和震级的初始报告通常可在地震发生后 10 到 30 分钟内获得，并在几天、几周和
+  几个月后进一步修订。
+
+区域地震目录有很多，通常由各个国家或区域的地震相关机构维护，比如：
+
+- 中国: [中国台网正式地震目录](https://data.earthquake.cn/datashare/report.shtml?PAGEID=earthquake_zhengshi)
+- 日本: [JMA 地震目录](https://www.data.jma.go.jp/svd/eqev/data/bulletin/hypo_e.html)
+- 美国南加州: [SCSN 地震目录](https://scedc.caltech.edu/eq-catalogs/)
+- 美国北加州: [NCSN 地震目录](https://ncedc.org/ncedc/catalog-search.html)
+
+在使用地震目录时，应根据自己的需求选择合适的地震目录。
