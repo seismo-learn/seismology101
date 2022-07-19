@@ -26,7 +26,7 @@ kernelspec:
 USGS 网站提供了在线搜索和查看地震目录的功能，既可以手动下载地震目录，也可以
 方便地查看地震分布情况。下面演示如何使用 USGS 网站在线搜索和查看地震目录。
 
-1. 访问 USGS 地震目录网站: https://earthquake.usgs.gov/earthquakes/search/\，
+1. 访问 USGS 地震目录网站: [https://earthquake.usgs.gov/earthquakes/search/]()，
    会看到如下搜索界面：
 
    :::{figure} usgs-catalog-1.jpg
@@ -79,7 +79,7 @@ USGS 网站提供了在线搜索和查看地震目录的功能，既可以手动
      模块处理
    - **KML**：Google Earth KML 格式，可以在 Google Earth 中直接打开
    - **QuakeML**: 地震学领域定义的标准地震目录格式，ObsPy 可以直接读取
-   - **GeoJSON**: 一种地理空間数据交换格式，多种软件和 Python 模块均可读取
+   - **GeoJSON**: 一种地理空间数据交换格式，多种软件和 Python 模块均可读取
 
 4. 所有选项选择完毕后，点击”Search“按钮，即可以根据指定的格式输出地震目录。
 
