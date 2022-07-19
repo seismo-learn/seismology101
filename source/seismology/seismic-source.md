@@ -24,7 +24,7 @@
 :width: 40%
 
 震源位置（hypocenter）与震中（epicenter）的区别。
-图片引自 [https://earthquake.usgs.gov/learn/glossary/?term=hypocenter](https://earthquake.usgs.gov/learn/glossary/?term=hypocenter)。
+图片引自 [USGS](https://earthquake.usgs.gov/learn/glossary/?term=hypocenter)。
 :::
 
 横向上看，地震大部分发生在不同板块的边界处。板块内部也有一些地震发生。
