@@ -13,9 +13,19 @@
 
 对于地震，人们最关心的基本参数有三个（俗称**地震三要素**），即时间、地点、强度（简称**时空强**）：
 
-- 时间：地震发生时间（origin time）
-- 地点：地震发生位置（hypocenter），其向上垂直投影到地面的位置称为震中（epicenter）
-- 强度：地震的大小，常用震级（magnitude）表示
+- 时间：地震发震时刻（origin time）
+- 地点：地震震源位置（hypocenter），即地震发生位置的经纬度和深度。震源位置（hypocenter）
+  向上垂直投影到地面的位置称为震中（epicenter）
+- 强度：地震的大小，常用震级（magnitude）度量
+
+:::{figure} https://earthquake.usgs.gov/learn/glossary/images/EpicenterHypocenter.gif
+:align: center
+:alt: 震源位置（hypocenter）与震中（epicenter）的区别
+:width: 40%
+
+震源位置（hypocenter）与震中（epicenter）的区别。
+图片引自 [https://earthquake.usgs.gov/learn/glossary/?term=hypocenter](https://earthquake.usgs.gov/learn/glossary/?term=hypocenter)。
+:::
 
 横向上看，地震大部分发生在不同板块的边界处。板块内部也有一些地震发生。
 
