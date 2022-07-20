@@ -44,7 +44,7 @@ jobs:
       - name: Disable notebook cache for scheduled jobs
         if: github.event_name == 'schedule'
         run: |
-          sed -i"" 's/execute_notebooks: cache/execute_notebooks: force/' source/_config.yml
+          sed -i"" 's/execute_notebooks: auto/execute_notebooks: force/' source/_config.yml
 
       - name: Build documentation
         run: make dirhtml
