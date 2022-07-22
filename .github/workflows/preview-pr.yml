@@ -31,8 +31,11 @@ jobs:
       - uses: actions/cache@v3
         id: cache
         with:
-          path: _build/jupyter_execute/
-          key: notebooks
+          path: |
+            _build/jupyter_execute/
+            ~/.local/share/cartopy/
+            ~/.matplotlib/
+          key: caches
 
       - name: Build documentation
         run: make dirhtml
