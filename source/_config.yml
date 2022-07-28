@@ -61,6 +61,15 @@ sphinx:
       software:
         - https://seismo-learn.org/software/
         - null
+      matplotlib:
+        - https://matplotlib.org/stable/
+        - null
+      numpy:
+        - https://numpy.org/doc/stable/
+        - null
+      obspy:
+        - https://docs.obspy.org/
+        - null
     copybutton_prompt_text: '>>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}:'
     copybutton_prompt_is_regexp: true
     copybutton_only_copy_prompt_lines: true
