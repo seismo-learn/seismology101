@@ -61,6 +61,7 @@ parts:
       - file: exercises/filter
     - file: exercises/analysis
       sections:
+      - file: exercises/catalog-analysis
       - file: exercises/particle-motion
       - file: exercises/cross-correlation
       - file: exercises/distaz
