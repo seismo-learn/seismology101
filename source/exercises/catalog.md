@@ -208,7 +208,7 @@ cat.plot(projection="local", resolution="i");
 也会消失，因而需要及时将地震目录保存起来。
 
 {meth}`Catalog.write() <obspy.core.event.Catalog.write()>` 函数用于将地震目录保存到磁盘文件中。
-下面的代码将地震目录以 QuakeML 格式（地震学标准地震目录格式）保存到文件 {file}`japan-earthquakes.xml` 中：
+下面的代码将地震目录以 QuakeML 格式保存到文件 {file}`japan-earthquakes.xml` 中：
 ```{code-cell} ipython3
 cat.write("japan-earthquakes.xml", format="QUAKEML")
 ```
@@ -228,7 +228,7 @@ print(cat)
 和 {func}`read_events() <obspy.core.event.read_events>` 的返回值都是
 {class}`~obspy.core.event.Catalog` 类型。
 
-事实上，{class}`~obspy.core.event.Catalog` 类是 ObsPy 中最核心的类之一，其用于储存
+事实上，{class}`~obspy.core.event.Catalog` 类是 ObsPy 中最核心的类之一，用于储存
 地震目录信息。下图展示了 {class}`~obspy.core.event.Catalog` 类的属性及其层级关系：
 
 :::{figure} https://docs.obspy.org/_images/Event.png
@@ -361,15 +361,9 @@ plt.show()
 ### 地震震级-频度关系
 
 在地震学中，有一个著名的定律，叫 Gutenberg–Richter 定律（简称 GR law），该定律描述了
-震级与某一地区大于等于该震级的地震数量之间的关系。该定律的表达式是：
+震级与某一地区大于等于该震级的地震数量之间的关系。该定律的表达式是：$\log_{10} N = a - b M$。
 
-$\log_{10} N = a - b M$ 或 $N=10^{a-bM}$
-
-其中，
-
-- $M$ 表示震级
-- $N$ 表示震级大于等于 $M$ 的地震数量
-- $a$ 和 $b$ 是常数
+其中，$M$ 表示震级，$N$ 表示震级大于等于 $M$ 的地震数量，$a$ 和 $b$ 是常数。
 
 为了绘制地震震级-频度关系图，首先需要计算得到公式里的 $N$，即大于等于某个特定震级 $M$ 的地震数目。
 这里，我们选择 $M$ 的取值范围为 4.0 到 8.0，间隔为 0.1。计算 $N$ 的方法有很多，下面的
