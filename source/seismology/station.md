@@ -48,9 +48,9 @@
 [How does a seismic station work?](http://www.usarray.org/public/about/how#anchor1)
 :::
 
-## Instrumental responses
+## 仪器响应
 
-## NET.STA.LOC.CHN
+## 台站命名
 
 1. ID：NET.STA.LOC.CHN
 2. 解释 NET、STA、LOC、CHN 的层级关系
