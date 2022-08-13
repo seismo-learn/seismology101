@@ -48,6 +48,8 @@
 [How does a seismic station work?](http://www.usarray.org/public/about/how#anchor1)
 :::
 
+## Instrumental responses
+
 ## NET.STA.LOC.CHN
 
 1. ID：NET.STA.LOC.CHN
