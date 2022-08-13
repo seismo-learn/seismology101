@@ -1,11 +1,11 @@
-# 地震仪
+# 地震台站
 
 - 本节贡献者: {{ 姚家园 }}（作者）、{{ 田冬冬 }}（审稿）
 - 最近更新日期: 2021-05-31
 
 ---
 
-## 基本原理
+## 地震仪基本原理
 
 地震仪（seismograph）是检测和记录地面质点运动（位移、速度、加速度、转动等）的仪器，
 主要由地震计（seismometer）和数据记录系统组成。其中，地震计用于直接拾取地面运动并将其转换
@@ -47,3 +47,11 @@
 地震学数据地记录和传输示意图。引自
 [How does a seismic station work?](http://www.usarray.org/public/about/how#anchor1)
 :::
+
+## 仪器响应
+
+## 台站命名
+
+1. ID：NET.STA.LOC.CHN
+2. 解释 NET、STA、LOC、CHN 的层级关系
+3. 解释channel，如 BHZ
