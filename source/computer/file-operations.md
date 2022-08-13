@@ -217,6 +217,36 @@ $ ls mylibdir/
 $ rm mylibdir passwd mylocalpasswd
 ```
 
+## 隐藏文件和隐藏目录
+
+Linux 中，以 `.` 开头的文件和目录是隐藏文件或隐藏目录。所谓隐藏，是指在一般情况下，
+在文件浏览器或执行 `ls` 命令时不会显示这些文件或目录。
+
+下面使用 `touch` 和 `mkdir` 命令创建一个隐藏文件和一个隐藏目录：
+```
+# 创建隐藏文件
+$ touch .hidden-example-file.txt
+# 创建隐藏目录
+$ mkdir .hidden-example-dir
+```
+
+使用 `ls` 命令查看当前目录的内容，隐藏文件和隐藏目录不会被显示：
+```
+$ ls
+```
+想要显示隐藏文件和隐藏目录，需要使用 `-a` 选项：
+```
+$ ls -a
+.                  ..                 .hidden-example-dir      .hidden-example-file.txt
+```
+
+:::{note}
+`.` 和 `..` 的具体含义会在下面一节介绍。
+:::
+
+在文件浏览器中，可以勾选“Show Hidden Files”选项以显示隐藏文件和隐藏目录，
+也可以直接使用快捷键 {kbd}`Ctrl` + {kbd}`H`。
+
 ## 文件路径
 
 访问文件或目录需要指定文件或目录的路径。Linux 下有两种表示路径的方式：绝对路径和相对路径。
@@ -247,18 +277,6 @@ $ rm mylibdir passwd mylocalpasswd
 - {file}`../figures`：上一层目录下的 {file}`figures` 目录，即 {file}`~/projects/NorthChina-MTZ/figures` 目录
 - {file}`../figures/fig1.pdf`：上一层目录下的 {file}`figures` 目录下的 {file}`fig1.pdf` 文件，
   即 {file}`~/projects/NorthChina-MTZ/figures/fig1.pdf`
-
-:::{note}
-可以使用 `ls` 命令的 `-a` 选项查看某目录下的所有文件和目录（含以 `.` 开头的隐藏文件和目录）。例如，查看家目录:
-
-```
-$ ls -a ~
-.     .bash_profile    Downloads   .vscode
-..    Desktop          Documents
-```
-
-可以看出，其实家目录下存在 {file}`.` 和 {file}`..` 这两个特殊的路径。
-:::
 
 ## 文件权限
 
