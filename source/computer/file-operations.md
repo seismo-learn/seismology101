@@ -234,7 +234,7 @@ $ mkdir .hidden-example-dir
 ```
 $ ls
 ```
-想要显示隐藏文件和隐藏目录，需要使用 `ls` 的 `-a` 选项：
+想要显示隐藏文件和隐藏目录，需要使用 `-a` 选项：
 ```
 $ ls -a
 .                  ..                 .hidden-example-dir      .hidden-example-file.txt
