@@ -16,7 +16,7 @@
 
 ## 地震学是什么？
 
-Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Seismology》（第二版）
+Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Seismology》（第二版）{cite}`Aki2002`
 对地震学的定义如下：
 
 > **Seismology** is the scientific study of mechanical vibrations of the Earth.
@@ -77,7 +77,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - 1911 年，Augustus Love 指出在速度随深度变化的弹性介质中存在另一种沿着固体表面传播的面波，即 Love 波
 
 更详细的弹性理论的发展史，可以阅读 1892 年 Augustus Love 出版的经典教材
-《A Treatise on the Mathematical Theory of Elasticity》（第一版）。
+《A Treatise on the Mathematical Theory of Elasticity》（第一版）{cite}`Love1892`。
 
 从十九世纪后期开始，地震学观测开始逐渐发展起来，极大地促进了地震学的发展。
 以下介绍地震学观测的早期进展：
