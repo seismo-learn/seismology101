@@ -4,24 +4,12 @@
 - 最近更新日期: 2021-05-30
 - 预计阅读时间: 20 分钟
 
-______________________________________________________________________
+---
 
 地震波（seismic wave）是在地球内部传播的机械波，由地震、火山喷发、山体滑坡或
 人为爆炸等震源激发。地震波分为体波（body wave）和面波（surface wave）。
 体波是指在地球内部传播的地震波，而面波指在地球表面附近传播的地震波。
-如下图所示意，体波（如 P、pP、S、ScS 等）一般先于面波到台站，
-而面波(如 Rayleigh)振幅一般比体波要大。本节将介绍最基础的地震波理论。
-
-:::{figure} seismic-waveform.png
-:align: center
-:alt: "\u4F53\u6CE2\u548C\u9762\u6CE2\u7684\u6CE2\u5F62\u548C\u4F20\u64AD\u8DEF\u5F84\
-:  \u5B9E\u4F8B"
-:width: 95%
-
-体波和面波的波形和传播路径实例。
-引自《[An Introduction to Seismology, Earthquakes, and Earth Structure]》
-图 1.1-3。
-:::
+本节将介绍最基础的地震波理论。
 
 ## 体波
 
@@ -41,8 +29,7 @@ S 波之所以会造成介质的剪切变形，是由于介质的运动方向与
 
 :::{figure} body-wave-propagation.jpg
 :align: center
-:alt: "\u4F53\u6CE2\u7684\u4ECB\u8D28\u8FD0\u52A8\u65B9\u5411\u4EE5\u53CA\u6CE2\u4F20\
-:  \u64AD\u65B9\u5411"
+:alt: "体波的介质运动方向以及波传播方向"
 :width: 80%
 
 体波的介质运动方向以及波传播方向。引自《[Introduction to Seismology]》（第三版）图 3.2。
@@ -59,8 +46,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 
 :::{figure} surface-wave-propagation.jpg
 :align: center
-:alt: "\u9762\u6CE2\u7684\u4ECB\u8D28\u8FD0\u52A8\u65B9\u5411\u4EE5\u53CA\u6CE2\u4F20\
-:  \u64AD\u65B9\u5411"
+:alt: "面波的介质运动方向以及波传播方向"
 :width: 50%
 
 基阶 Love 波（上）和 Rayleigh 波（下）的介质运动方向（假设面波沿着页面从左向右传播）。
@@ -100,7 +86,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 
 :::{figure} surface-wave-dispersion.jpg
 :align: center
-:alt: "\u9762\u6CE2\u7406\u8BBA\u9891\u6563\u66F2\u7EBF"
+:alt: "面波理论频散曲线"
 :width: 70%
 
 基阶 Love 波（左）和 Rayleigh 波（右）的理论频散曲线（来自 Preliminary Reference Earth Model (PREM)）。
@@ -121,7 +107,7 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 
 :::{figure} surface-wave-group-velocity.png
 :align: center
-:alt: "\u5927\u9646\u548C\u5927\u6D0B\u7684\u9762\u6CE2\u7FA4\u901F\u5EA6"
+:alt: "大陆和大洋的面波群速度"
 :width: 60%
 
 大陆和大洋的面波群速度。修改自《[An Introduction to the Theory of Seismology]》（第四版）图 11.1。
