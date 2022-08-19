@@ -1,7 +1,7 @@
 # macOS 配置指南
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（作者）、{{王亮}}（作者）
-- 最近更新日期: 2021-03-19
+- 最近更新日期: 2022-08-19
 - 预计花费时间: 120 分钟
 ---
 
@@ -222,15 +222,15 @@ Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
 $ brew install gcc
 ```
 
-通过 Homebrew 安装的 GCC 提供了命令 `gcc-11` 和 `g++-11`
-（`11` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
-用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-11` 和 `g++-11` 命令，
+通过 Homebrew 安装的 GCC 提供了命令 `gcc-12` 和 `g++-12`
+（`12` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
+用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-12` 和 `g++-12` 命令，
 或者在 Homebrew 的 bin 目录下创建软链接:
 
 ```
 $ cd $(brew --prefix)/bin/
-$ ln -s gcc-11 gcc
-$ ln -s g++-11 g++
+$ ln -s gcc-12 gcc
+$ ln -s g++-12 g++
 ```
 
 打开一个新终端后，使用的 `gcc` 和 `g++` 命令则默认是 GCC 编译器。
