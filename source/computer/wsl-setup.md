@@ -1,7 +1,7 @@
 # WSL 配置指南
 
 - 本节贡献者: {{赵志远}}（作者）、{{姚家园}}（审稿）、{{田冬冬}}（审稿）
-- 最近更新日期: 2022-05-31
+- 最近更新日期: 2022-10-26
 - 预计花费时间: 120 分钟
 
 ---
@@ -61,7 +61,7 @@ WSL 的安装可以参考[官方安装指南](https://docs.microsoft.com/zh-cn/w
 其对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。
 
 WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
-推荐使用 WSL 安装 Ubuntu 20.04 LTS。
+推荐使用 WSL 安装 Ubuntu 22.04 LTS。
 
 :::{note}
 想在 WSL 上安装 Fedora 的读者可以参考[英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
@@ -87,7 +87,7 @@ $ exit
 ```
 
 下面简要介绍 `wsl` 命令的用法。注意以下命令并不是在 Linux 环境中执行的，不需要进入 Linux 环境。
-假定已安装 WSL2 版本的 Ubuntu 20.04 LTS，且其名称为 Ubuntu:
+假定已安装 WSL2 版本的 Ubuntu 22.04 LTS，且其名称为 Ubuntu:
 
 ```
 # 查看 wsl 命令帮助
@@ -106,7 +106,7 @@ $ wsl --set-version Ubuntu 1
 $ wsl --set-version Ubuntu 2
 
 # 设置默认发行版
-$ wsl -s Ubuntu20.04
+$ wsl -s Ubuntu22.04
 
 # 删除某个发行版（如名为 Ubuntu）
 $ wsl --unregister Ubuntu
@@ -124,10 +124,10 @@ $ mkdir D:\WSLBAK
 $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
 
 # 导入并还原之前备份的 Linux 发行版
-# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu20.04
-$ mkdir D:\WSLDIR\Ubuntu20.04
-# 导入并还原之前的备份，将此发行版命名为 Ubuntu20.04
-$ wsl --import Ubuntu20.04 D:\WSLDIR\Ubuntu20.04 D:\WSLBAK\20210117bak.tar
+# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu22.04
+$ mkdir D:\WSLDIR\Ubuntu22.04
+# 导入并还原之前的备份，将此发行版命名为 Ubuntu22.04
+$ wsl --import Ubuntu22.04 D:\WSLDIR\Ubuntu22.04 D:\WSLBAK\20210117bak.tar
 
 # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
 $ wsl --unregister Ubuntu
