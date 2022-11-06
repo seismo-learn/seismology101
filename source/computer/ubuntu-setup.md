@@ -58,10 +58,10 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 2. 点击“安装”会将 Ventoy 安装到 U 盘中，此时 U 盘会被格式化。请务必确保选中的是
    目标 U 盘，且 U 盘中无其它重要文件
 3. Ventoy 成功安装后，会弹出成功安装的对话框，点击确定
-4. Ventory 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
+4. Ventoy 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
    启动盘制作成功
-5. 退出 Ventoy，在我的电脑中找到名为 Ventoy 的 U 盘，并将已下载好的 Linux ISO
-   镜像文件复制到 U 盘中即可
+5. 退出 Ventoy2Disk 程序。在我的电脑中找到名为 Ventoy 的 U 盘，并将已下载好的
+   Linux ISO 镜像文件复制到 U 盘中即可
 
 ### 进入 Live 系统
 
