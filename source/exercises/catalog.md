@@ -138,12 +138,16 @@ cat = client.get_events(
 并被保存在变量 `cat` 中。
 
 下面我们看看变量 `cat` 中的内容：
-````{margin}
-```{tip}
-由于地震数目太多，默认没有打印所有地震的信息。如果想要打印所有地震的信息，可以使用
-`print(cat.__str__(print_all=True))` 语句。
+`````{margin}
+````{tip}
+由于地震数目太多，默认没有打印所有地震的信息。如果想要打印所有地震的信息，可以
+使用 `for` 循环语句对变量 `cat` 中的所有事件进行打印：
+```python
+for event in cat:
+    print(event)
 ```
 ````
+`````
 ```{code-cell} ipython3
 print(cat)
 ```
