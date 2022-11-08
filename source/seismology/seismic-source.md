@@ -18,13 +18,13 @@
   向上垂直投影到地面的位置称为震中（epicenter）
 - 强度：地震的大小，常用震级（magnitude）度量
 
-:::{figure} https://earthquake.usgs.gov/learn/glossary/images/EpicenterHypocenter.gif
+:::{figure} epicenter-hypocenter.gif
 :align: center
 :alt: 震源位置（hypocenter）与震中（epicenter）的区别
 :width: 40%
 
 震源位置（hypocenter）与震中（epicenter）的区别。
-图片引自 [USGS](https://earthquake.usgs.gov/learn/glossary/?term=hypocenter)。
+图片引自 [USGS](https://www.usgs.gov/media/images/epicenter-hypocentergif)。
 :::
 
 横向上看，地震大部分发生在不同板块的边界处。板块内部也有一些地震发生。
