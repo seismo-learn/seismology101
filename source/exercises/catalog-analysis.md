@@ -50,14 +50,14 @@ import numpy as np
 需要注意的是，ObsPy 的地震目录中地震深度的单位为 m，所以需要除以 1000.0 转换为 m。
 
 ```{code-cell} ipython3
-depth = np.array([event.origins[0].depth/1000 for event in cat])
+depth = np.array([event.origins[0].depth / 1000 for event in cat])
 ```
 
 我们可以使用 Matplotlib 的 {meth}`~matplotlib.axes.Axes.hist()` 函数绘制直方图：
 这里我们设置的直方的最小值为 50，最大值 700，间隔为 10，同时设置了 Y 轴以对数方式显示。
 从图中可以明显看到地震深度随着深度的变化：
 ```{code-cell} ipython3
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.hist(depth, bins=np.arange(50, 700, 10), log=True)
 ax.set_xlabel("Depth (km)")
 ax.set_ylabel("Counts")
@@ -72,7 +72,7 @@ plt.show()
 ```{code-cell} ipython3
 mag = np.array([event.magnitudes[0].mag for event in cat])
 
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.hist(mag, bins=np.arange(4.5, 8, 0.1))
 ax.set_xlabel("Magnitude")
 ax.set_ylabel("Counts")
@@ -97,7 +97,7 @@ counts = np.array([(mag >= m).sum() for m in mw])
 绘图脚本如下，注意图中 Y 轴是对数坐标。从图中可以明显看到 $\log_{10}N$ 与 $M$ 在 4.8 - 7.6 级
 之间存在线性关系。由于我们使用的地震目录里只有 4.8 级以上的地震，所以在 4.7 级以下偏离了线性关系，而大地震由于数目太少也偏离了线性关系。
 ```{code-cell} ipython3
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.semilogy(mw, counts, "o")
 ax.set_xlabel("Magnitude")
 ax.set_ylabel("Cumulative Number")
@@ -109,12 +109,12 @@ plt.show()
 并使用 NumPy 的布尔索引功能筛选出满足条件的震级 `mw[idx]` 和对应的 `counts[idx]`，再
 使用 {func}`numpy.polyfit` 函数拟合一元一次多项式，最后绘图：
 ```{code-cell} ipython3
-idx = np.logical_and(mw >=4.8, mw<= 7.5)
+idx = np.logical_and(mw >= 4.8, mw <= 7.5)
 # fitting y = p[0] * x + p[1]
 p = np.polyfit(mw[idx], np.log10(counts[idx]), 1)
-N_pre = 10**(mw * p[0] + p[1])
+N_pre = 10 ** (mw * p[0] + p[1])
 
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.semilogy(mw, counts, "o")
 ax.semilogy(mw, N_pre, color="red", label=f"$\log_{{10}} N={p[1]:.2f}{p[0]:.2f}M$")
 ax.legend()
