@@ -12,7 +12,7 @@
 功能强大等优点，是目前地震学科研最常用的编程语言之一。
 
 这一节中，我们不介绍具体的 Python 语法，而是着重介绍如何安装和管理 Python、
-如何编写并执行 Python 脚本等。这一节最后列出了一些免费的 Python 学习资源，
+如何编写并执行 Python 脚本等。这一节的最后列出了一些免费的 Python 学习资源，
 读者可根据需要自行学习。
 
 ## 安装 Miniconda
@@ -32,7 +32,7 @@ Python 是一种解释型语言，需要专门的解释器去执行 Python 代�
 Python 解释器
 : 从 [Python 官方网站](https://www.python.org/downloads/) 下载的 Python 安装包
   只提供了一个 Python 解释器，仅包含 Python 的核心模块和库，是运行 Python
-  脚本所必需的。安装 Python 解释器相当于安装了 Python 解释器 + 核心模块/库。
+  脚本所必需的。使用官方的 Python 安装包相当于安装了 Python 解释器 + 核心模块/库。
 
 Anaconda
 : [Anaconda](https://www.anaconda.com/) 是一个 Python **发行版**，不仅提供了
@@ -53,7 +53,8 @@ Miniconda
   通常也只需要数十秒。安装 Miniconda 相当于安装了 Python 解释器 + 核心模块/库 + 包管理器 `conda`。
 :::
 
-下面展示了如何在 Linux 系统下安装 Miniconda。其它操作系统下的安装说明以及具体使用方法可以参考 {doc}`Anaconda <software:anaconda/index>`。
+下面展示了如何在 Linux 系统下安装 Miniconda。其它操作系统下的安装说明以及具体使用方法可以参考
+{doc}`地震“学”软件中 Anaconda 相关内容 <software:anaconda/index>`。
 
 1. 下载 Miniconda
 
