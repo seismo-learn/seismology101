@@ -27,7 +27,7 @@
 图片引自 [USGS](https://www.usgs.gov/media/images/epicenter-hypocentergif)。
 :::
 
-横向上看，地震大部分发生在不同板块的边界处。板块内部也有一些地震发生。
+空间上看，地震大部分发生在不同板块的边界处。板块内部也有一些地震发生。
 
 :::{figure} earthquake-distribution.jpg
 :align: center
@@ -38,7 +38,7 @@
 引自 [Why Do Earthquakes Happen?](https://www.iris.edu/hq/inclass/fact-sheet/why_do_earthquakes_happen)。
 :::
 
-垂向上看，地震主要发生在脆性地壳中。在 300 公里以上，地震数目整体上随着深度增加而减少。
+深度方向上看，地震主要发生在脆性地壳中。在 300 公里以上，地震数目整体上随着深度增加而减少。
 300 公里以下，地震数目略有增加。最大的地震深度约为 700 多公里。
 
 :::{figure} earthquake-depth.jpg
@@ -50,8 +50,17 @@
 引自《[Deep Earthquakes](https://doi.org/10.1017/CBO9781107297562)》图 4.3。
 :::
 
-震级越大的地震，数目越少。震级增加一级，地震释放的能量增加 32 倍。
-一般 4 级以下的地震破坏能力较小。
+震级越大的地震，数目越少。在地震学中，有一个著名的定律，叫 Gutenberg–Richter 定律（简称 GR law），
+该定律描述了震级与某一地区大于等于该震级的地震数量之间的关系。该定律的表达式是：
+
+$$
+\log_{10} N = a - b M
+$$
+
+其中，$M$ 表示震级，$N$ 表示震级大于等于 $M$ 的地震数量，$a$ 和 $b$ 是常数。
+一般 $b$ 的值接近 1。若取 $b=1$，则地震级数每降低一级，地震的数目就会增加 10 倍。
+
+震级增加一级，地震释放的能量增加 32 倍。
 
 :::{figure} earthquake-energy.jpg
 :align: center
