@@ -44,27 +44,27 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-### 地震深度分布直方图
+## 地震深度分布直方图
 
 为了绘制地震深度直方图，我们先从地震目录中提取出地震深度信息，并保存到数组 `depth` 中。
 需要注意的是，ObsPy 的地震目录中地震深度的单位为 m，所以需要除以 1000.0 转换为 m。
 
 ```{code-cell} ipython3
-depth = np.array([event.origins[0].depth/1000 for event in cat])
+depth = np.array([event.origins[0].depth / 1000 for event in cat])
 ```
 
 我们可以使用 Matplotlib 的 {meth}`~matplotlib.axes.Axes.hist()` 函数绘制直方图：
 这里我们设置的直方的最小值为 50，最大值 700，间隔为 10，同时设置了 Y 轴以对数方式显示。
 从图中可以明显看到地震深度随着深度的变化：
 ```{code-cell} ipython3
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.hist(depth, bins=np.arange(50, 700, 10), log=True)
 ax.set_xlabel("Depth (km)")
 ax.set_ylabel("Counts")
 plt.show()
 ```
 
-### 地震震级直方图
+## 地震震级直方图
 
 同理，从地震目录中提取出地震震级信息，保存到数组 `mag` 中并绘图。从图中可以明显看到，
 震级越小地震数目越多：
@@ -72,21 +72,17 @@ plt.show()
 ```{code-cell} ipython3
 mag = np.array([event.magnitudes[0].mag for event in cat])
 
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.hist(mag, bins=np.arange(4.5, 8, 0.1))
 ax.set_xlabel("Magnitude")
 ax.set_ylabel("Counts")
 plt.show()
 ```
 
-### 地震震级-频度关系
+## 地震震级-频度关系
 
-在地震学中，有一个著名的定律，叫 Gutenberg–Richter 定律（简称 GR law），该定律描述了
-震级与某一地区大于等于该震级的地震数量之间的关系。该定律的表达式是：$\log_{10} N = a - b M$。
-
-其中，$M$ 表示震级，$N$ 表示震级大于等于 $M$ 的地震数量，$a$ 和 $b$ 是常数。
-
-为了绘制地震震级-频度关系图，首先需要计算得到公式里的 $N$，即大于等于某个特定震级 $M$ 的地震数目。
+地震震级-频度关系应符合 Gutenberg–Richter 定律。为了绘制地震震级-频度关系，
+首先需要计算得到 GR 定律里的 $N$，即大于等于某个特定震级 $M$ 的地震数目。
 这里，我们选择 $M$ 的取值范围为 4.0 到 8.0，间隔为 0.1。计算 $N$ 的方法有很多，下面的
 方法使用了 Python 的列表表达式以及 {func}`numpy.sum()` 函数来实现：
 ```{code-cell} ipython3
@@ -97,7 +93,7 @@ counts = np.array([(mag >= m).sum() for m in mw])
 绘图脚本如下，注意图中 Y 轴是对数坐标。从图中可以明显看到 $\log_{10}N$ 与 $M$ 在 4.8 - 7.6 级
 之间存在线性关系。由于我们使用的地震目录里只有 4.8 级以上的地震，所以在 4.7 级以下偏离了线性关系，而大地震由于数目太少也偏离了线性关系。
 ```{code-cell} ipython3
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.semilogy(mw, counts, "o")
 ax.set_xlabel("Magnitude")
 ax.set_ylabel("Cumulative Number")
@@ -109,12 +105,12 @@ plt.show()
 并使用 NumPy 的布尔索引功能筛选出满足条件的震级 `mw[idx]` 和对应的 `counts[idx]`，再
 使用 {func}`numpy.polyfit` 函数拟合一元一次多项式，最后绘图：
 ```{code-cell} ipython3
-idx = np.logical_and(mw >=4.8, mw<= 7.5)
+idx = np.logical_and(mw >= 4.8, mw <= 7.5)
 # fitting y = p[0] * x + p[1]
 p = np.polyfit(mw[idx], np.log10(counts[idx]), 1)
-N_pre = 10**(mw * p[0] + p[1])
+N_pre = 10 ** (mw * p[0] + p[1])
 
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots()
 ax.semilogy(mw, counts, "o")
 ax.semilogy(mw, N_pre, color="red", label=f"$\log_{{10}} N={p[1]:.2f}{p[0]:.2f}M$")
 ax.legend()

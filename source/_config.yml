@@ -9,6 +9,7 @@ copyright : "2020–2022"
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: auto
+  timeout: 300
 
 # Parse and render settings
 parse:
