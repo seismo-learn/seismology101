@@ -51,6 +51,4 @@ Rayleigh 波在地表传播时，介质的运动既有与波传播方向相同�
 引自《[Introduction to Seismology]》（第三版）图 8.5。
 :::
 
-[an introduction to seismology, earthquakes, and earth structure]: https://www.wiley.com/en-us/An+Introduction+to+Seismology%2C+Earthquakes%2C+and+Earth+Structure-p-9780865420786
-[an introduction to the theory of seismology]: https://academic.oup.com/gji/article/86/1/215/636222
 [introduction to seismology]: https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742
