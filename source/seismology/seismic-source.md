@@ -60,6 +60,16 @@ $$
 其中，$M$ 表示震级，$N$ 表示震级大于等于 $M$ 的地震数量，$a$ 和 $b$ 是常数。
 一般 $b$ 的值接近 1。若取 $b=1$，则地震级数每降低一级，地震的数目就会增加 10 倍。
 
+:::{figure} earthquake-gr-law.jpg
+:align: center
+:alt: "GCMT 地震目录中 1976-2005 年间全球地震的震级与频次关系"
+:width: 70%
+
+GCMT 地震目录中 1976-2005 年间全球地震的震级与频次关系。图中圆点为观测数据，
+实线为 GR 定律中 b = 1 的理论曲线。
+引自《Introduction to Seismology》图 9.27。
+:::
+
 震级增加一级，地震释放的能量增加 32 倍。
 
 :::{figure} earthquake-energy.jpg
