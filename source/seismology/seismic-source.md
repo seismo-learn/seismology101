@@ -70,7 +70,13 @@ GCMT 地震目录中 1976-2005 年间全球地震的震级与频次关系。图�
 引自《Introduction to Seismology》图 9.27。
 :::
 
-震级增加一级，地震释放的能量增加 32 倍。
+地震释放的能量与地震震级之间的关系为{cite}`Gutenberg1956`：
+
+$$
+\log E = 1.5 M + 11.8
+$$
+
+可以看出，震级增加一级，地震释放的能量增加 32 倍。
 
 :::{figure} earthquake-energy.jpg
 :align: center
