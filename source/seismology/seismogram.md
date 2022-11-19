@@ -44,8 +44,7 @@ $$
 
 :::{figure} prem.jpg
 :align: center
-:alt: "\u5730\u7403\u5185\u90E8 P \u6CE2\u901F\u5EA6\u3001S \u6CE2\u901F\u5EA6\u548C\
-:  \u5BC6\u5EA6"
+:alt: "地球内部 P 波速度、S 波速度和密度"
 :width: 50%
 
 地球内部 P 波速度、S 波速度和密度（来自 Preliminary Reference Earth Model (PREM)）。
@@ -67,8 +66,7 @@ $\sqrt{3}$ 倍。P 波和 S 波传播速度也随深部而变化：
 
 :::{figure} phase-name.jpg
 :align: center
-:alt: "\u5168\u7403\u9707\u76F8\u7684\u5C04\u7EBF\u8DEF\u5F84\u53CA\u5176\u9707\u76F8\
-:  \u540D"
+:alt: "全球震相的射线路径及其震相名"
 :width: 50%
 
 全球震相的射线路径及其震相名。实线表示 P 波路径，摆动线表示 S 波路径。
@@ -80,8 +78,7 @@ $\sqrt{3}$ 倍。P 波和 S 波传播速度也随深部而变化：
 
 :::{figure} seismic-waveform.png
 :align: center
-:alt: "\u4F53\u6CE2\u548C\u9762\u6CE2\u7684\u6CE2\u5F62\u548C\u4F20\u64AD\u8DEF\u5F84\
-:  \u5B9E\u4F8B"
+:alt: "体波和面波的波形和传播路径实例"
 :width: 95%
 
 体波和面波的波形和传播路径实例。
