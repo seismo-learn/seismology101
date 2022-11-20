@@ -47,7 +47,8 @@ import numpy as np
 ## 地震深度分布直方图
 
 为了绘制地震深度直方图，我们先从地震目录中提取出地震深度信息，并保存到数组 `depth` 中。
-需要注意的是，ObsPy 的地震目录中地震深度的单位为 m，所以需要除以 1000.0 转换为 m。
+需要注意的是，ObsPy 的地震目录中地震深度的单位为 m，所以需要除以 1000.0 将深度单位
+转换为 km。
 
 ```{code-cell} ipython3
 depth = np.array([event.origins[0].depth / 1000 for event in cat])
@@ -60,7 +61,7 @@ depth = np.array([event.origins[0].depth / 1000 for event in cat])
 fig, ax = plt.subplots()
 ax.hist(depth, bins=np.arange(50, 700, 10), log=True)
 ax.set_xlabel("Depth (km)")
-ax.set_ylabel("Counts")
+ax.set_ylabel("Number of earthquakes")
 plt.show()
 ```
 
@@ -75,7 +76,7 @@ mag = np.array([event.magnitudes[0].mag for event in cat])
 fig, ax = plt.subplots()
 ax.hist(mag, bins=np.arange(4.5, 8, 0.1))
 ax.set_xlabel("Magnitude")
-ax.set_ylabel("Counts")
+ax.set_ylabel("Number of earthquakes")
 plt.show()
 ```
 
@@ -96,7 +97,7 @@ counts = np.array([(mag >= m).sum() for m in mw])
 fig, ax = plt.subplots()
 ax.semilogy(mw, counts, "o")
 ax.set_xlabel("Magnitude")
-ax.set_ylabel("Cumulative Number")
+ax.set_ylabel("Cumulative Number of earthquakes")
 plt.show()
 ```
 
@@ -108,13 +109,13 @@ plt.show()
 idx = np.logical_and(mw >= 4.8, mw <= 7.5)
 # fitting y = p[0] * x + p[1]
 p = np.polyfit(mw[idx], np.log10(counts[idx]), 1)
-N_pre = 10 ** (mw * p[0] + p[1])
+N_pred = 10 ** (mw * p[0] + p[1])
 
 fig, ax = plt.subplots()
 ax.semilogy(mw, counts, "o")
-ax.semilogy(mw, N_pre, color="red", label=f"$\log_{{10}} N={p[1]:.2f}{p[0]:.2f}M$")
+ax.semilogy(mw, N_pred, color="red", label=f"$\log_{{10}} N={p[1]:.2f}{p[0]:.2f}M$")
 ax.legend()
 ax.set_xlabel("Magnitude")
-ax.set_ylabel("Cumulative Number")
+ax.set_ylabel("Cumulative Number of earthquakes")
 plt.show()
 ```
