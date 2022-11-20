@@ -50,6 +50,8 @@ $\sqrt{3}$ 倍。P 波和 S 波传播速度也随深部而变化：
 - 在外核中，P 波速度再次随着深度逐渐增加
 - 在内核边界，P 波速度突然增加，内核中 S 波速度也不为零了
 
+## 震相
+
 :::{figure} phase-name.jpg
 :align: center
 :alt: "全球震相的射线路径及其震相名"
@@ -59,19 +61,8 @@ $\sqrt{3}$ 倍。P 波和 S 波传播速度也随深部而变化：
 引自《[Introduction to Seismology]》（第三版）图 4.16。
 :::
 
-## 震相
 
 
-:::{figure} seismic-waveform.png
-:align: center
-:alt: "\u4F53\u6CE2\u548C\u9762\u6CE2\u7684\u6CE2\u5F62\u548C\u4F20\u64AD\u8DEF\u5F84\
-:  \u5B9E\u4F8B"
-:width: 95%
-
-体波和面波的波形和传播路径实例。
-引自《[An Introduction to Seismology, Earthquakes, and Earth Structure]》
-图 1.1-3。
-:::
 
 地球内部不同的分层（地壳、地幔、外核、内核等）以及两种体波类型（P 波和 S 波）会产生许多
 可能的几何射线（geometric ray），也称震相（seismic phase）。地震学领域有统一的震相的
@@ -125,3 +116,13 @@ $$
 
 地震图与元数据（metadata）共同构成了完备的地震学观测数据。
 元数据包含与地震图相关的重要信息，如台站位置、仪器响应等。
+
+:::{figure} seismic-waveform.png
+:align: center
+:alt: "体波和面波的波形和传播路径实例"
+:width: 95%
+
+体波和面波的波形和传播路径实例。
+引自《[An Introduction to Seismology, Earthquakes, and Earth Structure]》
+图 1.1-3。
+:::
