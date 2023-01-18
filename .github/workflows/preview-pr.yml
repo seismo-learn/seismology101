@@ -41,7 +41,7 @@ jobs:
         run: make dirhtml
 
       - name: Deploy for preview
-        uses: peaceiris/actions-gh-pages@64b46b4226a4a12da2239ba3ea5aa73e3163c75b
+        uses: peaceiris/actions-gh-pages@bd8c6b06eba6b3d25d72b7a1767993c0aeee42e7
         with:
           # personal token can be generated at https://github.com/settings/tokens,
           # and added to https://github.com/organizations/seismo-learn/settings/secrets/actions
