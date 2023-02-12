@@ -157,12 +157,6 @@ X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗�
 的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
 :::
 
-:::{note}
-Windows 11 (版本号大于 22000) 用户或 Windows 11 内测版本号大于 21362 的用户，
-可以跳过以下内容，直接试用 Windows 官方正在开发的 WSL 图形界面软件
-[WSLg](https://github.com/microsoft/wslg)。
-:::
-
 Windows 下常见的 X Server 有 [VcXsrv](https://sourceforge.net/projects/vcxsrv/)、
 [Xming](http://www.straightrunning.com/XmingNotes/)、
 [Xmanager](https://www.xshellcn.com/) 等。
