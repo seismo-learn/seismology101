@@ -60,6 +60,8 @@ $ bcdedit /set hypervisorlaunchtype auto
 WSL 的安装可以参考[官方安装指南](https://docs.microsoft.com/zh-cn/windows/wsl/install)。
 其对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。
 
+WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
+推荐使用 WSL 安装 Ubuntu 22.04 LTS。
 如遇到网络问题导致命令行安装 WSL 失败，可以尝试去微软商店下载。
 
 :::{note}
