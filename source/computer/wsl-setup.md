@@ -1,7 +1,7 @@
 # WSL 配置指南
 
 - 本节贡献者: {{赵志远}}（作者）、{{姚家园}}（审稿）、{{田冬冬}}（审稿）
-- 最近更新日期: 2022-10-26
+- 最近更新日期: 2023-02-10
 - 预计花费时间: 120 分钟
 
 ---
@@ -60,8 +60,7 @@ $ bcdedit /set hypervisorlaunchtype auto
 WSL 的安装可以参考[官方安装指南](https://docs.microsoft.com/zh-cn/windows/wsl/install)。
 其对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。
 
-WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
-推荐使用 WSL 安装 Ubuntu 22.04 LTS。
+如遇到网络问题导致命令行安装 WSL 失败，可以尝试去微软商店下载。
 
 :::{note}
 想在 WSL 上安装 Fedora 的读者可以参考[英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
@@ -81,7 +80,6 @@ Fedora 只支持 WSL2。
 ```
 # 启动并进入 Linux 环境（进入默认发行版）
 $ bash
-
 # 退出 Linux 环境（并不会改变 WSL 的运行状态）
 $ exit
 ```
@@ -92,22 +90,16 @@ $ exit
 ```
 # 查看 wsl 命令帮助
 $ wsl -h
-
 # 列出所有已安装的 Linux 发行版的状态，并显示是 WSL1 还是 WSL2
 $ wsl -l -v
-
 # 停止正在运行的 Linux 发行版
 $ wsl -t Ubuntu
-
 # 将 Ubuntu 由 WSL2 更改为 WSL1
 $ wsl --set-version Ubuntu 1
-
 # 将 Ubuntu 由 WSL1 改回 WSL2
 $ wsl --set-version Ubuntu 2
-
 # 设置默认发行版
 $ wsl -s Ubuntu22.04
-
 # 删除某个发行版（如名为 Ubuntu）
 $ wsl --unregister Ubuntu
 ```
@@ -122,13 +114,11 @@ $ wsl --unregister Ubuntu
 $ mkdir D:\WSLBAK
 # 导出到备份目录下，命名为 20210117bak.tar
 $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
-
 # 导入并还原之前备份的 Linux 发行版
 # 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu22.04
 $ mkdir D:\WSLDIR\Ubuntu22.04
 # 导入并还原之前的备份，将此发行版命名为 Ubuntu22.04
 $ wsl --import Ubuntu22.04 D:\WSLDIR\Ubuntu22.04 D:\WSLBAK\20210117bak.tar
-
 # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
 $ wsl --unregister Ubuntu
 ```
@@ -146,7 +136,16 @@ Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 
 ## 安装 X Server
 
-WSL 本身不支持图形界面，需要在 Windows 中安装 X Server
+:::{note}
+目前在 Windows 10 Build 19044+ 或者 Windows 11 中新安装的 WSL 已经直接支持图形
+界面，不需要在 Windows 中配置 X Server。
+
+如果系统中已经存在之前安装的 WSL，可以对其进行[升级](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#existing-wsl-install)。
+
+如果对 WSL 升级失败，可以参考本节内容配置 X Server 以接收 Linux 图形。
+:::
+
+在版本号较低的 Windows 10 中安装的 WSL 不支持图形界面，需要在 Windows 中安装 X Server
 来接收和显示 Linux 中的图形界面。
 
 :::{note}
@@ -194,12 +193,10 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 
    ```
    # x11-apps 中包含了很多小程序如 xclock、xeyes
-
    # Ubuntu 用户使用如下命令安装
    $ sudo apt install x11-apps
    # Fedora 用户使用如下命令安装
    $ sudo dnf install xorg-x11-apps
-
    # 运行 xclock。若能看到一个时钟窗口，则表示图形界面设置成功
    $ xclock
    ```
