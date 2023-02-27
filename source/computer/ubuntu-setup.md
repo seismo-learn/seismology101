@@ -21,8 +21,8 @@
 
 **Ubuntu Desktop 22.04 LTS AMD64** 的 ISO 镜像文件（约 2.9 GB）下载链接：
 
-- [官方镜像](https://releases.ubuntu.com/22.04/ubuntu-22.04.1-desktop-amd64.iso)
-- [中科大镜像](https://mirrors.ustc.edu.cn/ubuntu-releases/22.04/ubuntu-22.04.1-desktop-amd64.iso)[**推荐国内用户使用**]
+- [官方镜像](https://releases.ubuntu.com/22.04/ubuntu-22.04.2-desktop-amd64.iso)
+- [中科大镜像](https://mirrors.ustc.edu.cn/ubuntu-releases/22.04/ubuntu-22.04.2-desktop-amd64.iso) [**推荐国内用户使用**]
 
 ### 制作 USB 启动盘
 
