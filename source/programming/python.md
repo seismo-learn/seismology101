@@ -330,6 +330,19 @@ Notebook 在交互式开发代码时很方便。但通常我们会想要将代�
 JupyterLab 除了可以编辑 Notebook 外，还可以编辑 Markdown 文件，也可以打开终端
 执行命令，还支持多个功能强大的插件。更多的功能，留待读者自行探索。
 
+## 其他 Python IDE/开发环境
+
+除了上面介绍的 JupyterLab 外，还有其他方便、实用的 Python IDE/开发环境，
+例如：
+
+- [Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial)
+	- [在 Visual Studio Code 里交互性编辑和运行 Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+	- [在 Visual Studio Code 里交互性编辑和运行 Python 脚本](https://code.visualstudio.com/docs/python/jupyter-support-py)
+- [PyCharm](https://www.jetbrains.com/pycharm/)
+- [Spyder](https://www.spyder-ide.org/)
+
+有兴趣的读者可以尝试不同的 Python IDE/开发环境并根据自己的喜好选择。
+
 ## Python 学习资源
 
 下面列出一些 Python 以及常用科学计算模块的相关学习资源：
