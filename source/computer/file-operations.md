@@ -39,7 +39,7 @@ Linux 文件系统就像一颗树一样，从 {file}`/` 目录开始，这个特
 
 ```
 # 使用 pwd（print working directory，即打印当前工作目录）命令查看当前所在目录
-# 可以看出启动终端后，默认进入家目录
+# 可以看出，启动终端后，默认进入家目录
 $ pwd
 /home/seismo-learn
 
@@ -237,7 +237,7 @@ $ ls
 想要显示隐藏文件和隐藏目录，需要使用 `-a` 选项：
 ```
 $ ls -a
-.                  ..                 .hidden-example-dir      .hidden-example-file.txt
+.              ..               .hidden-example-dir      .hidden-example-file.txt
 ```
 
 :::{note}
@@ -269,7 +269,7 @@ $ ls -a
 
 - {file}`./Beijing`：当前目录下的 {file}`Beijing` 目录，即 {file}`~/projects/NorthChina-MTZ/data/Beijing`。
   当前路径也可以省略，即 {file}`Beijing`
-- {file}`./Beijing/IC-BJI.sac`：当前目录下的 {file}`Beijing` 目录下的 {file}`IC-BJI.sac` 文件，
+- {file}`./Beijing/IC-BJT.sac`：当前目录下的 {file}`Beijing` 目录下的 {file}`IC-BJT.sac` 文件，
   即 {file}`~/projects/NorthChina-MTZ/data/Beijing/IC-BJT.sac`。
   当前路径也可以省略，即 {file}`Beijing/IC-BJT.sac`
 - {file}`..`：上一层目录，即 {file}`~/projects/NorthChina-MTZ` 目录
