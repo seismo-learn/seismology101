@@ -51,14 +51,14 @@ Bash 脚本的第一行通常用于指定脚本解释器。这一行以 Shebang 
 Shebang 字符后紧跟着脚本解释器的路径。`/usr/bin/env bash` 可以在环境变量
 **PATH** 指定的目录中自动寻找 Bash 解释器并返回其路径。
 
-.. note::
-
-	你可能也会见到 Shebang 行的另一种写法 `#!/bin/bash`。
-	Bash 解释器一般位于 {file}`/bin` 目录下，因而这种写法也是可行的。
-	但某些特殊的 Linux 系统的 Bash 解释器可能不在 {file}`/bin` 目录下，使得脚本
-	在这些特殊的系统上无法正常运行，因而不推荐使用这种写法。
-	而 `env` 命令总在 {file}`/usr/bin` 目录下，所以 `#!/usr/bin/env bash`
-	这种写法总可以正确找到 Bash 解释器。
+```{note}
+你可能也会见到 Shebang 行的另一种写法 `#!/bin/bash`。
+Bash 解释器一般位于 {file}`/bin` 目录下，因而这种写法也是可行的。
+但某些特殊的 Linux 系统的 Bash 解释器可能不在 {file}`/bin` 目录下，使得脚本
+在这些特殊的系统上无法正常运行，因而不推荐使用这种写法。
+而 `env` 命令总在 {file}`/usr/bin` 目录下，所以 `#!/usr/bin/env bash`
+这种写法总可以正确找到 Bash 解释器。
+```
 
 Shebang 行之后的所有行都是 Bash 脚本的实际代码，其中 `#` 表示注释，可以放在行首，
 也可以放在行尾。所有注释都会被 Bash 解释器自动忽略。
