@@ -336,8 +336,8 @@ JupyterLab 除了可以编辑 Notebook 外，还可以编辑 Markdown 文件，�
 例如：
 
 - [Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial)
-	- [在 Visual Studio Code 里交互性编辑和运行 Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
-	- [在 Visual Studio Code 里交互性编辑和运行 Python 脚本](https://code.visualstudio.com/docs/python/jupyter-support-py)
+	- [在 Visual Studio Code 里交互式编辑和运行 Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+	- [在 Visual Studio Code 里交互式编辑和运行 Python 脚本](https://code.visualstudio.com/docs/python/jupyter-support-py)
 - [PyCharm](https://www.jetbrains.com/pycharm/)
 - [Spyder](https://www.spyder-ide.org/)
 
