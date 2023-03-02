@@ -27,12 +27,14 @@ $$
 
 ## 远震地震图
 
-:::{figure} seismic-waveform.png
+:::{figure} teleseismic-waveform.png
 :align: center
-:alt: "体波和面波的波形和传播路径实例"
+:alt: "远震地震图示例"
 :width: 95%
 
-体波和面波的波形和传播路径实例。
+远震地震图中的地震震相及射线路径。
 引自《[An Introduction to Seismology, Earthquakes, and Earth Structure]》
 图 1.1-3。
 :::
+
+[An Introduction to Seismology, Earthquakes, and Earth Structure]: https://www.wiley.com/en-us/An+Introduction+to+Seismology%2C+Earthquakes%2C+and+Earth+Structure-p-9780865420786
