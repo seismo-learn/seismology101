@@ -16,7 +16,7 @@
 
 ## Makefile
 
-## 学习资源
+## 扩展阅读
 
 - [C 语言教程](https://wangdoc.com/clang/)
 - [C 语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)（较全面、系统）

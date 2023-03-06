@@ -343,7 +343,7 @@ JupyterLab 除了可以编辑 Notebook 外，还可以编辑 Markdown 文件，�
 
 有兴趣的读者可以尝试不同的 Python IDE/开发环境并根据自己的喜好选择。
 
-## Python 学习资源
+## 扩展阅读
 
 下面列出一些 Python 以及常用科学计算模块的相关学习资源：
 
