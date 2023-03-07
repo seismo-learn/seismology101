@@ -95,7 +95,7 @@ Hello world! This is seismo-learn.
 可执行文件。可以参考{doc}`/computer/environment-variable`一节
 设置环境变量 **PATH**。
 
-## 学习资源
+## 扩展阅读
 
 - [Bash 脚本教程](https://wangdoc.com/bash/)（全面、系统）
 - [Bash 脚本基础](https://101.lug.ustc.edu.cn/Ch06/#bash-usage)（简要）
