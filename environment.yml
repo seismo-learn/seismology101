@@ -6,7 +6,7 @@ dependencies:
   - python=3.10
   - pip
   - cartopy
-  - jupyter-book>=0.13
+  - jupyter-book=0.14
   - matplotlib
   - numpy
   - obspy=1.4.0
