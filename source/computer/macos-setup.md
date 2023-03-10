@@ -269,9 +269,9 @@ $ brew install git
 ### GNU 实用工具
 
 macOS 下自带了很多实用工具，如 `sed`、`grep` 等（位于 {file}`/usr/bin/` 目录下）。
-需要注意，这些实用工具是由 BSD 提供的，而 Linux 系统下的实用工具则是由 GNU 提供的。
-BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。二者之间的常见差异可以参考
-此[博文](https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/)。
+需要注意，这些实用工具是由 [BSD](https://www.bsd.org/) 提供的，而 Linux 系统下的
+实用工具则是由 [GNU](https://www.gnu.org/) 提供的。
+BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。
 由于网络上的大部分文档介绍的都是 GNU 实用工具的用法，因而 macOS 用户在使用网络上的
 命令时可能会出现错误。这一点可以通过安装 GNU 实用工具来解决:
 
@@ -281,8 +281,11 @@ $ brew install findutils gawk gnu-sed gnu-tar grep
 ```
 
 Homebrew 将 GNU 实用工具安装在 {file}`/usr/local/bin` 或 {file}`/opt/homebrew/bin` 目录下，
-但在所有工具的名称前
-加上了前缀 `g`，以避免替换 macOS 系统自带的 BSD 实用工具，即 `sed` 是 BSD 提供的，
+但在所有工具的名称前加上了前缀 `g`，以避免替换 macOS 系统自带的 BSD 实用工具，即 `sed` 是 BSD 提供的，
 而 `gsed` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 `g`），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 `g`），但在写脚本时，
 要额外注意脚本的可移植性。
+
+## 扩展阅读
+
+- [GNU 与 BSD 实用工具的用法区别](https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/)
