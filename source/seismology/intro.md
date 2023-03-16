@@ -37,7 +37,7 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 地震仪记录的地球机械振动称为[**地震图**](seismogram.md)（seismogram），是地震学的
 主要研究工具。
 
-:::{figure} seismic-waves.jpg
+:::{figure} seismology-overview.jpg
 :align: center
 :alt: 地震激发的地震波路径和波形
 :width: 95%
