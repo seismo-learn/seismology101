@@ -27,7 +27,10 @@ Linux 文件系统就像一颗树一样，从 {file}`/` 目录开始，这个特
 日常科研中，大多数情况下只在 {file}`/home` 目录下工作。假设用户名是 seismo-learn，
 该用户的家目录便是 {file}`/home/seismo-learn`。macOS 下的家目录是 {file}`/Users/seismo-learn`。
 在 Linux/macOS 系统下，可用 {file}`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
-{file}`~/Desktop`、{file}`~/Documents`、{file}`~/Downloads` 等。熟悉 Linux 文件系统后可以参考{doc}`《文件管理实践经验》<best-practices/file-organization>`和{doc}`《软件安装实践经验》<best-practices/software-installation>`进一步组织与管理家目录，以提高工作效率。
+{file}`~/Desktop`、{file}`~/Documents`、{file}`~/Downloads` 等。熟悉 Linux 文件系统后
+可以参考{doc}`《文件管理实践经验》<best-practices/file-organization>`和
+{doc}`《软件安装实践经验》<best-practices/software-installation>`进一步组织与管理家目录，
+以提高工作效率。
 
 ## 操作文件与目录
 
@@ -37,24 +40,29 @@ Linux 文件系统就像一颗树一样，从 {file}`/` 目录开始，这个特
 
 ### 查看文件和目录
 
+`ls` （list，即列表）命令用于显示当前目录下的文件和目录。
+
 ```
 # 使用 pwd（print working directory，即打印当前工作目录）命令查看当前所在目录
 # 可以看出，启动终端后，默认进入家目录
 $ pwd
 /home/seismo-learn
 
-# 使用 ls（list，即列表）命令显示当前所在目录（即家目录）含有的子目录和文件
+# 查看当前目录（即家目录）下的子目录和文件
 $ ls
 Desktop    Documents    Downloads
-# 查看 ~/Desktop 目录和 /etc/passwd 文件
+# 查看 ~/Desktop 目录
 $ ls Desktop
+# 查看 /etc/passwd 文件
 $ ls /etc/passwd
 ```
 
 ### 切换目录
 
+`cd`（change directory，即切换目录）命令进入用于在目录之间切换。
+
 ```
-# 使用 cd（change directory，即切换目录）命令进入根目录
+# 切换至根目录
 $ cd /
 # 查看根目录中的子目录和文件
 $ ls
@@ -72,10 +80,13 @@ $ pwd
 
 ### 新建文件和目录
 
+`mkdir` （make directory，即创建目录）命令可以用于新建目录，`touch` 命令可以
+用于创建一个新的空文件。
+
 ```
 # 进入家目录
 $ cd ~
-# 使用 mkdir（make directory，即创建目录）命令新建以下目录
+# 使用 mkdir 命令新建目录
 $ mkdir codes software
 $ ls
 codes  Desktop  Documents  Downloads  software
@@ -95,6 +106,8 @@ hello-world.txt  seismo-learn.txt  source
 
 ### 复制文件和目录
 
+`cp`（copy，即复制）命令可以用于复制文件和目录。
+
 :::{note}
 以下所有操作都假设读者已经切换到 {file}`~/workspace` 目录下了，即:
 
@@ -105,7 +118,7 @@ $ cd ~/workspace
 :::
 
 ```
-# 使用 cp（copy，即复制）命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
+# 使用 cp 命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
 $ cp hello-world.txt hello-world-cp.txt
 $ ls
 hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
@@ -128,8 +141,10 @@ hello-world.txt  seismo-learn.txt  source
 
 ### 移动文件和目录
 
+`mv` （move，即移动）命令可以用于移动文件和目录。
+
 ```
-# 使用 mv（move，即移动）命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
+# 使用 mv 命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
 $ mv hello-world.txt hello-world-mv.txt
 $ ls
 destination  hello-world-cp.txt  hello-world-mv.txt  seismo-learn.txt  source
@@ -154,8 +169,10 @@ hello-world.txt  seismo-learn.txt  source  source-mv
 
 ### 删除文件和目录
 
+`rm`（remove，即删除）命令 可以用于删除文件和目录。
+
 ```
-# 使用 rm（remove，即删除）命令删除 seismo-learn.txt 文件
+# 使用 rm 命令删除 seismo-learn.txt 文件
 $ rm seismo-learn.txt
 $ ls
 destination
