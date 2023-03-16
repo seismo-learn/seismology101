@@ -77,11 +77,8 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - 1885 年，Lord Rayleigh 预测弹性介质中存在沿着固体表面传播的面波，即 Rayleigh 面波 {cite}`Rayleigh1885`
 - 1911 年，Augustus Love 指出在速度随深度变化的弹性介质中存在另一种沿着固体表面传播的面波，即 Love 波
 
-更详细的弹性理论的发展史，可以阅读 1892 年 Augustus Love 出版的经典教材
-《A Treatise on the Mathematical Theory of Elasticity》（第一版）{cite}`Love1892`。
-
-从十九世纪后期开始，地震学观测开始逐渐发展起来，极大地促进了地震学的发展。
-以下介绍地震学观测的早期进展：
+从十九世纪后期开始，地震学观测技术开始逐渐发展起来，极大地促进了地震学的发展。
+以下介绍地震学观测技术的早期进展：
 
 - 1875 年，Filippo Cecchi 制作了第一个带时间记录的地震仪。随后，地震仪器不断改善和发展
 - 1889 年，E. Von Rebeur-Paschwitz 报告了在德国波兹坦记录到的日本地震的波形。这是
@@ -107,5 +104,9 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - 1940 年，Harold Jeffreys 和 K. E. Bullen 发表了他们最终版本的地震波走时表，
   简称 JB 走时表。该走时表至今仍在使用，并且与当今模型仅差几秒
 
-读者可以查阅 [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology)
-了解更多地震学历史。
+
+## 扩展阅读
+
+- A Treatise on the Mathematical Theory of Elasticity {cite}`Love1892`: Augustus Love 在 1892 年出版的经典教材，
+  详细介绍了弹性理论的发展史
+- [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology): 地震学发展史的海报
