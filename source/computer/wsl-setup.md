@@ -21,7 +21,7 @@
 [WSL](https://docs.microsoft.com/zh-cn/windows/wsl/)
 （Windows Subsystem for Linux，适用于 Linux 的 Windows 子系统）
 可以让用户直接在 Windows 10/11 上运行 Linux 环境（包括大多数命令行工具和应用程序），
-且不会产生传统虚拟机或双启动设置开销。
+且不会产生传统虚拟机或双系统的开销。
 
 :::{dropdown} WSL2 与 VMware/VirtualBox 兼容性警告
 :color: info
