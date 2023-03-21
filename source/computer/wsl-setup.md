@@ -140,7 +140,7 @@ Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 
 :::{note}
 Windows 10 Build 19044+ 以及 Windows 11 中新安装的 WSL 已经直接支持图形界面，
-详情见 https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps。
+详情见 https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps 。
 因而不需要在 Windows 单独配置 X Server。
 
 如果系统中已经存在之前安装的 WSL，可以对其进行[升级](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#existing-wsl-install)。
