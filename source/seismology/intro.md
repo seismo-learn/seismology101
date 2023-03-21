@@ -110,3 +110,6 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - A Treatise on the Mathematical Theory of Elasticity {cite}`Love1892`: Augustus Love 在 1892 年出版的经典教材，
   详细介绍了弹性理论的发展史
 - [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology): 地震学发展史的海报
+- Ben-Menahem, A. (1995). A concise history of mainstream seismology: Origins, legacy, and perspectives. 
+  Bulletin of the Seismological Society of America, 85(4), 1202–1225. https://doi.org/10.1785/BSSA0850041202
+
