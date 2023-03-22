@@ -13,33 +13,6 @@
 可以让用户直接在 Windows 10/11 上运行 Linux 环境（包括大多数命令行工具和应用程序），
 且不会产生传统虚拟机或双系统的开销。
 
-:::{dropdown} WSL2 与 VMware/VirtualBox 兼容性警告
-:color: info
-:icon: info
-
-由于 Hyper-V 兼容性问题，开启 WSL2 功能后，虚拟机软件 VMware/VirtualBox 的老版本
-将无法正常使用。
-WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。因此，已开启 WSL2 功能的用户
-若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，然后执行以下操作。
-
-使用管理员模式打开 CMD，使用以下命令关闭 Hyper-V（重启后方能生效）。
-此时，Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用:
-
-```
-$ bcdedit /set hypervisorlaunchtype off
-```
-
-使用管理员模式打开 CMD，使用以下命令开启 Hyper-V（重启后方能生效）。
-此时，Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用:
-
-```
-$ bcdedit /set hypervisorlaunchtype auto
-```
-
-新版本 VMware (≥15.5.5) 和 VirtualBox (≥6.0) 在最新 Windows 系统上
-（build number ≥19041）可以正常使用，无兼容性问题。
-:::
-
 :::{note}
 接下来的大部分命令是在命令行中执行的。
 
@@ -248,4 +221,26 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 
 ## 扩展阅读
 
-- [比较 WSL2 和 WSL1](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)
+-  [比较 WSL2 和 WSL1](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)
+-  **WSL2 与 VMware/VirtualBox 兼容性问题**
+
+   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，虚拟机软件 VMware/VirtualBox 的老版本
+   将无法正常使用。VMware ≥15.5.5 和 VirtualBox ≥6.0 在最新 Windows 系统上（版本号 ≥19041）
+   可以正常使用，无兼容性问题。
+
+   WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。因此，已开启 WSL2 功能的用户
+   若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，然后执行以下操作。
+
+   使用管理员模式打开 CMD，使用以下命令关闭 Hyper-V（重启后方能生效）。
+   此时，Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用:
+
+   ```
+   $ bcdedit /set hypervisorlaunchtype off
+   ```
+
+   使用管理员模式打开 CMD，使用以下命令开启 Hyper-V（重启后方能生效）。
+   此时，Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用:
+
+   ```
+   $ bcdedit /set hypervisorlaunchtype auto
+   ```
