@@ -19,14 +19,9 @@
 ## 简介
 
 [WSL](https://docs.microsoft.com/zh-cn/windows/wsl/)
-（Windows Subsystem for Linux，适用于 Linux 的 Windows 子系统）是一个在
-Windows 10/11 上运行原生 Linux 二进制可执行文件的兼容层。
-WSL 有 WSL1 和 WSL2 两个发行版本，二者底层原理不同。大多数情况下，建议使用 WSL2，
-因为它提供更快的性能和 100% 的系统调用兼容性。涉及到跨系统的文件互访时
-（Linux 访问 Windows 里的文件，或 Windows 访问 Linux 里的文件），使用 WSL1 具有
-更快的性能。WSL1 和 WSL2 的详细对比见[官方文档](https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions)。
-
-官方目前没有弃用 WSL1 的计划，并且支持将任何一个已经安装的 Linux 发行版转换为 WSL1 或者 WSL2。
+（Windows Subsystem for Linux，适用于 Linux 的 Windows 子系统）
+可以让用户直接在 Windows 10/11 上运行 Linux 环境（包括大多数命令行工具和应用程序），
+且不会产生传统虚拟机或双系统的开销。
 
 :::{dropdown} WSL2 与 VMware/VirtualBox 兼容性警告
 :color: info
@@ -250,3 +245,7 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。
 使用 VSCode 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
 :::
+
+## 扩展阅读
+
+- [比较 WSL2 和 WSL1](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)
