@@ -25,20 +25,40 @@
 
 ## 安装
 
-WSL 的安装可以参考[官方安装指南](https://docs.microsoft.com/zh-cn/windows/wsl/install)。
-其对 WSL 安装配置中可能遇到的常见问题都给出了详细的解决方案，请认真阅读。
+### 检查 Windows 版本
 
-WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
-推荐使用 WSL 安装 Ubuntu 22.04 LTS。
-如遇到网络问题导致命令行安装 WSL 失败，可以尝试去微软商店下载。
+WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装，因而，在安装 WSL 前，需要
+先检查当前 Windows 系统的版本号是否满足 WSL 的要求。
+
+按下 {kbd}`win` + {kbd}`R` 键，在打开的运行对话框中键入 `winver`，然后选择“确定”，
+则会弹出“关于 Windows”对话框，会看到类似“版本 2004 （OS 内部版本 19041 ）”的字样。
+其中，2004 是 Windows 版本号，19041 是系统内部版本号。
+
+### 安装 WSL
+
+若你使用的是 Windows 10 版本 2004 及更高版本（内部版本 19041 及更高版本）
+或 Windows 11，则可以通过如下方式安装 WSL。
+
+1.  在 Windows 系统的搜索框中直接输入命令 `CMD`
+2.  在搜索结果中的“命令提示符”上单击右键，选择管理员身份运行
+3.  在打开的 CMD 窗口中，输入如下命令：
+    ```
+    wsl --install
+    ```
+    此命令将启动 WSL 并默认安装 Ubuntu 22.04 LTS
+4.  待安装完成后，重启计算机
+
+更详细的安装步骤、常见问题的解决办法以及旧版本 Windows 下的安装方法可以参考
+[官方安装指南](https://docs.microsoft.com/zh-cn/windows/wsl/install)。
 
 :::{note}
+WSL 可以安装不同的 Linux 发行版，但目前官方并未提供 Fedora 发行版的安装。
+推荐使用 WSL 安装 Ubuntu 22.04 LTS。
+
 想在 WSL 上安装 Fedora 的读者可以参考[英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
 指南中介绍的是已经过时的 Fedora 33。用户请访问 Fedora 官方仓库下载
 [Fedora 36](https://github.com/fedora-cloud/docker-brew-fedora/tree/36/x86_64)（Fedora 最新版本）
 镜像文件。
-
-Fedora 只支持 WSL2。
 :::
 
 ## 常用命令
