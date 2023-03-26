@@ -59,7 +59,7 @@ WSL 默认安装的 Linux 发行版是 Ubuntu 22.04 LTS，但也支持安装其�
 
 WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora 的读者可以参考
 [英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
-指南中所使用的 Fedora 33 已经过时。用户请访问 Fedora 官方仓库下载
+指南中所使用的 Fedora 33 已经过时。请访问 Fedora 官方仓库下载
 [Fedora 37](https://github.com/fedora-cloud/docker-brew-fedora/tree/37/x86_64)（Fedora 最新版本）
 镜像文件，并按照指南进行操作。
 :::
