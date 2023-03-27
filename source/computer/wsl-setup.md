@@ -43,7 +43,7 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
 2.  在搜索结果中的“命令提示符”上单击右键，选择“管理员身份运行”
 3.  在打开的 CMD 窗口中，输入如下命令：
     ```
-    wsl --install
+    $ wsl --install
     ```
     此命令将启动 WSL 并默认安装 Ubuntu 22.04 LTS
 4.  待安装完成后，重启计算机
@@ -64,43 +64,35 @@ WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora �
 镜像文件，并按照指南进行操作。
 :::
 
-## 常用命令
+## WSL 常用命令
 
-打开 CMD，可以运行如下命令来使用 WSL。
+WSL 提供了命令 `wsl` 来管理 WSL。打开 CMD，即可执行 `wsl` 命令。可以使用
+`wsl -h` 命令查看 `wsl` 命令的帮助文档。
 
-启动、进入和退出 Linux 环境:
-
+假定已安装 WSL2 版本的 Ubuntu 22.04 LTS，且其名称为 Ubuntu。
+列出所有已安装的 Linux 发行版的状态：
 ```
-# 启动并进入 Linux 环境（进入默认发行版）
-$ bash
-# 退出 Linux 环境（并不会改变 WSL 的运行状态）
-$ exit
-```
-
-下面简要介绍 `wsl` 命令的用法。注意以下命令并不是在 Linux 环境中执行的，不需要进入 Linux 环境。
-假定已安装 WSL2 版本的 Ubuntu 22.04 LTS，且其名称为 Ubuntu:
-
-```
-# 查看 wsl 命令帮助
-$ wsl -h
-# 列出所有已安装的 Linux 发行版的状态，并显示是 WSL1 还是 WSL2
 $ wsl -l -v
-# 停止正在运行的 Linux 发行版
+```
+
+检查 WSL 状态：
+```
+$ wsl --status
+```
+
+停止正在运行的 Linux 发行版：
+```
 $ wsl -t Ubuntu
-# 将 Ubuntu 由 WSL2 更改为 WSL1
-$ wsl --set-version Ubuntu 1
-# 将 Ubuntu 由 WSL1 改回 WSL2
-$ wsl --set-version Ubuntu 2
-# 设置默认发行版
-$ wsl -s Ubuntu22.04
-# 删除某个发行版（如名为 Ubuntu）
+```
+
+注销并卸载某个 Linux 发行版：
+```
 $ wsl --unregister Ubuntu
 ```
 
 开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。为了避免占用 C 盘的大量空间，
 可以将已安装的 Linux 发行版导出备份，再导入还原到其它盘，最后删除 C 盘上的发行版。
 这样做的另一个好处是导入时用户就能得到 WSL 的真实路径。打开 CMD，执行如下命令:
-
 ```
 # 导出 Linux 发行版，可做为备份
 # 在 D 盘中新建备份目录，命名为 WSLBAK
@@ -118,6 +110,11 @@ $ wsl --unregister Ubuntu
 
 ## 配置 Linux
 
+打开 CMD，运行 `bash` 命令即可启动并进入 WSL 提供的 Linux 环境：
+```
+$ bash
+```
+
 安装 WSL 后，还需要对 Linux 系统进行配置。
 Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 《{doc}`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
@@ -126,6 +123,11 @@ Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 配置 Linux 系统时，切记要跳过“安装系统”一节，只需配置**系统软件**和**编程开发环境**。
 否则，整个电脑的 Windows 系统将会被覆盖。
 :::
+
+使用 `exit` 命令可以退出 Linux 环境：
+```
+$ exit
+```
 
 ## 安装 X Server
 
