@@ -125,7 +125,7 @@ $ wsl --unregister Ubuntu
 $ bash
 ```
 
-安装 WSL 后，还需要对 Linux 系统进行配置。
+通过 WSL 安装 Linux 系统后，还需要对 Linux 系统进行配置。
 Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 《{doc}`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
 
