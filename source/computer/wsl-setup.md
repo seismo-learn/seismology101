@@ -142,7 +142,7 @@ $ exit
 ## 配置图形界面
 
 :::::{tab-set}
-::::{tab-item} Windows 10 内部版本 19044 或更高版本以及 Windows 11 用户
+::::{tab-item} Windows 10 Build 19044+ / Windows 11
 Windows 10 内部版本 19044 或更高版本以及 Widnows 11 中新安装的 WSL 已经直接支持
 图形界面，无需做额外配置。但在运行 Linux GUI 应用前，需要先安装与显卡匹配的驱动程序：
 
@@ -153,7 +153,7 @@ Windows 10 内部版本 19044 或更高版本以及 Widnows 11 中新安装的 W
 详情参考[在 WSL 上运行 Linux GUI 应用](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps)。
 ::::
 
-::::{tab-item} Windows 10 内部版本低于 19044 的用户
+::::{tab-item} Windows 10 低于 19044
 
 内部版本低于 19044 的 Windows 10 中安装的 WSL 不支持图形界面，需要在 Windows 中安装 X Server
 来接收和显示 Linux 中的图形界面。
