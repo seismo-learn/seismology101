@@ -139,19 +139,23 @@ Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 $ exit
 ```
 
-## 安装 X Server
+## 配置图形界面
 
-:::{note}
-Windows 10 Build 19044+ 以及 Windows 11 中新安装的 WSL 已经直接支持图形界面，
-详情见 https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps 。
-因而不需要在 Windows 单独配置 X Server。
+:::::{tab-set}
+::::{tab-item} Windows 10 内部版本 19044 或更高版本以及 Windows 11 用户
+Windows 10 内部版本 19044 或更高版本以及 Widnows 11 中新安装的 WSL 已经直接支持
+图形界面，无需做额外配置。但在运行 Linux GUI 应用前，需要先安装与显卡匹配的驱动程序：
 
-如果系统中已经存在之前安装的 WSL，可以对其进行[升级](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#existing-wsl-install)。
+- [英特尔 GPU 驱动程序](https://www.intel.com/content/www/us/en/download/19344/intel-graphics-windows-dch-drivers.html)
+- [AMD GPU 驱动程序](https://www.amd.com/en/support)
+- [NVIDIA GPU 驱动程序](https://www.nvidia.com/Download/index.aspx?lang=en-us)
 
-如果对 WSL 升级失败，可以参考本节内容配置 X Server 以接收 Linux 图形。
-:::
+详情参考[在 WSL 上运行 Linux GUI 应用](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps)。
+::::
 
-在版本号较低的 Windows 10 中安装的 WSL 不支持图形界面，需要在 Windows 中安装 X Server
+::::{tab-item} Windows 10 内部版本低于 19044 的用户
+
+内部版本低于 19044 的 Windows 10 中安装的 WSL 不支持图形界面，需要在 Windows 中安装 X Server
 来接收和显示 Linux 中的图形界面。
 
 :::{note}
@@ -165,8 +169,7 @@ Windows 下常见的 X Server 有 [VcXsrv](https://sourceforge.net/projects/vcxs
 [Xmanager](https://www.xshellcn.com/) 等。
 其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。
 Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
-VcXsrv 的使用方式和界面与 Xming 极为相近。
-推荐使用 VcXsrv，本文以此软件为例进行介绍。
+VcXsrv 的使用方式和界面与 Xming 极为相近。推荐使用 VcXsrv，本文以此软件为例进行介绍。
 
 1. 下载 [VcXsrv](https://sourceforge.net/projects/vcxsrv/)，默认安装即可
 
@@ -205,11 +208,24 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。
 :::
 
+::::
+:::::
+
 ## 跨系统文件互访
 
-WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，
-还是从 Windows 访问 WSL，WSL1 的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
-时，建议将 Linux 发行版设置为 WSL1。
+WSL 有 WSL1 和 WSL2 两个版本。WSL2 是安装 Linux 发行版时的默认版本，其在各方面都优于 WSL1。
+但在跨系统访问文件方面（即在 Windows 下访问 WSL 中的文件或在 WSL 下访问 Windows 中的文件），
+WSL1 的速度要远远快于 WSL2。因而，在使用 WSL2 时，建议尽量将处理的文件放在 WSL 中，
+以避免跨系统访问文件。
+
+对于需要经常跨系统操作文件的需要，可以使用如下命令将 Linux 发行版（假定名为 Ubuntu）从 WSL2 转换为 WSL1：
+```
+$ wsl --set-version Ubuntu 1
+```
+同样的，也可以使用如下命令将 Linux 发行版（假定名为 Ubuntu）从 WSL1 转换为 WSL2：
+```
+$ wsl --set-version Ubuntu 2
+```
 
 ### WSL 访问 Windows
 
