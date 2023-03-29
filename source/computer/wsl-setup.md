@@ -72,13 +72,17 @@ WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora �
 
 ## WSL 常用命令
 
-WSL 提供了命令 `wsl` 来管理 WSL。打开 CMD，即可执行 `wsl` 命令。可以使用
-`wsl -h` 命令查看 `wsl` 命令的帮助文档。
+WSL 提供了命令 `wsl` 来管理 WSL。打开 CMD 后，即可在 CMD 中执行 `wsl` 命令。
+下面的命令假定已通过 WSL 安装 Ubuntu 22.04 LTS，且其名称为 Ubuntu。
 
-假定已安装 WSL2 版本的 Ubuntu 22.04 LTS，且其名称为 Ubuntu。
+查看 `wsl` 命令的完整帮助文档：
+```
+$ wsl --help
+```
+
 列出所有已安装的 Linux 发行版的状态：
 ```
-$ wsl -l -v
+$ wsl --list --online
 ```
 
 检查 WSL 状态：
@@ -88,7 +92,7 @@ $ wsl --status
 
 停止正在运行的 Linux 发行版：
 ```
-$ wsl -t Ubuntu
+$ wsl --terminate Ubuntu
 ```
 
 注销并卸载某个 Linux 发行版：
