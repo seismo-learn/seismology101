@@ -1,7 +1,7 @@
 # WSL 配置指南
 
 - 本节贡献者: {{赵志远}}（作者）、{{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2023-03-22
+- 最近更新日期: 2023-03-29
 - 预计花费时间: 120 分钟
 
 ---
@@ -43,7 +43,7 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
 2.  在搜索结果中的“命令提示符”上单击右键，选择“管理员身份运行”
 3.  在打开的 CMD 窗口中，输入如下命令：
     ```
-    wsl --install
+    $ wsl --install
     ```
     此命令将启动 WSL 并默认安装 Ubuntu 22.04 LTS
 4.  待安装完成后，重启计算机
@@ -53,9 +53,15 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
 
 :::{note}
 WSL 默认安装的 Linux 发行版是 Ubuntu 22.04 LTS，但也支持安装其它 Linux 发行版。
-可以使用命令 `wsl --list --online` 查看可安装的 Linux 发行版列表，并使用
-命令 `wsl --install -d <Distribution Name>` 安装指定 Linux 发行版
-（`<Distribution Name>` 为要安装的 Linux 发行版的名称）。
+可以使用如下命令查看可安装的 Linux 发行版列表：
+```
+$ wsl --list --online
+```
+可以使用如下命令安装指定的 Linux 发行版（其中 `<Distribution Name>` 为要安装的
+Linux 发行版的名称）：
+```
+$ wsl --install -d <Distribution Name>
+```
 
 WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora 的读者可以参考
 [英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
@@ -64,43 +70,39 @@ WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora �
 镜像文件，并按照指南进行操作。
 :::
 
-## 常用命令
+## WSL 常用命令
 
-打开 CMD，可以运行如下命令来使用 WSL。
+WSL 提供了命令 `wsl` 来管理 WSL。打开 CMD 后，即可在 CMD 中执行 `wsl` 命令。
+下面的命令假定已通过 WSL 安装 Ubuntu 22.04 LTS，且其名称为 Ubuntu。
 
-启动、进入和退出 Linux 环境:
-
+查看 `wsl` 命令的完整帮助文档：
 ```
-# 启动并进入 Linux 环境（进入默认发行版）
-$ bash
-# 退出 Linux 环境（并不会改变 WSL 的运行状态）
-$ exit
+$ wsl --help
 ```
 
-下面简要介绍 `wsl` 命令的用法。注意以下命令并不是在 Linux 环境中执行的，不需要进入 Linux 环境。
-假定已安装 WSL2 版本的 Ubuntu 22.04 LTS，且其名称为 Ubuntu:
-
+列出所有已安装的 Linux 发行版的状态：
 ```
-# 查看 wsl 命令帮助
-$ wsl -h
-# 列出所有已安装的 Linux 发行版的状态，并显示是 WSL1 还是 WSL2
-$ wsl -l -v
-# 停止正在运行的 Linux 发行版
-$ wsl -t Ubuntu
-# 将 Ubuntu 由 WSL2 更改为 WSL1
-$ wsl --set-version Ubuntu 1
-# 将 Ubuntu 由 WSL1 改回 WSL2
-$ wsl --set-version Ubuntu 2
-# 设置默认发行版
-$ wsl -s Ubuntu22.04
-# 删除某个发行版（如名为 Ubuntu）
+$ wsl --list --online
+```
+
+检查 WSL 状态：
+```
+$ wsl --status
+```
+
+停止正在运行的 Linux 发行版：
+```
+$ wsl --terminate Ubuntu
+```
+
+注销并卸载某个 Linux 发行版：
+```
 $ wsl --unregister Ubuntu
 ```
 
 开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。为了避免占用 C 盘的大量空间，
 可以将已安装的 Linux 发行版导出备份，再导入还原到其它盘，最后删除 C 盘上的发行版。
 这样做的另一个好处是导入时用户就能得到 WSL 的真实路径。打开 CMD，执行如下命令:
-
 ```
 # 导出 Linux 发行版，可做为备份
 # 在 D 盘中新建备份目录，命名为 WSLBAK
@@ -118,7 +120,12 @@ $ wsl --unregister Ubuntu
 
 ## 配置 Linux
 
-安装 WSL 后，还需要对 Linux 系统进行配置。
+打开 CMD，运行 `bash` 命令即可启动并进入 WSL 提供的 Linux 环境：
+```
+$ bash
+```
+
+通过 WSL 安装 Linux 系统后，还需要对 Linux 系统进行配置。
 Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 《{doc}`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
 
@@ -127,19 +134,28 @@ Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
 否则，整个电脑的 Windows 系统将会被覆盖。
 :::
 
-## 安装 X Server
+使用 `exit` 命令可以退出 Linux 环境：
+```
+$ exit
+```
 
-:::{note}
-Windows 10 Build 19044+ 以及 Windows 11 中新安装的 WSL 已经直接支持图形界面，
-详情见 https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps 。
-因而不需要在 Windows 单独配置 X Server。
+## 配置图形界面
 
-如果系统中已经存在之前安装的 WSL，可以对其进行[升级](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps#existing-wsl-install)。
+:::::{tab-set}
+::::{tab-item} Windows 10 Build 19044+ / Windows 11
+Windows 10 内部版本 19044 或更高版本以及 Widnows 11 中新安装的 WSL 已经直接支持
+图形界面，无需做额外配置。但在运行 Linux GUI 应用前，需要先安装与显卡匹配的驱动程序：
 
-如果对 WSL 升级失败，可以参考本节内容配置 X Server 以接收 Linux 图形。
-:::
+- [英特尔 GPU 驱动程序](https://www.intel.com/content/www/us/en/download/19344/intel-graphics-windows-dch-drivers.html)
+- [AMD GPU 驱动程序](https://www.amd.com/en/support)
+- [NVIDIA GPU 驱动程序](https://www.nvidia.com/Download/index.aspx?lang=en-us)
 
-在版本号较低的 Windows 10 中安装的 WSL 不支持图形界面，需要在 Windows 中安装 X Server
+详情参考[在 WSL 上运行 Linux GUI 应用](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps)。
+::::
+
+::::{tab-item} Windows 10 低于 19044
+
+内部版本低于 19044 的 Windows 10 中安装的 WSL 不支持图形界面，需要在 Windows 中安装 X Server
 来接收和显示 Linux 中的图形界面。
 
 :::{note}
@@ -153,8 +169,7 @@ Windows 下常见的 X Server 有 [VcXsrv](https://sourceforge.net/projects/vcxs
 [Xmanager](https://www.xshellcn.com/) 等。
 其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。
 Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
-VcXsrv 的使用方式和界面与 Xming 极为相近。
-推荐使用 VcXsrv，本文以此软件为例进行介绍。
+VcXsrv 的使用方式和界面与 Xming 极为相近。推荐使用 VcXsrv，本文以此软件为例进行介绍。
 
 1. 下载 [VcXsrv](https://sourceforge.net/projects/vcxsrv/)，默认安装即可
 
@@ -193,11 +208,24 @@ VcXsrv 的使用方式和界面与 Xming 极为相近。
 安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。
 :::
 
+::::
+:::::
+
 ## 跨系统文件互访
 
-WSL1 和 WSL2 都可以和 Windows 系统互相访问文件，但是无论从 WSL 访问 Windows，
-还是从 Windows 访问 WSL，WSL1 的速度都要远远快于 WSL2。因此，需要经常跨系统操作文件
-时，建议将 Linux 发行版设置为 WSL1。
+WSL 有 WSL1 和 WSL2 两个版本。WSL2 是安装 Linux 发行版时的默认版本，其在各方面都优于 WSL1。
+但在跨系统访问文件方面（即在 Windows 下访问 WSL 中的文件或在 WSL 下访问 Windows 中的文件），
+WSL1 的速度要远远快于 WSL2。因而，在使用 WSL2 时，建议尽量将处理的文件放在 WSL 中，
+以避免跨系统访问文件。
+
+对于需要经常跨系统操作文件的需要，可以使用如下命令将 Linux 发行版（假定名为 Ubuntu）从 WSL2 转换为 WSL1：
+```
+$ wsl --set-version Ubuntu 1
+```
+同样的，也可以使用如下命令将 Linux 发行版（假定名为 Ubuntu）从 WSL1 转换为 WSL2：
+```
+$ wsl --set-version Ubuntu 2
+```
 
 ### WSL 访问 Windows
 
