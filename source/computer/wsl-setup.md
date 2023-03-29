@@ -1,7 +1,7 @@
 # WSL 配置指南
 
 - 本节贡献者: {{赵志远}}（作者）、{{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2023-03-22
+- 最近更新日期: 2023-03-29
 - 预计花费时间: 120 分钟
 
 ---
@@ -53,9 +53,15 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
 
 :::{note}
 WSL 默认安装的 Linux 发行版是 Ubuntu 22.04 LTS，但也支持安装其它 Linux 发行版。
-可以使用命令 `wsl --list --online` 查看可安装的 Linux 发行版列表，并使用
-命令 `wsl --install -d <Distribution Name>` 安装指定 Linux 发行版
-（`<Distribution Name>` 为要安装的 Linux 发行版的名称）。
+可以使用如下命令查看可安装的 Linux 发行版列表：
+```
+$ wsl --list --online
+```
+可以使用如下命令安装指定的 Linux 发行版（其中 `<Distribution Name>` 为要安装的
+Linux 发行版的名称）：
+```
+$ wsl --install -d <Distribution Name>
+```
 
 WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora 的读者可以参考
 [英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
