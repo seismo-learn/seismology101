@@ -218,7 +218,7 @@ WSL 有 WSL1 和 WSL2 两个版本。WSL2 是安装 Linux 发行版时的默认�
 WSL1 的速度要远远快于 WSL2。因而，在使用 WSL2 时，建议尽量将处理的文件放在 WSL 中，
 以避免跨系统访问文件。
 
-对于需要经常跨系统操作文件的需要，可以使用如下命令将 Linux 发行版（假定名为 Ubuntu）从 WSL2 转换为 WSL1：
+对于有经常跨系统操作文件的需求，可以使用如下命令将 Linux 发行版（假定名为 Ubuntu）从 WSL2 转换为 WSL1：
 ```
 $ wsl --set-version Ubuntu 1
 ```
