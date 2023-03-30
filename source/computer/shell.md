@@ -68,21 +68,29 @@ $ ls *b*
 b.txt ab.txt
 ```
 
-使用方括号匹配字符:
-
+方括号 `[...]` 可以用于匹配方括号内的任意一个字符。
+若当前目录下存在文件 {file}`a.txt` 和 {file}`b.txt`，则 `[ab].txt` 会匹配这两个
+文件：
 ```
-# 若当前目录下存在文件 a.txt 和 b.txt
 $ ls [ab].txt
 a.txt b.txt
-# 若当前目录下只存在文件 a.txt
+```
+若当前目录下只存在文件 {file}`a.txt`，则 `[ab].txt` 只能匹配到一个文件：
+```
 $ ls [ab].txt
 a.txt
-
-# 若当前目录下存在文件 a.txt b.txt c.txt
+```
+方括号还可以用于匹配一个连续范围内的多个字符。例如，若当前目录存在文件
+{file}`a.txt`、{file}`b.txt` 和 {file}`c.txt`，则 `[a-c].txt` 可以匹配这三个文件：
+```
 $ ls [a-c].txt
 a.txt b.txt c.txt
+```
 
-# 若当前目录下存在文件 aaa.txt bbb.txt aba.txt
+不同的扩展符号可以组合在一起使用，可以实现更复杂的匹配功能。若当前目录下存在文件
+{file}`aaa.txt`、{file}`bbb.txt` 和 {file}`aba.txt`，则可以使用如下扩展符号匹配
+特定的文件：
+```
 $ ls ?[^a]?.txt
 aba.txt bbb.txt
 ```
