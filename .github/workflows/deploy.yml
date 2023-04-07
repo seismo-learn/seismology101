@@ -6,7 +6,7 @@ name: Deploy
 # Run on main branch only
 on:
   # uncomment 'pull_request' line to test the workflow in PR
-  # pull_request:
+  pull_request:
   push:
     branches:
       - main
