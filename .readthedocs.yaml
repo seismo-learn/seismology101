@@ -11,6 +11,7 @@ build:
     python: "mambaforge-4.10"
   jobs:
     pre_build:
+      - echo $READTHEDOCS_VERSION
       # Generate the Sphinx configuration for this Jupyter Book so it builds.
       - "jupyter-book config sphinx source/"
 
