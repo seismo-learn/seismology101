@@ -27,13 +27,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Mambaforge
-        uses: conda-incubator/setup-miniconda@v2.2.0
+      - name: Setup Micromamba
+        uses: mamba-org/provision-with-micromamba@v15
         with:
-          activate-environment: seismo-learn
           environment-file: environment.yml
-          miniforge-variant: Mambaforge
-          use-mamba: true
+          cache-downloads: true
+          cache-env: true
 
       - uses: actions/cache@v3
         id: cache
