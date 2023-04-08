@@ -38,17 +38,24 @@ Shell 接收到用户输入的命令后，会以空格为分隔符将输入的�
 | [*start*-*end*] | 方括号扩展的简写模式，匹配一个连续的范围 | [a-z] 表示所有小写字母，[0-9] 等同于 [0123456789] |
 | [^...]          | 匹配不在方括号里面的任意一个字符         | [^ab]c.txt 匹配 cc.txt、dc.txt 等文件名 |
 
-字符 `?` 可以匹配任意单个字符。假如当前目录下有 {file}`a.txt`、{file}`b.txt`
-和 {file}`ab.txt` 三个文件。`?.txt` 可以匹配文件 {file}`a.txt` 和 {file}`b.txt`，
+### 字符 `?` 扩展
+
+字符 `?` 可以匹配任意**单个**字符。
+
+假如当前目录下有 {file}`filea.txt`、{file}`fileb.txt` 和 {file}`fileab.txt` 三个文件。
+在命令中使用 `file?.txt` 时，Shell 会对 `file?.txt` 进行扩展。由于字符 `?` 可以
+匹配任意单个字符，因而 `file?.txt` 会匹配到文件 {file}`filea.txt` 和 {file}`fileb.txt`：
 ```
-$ ls ?.txt
-a.txt b.txt
+$ ls file?.txt
+filea.txt fileb.txt
 ```
-`??.txt` 则可以匹配文件 {file}`ab.txt`：
+同理，`file??.txt` 可以匹配文件 {file}`fileab.txt`：
 ```
-$ ls ??.txt
-ab.txt
+$ ls file??.txt
+fileab.txt
 ```
+
+### `*` 匹配任意数量的任意字符
 
 字符 `*` 可以匹配任意数量（包括零个）任意字符。若当前目录下有 {file}`a.txt`、{file}`b.txt`
 和 {file}`ab.txt` 三个文件。
@@ -67,6 +74,8 @@ a.txt ab.txt
 $ ls *b*
 b.txt ab.txt
 ```
+
+### `[...]` 匹配方括号内的任意一个字符
 
 方括号 `[...]` 可以用于匹配方括号内的任意一个字符。
 若当前目录下存在文件 {file}`a.txt` 和 {file}`b.txt`，则 `[ab].txt` 会匹配这两个
