@@ -55,27 +55,30 @@ $ ls file??.txt
 fileab.txt
 ```
 
-### `*` 匹配任意数量的任意字符
+### 字符 `*` 扩展
 
-字符 `*` 可以匹配任意数量（包括零个）任意字符。若当前目录下有 {file}`a.txt`、{file}`b.txt`
-和 {file}`ab.txt` 三个文件。
+字符 `*` 可以匹配任意数量（零个或多个）的任意字符。
+
+假如当前目录下有 {file}`filea.txt`、{file}`fileb.txt` 和 {file}`fileab.txt` 三个文件。
 使用 `*.txt` 可以匹配所有以 `.txt` 结尾的文件：
 ```
 $ ls *.txt
-a.txt b.txt ab.txt
+filea.txt fileb.txt fileab.txt
 ```
-使用 `a*.txt` 可以匹配到以 `a` 开头并以 `.txt` 结尾的文件：
+
+使用 `filea*.txt` 可以匹配到以 `filea` 开头并以 `.txt` 结尾的文件：
 ```
-$ ls a*.txt
-a.txt ab.txt
+$ ls filea*.txt
+filea.txt fileab.txt
 ```
+
 使用 `*b*` 可以匹配文件名中包括字符 `b` 的文件：
 ```
 $ ls *b*
-b.txt ab.txt
+fileb.txt fileab.txt
 ```
 
-### `[...]` 匹配方括号内的任意一个字符
+### 方括号 `[...]` 扩展
 
 方括号 `[...]` 可以用于匹配方括号内的任意一个字符。
 若当前目录下存在文件 {file}`a.txt` 和 {file}`b.txt`，则 `[ab].txt` 会匹配这两个
