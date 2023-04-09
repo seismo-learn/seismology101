@@ -27,13 +27,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Mambaforge
-        uses: conda-incubator/setup-miniconda@v2.2.0
+      - name: Setup Micromamba
+        uses: mamba-org/provision-with-micromamba@v15
         with:
-          activate-environment: seismo-learn
           environment-file: environment.yml
-          miniforge-variant: Mambaforge
-          use-mamba: true
+          cache-downloads: true
+          cache-env: true
 
       - uses: actions/cache@v3
         id: cache
@@ -53,7 +52,7 @@ jobs:
         run: make dirhtml
 
       - name: Deploy documentation
-        uses: peaceiris/actions-gh-pages@bd8c6b06eba6b3d25d72b7a1767993c0aeee42e7
+        uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/dirhtml
