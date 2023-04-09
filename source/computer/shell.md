@@ -80,31 +80,38 @@ fileb.txt fileab.txt
 
 ### 方括号 `[...]` 扩展
 
-方括号 `[...]` 可以用于匹配方括号内的任意一个字符。
-若当前目录下存在文件 {file}`a.txt` 和 {file}`b.txt`，则 `[ab].txt` 会匹配这两个
-文件：
+方括号 `[...]` 可以用于匹配方括号内的任意单个字符。
+
+假如当前目录下有 {file}`filea.txt`、{file}`fileb.txt` 和 {file}`filec.txt` 三个文件。
+使用 `file[ab].txt` 则会匹配到 {file}`filea.txt` 和 {file}`fileb.txt` 两个文件：
 ```
-$ ls [ab].txt
-a.txt b.txt
+$ ls file[ab].txt
+filea.txt fileb.txt
 ```
-若当前目录下只存在文件 {file}`a.txt`，则 `[ab].txt` 只能匹配到一个文件：
+使用 `file[cd].txt` 则只能匹配到 {file}`filec.txt` 这一个文件：
 ```
-$ ls [ab].txt
-a.txt
+$ ls file[cd].txt
+filec.txt
 ```
-方括号还可以用于匹配一个连续范围内的多个字符。例如，若当前目录存在文件
-{file}`a.txt`、{file}`b.txt` 和 {file}`c.txt`，则 `[a-c].txt` 可以匹配这三个文件：
+方括号里还可以用破折号 `-` 指定连续范围内的多个字符。例如 `[a-z]` 表示从 a 到 z
+的所有小写字母，`A-Z` 表示从 A 到 Z 的所有大小字母，`[0-9]` 表示数字 0 到 9，
+`[a-zA-Z0-0]` 在表示所有字母和数字。例如，使用 `file[a-c].txt` 可以匹配到三个文件：
 ```
-$ ls [a-c].txt
-a.txt b.txt c.txt
+$ ls file[a-c].txt
+filea.txt fileb.txt filec.txt
 ```
 
-不同的扩展符号可以组合在一起使用，可以实现更复杂的匹配功能。若当前目录下存在文件
-{file}`aaa.txt`、{file}`bbb.txt` 和 {file}`aba.txt`，则可以使用如下扩展符号匹配
+### 多种扩展字符的组合
+
+不同的扩展字符组合在一起使用可以实现更复杂的匹配功能。
+
+若当前目录下存在文件 {file}`filea.txt`、{file}`fileaaa.txt`、{file}`filebbb.txt`
+和 {file}`fileabc.txt`，则通配符 `file[a-b]b?.txt` 会匹配到 {file}`filebbb.txt`
+和 {file}`fileabc.txt` 两个文件：
 特定的文件：
 ```
-$ ls ?[^a]?.txt
-aba.txt bbb.txt
+$ ls file[a-b]b?.txt
+fileabc.txt filebbb.txt
 ```
 
 :::{warning}
