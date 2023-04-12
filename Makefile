@@ -2,7 +2,7 @@ SOURCEDIR	= source
 OUTPUTDIR 	= .
 
 html dirhtml:
-	jupyter-book build ${SOURCEDIR} --path-output ${OUTPUTDIR} --builder $@
+	jupyter-book build ${SOURCEDIR} --path-output ${OUTPUTDIR} --builder $@ -n
 
 clean:
-	rm -rf ${OUTPUTDIR}/_build/
+	jupyter-book clean --all ${OUTPUTDIR}
