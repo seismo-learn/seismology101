@@ -94,8 +94,8 @@ $ ls file[cd].txt
 filec.txt
 ```
 方括号里还可以用破折号 `-` 指定连续范围内的多个字符。例如 `[a-z]` 表示从 a 到 z
-的所有小写字母，`A-Z` 表示从 A 到 Z 的所有大小字母，`[0-9]` 表示数字 0 到 9，
-`[a-zA-Z0-0]` 在表示所有字母和数字。例如，使用 `file[a-c].txt` 可以匹配到三个文件：
+的所有小写字母，`[A-Z]` 表示从 A 到 Z 的所有大小字母，`[0-9]` 表示数字 0 到 9，
+`[a-zA-Z0-9]` 则表示所有字母和数字。例如，使用 `file[a-c].txt` 可以匹配到三个文件：
 ```
 $ ls file[a-c].txt
 filea.txt fileb.txt filec.txt
@@ -108,7 +108,6 @@ filea.txt fileb.txt filec.txt
 若当前目录下存在文件 {file}`filea.txt`、{file}`fileaaa.txt`、{file}`filebbb.txt`
 和 {file}`fileabc.txt`，则通配符 `file[a-b]b?.txt` 会匹配到 {file}`filebbb.txt`
 和 {file}`fileabc.txt` 两个文件：
-特定的文件：
 ```
 $ ls file[a-b]b?.txt
 fileabc.txt filebbb.txt
