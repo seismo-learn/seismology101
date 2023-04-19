@@ -38,6 +38,7 @@ parts:
     - file: seismology/seismic-wave
     - file: seismology/seismic-phase
     - file: seismology/seismogram
+    - file: seismology/seismograph
     - file: seismology/station
     - file: seismology/data-format
     - file: seismology/software
