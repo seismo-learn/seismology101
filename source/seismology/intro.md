@@ -30,12 +30,12 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 
 地震学是研究地球机械振动的科学。产生这些振动的源可能是地震、火山喷发、海浪、台风或飓风、
 人工爆炸、交通活动等，一般称为[**震源**](seismic-source.md)（seismic source），
-也常被称为**地震事件**（seismic event）或**事件**（event），
+也常被称为**地震事件**（seismic event）或**事件**（event）。
 震源激发的地球机械振动以[**地震波**](seismic-wave.md)（seismic wave）的形式
-在地球内部传播，并被布设在地表或地下的**地震仪**（seismograph）记录下来。
-一般常称地震仪为[**地震台站**](station.md)（seismic station）或**台站**（station）。
-地震仪记录的地球机械振动称为[**地震图**](seismogram.md)（seismogram），是地震学的
-主要研究工具。
+在地球内部传播，并被布设在地表或地下的[**地震仪**](seismograph.md)（seismograph）记录下来。
+地震仪加上一些辅助设备则构成了[**地震台站**](station.md)（seismic station）或**台站**（station）。
+地震仪记录的地球机械振动称为[**地震图**](seismogram.md)（seismogram）。
+地震图包含了具有不同特征的[**地震震相**](seismic-phase.md)，是地震学的主要研究工具。
 
 :::{figure} seismology-overview.jpg
 :align: center
