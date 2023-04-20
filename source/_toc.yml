@@ -40,7 +40,6 @@ parts:
     - file: seismology/seismogram
     - file: seismology/station
     - file: seismology/data-format
-    - file: seismology/software
     - file: seismology/resources
   - caption: 地震学实践
     chapters:
@@ -63,6 +62,7 @@ parts:
       - file: exercises/cross-correlation
       - file: exercises/distaz
       - file: exercises/phases
+    - file: exercises/software
   - caption: 实践经验
     chapters:
     - file: best-practices/intro
