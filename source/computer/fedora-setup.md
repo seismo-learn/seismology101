@@ -1,13 +1,13 @@
 # Fedora 配置指南
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2022-11-22
+- 最近更新日期: 2023-04-24
 - 预计花费时间: 120 分钟
 
 ---
 
 :::{note}
-本节内容适用于 **Fedora 37 Workstation**，不一定适用于其他 Fedora 版本。
+本节内容适用于 **Fedora 38 Workstation**，不一定适用于其他 Fedora 版本。
 建议用户访问 [Fedora 官网](https://getfedora.org/) 下载并安装 Fedora
 最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
 :::
@@ -19,10 +19,10 @@
 访问 [Fedora 官网](https://getfedora.org/) 并下载 Fedora Workstation 镜像文件，
 一般选择 x86_64 版本。
 
-**Fedora 37 Workstation x86_64** 的 ISO 镜像文件（约 2 GB）下载链接：
+**Fedora 38 Workstation x86_64** 的 ISO 镜像文件（约 2 GB）下载链接：
 
-- [官方镜像](https://download.fedoraproject.org/pub/fedora/linux/releases/37/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-37-1.7.iso)
-- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/37/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-37-1.7.iso) [**推荐国内用户使用**]
+- [官方镜像](https://download.fedoraproject.org/pub/fedora/linux/releases/38/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-38-1.6.iso)
+- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/38/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-38-1.6.iso) [**推荐国内用户使用**]
 
 ### 制作 USB 启动盘
 
@@ -67,7 +67,7 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 {kbd}`F10` 或 {kbd}`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
-正确启动后，则会进入 GRUB，按向上向下键选中“Start Fedora-Workstation-Live 37”
+正确启动后，则会进入 GRUB，按向上向下键选中“Start Fedora-Workstation-Live 38”
 以进入 Fedora 的 Live 系统。
 
 :::{note}
@@ -92,7 +92,7 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 :::
 
 读者可参考下面的图解步骤和对应的说明安装操作系统（图解步骤是基于 Fedora 36 的，
-但同样适用于 Fedora 37）。
+但同样适用于 Fedora 38）。
 
 ::::{card-carousel} 1
 :::{card} 1. 点击 “Install to Hard Drive” 以开始安装
