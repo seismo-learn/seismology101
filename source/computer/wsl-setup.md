@@ -1,7 +1,7 @@
 # WSL 配置指南
 
 - 本节贡献者: {{赵志远}}（作者）、{{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2023-03-29
+- 最近更新日期: 2023-04-24
 - 预计花费时间: 120 分钟
 
 ---
@@ -31,13 +31,15 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
 先检查当前 Windows 系统的版本号是否满足 WSL 的要求。
 
 按下 {kbd}`win` + {kbd}`R` 键，在打开的运行对话框中键入 `winver`，然后选择“确定”，
-则会弹出“关于 Windows”对话框，会看到类似“版本 2004 （OS 内部版本 19041 ）”的字样。
-其中，2004 是 Windows 版本号，19041 是系统内部版本号。
+则会弹出“关于 Windows”对话框，会看到类似“版本 21H2 （OS 内部版本 19044 ）”的字样。
+其中，21H2 是 Windows 版本号，19044 是系统内部版本号。
+
+:::{note}
+本配置指南的内容仅适用于 Windows 10 版本 21H2 及更高版本（内部版本 19044 及更高
+版本）或 Windows 11。低版本 Windows 用户请自行升级到更高版本。
+:::
 
 ### 安装 WSL
-
-若你使用的是 Windows 10 版本 2004 及更高版本（内部版本 19041 及更高版本）
-或 Windows 11，则可以通过如下方式安装 WSL。
 
 1.  在 Windows 系统的搜索框中直接输入命令 `CMD`
 2.  在搜索结果中的“命令提示符”上单击右键，选择“管理员身份运行”
@@ -141,75 +143,14 @@ $ exit
 
 ## 配置图形界面
 
-:::::{tab-set}
-::::{tab-item} Windows 10 Build 19044+ / Windows 11
-Windows 10 内部版本 19044 或更高版本以及 Widnows 11 中新安装的 WSL 已经直接支持
-图形界面，无需做额外配置。但在运行 Linux GUI 应用前，需要先安装与显卡匹配的驱动程序：
+新版本 Windows 中安装的 WSL 已经直接支持图形界面，无需做额外配置。但在运行
+Linux GUI 应用前，需要先安装与显卡匹配的驱动程序：
 
 - [英特尔 GPU 驱动程序](https://www.intel.com/content/www/us/en/download/19344/intel-graphics-windows-dch-drivers.html)
 - [AMD GPU 驱动程序](https://www.amd.com/en/support)
 - [NVIDIA GPU 驱动程序](https://www.nvidia.com/Download/index.aspx?lang=en-us)
 
 详情参考[在 WSL 上运行 Linux GUI 应用](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps)。
-::::
-
-::::{tab-item} Windows 10 低于 19044
-
-内部版本低于 19044 的 Windows 10 中安装的 WSL 不支持图形界面，需要在 Windows 中安装 X Server
-来接收和显示 Linux 中的图形界面。
-
-:::{note}
-X Window System（常称为 X11 或 X）是 UNIX 系统下常用的一种视窗系统，
-主要由 X Server 和 X Client 两部分组成。其中 X Server 负责接收对图形输出
-的请求并反馈用户输入，而 X Client 则是使用图形界面的应用程序。
-:::
-
-Windows 下常见的 X Server 有 [VcXsrv](https://sourceforge.net/projects/vcxsrv/)、
-[Xming](http://www.straightrunning.com/XmingNotes/)、
-[Xmanager](https://www.xshellcn.com/) 等。
-其中，VcXsrv 是开源免费软件；Xming 和 Xmanager 是收费软件。
-Xming 在 2007 年发布了最后一个免费版本（6.9.0.31）。
-VcXsrv 的使用方式和界面与 Xming 极为相近。推荐使用 VcXsrv，本文以此软件为例进行介绍。
-
-1. 下载 [VcXsrv](https://sourceforge.net/projects/vcxsrv/)，默认安装即可
-
-2. 运行 XLaunch，在 **Extra settings** 界面勾选 **Disable access control**，其他选项无需更改
-
-3. Windows 每次重启后，WSL2 nameserver 的 IP 可能发生变化，因而需要配置 Linux
-   下的环境变量以保证始终能连接到 X Server。
-
-   启动并进入 Linux 系统:
-
-   ```
-   $ bash
-   ```
-
-   在 Linux 系统中执行如下命令:
-
-   ```
-   $ echo "export DISPLAY=\$(awk '/nameserver / {print \$2; exit}' /etc/resolv.conf 2>/dev/null):0" >> ~/.bashrc
-   $ echo "export LIBGL_ALWAYS_INDIRECT=1" >> ~/.bashrc
-   $ source ~/.bashrc
-   ```
-
-4. 打开图形界面进行测试:
-
-   ```
-   # x11-apps 中包含了很多小程序如 xclock、xeyes
-   # Ubuntu 用户使用如下命令安装
-   $ sudo apt install x11-apps
-   # Fedora 用户使用如下命令安装
-   $ sudo dnf install xorg-x11-apps
-   # 运行 xclock。若能看到一个时钟窗口，则表示图形界面设置成功
-   $ xclock
-   ```
-
-:::{note}
-安装并配置好 X Server 之后，切记先运行 XLaunch 再进入 Linux 环境打开图形界面。
-:::
-
-::::
-:::::
 
 ## 跨系统文件互访
 
@@ -273,25 +214,3 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 ## 扩展阅读
 
 -  [比较 WSL2 和 WSL1](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)
--  **WSL2 与 VMware/VirtualBox 兼容性问题**
-
-   由于 Hyper-V 兼容性问题，开启 WSL2 功能后，虚拟机软件 VMware/VirtualBox 的老版本
-   将无法正常使用。VMware ≥15.5.5 和 VirtualBox ≥6.0 在最新 Windows 系统上（版本号 ≥19041）
-   可以正常使用，无兼容性问题。
-
-   WSL1 和 VMware/VirtualBox 不存在兼容性问题，可同时运行。因此，已开启 WSL2 功能的用户
-   若需要使用 VMware/VirtualBox，可以先把 Linux 发行版改为 WSL1，然后执行以下操作。
-
-   使用管理员模式打开 CMD，使用以下命令关闭 Hyper-V（重启后方能生效）。
-   此时，Hyper-V 功能关闭，VMware/VirtualBox 可用，WSL2 不可用:
-
-   ```
-   $ bcdedit /set hypervisorlaunchtype off
-   ```
-
-   使用管理员模式打开 CMD，使用以下命令开启 Hyper-V（重启后方能生效）。
-   此时，Hyper-V 功能开启，WSL2 可用，VMware/VirtualBox 不可用:
-
-   ```
-   $ bcdedit /set hypervisorlaunchtype auto
-   ```
