@@ -35,17 +35,12 @@ IRIS GMAP 是一个由 IRIS 提供的地震台站网页搜索工具，可以方�
 会看到如下界面：界面左侧为功能栏，可以使用不同的准则筛选地震台站；
 右侧为显示区，用于显示符合筛选条件的地震台站。
 
-左侧功能栏中，支持以多种不同的方式对地震台站进行筛选：
-
-- 指定台网名、台站名、位置码、通道名
-- 指定时间范围
-- 指定台站位置范围（矩形区域或圆形区域）
-- 指定地震数据中心
+左侧功能栏中，支持以多种不同的方式对地震台站进行筛选：指定台网名、台站名、位置码、通道名；指定时间范围；指定台站位置范围（矩形区域或圆形区域）；指定地震数据中心。
 
 :::{figure} gmap-1.jpg
 :align: center
 :alt: "IRIS GMAP 界面"
-:width: 100%
+:width: 90%
 
 IRIS GMAP 界面
 :::
@@ -58,7 +53,7 @@ IRIS GMAP 界面
 :::{figure} gmap-2.jpg
 :align: center
 :alt: "IRIS GMAP 显示 IU 台网的宽频带台站"
-:width: 100%
+:width: 90%
 
 IRIS GMAP 显示 IU 台网的宽频带台站
 :::
@@ -69,7 +64,7 @@ IRIS GMAP 显示 IU 台网的宽频带台站
 :::{figure} gmap-3.jpg
 :align: center
 :alt: "IRIS GMAP 查看 IU.ANMO 台站的基本信息"
-:width: 100%
+:width: 90%
 
 IRIS GMAP 查看 IU.ANMO 台站的基本信息
 :::
@@ -84,7 +79,7 @@ IRIS GMAP 查看 IU.ANMO 台站的基本信息
 :::{figure} mda-1.jpg
 :align: center
 :alt: "IRIS MDA 中查看 IU.ANMO 台站的基本信息"
-:width: 100%
+:width: 90%
 
 IRIS MDA 中查看 IU.ANMO 台站的基本信息
 :::
