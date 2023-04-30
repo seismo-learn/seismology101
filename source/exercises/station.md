@@ -118,7 +118,6 @@ inv = client.get_stations(
 ```
 该函数会向 IRIS 地震数据中心发起请求，并返回符合条件的地震台站信息。其返回值是
 {class}`~obspy.core.inventory.inventory.Inventory` 类型，并被保存到变量 `inv` 中。
-
 下面我们看看变量 `inv` 中的内容：
 ```{code-cell} ipython3
 print(inv)
@@ -163,6 +162,12 @@ inv = read_inventory("stations.xml")
 {class}`~obspy.core.inventory.inventory.Inventory` 类型。
 事实上，{class}`~obspy.core.inventory.inventory.Inventory` 类是 ObsPy 中最核心的类之一，用于储存地震台站信息。
 下图展示了 {class}`~obspy.core.inventory.inventory.Inventory` 类的属性及其层级关系：
+{class}`~obspy.core.inventory.inventory.Inventory` 类可以看做是 
+{class}`~obspy.core.inventory.network.Network` 类的列表;
+{class}`~obspy.core.inventory.network.Network` 类可以看做是 
+{class}`~obspy.core.inventory.station.Station` 类的列表;
+{class}`~obspy.core.inventory.station.Station` 类可以看做是 
+{class}`~obspy.core.inventory.channel.Channel` 类的列表。
 
 :::{figure} https://docs.obspy.org/_images/Inventory.png
 :align: center
@@ -174,10 +179,8 @@ ObsPy 的 {class}`~obspy.core.inventory.inventory.Inventory` 类。引自 [ObsPy
 
 ### {class}`~obspy.core.inventory.inventory.Inventory` 类
 
-{class}`~obspy.core.inventory.inventory.Inventory` 类可以看做是 
-{class}`~obspy.core.inventory.network.Network` 类的列表，因而可以对 
-{class}`~obspy.core.inventory.inventory.Inventory` 进行列表相关的操作。
-这里，我们对 `inv` 进行循环并打印每个元素（即 `Network` 类）的值：
+可以对 {class}`~obspy.core.inventory.inventory.Inventory` 进行列表相关的操作，
+下面对 `inv` 进行循环并打印每个元素（即 `Network` 类）的值：
 ```{code-cell} ipython3
 for net in inv:
     print(net)
@@ -186,15 +189,13 @@ for net in inv:
 ### {class}`~obspy.core.inventory.network.Network` 类
 
 {class}`~obspy.core.inventory.network.Network` 类提供了很多台网相关的属性和函数。
-例如，下面的代码会输出台网代码、台网总台站数以及 `inv` 中包含的台站数目：
+例如，下面的代码会输出第一个台网的代码、总台站数以及 `inv` 中实际包含的台站数目：
 ```{code-cell} ipython3
 net = inv[0]
 print(net.code, net.total_number_of_stations, net.selected_number_of_stations)
 ```
 
-{class}`~obspy.core.inventory.network.Network` 类可以看做是 
-{class}`~obspy.core.inventory.station.Station` 类的列表，因而可以对 
-{class}`~obspy.core.inventory.network.Network` 进行列表相关的操作。
+可以对 {class}`~obspy.core.inventory.network.Network` 进行列表相关的操作，
 这里我们取其第一个台站并查看其信息：
 ```{code-cell} ipython3
 sta = net[0]
@@ -211,8 +212,8 @@ print(sta.code, sta.latitude, sta.longitude, sta.elevation)
 print(sta.total_number_of_channels, sta.selected_number_of_channels)
 ```
 
-每个 {class}`~obspy.core.inventory.station.Station` 类可以看做是 
-{class}`~obspy.core.inventory.channel.Channel` 类的列表。这里我们取该台站的第一个通道并查看其信息：
+可以对 {class}`~obspy.core.inventory.station.Station` 进行列表相关的操作，
+这里我们取该台站的第一个通道并查看其信息：
 ```{code-cell} ipython3
 chn = sta[0]
 print(chn)
