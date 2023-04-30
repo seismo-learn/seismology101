@@ -43,13 +43,6 @@ repository:
   path_to_book: source
   branch: main
 
-# Launch button settings
-launch_buttons:
-  notebook_interface: jupyterlab 
-  binderhub_url: https://mybinder.org
-  thebe: true
-  colab_url: https://colab.research.google.com
-
 # Citation settings
 bibtex_bibfiles:
   - references.bib
