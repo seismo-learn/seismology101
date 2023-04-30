@@ -83,5 +83,5 @@ parts:
       title: 地震“学”主站
     - url: https://seismo-learn.org/contributing/
       title: 贡献指南
-    - url: https://github.com/seismo-learn/seismology101/discussions
+    - url: https://github.com/orgs/seismo-learn/discussions
       title: 参与讨论
