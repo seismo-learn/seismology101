@@ -33,10 +33,6 @@ html:
   use_repository_button: true
   use_issues_button: true
 
-# LaTeX-specific settings
-latex:
-  latex_engine: xelatex
-
 # Repository settings
 repository:
   url: https://github.com/seismo-learn/seismology101
