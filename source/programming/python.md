@@ -195,6 +195,8 @@ Python 解释器内置了所有标准库，安装解释器后就可以直接使�
 ```
 # 增加 conda-forge 通道，可以安装更多的软件包
 $ conda config --add channels conda-forge
+# 设置通道优先级为 strict，以避免混用 conda-forge 和 main
+$ conda config --set channel_priority true
 # 显示通道的 URL
 $ conda config --set show_channel_urls true
 # 配置使用国内清华源以加快软件下载速度
