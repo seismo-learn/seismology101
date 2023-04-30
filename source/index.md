@@ -24,7 +24,7 @@
 这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。
 请通过如下方式给予反馈：
 
-1. {octicon}`comment-discussion` [留言参与讨论](https://github.com/seismo-learn/seismology101/discussions)
+1. {octicon}`comment-discussion` [留言参与讨论](https://github.com/orgs/seismo-learn/discussions)
 2. {octicon}`issue-opened` 在教程源码仓库下[提交 Issue](https://github.com/seismo-learn/seismology101/issues)
 3. {octicon}`git-pull-request` 修改文档并[提交 Pull Request](https://github.com/seismo-learn/seismology101/pulls)
 
