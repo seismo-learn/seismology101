@@ -4,7 +4,6 @@ channels:
   - nodefaults
 dependencies:
   - python=3.10
-  - pip
   - cartopy
   - jupyter-book=0.15
   - matplotlib

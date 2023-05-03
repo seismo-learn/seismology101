@@ -102,21 +102,22 @@ $ cat file1 file2 > target_file
 `diff` 命令的命名来自 **diff**erence。该命令可以用来逐行比较两个文件的异同。
 我们用以下两个示例文件展示其用法:
 
+文件 {file}`file1` 中包含如下三行内容：
 ```
-$ cat file1
 seismo-learn
 seismology
 software
+```
 
-$ cat file2
+文件 {file}`file2` 中包含如下三行内容：
+```
 seismo-learn
 seismology101
 software
 ```
 
-比较 {file}`file1` 和 {file}`file2` 的异同，结果显示两个文件第二行不同，其他
-行是相同的:
-
+使用 `diff` 命令比较 {file}`file1` 和 {file}`file2` 的异同。结果显示，两个文件
+第二行不同，其他行是相同的:
 ```
 $ diff file1 file2
 2c2
@@ -499,7 +500,7 @@ $ tail -n 5 /etc/passwd
 可以直接选择压缩打包的文件，无需再单独使用压缩程序进行压缩。
 
 ```
-# 将 file1 和 file2 打包并用 gzip 命令进行压缩，文件命名为 seismo-learn.tar.gz。也可用 .tgz 来作标识
+# 将 file1 和 file2 打包并用 gzip 命令进行压缩，文件命名为 seismo-learn.tar.gz。
 $ tar -zcvf seismo-learn.tar.gz file1 file2
 
 # 打包并用 bzip2 命令进行压缩。一般用 .tar.bz2 或 .tbz 来作文件标识

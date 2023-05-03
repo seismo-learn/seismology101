@@ -30,14 +30,14 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 
 地震学是研究地球机械振动的科学。产生这些振动的源可能是地震、火山喷发、海浪、台风或飓风、
 人工爆炸、交通活动等，一般称为[**震源**](seismic-source.md)（seismic source），
-也常被称为**地震事件**（seismic event）或**事件**（event），
+也常被称为**地震事件**（seismic event）或**事件**（event）。
 震源激发的地球机械振动以[**地震波**](seismic-wave.md)（seismic wave）的形式
-在地球内部传播，并被布设在地表或地下的**地震仪**（seismograph）记录下来。
-一般常称地震仪为[**地震台站**](station.md)（seismic station）或**台站**（station）。
-地震仪记录的地球机械振动称为[**地震图**](seismogram.md)（seismogram），是地震学的
-主要研究工具。
+在地球内部传播，并被布设在地表或地下的[**地震仪**](seismograph.md)（seismograph）记录下来。
+地震仪加上一些辅助设备则构成了[**地震台站**](station.md)（seismic station）或**台站**（station）。
+地震仪记录的地球机械振动称为[**地震图**](seismogram.md)（seismogram）。
+地震图包含了具有不同特征的[**地震震相**](seismic-phase.md)，是地震学的主要研究工具。
 
-:::{figure} seismic-waves.jpg
+:::{figure} seismology-overview.jpg
 :align: center
 :alt: 地震激发的地震波路径和波形
 :width: 95%
@@ -94,6 +94,15 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - 20 世纪 80 和 90 年代，全球台站空白区域新增加了地震台，全球许多地震台升级为宽频带地震仪。
   地震仪的改进与观测资料的长期积累使得地震学得以快速发展
 
+随着观测的不断增加，人们对于地震的认知也在不断加深：
+
+- 1911 年，Harry Reid 在调查 1906 年美国旧金山大地震时发现圣安德列斯断层产生水平移动，
+  并提出“弹性回跳假说”以解释地震成因
+- 1928 年，Kiyoo Wadati 发现了深度大于 300 km 的地震（现在称之为深震）
+- 1935 年，Charles F. Richter 提出了地方震级的概念，用于定量描述地震的大小
+- 1967-1969 年，全球地震活动性进一步支持了 Alfred L. Wegener 于 1912 年提出的大陆漂移假说
+- 1977 年，Hiroo Kanamori 提出了矩震级的概念
+
 在地震学理论和观测的早期发展过程中，地球内部结构也取得了一系列重大突破：
 
 - 1906 年，Richard Oldham 报道地球存在地核 {cite}`Oldham1906`
@@ -107,6 +116,9 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 
 ## 扩展阅读
 
-- 更详细的弹性理论的发展史，见 1892 年 Augustus Love 出版的经典教材
-《A Treatise on the Mathematical Theory of Elasticity》（第一版）{cite}`Love1892`
-- 更多地震学历史见 [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology)
+- A Treatise on the Mathematical Theory of Elasticity {cite}`Love1892`: Augustus Love 在 1892 年出版的经典教材，
+  详细介绍了弹性理论的发展史
+- [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology): 地震学发展史的海报
+- Ben-Menahem, A. (1995). A concise history of mainstream seismology: Origins, legacy, and perspectives.
+  Bulletin of the Seismological Society of America, 85(4), 1202–1225. https://doi.org/10.1785/BSSA0850041202
+

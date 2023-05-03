@@ -38,9 +38,9 @@ parts:
     - file: seismology/seismic-wave
     - file: seismology/seismic-phase
     - file: seismology/seismogram
+    - file: seismology/seismograph
     - file: seismology/station
     - file: seismology/data-format
-    - file: seismology/software
     - file: seismology/resources
   - caption: 地震学实践
     chapters:
@@ -63,6 +63,7 @@ parts:
       - file: exercises/cross-correlation
       - file: exercises/distaz
       - file: exercises/phases
+    - file: exercises/software
   - caption: 实践经验
     chapters:
     - file: best-practices/intro
@@ -82,5 +83,5 @@ parts:
       title: 地震“学”主站
     - url: https://seismo-learn.org/contributing/
       title: 贡献指南
-    - url: https://github.com/seismo-learn/seismology101/discussions
+    - url: https://github.com/orgs/seismo-learn/discussions
       title: 参与讨论

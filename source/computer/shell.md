@@ -1,7 +1,7 @@
 # Shell 基础
 
 - 本节贡献者: {{姚家园}}（作者）、{{田冬冬}}（审稿）
-- 最近更新日期: 2021-02-13
+- 最近更新日期: 2023-04-08
 - 预计花费时间: 60 分钟
 
 ---
@@ -27,8 +27,10 @@ Shell 接收到用户输入的命令后，会以空格为分隔符将输入的�
 或通配符（wildcards 或 globbing）。通常来说，这些名词指代的都是这一节所介绍的内容。
 :::
 
+下表中列出了 Shell 中最常用的扩展字符：
+
 | 扩展字符 | 作用 | 示例 |
-|---|---|---|
+|:---|:---|:---|
 | ~               | 匹配当前用户的家目录                     | 例如 /home/seismo-learn |
 | ?               | 匹配任意单个字符（不能匹配零个字符）     | ?.txt 匹配 a.txt、b.txt 等文件名 |
 | \*              | 匹配任意数量字符（能匹配零个字符）       | \*.txt 匹配 a.txt、b.txt、ab.txt 等文件名 |
@@ -36,47 +38,79 @@ Shell 接收到用户输入的命令后，会以空格为分隔符将输入的�
 | [*start*-*end*] | 方括号扩展的简写模式，匹配一个连续的范围 | [a-z] 表示所有小写字母，[0-9] 等同于 [0123456789] |
 | [^...]          | 匹配不在方括号里面的任意一个字符         | [^ab]c.txt 匹配 cc.txt、dc.txt 等文件名 |
 
-匹配任意单个字符:
+### 字符 `?` 扩展
 
+字符 `?` 可以匹配任意**单个**字符。
+
+假如当前目录下有 {file}`filea.txt`、{file}`fileb.txt` 和 {file}`fileab.txt` 三个文件。
+在命令中使用 `file?.txt` 时，Shell 会对 `file?.txt` 进行扩展。由于字符 `?` 可以
+匹配任意单个字符，因而 `file?.txt` 会匹配到文件 {file}`filea.txt` 和 {file}`fileb.txt`：
 ```
-# 若当前目录下存在文件 a.txt 和 b.txt
-$ ls ?.txt
-a.txt b.txt
-# 若当前目录下存在文件 a.txt、b.txt 和 ab.txt
-$ ls ??.txt
-ab.txt
+$ ls file?.txt
+filea.txt fileb.txt
+```
+同理，`file??.txt` 可以匹配文件 {file}`fileab.txt`：
+```
+$ ls file??.txt
+fileab.txt
 ```
 
-匹配任意数量字符:
+### 字符 `*` 扩展
 
+字符 `*` 可以匹配任意数量（零个或多个）的任意字符。
+
+假如当前目录下有 {file}`filea.txt`、{file}`fileb.txt` 和 {file}`fileab.txt` 三个文件。
+使用 `*.txt` 可以匹配所有以 `.txt` 结尾的文件：
 ```
-# 若当前目录下存在文件 a.txt、b.txt 和 ab.txt
 $ ls *.txt
-a.txt b.txt ab.txt
-# 若当前目录下存在文件 a.txt、b.txt 和 ab.txt
-$ ls a*.txt
-a.txt ab.txt
+filea.txt fileb.txt fileab.txt
+```
+
+使用 `filea*.txt` 可以匹配到以 `filea` 开头并以 `.txt` 结尾的文件：
+```
+$ ls filea*.txt
+filea.txt fileab.txt
+```
+
+使用 `*b*` 可以匹配文件名中包括字符 `b` 的文件：
+```
 $ ls *b*
-b.txt ab.txt
+fileb.txt fileab.txt
 ```
 
-使用方括号匹配字符:
+### 方括号 `[...]` 扩展
 
+方括号 `[...]` 可以用于匹配方括号内的任意单个字符。
+
+假如当前目录下有 {file}`filea.txt`、{file}`fileb.txt` 和 {file}`filec.txt` 三个文件。
+使用 `file[ab].txt` 则会匹配到 {file}`filea.txt` 和 {file}`fileb.txt` 两个文件：
 ```
-# 若当前目录下存在文件 a.txt 和 b.txt
-$ ls [ab].txt
-a.txt b.txt
-# 若当前目录下只存在文件 a.txt
-$ ls [ab].txt
-a.txt
+$ ls file[ab].txt
+filea.txt fileb.txt
+```
+使用 `file[cd].txt` 则只能匹配到 {file}`filec.txt` 这一个文件：
+```
+$ ls file[cd].txt
+filec.txt
+```
+方括号里还可以用破折号 `-` 指定连续范围内的多个字符。例如 `[a-z]` 表示从 a 到 z
+的所有小写字母，`[A-Z]` 表示从 A 到 Z 的所有大小字母，`[0-9]` 表示数字 0 到 9，
+`[a-zA-Z0-9]` 则表示所有字母和数字。例如，使用 `file[a-c].txt` 可以匹配到三个文件：
+```
+$ ls file[a-c].txt
+filea.txt fileb.txt filec.txt
+```
 
-# 若当前目录下存在文件 a.txt b.txt c.txt
-$ ls [a-c].txt
-a.txt b.txt c.txt
+### 多种扩展字符的组合
 
-# 若当前目录下存在文件 aaa.txt bbb.txt aba.txt
-$ ls ?[^a]?.txt
-aba.txt bbb.txt
+不同的扩展字符组合在一起使用可以实现更复杂的匹配功能。
+
+若当前目录下存在文件 {file}`filea.txt`、{file}`fileaaa.txt`、{file}`filebbb.txt`
+和 {file}`fileabc.txt`，则通配符 `file[a-b]b?.txt` 会匹配到 {file}`filebbb.txt`
+和 {file}`fileabc.txt` 两个文件：
+```
+$ ls file[a-b]b?.txt
+fileabc.txt filebbb.txt
 ```
 
 :::{warning}
