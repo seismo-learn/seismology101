@@ -1,12 +1,12 @@
-# Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+# JupyterBook settings
+# Learn more at https://jupyterbook.org/en/stable/customize/config.html
 
+# Book settings
 title: "地震“学”科研入门教程"
 author: seismo-learn
 copyright : "2020–2023"
 
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# Execution settings
 execute:
   execute_notebooks: auto
   timeout: 300
@@ -26,31 +26,25 @@ parse:
     王亮: "[王亮](https://github.com/wangliang1989)"
     赵志远: "[赵志远](https://github.com/zhaozhiyuan1989)"
 
-# citation
-bibtex_bibfiles:
-  - references.bib
+# HTML-specific settings
+html:
+  favicon: favicon.ico
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
 
-# Information about where the book exists on the web
+# Repository settings
 repository:
   url: https://github.com/seismo-learn/seismology101
   path_to_book: source
   branch: main
 
-html:
-  favicon: favicon.ico
-  use_edit_page_button: true
-  use_issues_button: true
-  use_repository_button: true
-
-# LaTeX-specific settings
-latex:
-  latex_documents:
-    targetname: book.tex
+# Citation settings
+bibtex_bibfiles:
+  - references.bib
 
 # Advanced sphinx settings
 sphinx:
-  extra_extensions:
-    - sphinx.ext.intersphinx
   config:
     intersphinx_mapping:
       seis:
