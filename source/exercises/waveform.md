@@ -58,6 +58,9 @@ client = Client("IRIS")
 函数申请了 `IU.ANMO` 台站的宽频带垂直分量（即 `BHZ` 通道）的波形数据。数据开始时间为
 2022-09-22T06:18:00（即发震后约两分钟），结束时间为 2022-09-22T06:30:00，
 数据总长度为 12 分钟（即 720 秒）。
+```{margin}
+这里先假定我们已知台站 `IU.ANMO` 存在位置码为 `00`、通道码为 `BHZ` 的台站。
+```
 ```{code-cell} ipython3
 starttime=UTCDateTime("2022-09-22T06:18:00")  # 定义开始时间
 st = client.get_waveforms(
@@ -68,9 +71,6 @@ st = client.get_waveforms(
     starttime=starttime,        # 指定开始时间
     endtime=starttime + 720     # 指定结束时间
 )
-```
-```{margin}
-这里先假定我们已知台站 `IU.ANMO` 存在位置码为 `00`、通道码为 `BHZ` 的台站。
 ```
 函数的返回值为 {class}`~obspy.core.stream.Stream` 类型，赋值给变量 `st`。
 使用 `print` 函数可以显示变量 `st` 的值：
