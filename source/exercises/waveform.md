@@ -69,7 +69,7 @@ st = client.get_waveforms(
     endtime=starttime + 720     # 指定结束时间
 )
 ```
-```{sidebar}
+```{margin}
 这里先假定我们已知台站 `IU.ANMO` 存在位置码为 `00`、通道码为 `BHZ` 的台站。
 ```
 函数的返回值为 {class}`~obspy.core.stream.Stream` 类型，赋值给变量 `st`。
