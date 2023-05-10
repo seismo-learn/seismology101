@@ -133,7 +133,7 @@ print(st)
 函数返回的 {class}`~obspy.core.stream.Stream` 中包含三个 {class}`~obspy.core.trace.Trace`。
 绘图如下。
 ```{code-cell} ipython3
-st.plot(equal_scale=False);
+st.plot();
 ```
 
 ## 批量下载多个波形数据
@@ -175,7 +175,7 @@ st.plot();
 为了更方便地下载大量波形数据，ObsPy 提供了 {mod}`obspy.clients.fdsn.mass_downloader` 模块。
 {mod}`~obspy.clients.fdsn.mass_downloader` 模块主要包含了三部分：
 
-- {module}`~obspy.clients.fdsn.mass_downloader.domain`：根据位置信息筛选台站
+- {mod}`~obspy.clients.fdsn.mass_downloader.domain`：根据位置信息筛选台站
 - {class}`~obspy.clients.fdsn.mass_downloader.restrictions.Restrictions`：用于设置波形数据的相关参数
 - {class}`~obspy.clients.fdsn.mass_downloader.mass_downloader.MassDownloader`：用于下载数据
 
