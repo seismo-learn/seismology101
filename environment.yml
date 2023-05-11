@@ -1,11 +1,11 @@
-name: seismology101
+name: seismo-learn
 channels:
   - conda-forge
   - nodefaults
 dependencies:
   - python=3.10
-  - cartopy
   - jupyter-book=0.13
+  - cartopy
   - matplotlib
   - numpy
   - obspy=1.4.0
