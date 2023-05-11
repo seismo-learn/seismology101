@@ -59,7 +59,7 @@ client = Client("IRIS")
 2022-09-22T06:18:00（即发震后约两分钟），结束时间为 2022-09-22T06:30:00，
 数据总长度为 12 分钟（即 720 秒）。
 ```{margin}
-这里先假定我们已知台站 `IU.ANMO` 存在位置码为 `00`、通道码为 `BHZ` 的台站。
+这里先假定我们已知台站 `IU.ANMO` 存在位置码为 `00`、通道码为 `BHZ` 的通道。
 ```
 ```{code-cell} ipython3
 starttime=UTCDateTime("2022-09-22T06:18:00")  # 定义开始时间
@@ -210,8 +210,8 @@ restrictions = Restrictions(
     reject_channels_with_gaps=True,
     # 实际获得的数据长度不小于数据申请的时间段长度的 95%
     minimum_length=0.95,
-    # 通道优先级。当一个台站既有 HH? 和 BH？数据时，优先下载 HH？数据
-    channel_priorities=["HH?", "BH?", "SH?"]
+    # 通道优先级。当一个台站同时有 HH? 和 BH？数据时，优先下载 HH？数据
+    channel_priorities=["HH?", "BH?"]
 )
 
 # 初始化
