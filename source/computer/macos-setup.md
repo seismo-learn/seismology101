@@ -72,56 +72,26 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 针对国内用户的 Homebrew 安装和配置指南来自于 <https://brew.idayer.com/>。
 :::
 
-安装 Homebrew:
+打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew:
 
 ```
 $ /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
 ```
-
-启用 [Homebrew Cask](https://github.com/Homebrew/homebrew-cask) 以通过命令行
-安装带有图形界面的软件（如 VS Code、QQ）并设置使用中科大镜像:
-
-```
-$ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
-```
-
-设置从中科大镜像下载 bottles （二进制安装包）:
-
-```
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
-$ source ~/.zshrc
-```
 ::::
 
 :::{tab-item} 国外用户
-安装 Homebrew:
+打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew:
 
 ```
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-启用 [Homebrew Cask](https://github.com/Homebrew/homebrew-cask) 以通过命令行
-安装带有图形界面的软件（如  VS Code、QQ）:
-
-```
-$ brew tap homebrew/cask
 ```
 :::
 :::::
 
 :::{note}
 Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，
-通常是 {file}`/usr/local/` 目录。而在 Apple M1 芯片的 Mac 下，
+通常是 {file}`/usr/local/homebrew` 目录。而在 Apple M1/M2 芯片的 Mac 下，
 这一目录为 {file}`/opt/homebrew/`。
-:::
-
-:::{note}
-在 Apple M1 芯片的 Mac 下安装 Homebrew 后，还需要执行如下命令以配置 Homebrew:
-
-```
-$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-$ eval "$(/opt/homebrew/bin/brew shellenv)"
-```
 :::
 
 #### 使用 Homebrew
