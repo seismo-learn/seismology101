@@ -1,7 +1,7 @@
 # macOS 配置指南
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（作者）、{{王亮}}（作者）
-- 最近更新日期: 2022-08-19
+- 最近更新日期: 2023-07-03
 - 预计花费时间: 120 分钟
 
 ---
@@ -106,9 +106,8 @@ $ brew search wget
 # 安装 wget 软件包
 $ brew install wget
 
-# 安装 Visual Studio Code
-# 由于 Visual Studio Code 是带图形界面的软件，因而这里需要使用 --cask 选项
-$ brew install --cask visual-studio-code
+# 安装 QQ
+$ brew install qq
 
 # 升级某个软件
 $ brew upgrade xxx
@@ -151,15 +150,10 @@ Tap
   [brew tap](https://docs.brew.sh/Taps#the-brew-tap-command)
   命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
   {file}`/usr/local/Homebrew/Library/Taps/homebrew/` 目录。
-  常见软件仓库有 [homebrew-core](https://github.com/Homebrew/homebrew-core)
+  默认启用的软件仓库有 [homebrew-core](https://github.com/Homebrew/homebrew-core)
   和 [homebrew-cask](https://github.com/Homebrew/homebrew-cask)。
   其中，homebrew-core 是内置核心仓库，
   homebrew-cask 仓库则含有各种 macOS 系统下带图形界面的应用程序。
-
-Cask
-
-: Homebrew 的扩展功能，用于安装 macOS 下的图形界面应用程序。
-  使用 `brew list --cask` 命令可以查看已安装的 casks。
 
 Cellar
 
