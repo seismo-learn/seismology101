@@ -187,15 +187,15 @@ Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
 $ brew install gcc
 ```
 
-通过 Homebrew 安装的 GCC 提供了命令 `gcc-12` 和 `g++-12`
-（`12` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
-用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-12` 和 `g++-12` 命令，
+通过 Homebrew 安装的 GCC 提供了命令 `gcc-13` 和 `g++-13`
+（`13` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
+用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-13` 和 `g++-13` 命令，
 或者在 Homebrew 的 bin 目录下创建软链接:
 
 ```
 $ cd $(brew --prefix)/bin/
-$ ln -s gcc-12 gcc
-$ ln -s g++-12 g++
+$ ln -s gcc-13 gcc
+$ ln -s g++-13 g++
 ```
 
 打开一个新终端后，使用的 `gcc` 和 `g++` 命令则默认是 GCC 编译器。
