@@ -1,7 +1,7 @@
 # macOS 配置指南
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（作者）、{{王亮}}（作者）
-- 最近更新日期: 2022-08-19
+- 最近更新日期: 2023-07-03
 - 预计花费时间: 120 分钟
 
 ---
@@ -72,56 +72,26 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 针对国内用户的 Homebrew 安装和配置指南来自于 <https://brew.idayer.com/>。
 :::
 
-安装 Homebrew:
+打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew:
 
 ```
 $ /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
 ```
-
-启用 [Homebrew Cask](https://github.com/Homebrew/homebrew-cask) 以通过命令行
-安装带有图形界面的软件（如 VS Code、QQ）并设置使用中科大镜像:
-
-```
-$ brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git
-```
-
-设置从中科大镜像下载 bottles （二进制安装包）:
-
-```
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/bottles' >> ~/.zshrc
-$ source ~/.zshrc
-```
 ::::
 
 :::{tab-item} 国外用户
-安装 Homebrew:
+打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew:
 
 ```
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-启用 [Homebrew Cask](https://github.com/Homebrew/homebrew-cask) 以通过命令行
-安装带有图形界面的软件（如  VS Code、QQ）:
-
-```
-$ brew tap homebrew/cask
 ```
 :::
 :::::
 
 :::{note}
 Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，
-通常是 {file}`/usr/local/` 目录。而在 Apple M1 芯片的 Mac 下，
+通常是 {file}`/usr/local/homebrew` 目录。而在 Apple M1/M2 芯片的 Mac 下，
 这一目录为 {file}`/opt/homebrew/`。
-:::
-
-:::{note}
-在 Apple M1 芯片的 Mac 下安装 Homebrew 后，还需要执行如下命令以配置 Homebrew:
-
-```
-$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-$ eval "$(/opt/homebrew/bin/brew shellenv)"
-```
 :::
 
 #### 使用 Homebrew
@@ -136,9 +106,8 @@ $ brew search wget
 # 安装 wget 软件包
 $ brew install wget
 
-# 安装 Visual Studio Code
-# 由于 Visual Studio Code 是带图形界面的软件，因而这里需要使用 --cask 选项
-$ brew install --cask visual-studio-code
+# 安装 QQ
+$ brew install qq
 
 # 升级某个软件
 $ brew upgrade xxx
@@ -181,15 +150,10 @@ Tap
   [brew tap](https://docs.brew.sh/Taps#the-brew-tap-command)
   命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
   {file}`/usr/local/Homebrew/Library/Taps/homebrew/` 目录。
-  常见软件仓库有 [homebrew-core](https://github.com/Homebrew/homebrew-core)
+  默认启用的软件仓库有 [homebrew-core](https://github.com/Homebrew/homebrew-core)
   和 [homebrew-cask](https://github.com/Homebrew/homebrew-cask)。
   其中，homebrew-core 是内置核心仓库，
   homebrew-cask 仓库则含有各种 macOS 系统下带图形界面的应用程序。
-
-Cask
-
-: Homebrew 的扩展功能，用于安装 macOS 下的图形界面应用程序。
-  使用 `brew list --cask` 命令可以查看已安装的 casks。
 
 Cellar
 
@@ -223,15 +187,15 @@ Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
 $ brew install gcc
 ```
 
-通过 Homebrew 安装的 GCC 提供了命令 `gcc-12` 和 `g++-12`
-（`12` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
-用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-12` 和 `g++-12` 命令，
+通过 Homebrew 安装的 GCC 提供了命令 `gcc-13` 和 `g++-13`
+（`13` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
+用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-13` 和 `g++-13` 命令，
 或者在 Homebrew 的 bin 目录下创建软链接:
 
 ```
 $ cd $(brew --prefix)/bin/
-$ ln -s gcc-12 gcc
-$ ln -s g++-12 g++
+$ ln -s gcc-13 gcc
+$ ln -s g++-13 g++
 ```
 
 打开一个新终端后，使用的 `gcc` 和 `g++` 命令则默认是 GCC 编译器。

@@ -2,10 +2,6 @@
 
 欢迎阅读由[地震“学”小组](https://github.com/orgs/seismo-learn/people)撰写的《地震“学”科研入门教程》。
 
-:::{warning}
-本教程正在编写中，尚未完成，敬请期待最终完成版。
-:::
-
 本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
 其他刚接触地震学的科研人员。
 
@@ -29,6 +25,5 @@
 3. {octicon}`git-pull-request` 修改文档并[提交 Pull Request](https://github.com/seismo-learn/seismology101/pulls)
 
 :::{admonition} 免责声明
-本教程的所有内容完全基于撰写者在地震学科研过程中的理解与体会，
-并不具备权威性，仅供读者参考。
+本教程的所有内容完全基于撰写者在地震学科研过程中的理解与体会，仅供读者参考。
 :::
