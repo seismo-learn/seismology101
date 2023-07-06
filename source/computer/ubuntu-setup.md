@@ -9,7 +9,7 @@
 :::{note}
 本节内容适用于 **Ubuntu Desktop 22.04 LTS**，不一定适用于其他 Ubuntu 版本。
 建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 22.04 LTS）或最新版本
-（目前是 Ubuntu 22.10），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
+（目前是 Ubuntu 23.04），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
 :::
 
 ## 安装系统
@@ -60,7 +60,7 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 3. Ventoy 成功安装后，会弹出成功安装的对话框，点击确定
 4. Ventoy 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
    启动盘制作成功
-5. 退出 Ventoy2Disk 程序。在我的电脑中找到名为 Ventoy 的 U 盘，并将已下载好的
+5. 退出 Ventoy2Disk 程序。在“我的电脑”中找到名为 Ventoy 的 U 盘，并将已下载好的
    Linux ISO 镜像文件复制到 U 盘中即可
 
 ### 进入 Live 系统

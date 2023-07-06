@@ -1,4 +1,4 @@
-name: seismology101
+name: seismo-learn
 channels:
   - conda-forge
   - nodefaults
