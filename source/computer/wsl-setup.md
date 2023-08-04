@@ -171,7 +171,7 @@ $ wsl --set-version Ubuntu 2
 ### WSL 访问 Windows
 
 Windows 系统的硬盘挂载在 WSL 的 `/mnt` 路径下，用户可以在 WSL 终端中
-输入 `cd /mnt/d` 命令进入 Windows 系统的 D 盘，然后便可编辑和运行目录中的文件。
+输入 `cd /mnt/d` 命令进入 Windows 系统的 D 盘，然后便可编辑和运行 D 盘中的文件。
 
 ### Windows 访问 WSL
 
