@@ -73,6 +73,33 @@ WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora �
 镜像文件，并按照指南进行操作。
 :::
 
+## 配置 Linux
+
+打开 CMD，运行 `bash` 命令即可启动并进入 WSL 提供的 Linux 环境：
+```
+$ bash
+```
+
+通过 WSL 安装 Linux 系统后，还需要对 Linux 系统进行配置。
+Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
+《{doc}`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
+
+:::{warning}
+配置 Linux 系统时，切记要跳过“安装系统”一节，只需配置**系统软件**和**编程开发环境**。
+否则，整个电脑的 Windows 系统将会被覆盖。
+:::
+
+使用 `exit` 命令可以退出 Linux 环境：
+```
+$ exit
+```
+
+:::{note}
+新版本 Windows 中安装的 WSL 已经直接支持图形界面，无需做额外配置。
+如果无法正常启动图形界面，则可能需要先安装与显卡匹配的驱动程序。
+详情参考[在 WSL 上运行 Linux GUI 应用](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps)。
+:::
+
 ## WSL 常用命令
 
 WSL 提供了命令 `wsl` 来管理 WSL。打开 CMD 后，即可在 CMD 中执行 `wsl` 命令。
@@ -120,38 +147,6 @@ $ wsl --import Ubuntu22.04 D:\WSLDIR\Ubuntu22.04 D:\WSLBAK\20210117bak.tar
 # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
 $ wsl --unregister Ubuntu
 ```
-
-## 配置 Linux
-
-打开 CMD，运行 `bash` 命令即可启动并进入 WSL 提供的 Linux 环境：
-```
-$ bash
-```
-
-通过 WSL 安装 Linux 系统后，还需要对 Linux 系统进行配置。
-Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
-《{doc}`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
-
-:::{warning}
-配置 Linux 系统时，切记要跳过“安装系统”一节，只需配置**系统软件**和**编程开发环境**。
-否则，整个电脑的 Windows 系统将会被覆盖。
-:::
-
-使用 `exit` 命令可以退出 Linux 环境：
-```
-$ exit
-```
-
-## 配置图形界面
-
-新版本 Windows 中安装的 WSL 已经直接支持图形界面，无需做额外配置。但在运行
-Linux GUI 应用前，需要先安装与显卡匹配的驱动程序：
-
-- [英特尔 GPU 驱动程序](https://www.intel.com/content/www/us/en/download/19344/intel-graphics-windows-dch-drivers.html)
-- [AMD GPU 驱动程序](https://www.amd.com/en/support)
-- [NVIDIA GPU 驱动程序](https://www.nvidia.com/Download/index.aspx?lang=en-us)
-
-详情参考[在 WSL 上运行 Linux GUI 应用](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps)。
 
 ## 跨系统文件互访
 
