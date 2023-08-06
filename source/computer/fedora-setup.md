@@ -67,7 +67,7 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 {kbd}`F10` 或 {kbd}`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
-正确启动后，则会进入 GRUB，按向上向下键选中“Start Fedora-Workstation-Live 38”
+正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 38”
 以进入 Fedora 的 Live 系统。
 
 :::{note}
