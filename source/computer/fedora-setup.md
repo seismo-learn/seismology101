@@ -248,7 +248,7 @@ $ sudo dnf install gcc-gfortran
 运行 Java 程序需要安装 Java 运行环境，即 OpenJDK：
 
 ```
-$ sudo dnf install java-17-openjdk
+$ sudo dnf install java-latest-openjdk
 ```
 
 ### git
