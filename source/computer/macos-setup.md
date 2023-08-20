@@ -112,7 +112,7 @@ $ brew uninstall xxx
 ```
 
 :::{tip}
-Homebrew 用户也可以访问网站 <https://formulae.brew.sh/> 查看软件包。
+Homebrew 用户也可以访问网站 <https://formulae.brew.sh/> 查看和搜索可安装的软件包。
 :::
 
 :::{dropdown} Homebrew 相关名词解释
