@@ -3,6 +3,49 @@
 欢迎阅读由[地震“学”小组](https://github.com/orgs/seismo-learn/people)撰写的
 《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
 
+:::::{grid} 2 3 3 4
+
+::::{grid-item-card} 田冬冬
+:margin: 0 3 0 0
+:text-align: center
+:img-top: https://avatars.githubusercontent.com/u/3974108?v=4
+
+[@seisman](https://github.com/seisman)
++++
+{bdg-primary}`维护者`
+::::
+
+::::{grid-item-card} 姚家园
+:margin: 0 3 0 0
+:text-align: center
+:img-top: https://avatars.githubusercontent.com/u/50591376?v=4
+
+[@core-man](https://github.com/core-man)
++++
+{bdg-primary}`维护者`
+::::
+
+::::{grid-item-card} 赵志远
+:margin: 0 3 0 0
+:text-align: center
+:img-top: https://avatars.githubusercontent.com/u/23535406?v=4
+
+[@zhaozhiyuan1989](https://github.com/zhaozhiyuan1989)
++++
+{bdg-secondary}`贡献者`
+::::
+
+::::{grid-item-card} 王亮
+:margin: 0 3 0 0
+:text-align: center
+:img-top: https://avatars.githubusercontent.com/u/12059719?v=4
+
+[@wangliang1989](https://github.com/wangliang1989)
++++
+{bdg-secondary}`贡献者`
+::::
+:::::
+
 ```{rubric} 目标与受众
 ```
 本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
