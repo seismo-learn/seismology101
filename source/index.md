@@ -5,12 +5,11 @@
 
 :::::{grid} 2 3 3 4
 
-::::{grid-item-card} 田冬冬
+::::{grid-item-card} [田冬冬](https://github.com/seisman)
 :margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/3974108?v=4
 
-[@seisman](https://github.com/seisman)
 +++
 {bdg-primary}`维护者`
 ::::
