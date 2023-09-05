@@ -6,7 +6,7 @@
 :::::{grid} 2 3 3 4
 
 ::::{grid-item-card} 田冬冬
-:margin: 0 3 0 0
+:margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/3974108?v=4
 
@@ -16,7 +16,7 @@
 ::::
 
 ::::{grid-item-card} 姚家园
-:margin: 0 3 0 0
+:margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/50591376?v=4
 
@@ -26,7 +26,7 @@
 ::::
 
 ::::{grid-item-card} 赵志远
-:margin: 0 3 0 0
+:margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/23535406?v=4
 
@@ -36,7 +36,7 @@
 ::::
 
 ::::{grid-item-card} 王亮
-:margin: 0 3 0 0
+:margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/12059719?v=4
 
