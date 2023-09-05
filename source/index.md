@@ -14,32 +14,29 @@
 {bdg-primary}`维护者`
 ::::
 
-::::{grid-item-card} 姚家园
+::::{grid-item-card} [姚家园](https://github.com/core-man)
 :margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/50591376?v=4
 
-[@core-man](https://github.com/core-man)
 +++
 {bdg-primary}`维护者`
 ::::
 
-::::{grid-item-card} 赵志远
+::::{grid-item-card} [赵志远](https://github.com/zhaozhiyuan1989)
 :margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/23535406?v=4
 
-[@zhaozhiyuan1989](https://github.com/zhaozhiyuan1989)
 +++
 {bdg-secondary}`贡献者`
 ::::
 
-::::{grid-item-card} 王亮
+::::{grid-item-card} [王亮](https://github.com/wangliang1989)
 :margin: 0 1 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/12059719?v=4
 
-[@wangliang1989](https://github.com/wangliang1989)
 +++
 {bdg-secondary}`贡献者`
 ::::
