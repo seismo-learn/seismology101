@@ -5,13 +5,11 @@
 
 :::::{grid} 2 3 3 4
 
-::::{grid-item-card}
+::::{grid-item-card} [田冬冬](https://github.com/seisman)
 :margin: 0 0 0 0
 :text-align: center
+:img-top: https://avatars.githubusercontent.com/u/3974108?v=4
 
-[田冬冬](https://github.com/seisman)
-^^^
-![](https://avatars.githubusercontent.com/u/3974108?v=4)
 +++
 {bdg-primary}`创始人` {bdg-secondary}`核心贡献者`
 ::::
