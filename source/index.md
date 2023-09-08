@@ -11,7 +11,7 @@
 :img-top: https://avatars.githubusercontent.com/u/3974108?v=4
 
 +++
-{bdg-primary}`维护者`
+{bdg-primary}`创始人` {bdg-secondary}`核心贡献者` 
 ::::
 
 ::::{grid-item-card} [姚家园](https://github.com/core-man)
@@ -20,7 +20,7 @@
 :img-top: https://avatars.githubusercontent.com/u/50591376?v=4
 
 +++
-{bdg-primary}`维护者`
+{bdg-primary}`创始人` {bdg-secondary}`核心贡献者` 
 ::::
 
 ::::{grid-item-card} [赵志远](https://github.com/zhaozhiyuan1989)
@@ -29,7 +29,7 @@
 :img-top: https://avatars.githubusercontent.com/u/23535406?v=4
 
 +++
-{bdg-secondary}`贡献者`
+{bdg-success}`贡献者`
 ::::
 
 ::::{grid-item-card} [王亮](https://github.com/wangliang1989)
@@ -38,7 +38,7 @@
 :img-top: https://avatars.githubusercontent.com/u/12059719?v=4
 
 +++
-{bdg-secondary}`贡献者`
+{bdg-success}`贡献者`
 ::::
 :::::
 
