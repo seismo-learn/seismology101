@@ -5,13 +5,15 @@
 
 :::::{grid} 2 3 3 4
 
-::::{grid-item-card} [田冬冬](https://github.com/seisman)
+::::{grid-item-card}
 :margin: 0 0 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/3974108?v=4
 
+[田冬冬](https://github.com/seisman)
+^^^
 +++
-{bdg-primary}`创始人` {bdg-secondary}`核心贡献者` 
+{bdg-primary}`创始人` {bdg-secondary}`核心贡献者`
 ::::
 
 ::::{grid-item-card} [姚家园](https://github.com/core-man)
@@ -20,7 +22,7 @@
 :img-top: https://avatars.githubusercontent.com/u/50591376?v=4
 
 +++
-{bdg-primary}`创始人` {bdg-secondary}`核心贡献者` 
+{bdg-primary}`创始人` {bdg-secondary}`核心贡献者`
 ::::
 
 ::::{grid-item-card} [赵志远](https://github.com/zhaozhiyuan1989)
