@@ -54,7 +54,7 @@ macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再
 
 ### Homebrew
 
-[Homebrew](https://brew.sh/index_zh-cn.html) 是 macOS 下最流行的第三方软件包管理器。
+[Homebrew](https://brew.sh/zh-cn/) 是 macOS 下最流行的第三方软件包管理器。
 安装 Homebrew 后，即可通过命令行安装日常与科研工作所需的大多数软件和库文件。
 
 #### 安装 Homebrew
