@@ -70,21 +70,6 @@ $ echo $PATH
 /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 ```
 
-:::{dropdown} 查看命令所在目录
-:color: info
-:icon: info
-
-可以使用 `which` 或 `whereis` 命令查询命令所在目录:
-
-```
-$ which cat
-/usr/bin/cat
-
-$ whereis cat
-cat: /usr/bin/cat /usr/share/man/man1/cat.1.gz /usr/share/man/man1p/cat.1p.gz
-```
-:::
-
 若某命令所在目录不在 **PATH** 变量中，Shell 将无法将其找到交给系统执行。可以通过修改配置文件将目录永久加入到 **PATH** 变量中。
 Bash 常见的配置文件有 {file}`/etc/profile`、{file}`~/.bash_profile`、{file}`~/.bashrc` 等，
 一般通过修改 {file}`~/.bashrc` 文件来设置和更新个人 Shell 环境。使用 Zsh 的读者可以修改 {file}`~/.zshrc`
