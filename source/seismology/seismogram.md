@@ -1,3 +1,16 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.13.0
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # 地震图
 
 - 本节贡献者: {{ 田冬冬 }}（作者）、{{ 姚家园 }}（作者）
@@ -21,11 +34,31 @@ $$
 因此，地震图中包含了震源、结构以及仪器的信息。一般而言，仪器项（即仪器响应）是已知的，
 地震学通过解读地震图即可获得震源属性和地下结构的相关信息。
 
+```{code-cell} ipython3
+from obspy.clients.syngine import Client
+client = Client()
+```
+
 ## 地方震地震图
 
 ## 近震地震图
 
 ## 远震地震图
+
+```{code-cell} ipython3
+st = client.get_waveforms(
+        model="ak135f_1s",
+        sourcelatitude=0,
+        sourcelongitude=0,
+        sourcedepthinmeters=100*1000,
+        receiverlatitude=0,
+        receiverlongitude=50,
+        sourcedoublecouple=(30, 50, 70),
+        starttime="P-50"
+)
+st.plot();
+```
+
 
 :::{figure} teleseismic-waveform.png
 :align: center
