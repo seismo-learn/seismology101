@@ -46,17 +46,39 @@ client = Client()
 ## 远震地震图
 
 ```{code-cell} ipython3
+from obspy import UTCDateTime
+
+from obspy.clients.syngine import Client
+client = Client()
 st = client.get_waveforms(
         model="ak135f_1s",
         sourcelatitude=0,
         sourcelongitude=0,
-        sourcedepthinmeters=100*1000,
+        sourcedepthinmeters=50*1000,
         receiverlatitude=0,
-        receiverlongitude=50,
+        receiverlongitude=60,
         sourcedoublecouple=(30, 50, 70),
-        starttime="P-50"
+        starttime="P-100",
+        endtime="S+600",
+        origintime=UTCDateTime("2000-01-01T00:00:00"),
+        units="velocity"
 )
-st.plot();
+
+tr = st[0]
+
+import matplotlib.pyplot as plt
+
+
+from obspy.taup import TauPyModel
+
+model = TauPyModel("iasp91")
+arrivals = model.get_travel_times(distance_in_degree=60, source_depth_in_km=50, phase_list=["P", "S", "pP", "PP", "SS", "PcP"])
+
+plt.plot(tr.times(reftime=UTCDateTime("2000-01-01T00:00:00")), tr.normalize().data)
+for ar in arrivals:
+    print(ar.time)
+    plt.scatter(ar.time, -0.5, marker="o", c="black")
+    plt.text(ar.time, -0.5, ar.name)
 ```
 
 
