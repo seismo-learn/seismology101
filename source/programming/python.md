@@ -175,7 +175,7 @@ Python 语言的一大特色是其功能强大的标准库和第三方软件包�
 Python 解释器内置了所有标准库，安装解释器后就可以直接使用标准库，
 而第三方包需要先安装才能使用。
 
-:::{admonition} `pip` 与 `conda` 
+:::{admonition} `pip` 与 `conda`
 
 学习如何安装 Python 包之前，有必要先了解 `pip` 和 `conda`，以及它们之间的区别与联系:
 
@@ -199,15 +199,11 @@ $ conda config --add channels conda-forge
 $ conda config --set channel_priority true
 # 显示通道的 URL
 $ conda config --set show_channel_urls true
+# 设置 conda 使用更快的 libmamab solver
+$ conda config --set solver libmamba
 # 配置使用国内清华源以加快软件下载速度
 $ conda config --add default_channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 $ conda config --set 'custom_channels.conda-forge' https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-```
-
-设置 `conda` 使用更快的 libmamab solver：
-```
-$ conda install -n base conda-libmamba-solver
-$ conda config --set solver libmamba
 ```
 
 使用 `conda` 安装软件很简单，直接 `conda install` 加上要安装的软件包名称即可。
