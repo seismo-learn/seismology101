@@ -2,7 +2,7 @@
 
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://seismo-learn.org/seismology101/)
 [![Deploy](https://github.com/seismo-learn/seismology101/actions/workflows/deploy.yml/badge.svg)](https://github.com/seismo-learn/seismology101/actions/workflows/deploy.yml)
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
 
 本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
 其他刚接触地震学的科研人员。
@@ -20,7 +20,7 @@
 
 ## 许可协议
 
-本作品采用 [知识共享署名-非商业性使用 4.0 国际许可协议 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh) 。
+本作品采用 [知识共享署名-非商业性使用 4.0 国际许可协议 (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans) 。
 任何人都可以自由地分享、修改本作品，但必须遵循如下条件：
 
 - 署名：必须提到原作者，提供指向此许可协议的链接，表明是否有做修改
