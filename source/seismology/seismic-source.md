@@ -126,3 +126,5 @@ $$
 - 美国北加州: [NCSN 地震目录](https://ncedc.org/ncedc/catalog-search.html)
 
 在使用地震目录时，应根据自己的需求选择合适的地震目录。
+
+[introduction to seismology]: https://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742

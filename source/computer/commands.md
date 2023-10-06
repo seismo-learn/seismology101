@@ -171,8 +171,8 @@ $ du -h file1.txt
 (find)=
 ## find
 
-`find` 命令用来查找指定目录下的子目录和文件，并执行一些操作。可以参考
-[find 命令](https://man.linuxde.net/find/) 学习更多用法。
+`find` 命令用来查找指定目录下的子目录和文件，并对找到的目录和文件执行特定操作。
+该命令功能强大，更多功能可以参考 [find 命令](https://man.linuxde.net/find/)。
 
 ```
 # 列出 ~/src 目录及其子目录下的所有目录和文件
@@ -195,7 +195,7 @@ $ find ~/src -type f -name "*.pyc" -delete
 `find` 的 `-exec` 选项可以调用其他系统命令直接对查找的结果进行处理:
 
 ```
-# 查找 ~/src 目录及其子目录下以 .c 结尾的文件，并执行 grep 命令找出这些文件中含 seismo-learn 的行
+# 递归查找 ~/src 目录以 .c 结尾的文件，并执行 grep 命令找出文件中含 seismo-learn 的行
 $ find ~/src -type f -name "*.c" -exec grep seismo-learn {} +
 ```
 
@@ -266,10 +266,10 @@ $ head -n 5 /etc/passwd
 (less)=
 ## less
 
-`less` 命令可以用来浏览文件内容，比 `more` 命令功能更强大。因此，一个常用的
-笑话记忆方式是“less is more”。该命令允许用户向前或向后浏览文件：按 {kbd}`PageUp`
-键向上翻页，用 {kbd}`PageDown` 键向下翻页，按 {kbd}`Enter` 键或向下方向键则向下移动，
-用向上方向键则向上移动。按 {kbd}`q` 键退出浏览。
+`less` 命令可以用来浏览文件内容，其与 `cat` 功能相似，但允许用户向前或向后浏览文件：
+按 {kbd}`PageUp` 键向上翻页，用 {kbd}`PageDown` 键向下翻页，
+按 {kbd}`Enter` 键或向下方向键则向下移动，用向上方向键则向上移动，
+按 {kbd}`q` 键退出浏览。
 
 ```
 # 浏览 /etc/passwd
