@@ -1,14 +1,14 @@
 # macOS 配置指南
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（作者）、{{王亮}}（作者）
-- 最近更新日期: 2023-07-03
+- 最近更新日期: 2023-11-19
 - 预计花费时间: 120 分钟
 
 ---
 
 :::{warning}
 本节内容基于作者在 macOS Monterey (12) 上的配置经验，可能适用于
-macOS Ventura (13) 和 macOS Big Sur (11)，但不一定适用于更老的 macOS 版本。
+macOS Ventura (13) 和 macOS Sonoma (14)，但不一定适用于更老的 macOS 版本。
 欢迎用户帮助我们更新本文以适配 macOS 最新版本。
 :::
 
@@ -54,7 +54,7 @@ macOS 系统更新后，有时需重新安装 Command Line Tools for Xcode，再
 
 ### Homebrew
 
-[Homebrew](https://brew.sh/index_zh-cn.html) 是 macOS 下最流行的第三方软件包管理器。
+[Homebrew](https://brew.sh/zh-cn/) 是 macOS 下最流行的第三方软件包管理器。
 安装 Homebrew 后，即可通过命令行安装日常与科研工作所需的大多数软件和库文件。
 
 #### 安装 Homebrew
@@ -64,29 +64,24 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 其他软件速度太慢。因而，Homebrew 的安装说明分为国内和国外两个版本。
 读者应根据自己所处的地理位置使用相应的安装说明。
 
-:::::{tab-set}
-
-::::{tab-item} 国内用户
-
-:::{note}
-针对国内用户的 Homebrew 安装和配置指南来自于 <https://brew.idayer.com/>。
-:::
-
-打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew:
-
+打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew。
+::::{tab-set}
+:::{tab-item} 国内用户
 ```
 $ /bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
 ```
-::::
+:::
 
 :::{tab-item} 国外用户
-打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew:
-
 ```
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 :::
-:::::
+::::
+
+:::{note}
+针对国内用户的 Homebrew 安装和配置指南来自于 <https://brew.idayer.com/>。
+:::
 
 :::{note}
 Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，
@@ -117,7 +112,7 @@ $ brew uninstall xxx
 ```
 
 :::{tip}
-Homebrew 用户也可以访问网站 <https://formulae.brew.sh/> 查看软件包。
+Homebrew 用户也可以访问网站 <https://formulae.brew.sh/> 查看和搜索可安装的软件包。
 :::
 
 :::{dropdown} Homebrew 相关名词解释
