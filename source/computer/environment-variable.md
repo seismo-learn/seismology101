@@ -34,7 +34,7 @@
 ### 查看环境变量
 
 与一般的 SHELL 变量类似，可以使用 `echo` 命令查看某个环境变量的值。例如，
-查看环境变量 HOME 的值：
+查看环境变量 **HOME** 的值：
 
 ```
 $ echo $HOME
@@ -47,12 +47,12 @@ $ echo $HOME
 
 ## 添加、修改环境变量
 
-可以使用 `export` 命令添加或修改环境变量。例如，添加环境变量 `NEWVAR`：
+可以使用 `export` 命令添加或修改环境变量。例如，添加环境变量 **NEWVAR**：
 ```
 export NEWVAR="envvalue"
 ```
 
-这将在当前 Shell 会话中添加环境变量 `ENVVAR`，但是在会话结束后，该环境变量
+这将在当前 Shell 会话中添加环境变量 **ENVVAR**，但是在会话结束后，该环境变量
 将被删除。
 
 若要永久添加环境变量，可以将其添加到 Shell 配置文件中(:file:`~/.bashrc`)。
@@ -86,15 +86,17 @@ $ echo $USER
 
 ## 环境变量 PATH
 
-**PATH** 是 Linux 系统中最重要也最常用的环境变量，其指定了 Shell
+环境变量 **PATH** 是 Linux 系统中最重要也最常用的环境变量。
 
-在终端中输入命令后，Shell 需要先找到该命令，才能交给系统执行。不同命令所在目录并不相同，
-常见的命令目录有 {file}`/bin`、{file}`/usr/bin`、{file}`/usr/local/bin` 等。
-此外，大多数闭源软件或商业软件默认安装在 {file}`/opt` 目录下，用户也可能会将一些常用工具放在 {file}`~/bin` 目录下。
-因此，Shell 需要知道去哪些目录下搜索用户输入的命令。而 **PATH** 环境变量则定义了用于搜索可执行程序名的目录列表。
+在终端中输入命令后，Shell 需要先找到该命令，才能交给系统执行。不同命令所在目录
+并不相同，常见的命令目录有 {file}`/bin`、{file}`/usr/bin`、{file}`/usr/local/bin` 等。
+此外，大多数闭源软件或商业软件默认安装在 {file}`/opt` 目录下，用户也可能会将
+一些常用工具放在 {file}`~/bin` 目录下。因此，Shell 需要知道去哪些目录下搜索用户
+输入的命令。而环境变量 **PATH** 则定义了用于搜索可执行程序名的目录列表。
 多个目录之间由冒号分隔。在终端中输入命令名后，Shell 会依次在该目录列表下搜索命令。
 
-登录系统后，**PATH** 变量已经设置了默认值。前文中，在终端输入命令名后，Shell 正是到这些目录下去搜索并找到命令的。
+登录系统后，环境变量 **PATH** 已经设置了默认值。前文中，在终端输入命令名后，Shell
+正是到这些目录下去搜索并找到命令的。
 
 ```
 # 使用 echo 命令查看 PATH 环境变量
@@ -102,27 +104,28 @@ $ echo $PATH
 /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 ```
 
-若某命令所在目录不在 **PATH** 变量中，Shell 将无法将其找到交给系统执行。可以通过修改配置文件将目录永久加入到 **PATH** 变量中。
+若某命令所在目录不在环境变量 **PATH** 中，Shell 将无法将其找到交给系统执行。可以通过
+修改配置文件将目录永久加入到环境变量 **PATH** 中。
 ```
 # 在 ~/.bashrc 文件中添加一行命令 export PATH=$PATH:$HOME/bin
 $ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 ```
 
-以上命令在 {file}`~/.bashrc` 配置文件最后添加了一行 `export PATH=$PATH:$HOME/bin`。其中，`export` 命令用于新增、
-修改或删除环境变量，**HOME** 环境变量表示用户的家目录，即 {file}`~`。假设用户名是 seismo-learn，家目录便是
-{file}`/home/seismo-learn`。因此，该行的作用是将 {file}`/home/seismo-learn/bin` 目录添加到搜索目录列表的末尾，
-更新 **PATH** 变量:
+以上命令在 {file}`~/.bashrc` 配置文件最后添加了一行 `export PATH=$PATH:$HOME/bin`。
+假设用户名是 seismo-learn，则该行的作用是将 {file}`/home/seismo-learn/bin` 目录
+添加到搜索目录列表的末尾。
 
+使用 `echo` 命令查看 **PATH** 环境变量的值，会发现其值并没有改变：
 ```
-# 打开一个新的终端，查看 PATH 变量
+$ echo $PATH
+/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+```
+这是因为配置文件仅在开启一个新 Shell 会话（或打开一个新终端）时会被加载与执行，
+因而当前终端的 Shell 环境并没有更新。
+
+可以在当前终端中使用 `source ~/.bashrc` 命令重新加载并执行配置文件以更新 Shell 会话，
+或者重新开启一个新的终端。再次查看环境变量 **PATH** 的值，会发现其值已经更新：
+```
 $ echo $PATH
 /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/seismo-learn/bin
-```
-
-修改配置文件后，打开新的终端，Shell 环境就会更新。需要注意的是，当前终端的 Shell 环境并没有更新。
-可以在当前终端中使用 `source` 命令重新加载（即读取并执行）配置文件，当前 Shell 环境也会更新:
-
-```
-# 重新加载 ~/.bashrc
-$ source ~/.bashrc
 ```
