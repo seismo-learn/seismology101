@@ -99,7 +99,6 @@ $ echo $USER
 正是到这些目录下去搜索并找到命令的。
 
 ```
-# 使用 echo 命令查看 PATH 环境变量
 $ echo $PATH
 /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 ```
@@ -107,7 +106,6 @@ $ echo $PATH
 若某命令所在目录不在环境变量 **PATH** 中，Shell 将无法将其找到交给系统执行。可以通过
 修改配置文件将目录永久加入到环境变量 **PATH** 中。
 ```
-# 在 ~/.bashrc 文件中添加一行命令 export PATH=$PATH:$HOME/bin
 $ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 ```
 
