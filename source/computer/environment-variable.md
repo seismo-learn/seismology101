@@ -45,7 +45,7 @@ $ echo $HOME
 `printenv` 或 `env` 命令可以把当前所有环境变量打印出来。
 :::
 
-## 添加、修改环境变量
+### 添加、修改环境变量
 
 可以使用 `export` 命令添加或修改环境变量。例如，添加环境变量 **NEWVAR**：
 ```
@@ -68,7 +68,7 @@ Bash 常见的配置文件有 {file}`/etc/profile`、{file}`~/.bash_profile`、
 $ source ~/.bashrc
 ```
 
-## 删除环境变量
+### 删除环境变量
 
 使用 `unset` 命令可以删除某个环境变量。例如，
 
