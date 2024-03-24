@@ -1,0 +1,1205 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ubuntu 配置指南 &#8212; 地震“学”科研入门教程</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="macOS 配置指南" href="../macos-setup/" />
+    <link rel="prev" title="Fedora 配置指南" href="../fedora-setup/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">地震“学”科研入门教程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  计算机基础
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../operating-system/">
+   选择操作系统
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../setup/">
+   配置操作系统
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../fedora-setup/">
+     Fedora 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Ubuntu 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../macos-setup/">
+     macOS 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../wsl-setup/">
+     WSL 配置指南
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linux101/">
+   Linux 入门
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../command-line/">
+     命令行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../file-operations/">
+     文件操作
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../shell/">
+     Shell 基础
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../environment-variable/">
+     环境变量
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../commands/">
+   Linux 常用命令
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  编程基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/editor/">
+   文本编辑器
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming/languages/">
+   编程语言
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/bash/">
+     Bash 脚本
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/python/">
+     Python 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/c/">
+     C 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/markdown/">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/git/">
+   Git 与代码管理
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-source/">
+   震源
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-wave/">
+   地震波
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-phase/">
+   地震震相
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismogram/">
+   地震图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismograph/">
+   地震仪
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/station/">
+   地震台站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/data-format/">
+   波形数据格式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/resources/">
+   学习资料
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学实践
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/prerequisite/">
+   准备工作
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/download/">
+   数据下载
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/catalog/">
+     地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/station/">
+     地震台站
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/waveform/">
+     地震波形数据
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/preprocessing/">
+   数据预处理
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/process/">
+   数据处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/rotate/">
+     分量旋转
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/filter/">
+     滤波
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/analysis/">
+   数据分析
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/catalog-analysis/">
+     分析地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/particle-motion/">
+     质点运动轨迹
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/cross-correlation/">
+     互相关
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/distaz/">
+     震中距、方位角与反方位角
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/phases/">
+     震相
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/software/">
+   常用软件
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  实践经验
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../best-practices/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../best-practices/file-organization/">
+   文件管理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../best-practices/software-installation/">
+   软件安装
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../best-practices/backup/">
+   数据备份
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../best-practices/backup-Linux/">
+     Linux 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../best-practices/backup-macOS/">
+     macOS 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../best-practices/backup-Windows/">
+     Windows 数据备份
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../best-practices/software/">
+   高效率软件
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../best-practices/zsh/">
+   Zsh 及其配置
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../best-practices/vscode/">
+   VS Code 使用教程
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  外部链接
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/">
+   地震“学”主站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/contributing/">
+   贡献指南
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">
+   参与讨论
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fcomputer/ubuntu-setup.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/edit/main/source/computer/ubuntu-setup.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/computer/ubuntu-setup.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   安装系统
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     下载系统镜像
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usb">
+     制作 USB 启动盘
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#live">
+     进入 Live 系统
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     开始安装
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     更新系统
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   系统软件
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   编程开发环境
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-c">
+     C/C++
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fortran">
+     Fortran
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#java">
+     Java
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     git
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Ubuntu 配置指南</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   安装系统
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     下载系统镜像
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usb">
+     制作 USB 启动盘
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#live">
+     进入 Live 系统
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     开始安装
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     更新系统
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   系统软件
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   编程开发环境
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-c">
+     C/C++
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fortran">
+     Fortran
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#java">
+     Java
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     git
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ubuntu">
+<h1>Ubuntu 配置指南<a class="headerlink" href="#ubuntu" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://me.seisman.info/">田冬冬</a>（作者）、<a class="reference external" href="https://github.com/core-man">姚家园</a>（审稿）</p></li>
+<li><p>最近更新日期: 2023-11-19</p></li>
+<li><p>预计花费时间: 120 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本节内容适用于 <strong>Ubuntu Desktop 22.04 LTS</strong>，不一定适用于其他 Ubuntu 版本。
+建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 22.04 LTS）或最新版本
+（目前是 Ubuntu 23.10），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。</p>
+</div>
+<section id="id1">
+<h2>安装系统<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="id2">
+<h3>下载系统镜像<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>访问 <a class="reference external" href="https://ubuntu.com/">Ubuntu 官网</a> 并下载 Ubuntu Desktop 镜像文件，
+一般选择 AMD64（x86_64）版本。</p>
+<p><strong>Ubuntu Desktop 22.04 LTS AMD64</strong> 的 ISO 镜像文件（约 2.9 GB）下载链接：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://releases.ubuntu.com/22.04/ubuntu-22.04.3-desktop-amd64.iso">官方镜像</a></p></li>
+<li><p><a class="reference external" href="https://mirrors.ustc.edu.cn/ubuntu-releases/22.04/ubuntu-22.04.3-desktop-amd64.iso">中科大镜像</a> [<strong>推荐国内用户使用</strong>]</p></li>
+</ul>
+</section>
+<section id="usb">
+<h3>制作 USB 启动盘<a class="headerlink" href="#usb" title="Permalink to this headline">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！</p>
+</div>
+<p>准备一个 4 GB 以上容量的 U 盘，并使用 <a class="reference external" href="https://ventoy.net/cn/">Ventoy</a> 制作 USB 启动盘。
+Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 <a class="reference external" href="https://ventoy.net/cn/doc_start.html">官方文档</a>。
+下面以图解形式演示如何在 Windows 下使用 Ventoy 制作 USB 启动盘。</p>
+<div class="sd-sphinx-override sd-cards-carousel sd-card-cols-1 docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+1. 启动 Ventoy2Disk.exe 程序</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-1.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+2. 将 Ventoy 写入 USB 盘</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-2.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+3. USB 启动盘制作成功</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-3.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+4. 制作成功后的显示界面</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-4.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+5. 将 Linux ISO 镜像文件复制到 U 盘中</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-5.jpg" /></p>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>从 <a class="reference external" href="https://ventoy.net/cn/download.html">Ventoy 下载页面</a> 下载 Ventoy 软件包。
+解压后，执行其中的 <code class="file docutils literal notranslate"><span class="pre">Ventoy2Disk.exe</span></code> 程序，程序启动后界面如图 1 所示。
+Ventoy 程序自动找到了用于制作启动盘的 32 GB U 盘</p></li>
+<li><p>点击“安装”会将 Ventoy 安装到 U 盘中，此时 U 盘会被格式化。请务必确保选中的是
+目标 U 盘，且 U 盘中无其它重要文件</p></li>
+<li><p>Ventoy 成功安装后，会弹出成功安装的对话框，点击确定</p></li>
+<li><p>Ventoy 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
+启动盘制作成功</p></li>
+<li><p>退出 Ventoy2Disk 程序。在“我的电脑”中找到名为 Ventoy 的 U 盘，并将已下载好的
+Linux ISO 镜像文件复制到 U 盘中即可</p></li>
+</ol>
+</section>
+<section id="live">
+<h3>进入 Live 系统<a class="headerlink" href="#live" title="Permalink to this headline">#</a></h3>
+<p>将制作好的 USB 启动盘插入要安装 Ubuntu 系统的计算机上，开机启动，
+按下 <kbd class="kbd docutils literal notranslate">F10</kbd> 或 <kbd class="kbd docutils literal notranslate">F12</kbd> 进入 BIOS，并使计算机优先从 USB 盘启动。
+正确启动后，则会进入系统启动引导程序，按向上向下键选中“Ubuntu”以进入 Ubuntu 的 Live 系统。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Live 系统中进行
+任何操作以体验该系统。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol class="simple">
+<li><p>不同型号的电脑进入 BIOS 的方法可能不同，请自行查询。</p></li>
+<li><p>若计算机无法从 USB 盘启动，则可能是由于计算机的“安全启动”设置导致的，
+可以尝试进入 BIOS 设置，并在 BIOS 设置内关闭“安全启动”。</p></li>
+<li><p>如果尝试多次都无法正确从 USB 启动，则可能是 USB 启动盘制作失败，请尝试重新制作启动盘。</p></li>
+</ol>
+</div>
+</section>
+<section id="id3">
+<h3>开始安装<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>以下安装步骤假定用户想要将 Ubuntu 系统作为电脑的<strong>唯一</strong>系统，
+电脑中原有的 Windows 或其它 Linux 系统会被彻底覆盖。
+如果用户想要安装双系统（即同时安装 Windows + Linux），请参考网络上的
+其他文档。</p>
+</div>
+<p>读者可参考下面的图解步骤和对应的说明安装操作系统。</p>
+<div class="sd-sphinx-override sd-cards-carousel sd-card-cols-1 docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+1. 欢迎界面</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-1.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+2. 选择安装过程中使用的语言</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-2.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+3. 设置键盘布局</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-3.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+4. 设置要安装的软件</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-4.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+5. 设置安装类型</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-5.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+6. 对硬盘进行分区操作</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-6.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+7. 设置时区</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-7.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+8. 设置用户名与密码</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-8.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+9. 等待安装完成</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ubuntu-setup-9.jpg" /></p>
+</div>
+</div>
+</div>
+<ol class="simple">
+<li><p>进入欢迎界面，左侧可以选择安装过程中使用的语言</p></li>
+<li><p>选择“中文（简体）”，点击“安装 Ubuntu”即开始安装</p></li>
+<li><p>选择键盘布局，汉语或 “English(US)”均可</p></li>
+<li><p>选择“正常安装”，建议勾选“安装 Ubuntu 时下载更新”和“为图形或无线硬件，
+以及其他媒体格式安装第三方软件”</p></li>
+<li><p>在“安装类型”界面，选择“清除整个硬盘并安装 Ubuntu”，安装程序会进行自动分区。
+有经验的用户也可以选择“其他选项”自定义分区，但需要了解 Linux 的分区操作。
+对于一般用户而言，建议使用默认的自动分区</p></li>
+<li><p>单击“现在安装”，选择“继续”以将改动写入磁盘</p></li>
+<li><p>选择时区（例如“上海”）</p></li>
+<li><p>输入账户信息和密码信息。注意用户名只能是英文</p></li>
+<li><p>等待安装完成。完成后点击“现在重启”以重启计算机。</p></li>
+</ol>
+<p>重启计算机时，记得拔出 USB 启动盘，以免再次进入 USB 安装镜像。</p>
+</section>
+<section id="id4">
+<h3>更新系统<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>当已安装的软件有可用的更新，或 Ubuntu 系统可升级至新版本时，
+Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>更新系统前，特别是大版本更新（如 Ubuntu 20.04 更新为 Ubuntu 20.10），
+最好先进行一次备份（可以参考<a class="reference internal" href="../../best-practices/backup/"><span class="doc">数据备份</span></a>）。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击
+“Terminal” 图标以启动终端，然后在终端中输入命令并按下 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键
+即可执行相应的命令。</p>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>系统软件<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<p>Ubuntu 系统自带了“软件中心”，可用于查找、安装、卸载和管理软件包，但一般建议使用
+命令行工具 <code class="docutils literal notranslate"><span class="pre">apt</span></code> 安装和管理软件。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">apt</span></code> 会从 Ubuntu 软件源下载软件包。
+国内用户可以参考 <a class="reference external" href="https://mirrors.ustc.edu.cn/help/ubuntu.html">https://mirrors.ustc.edu.cn/help/ubuntu.html</a> 将默认软件源镜像
+替换为中科大镜像，以加快软件下载速度。</p>
+<p>注意：在替换软件源镜像后要执行 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt</span> <span class="pre">update</span></code> 更新本地缓存的软件包元数据。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">apt</span></code> 的详细用法请阅读 <a class="reference external" href="http://manpages.ubuntu.com/manpages/focal/man8/apt.8.html">apt 帮助文档</a>，
+这里只介绍一些常用命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 更新本地软件包元数据
+$ sudo apt update
+
+# 检查并升级所有已经安装的软件
+$ sudo apt upgrade
+
+# 搜索软件
+$ apt search xxx
+
+# 安装或升级软件
+$ sudo apt install xxx
+
+# 检查并升级某软件
+$ sudo apt --only-upgrade install xxx
+
+# 卸载软件
+$ sudo apt remove xxx  （保留配置文件）
+$ sudo apt purge xxx  （删除配置文件）
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Linux 用户也可以访问 <a class="reference external" href="https://pkgs.org/">https://pkgs.org/</a> 网站查询软件包。
+该网站支持多种 Linux 发行版和多个官方及第三方软件仓库，
+且为每个软件包提供了丰富的元信息、依赖和被依赖关系、包含的文件、
+安装方式以及更新历史等信息。</p>
+</div>
+</section>
+<section id="id6">
+<h2>编程开发环境<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<section id="c-c">
+<h3>C/C++<a class="headerlink" href="#c-c" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://gcc.gnu.org/">GCC</a> 系列的 C/C++ 编译器是 Linux 下最常用的
+C/C++ 编译器，其提供了 <code class="docutils literal notranslate"><span class="pre">gcc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">g++</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install gcc g++
+</pre></div>
+</div>
+</section>
+<section id="fortran">
+<h3>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://gcc.gnu.org/fortran/">GNU Fortran</a> 编译器是 Linux 下最常用的
+Fortran 编译器，其提供了 <code class="docutils literal notranslate"><span class="pre">gfortran</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install gfortran
+</pre></div>
+</div>
+</section>
+<section id="java">
+<h3>Java<a class="headerlink" href="#java" title="Permalink to this headline">#</a></h3>
+<p>运行 Java 程序需要安装 Java 运行环境，即 OpenJDK:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install default-jdk
+</pre></div>
+</div>
+</section>
+<section id="git">
+<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://git-scm.com/">git</a> 是目前最流行的版本控制工具，推荐在科研过程中
+使用 git 管理自己编写的代码和文件。一般情况下系统已经安装了该软件。如果没安装，
+可以使用如下命令安装:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install git
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./computer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../fedora-setup/" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fedora 配置指南</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../macos-setup/" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">macOS 配置指南</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By seismo-learn<br/>
+  
+      &copy; Copyright 2020–2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>VS Code 使用教程 &#8212; 地震“学”科研入门教程</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="prev" title="Zsh 及其配置" href="../zsh/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">地震“学”科研入门教程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  计算机基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../computer/operating-system/">
+   选择操作系统
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../computer/setup/">
+   配置操作系统
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/fedora-setup/">
+     Fedora 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/ubuntu-setup/">
+     Ubuntu 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/macos-setup/">
+     macOS 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/wsl-setup/">
+     WSL 配置指南
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../computer/linux101/">
+   Linux 入门
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/command-line/">
+     命令行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/file-operations/">
+     文件操作
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/shell/">
+     Shell 基础
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/environment-variable/">
+     环境变量
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../computer/commands/">
+   Linux 常用命令
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  编程基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/editor/">
+   文本编辑器
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming/languages/">
+   编程语言
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/bash/">
+     Bash 脚本
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/python/">
+     Python 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/c/">
+     C 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/markdown/">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/git/">
+   Git 与代码管理
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-source/">
+   震源
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-wave/">
+   地震波
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-phase/">
+   地震震相
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismogram/">
+   地震图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismograph/">
+   地震仪
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/station/">
+   地震台站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/data-format/">
+   波形数据格式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/resources/">
+   学习资料
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学实践
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/prerequisite/">
+   准备工作
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/download/">
+   数据下载
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/catalog/">
+     地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/station/">
+     地震台站
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/waveform/">
+     地震波形数据
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/preprocessing/">
+   数据预处理
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/process/">
+   数据处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/rotate/">
+     分量旋转
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/filter/">
+     滤波
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/analysis/">
+   数据分析
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/catalog-analysis/">
+     分析地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/particle-motion/">
+     质点运动轨迹
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/cross-correlation/">
+     互相关
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/distaz/">
+     震中距、方位角与反方位角
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/phases/">
+     震相
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/software/">
+   常用软件
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  实践经验
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../file-organization/">
+   文件管理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-installation/">
+   软件安装
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../backup/">
+   数据备份
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../backup-Linux/">
+     Linux 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../backup-macOS/">
+     macOS 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../backup-Windows/">
+     Windows 数据备份
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software/">
+   高效率软件
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../zsh/">
+   Zsh 及其配置
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   VS Code 使用教程
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  外部链接
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/">
+   地震“学”主站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/contributing/">
+   贡献指南
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">
+   参与讨论
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fbest-practices/vscode.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/edit/main/source/best-practices/vscode.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/best-practices/vscode.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   安装中文语言包
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   连接远程计算机
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>VS Code 使用教程</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   安装中文语言包
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   连接远程计算机
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="vs-code">
+<h1>VS Code 使用教程<a class="headerlink" href="#vs-code" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）、<a class="reference external" href="https://me.seisman.info/">田冬冬</a>（审稿）</p></li>
+<li><p>最近更新日期: 2021-09-28</p></li>
+<li><p>预计花费时间: 30 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>本节正在编写中，尚未完成。</p>
+</div>
+<section id="id1">
+<h2>安装中文语言包<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>VS Code 的界面默认显示语言是英文，可以安装中文语言包。点击菜单栏“查看”后选择
+“命令面板”（快捷键：<kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">p</kbd>），接着输入
+“configure display language”并按 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键，然后选择“安装其他语言”。
+这时界面会跳转到插件商店并自动搜索其他语言，一般第一个就是中文，
+即 “Chinese (Simplified) Language Pack for Visual Studio Code”，点击安装就行了。
+安装完之后自动重启，界面就变成中文了。</p>
+</section>
+<section id="id2">
+<h2>连接远程计算机<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>编辑远程计算机文件的传统方法是先使用 ssh 命令登录到远程计算机，然后在远程计算机中
+使用 vim 编辑器编辑文件。</p>
+<p>现在，我们可以借助 VS Code 扩展包 Remote - SSH，使用 VS Code 编辑远程文件，
+这极大地提高编辑效率。这里简要介绍如何安装和使用该扩展包，可以参考 VS Code
+官方文档 <a class="reference external" href="https://code.visualstudio.com/docs/remote/ssh">ssh</a> 了解详细用法。</p>
+<ol>
+<li><p>安装 Remote - SSH 扩展包</p>
+<p>在“扩展”中，搜索“Remote - SSH”，点击安装。</p>
+<p>安装完之后，左下角导航栏会多一个类似 <code class="docutils literal notranslate"><span class="pre">&gt;&lt;</span></code> 的远程连接图标。之后可以通过
+点击该图标来使用该扩展包。</p>
+</li>
+<li><p>配置远程计算机的 SSH 主机</p>
+<p>一般情况下，远程计算机已安装 SSH 服务器，本地计算机已安装 SSH 客户端。
+我们还需要配置基于密钥的认证，这也是 VS Code 官方推荐的认证方式。以下
+命令假设本地和远程计算机都是 Linux 或 macOS 系统，远程计算机的 IP 地址是
+192.168.1.100，用户在远程计算机中的用户名是 seismo-learn。
+可以参考 <a class="reference external" href="https://wangdoc.com/ssh/key.html">SSH 教程：SSH 密钥登录</a>
+进一步学习更详细的配置过程。</p>
+<p>本地计算机下，运行以下命令生成 SSH 密钥:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-keygen -t rsa -f ~/.ssh/id_rsa-remote-ssh
+</pre></div>
+</div>
+<p>该命令产生的一对 SSH 密钥分别位于 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/id_rsa-remote-ssh</span></code> 和
+<code class="file docutils literal notranslate"><span class="pre">~/.ssh/id_rsa-remote-ssh.pub</span></code> 文件中。
+前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。</p>
+<p>运行以下命令将公钥复制到远程计算机中（需用户输入远程计算机的密码）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub seismo-learn@192.168.1.100
+</pre></div>
+</div>
+<p>该命令会把本地的公钥以追加的方式复制到远程计算机的 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>
+文件中，并给远程计算机中的用户家目录、<code class="file docutils literal notranslate"><span class="pre">~/.ssh</span></code> 目录以及 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code>
+设置合适的权限。若远程计算机或本地计算机是 Windows 系统，请参考
+<a class="reference external" href="https://code.visualstudio.com/docs/remote/troubleshooting#_quick-start-using-ssh-keys">Quick start: Using SSH keys</a>
+进行配置。</p>
+<p>在终端中输入以下命令，验证是否配置是否成功（即可以登录远程计算机）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh seismo-learn@192.168.1.100
+</pre></div>
+</div>
+</li>
+<li><p>编辑远程文件</p>
+<p>点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，输入
+<a class="reference external" href="mailto:seismo-learn&#37;&#52;&#48;192&#46;168&#46;1&#46;100">mailto:seismo-learn<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>1<span>&#46;</span>100</a> 便可使用 VS Code 编辑远程计算机中的文件了。</p>
+</li>
+<li><p>退出远程连接</p>
+<p>文件编辑完毕后，选择菜单栏“文件”中的“关闭远程连接”，或者直接关闭 VS Code，
+就可以退出远程连接。</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果需要经常连接远程计算机，可以使用 SSH 配置文件。</p>
+<p>在活动栏中选择“远程资源管理器”，点击“配置”后选择 <code class="file docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>
+配置文件，按照以下格式添加相关信息到该文件中:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">seismology</span>
+    <span class="n">User</span> <span class="n">seismo</span><span class="o">-</span><span class="n">learn</span>
+    <span class="n">HostName</span> <span class="mf">192.168.1.100</span>
+    <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span><span class="o">-</span><span class="n">remote</span><span class="o">-</span><span class="n">ssh</span>
+</pre></div>
+</div>
+<p>第一列是关键词，如 Host、User、HostName、IdentityFile，第二列是对应的值。
+seismology 是用户自定义的远程主机标识，其他三个值同上文。可以按照该格式，
+向该文件中添加多个远程计算机。</p>
+<p>点击左下角的远程连接图标，选择“Remote-SSH: Connect to Host”，点击“seismology”
+就可以登录远程计算机了。也可以通过“远程资源管理器”，点击“seismology”登录远程计算机。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果远程计算机使用的 Shell 是 Bash，本地计算机是 Zsh，可能遇到无法启动
+VS Code 的终端的问题。此时，需要修改一下配置文件以正确启动终端。</p>
+<p>打开命令面板，输入 Remote-SSH: Settings，搜索 terminal.integrated.shell.linux，
+将 “/bin/zsh” 改为 “/bin/bash” 即可。详情请参考
+<a class="reference external" href="https://github.com/microsoft/vscode-remote-release/issues/38">microsoft/vscode-remote-release issues #38</a></p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./best-practices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../zsh/" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Zsh 及其配置</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By seismo-learn<br/>
+  
+      &copy; Copyright 2020–2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

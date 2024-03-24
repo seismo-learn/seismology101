@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>高效率软件 &#8212; 地震“学”科研入门教程</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Zsh 及其配置" href="../zsh/" />
+    <link rel="prev" title="Windows 数据备份" href="../backup-Windows/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">地震“学”科研入门教程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  计算机基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../computer/operating-system/">
+   选择操作系统
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../computer/setup/">
+   配置操作系统
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/fedora-setup/">
+     Fedora 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/ubuntu-setup/">
+     Ubuntu 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/macos-setup/">
+     macOS 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/wsl-setup/">
+     WSL 配置指南
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../computer/linux101/">
+   Linux 入门
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/command-line/">
+     命令行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/file-operations/">
+     文件操作
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/shell/">
+     Shell 基础
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../computer/environment-variable/">
+     环境变量
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../computer/commands/">
+   Linux 常用命令
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  编程基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/editor/">
+   文本编辑器
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../programming/languages/">
+   编程语言
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/bash/">
+     Bash 脚本
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/python/">
+     Python 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/c/">
+     C 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../programming/markdown/">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../programming/git/">
+   Git 与代码管理
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-source/">
+   震源
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-wave/">
+   地震波
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismic-phase/">
+   地震震相
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismogram/">
+   地震图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/seismograph/">
+   地震仪
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/station/">
+   地震台站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/data-format/">
+   波形数据格式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../seismology/resources/">
+   学习资料
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学实践
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/prerequisite/">
+   准备工作
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/download/">
+   数据下载
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/catalog/">
+     地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/station/">
+     地震台站
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/waveform/">
+     地震波形数据
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/preprocessing/">
+   数据预处理
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/process/">
+   数据处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/rotate/">
+     分量旋转
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/filter/">
+     滤波
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../exercises/analysis/">
+   数据分析
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/catalog-analysis/">
+     分析地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/particle-motion/">
+     质点运动轨迹
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/cross-correlation/">
+     互相关
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/distaz/">
+     震中距、方位角与反方位角
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../exercises/phases/">
+     震相
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../exercises/software/">
+   常用软件
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  实践经验
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../file-organization/">
+   文件管理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../software-installation/">
+   软件安装
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../backup/">
+   数据备份
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../backup-Linux/">
+     Linux 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../backup-macOS/">
+     macOS 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../backup-Windows/">
+     Windows 数据备份
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   高效率软件
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../zsh/">
+   Zsh 及其配置
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vscode/">
+   VS Code 使用教程
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  外部链接
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/">
+   地震“学”主站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/contributing/">
+   贡献指南
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">
+   参与讨论
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fbest-practices/software.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/edit/main/source/best-practices/software.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/best-practices/software.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dos2unix-unix2dos">
+   dos2unix &amp; unix2dos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tldr">
+   tldr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ack">
+   ack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   解压软件
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     终端
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>高效率软件</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dos2unix-unix2dos">
+   dos2unix &amp; unix2dos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tldr">
+   tldr
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ack">
+   ack
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   解压软件
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     终端
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>高效率软件<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://me.seisman.info/">田冬冬</a>（作者）、<a class="reference external" href="https://github.com/core-man">姚家园</a>（作者）</p></li>
+<li><p>最近更新日期: 2021-11-20</p></li>
+<li><p>预计阅读时间: 10 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<p>这一节推荐一些可以提高日常效率的软件，供读者参考。</p>
+<section id="dos2unix-unix2dos">
+<h2>dos2unix &amp; unix2dos<a class="headerlink" href="#dos2unix-unix2dos" title="Permalink to this headline">#</a></h2>
+<p>Windows 和 Linux/macOS 系统下，<a class="reference external" href="https://www.ruanyifeng.com/blog/2006/04/post_213.html">文本文件的换行符</a>是不同的。
+<code class="docutils literal notranslate"><span class="pre">dos2unix</span></code> 和 <code class="docutils literal notranslate"><span class="pre">unix2dos</span></code> 是可以实现换行符转换的命令行工具。
+<code class="docutils literal notranslate"><span class="pre">dos2unix</span></code> 可以将 Windows 系统下的换行符转换为 Linux/macOS 系统下的换行符，
+<code class="docutils literal notranslate"><span class="pre">unix2dos</span></code> 则反之。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="7d24da48-154e-4efb-a803-a660dd782134" name="328b2a92-a0e4-4fa8-bb6e-2ab7c49ef3d0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="fedora" for="7d24da48-154e-4efb-a803-a660dd782134">
+Fedora</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install dos2unix
+</pre></div>
+</div>
+</div>
+<input id="d015f927-e76a-4302-a24a-fbdf4bb47044" name="328b2a92-a0e4-4fa8-bb6e-2ab7c49ef3d0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ubuntu" for="d015f927-e76a-4302-a24a-fbdf4bb47044">
+Ubuntu</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install dos2unix
+</pre></div>
+</div>
+</div>
+<input id="6f5cc8f4-5582-45e5-8865-ca48d6cb5876" name="328b2a92-a0e4-4fa8-bb6e-2ab7c49ef3d0" type="radio">
+</input><label class="sd-tab-label" data-sync-id="macos" for="6f5cc8f4-5582-45e5-8865-ca48d6cb5876">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install dos2unix unix2dos
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tldr">
+<h2>tldr<a class="headerlink" href="#tldr" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://tldr.sh/">tldr</a> 是一个提供命令的常用用法和示例的命令行工具，
+其功能与 UNIX 下的 <code class="docutils literal notranslate"><span class="pre">man</span></code> 命令相似，但其提供的输出更简单、更易读。
+使用如下命令安装 <code class="docutils literal notranslate"><span class="pre">tldr</span></code>：</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="2b3cadb3-8aeb-419c-bc5d-149ba4dc34e3" name="35570628-0880-4085-ab62-8e341b875847" type="radio">
+</input><label class="sd-tab-label" data-sync-id="fedora" for="2b3cadb3-8aeb-419c-bc5d-149ba4dc34e3">
+Fedora</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install tldr
+</pre></div>
+</div>
+</div>
+<input id="73cf0653-b0e0-4eef-b734-6de87a6c7f87" name="35570628-0880-4085-ab62-8e341b875847" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ubuntu" for="73cf0653-b0e0-4eef-b734-6de87a6c7f87">
+Ubuntu</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install tldr
+</pre></div>
+</div>
+</div>
+<input id="b22bacd3-528c-478d-8f77-6aa6106ccbe2" name="35570628-0880-4085-ab62-8e341b875847" type="radio">
+</input><label class="sd-tab-label" data-sync-id="macos" for="b22bacd3-528c-478d-8f77-6aa6106ccbe2">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install tldr
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ack">
+<h2>ack<a class="headerlink" href="#ack" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://beyondgrep.com/">ack</a> 是一个字符搜索工具，与 <code class="docutils literal notranslate"><span class="pre">grep</span></code> 命令类似。
+其专为搜索源代码设计，因而在日常编程中更加简单易用。使用如下命令安装 <code class="docutils literal notranslate"><span class="pre">ack</span></code>。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="29c32097-bebd-4741-889f-790b7723bc76" name="cab07526-0aea-43af-90d0-c9010f734f20" type="radio">
+</input><label class="sd-tab-label" data-sync-id="fedora" for="29c32097-bebd-4741-889f-790b7723bc76">
+Fedora</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install ack
+</pre></div>
+</div>
+</div>
+<input id="3c64a187-f040-49b1-8e3e-38c635f1c2bc" name="cab07526-0aea-43af-90d0-c9010f734f20" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ubuntu" for="3c64a187-f040-49b1-8e3e-38c635f1c2bc">
+Ubuntu</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install ack
+</pre></div>
+</div>
+</div>
+<input id="93ae80bd-d3ae-40c2-89bd-6086d32662eb" name="cab07526-0aea-43af-90d0-c9010f734f20" type="radio">
+</input><label class="sd-tab-label" data-sync-id="macos" for="93ae80bd-d3ae-40c2-89bd-6086d32662eb">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install ack
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>解压软件<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p>Fedora/Ubuntu/macOS 系统自带的压缩解压工具可以识别并打开 Linux 下的常见压缩格式
+（如 <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code>、<code class="docutils literal notranslate"><span class="pre">.tar.bz2</span></code> 等），也支持 Windows 和 macOS 下的常见压缩格式
+（如 <code class="docutils literal notranslate"><span class="pre">.zip</span></code> 和 <code class="docutils literal notranslate"><span class="pre">.7z</span></code>），但默认不支持 <code class="docutils literal notranslate"><span class="pre">.rar</span></code> 格式。
+推荐安装解压软件 <a class="reference external" href="https://theunarchiver.com/">The Unarchiver</a>，其支持几乎
+所有压缩格式。安装后即可通过双击直接解压 <code class="docutils literal notranslate"><span class="pre">.rar</span></code> 文件。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="f5b9735b-946f-41ef-ad4d-ef81bf19f64b" name="7b058210-27b2-4080-8718-991f9e7de9a4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="fedora" for="f5b9735b-946f-41ef-ad4d-ef81bf19f64b">
+Fedora</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install unar
+</pre></div>
+</div>
+</div>
+<input id="54fd0d25-a532-434e-9725-1ca3a149f689" name="7b058210-27b2-4080-8718-991f9e7de9a4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ubuntu" for="54fd0d25-a532-434e-9725-1ca3a149f689">
+Ubuntu</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install unar
+</pre></div>
+</div>
+</div>
+<input id="36202c82-b8fe-4512-ab4c-0ced57d142f4" name="7b058210-27b2-4080-8718-991f9e7de9a4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="macos" for="36202c82-b8fe-4512-ab4c-0ced57d142f4">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask the-unarchiver
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3>终端<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Fedora/Ubuntu/macOS 自带了终端模拟器 Terminal，使用起来中规中矩。
+日常科研经常需要开好几个终端，切换和管理起来比较麻烦。</p>
+<p>Linux 下的 <a class="reference external" href="https://gnome-terminator.org/">Terminator</a> 和
+macOS 下的 <a class="reference external" href="https://iterm2.com/">iTerm2</a> 相比于自带 Terminal 具有更多的功能，
+比如支持水平和垂直分割窗格以及终端快速切换。</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="c1b51ab6-44ef-4001-b1b7-9c13ac62457c" name="f7f3f76c-6f76-46a0-92fc-fbdefcd3d7f7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="fedora" for="c1b51ab6-44ef-4001-b1b7-9c13ac62457c">
+Fedora</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install terminator
+</pre></div>
+</div>
+</div>
+<input id="fdcf73d1-8e23-4ab7-b6dc-4898560adffc" name="f7f3f76c-6f76-46a0-92fc-fbdefcd3d7f7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="ubuntu" for="fdcf73d1-8e23-4ab7-b6dc-4898560adffc">
+Ubuntu</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt install terminator
+</pre></div>
+</div>
+</div>
+<input id="5309196e-ca77-4005-9086-b8beff8a48e7" name="f7f3f76c-6f76-46a0-92fc-fbdefcd3d7f7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="macos" for="5309196e-ca77-4005-9086-b8beff8a48e7">
+macOS</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask iterm2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./best-practices"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../backup-Windows/" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Windows 数据备份</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../zsh/" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Zsh 及其配置</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By seismo-learn<br/>
+  
+      &copy; Copyright 2020–2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

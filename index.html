@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>地震“学”科研入门教程 &#8212; 地震“学”科研入门教程</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="#" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex/" />
+    <link rel="search" title="Search" href="search/" />
+    <link rel="next" title="选择操作系统" href="computer/operating-system/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">地震“学”科研入门教程</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search/" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p class="caption" role="heading">
+ <span class="caption-text">
+  计算机基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="computer/operating-system/">
+   选择操作系统
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="computer/setup/">
+   配置操作系统
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/fedora-setup/">
+     Fedora 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/ubuntu-setup/">
+     Ubuntu 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/macos-setup/">
+     macOS 配置指南
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/wsl-setup/">
+     WSL 配置指南
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="computer/linux101/">
+   Linux 入门
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/command-line/">
+     命令行
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/file-operations/">
+     文件操作
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/shell/">
+     Shell 基础
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="computer/environment-variable/">
+     环境变量
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="computer/commands/">
+   Linux 常用命令
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  编程基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming/editor/">
+   文本编辑器
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="programming/languages/">
+   编程语言
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="programming/bash/">
+     Bash 脚本
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="programming/python/">
+     Python 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="programming/c/">
+     C 语言
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="programming/markdown/">
+     Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="programming/git/">
+   Git 与代码管理
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学基础
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/seismic-source/">
+   震源
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/seismic-wave/">
+   地震波
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/seismic-phase/">
+   地震震相
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/seismogram/">
+   地震图
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/seismograph/">
+   地震仪
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/station/">
+   地震台站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/data-format/">
+   波形数据格式
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="seismology/resources/">
+   学习资料
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  地震学实践
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercises/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercises/prerequisite/">
+   准备工作
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exercises/download/">
+   数据下载
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/catalog/">
+     地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/station/">
+     地震台站
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/waveform/">
+     地震波形数据
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercises/preprocessing/">
+   数据预处理
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exercises/process/">
+   数据处理
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/rotate/">
+     分量旋转
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/filter/">
+     滤波
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="exercises/analysis/">
+   数据分析
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/catalog-analysis/">
+     分析地震目录
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/particle-motion/">
+     质点运动轨迹
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/cross-correlation/">
+     互相关
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/distaz/">
+     震中距、方位角与反方位角
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/phases/">
+     震相
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercises/software/">
+   常用软件
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  实践经验
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practices/intro/">
+   简介
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practices/file-organization/">
+   文件管理
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practices/software-installation/">
+   软件安装
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="best-practices/backup/">
+   数据备份
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="best-practices/backup-Linux/">
+     Linux 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="best-practices/backup-macOS/">
+     macOS 数据备份
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="best-practices/backup-Windows/">
+     Windows 数据备份
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practices/software/">
+   高效率软件
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practices/zsh/">
+   Zsh 及其配置
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="best-practices/vscode/">
+   VS Code 使用教程
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  外部链接
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/">
+   地震“学”主站
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://seismo-learn.org/contributing/">
+   贡献指南
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">
+   参与讨论
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/seismo-learn/seismology101/edit/main/source/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/index.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>地震“学”科研入门教程</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>地震“学”科研入门教程<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>欢迎阅读由<a class="reference external" href="https://github.com/orgs/seismo-learn/people">地震“学”小组</a>撰写的
+《<a class="reference external" href="https://seismo-learn.org/seismology101/">地震“学”科研入门教程</a>》。</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-4 docutils">
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-0 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="card-img-top" class="sd-card-img-top" src="https://avatars.githubusercontent.com/u/3974108?v=4" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference external" href="https://github.com/seisman">田冬冬</a></div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">创始人</span> <span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">核心贡献者</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-0 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="card-img-top" class="sd-card-img-top" src="https://avatars.githubusercontent.com/u/50591376?v=4" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference external" href="https://github.com/core-man">姚家园</a></div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">创始人</span> <span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">核心贡献者</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-0 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="card-img-top" class="sd-card-img-top" src="https://avatars.githubusercontent.com/u/23535406?v=4" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference external" href="https://github.com/zhaozhiyuan1989">赵志远</a></div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">贡献者</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-mt-0 sd-mb-0 sd-ml-0 sd-mr-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<img alt="card-img-top" class="sd-card-img-top" src="https://avatars.githubusercontent.com/u/12059719?v=4" />
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<a class="reference external" href="https://github.com/wangliang1989">王亮</a></div>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">贡献者</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="rubric">目标与受众</p>
+<p>本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
+其他刚接触地震学的科研人员。</p>
+<p>本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以
+作为地震学新手的入门自学材料，也可以作为地震学研究组的入门培训材料。</p>
+<p class="rubric">教程内容</p>
+<p>本教程主要包括五部分内容：</p>
+<ol class="simple">
+<li><p><strong>计算机基础</strong>：Linux 操作系统的基础知识和常用操作</p></li>
+<li><p><strong>编程基础</strong>：科研工作中常用的编程语言和编程技能</p></li>
+<li><p><strong>地震学基础</strong>：开展科研工作前必须了解的地震学基础知识</p></li>
+<li><p><strong>地震学实践</strong>：通过实践掌握基本的地震学数据处理</p></li>
+<li><p><strong>实践经验</strong>：日常科研工作中的一些实践经验</p></li>
+</ol>
+<p class="rubric">反馈与建议</p>
+<p>欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
+这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。
+请通过如下方式给予反馈：</p>
+<ol class="simple">
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-comment-discussion" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h8.5a.25.25 0 01.25.25v5.5a.25.25 0 01-.25.25h-3.5a.75.75 0 00-.53.22L3.5 11.44V9.25a.75.75 0 00-.75-.75h-1a.25.25 0 01-.25-.25v-5.5zM1.75 1A1.75 1.75 0 000 2.75v5.5C0 9.216.784 10 1.75 10H2v1.543a1.457 1.457 0 002.487 1.03L7.061 10h3.189A1.75 1.75 0 0012 8.25v-5.5A1.75 1.75 0 0010.25 1h-8.5zM14.5 4.75a.25.25 0 00-.25-.25h-.5a.75.75 0 110-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0114.25 12H14v1.543a1.457 1.457 0 01-2.487 1.03L9.22 12.28a.75.75 0 111.06-1.06l2.22 2.22v-2.19a.75.75 0 01.75-.75h1a.25.25 0 00.25-.25v-5.5z"></path></svg> <a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">留言参与讨论</a></p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-issue-opened" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path><path fill-rule="evenodd" d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"></path></svg> 在教程源码仓库下<a class="reference external" href="https://github.com/seismo-learn/seismology101/issues">提交 Issue</a></p></li>
+<li><p><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-git-pull-request" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path></svg> 修改文档并<a class="reference external" href="https://github.com/seismo-learn/seismology101/pulls">提交 Pull Request</a></p></li>
+</ol>
+<p class="rubric">免责声明</p>
+<p>本教程的所有内容完全基于撰写者在地震学科研过程中的理解与体会，仅供读者参考。</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="computer/operating-system/" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">选择操作系统</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By seismo-learn<br/>
+  
+      &copy; Copyright 2020–2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
