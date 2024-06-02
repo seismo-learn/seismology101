@@ -5,7 +5,7 @@ channels:
 dependencies:
   - python=3.11
   - cartopy
-  - jupyter-book=1.0
+  - jupyter-book=1.0.0
   - matplotlib
   - numpy
   - obspy=1.4.0
