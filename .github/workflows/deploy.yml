@@ -29,13 +29,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Micromamba
-        uses: mamba-org/setup-micromamba@v1.7.3
+        uses: mamba-org/setup-micromamba@v1.9.0
         with:
           environment-file: environment.yml
           cache-downloads: true
           cache-environment: true
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         id: cache
         with:
           path: |
@@ -53,7 +53,7 @@ jobs:
         run: make dirhtml
 
       - name: Deploy documentation
-        uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/dirhtml
