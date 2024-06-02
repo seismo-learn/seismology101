@@ -1,7 +1,7 @@
 # 选择操作系统
 
 - 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（作者）
-- 最近更新日期: 2021-03-19
+- 最近更新日期: 2024-06-02
 - 预计阅读时间: 5 分钟
 
 ----
@@ -30,15 +30,6 @@ Linux 有[上百个不同的发行版](https://distrowatch.com/)，
 对于不了解 Linux 的读者，**推荐使用 Fedora 或 Ubuntu 系统**，可以分别参考
 《{doc}`/computer/fedora-setup`》和《{doc}`/computer/ubuntu-setup`》
 来安装和配置系统，以满足科研工作的需求。
-
-:::{note}
-选择 **CentOS** 的读者应使用 [CentOS Stream](https://www.centos.org/centos-stream/)，
-而非 [CentOS Linux](https://www.centos.org/centos-linux/)。
-Red Hat 在 2020 年 12 月宣布将停止 CentOS Linux 项目。
-CentOS Linux 8 已于 2021 年末停止维护；
-CentOS Linux 7 也将于 2024 年 6 月 30 日停止更新。
-详情请阅读 [CentOS 博客](https://blog.centos.org/2020/12/future-is-centos-stream/)。
-:::
 
 ## macOS
 
