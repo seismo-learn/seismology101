@@ -32,7 +32,7 @@ jobs:
         uses: mamba-org/setup-micromamba@v1.9.0
         with:
           environment-file: environment.yml
-          cache-downloads: true
+          cache-downloads: false
           cache-environment: true
 
       - uses: actions/cache@v4
