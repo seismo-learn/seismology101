@@ -8,4 +8,4 @@ dependencies:
   - jupyter-book=1.0.0
   - matplotlib
   - numpy
-  - obspy=1.4.0
+  - obspy=1.4.1
