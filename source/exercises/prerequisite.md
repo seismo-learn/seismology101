@@ -22,7 +22,7 @@ kernelspec:
 这一章，我们将使用 Python 语言和 [ObsPy 软件包](https://docs.obspy.org/)
 学习并掌握地震学数据的获取、处理和分析。在开始本章内容之前，读者应：
 
-- 阅读《{doc}`/programming/python`》一节，并安装 Miniconda
+- 阅读《[](/programming/python)》一节，并安装 Miniconda
 - 掌握 Python 的基本语法并了解如何执行 Python 代码
 
 ## 安装依赖包

@@ -54,7 +54,7 @@ Miniconda
 :::
 
 下面展示了如何在 Linux 系统下安装 Miniconda。其它操作系统下的安装说明以及具体使用方法可以参考
-{doc}`地震“学”软件中 Anaconda 相关内容 <software:anaconda/index>`。
+[地震“学”软件中 Anaconda 相关内容](software:anaconda/index)。
 
 1. 下载 Miniconda
 
