@@ -28,8 +28,8 @@ Linux 文件系统就像一颗树一样，从 {file}`/` 目录开始，这个特
 该用户的家目录便是 {file}`/home/seismo-learn`。macOS 下的家目录是 {file}`/Users/seismo-learn`。
 在 Linux/macOS 系统下，可用 {file}`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
 {file}`~/Desktop`、{file}`~/Documents`、{file}`~/Downloads` 等。熟悉 Linux 文件系统后
-可以参考{doc}`《文件管理实践经验》<best-practices/file-organization>`和
-{doc}`《软件安装实践经验》<best-practices/software-installation>`进一步组织与管理家目录，
+可以参考 [《文件管理实践经验》](/best-practices/file-organization) 和
+[《软件安装实践经验》](/best-practices/software-installation) 进一步组织与管理家目录，
 以提高工作效率。
 
 ## 操作文件与目录

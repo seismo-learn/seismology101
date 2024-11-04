@@ -28,7 +28,7 @@ Linux 有[上百个不同的发行版](https://distrowatch.com/)，
 有经验的读者可以根据自己的喜好自行选择合适的 Linux 发行版。
 
 对于不了解 Linux 的读者，**推荐使用 Fedora 或 Ubuntu 系统**，可以分别参考
-《{doc}`/computer/fedora-setup`》和《{doc}`/computer/ubuntu-setup`》
+《[](/computer/fedora-setup)》和《[](/computer/ubuntu-setup)》
 来安装和配置系统，以满足科研工作的需求。
 
 ## macOS
@@ -36,7 +36,7 @@ Linux 有[上百个不同的发行版](https://distrowatch.com/)，
 Mac 笔记本（MacBook Air、MacBook Pro）或台式机（iMac、Mac mini、Mac Pro）自带的
 macOS 系统可以满足科研工作的大部分需求。
 **对于以 Mac 笔记本或 Mac 台式机作为科研主力机器的读者，建议直接使用 macOS 系统**。
-可以参考《{doc}`/computer/macos-setup`》对 macOS 系统进行配置，以满足科研工作的需求。
+可以参考《[](/computer/macos-setup)》对 macOS 系统进行配置，以满足科研工作的需求。
 
 ## Microsoft Windows
 
@@ -56,4 +56,4 @@ WSL 是微软官方开发的一个在 Windows 10/11 上运行原生 Linux 二进
 与安装双系统相比，WSL 安装简便且可以在多系统之间无缝切换。
 与使用虚拟机相比，WSL 在启动速度、消耗资源以及性能利用上有较大优势。
 因此，对于绝大多数 Windows 10/11 用户，WSL 是比双系统和虚拟机更好的选择。
-可以参考《{doc}`/computer/wsl-setup`》来安装并配置 WSL，以满足科研工作的需求。
+可以参考《[](/computer/wsl-setup)》来安装并配置 WSL，以满足科研工作的需求。
