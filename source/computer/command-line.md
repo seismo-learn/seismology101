@@ -39,7 +39,7 @@ $ exit
 
 从终端程序输入的指令，会被一个称为 Shell（壳）的程序接收，并进一步交给系统执行。
 几乎所有的 Linux 发行版都提供了一个叫 Bash 的 Shell，此外还有 Zsh、csh、ksh 等 Shell。
-熟悉 Linux 系统之后，推荐参考[《Zsh 及其配置实践经验](/best-practices/zsh) 安装和使用 Zsh。
+熟悉 Linux 系统之后，推荐参考[《Zsh 及其配置实践经验》](/best-practices/zsh) 安装和使用 Zsh。
 
 打开终端后，通常会看到类似如下 Shell 提示符:
 
