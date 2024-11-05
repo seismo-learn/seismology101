@@ -81,8 +81,8 @@ $ bash
 ```
 
 通过 WSL 安装 Linux 系统后，还需要对 Linux 系统进行配置。
-Ubuntu 和 Fedora 用户可以分别参考《{doc}`/computer/ubuntu-setup`》和
-《{doc}`/computer/fedora-setup`》对系统进行配置，以满足科研工作的需求。
+Ubuntu 和 Fedora 用户可以分别参考《[](/computer/ubuntu-setup)》和
+《[](/computer/fedora-setup)》对系统进行配置，以满足科研工作的需求。
 
 :::{warning}
 配置 Linux 系统时，切记要跳过“安装系统”一节，只需配置**系统软件**和**编程开发环境**。

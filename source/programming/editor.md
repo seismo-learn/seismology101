@@ -25,4 +25,4 @@ VS Code 下载地址： <https://code.visualstudio.com/download>
 ## 使用 VS Code
 
 建议在日常科研中随时根据个人习惯，去配置 VS Code、安装和使用扩展包等。
-更多的配置和使用技巧见 {doc}`/best-practices/vscode`。
+更多的配置和使用技巧见 [](/best-practices/vscode)。

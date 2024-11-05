@@ -171,7 +171,7 @@ Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软�
 
 :::{warning}
 更新系统前，特别是大版本更新（如 Fedora 35 更新为 Fedora 36），
-最好先进行一次备份（可以参考{doc}`/best-practices/backup`）。
+最好先进行一次备份（可以参考[](/best-practices/backup)）。
 :::
 
 :::{note}

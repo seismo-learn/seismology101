@@ -18,7 +18,7 @@ GNU bash，version 5.0.3(1)-release (x86_64-pc-linux-gnu)
 ```
 
 这一节中，我们不介绍具体的 Bash 语法，而是介绍如何编写和执行 Bash 脚本。
-{doc}`/computer/linux101` 一节中已经简要介绍了 Bash 语法，
+[](/computer/linux101) 一节中已经简要介绍了 Bash 语法，
 本节的最后也列出了一些 Bash 学习资源，读者可根据需要自行学习。
 
 ## Bash 脚本
@@ -94,7 +94,7 @@ Hello world! This is seismo-learn.
 拥有 Shebang 行和可执行权限的脚本，在调用时还需要指定脚本的路径，
 如 `./hello-world.sh` 代表该脚本位于当前目录。如果将脚本放在环境变量 **PATH**
 指定的目录中，就不需要指定路径了，因为 Bash 会自动到这些目录中寻找是否存在同名的
-可执行文件。可以参考{doc}`/computer/environment-variable`一节
+可执行文件。可以参考[](/computer/environment-variable) 一节
 设置环境变量 **PATH**。
 
 ## 扩展阅读

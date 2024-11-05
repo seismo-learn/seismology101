@@ -21,7 +21,7 @@ macOS 系统的更新也十分简单。当有新版本发布以后，在“系�
 
 :::{warning}
 更新系统前，特别是大版本更新（如 macOS 11 更新为 macOS 12），
-最好先备份一下（可以参考{doc}`/best-practices/backup`）。
+最好先备份一下（可以参考[](/best-practices/backup)）。
 :::
 
 :::{note}
