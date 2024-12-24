@@ -302,10 +302,12 @@ print(mag)
 print(mag.mag, mag.magnitude_type)
 ```
 
-由此，我们就可以从地震目录 {class}`~obspy.core.event.Catalog` 中获取地震研究中常用的地震
-参数信息，即：
-```{code-cell} ipython3
+## 将 {class}`~obspy.core.event.Catalog` 以更易读的格式输出
 
+在了解了 {class}`~obspy.core.event.Catalog` 类的技术细节后，我们就可以很容易地从地震目录 
+{class}`~obspy.core.event.Catalog` 中获取地震的相关信息，并以更易读的文本格式输出。例如，
+
+```{code-cell} ipython3
 for event in cat:
     origin = event.origins[0]
     mag = event.magnitudes[0]
