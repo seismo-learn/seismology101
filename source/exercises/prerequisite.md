@@ -45,13 +45,16 @@ $ conda install obspy cartopy jupyterlab
 在 JupyterLab 中新建一个 Notebook，并在 Notebook 中执行如下命令以检查当前环境。
 
 ```{code-cell} ipython3
+import platform
+
 import obspy
 import matplotlib
 import numpy
 import cartopy
 
-print("ObsPy version:", obspy.__version__)
-print("Matplotlib version:", matplotlib.__version__)
-print("NumPy version:", numpy.__version__)
-print("cartopy version:", cartopy.__version__)
+print("Python: ", platform.python_version())
+print("ObsPy: ", obspy.__version__)
+print("Matplotlib: ", matplotlib.__version__)
+print("NumPy: ", numpy.__version__)
+print("cartopy: ", cartopy.__version__)
 ```
