@@ -301,3 +301,13 @@ print(mag)
 ```{code-cell} ipython3
 print(mag.mag, mag.magnitude_type)
 ```
+
+由此，我们就可以从地震目录 {class}`~obspy.core.event.Catalog` 中获取地震研究中常用的地震
+参数信息，即：
+```{code-cell} ipython3
+
+for event in cat:
+    origin = event.origins[0]
+    mag = event.magnitudes[0]
+    print(origin.time, origin.latitude, origin.longitude, origin.depth / 1000.0, mag.mag, mag.magnitude_type)
+```
