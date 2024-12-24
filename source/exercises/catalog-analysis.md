@@ -113,7 +113,7 @@ N_pred = 10 ** (mw * p[0] + p[1])
 
 fig, ax = plt.subplots()
 ax.semilogy(mw, counts, "o")
-ax.semilogy(mw, N_pred, color="red", label=f"$\log_{{10}} N={p[1]:.2f}{p[0]:.2f}M$")
+ax.semilogy(mw, N_pred, color="red", label=rf"$\log_{{10}} N={p[1]:.2f}{p[0]:.2f}M$")
 ax.legend()
 ax.set_xlabel("Magnitude")
 ax.set_ylabel("Cumulative Number of earthquakes")
