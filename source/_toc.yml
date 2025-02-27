@@ -51,6 +51,7 @@ parts:
       - file: exercises/catalog
       - file: exercises/station
       - file: exercises/waveform
+      - file: exercises/synthetic
     - file: exercises/process
       sections:
       - file: exercises/demean
