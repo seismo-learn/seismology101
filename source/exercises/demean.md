@@ -36,10 +36,10 @@ st = client.get_waveforms(
     endtime=endtime)
     
 # 保存波形图片
-st.plot(outfile="demean1.png")
+st.plot(outfile="demean-1.png")
 ```
 
-![下载波形图](demean1.png)
+![下载波形图](demean-1.png)
 
 ---
 
@@ -58,7 +58,6 @@ plt.figure(figsize=(10, 6))
 plt.subplot(2, 1, 1)
 plt.plot(tr_original.times(), tr_original.data, color='blue', label='Before Demean')
 plt.title('Seismic Waveform Before Demean (2010 Chile Earthquake)')
-plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
 plt.legend()
 plt.grid(True)
@@ -73,11 +72,12 @@ plt.legend()
 plt.grid(True)
 
 # 调整布局并显示图形
+plt.savefig("demean-2.png")
 plt.tight_layout()
 plt.show()
 ```
 
-![去均值前后对比图](demean2.png)
+![去均值前后对比图](demean-2.png)
 
 去均值操作的结果如图所示：
 原始地震波形（蓝色）存在显著的负向直流分量，
