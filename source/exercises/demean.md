@@ -12,7 +12,7 @@
 
 ---
 
-首先，我们使用ObsPy 下载一个地震波形数据作为示例。
+首先，我们使用ObsPy 下载一个2010年智利地震波形数据作为示例。
 
 ```{code-cell} ipython3
 import obspy
