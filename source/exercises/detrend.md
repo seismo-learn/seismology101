@@ -8,7 +8,11 @@
 
 
 
-首先，我们下载2011年东日本大地震（M9.0）中位于IU网络MAJO台站的BHZ通道5分钟波形数据，其原始波形显示显著线性漂移（斜率3.94e+04，均值5325599），反映出仪器基线偏移。
+在此我们同样使用上一节中的2010年智利地震波形数据，其原始波形显示显著线性漂移（斜率0.466），反映出仪器基线偏移。
+
+
+然后，我们通过ObsPy的`detrend("linear")`方法拟合并移除线性趋势，后处理后斜率降至-8.23e-14，同时均值精确为0，成功校正基线而不改变地震信号形态。
+
 
 ```{code-cell} ipython3
 import obspy
@@ -18,78 +22,47 @@ import numpy as np
 
 client = Client("IRIS")
 
-# 下载数据
-starttime = obspy.UTCDateTime("2011-03-11T05:46:24")
-endtime = starttime + 5 * 60
+## （2010年智利地震的数据）
+starttime = obspy.UTCDateTime("2010-02-27T06:30:00")
+endtime = starttime + 300  
+
+
 st = client.get_waveforms(
     network="IU",
-    station="MAJO",
-    location="00",
+    station="ANMO", 
+    location="00", 
     channel="BHZ",
-    starttime=starttime,
-    endtime=endtime
-)
-
-tr = st[0]
-
-# 计算原始数据的斜率
-time_array = tr.times()
-p_before = np.polyfit(time_array, tr.data, 1)
-fig = st.plot(show=False)
-
-# 在图上添加斜率信息
-ax = fig.axes[0]
-ax.text(0.02, 0.05, f'Slope Before: {p_before[0]:.2e}', 
-        transform=ax.transAxes, 
-        color='k',
-        fontsize=12,
-        verticalalignment='bottom') 
-
-# 保存图像
-fig.savefig("detrend-1.png")
-plt.show()
-```
-
-
-![detrend-1](detrend-1.png)
-
-
-
-然后，我们通过ObsPy的`detrend("linear")`方法拟合并移除线性趋势，后处理后斜率降至-1.26e-11，均值精确为0，成功校正基线而不改变地震信号形态。
-
-
-```{code-cell} ipython3
-
+    starttime=starttime, 
+    endtime=endtime)
+    
 tr = st[0]
 tr_original = tr.copy()
-# 线性去趋势
+
+
+## 执行线性去趋势
 tr.detrend("linear")
 time_array = tr_original.times()
-
 # 计算处理前后的斜率和均值
 p_before = np.polyfit(time_array, tr_original.data, 1)
 mean_before = np.mean(tr_original.data)
 p_after = np.polyfit(time_array, tr.data, 1)
 mean_after = np.mean(tr.data)
 
-#绘图对比
+## 处理前后绘图对比
 fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(15, 8), sharex=True)
-fig.suptitle('Linear Detrend Comparison (2011 Tohoku Earthquake, IU.MAJO.BHZ)', fontsize=16)
+fig.suptitle('Linear Detrend Comparison (2010 Chile Earthquake, IU.ANMO.BHZ)', fontsize=16)
 
-# 统一Y轴范围
-y_max = max(np.max(np.abs(tr_original.data)), np.max(np.abs(tr.data))) * 1.1
-y_range = [-y_max, y_max]
+# (处理前)
 ax1 = axes[0]
 ax1.plot(tr_original.times(), tr_original.data, color='black', label='Before Detrend')
 ax1.axhline(y=mean_before, color='black', linestyle='--', label=f'Mean Before: {mean_before:.0f}')
 ax1.text(0.02, 0.95, f'Slope Before: {p_before[0]:.2e}', transform=ax1.transAxes, color='black')
 ax1.set_title('Original Waveform')
 ax1.set_ylabel('Amplitude')
-ax1.set_ylim(y_range)
 ax1.legend(loc='lower left')
 ax1.grid(True)
 
-
+#  (处理后)
 ax2 = axes[1]
 ax2.plot(tr.times(), tr.data, color='black', label='After Detrend')
 ax2.axhline(y=mean_after, color='black', linestyle='--', label=f'Mean After: {mean_after:.0f}')
@@ -97,16 +70,15 @@ ax2.text(0.02, 0.95, f'Slope After: {p_after[0]:.2e}', transform=ax2.transAxes, 
 ax2.set_title('Detrended Waveform')
 ax2.set_xlabel('Time (s)')
 ax2.set_ylabel('Amplitude')
-ax2.set_ylim(y_range)
 ax2.legend(loc='lower left')
 ax2.grid(True)
 
-plt.tight_layout(rect=[0, 0.03, 1, 0.95]) 
-plt.savefig("detrend-2.png")
+plt.tight_layout() 
+plt.savefig("detrend.png")
 plt.show()
 
 ```
 
-![detrend-2](detrend-2.png)
+![detrend-2](detrend.png)
 
 
