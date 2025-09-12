@@ -1,3 +1,17 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.13.0
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+
 # 去均值
 
 - 本节贡献者: {{何星辰}}（作者）
@@ -10,7 +24,8 @@
 为后续处理（如傅里叶变换、滤波或积分）奠定基础，
 避免因直流分量导致的失真或错误
 
----
+
+
 
 首先，我们使用ObsPy 下载一个2010年智利地震波形数据作为示例。
 
