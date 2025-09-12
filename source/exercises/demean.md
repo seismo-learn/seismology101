@@ -54,7 +54,7 @@ st = client.get_waveforms(
 st.plot(outfile="demean-1.png")
 ```
 
-![下载波形图](demean-1.png)
+<!-- ![下载波形图](demean-1.png) -->
 
 ---
 
