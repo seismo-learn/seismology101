@@ -53,7 +53,7 @@ tr = st[0]
 tr_original = tr.copy()
 
 
-## 执行线性去趋势
+## 线性去趋势
 tr.detrend("linear")
 time_array = tr_original.times()
 # 计算处理前后的斜率和均值
@@ -68,9 +68,9 @@ fig.suptitle('Linear Detrend Comparison (2010 Chile Earthquake, IU.ANMO.BHZ)', f
 
 # (处理前)
 ax1 = axes[0]
-ax1.plot(tr_original.times(), tr_original.data, color='black', label='Before Detrend')
-ax1.axhline(y=mean_before, color='black', linestyle='--', label=f'Mean Before: {mean_before:.0f}')
-ax1.text(0.02, 0.95, f'Slope Before: {p_before[0]:.2e}', transform=ax1.transAxes, color='black')
+ax1.plot(tr_original.times(), tr_original.data, color='blue', label='Before Detrend')
+ax1.axhline(y=mean_before, color='blue', linestyle='--', label=f'Mean Before: {mean_before:.0f}')
+ax1.text(0.02, 0.95, f'Slope Before: {p_before[0]:.2e}', transform=ax1.transAxes, color='blue')
 ax1.set_title('Original Waveform')
 ax1.set_ylabel('Amplitude')
 ax1.legend(loc='lower left')
@@ -78,9 +78,9 @@ ax1.grid(True)
 
 #  (处理后)
 ax2 = axes[1]
-ax2.plot(tr.times(), tr.data, color='black', label='After Detrend')
-ax2.axhline(y=mean_after, color='black', linestyle='--', label=f'Mean After: {mean_after:.0f}')
-ax2.text(0.02, 0.95, f'Slope After: {p_after[0]:.2e}', transform=ax2.transAxes, color='black')
+ax2.plot(tr.times(), tr.data, color='red', label='After Detrend')
+ax2.axhline(y=mean_after, color='red', linestyle='--', label=f'Mean After: {mean_after:.0f}')
+ax2.text(0.02, 0.95, f'Slope After: {p_after[0]:.2e}', transform=ax2.transAxes, color='red')
 ax2.set_title('Detrended Waveform')
 ax2.set_xlabel('Time (s)')
 ax2.set_ylabel('Amplitude')
