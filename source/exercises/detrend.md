@@ -94,6 +94,6 @@ plt.show()
 
 ```
 
-![detrend-2](detrend.png)
+<!-- ![detrend-2](detrend.png) -->
 
 
