@@ -92,5 +92,3 @@ plt.savefig("detrend.png")
 plt.show()
 
 ```
-<!-- 
-![detrend-2](detrend.png) -->

@@ -54,7 +54,6 @@ st = client.get_waveforms(
 st.plot(outfile="demean-1.png")
 ```
 
-<!-- ![下载波形图](demean-1.png) -->
 
 ---
 
@@ -91,8 +90,6 @@ plt.savefig("demean-2.png")
 plt.tight_layout()
 plt.show()
 ```
-
-<!-- ![去均值前后对比图](demean-2.png) -->
 
 去均值操作的结果如图所示：
 原始地震波形（蓝色）存在显著的负向直流分量，
