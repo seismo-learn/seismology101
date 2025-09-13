@@ -13,7 +13,7 @@ kernelspec:
 
 # 去线性趋势
 
-- 本节贡献者: [何星辰](https://github.com/Chuan1937)
+- 本节贡献者: [何星辰](https://github.com/Chuan1937)（作者）、[田冬冬](https://me.seisman.info/)（审稿）
 - 最近更新日期: 2025-09-07
 - 预计花费时间: 10 分钟
 
@@ -92,7 +92,7 @@ plt.savefig("detrend.png")
 plt.show()
 
 ```
-
-![detrend-2](detrend.png)
+<!-- 
+![detrend-2](detrend.png) -->
 
 
