@@ -23,11 +23,6 @@ kernelspec:
 
 
 在此我们同样使用上一节中的2010年智利地震波形数据，其原始波形显示显著线性漂移（斜率0.466），反映出仪器基线偏移。
-
-
-然后，我们通过ObsPy的`detrend("linear")`方法拟合并移除线性趋势，后处理后斜率降至-8.23e-14，同时均值精确为0，成功校正基线而不改变地震信号形态。
-
-
 ```{code-cell} ipython3
 import obspy
 from obspy.clients.fdsn import Client
@@ -52,7 +47,12 @@ st = client.get_waveforms(
 tr = st[0]
 tr_original = tr.copy()
 
+```
 
+然后，我们通过ObsPy的`detrend("linear")`方法拟合并移除线性趋势，后处理后斜率降至-8.23e-14，同时均值精确为0，成功校正基线而不改变地震信号形态。
+
+
+```{code-cell} ipython3
 ## 线性去趋势
 tr.detrend("linear")
 time_array = tr_original.times()
