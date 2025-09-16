@@ -68,8 +68,8 @@ st_processed.taper(max_percentage=0.05, type='cosine')
 最后为了清晰地展示尖灭的作用，我们在图上放大波形的起始和结束部分，以直观地看到振幅是如何被平滑地衰减至零的。
 
 ```{code-cell} ipython3
-
-
+tr_orig = st_original[0]
+tr_proc = st_processed[0]
 # 尖灭窗口的持续时间（总时长的5%）
 times = tr_orig.times()
 taper_duration = times[-1] * 0.05
