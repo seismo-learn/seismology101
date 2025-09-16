@@ -50,8 +50,7 @@ st = client.get_waveforms(
     starttime=starttime, 
     endtime=endtime)
     
-# 保存波形图片
-st.plot(outfile="demean-1.png")
+
 ```
 
 
@@ -86,7 +85,6 @@ plt.legend()
 plt.grid(True)
 
 # 调整布局并显示图形
-plt.savefig("demean-2.png")
 plt.tight_layout()
 plt.show()
 ```
