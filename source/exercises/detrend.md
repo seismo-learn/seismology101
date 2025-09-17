@@ -49,10 +49,12 @@ tr_original = tr.copy()
 
 ```
 
-然后，我们通过ObsPy的`detrend("linear")`方法拟合并移除线性趋势，后处理后斜率降至-8.23e-14，同时均值精确为0，成功校正基线而不改变地震信号形态。
+然后，先进行去均值操作，随即通过ObsPy的`detrend("linear")`方法拟合并移除线性趋势，后处理后斜率降至-8.23e-14，同时均值精确为0，成功校正基线而不改变地震信号形态。
 
 
 ```{code-cell} ipython3
+# 去均值
+tr.detrend("demean")
 ## 线性去趋势
 tr.detrend("linear")
 time_array = tr_original.times()
