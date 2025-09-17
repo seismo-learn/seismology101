@@ -30,7 +30,7 @@ $$D(t) = G(t) * I(t)$$
 
 显而易见，去除仪器响应的方法就是反卷积，我们可以使用ObsPy的`remove_response`方法进行处理。
 
-同样，我们使用之前去均值与去线性趋势中一样的数据，但是不同的是，我们需要同时获取其对应的仪器元数据。随即便可以进行去除仪器响应并绘图对比。
+同样，我们使用前几节一样的数据，但是不同的是，我们需要同时获取其对应的仪器元数据。以便可以进行去除仪器响应并绘图对比。
 
 
 ```{code-cell} ipython3
@@ -63,12 +63,16 @@ inventory = client.get_stations(
     starttime=starttime,
     level="response"  # 必须指定此参数以获取响应数据
 )
+```
+获得数据后，我们仍然按照之前的步骤进行去均值，去线性趋势以及波形尖灭。
 
-
-
-
+```{code-cell} ipython3
 tr = st[0]
 tr_corr = tr.copy()
+
+tr_corr.detrend("demean")   # 去均值
+tr_corr.detrend("linear")   # 去线性趋势
+tr_corr.taper(max_percentage=0.05, type="cosine")  # 5%余弦尖灭
 
 # 定义一个预滤波器，这对于稳定反卷积过程至关重要
 # 频带应选择在仪器的平坦响应区内
@@ -104,11 +108,10 @@ ax2.grid(True)
 
 fig.suptitle("2010 Chile Earthquake in Removing Response", fontsize=16)
 plt.tight_layout()
-plt.savefig("response.png")
 plt.show()
 ```
 
 
 ---
 
-从图上可以去除前的波形单位是未经校正的数字量，其振幅和形态均受到仪器自身频率响应的严重影响，因此不具备直接的物理意义和可比性。而去除仪器响应后的波形单位已成功转换为$Velocity (m/s)$，恢复了地面的真实运动速度。
+从图上可以去除前的波形单位是未经校正的仪器记录到的原始数字振幅，其振幅和形态均受到仪器自身频率响应的严重影响，因此不具备直接的物理意义和可比性。而去除仪器响应后的波形单位已成功转换为$Velocity (m/s)$，恢复了地面的真实运动速度。
