@@ -54,6 +54,7 @@ st_original = st.copy()
 st_processed = st.copy()
 
 #去均值和去线性趋势
+st_processed.detrend('demean')
 st_processed.detrend('linear')
 
 ```
