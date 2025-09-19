@@ -79,6 +79,7 @@ event_lon = event_origin.longitude
 
 station_lat = inventory[0][0].latitude
 station_lon = inventory[0][0].longitude
+st_processed = st.copy()
 ```
 
 然后仍然需要延续之前的预处理步骤，完成去均值，去线性趋势，波形尖灭，去除仪器响应和滤波操作。
