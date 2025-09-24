@@ -99,6 +99,13 @@ gcc simple_example.c -o simple_example
 ./simple_example
 ```
 
+结果如下:
+
+```
+S-P Time: 15.50 s
+Estimated Distance: 124.00 km
+```
+
 ## 复杂的 C 源码示例
 
 ## 编译与链接
