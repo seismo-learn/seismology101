@@ -27,7 +27,7 @@ kernelspec:
 
 
 
-首先，我们使用ObsPy 下载一个2010年智利地震波形数据作为示例。
+首先，我们使用ObsPy 下载一个2022年墨西哥地震波形数据作为示例。
 
 ```{code-cell} ipython3
 import obspy
@@ -36,12 +36,11 @@ import matplotlib.pyplot as plt
 
 client = Client("IRIS") 
 
-# 定义时间范围（2010年智利地震）
-starttime = obspy.UTCDateTime("2010-02-27T06:30:00")
-endtime = starttime + 300  # 下载5分钟数据
+# 定义时间范围（2022年墨西哥Mw 6.8 级地震）
+starttime=obspy.UTCDateTime("2022-09-22T06:18:00")
+endtime = starttime + 720  # 下载12分钟数据
 
 # 下载地震数据
-# 以IU网络的ANMO台站为例
 st = client.get_waveforms(
     network="IU",
     station="ANMO", 
@@ -50,7 +49,6 @@ st = client.get_waveforms(
     starttime=starttime, 
     endtime=endtime)
     
-
 ```
 
 
@@ -70,7 +68,7 @@ plt.figure(figsize=(10, 6))
 # 绘制去均值前的波形
 plt.subplot(2, 1, 1)
 plt.plot(tr_original.times(), tr_original.data, color='blue', label='Before Demean')
-plt.title('Seismic Waveform Before Demean (2010 Chile Earthquake)')
+plt.title('Seismic Waveform Before Demean (2022 Mexico Earthquake)')
 plt.ylabel('Amplitude')
 plt.legend()
 plt.grid(True)
@@ -89,10 +87,5 @@ plt.tight_layout()
 plt.show()
 ```
 
-去均值操作的结果如图所示：
-原始地震波形（蓝色）存在显著的负向直流分量，
-整体振动围绕约-49000的基线，而非零点。
-经过ObsPy的`detrend("demean")`处理后，
-红色波形显示直流分量被完全移除，
-波形以零点为中心上下振动，成功校正基线，
-同时保留了地震信号的原始形态。
+
+从图中可以看出，去均值（demean）操作前后波形几乎没有视觉差异，这是因为原始的蓝色波形数据质量很高，其振动基线已精确地围绕零轴，几乎没有直流偏移。
