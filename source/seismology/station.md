@@ -1,7 +1,8 @@
 # 地震台站
 
 - 本节贡献者: {{ 姚家园 }}（作者）、{{ 田冬冬 }}（审稿）
-- 最近更新日期: 2021-05-31
+- 最近更新日期: 2023-02-28
+- 预计阅读时间: 60 分钟
 
 ---
 
@@ -27,6 +28,29 @@
 
 ## 台站命名
 
+为了唯一确定一个台站，需要给台站命名。地震学中，台站命名的规则如下：
+```
+NET.STA.LOC.CHN
+```
+
+其中，NET、STA、LOC、CHN 分别代表网络、台站、位置、通道。
+
+### 台网代码
+
+网络代码（NET）是用来区分不同的地震台网的，如：
+
+### 台站名
+
+### 位置码
+
+### 通道名
+
+
 1. ID：NET.STA.LOC.CHN
 2. 解释 NET、STA、LOC、CHN 的层级关系
 3. 解释channel，如 BHZ
+
+通道名：
+
+https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/
+https://ds.iris.edu/ds/nodes/dmc/tools/data_channels/#???
