@@ -18,11 +18,9 @@ kernelspec:
 - 最近更新日期: 2025-09-06
 - 预计花费时间: 10 分钟
 
-去均值是指计算波形数据的平均值（即直流分量或DC offset），
-并从每个数据点中减去该平均值，使波形围绕零点振动。
-这一操作旨在消除仪器零点漂移，
-为后续处理（如傅里叶变换、滤波或积分）奠定基础，
-避免因直流分量导致的失真或错误
+去均值是指计算波形数据的平均值（也称直流分量），
+并从每个数据点中减去该平均值。
+这一操作旨在消除仪器零点漂移，一般是数据处理的第一步。
 
 
 
@@ -65,9 +63,14 @@ tr.detrend("demean")  # 去均值处理
 # 创建图形以供对比
 plt.figure(figsize=(10, 6))
 
+#计算处理前后波形均值
+mean_before = tr_original.data.mean()
+mean_after = tr.data.mean()
+
 # 绘制去均值前的波形
 plt.subplot(2, 1, 1)
 plt.plot(tr_original.times(), tr_original.data, color='blue', label='Before Demean')
+plt.text(0.5, 0.9, f'Mean Before: {mean_before:.2f}', transform=plt.gca().transAxes, fontsize=10, color='blue')
 plt.title('Seismic Waveform Before Demean (2022 Mexico Earthquake)')
 plt.ylabel('Amplitude')
 plt.legend()
@@ -76,6 +79,7 @@ plt.grid(True)
 # 绘制去均值后的波形
 plt.subplot(2, 1, 2)
 plt.plot(tr.times(), tr.data, color='red', label='After Demean')
+plt.text(0.5, 0.9, f'Mean After: {mean_after:.2f}', transform=plt.gca().transAxes, fontsize=10, color='red')
 plt.title('Seismic Waveform After Demean')
 plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
@@ -88,4 +92,5 @@ plt.show()
 ```
 
 
-从图中可以看出，去均值（demean）操作前后波形几乎没有视觉差异，这是因为原始的蓝色波形数据质量很高，其振动基线已精确地围绕零轴，几乎没有直流偏移。但仍然可以说明我们的去均值操作是成功的。
+从图中可以看出，虽然去均值（demean）操作前后波形几乎没有视觉差异，但是原始波形的均值从1060.42变为0，表明已经成功的完成了去均值操作。
+
