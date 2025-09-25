@@ -45,7 +45,7 @@ st = client.get_waveforms(
     endtime=endtime)
 ```
 
-去线性趋势之前要先进行去均值操作。这里我们复制两份原始波形数据，st_previous只进行上一节的去均值操作，而st_processed则额外进行去线性趋势，同时计算处理前后的波形斜率。以此为后续对比作图准备。
+去线性趋势之前要先进行去均值操作。这里我们复制两份原始波形数据，`st_previous`只进行上一节的去均值操作，而`st_processed`则额外进行去线性趋势，同时计算处理前后的波形斜率。以此为后续对比作图准备。
 
 ```{code-cell} ipython3
 tr = st[0]
