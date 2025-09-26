@@ -28,7 +28,7 @@ C 语言是一门强大、高效且应用广泛的过程式编程语言。它由
 
 ## 简单的 C 源码示例
 
-这里我们使用C来进行估算地震的震中距，以此来作为C科学计算的实例。
+这里我们使用C来进行估算地震震中距，以此来作为C科学计算的实例。
 
 由于地震P波比S波快，因此距离震源越远，两者的到达时间差（S-P时）越大。这个时间差可用于估算震中距。对于地壳内的近震，震中距的估算有一个广为使用的经验公式：
 
@@ -108,8 +108,186 @@ Estimated Distance: 124.00 km
 
 ## 复杂的 C 源码示例
 
-## 编译与链接
+接下来，我们将编写一个相对复杂的程序，用于模拟地震波的射线路径与走时。在程序设计上，将算法模型的定义、具体实现以及主程序调用进行模块化分离，以便更好地管理与集成各个功能。
 
+
+:::{figure} c.png
+:align: center
+:alt: "平面波穿过两个均匀半空间之间的水平界面"
+:width: 50%
+
+平面波穿过两个均匀半空间之间的水平界面
+引自《[Introduction to Seismology]》（第三版）图 4.2。
+:::
+
+在地震学研究中，地球常被理想化为由若干水平均匀的速度层叠加而成，且速度随深度逐渐增大。地震波在这种层状介质中传播时，会在各层界面发生折射，$\theta$不断变大，传播方向逐步趋向水平。随着速度的不断增加，入射角 $\theta$ 会逐渐逼近 $90^\circ$，最终使射线转为近似水平的传播路径。
+
+
+根据**斯涅尔定律**，定义射线参数 $p$：
+
+$$
+p = \frac{\sin\theta_i}{V_i} = u_i \sin\theta_i, \quad u_i = \tfrac{1}{V_i},
+$$
+
+其在整个传播路径中保持不变。由此可得，对于满足慢度$u_i > p$ 的各层，可以逐层累加得到射线的水平距离$X(P)$与传播时间$T(P)$：
+
+$$
+X(p) = 2p \sum_i \frac{\Delta z_i}{\sqrt{u_i^2 - p^2}}, \qquad
+T(p) = 2 \sum_i \frac{u_i^2 \Delta z_i}{\sqrt{u_i^2 - p^2}}.
+$$
+
+接下来，我们根据上面所介绍的模型与计算方法来编写计算射线的水平距离$X(P)$与传播时间$T(P)$的程序。
+
+首先，新建一个`travel_time.h`头文件，里面定义了`Layer`, `VelocityModel`等结构体和可供调用的函数。但它本身不包含任何计算逻辑，仅供其他文件调用。
+
+```c
+#ifndef TRAVEL_TIME_H
+#define TRAVEL_TIME_H
+
+#define MAX_LAYERS 10 // 定义支持的最大地层数
+
+// 地层结构体
+typedef struct {
+    double thickness_km;
+    double velocity_kms;
+} Layer;
+
+// 速度模型结构体，可以包含多个地层
+typedef struct {
+    int num_layers;
+    Layer layers[MAX_LAYERS];
+} VelocityModel;
+
+// 结果结构体，返回计算出的T和X
+typedef struct {
+    double time_s;      // 总走时 T(p)
+    double distance_km; // 总水平距离 X(p)
+    int turning_layer;  // 射线发生转折的层
+} RayPath;
+
+//可供调用的函数接口
+RayPath compute_tx_for_ray(const VelocityModel* model, double p);
+
+#endif // TRAVEL_TIME_H
+```
+
+然后新建一个`travel_time.c`文件，这里面实现了头文件中声明的函数。包含程序的计算，可以封装复杂算法。
+
+```c
+#include <math.h>
+#include <stdio.h> 
+#include "travel_time.h"
+
+//头文件中函数的具体实现
+RayPath compute_tx_for_ray(const VelocityModel* model, double p) {
+    RayPath result = {-1.0, -1.0, -1}; // 初始化为无效结果
+    double total_time_sum = 0;
+    double total_dist_sum = 0;
+    
+    // 遍历模型中的每一层
+    for (int i = 0; i < model->num_layers; ++i) {
+        double velocity = model->layers[i].velocity_kms;
+        double thickness = model->layers[i].thickness_km;
+        double slowness = 1.0 / velocity;
+
+        // 如果射线参数p大于等于当前层的慢度，射线将无法穿透该层
+        if (p >= slowness) {
+            result.turning_layer = i - 1; 
+            break; // 停止向下计算
+        }
+      
+        // 计算公式 (u^2 - p^2)^1/2 的值
+        double denom_sqrt = sqrt(pow(slowness, 2) - pow(p, 2));
+
+        // 公式 T(p) = 2 * SUM( u^2 * dz / sqrt(u^2-p^2) )
+        total_time_sum += (pow(slowness, 2) * thickness) / denom_sqrt;
+        
+        // 公式 X(p) = 2p * SUM( dz / sqrt(u^2-p^2) )
+        total_dist_sum += thickness / denom_sqrt;
+        
+        // 如果这是最后一层，说明转折点在这一层内部或更深
+        if (i == model->num_layers - 1) {
+            result.turning_layer = i;
+        }
+    }
+
+    // 如果循环至少执行了一次 (即射线至少进入了第一层)
+    if (result.turning_layer >= 0) {
+        result.time_s = 2.0 * total_time_sum;
+        result.distance_km = 2.0 * p * total_dist_sum;
+    }
+    
+    return result;
+}
+```
+
+最后则是新建一个`main.c`，可以在这里面构建整体流程，只需要引用头文件`travel_time.h`就可以计算定义的速度模型的最后结果。
+
+```c
+#include <stdio.h>
+#include "travel_time.h"
+
+int main() {
+    // 构建3层速度模型
+    VelocityModel textbook_model;
+    textbook_model.num_layers = 3;
+    textbook_model.layers[0] = (Layer){ .thickness_km = 3.0, .velocity_kms = 4.0 };
+    textbook_model.layers[1] = (Layer){ .thickness_km = 3.0, .velocity_kms = 6.0 };
+    textbook_model.layers[2] = (Layer){ .thickness_km = 3.0, .velocity_kms = 8.0 };
+
+    // 定义射线参数 p 
+    double p_ray = 0.15; // s/km
+    
+    //调用定义的计算函数
+    RayPath result = compute_tx_for_ray(&textbook_model, p_ray);
+    
+    // 输出结果
+    printf("Input ray parameter p = %.3f s/km\n\n", p_ray);
+    printf(" -> Total Distance X(p)  = %.2f km\n", result.distance_km);
+    printf(" -> Total Travel Time T(p) = %.2f s\n\n", result.time_s);
+
+    return 0;
+}
+```
+
+## 编译与链接
+在完成代码编写后，我们将它们组合成一个可执行程序。此部分的编译与上面一节中编译C源码一样，但不同的是这里有两个.c文件，所以在编译的同时我们需要将他们进行链接，不然单独编译`main.c`会导致其运行时不能找到`travel_time.c`里面的计算代码而报错。同时，如果使用了一些外部库的话，也需要在链接选项后添加`-l`，例如此处使用了`Math Library`,所以需要加上`-lm`。
+
+ 这里有两种方法，我们可以先只进行编译，方法如下:
+
+- 方法一
+```bash
+# 编译 main.c，生成 main.o
+gcc -Wall -c main.c
+
+# 编译 travel_time.c，生成 travel_time.o
+gcc -Wall -c travel_time.c
+```
+执行后，文件夹里会多出 main.o 和 travel_time.o 这两个文件,但还不能独立运行。下面需要将他们链接在一起。
+
+```bash
+# 将所有 .o 文件链接起来，并指定输出文件名tx_calculator
+gcc main.o travel_time.o -o tx_calculator -lm
+```
+现在就得到了一个名为 tx_calculator 的完整可执行文件，可以通过` ./tx_calculator` 运行。
+
+- 方法二
+
+通常，`gcc` 可以将上述两步合并成一条命令.
+```bash
+gcc -Wall main.c travel_time.c -o tx_calculator -lm
+```
+虽然这条命令看起来是一步，但 GCC 在后台仍然是先分别编译每个 .c 文件，然后再将生成的目标文件链接起来。
+
+最后运行结果如下：
+```
+Input ray parameter p = 0.150 s/km
+
+ -> Total Distance X(p)  = 16.89 km
+ -> Total Travel Time T(p) = 4.17 s
+```
+
+最后，如果在大型项目中，如果只修改了一个 .c 文件，你只需重新编译那一个文件，然后重新链接所有 .o 文件即可，便可比重新编译所有文件节约时间。
 ## Makefile
 
 ## 扩展阅读
