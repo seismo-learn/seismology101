@@ -114,7 +114,7 @@ Estimated Distance: 124.00 km
 :width: 50%
 
 平面波穿过两个均匀半空间之间的水平界面
-引自《[Introduction to Seismology]》（第三版）图 4.2。
+引自《[Introduction to Seismology](http://d.cambridge.org/us/universitypress/subjects/earth-and-environmental-science/solid-earth-geophysics/introduction-seismology-3rd-edition?format=HB&isbn=9781316635742)》（第三版）图 4.2。
 :::
 
 在地震学研究中，地球常被理想化为由若干水平均匀的速度层叠加而成，且速度随深度逐渐增大。地震波在这种层状介质中传播时，会在各层界面发生折射，$\theta$不断变大，传播方向逐步趋向水平。随着速度的不断增加，入射角 $\theta$ 会逐渐逼近 $90^\circ$，最终使射线转为近似水平的传播路径。
