@@ -253,7 +253,7 @@ int main() {
 ## 编译与链接
 在完成代码编写后，我们将它们组合成一个可执行程序。此部分的编译与上面一节中编译C源码一样，但不同的是这里有两个.c文件，所以在编译的同时我们需要将他们进行链接，不然单独编译`main.c`会导致其运行时不能找到`travel_time.c`里面的计算代码而报错。同时，如果使用了一些外部库的话，也需要在链接选项后添加`-l`，例如此处使用了`Math Library`,所以需要加上`-lm`。
 
- 这里有两种方法，我们可以先只进行编译，方法如下:
+ 这里有两种方法，一种是先进行编译，然后才链接。另一种是直接编译与链接同步进行。
 
 - 方法一
 ```bash
@@ -289,6 +289,98 @@ Input ray parameter p = 0.150 s/km
 
 最后，如果在大型项目中，如果只修改了一个 .c 文件，你只需重新编译那一个文件，然后重新链接所有 .o 文件即可，便可比重新编译所有文件节约时间。
 ## Makefile
+
+
+在上一节，我们使用了两种方法来编译链接我们的多文件项目。得益于只有两个文件，所以编译很方便快速。但是当文件增多后，每次编译都要手动敲入一长串命令。同时如果我们只修改了 `main.c`，其那就只需要编译 `main.c`，而不需要重新编译 `travel_time.c`。但如果手动操作，就很可能会把所有命令都重跑一遍，浪费大量时间。
+
+而Makefile就是为了解决上面的问题而生的。它可以使用 `make` 这个工具来高效、智能地构建我们的项目。
+
+首先，让我们从一个一个基本的 Makefile开始，先在之前的项目文件夹（包含 `main.c`, `travel_time.c`, `travel_time.h`）中，创建一个名为 `Makefile` 的文件（没有后缀名），并填入以下内容：
+
+```makefile
+
+# 最终目标：可执行文件 tx_calculator
+# 它依赖于两个目标文件 .o
+tx_calculator: main.o travel_time.o
+	gcc main.o travel_time.o -o tx_calculator -lm
+
+# 编译：如何从 .c 生成 .o
+# main.o 依赖于 main.c 和 travel_time.h
+# (因为 main.c 包含了 travel_time.h，所以头文件改变，main.c 也需重编)
+main.o: main.c travel_time.h
+	gcc -Wall -c main.c
+
+# travel_time.o 依赖于 travel_time.c 和 travel_time.h
+travel_time.o: travel_time.c travel_time.h
+	gcc -Wall -c travel_time.c
+
+# 清理
+# 一键删除生成的中间文件，最后只剩源码
+.PHONY: clean
+clean:
+	rm -f *.o tx_calculator
+```
+上面的makefile看起来非常冗长，这是因为所有文件名和命令都直接固定写在了规则里。对于初学者是很明白的，但是如果项目有增删之类的改动，那么就得手动修改，变得难以维护。所以下面有更高效与通用的一种写法。
+
+---
+这里，我们通常使用变量来组织 Makefile。这会使修改编译器、编译选项等变得非常容易。
+
+
+```makefile
+
+# 定义编译器
+CC = gcc
+
+# 定义编译选项
+# -Wall: 开启所有警告
+# -g: 添加调试信息
+CFLAGS = -Wall -g
+
+# 定义链接选项
+LDFLAGS = -lm
+
+# 定义所有需要的目标文件 (.o 文件)
+OBJS = main.o travel_time.o
+
+# 定义最终的可执行文件名
+TARGET = tx_calculator
+
+
+# $@ 是一个自动变量，代表规则中的“目标”
+# $^ 是一个自动变量，代表规则中的所有“依赖”
+$(TARGET): $(OBJS)
+	$(CC) $^ -o $@ $(LDFLAGS)
+
+# 编译：如何将任意 .c 文件编译成 .o 文件
+# $< 是一个自动变量，代表规则中的第一个“依赖”
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# 清理
+.PHONY: clean
+clean:
+	rm -f $(OBJS) $(TARGET)
+```
+
+这个版本功能完全相同，但更具高效性和可维护性。
+
+-----
+
+有了 `Makefile` 文件后，只需在终端中执行简单的 `make` 命令即可。
+
+```bash
+make
+```
+`make` 会自动读取 `Makefile`，分析文件依赖关系，并执行所有必要的命令来生成最终的 `tx_calculator` 文件。
+
+
+```bash
+make clean
+```
+
+这个命令会执行 `clean` 规则下的 `rm` 命令，删除所有生成的目标文件和可执行文件，只让项目保留源代码文件
+
+
 
 ## 扩展阅读
 
