@@ -24,7 +24,7 @@ kernelspec:
 首先，我们使用 ObsPy 下载一个 2022 年墨西哥地震波形数据作为示例。
 
 ```{code-cell} ipython3
-import obspy
+from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
 import matplotlib.pyplot as plt
 
