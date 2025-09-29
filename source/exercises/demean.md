@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt
 client = Client("IRIS") 
 
 # 定义时间范围（2022年墨西哥Mw 6.8 级地震）
-starttime=obspy.UTCDateTime("2022-09-22T06:18:00")
+starttime = UTCDateTime("2022-09-22T06:18:00")
 endtime = starttime + 720  # 下载12分钟数据
 
 # 下载地震数据
