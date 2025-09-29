@@ -45,7 +45,7 @@ st = client.get_waveforms(
 )    
 ```
 
-接下来，我们使用ObsPy的 `demean` 方法进行去均值操作。
+接下来，我们使用ObsPy的 {meth}`obspy.core.trace.Trace.detrend` 方法进行去均值操作。
 
 ```{code-cell} ipython3
 tr = st[0]
