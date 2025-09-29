@@ -41,8 +41,8 @@ st = client.get_waveforms(
     location="00", 
     channel="BHZ",
     starttime=starttime, 
-    endtime=endtime)
-    
+    endtime=endtime,
+)    
 ```
 
 
