@@ -60,7 +60,7 @@ st_processed.detrend('demean')
 st_processed.detrend('linear')
 ```
 
-波形尖灭使用 obspy 的{meth}`obspy.core.trace.Trace.taper`方法，参数选择 5% 余弦窗口。因为其是一种经验成熟的做法，可以兼顾平滑抑制频谱泄漏与保持波形主要信息的平衡。
+波形尖灭使用 ObsPy 的{meth}`obspy.core.trace.Trace.taper`方法，参数选择 5% 余弦窗口。因为其是一种经验成熟的做法，可以兼顾平滑抑制频谱泄漏与保持波形主要信息的平衡。
 
 ```{code-cell} ipython3
 # 5%的余弦波形尖灭
@@ -72,6 +72,7 @@ st_processed.taper(max_percentage=0.05, type='cosine')
 ```{code-cell} ipython3
 tr_prev = st_previous[0]
 tr_proc = st_processed[0]
+
 # 尖灭窗口的持续时间（总时长的5%）
 times = tr_prev.times()
 taper_duration = times[-1] * 0.05
@@ -85,6 +86,7 @@ ax1.set_xlabel('Time (s)')
 ax1.set_ylabel('Amplitude')
 ax1.legend()
 ax1.grid(True)
+
 # 标记出将要放大的区域
 ax1.axvspan(0, taper_duration, color='blue', alpha=0.2, label='Zoom Area')
 ax1.axvspan(times[-1] - taper_duration, times[-1], color='blue', alpha=0.2)
