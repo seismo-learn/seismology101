@@ -124,7 +124,7 @@ st_processed.filter(
 )
 ```
 
-最后，我们进行分量旋转。首先使用 ObsPy 的{meth}`obspy.geodetics.base.gps2dist_azimuth`函数通过震源和台站的坐标，计算出执行旋转所必需的角度。然后使用{meth}`obspy.core.stream.Stream.rotate`将分量校准到标准地理坐标系。最后再一次使用`rotate`完成分量旋转。
+最后，我们进行分量旋转。首先使用 ObsPy 的{meth}`obspy.geodetics.base.gps2dist_azimuth()`函数通过震源和台站的坐标，计算出执行旋转所必需的角度。然后使用{meth}`obspy.core.stream.Stream.rotate`将分量校准到标准地理坐标系。最后再一次使用`rotate`完成分量旋转。
 
 ```{code-cell} ipython3
 # 计算旋转角度
