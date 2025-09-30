@@ -90,4 +90,4 @@ plt.tight_layout()
 plt.show()
 ```
 
-可以看到，通过ObsPy的{meth}`obspy.core.trace.Trace.detrend`方法拟合并移除线性趋势后，处理后斜率降至 4.26e-15 ，成功校正基线而不改变地震信号形态。
+可以看到，通过 ObsPy 的{meth}`obspy.core.trace.Trace.detrend`方法拟合并移除线性趋势后，处理后斜率降至 4.26e-15 ，成功校正基线而不改变地震信号形态。
