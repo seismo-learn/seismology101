@@ -1,33 +1,20 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.13.0
-kernelspec:
-  display_name: C++17     
-  language: c++           
-  name: xcpp17           
----
-
 # C 语言
 
 - 本节贡献者: [何星辰](https://github.com/Chuan1937)（作者）、[田冬冬](https://me.seisman.info/)（审稿）
 - 最近更新日期: 2025-09-24
-- 预计花费时间: 10 分钟
+- 预计花费时间: 60 分钟
 
 ---
+
 ## C 语言简介
 
-
-C 语言是一门强大、高效且应用广泛的过程式编程语言。它由丹尼斯·里奇 (Dennis Ritchie) 于 20 世纪 70 年代初在贝尔实验室 (Bell Labs) 开发，最初用于编写 UNIX 操作系统。对于地震学研究者而言，C语言是一门不可或缺的高性能计算工具。它主要用于快速处理海量的波形数据、运行复杂的数值模拟。
+C 语言是一门强大、高效且应用广泛的过程式编程语言。它由丹尼斯·里奇 (Dennis Ritchie) 于 20 世纪 70 年代初在贝尔实验室 (Bell Labs) 开发，最初用于编写 UNIX 操作系统。对于地震学研究者而言，C 语言是一门不可或缺的高性能计算工具。它主要用于快速处理海量的波形数据、运行复杂的数值模拟。
 
 ## 简单的 C 源码示例
 
-这里我们使用C来进行估算地震震中距，以此来作为C科学计算的实例。
+这里我们使用 C 来进行估算地震震中距，以此来作为 C 科学计算的实例。
 
-由于地震P波比S波快，因此距离震源越远，两者的到达时间差（S-P时）越大。这个时间差可用于估算震中距。对于地壳内的近震，震中距的估算有一个广为使用的经验公式：
+由于地震 P 波比 S 波快，因此距离震源越远，两者的到达时间差（ S - P 时）越大。这个时间差可用于估算震中距。对于地壳内的近震，震中距的估算有一个广为使用的经验公式：
 
 $$D \approx t_{S-P} \times 8.0$$
 
@@ -36,6 +23,7 @@ $$D \approx t_{S-P} \times 8.0$$
   - **$8.0$** : 经验常数 (km/s)
 
 使用记事本新建一个`simple_example.c`的C语言文件，编写代码完成后进行保存。
+
 ```c
 //导入需要的函数库
 #include <stdio.h>
@@ -61,7 +49,9 @@ int main() {
     return 0; 
 }
 ```
+
 ## 编译 C 源码
+
 简单来说，编译就是一个“翻译”过程。编写的 C 代码（.c 文件）是人类可以理解的“高级语言”。但是，计算机的中央处理器（CPU）只能理解由 0 和 1 组成的“机器语言”。编译器 (Compiler) 就是一个翻译程序，它读取 C 源码，将其翻译成 CPU 可以直接执行的机器码文件（在 Windows 上是 .exe 文件，在 Linux/macOS 上通常没有后缀）。
 
 **安装编译器**
@@ -70,12 +60,13 @@ int main() {
 
 - **Linux (Ubuntu/Debian)**: GCC 通常已预装。如果没有，打开终端运行：
 
-```
+```bash
 sudo apt update && sudo apt install build-essential
 ```
 
 - **macOS**: 需要安装 Xcode 命令行工具。打开“终端” (Terminal) 程序，运行：
-```
+
+```bash
 xcode-select --install
 ```
 
@@ -86,13 +77,15 @@ xcode-select --install
 
 然后，运行以下命令：
 
-```
+```bash
 gcc simple_example.c -o simple_example
 ```
-`-o`表示编译后的输出文件名，执行完后会生成一个名为`simple_example`的文件。
+
+`-o` 表示编译后的输出文件名，执行完后会生成一个名为`simple_example`的文件。
 
 最后通过以下命令运行它：
-```
+
+```bash
 ./simple_example
 ```
 
@@ -107,7 +100,6 @@ Estimated Distance: 124.00 km
 
 接下来，我们将编写一个相对复杂的程序，用于模拟地震波的射线路径与走时。在程序设计上，将算法模型的定义、具体实现以及主程序调用进行模块化分离，以便更好地管理与集成各个功能。
 
-
 :::{figure} c.png
 :align: center
 :alt: "平面波穿过两个均匀半空间之间的水平界面"
@@ -118,7 +110,6 @@ Estimated Distance: 124.00 km
 :::
 
 在地震学研究中，地球常被理想化为由若干水平均匀的速度层叠加而成，且速度随深度逐渐增大。地震波在这种层状介质中传播时，会在各层界面发生折射，$\theta$不断变大，传播方向逐步趋向水平。随着速度的不断增加，入射角 $\theta$ 会逐渐逼近 $90^\circ$，最终使射线转为近似水平的传播路径。
-
 
 根据**斯涅尔定律**，定义射线参数 $p$：
 
@@ -133,7 +124,7 @@ X(p) = 2p \sum_i \frac{\Delta z_i}{\sqrt{u_i^2 - p^2}}, \qquad
 T(p) = 2 \sum_i \frac{u_i^2 \Delta z_i}{\sqrt{u_i^2 - p^2}}.
 $$
 
-接下来，我们根据上面所介绍的模型与计算方法来编写计算射线的水平距离$X(P)$与传播时间$T(P)$的程序。
+接下来，我们根据上面所介绍的模型与计算方法来编写计算射线的水平距离 $X(P)$ 与传播时间 $T(P)$ 的程序。
 
 首先，新建一个`travel_time.h`头文件，里面定义了`Layer`, `VelocityModel`等结构体和可供调用的函数。但它本身不包含任何计算逻辑，仅供其他文件调用。
 
@@ -253,6 +244,7 @@ int main() {
  这里有两种方法，一种是先进行编译，然后才链接。另一种是直接编译与链接同步进行。
 
 - 方法一
+
 ```bash
 # 编译 main.c，生成 main.o
 gcc -Wall -c main.c
@@ -260,23 +252,28 @@ gcc -Wall -c main.c
 # 编译 travel_time.c，生成 travel_time.o
 gcc -Wall -c travel_time.c
 ```
+
 执行后，文件夹里会多出 main.o 和 travel_time.o 这两个文件,但还不能独立运行。下面需要将他们链接在一起。
 
 ```bash
 # 将所有 .o 文件链接起来，并指定输出文件名tx_calculator
 gcc main.o travel_time.o -o tx_calculator -lm
 ```
+
 现在就得到了一个名为 tx_calculator 的完整可执行文件，可以通过` ./tx_calculator` 运行。
 
 - 方法二
 
-通常，`gcc` 可以将上述两步合并成一条命令.
+通常，`gcc` 可以将上述两步合并成一条命令。
+
 ```bash
 gcc -Wall main.c travel_time.c -o tx_calculator -lm
 ```
+
 虽然这条命令看起来是一步，但 GCC 在后台仍然是先分别编译每个 .c 文件，然后再将生成的目标文件链接起来。
 
 最后运行结果如下：
+
 ```
 Input ray parameter p = 0.150 s/km
 
@@ -284,18 +281,17 @@ Input ray parameter p = 0.150 s/km
  -> Total Travel Time T(p) = 4.17 s
 ```
 
-最后，如果在大型项目中，如果只修改了一个 .c 文件，你只需重新编译那一个文件，然后重新链接所有 .o 文件即可，便可比重新编译所有文件节约时间。
-## Makefile
+如果在大型项目中，如果只修改了一个 .c 文件，你只需重新编译那一个文件，然后重新链接所有 .o 文件即可，便可比重新编译所有文件节约时间。
 
+## Makefile
 
 在上一节，我们使用了两种方法来编译链接我们的多文件项目。得益于只有两个文件，所以编译很方便快速。但是当文件增多后，每次编译都要手动敲入一长串命令。同时如果我们只修改了 `main.c`，其那就只需要编译 `main.c`，而不需要重新编译 `travel_time.c`。但如果手动操作，就很可能会把所有命令都重跑一遍，浪费大量时间。
 
-而Makefile就是为了解决上面的问题而生的。它可以使用 `make` 这个工具来高效、智能地构建我们的项目。
+而 Makefile 就是为了解决上面的问题而生的。它可以使用 `make` 这个工具来高效、智能地构建我们的项目。
 
 首先，让我们从一个一个基本的 Makefile开始，先在之前的项目文件夹（包含 `main.c`, `travel_time.c`, `travel_time.h`）中，创建一个名为 `Makefile` 的文件（没有后缀名），并填入以下内容：
 
 ```makefile
-
 # 最终目标：可执行文件 tx_calculator
 # 它依赖于两个目标文件 .o
 tx_calculator: main.o travel_time.o
@@ -317,14 +313,15 @@ travel_time.o: travel_time.c travel_time.h
 clean:
 	rm -f *.o tx_calculator
 ```
-上面的makefile看起来非常冗长，这是因为所有文件名和命令都直接固定写在了规则里。对于初学者是很明白的，但是如果项目有增删之类的改动，那么就得手动修改，变得难以维护。所以下面有更高效与通用的一种写法。
+
+上面的 Makefile 看起来非常冗长，这是因为所有文件名和命令都直接固定写在了规则里。对于初学者是很明白的，但是如果项目有增删之类的改动，那么就得手动修改，变得难以维护。所以下面有更高效与通用的一种写法。
 
 ---
+
 这里，我们通常使用变量来组织 Makefile。这会使修改编译器、编译选项等变得非常容易。
 
 
 ```makefile
-
 # 定义编译器
 CC = gcc
 
@@ -341,7 +338,6 @@ OBJS = main.o travel_time.o
 
 # 定义最终的可执行文件名
 TARGET = tx_calculator
-
 
 # $@ 是一个自动变量，代表规则中的“目标”
 # $^ 是一个自动变量，代表规则中的所有“依赖”
@@ -368,16 +364,14 @@ clean:
 ```bash
 make
 ```
-`make` 会自动读取 `Makefile`，分析文件依赖关系，并执行所有必要的命令来生成最终的 `tx_calculator` 文件。
 
+`make` 会自动读取 `Makefile`，分析文件依赖关系，并执行所有必要的命令来生成最终的 `tx_calculator` 文件。
 
 ```bash
 make clean
 ```
 
 这个命令会执行 `clean` 规则下的 `rm` 命令，删除所有生成的目标文件和可执行文件，只让项目保留源代码文件
-
-
 
 ## 扩展阅读
 
