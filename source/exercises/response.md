@@ -11,7 +11,6 @@ kernelspec:
   name: python3
 ---
 
-
 # 去仪器响应
 
 - 本节贡献者: [何星辰](https://github.com/Chuan1937)（作者）、[田冬冬](https://me.seisman.info/)（审稿）
@@ -20,7 +19,7 @@ kernelspec:
 
 ---
 
-仪器响应是地震仪系统（包括传感器和记录器）将真实地表运动信号转换为数字记录的传递函数，反映了仪器对输入信号的系统性滤波效应。在数学上，记录波形 D(t)  是真实地表运动 G(t)与仪器响应函数 I(t) 的卷积，即
+仪器响应是地震仪系统（包括传感器和记录器）将真实地表运动信号转换为数字记录的传递函数，反映了仪器对输入信号的系统性滤波效应。在数学上，记录波形 D(t)  是真实地表运动 G(t) 与仪器响应函数 I(t) 的卷积，即
 
 $$D(t) = G(t) * I(t)$$
 
@@ -28,29 +27,31 @@ $$D(t) = G(t) * I(t)$$
 
 ---
 
-显而易见，去除仪器响应的方法就是反卷积，我们可以使用ObsPy的`remove_response`方法进行处理。
+显而易见，去除仪器响应的方法就是反卷积，我们可以使用 ObsPy 的{meth}`obspy.core.trace.Trace.remove_response`方法进行处理。
 
 同样，我们使用前几节一样的数据，但是不同的是，我们需要同时获取其对应的仪器元数据。以便可以进行去除仪器响应并绘图对比。
 
-
 ```{code-cell} ipython3
-import obspy
+from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
+import numpy as np
 import matplotlib.pyplot as plt
 
-# 2010年智利大地震的数据
-client = Client("IRIS")
-starttime = obspy.UTCDateTime("2010-02-27T06:30:00")
-endtime = starttime + 300  
+client = Client("IRIS") 
 
+# 定义时间范围（2022年墨西哥Mw 6.8 级地震）
+starttime = UTCDateTime("2022-09-22T06:18:00")
+endtime = starttime + 720  # 下载12分钟数据
+
+# 下载地震数据
 st = client.get_waveforms(
     network="IU",
-    station="ANMO",
-    location="00",
+    station="ANMO", 
+    location="00", 
     channel="BHZ",
-    starttime=starttime,
-    endtime=endtime
-)
+    starttime=starttime, 
+    endtime=endtime,
+)    
 
 # 获取对应的仪器元数据
 # 使用与波形数据相同的参数来获取元数据
@@ -61,57 +62,69 @@ inventory = client.get_stations(
     location="00",
     channel="BHZ",
     starttime=starttime,
-    level="response"  # 必须指定此参数以获取响应数据
+    level="response",  # 必须指定此参数以获取响应数据
 )
 ```
+
 获得数据后，我们仍然按照之前的步骤进行去均值，去线性趋势以及波形尖灭。
 
 ```{code-cell} ipython3
-tr = st[0]
-tr_corr = tr.copy()
+st_previous = st[0].copy()
+st_processed = st[0].copy()
 
-tr_corr.detrend("demean")   # 去均值
-tr_corr.detrend("linear")   # 去线性趋势
-tr_corr.taper(max_percentage=0.05, type="cosine")  # 5%余弦尖灭
+# 去均值 + 去线性趋势 + 尖灭
+st_previous.detrend("demean")
+st_previous.detrend("linear")
+st_previous.taper(max_percentage=0.05, type="cosine")  
 
+st_processed.detrend("demean")
+st_processed.detrend("linear")
+st_processed.taper(max_percentage=0.05, type="cosine")  
+```
+---
+
+处理完成后，我们使用使用 ObsPy 的{meth}`obspy.core.trace.Trace.remove_response`方法进行去除仪器响应。
+
+```{code-cell} ipython3
 # 定义一个预滤波器，这对于稳定反卷积过程至关重要
 # 频带应选择在仪器的平坦响应区内
 pre_filt = (0.005, 0.01, 1.0, 5.0)
 
 # 去除仪器响应
-tr_corr.remove_response(
+st_processed.remove_response(
     inventory=inventory,
     pre_filt=pre_filt,
     output="VEL",       # 指定输出为速度 (m/s)
     water_level=60,     # 设置水准则为60 dB
-    plot=False          # 设置为True可以显示反卷积过程的频谱图
+    plot=False,          # 设置为True可以显示反卷积过程的频谱图
 )
+```
+完成后，便可以进行绘图对比去除仪器响应前后的波形。
 
-
+```{code-cell} ipython3
 # 绘图对比结果
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
 
 # 绘制去除仪器响应前的波形
-ax1.plot(tr.times(), tr.data, "k-", label="Original Waveform")
-ax1.set_title(f"Original Waveform - {tr.id}")
+ax1.plot(st_previous.times(), st_previous.data, "k-", label="Previous Waveform")
+ax1.set_title(f"Previous Waveform - {st_previous.id}")
 ax1.set_ylabel("Counts")
 ax1.legend(loc='upper right')
 ax1.grid(True)
 
 # 绘制去除仪器响应后的波形
-ax2.plot(tr_corr.times(), tr_corr.data, "r-", label="Corrected Waveform") 
-ax2.set_title(f"After Instrument Response Removal - {tr_corr.id}")
+ax2.plot(st_processed.times(), st_processed.data, "r-", label="Processed Waveform") 
+ax2.set_title(f"After Instrument Response Removal - {st_processed.id}")
 ax2.set_xlabel("Time (s)")
 ax2.set_ylabel("Velocity (m/s)")
 ax2.legend(loc='upper right')
 ax2.grid(True)
 
-fig.suptitle("2010 Chile Earthquake in Removing Response", fontsize=16)
+fig.suptitle("Response Removal Comparison (2022 Mexico Earthquake, IU.ANMO.BHZ)", fontsize=16)
 plt.tight_layout()
 plt.show()
 ```
 
-
 ---
 
-从图上可以去除前的波形单位是未经校正的仪器记录到的原始数字振幅，其振幅和形态均受到仪器自身频率响应的严重影响，因此不具备直接的物理意义和可比性。而去除仪器响应后的波形单位已成功转换为$Velocity (m/s)$，恢复了地面的真实运动速度。
+从图上可以去除前的波形单位是未经校正的仪器记录到的原始数字振幅，其振幅和形态均受到仪器自身频率响应的严重影响，因此不具备直接的物理意义和可比性。而去除仪器响应后的波形单位已成功转换为 $Velocity (m/s)$ ，恢复了地面的真实运动速度。
