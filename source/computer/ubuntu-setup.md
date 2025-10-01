@@ -7,9 +7,9 @@
 ---
 
 :::{note}
-本节内容适用于 **Ubuntu Desktop 22.04 LTS**，不一定适用于其他 Ubuntu 版本。
-建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 22.04 LTS）或最新版本
-（目前是 Ubuntu 23.10），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
+本节内容适用于 **Ubuntu Desktop 24.04.3 LTS**，不一定适用于其他 Ubuntu 版本。
+建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 24.04.3 LTS）或最新版本
+（目前是 Ubuntu 25.04），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
 :::
 
 ## 安装系统
