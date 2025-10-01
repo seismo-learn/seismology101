@@ -1,7 +1,7 @@
 # Ubuntu 配置指南
 
-- 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2023-11-19
+- 本节贡献者: [田冬冬](https://me.seisman.info/)（作者）、[何星辰](https://github.com/Chuan1937)（作者）、[姚家园](https://github.com/core-man)（审稿）
+- 最近更新日期: 2025-10-01
 - 预计花费时间: 120 分钟
 
 ---
@@ -16,13 +16,13 @@
 
 ### 下载系统镜像
 
-访问 [Ubuntu 官网](https://ubuntu.com/) 并下载 Ubuntu Desktop 镜像文件，
-一般选择 AMD64（x86_64）版本。
+访问 [Ubuntu 官网](https://ubuntu.com/download/desktop)并下载 Ubuntu Desktop 镜像文件，
+网站会自动进行下载。
 
-**Ubuntu Desktop 22.04 LTS AMD64** 的 ISO 镜像文件（约 2.9 GB）下载链接：
+**Ubuntu 24.04.3 LTS** 的 ISO 镜像文件（约 5.9 GB）下载链接：
 
-- [官方镜像](https://releases.ubuntu.com/22.04/ubuntu-22.04.3-desktop-amd64.iso)
-- [中科大镜像](https://mirrors.ustc.edu.cn/ubuntu-releases/22.04/ubuntu-22.04.3-desktop-amd64.iso) [**推荐国内用户使用**]
+- [官方镜像](https://releases.ubuntu.com/noble/ubuntu-24.04.3-desktop-amd64.iso)
+- [中科大镜像](https://mirrors.ustc.edu.cn/ubuntu-releases/24.04.3/ubuntu-24.04.3-desktop-amd64.iso) [**推荐国内用户使用**]
 
 ### 制作 USB 启动盘
 
