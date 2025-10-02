@@ -21,7 +21,7 @@
 
 **Fedora 42 Workstation x86_64** 的 ISO 镜像文件（约 2.23 GB）下载链接：
 
-- [官方镜像](https://mirror.twds.com.tw/fedora/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso)
+- [官方镜像](https://d2lzkl7pfhq30w.cloudfront.net/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso)
 - [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso) [**推荐国内用户使用**]
 
 ### 制作 USB 启动盘
