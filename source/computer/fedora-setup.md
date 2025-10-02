@@ -1,13 +1,13 @@
 # Fedora 配置指南
 
-- 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2023-11-19
+- 本节贡献者: {{田冬冬}}（作者）、{{何星辰}}（作者）、{{姚家园}}（审稿）
+- 最近更新日期: 2025-10-02
 - 预计花费时间: 120 分钟
 
 ---
 
 :::{note}
-本节内容适用于 **Fedora 39 Workstation**，不一定适用于其他 Fedora 版本。
+本节内容适用于 **Fedora 42 Workstation**，不一定适用于其他 Fedora 版本。
 建议用户访问 [Fedora 官网](https://getfedora.org/) 下载并安装 Fedora
 最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
 :::
@@ -19,10 +19,10 @@
 访问 [Fedora 官网](https://getfedora.org/) 并下载 Fedora Workstation 镜像文件，
 一般选择 x86_64 版本。
 
-**Fedora 39 Workstation x86_64** 的 ISO 镜像文件（约 2 GB）下载链接：
+**Fedora 42 Workstation x86_64** 的 ISO 镜像文件（约 2.23 GB）下载链接：
 
-- [官方镜像](https://download.fedoraproject.org/pub/fedora/linux/releases/39/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-39-1.5.iso)
-- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/39/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-39-1.5.iso) [**推荐国内用户使用**]
+- [官方镜像](https://mirror.twds.com.tw/fedora/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso)
+- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso) [**推荐国内用户使用**]
 
 ### 制作 USB 启动盘
 
@@ -92,7 +92,7 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 :::
 
 读者可参考下面的图解步骤和对应的说明安装操作系统（图解步骤是基于 Fedora 36 的，
-但同样适用于 Fedora 39）。
+但同样适用于 Fedora 42）。
 
 ::::{card-carousel} 1
 :::{card} 1. 点击 “Install to Hard Drive” 以开始安装
