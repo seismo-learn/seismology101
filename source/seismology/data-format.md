@@ -94,7 +94,7 @@ HDF5 的主要优点是**灵活性高、可扩展性强、I/O性能优越**，�
 
 - [Seismic Unix](https://wiki.seismic-unix.org/start) 是一个经典的命令行工具集，用于处理和转换 SEGY 和 SU 格式数据。
 
--   Python 库如 [segyio](https://github.com/equinor/segyio) 和 [segpy](https://segpy.readthedocs.io/en/latest/) 提供了读取、操作和写入 SEGY 文件的能力。
+- [segyio](https://github.com/equinor/segyio) 和 [segpy](https://segpy.readthedocs.io/en/latest/) 等 Python 库可以读取、操作和写入 SEGY 文件。
 
 -  HDF5 文件可以直接通过 python 库 [h5py](https://github.com/h5py/h5py) 读取为`numpy`或者`pandas`格式。随即便可以将其写入为任意的文件格式
 
