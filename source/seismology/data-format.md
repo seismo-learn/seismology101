@@ -102,6 +102,6 @@ HDF5 的主要优点是**灵活性高、可扩展性强、I/O性能优越**，�
 ## 参考文档
 
 - <https://ds.iris.edu/ds/nodes/dmc/data/formats/>
-- <https://segyio.readthedocs.io/en/stable/>
+- <https://docs.h5py.org>
+- <https://segyio.readthedocs.io>
 - <https://woodshole.er.usgs.gov/pubs/of01-97/01-97_1/htmldocs/segy.htm>
-- <https://docs.h5py.org/en/stable/>
