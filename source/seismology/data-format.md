@@ -9,7 +9,7 @@
 日常科研中，经常会接触不同格式的波形数据，最常见的是 SAC 、 miniSEED 、segy 和 hdf5 格式。
 每种数据格式都有各自的优点和缺点。例如，SAC 格式有利于数据处理和分析，
 但不利于大批量数据的存储和交换。miniSEED 格式有利于波形数据的存档和交换，
-近几年也常用于数据处理和分析。segy格式在工业界广泛使用，但是不太适用于天然地震学中常见的、时序连续且台站分布不规则的波形数据。HDF5适用于存储和组织大规模复杂科学数据。
+近几年也常用于数据处理和分析。segy格式在工业界广泛使用，但不太适用于天然地震学波形数据。HDF5适用于存储和组织大规模复杂科学数据。
 因此，miniSEED 格式是目前地震学领域**最流行**的波形数据格式。
 
 ## SAC
@@ -92,16 +92,16 @@ HDF5 的主要优点是**灵活性高、可扩展性强、I/O性能优越**，�
 - [mseed2sac](https://github.com/iris-edu/mseed2sac) 软件可以
   将 miniSEED 格式转成 SAC 格式。
 
-- [Seismic Unix](https://wiki.seismic-unix.org/start) 是一个经典的命令行工具集，提供了丰富的模块用于处理和转换 SEGY 及 SU 格式数据。
+- [Seismic Unix](https://wiki.seismic-unix.org/start) 是一个经典的命令行工具集，用于处理和转换 SEGY 和 SU 格式数据。
 
--   Python 库如 [segyio](https://github.com/equinor/segyio) 和 [segpy](https://segpy.readthedocs.io/en/latest/) 提供了读取、操作和写入 SEGY 文件的能力。
+- [segyio](https://github.com/equinor/segyio) 和 [segpy](https://segpy.readthedocs.io/en/latest/) 等 Python 库可以读取、操作和写入 SEGY 文件。
 
--  HDF5 文件可以直接通过 python 库 [h5py](https://github.com/h5py/h5py) 读取为`numpy`或者`pandas`格式。随即便可以将其写入为任意的文件格式
+- [h5py](https://github.com/h5py/h5py) 可以读取 HDF5 文件， 并可将其存储为任意格式的文件。
 
 
 ## 参考文档
 
 - <https://ds.iris.edu/ds/nodes/dmc/data/formats/>
-- <https://segyio.readthedocs.io/en/stable/>
+- <https://docs.h5py.org>
+- <https://segyio.readthedocs.io>
 - <https://woodshole.er.usgs.gov/pubs/of01-97/01-97_1/htmldocs/segy.htm>
-- <https://docs.h5py.org/en/stable/>
