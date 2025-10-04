@@ -92,7 +92,7 @@ HDF5 的主要优点是**灵活性高、可扩展性强、I/O性能优越**，�
 - [mseed2sac](https://github.com/iris-edu/mseed2sac) 软件可以
   将 miniSEED 格式转成 SAC 格式。
 
-- [Seismic Unix](https://wiki.seismic-unix.org/start) 是一个经典的命令行工具集，提供了丰富的模块用于处理和转换 SEGY 及 SU 格式数据。
+- [Seismic Unix](https://wiki.seismic-unix.org/start) 是一个经典的命令行工具集，用于处理和转换 SEGY 和 SU 格式数据。
 
 -   Python 库如 [segyio](https://github.com/equinor/segyio) 和 [segpy](https://segpy.readthedocs.io/en/latest/) 提供了读取、操作和写入 SEGY 文件的能力。
 
