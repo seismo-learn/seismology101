@@ -12,39 +12,16 @@ C 语言是一门强大、高效且应用广泛的过程式编程语言。它由
 
 ## 简单的 C 源码示例
 
-这里我们使用 C 来进行估算地震震中距，以此来作为 C 科学计算的实例。
-
-由于地震 P 波比 S 波快，因此距离震源越远，两者的到达时间差（ S - P 时）越大。这个时间差可用于估算震中距。对于地壳内的近震，震中距的估算有一个广为使用的经验公式：
-
-$$D \approx t_{S-P} \times 8.0$$
-
-  - **$D$** : 震中距 (km)
-  - **$t\_{S-P}$** : S波与P波的到时差 (s)
-  - **$8.0$** : 经验常数 (km/s)
-
-使用记事本新建一个`simple_example.c`的C语言文件，编写代码完成后进行保存。
+首先，使用 vscode 新建一个`simple_example.c`的 C 语言文件，编写代码完成后进行保存。
 
 ```c
 //导入需要的函数库
 #include <stdio.h>
 
-// 定义经验常数
-#define EFFECTIVE_VELOCITY 8.0
-
 int main() {
     
-    // 定义 S-P 到时差为 15.5 秒
-    double s_p_time = 15.5; 
-    
-    // 定义变量用于存储结果
-    double distance;
-    
-    // 执行计算
-    distance = s_p_time * EFFECTIVE_VELOCITY;
-    
-    // 打印输出，.2f 表示保留两位小数
-    printf("S-P Time: %.2f s\n", s_p_time);
-    printf("Estimated Distance: %.2f km\n", distance);
+    // 打印输出
+    printf("Hello World!\n");
     
     return 0; 
 }
@@ -92,8 +69,7 @@ gcc simple_example.c -o simple_example
 结果如下:
 
 ```
-S-P Time: 15.50 s
-Estimated Distance: 124.00 km
+Hello World!
 ```
 
 ## 复杂的 C 源码示例
