@@ -55,13 +55,15 @@ st = client.get_waveforms(
 st.plot()
 tr = st[0]
 #计算处理前后波形均值
+mean_before=tr.data.mean()
 print(f"处理前均值: {mean_before}")
 ```
 
 ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去均值操作。
 
 ```{code-cell} ipython3
-tr.detrend("demean")  # 去均值处理
+# 去均值处理
+tr.detrend("demean")  
 #计算处理前后波形均值
 mean_after = tr.data.mean()
 print(f"处理后均值: {mean_after}")
