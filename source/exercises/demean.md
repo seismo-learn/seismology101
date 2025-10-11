@@ -18,8 +18,7 @@ kernelspec:
 - 最近更新日期: 2025-10-11
 - 预计花费时间: 10 分钟
 
-去均值是从每个数据点中减去所有数据点的平均值（也称直流分量）。
-这一操作旨在消除仪器零点漂移，一般是数据处理的第一步。
+去均值是从每个数据点中减去所有数据点的平均值（也称直流分量），这一操作旨在消除仪器零点漂移，一般是数据处理的第一步。
 
 我们以 2022 年 9 月 22 日发生在墨西哥的一个 Mw 6.8 级地震为例，该地震的详细信息见 <https://earthquake.usgs.gov/earthquakes/eventpage/us7000ia36>。使用 ObsPy 提供的 {meth}`obspy.clients.fdsn.client.Client.get_waveforms` 方法下载该地震在 ANMO 台站的事件波形资料。
 
