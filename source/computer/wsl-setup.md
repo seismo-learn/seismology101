@@ -54,7 +54,7 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
 [官方安装指南](https://docs.microsoft.com/zh-cn/windows/wsl/install)。
 
 :::{note}
-WSL 默认安装的 Linux 发行版是 Ubuntu 24.04 LTS，但也支持安装其它 Linux 发行版。可以使用如下命令
+WSL 默认安装的 Linux 发行版是 Ubuntu，但也支持安装其它 Linux 发行版。可以使用如下命令
 查看可安装的 Linux 发行版列表：
 ```
 $ wsl --list --online
@@ -105,7 +105,7 @@ $ exit
 ## WSL 常用命令
 
 WSL 提供了命令 `wsl` 来管理 WSL。打开 CMD 后，即可在 CMD 中执行 `wsl` 命令。
-下面的命令假定已通过 WSL 安装 Ubuntu 22.04 LTS，且其名称为 Ubuntu。
+下面的命令假定已通过 WSL 安装 Ubuntu 24.04 LTS，且其名称为 Ubuntu。
 
 查看 `wsl` 命令的完整帮助文档：
 ```
@@ -114,7 +114,7 @@ $ wsl --help
 
 列出所有已安装的 Linux 发行版的状态：
 ```
-$ wsl --list --online
+$ wsl --list
 ```
 
 检查 WSL 状态：
@@ -142,10 +142,10 @@ $ mkdir D:\WSLBAK
 # 导出到备份目录下，命名为 20210117bak.tar
 $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
 # 导入并还原之前备份的 Linux 发行版
-# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu22.04
-$ mkdir D:\WSLDIR\Ubuntu22.04
-# 导入并还原之前的备份，将此发行版命名为 Ubuntu22.04
-$ wsl --import Ubuntu22.04 D:\WSLDIR\Ubuntu22.04 D:\WSLBAK\20210117bak.tar
+# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu24.04
+$ mkdir D:\WSLDIR\Ubuntu24.04
+# 导入并还原之前的备份，将此发行版命名为 Ubuntu24.04
+$ wsl --import Ubuntu24.04 D:\WSLDIR\Ubuntu24.04 D:\WSLBAK\20210117bak.tar
 # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
 $ wsl --unregister Ubuntu
 ```
