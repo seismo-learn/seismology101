@@ -1,15 +1,16 @@
 # 波形数据格式
 
-- 本节贡献者: {{ 田冬冬 }}（作者）、{{ 姚家园 }}（作者）
-- 最近更新日期: 2021-01-05
-- 预计阅读时间: 10 分钟
+- 本节贡献者: {{ 田冬冬 }}（作者）、{{ 姚家园 }}（作者）、{{何星辰}}（作者）
+- 最近更新日期: 2025-10-03
+- 预计阅读时间: 30 分钟
 
 ---
 
-日常科研中，经常会接触不同格式的波形数据，最常见的是 SAC 和 miniSEED 格式。
+日常科研中，经常会接触不同格式的波形数据，最常见的是 SAC 、 miniSEED 、segy 和 hdf5 格式。
 每种数据格式都有各自的优点和缺点。例如，SAC 格式有利于数据处理和分析，
 但不利于大批量数据的存储和交换。miniSEED 格式有利于波形数据的存档和交换，
-近几年也常用于数据处理和分析，因此，miniSEED 格式是目前地震学领域**最流行**的波形数据格式。
+近几年也常用于数据处理和分析。segy格式在工业界广泛使用，但不太适用于天然地震学波形数据。HDF5适用于存储和组织大规模复杂科学数据。
+因此，miniSEED 格式是目前地震学领域**最流行**的波形数据格式。
 
 ## SAC
 
@@ -52,6 +53,37 @@ miniseed 格式也常用于数据处理和分析。此时，所需的元数据�
 元数据文件中提取。例如，目前比较流行的组合方式是 miniSEED 格式的时间序列数据和
 [StationXML](https://www.fdsn.org/xml/station/) 格式的元数据。
 
+## SEGY
+
+[SEGY](https://woodshole.er.usgs.gov/pubs/of01-97/01-97_1/htmldocs/segy.htm) 格式由勘探地球物理学家学会（Society of Exploration Geophysicists）定义，是主动源地震勘探、石油和天然气工业中的标准数据格式。它主要用于存储和交换大规模的2D或3D地震勘测数据，如炮集、共中心点道集和叠加剖面等。
+
+一个 SEGY 文件主要由以下几部分组成：
+
+* **文本文件头**: 一个3200字节的头部，通常使用 EBCDIC 编码，记录了测线、勘测区域等基本信息。
+* **二进制文件头**: 一个400字节的头部，定义了数据的基本参数，如采样间隔、道数等。
+* **道头和数据体**: 每个地震道（trace）都有一个240字节的道头，包含了该道的详细元数据（如震源和接收点的坐标、偏移距等），其后紧跟着该道的振幅数据。
+
+SEGY 格式的优点是其在工业界的标准化和广泛应用。然而，其结构非常固定，且头部格式较为古老，这使得它不太适用于天然地震学中常见的、时序连续且台站分布不规则的波形数据。
+
+## HDF5
+
+[HDF5](https://woodshole.er.usgs.gov/pubs/of01-97/01-97_1/htmldocs/segy.htm) (Hierarchical Data Format version 5) 不是一个地震学专用格式，而是一种通用的、为存储和组织大规模复杂科学数据而设计的格式。它在众多科学计算领域（包括地震学）中越来越受欢迎。
+
+HDF5 文件的特性是其层次化和自描述性，可以将其理解为一个“文件内部的文件系统”：
+
+* **组 (Groups)**: 类似于文件夹，可以将相关的数据集组织在一起。
+* **数据集 (Datasets)**: 类似于文件，是存储数据的多维数组（如波形数据、模型参数等）。
+* **属性 (Attributes)**: 附着在组或数据集上的元数据，用于描述数据（如台站名、采样率、单位等）。
+
+在地震学中，HDF5 因其灵活性和高性能而被广泛应用。
+
+* **大规模数据集的存储**: 特别适用于分布式声学传感（DAS）等产生海量（TB级）数据的场景。
+* **深度学习**: 常用于打包地震波形和其对应的标签（如震相拾取、事件类型），深度学习中的 [STEAD](https://github.com/smousavi05/STEAD) 与 [DiTing](https://data.earthquake.cn/datashare/report.shtml?PAGEID=datasourcelist&dt=ff8080828b238a7a018b40eac2790006) 数据集就是使用HDF5格式。
+* **复杂数据产品**: 存储地震目录、速度模型、接收函数等多种类型的数据。
+
+HDF5 的主要优点是**灵活性高、可扩展性强、I/O性能优越**，并且有 `h5py` 等成熟的 Python 库支持。其缺点在于，由于内部结构没有统一标准，不同项目或组织产出的 HDF5 文件可能结构各异，读取时需要编写针对性的代码。
+
+
 ## 格式转换
 
 不同波形数据格式经常要互相转换，以实现不同的目的。
@@ -60,6 +92,16 @@ miniseed 格式也常用于数据处理和分析。此时，所需的元数据�
 - [mseed2sac](https://github.com/iris-edu/mseed2sac) 软件可以
   将 miniSEED 格式转成 SAC 格式。
 
+- [Seismic Unix](https://wiki.seismic-unix.org/start) 是一个经典的命令行工具集，用于处理和转换 SEGY 和 SU 格式数据。
+
+- [segyio](https://github.com/equinor/segyio) 和 [segpy](https://segpy.readthedocs.io/en/latest/) 等 Python 库可以读取、操作和写入 SEGY 文件。
+
+- [h5py](https://github.com/h5py/h5py) 可以读取 HDF5 文件， 并可将其存储为任意格式的文件。
+
+
 ## 参考文档
 
 - <https://ds.iris.edu/ds/nodes/dmc/data/formats/>
+- <https://docs.h5py.org>
+- <https://segyio.readthedocs.io>
+- <https://woodshole.er.usgs.gov/pubs/of01-97/01-97_1/htmldocs/segy.htm>
