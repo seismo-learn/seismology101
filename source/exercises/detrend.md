@@ -19,8 +19,7 @@ kernelspec:
 
 ---
 
-去线性趋势是指计算出一条最能拟合整个波形数据的直线（即趋势线），并从每个数据点中减去该直线对应的值，使波形围绕稳定的零基线振动。此操作用于消除更复杂的低频趋势，例如由仪器温度变化引起的缓慢漂移，或大地震后地表永久形变导致的基线偏移。
-
+去线性趋势是指计算出一条最能拟合整个波形数据的直线（即趋势线），并从每个数据点中减去该直线对应的值，使波形围绕稳定的零基线振动。此操作用于去除由温度变化或地壳形变等因素造成的缓慢漂移与基线偏移。
 
 我们以 2022 年 9 月 22 日发生在墨西哥的一个 Mw 6.8 级地震为例，该地震的详细信息见 <https://earthquake.usgs.gov/earthquakes/eventpage/us7000ia36>。
 
@@ -31,6 +30,7 @@ kernelspec:
 from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
 import matplotlib.pyplot as plt
+import numpy as np
 
 client = Client("IRIS") 
 
