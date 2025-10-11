@@ -213,6 +213,9 @@ Python 语言的一大特色是其功能强大的标准库和第三方软件包�
 [`mamba`](https://mamba.readthedocs.io/)
 : `mamba` 是由 QuantStack 公司开发的 `conda` 替代品。其用法与 `conda` 几乎完全兼容，但其不管是
   依赖解析速度还是软件包下载速度都更快。
+
+  Miniforge 发行版内置了 `mamba`。Anaconda 和 Miniconda 发行版中也可以使用 `conda` 命令
+  安装 `mamba`。
 :::
 
 在使用 `conda`/`mamba` 前，还需要对 `conda`/`mamba` 做简单配置：
