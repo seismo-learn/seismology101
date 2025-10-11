@@ -47,7 +47,7 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
     ```
     $ wsl --install
     ```
-    此命令将启动 WSL 并默认安装 Ubuntu 22.04 LTS
+    此命令将启动 WSL 并默认安装 Ubuntu 24.04 LTS
 3.  待安装完成后，重启计算机
 
 更详细的安装步骤、常见问题的解决办法以及旧版本 Windows 下的安装方法可以参考
