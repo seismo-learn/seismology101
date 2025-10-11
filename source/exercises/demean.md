@@ -52,45 +52,16 @@ st = client.get_waveforms(
     starttime=starttime, 
     endtime=endtime,
 )    
+st.plot();
+mean_before = tr_original.data.mean()
+print(f"处理前均值: {mean_before}")
 ```
 
 ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去均值操作。
 
 ```{code-cell} ipython3
-tr = st[0]
-tr_original = tr.copy()
-
-tr.detrend("demean")  # 去均值处理
-
-# 创建图形以供对比
-plt.figure(figsize=(10, 6))
-
-#计算处理前后波形均值
-mean_before = tr_original.data.mean()
 mean_after = tr.data.mean()
-
-# 绘制去均值前的波形
-plt.subplot(2, 1, 1)
-plt.plot(tr_original.times(), tr_original.data, color='blue', label='Before Demean')
-plt.text(0.5, 0.9, f'Mean Before: {mean_before:.2f}', transform=plt.gca().transAxes, fontsize=10, color='blue')
-plt.title('Seismic Waveform Before Demean (2022 Mexico Earthquake)')
-plt.ylabel('Amplitude')
-plt.legend()
-plt.grid(True)
-
-# 绘制去均值后的波形
-plt.subplot(2, 1, 2)
-plt.plot(tr.times(), tr.data, color='red', label='After Demean')
-plt.text(0.5, 0.9, f'Mean After: {mean_after:.2f}', transform=plt.gca().transAxes, fontsize=10, color='red')
-plt.title('Seismic Waveform After Demean')
-plt.xlabel('Time (s)')
-plt.ylabel('Amplitude')
-plt.legend()
-plt.grid(True)
-
-# 调整布局并显示图形
-plt.tight_layout()
-plt.show()
+print(f"处理后均值: {mean_after}")
 ```
 
-从图中可以看出，虽然去均值（demean）操作前后波形几乎没有视觉差异，但是原始波形的均值从1060.42变为0，表明已经成功的完成了去均值操作。
+从前后结果可以看出，虽然原始波形在视觉上不能看到显著的直流分量，但是去均值（demean）操作成功的将原始波形的均值从1060.42变为4e-12，表明已经成功的完成了去均值操作。
