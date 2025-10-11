@@ -41,7 +41,7 @@
 {bdg-success}`贡献者`
 ::::
 
-::::{grid-item-card} [何星辰](https://github.com/Chen-Xingyan)
+::::{grid-item-card} [何星辰](https://github.com/Chuan1937)
 :margin: 0 0 0 0
 :text-align: center
 :img-top: https://avatars.githubusercontent.com/u/84487285?v=4
