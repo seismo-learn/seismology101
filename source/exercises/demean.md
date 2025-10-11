@@ -29,11 +29,9 @@ import matplotlib.pyplot as plt
 
 client = Client("IRIS") 
 
-# 定义时间范围（2022年墨西哥Mw 6.8 级地震）
+# 下载 2022 年墨西哥 Mw 6.8 级地震在 ANMO 台站的波形数据
 starttime = UTCDateTime("2022-09-22T06:18:00")
-endtime = starttime + 720  # 下载12分钟数据
-
-# 下载地震数据
+endtime = starttime + 720  # 下载 12 分钟数据
 st = client.get_waveforms(
     network="IU",
     station="ANMO", 
@@ -41,7 +39,7 @@ st = client.get_waveforms(
     channel="BHZ",
     starttime=starttime, 
     endtime=endtime,
-)    
+)
 st.plot()
 ```
 
