@@ -1,6 +1,6 @@
 # 选择操作系统
 
-- 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（作者）
+- 本节贡献者: {{田冬冬}}、{{姚家园}}
 - 最近更新日期: 2024-06-02
 - 预计阅读时间: 5 分钟
 
@@ -45,8 +45,10 @@ macOS 系统可以满足科研工作的大部分需求。
 解决办法：
 
 1. 在电脑上同时安装 Windows 和 Linux 双系统
-2. 在 Windows 系统中安装虚拟机软件，并在虚拟机中安装和使用 Linux 系统
-3. 在 Windows 系统中使用“适用于 Linux 的 Windows 子系统”（Windows Subsystem for Linux，即 WSL）
+2. 在 Windows 系统中安装虚拟机软件（如 VMware Workstation 或 VirtualBox），并在虚拟机中
+   安装和使用 Linux 系统
+3. 在 Windows 系统中使用“适用于 Linux 的 Windows 子系统”（Windows Subsystem for Linux，
+   即 WSL）
 
 **推荐 Windows 10/11 用户使用 WSL**。
 WSL 是微软官方开发的一个在 Windows 10/11 上运行原生 Linux 二进制可执行文件的兼容层。
