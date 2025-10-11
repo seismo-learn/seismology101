@@ -101,11 +101,12 @@ Miniforge
 
    打开一个新的终端，在终端中输入 `python`，输出中看到 `packaged by conda-forge` 字样即代表成功
    安装 Miniforge 并启动了 Python 解释器：
-
-      $ python
-      Python 3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 14:25:12) [Clang 18.1.8 ] on darwin
-      Type "help", "copyright", "credits" or "license" for more information.
-      >>>
+   ```
+   $ python
+   Python 3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 14:25:12) [Clang 18.1.8 ] on darwin
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>>
+   ```
 
    在提示符 `>>>` 后输入 `quit()` 后按下 {kbd}`Enter` 键退出 Python 解释器。
 
