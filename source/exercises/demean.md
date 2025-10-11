@@ -58,11 +58,13 @@ st.plot()
 ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去均值操作。
 
 ```{code-cell} ipython3
+tr = st[0]
+print(f"Mean value before demean: {tr.data.mean()}")
+
 # 去均值处理
 tr.detrend("demean")  
-#计算处理前后波形均值
-mean_after = tr.data.mean()
-print(f"处理后均值: {mean_after}")
+
+print(f"Mean value after demean: {tr.data.mean()}")
 ```
 
 从前后结果可以看出，虽然原始波形在视觉上不能看到显著的直流分量，但是去均值（demean）操作成功的将原始波形的均值从1060.42变为4e-12，表明已经成功的完成了去均值操作。
