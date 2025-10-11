@@ -21,16 +21,7 @@ kernelspec:
 去均值是从每个数据点中减去所有数据点的平均值（也称直流分量）。
 这一操作旨在消除仪器零点漂移，一般是数据处理的第一步。
 
-首先，我们以 2022 年 9 月 22 日发生在墨西哥的一个 Mw 6.8 级地震为例，申请该地震相关的
-波形数据。该地震的基本信息为：
-
-- 发震时刻：2022-09-22 06:16:09 UTC
-- 经度：102.9518° W
-- 纬度：18.247° N
-- 深度：20.0 km
-- 震级：mww 6.8
-
-该地震的详细信息见 <https://ds.iris.edu/ds/nodes/dmc/tools/event/11600859>。
+我们以 2022 年 9 月 22 日发生在墨西哥的一个 Mw 6.8 级地震为例，该地震的详细信息见 <https://earthquake.usgs.gov/earthquakes/eventpage/us7000ia36>。使用 ObsPy 提供的 {meth}`obspy.clients.fdsn.client.Client.get_waveforms` 方法下载该地震在 ANMO 台站的事件波形资料。
 
 ```{code-cell} ipython3
 from obspy import UTCDateTime
