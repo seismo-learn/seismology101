@@ -67,7 +67,7 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 {kbd}`F10` 或 {kbd}`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
-正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 39”
+正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 42”
 以进入 Fedora 的 Live 系统。
 
 :::{note}
@@ -170,14 +170,13 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软件。
 
 :::{warning}
-更新系统前，特别是大版本更新（如 Fedora 35 更新为 Fedora 36），
-最好先进行一次备份（可以参考[](/best-practices/backup)）。
+更新系统前，特别是大版本更新（如 Fedora 41 更新为 Fedora 42），最好先进行一次备份
+（可以参考[](/best-practices/backup)）。
 :::
 
 :::{note}
-本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击
-“Terminal” 图标以启动终端，然后在终端中输入命令并按下 {kbd}`Enter` 键
-即可执行相应的命令。
+本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击“Terminal” 图标以
+启动终端，然后在终端中输入命令并按下 {kbd}`Enter` 键即可执行相应的命令。
 :::
 
 ## 系统软件
