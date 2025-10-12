@@ -99,7 +99,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 :::
 
 :::{note}
-Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，通常是 {file}/usr/local/homebrew 目录。而在 Apple M 系列（M1/M2/M3/M4）芯片的 Mac 下，这一目录为 {file}/opt/homebrew/。
+Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下，通常是 {file}`/usr/local/homebrew` 目录。而在 Apple M 系列（M1/M2/M3/M4）芯片的 Mac 下，这一目录为 {file}`/opt/homebrew/`。
 :::
 
 #### 使用 Homebrew
