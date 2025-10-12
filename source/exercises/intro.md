@@ -5,8 +5,8 @@
 日常地震学科研工作中的常用工作流程，主要以实际工作中会用到的代码为主。
 目的是帮助地震学新手快速熟悉地震学数据下载、处理以及分析的基础代码，然后直接可以开展实际科研工作。
 
-地震台站记录到的地震图会实时或隔一段时间后传输至数据中心（**Data Center**），
-如 [Incorporated Research Institutions for Seismology (IRIS)](https://www.iris.edu/hq/)。
+地震台站记录到的地震图会实时或隔一段时间后传输至数据中心（**Data Center**），如
+[EarthScope SAGE](https://www.iris.edu/hq/)（前身为 Incorporated Research Institutions for Seismology (IRIS)）。
 一般情况下，地震学科研工作者直接可以从数据中心下载到公开的波形数据（time series data）。
 此外，一些数据中心也会提供地震目录（catalog）和台站元数据（medadata）。
 
