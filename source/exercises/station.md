@@ -28,7 +28,7 @@ kernelspec:
 EarthScope SAGE GMAP （之前称为 IRIS GMAP）使用了 Google 地图服务，因而需要科学上网才能正常访问。
 ```
 
-EarthScope SAGE GMAP （之前称为 IRIS GMAP）是一个由 EarthScope 提供的地震台站网页搜索工具，可以
+EarthScope SAGE GMAP （之前称为 IRIS GMAP）是一个由 EarthScope SAGE 提供的地震台站网页搜索工具，可以
 方便地查看全球地震台站分布以及台站的详细信息。下面演示 EarthScope SAGE GMAP 的基本使用方法。
 
 访问 EarthScope SAGE GMAP 网站 [https://ds.iris.edu/gmap/](https://ds.iris.edu/gmap/)，
