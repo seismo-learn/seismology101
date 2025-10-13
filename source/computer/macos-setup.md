@@ -187,7 +187,7 @@ C/C++ 编译器。
 :icon: info
 
 Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
-[Apple Clang](https://clang.llvm.org/docs/UsersManual.html) 编译器，
+[Apple Clang](https://clang.llvm.org/) 编译器，
 其与 [GCC](https://gcc.gnu.org/) 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
 因而一般用户无需再安装 GCC 编译器。
 
