@@ -67,7 +67,7 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 {file}`/opt/homebrew/` 下。
 ::::{tab-set}
 :::{tab-item} 国内用户
-在安装前请先设置中科大镜像环境变量，以确保安装及后续更新均从国内镜像获取：
+在安装前请先设置中科大镜像环境变量，以确保安装及后续更新均从国内镜像获取， 方法来源[USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)：
 ```
 # 设置中科大镜像环境变量
 $ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
@@ -93,15 +93,6 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 ```
 :::
 ::::
-
-:::{note}
-针对国内用户的 Homebrew 安装和配置指南来自于 [USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)
-:::
-
-:::{note}
-Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到特定目录下。
-在 Apple M 系列（M1/M2/M3/M4）芯片的 Mac 下，这一目录为 {file}`/opt/homebrew/`。
-:::
 
 #### 使用 Homebrew
 
@@ -145,7 +136,7 @@ Formula
 : 软件的描述文件，包含了软件的基本信息和编译安装方法。
   Homebrew 根据 Formula 提供的信息，即可编译或安装软件。
   每个软件对应一个 Formula。例如，git 对应的 Formula 是
-  {file}`/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb`。
+  ​{file}`/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb`。
 
 Bottle
 
@@ -158,7 +149,7 @@ Tap
 : 一个含有一系列软件的 git 仓库。使用
   [brew tap](https://docs.brew.sh/Taps#the-brew-tap-command)
   命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
-  {file}`/usr/local/Homebrew/Library/Taps/homebrew/` 目录。
+  ​{file}`/opt/homebrew/Library/Taps/homebrew/` 目录。
   默认启用的软件仓库有 [homebrew-core](https://github.com/Homebrew/homebrew-core)
   和 [homebrew-cask](https://github.com/Homebrew/homebrew-cask)。
   其中，homebrew-core 是内置核心仓库，
@@ -213,7 +204,8 @@ $ ln -s g++-15 g++
 
 ### Fortran
 
-Homebrew 不再提供独立 gfortran 包，它已经被集成到 `gcc` 中。
+[GNU Fortran](https://gcc.gnu.org/fortran/) 编译器是 macOS 下最常用的
+Fortran 编译器，但是Homebrew 不再提供独立 gfortran 包，它已经被集成到 `gcc` 中。
 
 ```
 $ brew install gcc
