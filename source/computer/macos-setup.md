@@ -7,8 +7,7 @@
 ---
 
 :::{warning}
-本节内容基于作者在 macOS Sequoia (15) 上的配置经验，可能适用于macOS Monterey (12)
-macOS Ventura (13) 和 macOS Sonoma (14)，但不一定适用于更老的 macOS 版本。
+本节内容基于作者在 macOS Sequoia (15) 上的配置经验，仅适用于 Apple M 系列芯片。
 欢迎用户帮助我们更新本文以适配 macOS 最新版本。
 :::
 
