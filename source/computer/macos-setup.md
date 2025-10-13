@@ -82,8 +82,8 @@ $ /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 安装完成后，为使 brew 命令生效，请执行：
 
 ```
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
+$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+$ eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 :::
 
