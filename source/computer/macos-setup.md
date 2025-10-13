@@ -209,7 +209,7 @@ $ ln -s g++-15 g++
 ### Fortran
 
 [GNU Fortran](https://gcc.gnu.org/fortran/) 编译器是 macOS 下最常用的
-Fortran 编译器，但是 Homebrew 不再提供独立 gfortran 包，它已经被集成到 `gcc` 中。
+Fortran 编译器，其提供了 `gfortran` 命令。但是 Homebrew 不再提供独立 GNU Fortran 安装包，它已经被集成到 `gcc` 中。
 虽然 macOS 系统自带的命令行工具中包含一个 gcc 命令，但这实际上是 Apple Clang 编译器的别名。
 Apple Clang 不支持 Fortran 语言。所以我们需要通过 Homebrew 安装的`gcc`包是完整的 **GNU Compiler Collection**，
 它包含了我们所需要的 gfortran 编译器，以及真正的 GNU C/C++ 编译器。
