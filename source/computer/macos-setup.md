@@ -96,7 +96,7 @@ $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 $ source ~/.zprofile
 ```
 
-国内用户的 Homebrew 安装和配置指南来自于 [USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html).
+国内用户的 Homebrew 安装和配置指南来自于 [USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)。
 :::
 
 :::{tab-item} 国外用户
