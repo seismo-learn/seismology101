@@ -132,7 +132,10 @@ $ wsl --terminate Ubuntu
 $ wsl --unregister Ubuntu
 ```
 
-:::{note} 将 WSL 从 C 盘移动到其它盘
+:::{dropdown} 将 WSL 从 C 盘移动到其它盘
+:color: info
+:icon: info
+
 开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。为了避免占用 C 盘的大量空间，
 可以将已安装的 Linux 发行版导出备份，再导入还原到其它盘，最后删除 C 盘上的发行版。
 这样做的另一个好处是导入时用户就能得到 WSL 的真实路径。打开 CMD，执行如下命令:
