@@ -49,7 +49,10 @@ st = client.get_waveforms(
 st.plot();
 ```
 
-ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。但是在去线性趋势之前要我们需要先进行去均值操作。这里我们复制两份原始波形数据，`st_previous`只进行上一节的去均值操作，而`st_processed`则额外进行去线性趋势，同时计算处理前后的波形斜率。
+ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。
+但是在去线性趋势之前要我们需要先进行去均值操作。这里我们复制两份原始波形数据，
+`st_previous`只进行上一节的去均值操作，而`st_processed`则额外进行去线性趋势，
+同时计算处理前后的波形斜率。
 
 ```{code-cell} ipython3
 tr = st[0]
