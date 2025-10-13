@@ -67,27 +67,35 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 {file}`/opt/homebrew/` 下。
 ::::{tab-set}
 :::{tab-item} 国内用户
-直接从中科大镜像源运行安装程序。
+首先，我们将中科大镜像源的地址永久写入终端的配置文件 (~/.zprofile) 中。
+
+```
+# 将 Homebrew 镜像配置写入 .zprofile 文件
+$ echo 'export HOMEbrew_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zprofile
+$ echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zprofile
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zprofile
+$ echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zprofile
+
+# 刷新配置
+$ source ~/.zprofile
+```
+
+安装
 
 ```
 $ /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 ```
 
-安装成功后，我们将 brew 命令和中科大镜像源配置永久写入终端配置文件中。
+安装完成后，我们需要将 brew 命令的路径也添加到配置文件中。
 
 ```
-# 将 Homebrew 镜像配置写入 .zprofile 文件
-$ echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zprofile
-$ echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zprofile
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zprofile
-$ echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zprofile
-
 # 将 Homebrew 命令路径写入 .zprofile 文件
 $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 
 # 刷新配置
 $ source ~/.zprofile
 ```
+
 国内用户的 Homebrew 安装和配置指南来自于 [USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html).
 :::
 
