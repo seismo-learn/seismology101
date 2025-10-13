@@ -67,24 +67,28 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 {file}`/opt/homebrew/` 下。
 ::::{tab-set}
 :::{tab-item} 国内用户
-在安装前请先设置中科大镜像环境变量，以确保安装及后续更新均从国内镜像获取， 方法来源[USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)：
-```
-# 设置中科大镜像环境变量
-$ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
-$ export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
-$ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-$ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+直接从中科大镜像源运行安装程序。
 
-# 执行安装脚本
+```
 $ /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 ```
 
-安装完成后，为使 brew 命令生效，请执行：
+安装成功后，我们将 brew 命令和中科大镜像源配置永久写入终端配置文件中。
 
 ```
+# 将 Homebrew 镜像配置写入 .zprofile 文件
+$ echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zprofile
+$ echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zprofile
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zprofile
+$ echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zprofile
+
+# 将 Homebrew 命令路径写入 .zprofile 文件
 $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-$ eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# 刷新配置
+$ source ~/.zprofile
 ```
+
 :::
 
 :::{tab-item} 国外用户
@@ -205,7 +209,10 @@ $ ln -s g++-15 g++
 ### Fortran
 
 [GNU Fortran](https://gcc.gnu.org/fortran/) 编译器是 macOS 下最常用的
-Fortran 编译器，但是Homebrew 不再提供独立 gfortran 包，它已经被集成到 `gcc` 中。
+Fortran 编译器，但是 Homebrew 不再提供独立 gfortran 包，它已经被集成到 `gcc` 中。
+虽然 macOS 系统自带的命令行工具中包含一个 gcc 命令，但这实际上是 Apple Clang 编译器的别名。
+Apple Clang 不支持 Fortran 语言。所以我们需要通过 Homebrew 安装的`gcc`包是完整的 **GNU Compiler Collection**，
+它包含了我们所需要的 gfortran 编译器，以及真正的 GNU C/C++ 编译器。
 
 ```
 $ brew install gcc
