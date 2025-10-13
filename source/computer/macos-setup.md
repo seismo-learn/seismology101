@@ -70,14 +70,14 @@ Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 
 配置使用 Homebrew 的中科大镜像源
 
 ```
-# 将 Homebrew 镜像配置写入 .zprofile 文件
-$ echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zprofile
-$ echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zprofile
-$ echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zprofile
-$ echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zprofile
+# 将 Homebrew 镜像配置写入 .zshrc 文件
+$ echo 'export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"' >> ~/.zshrc
+$ echo 'export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"' >> ~/.zshrc
+$ echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"' >> ~/.zshrc
+$ echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"' >> ~/.zshrc
 
 # 刷新配置
-$ source ~/.zprofile
+$ source ~/.zshrc
 ```
 
 安装 Homebrew
@@ -89,11 +89,11 @@ $ /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 安装完成后，我们需要将 brew 命令的路径也添加到配置文件中。
 
 ```
-# 将 Homebrew 命令路径写入 .zprofile 文件
-$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+# 将 Homebrew 命令路径写入 .zshrc 文件
+$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
 
 # 刷新配置
-$ source ~/.zprofile
+$ source ~/.zshrc
 ```
 
 国内用户的 Homebrew 安装和配置指南来自于 [USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)。
