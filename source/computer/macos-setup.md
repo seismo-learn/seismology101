@@ -183,6 +183,14 @@ Keg
 Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
 C/C++ 编译器。
 
+
+### Fortran
+
+:::{note}
+[GNU Fortran](https://gcc.gnu.org/fortran/) 编译器是 macOS 下最常用的
+Fortran 编译器，其提供了 `gfortran` 命令。但是 Homebrew 不再提供独立 GNU Fortran 安装包，它已经被集成到 `gcc` 中。
+:::
+
 :::{dropdown} GCC 编译器
 :color: info
 :icon: info
@@ -192,7 +200,7 @@ Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
 其与 [GCC](https://gcc.gnu.org/) 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
 因而一般用户无需再安装 GCC 编译器。
 
-由于特殊原因需要安装 GCC 编译器的用户（例如需要使用 GCC 特有的功能和选项），
+由于特殊原因需要安装 GCC 编译器的用户（例如需要使用 GCC Fortran），
 可以使用如下命令安装:
 
 ```
@@ -214,16 +222,7 @@ $ ln -s g++-15 g++
 删除软链接后，默认使用的又是 Apple Clang 编译器了。
 :::
 
-### Fortran
 
-[GNU Fortran](https://gcc.gnu.org/fortran/) 编译器是 macOS 下最常用的
-Fortran 编译器，其提供了 `gfortran` 命令。但是 Homebrew 不再提供独立 GNU Fortran 安装包，它已经被集成到 `gcc` 中。
-虽然 macOS 系统自带的命令行工具中包含一个 gcc 命令，但这实际上是 Apple Clang 编译器的别名。Apple Clang 不支持 Fortran 语言。
-所以我们需要通过 Homebrew 安装`gcc`包来获取我们所需要的 gfortran 编译器，以及真正的 GNU C/C++ 编译器。
-
-```
-$ brew install gcc
-```
 
 ### Java
 
