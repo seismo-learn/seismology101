@@ -135,9 +135,7 @@ Homebrew 用户也可以访问网站 <https://formulae.brew.sh/> 查看和搜索
 使用 Homebrew 时会碰到很多名词。这里做简单解释，
 更详细的解释请查看[官方文档](https://docs.brew.sh/Formula-Cookbook#homebrew-terminology)。
 
-```
-brew
-```
+`brew`
 
 : Homebrew 提供的命令，用于查询、安装、卸载、升级以及管理软件包。
 
