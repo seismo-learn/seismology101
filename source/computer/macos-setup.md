@@ -67,7 +67,7 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 {file}`/opt/homebrew/` 下。
 ::::{tab-set}
 :::{tab-item} 国内用户
-首先，我们将中科大镜像源的地址永久写入终端的配置文件 (~/.zprofile) 中。
+配置使用 Homebrew 的中科大镜像源
 
 ```
 # 将 Homebrew 镜像配置写入 .zprofile 文件
