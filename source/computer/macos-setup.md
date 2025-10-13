@@ -80,7 +80,7 @@ $ echo 'export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles
 $ source ~/.zprofile
 ```
 
-安装
+安装 Homebrew
 
 ```
 $ /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
