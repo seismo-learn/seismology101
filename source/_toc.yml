@@ -27,7 +27,6 @@ parts:
       sections:
       - file: programming/bash
       - file: programming/python
-      - file: programming/c
       - file: programming/markdown
     - file: programming/editor
     - file: programming/git
