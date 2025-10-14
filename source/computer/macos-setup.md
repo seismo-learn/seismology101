@@ -97,6 +97,15 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 :::
 ::::
 
+安装完成后，我们需要将 brew 命令的路径也添加到配置文件中。
+
+```
+# 将 Homebrew 命令路径写入 .zshrc 文件
+$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+
+# 刷新配置
+$ source ~/.zshrc
+```
 #### 使用 Homebrew
 
 安装好 Homebrew 后，即可以使用 Homebrew 提供的 `brew` 命令。
