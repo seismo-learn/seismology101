@@ -85,15 +85,6 @@ $ source ~/.zshrc
 ```
 $ /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 ```
-
-安装完成后，我们需要将 brew 命令的路径也添加到配置文件中。
-
-```
-# 将 Homebrew 命令路径写入 .zshrc 文件
-$ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-
-# 刷新配置
-$ source ~/.zshrc
 ```
 
 国内用户的 Homebrew 安装和配置指南来自于 [USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)。
