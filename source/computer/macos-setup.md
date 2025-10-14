@@ -179,8 +179,10 @@ Keg
 
 ### C/C++
 
-Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因而无需单独安装
-C/C++ 编译器。
+Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因此无需单独安装。
+需要注意的是，其提供的 C/C++ 编译器实际上是 [Apple Clang](https://clang.llvm.org/)，
+而非 [GCC](https://gcc.gnu.org/)。尽管两者存在一定差异，但 Apple Clang 足以满足大多数
+科研场景中编译 C/C++ 程序的需求，一般情况下无需再安装 GCC。
 
 
 ### Fortran
