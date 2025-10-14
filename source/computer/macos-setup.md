@@ -105,6 +105,7 @@ $ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
 # 刷新配置
 $ source ~/.zshrc
 ```
+
 #### 使用 Homebrew
 
 安装好 Homebrew 后，即可以使用 Homebrew 提供的 `brew` 命令。
@@ -139,24 +140,20 @@ Homebrew 用户也可以访问网站 <https://formulae.brew.sh/> 查看和搜索
 更详细的解释请查看[官方文档](https://docs.brew.sh/Formula-Cookbook#homebrew-terminology)。
 
 `brew`
-
 : Homebrew 提供的命令，用于查询、安装、卸载、升级以及管理软件包。
 
 Formula
-
 : 软件的描述文件，包含了软件的基本信息和编译安装方法。
   Homebrew 根据 Formula 提供的信息，即可编译或安装软件。
   每个软件对应一个 Formula。例如，git 对应的 Formula 是
   ​{file}`/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/git.rb`。
 
 Bottle
-
 : 预先编译好的二进制软件包。使用 Bottle 安装软件，
   比从源码编译和安装更快。如果一个软件仓库包含预编译的软件包，使用 `brew install`
   时会自动使用它。
 
 Tap
-
 : 一个含有一系列软件的 git 仓库。使用
   [brew tap](https://docs.brew.sh/Taps#the-brew-tap-command)
   命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
@@ -167,11 +164,9 @@ Tap
   homebrew-cask 仓库则含有各种 macOS 系统下带图形界面的应用程序。
 
 Cellar
-
 : 所有软件的安装目录，即 {file}`/opt/homebrew/Cellar`。
 
 Keg
-
 : 某一软件的安装目录，如 {file}`/opt/homebrew/Cellar/git/2.45.0`。
 :::
 
@@ -179,28 +174,18 @@ Keg
 
 ### C/C++
 
-### Fortran
+Command Line Tools for Xcode 已经提供了 C/C++ 编译器和相关工具，因此无需再单独安装 C/C++ 编译器。
+需要注意的是，其提供的 C/C++ 编译器实际上是 [Apple Clang](https://clang.llvm.org/)，
+而非 [GCC](https://gcc.gnu.org/)（GNU Compiler Collection）。尽管两者存在一定差异，
+但 Apple Clang 足以满足大多数科研场景中编译 C/C++ 程序的需求，一般情况下无需再安装 GCC。
 
 :::{note}
-[GNU Fortran](https://gcc.gnu.org/fortran/) 编译器是 macOS 下最常用的
-Fortran 编译器，其提供了 `gfortran` 命令。但是 Homebrew 不再提供独立 GNU Fortran 安装包，它已经被集成到 `gcc` 中。
-:::
-
-:::{note} GCC 编译器
-Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
-[Apple Clang](https://clang.llvm.org/) 编译器，
-其与 [GCC](https://gcc.gnu.org/) 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
-因而一般用户无需再安装 GCC 编译器。
-
-由于特殊原因需要安装 GCC 编译器的用户（例如需要使用 GCC Fortran），
-可以使用如下命令安装:
-
+若确有需要（例如希望与 Linux 上的 GCC 环境保持一致），可以通过 Homebrew 安装 GCC：
 ```
 $ brew install gcc
 ```
-
-通过 Homebrew 安装的 GCC 提供了命令 `gcc-15` 和 `g++-15`
-（`15` 是 GCC 的主版本号）以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
+通过 Homebrew 安装的 GCC 提供了命令 `gcc-15` 和 `g++-15` （`15` 是 GCC 的主版本号）
+以避免替换 Command Line Tools for Xcode 提供的 `gcc` 和 `g++` 命令。
 用户如果想使用 GCC 编译器，可以在编译代码时显式指定使用 `gcc-15` 和 `g++-15` 命令，
 或者在 Homebrew 的 bin 目录下创建软链接:
 
@@ -214,7 +199,14 @@ $ ln -s g++-15 g++
 删除软链接后，默认使用的又是 Apple Clang 编译器了。
 :::
 
+### Fortran
 
+[GNU Fortran](https://gcc.gnu.org/fortran/) 编译器是 macOS 下最常用的 Fortran 编译器，
+其提供了 `gfortran` 命令。 GNU Fortran 是 GCC 套件的一部分，因而通过安装 GCC 即可获得
+GNU Fortran 编译器：
+```
+$ brew install gcc
+```
 
 ### Java
 
