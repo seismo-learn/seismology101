@@ -96,7 +96,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 :::
 ::::
 
-安装完成后，我们需要将 brew 命令的路径也添加到配置文件中。
+安装完成后，需要将 brew 命令的路径添加到配置文件中。
 
 ```
 # 将 Homebrew 命令路径写入 .zshrc 文件
