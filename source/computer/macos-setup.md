@@ -85,7 +85,6 @@ $ source ~/.zshrc
 ```
 $ /bin/bash -c "$(curl -fsSL https://mirrors.ustc.edu.cn/misc/brew-install.sh)"
 ```
-```
 
 国内用户的 Homebrew 安装和配置指南来自于 [USTC Mirror Help](https://mirrors.ustc.edu.cn/help/brew.git.html)。
 :::
