@@ -191,10 +191,7 @@ C/C++ 编译器。
 Fortran 编译器，其提供了 `gfortran` 命令。但是 Homebrew 不再提供独立 GNU Fortran 安装包，它已经被集成到 `gcc` 中。
 :::
 
-:::{dropdown} GCC 编译器
-:color: info
-:icon: info
-
+:::{note} GCC 编译器
 Command Line Tools for Xcode 提供的 C/C++ 编译器本质上是
 [Apple Clang](https://clang.llvm.org/) 编译器，
 其与 [GCC](https://gcc.gnu.org/) 编译器有差异，但足以满足日常科研中编译 C/C++ 程序的需求。
