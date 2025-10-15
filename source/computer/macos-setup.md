@@ -157,7 +157,7 @@ Tap
 : 一个含有一系列软件的 git 仓库。使用
   [brew tap](https://docs.brew.sh/Taps#the-brew-tap-command)
   命令查看已启用的仓库列表或启用仓库。已启用的仓库位于
-  ​{file}`/opt/homebrew/Library/Taps/homebrew/` 目录。
+  ​{file}`/opt/homebrew/Library/Taps/homebrew` 目录。
   默认启用的软件仓库有 [homebrew-core](https://github.com/Homebrew/homebrew-core)
   和 [homebrew-cask](https://github.com/Homebrew/homebrew-cask)。
   其中，homebrew-core 是内置核心仓库，
