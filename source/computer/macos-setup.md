@@ -64,7 +64,7 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 读者应根据自己所处的地理位置使用相应的安装说明。
 
 打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew。
-Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 {file}`/opt/homebrew/` 下。
+Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 {file}`/opt/homebrew` 下。
 ::::{tab-set}
 :::{tab-item} 国内用户
 配置使用 Homebrew 的中科大镜像源
