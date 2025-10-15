@@ -14,7 +14,7 @@ kernelspec:
 # 去线性趋势
 
 - 本节贡献者: {{何星辰}}、{{田冬冬}}、{{姚家园}}
-- 最近更新日期: 2025-10-11
+- 最近更新日期: 2025-10-15
 - 预计花费时间: 20 分钟
 
 ---
@@ -50,9 +50,7 @@ st.plot();
 ```
 
 ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。
-但是在去线性趋势之前要我们需要先进行去均值操作。这里我们复制两份原始波形数据，
-`st_previous`只进行上一节的去均值操作，而`st_processed`则额外进行去线性趋势，
-同时计算处理前后的波形斜率。
+但是在去线性趋势之前要我们需要先进行去均值操作。
 
 ```{code-cell} ipython3
 tr = st[0]
@@ -60,17 +58,17 @@ st_previous = tr.copy()
 st_processed = tr.copy()
 
 # 去均值
-st_previous.detrend("demean")
+tr.detrend("demean")
 
-# 去均值+去线性趋势
-st_processed.detrend("demean")
-st_processed.detrend("linear")
+#计算去线性趋势前的斜率
+time_array = tr.times()
+p_before = np.polyfit(time_array, tr.data, 1)
 
-# 计算处理前后的斜率和均值
-time_array = st_previous.times()
-p_before = np.polyfit(time_array, st_previous.data, 1)
-p_after = np.polyfit(time_array, st_processed.data, 1)
+# 去线性趋势
+tr.detrend("linear")
 
+# 计算去线性趋势处理后的斜率
+p_after = np.polyfit(time_array, tr.data, 1)
 print(f"Slope before linear detrend: {p_before[0]}")
 print(f"Slope after linear detrend: {p_after[0]}")
 ```
