@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Shell 基础 &#8212; 地震“学”科研入门教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=61152374"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'computer/shell';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="环境变量" href="../environment-variable/" />
+    <link rel="prev" title="文件操作" href="../file-operations/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震“学”科研入门教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">计算机基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../setup/">配置操作系统</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../linux101/">Linux 入门</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../command-line/">命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file-operations/">文件操作</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Shell 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variable/">环境变量</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">Linux 常用命令</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">编程基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programming/intro/">简介</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming/languages/">编程语言</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/bash/">Bash 脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/python/">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/markdown/">Markdown</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/editor/">文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/git/">Git 与代码管理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-phase/">地震震相</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/station/">地震台站</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/data-format/">波形数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/resources/">学习资料</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学实践</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/prerequisite/">准备工作</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/download/">数据下载</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog/">地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/station/">地震台站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/waveform/">地震波形数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/synthetic/">合成地震波形</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/process/">数据处理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/demean/">去均值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/detrend/">去线性趋势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/taper/">波形尖灭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/response/">去仪器响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/filter/">滤波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/rotate/">分量旋转</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/analysis/">数据分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog-analysis/">分析地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/particle-motion/">质点运动轨迹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/cross-correlation/">互相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/distaz/">震中距、方位角与反方位角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/phases/">震相</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/software/">常用软件</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">实践经验</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../best-practices/backup/">数据备份</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Linux/">Linux 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-macOS/">macOS 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Windows/">Windows 数据备份</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software/">高效率软件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/vscode/">VS Code 使用教程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外部链接</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/">地震“学”主站</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">参与讨论</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/edit/main/source/computer/shell.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fcomputer/shell.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/computer/shell.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Shell 基础</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Shell 扩展</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字符 <code class="docutils literal notranslate"><span class="pre">?</span></code> 扩展</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">字符 <code class="docutils literal notranslate"><span class="pre">*</span></code> 扩展</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">方括号 <code class="docutils literal notranslate"><span class="pre">[...]</span></code> 扩展</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">多种扩展字符的组合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">标准输入输出与重定向</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">标准输出重定向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">标准输入重定向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">标准错误重定向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">输入多行字符串</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">管道</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="shell">
+<h1>Shell 基础<a class="headerlink" href="#shell" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://github.com/core-man">姚家园</a>、<a class="reference external" href="https://me.seisman.info/">田冬冬</a></p></li>
+<li><p>最近更新日期: 2023-04-08</p></li>
+<li><p>预计花费时间: 60 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<section id="id1">
+<h2>Shell 扩展<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Shell 接收到用户输入的命令后，会以空格为分隔符将输入的命令拆分成一个个词元（token）。
+如果词元中存在特殊字符，Shell 会先扩展这些特殊字符。扩展完成后，Shell 才会把命令
+交给系统执行。需要注意，<strong>扩展是由 Shell 负责的，与所执行的命令无关</strong>。命令本身
+并不扩展参数，收到什么参数就原样执行。</p>
+<p>例如，用户在终端键入 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> 后，Shell 先将该命令拆分成 <code class="docutils literal notranslate"><span class="pre">cd</span></code> 和 <code class="docutils literal notranslate"><span class="pre">~</span></code> 两个词元，
+然后把 <code class="docutils literal notranslate"><span class="pre">~</span></code> 这个特殊字符扩展成用户的家目录路径（如 <code class="docutils literal notranslate"><span class="pre">/home/seismo-learn</span></code>），
+最后交给系统执行，即 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/seismo-learn</span></code>。系统执行完命令后，用户所在目
+录就切换到家目录下了。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本文只介绍 Shell 扩展的一些常见用法，可以参考
+<a class="reference external" href="https://wangdoc.com/bash/expansion.html#startend-%E6%89%A9%E5%B1%95">Bash 的模式扩展</a>
+学习详细用法。</p>
+<p>在网络上的部分教程或文档中，Shell 扩展（expansion）也被称为模式匹配（pattern matching）
+或通配符（wildcards 或 globbing）。通常来说，这些名词指代的都是这一节所介绍的内容。</p>
+</div>
+<p>下表中列出了 Shell 中最常用的扩展字符：</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>扩展字符</p></th>
+<th class="head text-left"><p>作用</p></th>
+<th class="head text-left"><p>示例</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>~</p></td>
+<td class="text-left"><p>匹配当前用户的家目录</p></td>
+<td class="text-left"><p>例如 /home/seismo-learn</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>?</p></td>
+<td class="text-left"><p>匹配任意单个字符（不能匹配零个字符）</p></td>
+<td class="text-left"><p>?.txt 匹配 a.txt、b.txt 等文件名</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>*</p></td>
+<td class="text-left"><p>匹配任意数量字符（能匹配零个字符）</p></td>
+<td class="text-left"><p>*.txt 匹配 a.txt、b.txt、ab.txt 等文件名</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>[…]</p></td>
+<td class="text-left"><p>匹配方括号中的任意一个字符</p></td>
+<td class="text-left"><p>[abc].txt 匹配 a.txt、b.txt 以及 c.txt 文件名</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>[<em>start</em>-<em>end</em>]</p></td>
+<td class="text-left"><p>方括号扩展的简写模式，匹配一个连续的范围</p></td>
+<td class="text-left"><p>[a-z] 表示所有小写字母，[0-9] 等同于 [0123456789]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>[^…]</p></td>
+<td class="text-left"><p>匹配不在方括号里面的任意一个字符</p></td>
+<td class="text-left"><p>[^ab]c.txt 匹配 cc.txt、dc.txt 等文件名</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="id2">
+<h3>字符 <code class="docutils literal notranslate"><span class="pre">?</span></code> 扩展<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>字符 <code class="docutils literal notranslate"><span class="pre">?</span></code> 可以匹配任意<strong>单个</strong>字符。</p>
+<p>假如当前目录下有 <code class="file docutils literal notranslate"><span class="pre">filea.txt</span></code>、<code class="file docutils literal notranslate"><span class="pre">fileb.txt</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">fileab.txt</span></code> 三个文件。
+在命令中使用 <code class="docutils literal notranslate"><span class="pre">file?.txt</span></code> 时，Shell 会对 <code class="docutils literal notranslate"><span class="pre">file?.txt</span></code> 进行扩展。由于字符 <code class="docutils literal notranslate"><span class="pre">?</span></code> 可以
+匹配任意单个字符，因而 <code class="docutils literal notranslate"><span class="pre">file?.txt</span></code> 会匹配到文件 <code class="file docutils literal notranslate"><span class="pre">filea.txt</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">fileb.txt</span></code>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls file?.txt
+filea.txt fileb.txt
+</pre></div>
+</div>
+<p>同理，<code class="docutils literal notranslate"><span class="pre">file??.txt</span></code> 可以匹配文件 <code class="file docutils literal notranslate"><span class="pre">fileab.txt</span></code>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls file??.txt
+fileab.txt
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>字符 <code class="docutils literal notranslate"><span class="pre">*</span></code> 扩展<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>字符 <code class="docutils literal notranslate"><span class="pre">*</span></code> 可以匹配任意数量（零个或多个）的任意字符。</p>
+<p>假如当前目录下有 <code class="file docutils literal notranslate"><span class="pre">filea.txt</span></code>、<code class="file docutils literal notranslate"><span class="pre">fileb.txt</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">fileab.txt</span></code> 三个文件。
+使用 <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> 可以匹配所有以 <code class="docutils literal notranslate"><span class="pre">.txt</span></code> 结尾的文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls *.txt
+filea.txt fileb.txt fileab.txt
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">filea*.txt</span></code> 可以匹配到以 <code class="docutils literal notranslate"><span class="pre">filea</span></code> 开头并以 <code class="docutils literal notranslate"><span class="pre">.txt</span></code> 结尾的文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls filea*.txt
+filea.txt fileab.txt
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">*b*</span></code> 可以匹配文件名中包括字符 <code class="docutils literal notranslate"><span class="pre">b</span></code> 的文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls *b*
+fileb.txt fileab.txt
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>方括号 <code class="docutils literal notranslate"><span class="pre">[...]</span></code> 扩展<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>方括号 <code class="docutils literal notranslate"><span class="pre">[...]</span></code> 可以用于匹配方括号内的任意单个字符。</p>
+<p>假如当前目录下有 <code class="file docutils literal notranslate"><span class="pre">filea.txt</span></code>、<code class="file docutils literal notranslate"><span class="pre">fileb.txt</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">filec.txt</span></code> 三个文件。
+使用 <code class="docutils literal notranslate"><span class="pre">file[ab].txt</span></code> 则会匹配到 <code class="file docutils literal notranslate"><span class="pre">filea.txt</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">fileb.txt</span></code> 两个文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls file[ab].txt
+filea.txt fileb.txt
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">file[cd].txt</span></code> 则只能匹配到 <code class="file docutils literal notranslate"><span class="pre">filec.txt</span></code> 这一个文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls file[cd].txt
+filec.txt
+</pre></div>
+</div>
+<p>方括号里还可以用破折号 <code class="docutils literal notranslate"><span class="pre">-</span></code> 指定连续范围内的多个字符。例如 <code class="docutils literal notranslate"><span class="pre">[a-z]</span></code> 表示从 a 到 z
+的所有小写字母，<code class="docutils literal notranslate"><span class="pre">[A-Z]</span></code> 表示从 A 到 Z 的所有大小字母，<code class="docutils literal notranslate"><span class="pre">[0-9]</span></code> 表示数字 0 到 9，
+<code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9]</span></code> 则表示所有字母和数字。例如，使用 <code class="docutils literal notranslate"><span class="pre">file[a-c].txt</span></code> 可以匹配到三个文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls file[a-c].txt
+filea.txt fileb.txt filec.txt
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>多种扩展字符的组合<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>不同的扩展字符组合在一起使用可以实现更复杂的匹配功能。</p>
+<p>若当前目录下存在文件 <code class="file docutils literal notranslate"><span class="pre">filea.txt</span></code>、<code class="file docutils literal notranslate"><span class="pre">fileaaa.txt</span></code>、<code class="file docutils literal notranslate"><span class="pre">filebbb.txt</span></code>
+和 <code class="file docutils literal notranslate"><span class="pre">fileabc.txt</span></code>，则通配符 <code class="docutils literal notranslate"><span class="pre">file[a-b]b?.txt</span></code> 会匹配到 <code class="file docutils literal notranslate"><span class="pre">filebbb.txt</span></code>
+和 <code class="file docutils literal notranslate"><span class="pre">fileabc.txt</span></code> 两个文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls file[a-b]b?.txt
+fileabc.txt filebbb.txt
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>其他 Shell （如 Zsh, csh, ksh）的扩展语法可能稍微不同，以上示例可能不适用。</p>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2>标准输入输出与重定向<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>一般情况下，命令从标准输入（stdin）读取输入，并将产生的输出发送到到标准输出（stdout），
+默认的标准输入和标准输出都是终端。此外，还有标准错误（stderr），用于输出命令运行的
+状态和错误信息，其默认也是终端。一般用 0、1、2 分别表示标准输入、标准输出和标准错误。</p>
+<p>在下面的示例中，<code class="docutils literal notranslate"><span class="pre">echo</span></code> 命令从终端（即标准输入）获取了输入 <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">World&quot;</span></code>，
+并将输出 <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code> 发送到终端（即标准输出）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 echo 命令输出 Hello World 到终端
+$ echo &quot;Hello World&quot;
+Hello World
+</pre></div>
+</div>
+<p>使用重定向，可以修改标准输入、标准输出以及标准错误，以达到从文件中读取输入，以及
+输出到文件的目的。</p>
+<section id="id7">
+<h3>标准输出重定向<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">echo</span></code> 命令为例的重定向输出到文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 输出 Hello World 到 output_file 文件中（文件不存在则新建该文件）
+$ echo &quot;Hello World&quot; &gt; output_file
+# 使用 cat 命令查看 output_file 的内容
+$ cat output_file
+Hello World
+
+# 输出 Rewrite it 到 output_file 文件中（文件存在则覆盖该文件原有内容）
+$ echo &quot;Rewrite it&quot; &gt; output_file
+$ cat output_file
+Rewrite it
+
+# 输出 Append it 到 output_file 文件中（文件不存在则新建该文件；存在则添加到文件末尾）
+$ echo &quot;append it&quot; &gt;&gt; output_file
+$ cat output_file
+Rewrite it
+Append it
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>标准输入重定向<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 命令为例的从文件中读取输入:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 键入 cat 命令
+$ cat
+
+# 没指定任何参数时，该命令会从标准输入读入数据，即正在等待我们从终端输入中
+# 在终端输入 Hello World 并按 Enter 键，最后按 Ctrl + D 结束输入
+$ cat
+Hello World
+Hello World
+
+# 重定向标准输入从 output_file 读如内容
+$ cat &lt; output_file
+Rewrite it
+Append it
+</pre></div>
+</div>
+<p>从文件中读如输入，并输出到文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 查看 output_file 文件内容，并输出到 output_file2 文件中
+$ cat &lt; output_file &gt; output_file2
+$ cat output_file2
+Rewrite it
+Append it
+</pre></div>
+</div>
+<p>上例子中 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 命令后面直接跟文件名时，跟加 <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> 和文件名，结果一样。</p>
+</section>
+<section id="id9">
+<h3>标准错误重定向<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>标准错误可以用 <code class="docutils literal notranslate"><span class="pre">2&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">2&gt;&gt;</span></code> 重定向输出到文件中，数字 2 和 <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> 与 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>
+之间没有空格:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 cat 命令查看 out_file 的内容。该文件不存在，因此会输出出错信息到终端
+$ cat out_file
+cat: out_file: No such file or directory
+
+# 输出出错信息到 err_file（文件不存在则新建该文件；存在则覆盖该文件原有内容）
+$ cat out_file 2&gt; err_file
+$ cat err_file
+cat: out_file: No such file or directory
+
+# 输出出错信息到 err_file（文件不存在则新建该文件；存在则添加到文件末尾）
+$ cat out_file 2&gt;&gt; err_file
+$ cat err_file
+cat: out_file: No such file or directory
+cat: out_file: No such file or directory
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">2&gt;&amp;1</span></code> 可以将标准错误合并到标准输出（注意重定向的顺序非常重要，标准错误的
+重定向 <code class="docutils literal notranslate"><span class="pre">2&gt;&amp;1</span></code> 必须总是出现在标准输出重定向之后，否则不起作用）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 将命令输出和出错信息都写入到 out_err_file 文件中
+$ cat out_file &gt; out_err_file 2&gt;&amp;1
+cat: out_file: No such file or directory
+
+# 将命令输出和出错信息以追加的形式都写入到 out_err_file 文件中
+$ cat out_file &gt;&gt; out_err_file 2&gt;&amp;1
+cat: out_file: No such file or directory
+cat: out_file: No such file or directory
+</pre></div>
+</div>
+<p>可以使用 <code class="docutils literal notranslate"><span class="pre">&amp;&gt;</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&amp;&gt;&gt;</span></code> 这以精简方法来执行这种联合的重定向:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 将命令输出和出错信息都写入到 out_err_file 文件中
+$ cat out_file &amp;&gt; out_err_file
+cat: out_file: No such file or directory
+
+# 将命令输出和出错信息以追加的形式都写入到 out_err_file 文件中
+$ cat out_file &amp;&gt;&gt; out_err_file
+cat: out_file: No such file or directory
+cat: out_file: No such file or directory
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>有时，我们不想要命令的输出结果（标准输出或标准错误）。此时可以将输出重定向到
+<code class="file docutils literal notranslate"><span class="pre">/dev/null</span></code> 文件。此文件是系统设备，叫做位存储桶，可以接受输入，并且
+对输入不做任何处理。例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat out_file 2&gt; /dev/null
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id10">
+<h3>输入多行字符串<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Here 文档（here document）是一种输入多行字符串的方法，格式如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;&lt;</span> <span class="n">token</span>
+<span class="n">text</span>
+<span class="n">token</span>
+</pre></div>
+</div>
+<p>它的格式分成开始标记 <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span> <span class="pre">token</span></code>、字符串 <code class="docutils literal notranslate"><span class="pre">text</span></code> 和结束标记 <code class="docutils literal notranslate"><span class="pre">token</span></code>。
+开始标记由两个小于号加上 Here 文档的名称（名称可以随意取，通常用 <code class="docutils literal notranslate"><span class="pre">EOF</span></code> 或 <code class="docutils literal notranslate"><span class="pre">END</span></code>）
+组成，后面必须是一个换行符。结束标记是单独一行且顶格写的 Here 文档名称，若不顶格，
+结束标记不起作用。两者之间就是多行字符串的内容。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 cat 命令输入三行数字
+$ cat &lt;&lt; EOF
+1 2
+3 4
+5 6
+EOF
+# 以上命令的输出是
+1 2
+3 4
+5 6
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h2>管道<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>管道（pipe）操作符 <code class="docutils literal notranslate"><span class="pre">|</span></code> 可以将一个命令的标准输出送至另一个命令的标准输入。
+管道不会处理标准错误。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># echo 命令输出的 Hello World 被管道操作符交给 wc 命令当作输入来统计字数
+$ echo &quot;Hello World&quot; | wc -w
+2
+
+# 可以无限多次使用管道。使用 cat 命令将上例的输出重定向写入 pipe.dat 文件中
+$ echo &quot;Hello World&quot; | wc -w | cat &gt; pipe.dat
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./computer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../file-operations/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">文件操作</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../environment-variable/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">环境变量</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Shell 扩展</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字符 <code class="docutils literal notranslate"><span class="pre">?</span></code> 扩展</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">字符 <code class="docutils literal notranslate"><span class="pre">*</span></code> 扩展</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">方括号 <code class="docutils literal notranslate"><span class="pre">[...]</span></code> 扩展</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">多种扩展字符的组合</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">标准输入输出与重定向</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">标准输出重定向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">标准输入重定向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">标准错误重定向</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">输入多行字符串</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">管道</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By seismo-learn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

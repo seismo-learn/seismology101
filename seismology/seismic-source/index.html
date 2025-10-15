@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>震源 &#8212; 地震“学”科研入门教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=61152374"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seismology/seismic-source';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="地震波" href="../seismic-wave/" />
+    <link rel="prev" title="简介" href="../intro/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震“学”科研入门教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">计算机基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../computer/operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computer/setup/">配置操作系统</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computer/linux101/">Linux 入门</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/command-line/">命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/file-operations/">文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/shell/">Shell 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/environment-variable/">环境变量</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/commands/">Linux 常用命令</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">编程基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programming/intro/">简介</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming/languages/">编程语言</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/bash/">Bash 脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/python/">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/markdown/">Markdown</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/editor/">文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/git/">Git 与代码管理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seismic-phase/">地震震相</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../station/">地震台站</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-format/">波形数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources/">学习资料</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学实践</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/prerequisite/">准备工作</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/download/">数据下载</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog/">地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/station/">地震台站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/waveform/">地震波形数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/synthetic/">合成地震波形</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/process/">数据处理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/demean/">去均值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/detrend/">去线性趋势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/taper/">波形尖灭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/response/">去仪器响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/filter/">滤波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/rotate/">分量旋转</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/analysis/">数据分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog-analysis/">分析地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/particle-motion/">质点运动轨迹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/cross-correlation/">互相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/distaz/">震中距、方位角与反方位角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/phases/">震相</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/software/">常用软件</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">实践经验</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../best-practices/backup/">数据备份</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Linux/">Linux 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-macOS/">macOS 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Windows/">Windows 数据备份</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software/">高效率软件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/vscode/">VS Code 使用教程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外部链接</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/">地震“学”主站</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">参与讨论</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/edit/main/source/seismology/seismic-source.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fseismology/seismic-source.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/seismology/seismic-source.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>震源</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">地震三要素</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">地震目录</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>震源<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://github.com/core-man">姚家园</a>、<a class="reference external" href="https://me.seisman.info/">田冬冬</a></p></li>
+<li><p>最近更新日期: 2022-07-17</p></li>
+<li><p>预计阅读时间: 5 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<p>任何产生能被地震仪记录到的地球机械振动的源都可以称为震源（seismic source）。
+震源可以是地震、火山喷发、海浪、台风或飓风、人工爆炸、交通活动等。本节介绍震源的基础概念。</p>
+<section id="id2">
+<h2>地震三要素<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>对于地震，人们最关心的基本参数有三个（俗称<strong>地震三要素</strong>），即时间、地点、强度（简称<strong>时空强</strong>）：</p>
+<ul class="simple">
+<li><p>时间：地震发震时刻（origin time）</p></li>
+<li><p>地点：地震震源位置（hypocenter），即地震发生位置的经纬度和深度。震源位置（hypocenter）
+向上垂直投影到地面的位置称为震中（epicenter）</p></li>
+<li><p>强度：地震的大小，常用震级（magnitude）度量</p></li>
+</ul>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/epicenter-hypocenter.gif"><img alt="震源位置（hypocenter）与震中（epicenter）的区别" src="../../_images/epicenter-hypocenter.gif" style="width: 40%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">震源位置（hypocenter）与震中（epicenter）的区别。
+图片引自 <a class="reference external" href="https://www.usgs.gov/media/images/epicenter-hypocentergif">USGS</a>。</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>空间上看，地震大部分发生在不同板块的边界处。板块内部也有一些地震发生。</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/earthquake-distribution.jpg"><img alt="五年内 4 级以上地震的全球分布" src="../../_images/earthquake-distribution.jpg" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">五年内 4 级以上地震的全球分布。
+引自 <a class="reference external" href="https://www.iris.edu/hq/inclass/fact-sheet/why_do_earthquakes_happen">Why Do Earthquakes Happen?</a>。</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>深度方向上看，地震主要发生在脆性地壳中。在 300 公里以上，地震数目整体上随着深度增加而减少。
+300 公里以下，地震数目略有增加。最大的地震深度约为 700 多公里。</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/earthquake-depth.jpg"><img alt="1964-2001 年全球 5.2 级以上地震的年发生率和震源深度的关系" src="../../_images/earthquake-depth.jpg" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">1964-2001 年全球 5.2 级以上地震的年发生率和震源深度的关系。
+引自《<a class="reference external" href="https://doi.org/10.1017/CBO9781107297562">Deep Earthquakes</a>》图 4.3。</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>震级越大的地震，数目越少。在地震学中，有一个著名的定律，叫 Gutenberg–Richter 定律（简称 GR law），
+该定律描述了震级与某一地区大于等于该震级的地震数量之间的关系。该定律的表达式是：</p>
+<div class="math notranslate nohighlight">
+\[
+\log_{10} N = a - b M
+\]</div>
+<p>其中，<span class="math notranslate nohighlight">\(M\)</span> 表示震级，<span class="math notranslate nohighlight">\(N\)</span> 表示震级大于等于 <span class="math notranslate nohighlight">\(M\)</span> 的地震数量，<span class="math notranslate nohighlight">\(a\)</span> 和 <span class="math notranslate nohighlight">\(b\)</span> 是常数。
+一般 <span class="math notranslate nohighlight">\(b\)</span> 的值接近 1。若取 <span class="math notranslate nohighlight">\(b=1\)</span>，则地震级数每降低一级，地震的数目就会增加 10 倍。</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="../../_images/earthquake-gr-law.jpg"><img alt="GCMT 地震目录中 1976-2005 年间全球地震的震级与频次关系" src="../../_images/earthquake-gr-law.jpg" style="width: 70%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">GCMT 地震目录中 1976-2005 年间全球地震的震级与频次关系。图中圆点为观测数据，
+实线为 GR 定律中 b = 1 的理论曲线。
+引自《Introduction to Seismology》图 9.27。</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>地震释放的能量与地震震级之间的关系为<span id="id3"><sup><a class="reference internal" href="../../bibliography/#id8" title="Beno Gutenberg. The energy of earthquakes. Quarterly Journal of the Geological Society, 112(1–4):1–14, Aug 1956. doi:10.1144/GSL.JGS.1956.112.01-04.02.">3</a></sup></span>：</p>
+<div class="math notranslate nohighlight">
+\[
+\log E = 1.5 M + 11.8
+\]</div>
+<p>可以看出，震级增加一级，地震释放的能量增加 32 倍。</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/earthquake-energy.jpg"><img alt="地震的震级、频率以及释放能量的经验关系" src="../../_images/earthquake-energy.jpg" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">地震的震级、频率以及释放能量的经验关系。
+引自 <a class="reference external" href="https://www.iris.edu/hq/inclass/fact-sheet/how_often_do_earthquakes_occur">How Often Do Earthquakes Occur?</a>。</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
+<h2>地震目录<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>将大量地震事件的参数进行汇总整理得到的目录资料，称之为地震目录。地震目录对于研究
+地震活动性、地震灾害评估等具有重要的意义。</p>
+<p>地震目录至少应包含地震的时空强信息，即：</p>
+<ul class="simple">
+<li><p>发震时刻</p></li>
+<li><p>震中经纬度</p></li>
+<li><p>地震深度</p></li>
+<li><p>地震震级</p></li>
+</ul>
+<p>除此之外，有些地震目录还提供了地震的破裂时间和震源机制等其他参数。</p>
+<p>根据所包含地震的区域范围，地震目录可以分成两类：全球地震目录和区域地震目录。
+顾名思义，全球地震目录包含了全球范围内的地震，但通常只包含比较大的地震，小地震多有遗漏；
+区域地震目录则只关注某个特定区域内的地震，通常包含更多的小地震。</p>
+<p>常见的全球地震目录包括：</p>
+<dl class="simple myst">
+<dt><a class="reference external" href="http://www.isc.ac.uk/iscbulletin/">International Seismological Center 地震目录</a></dt><dd><p>ISC 地震目录是全球地震的最终版本，涵盖了
+1900 年至今的地震信息。所有地震信息通过程序自动确定，并由 ISC 的分析人员对其
+进行人工检查和重定位。经过人工审核的 ISC 地震目录通常有 24 个月的延迟。</p>
+</dd>
+<dt><a class="reference external" href="https://earthquake.usgs.gov/data/comcat/">ANSS ComCat 地震目录</a></dt><dd><p>ANSS Comprehensive Earthquake Catalog (ComCat) 是 ANSS (Advanced National Seismic System)
+制作的地震目录。该目录专注于提供全球 5.0 级以上地震事件的权威、近实时信息。
+地震位置和震级的初始报告通常可在地震发生后 10 到 30 分钟内获得，并在几天、几周和
+几个月后进一步修订。</p>
+</dd>
+</dl>
+<p>区域地震目录有很多，通常由各个国家或区域的地震相关机构维护，比如：</p>
+<ul class="simple">
+<li><p>中国: <a class="reference external" href="https://data.earthquake.cn/datashare/report.shtml?PAGEID=earthquake_zhengshi">中国台网正式地震目录</a></p></li>
+<li><p>日本: <a class="reference external" href="https://www.data.jma.go.jp/svd/eqev/data/bulletin/hypo_e.html">JMA 地震目录</a></p></li>
+<li><p>美国南加州: <a class="reference external" href="https://scedc.caltech.edu/eq-catalogs/">SCSN 地震目录</a></p></li>
+<li><p>美国北加州: <a class="reference external" href="https://ncedc.org/ncedc/catalog-search.html">NCSN 地震目录</a></p></li>
+</ul>
+<p>在使用地震目录时，应根据自己的需求选择合适的地震目录。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./seismology"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">简介</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../seismic-wave/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">地震波</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">地震三要素</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">地震目录</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By seismo-learn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

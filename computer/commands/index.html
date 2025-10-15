@@ -1,0 +1,1261 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linux 常用命令 &#8212; 地震“学”科研入门教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=61152374"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'computer/commands';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="简介" href="../../programming/intro/" />
+    <link rel="prev" title="环境变量" href="../environment-variable/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震“学”科研入门教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">计算机基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../setup/">配置操作系统</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linux101/">Linux 入门</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/">命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file-operations/">文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/">Shell 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variable/">环境变量</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linux 常用命令</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">编程基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programming/intro/">简介</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming/languages/">编程语言</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/bash/">Bash 脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/python/">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/markdown/">Markdown</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/editor/">文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/git/">Git 与代码管理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-phase/">地震震相</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/station/">地震台站</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/data-format/">波形数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/resources/">学习资料</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学实践</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/prerequisite/">准备工作</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/download/">数据下载</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog/">地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/station/">地震台站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/waveform/">地震波形数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/synthetic/">合成地震波形</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/process/">数据处理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/demean/">去均值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/detrend/">去线性趋势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/taper/">波形尖灭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/response/">去仪器响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/filter/">滤波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/rotate/">分量旋转</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/analysis/">数据分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog-analysis/">分析地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/particle-motion/">质点运动轨迹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/cross-correlation/">互相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/distaz/">震中距、方位角与反方位角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/phases/">震相</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/software/">常用软件</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">实践经验</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../best-practices/backup/">数据备份</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Linux/">Linux 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-macOS/">macOS 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Windows/">Windows 数据备份</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software/">高效率软件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/vscode/">VS Code 使用教程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外部链接</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/">地震“学”主站</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">参与讨论</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/edit/main/source/computer/commands.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fcomputer/commands.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/computer/commands.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linux 常用命令</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cat">cat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">diff</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#df">df</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du">du</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find">find</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gawk">gawk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grep">grep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head">head</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#less">less</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#locate">locate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rsync">rsync</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scp">scp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sed">sed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort">sort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">ssh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudo">sudo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tail">tail</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tar">tar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top">top</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniq">uniq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wc">wc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wget">wget</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linux">
+<h1>Linux 常用命令<a class="headerlink" href="#linux" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://github.com/core-man">姚家园</a>、<a class="reference external" href="https://me.seisman.info/">田冬冬</a></p></li>
+<li><p>最近更新日期: 2021-04-04</p></li>
+<li><p>预计花费时间: 120 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<p>Linux/macOS 下有成百上千个命令，每个命令都有众多选项。一开始上手 Linux/macOS，
+如果要学习这么多命令会让人发狂，而且根本记不住。其实，<strong>命令不是背出来的而是用出来的</strong>。
+我们只需要掌握少数常用命令的常用用法，遇到不熟悉的命令或用法再查询和学习即可。
+这一节就介绍一些常用命令的常用用法。用户可以通过如下方式查询更多命令及其用法。</p>
+<ol class="arabic">
+<li><p>使用 <a class="reference external" href="https://tldr.sh/">tldr</a> 命令查询 [<strong>推荐</strong>]</p>
+<p><code class="docutils literal notranslate"><span class="pre">tldr</span></code> 是由社区维护的简化版的命令帮助文档。其以实例的方式展示了
+大多数常用命令的常见用法，但某些命令可能还未编写。例如 <code class="docutils literal notranslate"><span class="pre">tldr</span> <span class="pre">mkdir</span></code>
+将显示 <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> 命令的简单用法。</p>
+</li>
+<li><p>使用 UNIX 提供的 <code class="docutils literal notranslate"><span class="pre">man</span></code> 命令查询</p>
+<p><code class="docutils literal notranslate"><span class="pre">man</span></code> 提供了命令的完整语法，因而通常比较冗长。例如 <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">mkdir</span></code> 将
+显示 <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> 命令的完整语法。</p>
+</li>
+<li><p>网页搜索相关命令</p>
+<ul class="simple">
+<li><p>使用 Google 搜索</p></li>
+<li><p>在网站 <a class="reference external" href="https://man.linuxde.net/">https://man.linuxde.net/</a> 中查询</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-4 sd-g-4 sd-g-xs-4 sd-g-sm-4 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+文件查看</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#cat"><span class="std std-ref">cat</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#head"><span class="std std-ref">head</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#less"><span class="std std-ref">less</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#tail"><span class="std std-ref">tail</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+文件处理</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#diff"><span class="std std-ref">diff</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#gawk"><span class="std std-ref">gawk</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#grep"><span class="std std-ref">grep</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#sed"><span class="std std-ref">sed</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#sort"><span class="std std-ref">sort</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#uniq"><span class="std std-ref">uniq</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#wc"><span class="std std-ref">wc</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+文件搜索</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#find"><span class="std std-ref">find</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#locate"><span class="std std-ref">locate</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+文件传输</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#rsync"><span class="std std-ref">rsync</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#scp"><span class="std std-ref">scp</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+文件下载</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#wget"><span class="std std-ref">wget</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+压缩与解压</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#tar"><span class="std std-ref">tar</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+系统管理</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#df"><span class="std std-ref">df</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#du"><span class="std std-ref">du</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#sudo"><span class="std std-ref">sudo</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="#top"><span class="std std-ref">top</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+远程登录</div>
+<ul class="simple">
+<li><p class="sd-card-text"><a class="reference internal" href="#ssh"><span class="std std-ref">ssh</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="cat">
+<span id="id1"></span><h2>cat<a class="headerlink" href="#cat" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span></code> 命令的命名来源于 con<strong>cat</strong>enate（拼接）。该命令可以输出某个文件的
+内容，或将多个文件拼接起来:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 将一个文件的内容输出到终端
+$ cat file
+
+# 输出文件内容并显示行号
+$ cat -n file
+
+# 将文件 file1 和 file2 拼接到一个文件 target_file 中
+$ cat file1 file2 &gt; target_file
+</pre></div>
+</div>
+</section>
+<section id="diff">
+<span id="id2"></span><h2>diff<a class="headerlink" href="#diff" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">diff</span></code> 命令的命名来自 <strong>diff</strong>erence。该命令可以用来逐行比较两个文件的异同。
+我们用以下两个示例文件展示其用法:</p>
+<p>文件 <code class="file docutils literal notranslate"><span class="pre">file1</span></code> 中包含如下三行内容：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seismo</span><span class="o">-</span><span class="n">learn</span>
+<span class="n">seismology</span>
+<span class="n">software</span>
+</pre></div>
+</div>
+<p>文件 <code class="file docutils literal notranslate"><span class="pre">file2</span></code> 中包含如下三行内容：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seismo</span><span class="o">-</span><span class="n">learn</span>
+<span class="n">seismology101</span>
+<span class="n">software</span>
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">diff</span></code> 命令比较 <code class="file docutils literal notranslate"><span class="pre">file1</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">file2</span></code> 的异同。结果显示，两个文件
+第二行不同，其他行是相同的:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ diff file1 file2
+2c2
+&lt; seismology
+---
+&gt; seismology101
+</pre></div>
+</div>
+</section>
+<section id="df">
+<span id="id3"></span><h2>df<a class="headerlink" href="#df" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">df</span></code> 命令的命名来自 <strong>d</strong>isk <strong>f</strong>ree（可使用的硬盘空间）。
+该命令可以获取硬盘总空间、已使用空间、剩余空间等信息。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ df -h
+Filesystem                          Size  Used Avail Use% Mounted on
+/dev/mapper/cl_ivantjuawinata-root  100G   86G   15G  86% /
+devtmpfs                            7.8G     0  7.8G   0% /dev
+tmpfs                               7.8G  114M  7.7G   2% /run
+/dev/mapper/cl_ivantjuawinata-home  1.1T  904G  149G  86% /home
+</pre></div>
+</div>
+<p>从输出中可以得知，<code class="file docutils literal notranslate"><span class="pre">/home</span></code> 分区总硬盘空间为 1.1 TB，已使用 904 GB，剩余 149 GB。</p>
+</section>
+<section id="du">
+<span id="id4"></span><h2>du<a class="headerlink" href="#du" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">du</span></code> 命令的名字来自 <strong>d</strong>isk <strong>u</strong>sage（硬盘使用情况）。该命令用于查看
+文件和目录占用的硬盘空间。</p>
+<p>查看当前目录所占硬盘空间（也可以在最后指定想查看的目录名）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 默认显示当前目录及其所有子目录所占硬盘空间
+$ du -h
+
+# 设置目录深度为 0，即只显示当前目录所占硬盘空间，不显示其任何子目录
+$ du -h -d 0
+
+# 设置目录深度为 1，即只显示当前目录及其一级子目录所占硬盘空间
+$ du -h -d 1
+</pre></div>
+</div>
+<p>查看指定文件所占硬盘空间:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ du -h file1.txt
+</pre></div>
+</div>
+</section>
+<section id="find">
+<span id="id5"></span><h2>find<a class="headerlink" href="#find" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">find</span></code> 命令用来查找指定目录下的子目录和文件，并对找到的目录和文件执行特定操作。
+该命令功能强大，更多功能可以参考 <a class="reference external" href="https://man.linuxde.net/find/">find 命令</a>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 列出 ~/src 目录及其子目录下的所有目录和文件
+$ find ~/src
+
+# 查找 ~/src 目录及其子目录下以 .c 结尾的目录和文件
+$ find ~/src -name &quot;*.c&quot;
+
+# 查找 ~/src 目录及其子目录下以 .c 结尾的文件
+$ find ~/src -type f -name &quot;*.c&quot;
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-delete</span></code> 选项可以直接删除查找的文件或目录:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 查找 ~/src 目录及其子目录下以 .pyc 结尾的文件，并删除
+$ find ~/src -type f -name &quot;*.pyc&quot; -delete
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">find</span></code> 的 <code class="docutils literal notranslate"><span class="pre">-exec</span></code> 选项可以调用其他系统命令直接对查找的结果进行处理:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 递归查找 ~/src 目录以 .c 结尾的文件，并执行 grep 命令找出文件中含 seismo-learn 的行
+$ find ~/src -type f -name &quot;*.c&quot; -exec grep seismo-learn {} +
+</pre></div>
+</div>
+<p>这个例子中，<code class="docutils literal notranslate"><span class="pre">{}</span></code> 与 <code class="docutils literal notranslate"><span class="pre">-exec</span></code> 选项结合，表示查找到的文件。我们还可以用 <code class="docutils literal notranslate"><span class="pre">-ok</span></code>
+来代替 <code class="docutils literal notranslate"><span class="pre">-exec</span></code> 选项，二者的区别是 <code class="docutils literal notranslate"><span class="pre">-ok</span></code> 选项在执行后面的命令前会给出提示，
+输入 <kbd class="kbd docutils literal notranslate">y</kbd> 才会执行，输入 <kbd class="kbd docutils literal notranslate">n</kbd> 则不执行。</p>
+</section>
+<section id="gawk">
+<span id="id6"></span><h2>gawk<a class="headerlink" href="#gawk" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">awk</span></code> 命令的命名起源于其三位作者的姓氏首字母。该命令可以选择标准输入、其他命令的
+输出或文件中的特定字段并进行操作。它依次扫描每一行，并读取里面的每一个字段。
+可以参考
+<a class="reference external" href="https://www.bookstack.cn/read/bash-tutorial/docs-archives-commands-awk.md">Bash 脚本教程: awk</a>
+学习其更多用法。</p>
+<p><code class="docutils literal notranslate"><span class="pre">gawk</span></code> 是 GNU 版本的 <code class="docutils literal notranslate"><span class="pre">awk</span></code> 命令。通常建议直接使用 <code class="docutils literal notranslate"><span class="pre">gawk</span></code> 而非 <code class="docutils literal notranslate"><span class="pre">awk</span></code>，
+尽管在 Linux 系统下，<code class="docutils literal notranslate"><span class="pre">awk</span></code> 命令一般是指向 <code class="docutils literal notranslate"><span class="pre">gawk</span></code> 命令的软链接。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 将一个文件的每一行输出到标准输出。 $0 表示当前行
+$ gawk &#39;{print $0}&#39; file
+
+# 将一个文件的每一行的第 1 个和第 3 个字段输出到标准输出（字段的默认分隔符是空格和制表符）
+$ gawk &#39;{print $1,$3}&#39; file
+
+# 同上，但跳过第 1-2 行，从第 3 行开始。FNR 为当前行的行数
+$ gawk &#39;FNR&gt;2 {print $1,$3}&#39; file
+
+# 将 /etc/passwd 每一行的第 1 个和第 3 个字段输出到标准输出，并设置字段分隔符为冒号
+$ gawk -F &#39;:&#39; &#39;{print $1,$3}&#39; /etc/passwd
+
+# 同上，并输出每一行的行号
+$ gawk -F &#39;:&#39; &#39;{print NR,$1,$3}&#39; /etc/passwd
+</pre></div>
+</div>
+</section>
+<section id="grep">
+<span id="id7"></span><h2>grep<a class="headerlink" href="#grep" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> 命令的命名来自 <strong>g</strong>lobally search a <strong>re</strong>gular expression and <strong>p</strong>rint
+（以正则表达式进行全局搜索并输出）。它是一个强大的文本搜索工具，可以搜索文件中
+与指定模式匹配的行并输出:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 搜索并输出 /etc/passwd 中含有 root 的行
+$ grep root /etc/passwd
+
+# 同上，并显示行号
+$ grep -n root /etc/passwd
+
+# 搜索并输出 /etc/passwd 中不含有 root 的行
+$ grep -v root /etc/passwd
+</pre></div>
+</div>
+</section>
+<section id="head">
+<span id="id8"></span><h2>head<a class="headerlink" href="#head" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">head</span></code> 命令用于输出文件开头部分的内容:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 输出 /etc/passwd 的前 10 行
+$ head /etc/passwd
+
+# 输出 /etc/passwd 的前 5 行
+$ head -n 5 /etc/passwd
+</pre></div>
+</div>
+</section>
+<section id="less">
+<span id="id9"></span><h2>less<a class="headerlink" href="#less" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">less</span></code> 命令可以用来浏览文件内容，其与 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 功能相似，但允许用户向前或向后浏览文件：
+按 <kbd class="kbd docutils literal notranslate">PageUp</kbd> 键向上翻页，用 <kbd class="kbd docutils literal notranslate">PageDown</kbd> 键向下翻页，
+按 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键或向下方向键则向下移动，用向上方向键则向上移动，
+按 <kbd class="kbd docutils literal notranslate">q</kbd> 键退出浏览。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 浏览 /etc/passwd
+$ less /etc/passwd
+
+# 同上，并显示行号
+$ less -N /etc/passwd
+</pre></div>
+</div>
+</section>
+<section id="locate">
+<span id="id10"></span><h2>locate<a class="headerlink" href="#locate" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">locate</span></code> 命令可以用于查找目录和文件。该命令比 <a class="reference internal" href="#find"><span class="std std-ref">find</span></a> 命令快得多，原因在于它
+不搜索具体目录，而是直接搜索含有本地所有文件信息的数据库:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 搜索名称含 passwd 的目录或文件
+$ locate passwd
+
+# 搜索名称含 /etc/sh 的目录或文件（包括了 /etc 目录下所有以 sh 开头的目录或文件）
+$ locate /etc/sh
+
+# 搜索名称含 ~/Des 的目录或文件（包括了家目录下，所有以 Des 开头的目录或文件）
+$ locate ~/Des
+
+# 同上，但忽略大小写
+$ locate -i ~/des
+</pre></div>
+</div>
+<p>该命令所需的数据库是系统自动创建的，每天自动更新。因此，<code class="docutils literal notranslate"><span class="pre">locate</span></code> 命令查不到
+最新变动过的文件。可以执行 <code class="docutils literal notranslate"><span class="pre">updatedb</span></code> 命令手动更新数据库，但是 <code class="docutils literal notranslate"><span class="pre">updatedb</span></code>
+命令的执行过程较长:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Linux
+$ sudo updatedb
+
+# macOS 系统可以使用以下命令
+$ sudo /usr/libexec/locate.updatedb
+</pre></div>
+</div>
+</section>
+<section id="rsync">
+<span id="id11"></span><h2>rsync<a class="headerlink" href="#rsync" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rsync</span></code> 命令的命名来自 <strong>r</strong>emote <strong>sync</strong>hronization（远程同步）。该命名
+可以用于同步文件，可以是两个本地目录之间，也可以是本地计算机与远程计算机之间。
+与其他文件传输工具（如 <a class="reference internal" href="#scp"><span class="std std-ref">scp</span></a>）不同，<code class="docutils literal notranslate"><span class="pre">rsync</span></code> 命令仅传输有变动的部分。因此，
+同步速度更快，常用于文件备份。可以参考
+<a class="reference external" href="https://wangdoc.com/ssh/rsync.html">SSH 教程：rsync 命令</a>
+进一步学习其用法。</p>
+<p>以下示例假设源目录是 <code class="file docutils literal notranslate"><span class="pre">~/Downloads/source</span></code>，目标目录是 <code class="file docutils literal notranslate"><span class="pre">~/workspace/destination</span></code>，
+远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn。</p>
+<p>同步两个本地目录:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 将源目录同步到目标目录下。~/workspace/destination/source 成为源目录的一个镜像
+$ rsync -av --delete ~/Downloads/source ~/workspace/destination
+
+# 将源目录下的文件和目录同步到目标目录下。~/workspace/destination 成为源目录的一个镜像
+# 该命令与上一命令相比，在源目录的结尾多了一个反斜杠 &quot;/&quot;
+$ rsync -av --delete ~/Downloads/source/ ~/workspace/destination
+
+# 若只想查看命令执行效果，不真的执行命令，可以使用 -n 选项。例如
+$ rsync -anv ~/Downloads/source ~/workspace/destination
+</pre></div>
+</div>
+<p>同步本地源目录到远程计算机的目标目录下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rsync -av --delete ~/Downloads/source seismo-learn@192.168.1.100:~/workspace/destination
+</pre></div>
+</div>
+<p>同步远程计算机的源目录本地目标目录下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rsync -av --delete seismo-learn@192.168.1.100:~/Downloads/source ~/workspace/destination
+</pre></div>
+</div>
+<p>具体解释以下几个常用选项：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项表示以归档方式传输文件，并保持所有文件属性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> 选项表示将执行过程输出到终端，用于查看哪些内容正在被同步</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--delete</span></code> 选项表示删除目标目录下那些不存在于源目录下的文件和目录，
+实现源目录和目标目录的同步</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-n</span></code> 选项表示不执行命令，但模拟执行结果，可用于检测命令的运行是否符合预期</p></li>
+</ul>
+</section>
+<section id="scp">
+<span id="id12"></span><h2>scp<a class="headerlink" href="#scp" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">scp</span></code> 命令的命名来源于 <strong>s</strong>ecure <strong>c</strong>o<strong>p</strong>y（安全复制），可用于本地
+和远程计算机之间传输文件。该命令基于 <a class="reference internal" href="#ssh"><span class="std std-ref">ssh</span></a> 进行安全的远程文件传输，因此传输是加密的。
+虽然 <code class="docutils literal notranslate"><span class="pre">scp</span></code> 传输速度不如 <a class="reference internal" href="#rsync"><span class="std std-ref">rsync</span></a> 命令，但是它不占系统资源。当需要传输大量小文件时，
+使用 <a class="reference internal" href="#rsync"><span class="std std-ref">rsync</span></a> 命名会导致硬盘 I/O（输入/输出）非常高，而 <code class="docutils literal notranslate"><span class="pre">scp</span></code> 基本不影响系统
+正常使用。可以参考
+<a class="reference external" href="https://wangdoc.com/ssh/scp.html">SSH 教程：scp 命令</a>
+进一步学习其用法。</p>
+<p>以下命令假定远程电脑的 IP 地址是 192.168.1.100，用户名是 seismo-learn:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 复制远程文件或目录 /home/seismo-learn/file-or-folder 到本地目录 ~/Downloads 下
+$ scp -r seismo-learn@192.168.1.100:/home/seismo-learn/file-or-folder ~/Downloads/
+
+# 上传本地文件或目录 ~/Downloads/file-or-folder 到远程目录 home/seismo-learn/folder2
+$ scp -r ~/Downloads/file-or-folder seismo-learn@192.168.1.100:/home/seismo-learn/folder2/
+</pre></div>
+</div>
+</section>
+<section id="sed">
+<span id="id13"></span><h2>sed<a class="headerlink" href="#sed" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sed</span></code> 命令的名字来源于 <strong>s</strong>tream <strong>ed</strong>itor（流编辑器）。该命令可以用于
+对输入流（文件或管道）执行基本的文本转换。它会把当前处理的行存储在临时缓冲区中
+再进行处理，处理完成后再把缓冲区的内容送往屏幕。接着处理下一行，直到文件末尾。
+因此默认情况下，文件内容并没有改变:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 将 file 中每一行的第一个 book 替换成 books
+$ sed &#39;s/book/books/&#39; file
+
+# 将 file 中每一行的所有的 book 都替换成 books
+$ sed &#39;s/book/books/g&#39; file
+
+# 以上命令只是将转换后的文本内容输出出来，并未改变文件本身。可以使用 -i 选项直接改变文件
+$ sed -i &#39;s/book/books/g&#39; file
+
+# 以上命令使用斜杠 / 当定界符，也可以使用任意定界符，比如 #
+$ sed &#39;s#book#books#&#39; file
+$ sed &#39;s#book#books#g&#39; file
+$ sed -i &#39;s#book#books#g&#39; file
+</pre></div>
+</div>
+<p>需要注意，macOS 提供的 BSD <code class="docutils literal notranslate"><span class="pre">sed</span></code> 的语法很不同。建议 macOS 用户使用 Homebrew
+安装 <code class="docutils literal notranslate"><span class="pre">gnu-sed</span></code>，并将以上命令替换为 <code class="docutils literal notranslate"><span class="pre">gsed</span></code>。</p>
+</section>
+<section id="sort">
+<span id="id14"></span><h2>sort<a class="headerlink" href="#sort" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">sort</span></code> 命令可以将文件内容进行排序，并输出排序结果。该命令将文件的每一行作为
+一个单位，相互比较。默认的比较原则是从首字符向后，依次按 ASCII 码值进行比较，
+最后将他们按排序结果输出。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 按 ASCII 码值进行升序排序
+$ sort seismo-learn-sort.txt
+
+# 按 ASCII 码值进行降序排序
+$ sort -r seismo-learn-sort.txt
+
+# 按 ASCII 码值进行升序排序，并忽略相同行（即重复行只统计一次）
+$ sort -u seismo-learn-sort.txt
+
+# 按 ASCII 码值进行降序排序，并忽略相同行
+$ sort -u -r seismo-learn-sort.txt
+# 不同选项也可以写在一块
+# sort -ur seismo-learn-sort.txt
+
+# 按数值大小进行升序排序
+$ sort -n seismo-learn-sort.txt
+
+# 按第三列 ASCII 码值进行升序排列
+$ sort -k3,3 seismo-learn-sort.txt
+
+# 按第三列的数值大小进行升序排列
+$ sort -k3,3n seismo-learn-sort.txt
+
+# 按第三列的数值大小进行降序排列
+$ sort -k3,3nr seismo-learn-sort.txt
+</pre></div>
+</div>
+</section>
+<section id="ssh">
+<span id="id15"></span><h2>ssh<a class="headerlink" href="#ssh" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ssh</span></code> 命令的命名源于 <strong>S</strong>ecure <strong>Sh</strong>ell（安全外壳协议，简称 SSH），
+该协议是一种加密的网络传输协议。使用 <code class="docutils literal notranslate"><span class="pre">ssh</span></code> 命令可以登录到远程计算机中。
+常用于登录服务器提交计算任务。可以参考
+<a class="reference external" href="https://wangdoc.com/ssh/key.html">SSH 教程：SSH 基本知识</a>
+进一步学习其用法。</p>
+<p>若远程计算机的 IP 地址是 192.168.1.100，用户名是 seismo-learn:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 登录远程计算机
+$ ssh seismo-learn@192.168.1.100
+
+# 登录远程计算机并打开图形界面（需要配置远程计算上的 ssh 服务器配置）
+$ ssh -X seismo-learn@192.168.1.100
+</pre></div>
+</div>
+</section>
+<section id="sudo">
+<span id="id16"></span><h2>sudo<a class="headerlink" href="#sudo" title="Link to this heading">#</a></h2>
+<p>用户可以随意对家目录下的文件进行任何读、写以及删除等操作，但却无法对根目录下的
+文件进行类似操作。这是因为 Linux 下有严格的权限机制，只允许 root 用户（即管理员）
+对根目录下的文件进行操作，以防止一般用户的操作对系统造成破坏。有些时候，
+为安装软件或者修改系统配置文件，需要临时获取 root 用户权限。此时可以在需要执行的
+命令前加上 <code class="docutils literal notranslate"><span class="pre">sudo</span></code>。例如，在 Fedora 下使用 dnf 命令安装 GNU Fortran:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install gcc-gfortran
+</pre></div>
+</div>
+</section>
+<section id="tail">
+<span id="id17"></span><h2>tail<a class="headerlink" href="#tail" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">tail</span></code> 命令用于输出文件尾部内容:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 输出 /etc/passwd 的后 10 行
+$ tail /etc/passwd
+
+# 输出 /etc/passwd 的后 5 行
+$ tail -n 5 /etc/passwd
+</pre></div>
+</div>
+</section>
+<section id="tar">
+<span id="id18"></span><h2>tar<a class="headerlink" href="#tar" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">tar</span></code> 命令的名字来自 <strong>t</strong>ape <strong>ar</strong>chive（磁带存档），因为该命令最初被
+用来在磁带上创建档案。该命令可以把一大堆文件和目录打包成一个文件，并且可以
+对该文件进行压缩。这对于备份文件或将几个文件组合成一个文件以便于网络传输是非常有用的。</p>
+<p>首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录打包成一个文件，而压缩
+则是将一个大文件通过一些压缩算法变成一个小文件。Linux 中的很多压缩程序只能压缩
+单个文件，若想压缩一大堆文件，首先得将这一大堆文件打成一个包（使用 <code class="docutils literal notranslate"><span class="pre">tar</span></code> 命令），
+再用压缩程序进行压缩（使用 <code class="docutils literal notranslate"><span class="pre">gzip</span></code> 或 <code class="docutils literal notranslate"><span class="pre">bzip2</span></code> 命令）。使用 <code class="docutils literal notranslate"><span class="pre">tar</span></code> 命令时，
+可以直接选择压缩打包的文件，无需再单独使用压缩程序进行压缩。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 将 file1 和 file2 打包并用 gzip 命令进行压缩，文件命名为 seismo-learn.tar.gz。
+$ tar -zcvf seismo-learn.tar.gz file1 file2
+
+# 打包并用 bzip2 命令进行压缩。一般用 .tar.bz2 或 .tbz 来作文件标识
+$ tar -jcvf seism-learn.tar.bz2 file1 file2
+
+# 列出压缩包中的文件和目录
+$ tar -tvf seismo-learn.tar.gz
+
+# 解压一个压缩包，默认解压到当前目录下
+$ tar -xvf seismo-learn.tar.gz
+
+# 解压到 bak 目录下（该目录必须存在）
+$ mkdir bak
+$ tar -xvf seismo-learn.tar.gz -C bak
+</pre></div>
+</div>
+<p>以上查看和解压命令也适用于 <code class="file docutils literal notranslate"><span class="pre">.tar</span></code> 和 <code class="file docutils literal notranslate"><span class="pre">tar.bz2</span></code> 压缩包格式。</p>
+<p>以上示例使用的 <code class="docutils literal notranslate"><span class="pre">-v</span></code> 选项会显示指令执行过程，若不想显示执行过程，可以不使用该选项。</p>
+</section>
+<section id="top">
+<span id="id19"></span><h2>top<a class="headerlink" href="#top" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">top</span></code> 命令的名字来自 <strong>t</strong>able <strong>o</strong>f <strong>p</strong>rocesses（进程表）。
+该命令可以实时动态地查看系统的整体运行情况，是一个综合了多方信息，
+监测系统性能和运行信息的实用工具。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ top
+top - 14:31:52 up 29 days, 14:02,  5 users,  load average: 0.32, 0.51, 0.49
+Tasks: 328 total,   1 running, 327 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.0 us,  0.5 sy,  0.0 ni, 98.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 16320540 total,  2548620 free,  6057748 used,  7714172 buff/cache
+KiB Swap: 17821692 total, 17444092 free,   377600 used.  8252436 avail Mem
+
+   PID USER           PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+120901 seismo-learn   20   0 5027300  88404  45736 S   2.0  0.5   0:20.05 chrome
+  2158 seismo-learn   20   0 4355124 444384  57984 S   1.0  2.7   1581:35 gnome-shell
+148103 seismo-learn   20   0  911924  82504  26180 S   1.0  0.5   4:04.09 terminator
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">top</span></code> 命令执行过程中可以使用的一些单字母或数字的交互命令:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code>：退出命令</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code>：显示每个 CPU 的状态</p></li>
+</ul>
+</section>
+<section id="uniq">
+<span id="id20"></span><h2>uniq<a class="headerlink" href="#uniq" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">uniq</span></code> 命令的命名源于 <strong>uniq</strong>ue（唯一），可以用于忽略或查询文件中的重复行。
+如果重复行不相邻，则该命令不起作用。所以，<code class="docutils literal notranslate"><span class="pre">uniq</span></code> 命令一般与 <a class="reference internal" href="#sort"><span class="std std-ref">sort</span></a> 命令结合使用。
+以下命令假设示例文件已经按行排序，即重复行相邻。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 输出 file 中非重复和重复行，但重复行只输出一次
+$ uniq file
+# 以上命令等同于以下命令
+$ sort -u file
+
+# 同上，同时输出各行在文件中出现的次数
+$ uniq -c file
+
+# 只输出 file 中非重复的行
+$ uniq -u file
+
+# 只输出 file 中重复的行
+$ uniq -d file
+</pre></div>
+</div>
+<p>若重复行在文件中不相邻，可以使用 <a class="reference internal" href="#sort"><span class="std std-ref">sort</span></a> 命令先对文件进行排序:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sort file | uniq
+# 以上命令等同于以下命令
+$ sort -c file
+
+$ sort file | uniq -c
+$ sort file | uniq -u
+$ sort file | uniq -d
+</pre></div>
+</div>
+</section>
+<section id="wc">
+<span id="id21"></span><h2>wc<a class="headerlink" href="#wc" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">wc</span></code> 命令的名字来自 <strong>w</strong>ord <strong>c</strong>ount（字数）。该命令可以输出文件或标准输入的
+行数、单词数以及字节数:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 输出统计 /etc/passwd 的行数、单词数以及字节数
+$ wc /etc/passwd
+ 119     321    7579 /etc/passwd
+</pre></div>
+</div>
+<p>从输出中可以得知，<code class="file docutils literal notranslate"><span class="pre">/etc/passwd</span></code> 有 119 行、321 个单词以及 7579 个字节。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">-l</span></code>、<code class="docutils literal notranslate"><span class="pre">-w</span></code> 或 <code class="docutils literal notranslate"><span class="pre">-c</span></code> 选项，可以分别只输出行数、单词数或字节数。例如，
+只输出 <code class="file docutils literal notranslate"><span class="pre">/etc/passwd</span></code> 的行数:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wc -l /etc/passwd
+</pre></div>
+</div>
+</section>
+<section id="wget">
+<span id="id22"></span><h2>wget<a class="headerlink" href="#wget" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">wget</span></code> 命令的名字来自 <strong>W</strong>orld <strong>W</strong>ide <strong>W</strong>eb <strong>get</strong>（万维网获取）。
+该命令可以用来从网络上下载文件，支持断点续传。
+类似的命令还有 <code class="docutils literal notranslate"><span class="pre">curl</span></code>，可以参考 <a class="reference external" href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">curl 用法指南</a>
+学习其基本用法。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 下载以下网址对应的单个文件（即 distaz.c 代码）
+$ wget http://www.seis.sc.edu/software/distaz/distaz.c
+
+# 下载并以不同的文件名保存
+$ wget -O distaz-rename.c http://www.seis.sc.edu/software/distaz/distaz.c
+
+# 继续一个未完成的下载任务，这对下载大文件时突然中断非常有帮助
+$ wget -c http://www.seis.sc.edu/software/distaz/distaz.c
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./computer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../environment-variable/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">环境变量</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../programming/intro/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">简介</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cat">cat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diff">diff</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#df">df</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#du">du</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find">find</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gawk">gawk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grep">grep</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#head">head</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#less">less</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#locate">locate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rsync">rsync</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scp">scp</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sed">sed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort">sort</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">ssh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sudo">sudo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tail">tail</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tar">tar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top">top</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniq">uniq</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wc">wc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wget">wget</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By seismo-learn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
