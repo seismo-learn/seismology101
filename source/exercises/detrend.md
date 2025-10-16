@@ -54,8 +54,6 @@ ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线�
 
 ```{code-cell} ipython3
 tr = st[0]
-st_previous = tr.copy()
-st_processed = tr.copy()
 
 # 去均值
 tr.detrend("demean")
