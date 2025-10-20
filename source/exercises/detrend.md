@@ -22,7 +22,7 @@ kernelspec:
 去线性趋势是指计算出一条最能拟合整个波形数据的直线（即趋势线），并从每个数据点中减去该直线对应的值，
 使波形围绕稳定的零基线振动。此操作用于去除由温度变化或地壳形变等因素造成的缓慢漂移与基线偏移。
 
-我们以 2022 年 9 月 22 日发生在墨西哥的一个 Mw 6.8 级地震为例，该地震的详细信息见 <https://earthquake.usgs.gov/earthquakes/eventpage/us7000ia36>。
+我们以前一节使用的 2022 年 9 月 22 日墨西哥 Mw 6.8 地震在 ANMO 台站的波形为例。
 
 使用 ObsPy 提供的 {meth}`Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms>` 方法下载
 该地震在 ANMO 台站的事件波形资料。
