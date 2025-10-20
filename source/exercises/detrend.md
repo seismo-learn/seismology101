@@ -47,7 +47,7 @@ st.plot();
 ```
 
 ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。
-但是在去线性趋势之前要我们需要先进行去均值操作。
+通常在去去线性趋势之前，先需要进行去均值操作。
 
 ```{code-cell} ipython3
 tr = st[0]
