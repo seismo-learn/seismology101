@@ -24,9 +24,6 @@ kernelspec:
 
 我们以前一节使用的 2022 年 9 月 22 日墨西哥 Mw 6.8 地震在 ANMO 台站的波形为例。
 
-使用 ObsPy 提供的 {meth}`Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms>` 方法下载
-该地震在 ANMO 台站的事件波形资料。
-
 ```{code-cell} ipython3
 from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
