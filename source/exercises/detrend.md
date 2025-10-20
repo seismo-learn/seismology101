@@ -63,8 +63,8 @@ tr.detrend("linear")
 
 # 计算去线性趋势处理后的斜率
 p_after = np.polyfit(tr.times(), tr.data, 1)
-print(f"Slope before linear detrend: {p_before[0]}")
-print(f"Slope after linear detrend: {p_after[0]}")
+print(f"Slope before linear detrend: {p_before}")
+print(f"Slope after linear detrend: {p_after}")
 ```
 
 可以看到，针对去均值后的波形，其斜率从 -1.15 降至 4.26e-15，说明 detrend 方法已成功校正基线而未改变地震信号的整体形态。
