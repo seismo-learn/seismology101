@@ -62,7 +62,7 @@ p_before = np.polyfit(tr.times(), tr.data, deg=1)[0]
 tr.detrend("linear")
 
 # 计算去线性趋势处理后的斜率
-p_after = np.polyfit(tr.times(), tr.data, 1)
+p_after = np.polyfit(tr.times(), tr.data, deg=1)[0]
 print(f"Slope before linear detrend: {p_before}")
 print(f"Slope after linear detrend: {p_after}")
 ```
