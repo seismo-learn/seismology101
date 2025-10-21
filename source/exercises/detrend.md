@@ -28,7 +28,7 @@ kernelspec:
 from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
 import matplotlib.pyplot as plt
-import numpy as np
+from numpy.polynomial import polynomial
 
 client = Client("IRIS") 
 
@@ -55,7 +55,7 @@ tr = st[0]
 tr.detrend("demean")
 
 # 计算去线性趋势处理前的斜率
-p_before = np.polyfit(tr.times(), tr.data, deg=1)[0]
+slope_before = polynomial.polyfit(tr.times(), tr.data, deg=1)[1]
 ```
 ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。
 
@@ -64,9 +64,9 @@ ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线�
 tr.detrend("linear")
 
 # 计算去线性趋势处理后的斜率
-p_after = np.polyfit(tr.times(), tr.data, deg=1)[0]
-print(f"Slope before linear detrend: {p_before}")
-print(f"Slope after linear detrend: {p_after}")
+slope_after = polynomial.polyfit(tr.times(), tr.data, deg=1)[1]
+print(f"Slope before linear detrend: {slope_before}")
+print(f"Slope after linear detrend: {slope_after}")
 ```
 
 可以看到，针对去均值后的波形，其斜率从 -1.15 降至 4.26e-15，说明 detrend 方法已成功校正基线。
