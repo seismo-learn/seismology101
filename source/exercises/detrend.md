@@ -55,7 +55,7 @@ tr = st[0]
 # 去均值
 tr.detrend("demean")
 
-# 计算去线性趋势前的斜率
+# 计算去线性趋势处理前的斜率
 p_before = np.polyfit(tr.times(), tr.data, deg=1)[0]
 
 # 去线性趋势
