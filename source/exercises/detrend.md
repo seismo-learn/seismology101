@@ -46,7 +46,6 @@ st = client.get_waveforms(
 st.plot();
 ```
 
-ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。
 进行去线性趋势处理之前，通常需要先进行去均值操作。
 
 ```{code-cell} ipython3
