@@ -69,4 +69,4 @@ print(f"Slope before linear detrend: {p_before}")
 print(f"Slope after linear detrend: {p_after}")
 ```
 
-可以看到，针对去均值后的波形，其斜率从 -1.15 降至 4.26e-15，说明 detrend 方法已成功校正基线而未改变地震信号的整体形态。
+可以看到，针对去均值后的波形，其斜率从 -1.15 降至 4.26e-15，说明 detrend 方法已成功校正基线。
