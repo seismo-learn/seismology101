@@ -27,26 +27,6 @@ $$
 其中 $w(j)$ 在信号首尾逐渐从 0 过渡到 1，并在中间区域保持为 1，实现波形的尖灭。
 
 
-下表给出了常用的三种尖灭窗函数及其参数：
-
-| 类型 | $\omega$ | $F_0$ | $F_1$ |
-|:----:|:----------:|:-----:|:-----:|
-| HANNING | $\frac{\pi}{N}$ | 0.50 | 0.50 |
-| HAMMING | $\frac{\pi}{N}$ | 0.54 | 0.46 |
-| COSINE  | $\frac{\pi}{2N}$ | 1.00 | 1.00 |
-
-:::{figure} taper-functions.png
-:align: center
-:alt: "taper 衰减函数曲线"
-:width: 95%
-
-taper 衰减函数曲线。
-引自[SAC中文手册](https://seisman.github.io/SAC_Docs_zh/commands/taper/)
-图 25。
-:::
-
-图中可以看出，hamming 窗实际上并没有完全实现尖灭
-
 我们以前一节使用的 2022 年 9 月 22 日墨西哥 Mw 6.8 地震在 ANMO 台站的波形为例。
 
 ```{code-cell} ipython3
@@ -85,7 +65,24 @@ tr_prev = tr.copy()  # 尖灭前波形
 tr_proc = tr.copy()  # 尖灭后波形
 ```
 
-波形尖灭使用 ObsPy 的{meth}`obspy.core.trace.Trace.taper`方法，参数选择 5% 余弦窗口以用作示例。
+波形尖灭可使用 ObsPy 的 `{meth}` 方法 `obspy.core.trace.Trace.taper` 实现，下面是常用的三种尖灭窗函数及其参数：
+
+|    类型   |     $\omega$     | $F_0$ | $F_1$ |
+| :-----: | :--------------: | :---: | :---: |
+| HANNING |  $\frac{\pi}{N}$ |  0.50 |  0.50 |
+| HAMMING |  $\frac{\pi}{N}$ |  0.54 |  0.46 |
+|  COSINE | $\frac{\pi}{2N}$ |  1.00 |  1.00 |
+
+:::{figure} taper-functions.png
+:align: center
+:alt: "taper 衰减函数曲线"
+:width: 95%
+
+同时上图展示了三种尖灭函数的衰减曲线（引自 [SAC中文手册](https://seisman.github.io/SAC_Docs_zh/commands/taper/)，图 25）。
+
+从图中可以看出，Hanning 和 Cosine 窗能实现较好的尖灭效果，而 Hamming 窗则没有完全衰减至零。
+
+由此，我们这里以 5% 的余弦窗口为示例。
 
 ```{code-cell} ipython3
 # 5%的余弦波形尖灭
