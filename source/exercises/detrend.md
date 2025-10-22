@@ -28,7 +28,7 @@ kernelspec:
 from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
 import matplotlib.pyplot as plt
-from numpy.polynomial import polynomial
+from numpy.polynomial import polynomial as P
 
 client = Client("IRIS") 
 
