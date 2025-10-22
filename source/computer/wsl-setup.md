@@ -1,7 +1,7 @@
 # WSL 配置指南
 
-- 本节贡献者: {{赵志远}}（作者）、{{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2023-04-24
+- 本节贡献者: {{赵志远}}、{{田冬冬}}、{{姚家园}}
+- 最近更新日期: 2025-10-11
 - 预计花费时间: 120 分钟
 
 ---
@@ -47,29 +47,32 @@ WSL 只能在 Windows 10 的较高版本或 Windows 11 上安装。因而，在�
     ```
     $ wsl --install
     ```
-    此命令将启动 WSL 并默认安装 Ubuntu 22.04 LTS
+    此命令将启动 WSL 并默认安装 Ubuntu 24.04 LTS
 3.  待安装完成后，重启计算机
 
 更详细的安装步骤、常见问题的解决办法以及旧版本 Windows 下的安装方法可以参考
 [官方安装指南](https://docs.microsoft.com/zh-cn/windows/wsl/install)。
 
 :::{note}
-WSL 默认安装的 Linux 发行版是 Ubuntu 22.04 LTS，但也支持安装其它 Linux 发行版。
-可以使用如下命令查看可安装的 Linux 发行版列表：
+WSL 默认安装的 Linux 发行版是 Ubuntu，但也支持安装其它 Linux 发行版。可以使用如下命令
+查看可安装的 Linux 发行版列表：
 ```
 $ wsl --list --online
 ```
-可以使用如下命令安装指定的 Linux 发行版（其中 `<Distribution Name>` 为要安装的
-Linux 发行版的名称）：
+可以使用如下命令安装指定的 Linux 发行版（其中 `<Distribution Name>` 为要安装的 Linux 发行版的
+名称）：
 ```
-$ wsl --install -d <Distribution Name>
+$ wsl --install <Distribution Name>
 ```
 
-WSL 目前不支持直接安装 Fedora 发行版。想在 WSL 上安装 Fedora 的读者可以参考
-[英文指南](https://fedoramagazine.org/wsl-fedora-33/)或[中文指南](https://suiahae.me/Using-Fedora-33-on-Windows-10-WSL2/)。
-指南中所使用的 Fedora 33 已经过时。请访问 Fedora 官方仓库下载
-[Fedora 39](https://github.com/fedora-cloud/docker-brew-fedora/tree/39/x86_64)（Fedora 最新版本）
-镜像文件，并按照指南进行操作。
+例如，如果想安装 Fedora 发行版，则可以使用：
+```
+$ wsl --install FedoraLinux-42
+```
+安装完成后可以使用如下命令启动 Fedora：
+```
+$ wsl -d FedoraLinux-42
+```
 :::
 
 ## 配置 Linux
@@ -102,7 +105,7 @@ $ exit
 ## WSL 常用命令
 
 WSL 提供了命令 `wsl` 来管理 WSL。打开 CMD 后，即可在 CMD 中执行 `wsl` 命令。
-下面的命令假定已通过 WSL 安装 Ubuntu 22.04 LTS，且其名称为 Ubuntu。
+下面的命令假定已通过 WSL 安装 Ubuntu 24.04 LTS，且其名称为 Ubuntu。
 
 查看 `wsl` 命令的完整帮助文档：
 ```
@@ -111,7 +114,7 @@ $ wsl --help
 
 列出所有已安装的 Linux 发行版的状态：
 ```
-$ wsl --list --online
+$ wsl --list
 ```
 
 检查 WSL 状态：
@@ -129,6 +132,10 @@ $ wsl --terminate Ubuntu
 $ wsl --unregister Ubuntu
 ```
 
+:::{dropdown} 将 WSL 从 C 盘移动到其它盘
+:color: info
+:icon: info
+
 开启 WSL 后，Linux 发行版的默认安装位置是 C 盘。为了避免占用 C 盘的大量空间，
 可以将已安装的 Linux 发行版导出备份，再导入还原到其它盘，最后删除 C 盘上的发行版。
 这样做的另一个好处是导入时用户就能得到 WSL 的真实路径。打开 CMD，执行如下命令:
@@ -139,13 +146,14 @@ $ mkdir D:\WSLBAK
 # 导出到备份目录下，命名为 20210117bak.tar
 $ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
 # 导入并还原之前备份的 Linux 发行版
-# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu22.04
-$ mkdir D:\WSLDIR\Ubuntu22.04
-# 导入并还原之前的备份，将此发行版命名为 Ubuntu22.04
-$ wsl --import Ubuntu22.04 D:\WSLDIR\Ubuntu22.04 D:\WSLBAK\20210117bak.tar
+# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu24.04
+$ mkdir D:\WSLDIR\Ubuntu24.04
+# 导入并还原之前的备份，将此发行版命名为 Ubuntu24.04
+$ wsl --import Ubuntu24.04 D:\WSLDIR\Ubuntu24.04 D:\WSLBAK\20210117bak.tar
 # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
 $ wsl --unregister Ubuntu
 ```
+:::
 
 ## 跨系统文件互访
 
