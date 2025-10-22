@@ -1,13 +1,13 @@
 # Fedora 配置指南
 
-- 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2023-11-19
+- 本节贡献者: {{田冬冬}}、{{姚家园}}、{{何星辰}}
+- 最近更新日期: 2025-10-03
 - 预计花费时间: 120 分钟
 
 ---
 
 :::{note}
-本节内容适用于 **Fedora 39 Workstation**，不一定适用于其他 Fedora 版本。
+本节内容适用于 **Fedora 42 Workstation**，不一定适用于其他 Fedora 版本。
 建议用户访问 [Fedora 官网](https://getfedora.org/) 下载并安装 Fedora
 最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
 :::
@@ -19,10 +19,10 @@
 访问 [Fedora 官网](https://getfedora.org/) 并下载 Fedora Workstation 镜像文件，
 一般选择 x86_64 版本。
 
-**Fedora 39 Workstation x86_64** 的 ISO 镜像文件（约 2 GB）下载链接：
+**Fedora 42 Workstation x86_64** 的 ISO 镜像文件（约 2.23 GB）下载链接：
 
-- [官方镜像](https://download.fedoraproject.org/pub/fedora/linux/releases/39/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-39-1.5.iso)
-- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/39/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-39-1.5.iso) [**推荐国内用户使用**]
+- [官方镜像](https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso)
+- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso) [**推荐国内用户使用**]
 
 ### 制作 USB 启动盘
 
@@ -67,7 +67,7 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 {kbd}`F10` 或 {kbd}`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
-正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 39”
+正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 42”
 以进入 Fedora 的 Live 系统。
 
 :::{note}
@@ -92,7 +92,7 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 :::
 
 读者可参考下面的图解步骤和对应的说明安装操作系统（图解步骤是基于 Fedora 36 的，
-但同样适用于 Fedora 39）。
+但同样适用于 Fedora 42）。
 
 ::::{card-carousel} 1
 :::{card} 1. 点击 “Install to Hard Drive” 以开始安装
@@ -170,14 +170,13 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软件。
 
 :::{warning}
-更新系统前，特别是大版本更新（如 Fedora 35 更新为 Fedora 36），
-最好先进行一次备份（可以参考[](/best-practices/backup)）。
+更新系统前，特别是大版本更新（如 Fedora 41 更新为 Fedora 42），最好先进行一次备份
+（可以参考[](/best-practices/backup)）。
 :::
 
 :::{note}
-本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击
-“Terminal” 图标以启动终端，然后在终端中输入命令并按下 {kbd}`Enter` 键
-即可执行相应的命令。
+本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击“Terminal” 图标以
+启动终端，然后在终端中输入命令并按下 {kbd}`Enter` 键即可执行相应的命令。
 :::
 
 ## 系统软件

@@ -23,13 +23,12 @@ parts:
   - caption: 编程基础
     chapters:
     - file: programming/intro
-    - file: programming/editor
     - file: programming/languages
       sections:
       - file: programming/bash
       - file: programming/python
-      - file: programming/c
       - file: programming/markdown
+    - file: programming/editor
     - file: programming/git
   - caption: 地震学基础
     chapters:
