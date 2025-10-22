@@ -64,7 +64,7 @@ ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线�
 tr.detrend("linear")
 
 # 计算去线性趋势处理后的斜率
-slope_after = polynomial.polyfit(tr.times(), tr.data, deg=1)[1]
+slope_after = P.polyfit(tr.times(), tr.data, deg=1)[1]
 print(f"Slope before linear detrend: {slope_before}")
 print(f"Slope after linear detrend: {slope_after}")
 ```
