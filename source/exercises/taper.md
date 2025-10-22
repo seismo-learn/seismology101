@@ -14,28 +14,51 @@ kernelspec:
 # 波形尖灭
 
 - 本节贡献者: {{何星辰}}、{{田冬冬}}、{{姚家园}}
-- 最近更新日期: 2025-09-12
+- 最近更新日期: 2025-10-22
 - 预计花费时间: 20 分钟
 
 ---
+波形尖灭是指在信号的首尾施加**平滑衰减窗函数**，使波形两端的振幅逐渐过渡至零，从而有效减少因信号截断而产生的频谱泄漏。设波形数据为 $Data(j)$（共有 $npts$ 个采样点），衰减窗宽度比例为 $v$（$0<v\le0.5$），则窗宽为 $N = npts \times v$。在波形首尾各 $N$ 个采样点上，尖灭函数定义为：
 
-波形尖灭是一种信号处理方法，具体操作是在一段有限长度的时间序列（如地震记录）的起始和结束部分，应用一个窗函数（例如余弦窗），使其振幅平滑地过渡至零。执行此操作的目的在于抑制因信号截断而引起的频谱泄漏。当对这类时间序列进行离散傅里叶变换（DFT）时，其两端的突变边界会被视为不连续点，从而在频率域中引入并非信号本身固有的虚假高频成分。
+$$
+Data(j) = Data(j) \times [F_0 - F_1 \cos(\omega (j - 1))],
+$$
 
-在进行波形尖灭之前，我们仍然采用前两节去均值与去线性趋势的 2022 年墨西哥地震数据。
+并在尾端对称应用，使数据两端的振幅平滑衰减至零，从而实现尖灭效果。
+
+下表给出了常用的三种尖灭窗函数及其参数：
+
+| 类型 | $\omega$ | $F_0$ | $F_1$ |
+|:----:|:----------:|:-----:|:-----:|
+| HANNING | $\frac{\pi}{N}$ | 0.50 | 0.50 |
+| HAMMING | $\frac{\pi}{N}$ | 0.54 | 0.46 |
+| COSINE  | $\frac{\pi}{2N}$ | 1.00 | 1.00 |
+
+:::{figure} taper-functions.png
+:align: center
+:alt: "taper 衰减函数曲线"
+:width: 95%
+
+taper 衰减函数曲线。
+引自[SAC中文手册](https://seisman.github.io/SAC_Docs_zh/commands/taper/)
+图 25。
+:::
+
+图中可以看出，hamming 窗实际上并没有完全实现尖灭
+
+我们以前一节使用的 2022 年 9 月 22 日墨西哥 Mw 6.8 地震在 ANMO 台站的波形为例。
 
 ```{code-cell} ipython3
 from obspy import UTCDateTime
 from obspy.clients.fdsn import Client
-import numpy as np
 import matplotlib.pyplot as plt
+from numpy.polynomial import polynomial as P
 
 client = Client("IRIS") 
 
-# 定义时间范围（2022年墨西哥Mw 6.8 级地震）
+# 下载 2022 年墨西哥 Mw 6.8 级地震在 ANMO 台站的波形数据
 starttime = UTCDateTime("2022-09-22T06:18:00")
-endtime = starttime + 720  # 下载12分钟数据
-
-# 下载地震数据
+endtime = starttime + 720  # 下载 12 分钟数据
 st = client.get_waveforms(
     network="IU",
     station="ANMO", 
@@ -43,36 +66,34 @@ st = client.get_waveforms(
     channel="BHZ",
     starttime=starttime, 
     endtime=endtime,
-)    
+)
+st.plot();
 ```
 
-需要注意的时，波形尖灭处理之前要先进行去均值与去线性趋势操作。这里我们复制两份原始波形数据，`st_previous`只进行前两节的去均值和去线性趋势操作，而`st_processed`则额外进行波形尖灭，以此为后续对比作图准备。
+进行去波形尖灭处理之前，通常需要先进行去均值、去线性趋势操作。
 
 ```{code-cell} ipython3
-#去均值和去线性趋势
-st_previous = st.copy()
-st_processed = st.copy()
+tr = st[0]
 
-st_previous.detrend('demean')
-st_previous.detrend('linear')
+# 去均值 + 去趋势
+tr.detrend("demean")
+tr.detrend("linear")
 
-st_processed.detrend('demean')
-st_processed.detrend('linear')
+# 创建副本
+tr_prev = tr.copy()  # 尖灭前波形
+tr_proc = tr.copy()  # 尖灭后波形
 ```
 
-波形尖灭使用 ObsPy 的{meth}`obspy.core.trace.Trace.taper`方法，参数选择 5% 余弦窗口。因为其是一种经验成熟的做法，可以兼顾平滑抑制频谱泄漏与保持波形主要信息的平衡。
+波形尖灭使用 ObsPy 的{meth}`obspy.core.trace.Trace.taper`方法，参数选择 5% 余弦窗口以用作示例。
 
 ```{code-cell} ipython3
 # 5%的余弦波形尖灭
-st_processed.taper(max_percentage=0.05, type='cosine')
+tr_proc.taper(max_percentage=0.05, type='cosine')
 ```
 
 最后为了清晰地展示尖灭的作用，我们在图上放大波形的起始和结束部分，以直观地看到振幅是如何被平滑地衰减至零的。
 
 ```{code-cell} ipython3
-tr_prev = st_previous[0]
-tr_proc = st_processed[0]
-
 # 尖灭窗口的持续时间（总时长的5%）
 times = tr_prev.times()
 taper_duration = times[-1] * 0.05
@@ -114,9 +135,10 @@ ax3.set_xlim(times[-1] - (taper_duration * 1.5), times[-1]) # 显示尖灭区域
 ax3.legend()
 ax3.grid(True)
 
-plt.suptitle("Tapering Comparison (2022 Mexico Earthquake, IU.ANMO.BHZ)'", fontsize=16)
+plt.suptitle("Tapering Comparison (2022 Mexico Earthquake, IU.ANMO.BHZ)", fontsize=16)
 plt.tight_layout()
 plt.show()
 ```
 
 可以看到，底部右侧放大图中经过去均值与去线性趋势的波形数据（黑线）在记录的结束处是一个突变的、非零的“硬边界”，而经过尖灭处理的波形（红线）则被平滑地塑造为从零“淡入”并最终“淡出”至零的“软边界”。从而有效抑制了频谱泄漏。
+
