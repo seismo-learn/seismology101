@@ -69,4 +69,4 @@ slope_after = P.polyfit(tr.times(), tr.data, deg=1)[1]
 print(f"Slope after linear detrend: {slope_after}")
 ```
 
-可以看到，针对去均值后的波形，其斜率从 -1.15 降至 4.26e-15，说明 detrend 方法已成功校正基线。
+可以看到，针对去均值后的波形，其斜率从 -1.15 降至 1.96e-14，说明 detrend 方法已成功校正基线。
