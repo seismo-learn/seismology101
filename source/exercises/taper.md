@@ -14,7 +14,7 @@ kernelspec:
 # 波形尖灭
 
 - 本节贡献者: {{何星辰}}、{{田冬冬}}、{{姚家园}}
-- 最近更新日期: 2025-10-22
+- 最近更新日期: 2025-11-01
 - 预计花费时间: 20 分钟
 
 ---
@@ -65,13 +65,7 @@ tr_prev = tr.copy()  # 尖灭前波形
 tr_proc = tr.copy()  # 尖灭后波形
 ```
 
-波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现，下面是常用的三种尖灭窗函数及其参数：
-
-|    类型   |     $\omega$     | $F_0$ | $F_1$ |
-| :-----: | :--------------: | :---: | :---: |
-| HANNING |  $\frac{\pi}{N}$ |  0.50 |  0.50 |
-| HAMMING |  $\frac{\pi}{N}$ |  0.54 |  0.46 |
-|  COSINE | $\frac{\pi}{2N}$ |  1.00 |  1.00 |
+波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现，下面是常用的两种尖灭窗函数：
 
 :::{figure} taper-functions.png
 :align: center
@@ -81,7 +75,7 @@ tr_proc = tr.copy()  # 尖灭后波形
 Taper 衰减曲线（引自 [SAC中文手册](https://seisman.github.io/SAC_Docs_zh/commands/taper/)，图 25）。
 :::
 
-从图中可以看出，Hanning 和 Cosine 窗能实现较好的尖灭效果，而 Hamming 窗则没有完全衰减至零。
+从图中可以看出，Hanning 和 Cosine 窗能实现较好的尖灭效果。
 
 由此，我们这里以 5% 的余弦窗口为示例。
 
