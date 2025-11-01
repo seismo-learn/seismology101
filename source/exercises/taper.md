@@ -65,13 +65,7 @@ tr_prev = tr.copy()  # 尖灭前波形
 tr_proc = tr.copy()  # 尖灭后波形
 ```
 
-波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现，下面是常用的三种尖灭窗函数及其参数：
-
-|    类型   |     $\omega$     | $F_0$ | $F_1$ |
-| :-----: | :--------------: | :---: | :---: |
-| HANNING |  $\frac{\pi}{N}$ |  0.50 |  0.50 |
-| HAMMING |  $\frac{\pi}{N}$ |  0.54 |  0.46 |
-|  COSINE | $\frac{\pi}{2N}$ |  1.00 |  1.00 |
+波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现。
 
 :::{figure} taper-functions.png
 :align: center
