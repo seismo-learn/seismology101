@@ -67,13 +67,6 @@ tr_proc = tr.copy()  # 尖灭后波形
 
 波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现。
 
-:::{figure} taper-functions.png
-:align: center
-:alt: "taper 衰减函数曲线"
-:width: 95%
-
-Taper 衰减曲线（引自 [SAC中文手册](https://seisman.github.io/SAC_Docs_zh/commands/taper/)，图 25）。
-:::
 
 从图中可以看出，Hanning 和 Cosine 窗能实现较好的尖灭效果，而 Hamming 窗则没有完全衰减至零。
 
