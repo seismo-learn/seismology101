@@ -60,9 +60,9 @@ tr = st[0]
 tr.detrend("demean")
 tr.detrend("linear")
 
-# 为了让示例更直观，选取较短的时间窗（100–200 s）
+# 为了让示例更直观，选取较短的时间窗（400–700 s）
 tr = tr.copy()
-tr.trim(tr.stats.starttime + 100, tr.stats.starttime + 200)
+tr.trim(tr.stats.starttime + 400, tr.stats.starttime + 700)
 
 tr_prev = tr.copy()   # 尖灭前波形（黑）
 tr_proc = tr.copy()   # 尖灭后波形（红）
