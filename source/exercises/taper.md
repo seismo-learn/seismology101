@@ -14,7 +14,7 @@ kernelspec:
 # 波形尖灭
 
 - 本节贡献者: {{何星辰}}、{{田冬冬}}、{{姚家园}}
-- 最近更新日期: 2025-11-01
+- 最近更新日期: 2025-11-07
 - 预计花费时间: 20 分钟
 
 ---
@@ -51,7 +51,7 @@ st = client.get_waveforms(
 st.plot();
 ```
 
-进行去波形尖灭处理之前，通常需要先进行去均值、去线性趋势操作。
+进行尖灭处理之前，通常先进行去均值、去线性趋势。
 
 ```{code-cell} ipython3
 tr = st[0]
@@ -60,71 +60,39 @@ tr = st[0]
 tr.detrend("demean")
 tr.detrend("linear")
 
-# 创建副本
-tr_prev = tr.copy()  # 尖灭前波形
-tr_proc = tr.copy()  # 尖灭后波形
+# 为了让示例更直观，选取较短的时间窗（100–200 s）
+tr = tr.copy()
+tr.trim(tr.stats.starttime + 100, tr.stats.starttime + 200)
+
+tr_prev = tr.copy()   # 尖灭前波形（黑）
+tr_proc = tr.copy()   # 尖灭后波形（红）
 ```
 
 波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现。
 
-
-从图中可以看出，Hanning 和 Cosine 窗能实现较好的尖灭效果。
-
-由此，我们这里以 5% 的余弦窗口为示例。
+本例为了演示更明显，使用 10% 的余弦窗（`max_percentage=0.1`）；实际处理中更常用 5%（`0.05`）。
 
 ```{code-cell} ipython3
-# 5%的余弦波形尖灭
-tr_proc.taper(max_percentage=0.05, type='cosine')
+# 为使结果此处演示结果更明显，使用10% 的余弦窗尖灭；实际常用 5%
+tr_proc.taper(max_percentage=0.1, type='cosine')
 ```
 
-最后为了清晰地展示尖灭的作用，我们在图上放大波形的起始和结束部分，以直观地看到振幅是如何被平滑地衰减至零的。
+接下来，用一张图直接对比尖灭前后的波形：黑色为经过去均值，去趋势后的波形，红色为尖灭操作后的结果。
 
 ```{code-cell} ipython3
-# 尖灭窗口的持续时间（总时长的5%）
 times = tr_prev.times()
-taper_duration = times[-1] * 0.05
 
-# 绘图对比
-fig = plt.figure(figsize=(15, 10))
-ax1 = plt.subplot(2, 1, 1)
-ax1.plot(times, tr_prev.data, 'k-', label='Previous Waveform(demean + linear)')
-ax1.plot(times, tr_proc.data, 'r-', label='Processed (demean + linear + Taper)', alpha=0.8)
-ax1.set_xlabel('Time (s)')
-ax1.set_ylabel('Amplitude')
-ax1.legend()
-ax1.grid(True)
-
-# 标记出将要放大的区域
-ax1.axvspan(0, taper_duration, color='blue', alpha=0.2, label='Zoom Area')
-ax1.axvspan(times[-1] - taper_duration, times[-1], color='blue', alpha=0.2)
-
-# 放大波形两端，突出尖灭效果
-# 起始段
-ax2 = plt.subplot(2, 2, 3)
-ax2.plot(times, tr_prev.data, 'k-', label='Previous')
-ax2.plot(times, tr_proc.data, 'r-', label='Tapered')
-ax2.set_title('Zoom-in: Start of Waveform')
-ax2.set_xlabel('Time (s)')
-ax2.set_ylabel('Amplitude')
-ax2.set_xlim(0, taper_duration * 1.5) # 显示尖灭区域及稍后部分
-ax2.legend()
-ax2.grid(True)
-
-# 结束段
-ax3 = plt.subplot(2, 2, 4)
-ax3.plot(times, tr_prev.data, 'k-', label='Previous')
-ax3.plot(times, tr_proc.data, 'r-', label='Tapered')
-ax3.set_title('Zoom-in: End of Waveform')
-ax3.set_xlabel('Time (s)')
-ax3.set_ylabel('Amplitude')
-ax3.set_xlim(times[-1] - (taper_duration * 1.5), times[-1]) # 显示尖灭区域及稍前部分
-ax3.legend()
-ax3.grid(True)
-
-plt.suptitle("Tapering Comparison (2022 Mexico Earthquake, IU.ANMO.BHZ)", fontsize=16)
+plt.figure(figsize=(10, 4))
+plt.plot(times, tr_prev.data, 'k-', label='Original (demean + linear)')
+plt.plot(times, tr_proc.data, 'r-', label='Tapered (+ cosine 10%)', alpha=0.85)
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.title('Tapering Comparison (short window 100–200 s)')
+plt.legend()
+plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
 
-可以看到，底部右侧放大图中经过去均值与去线性趋势的波形数据（黑线）在记录的结束处是一个突变的、非零的“硬边界”，而经过尖灭处理的波形（红线）则被平滑地塑造为从零“淡入”并最终“淡出”至零的“软边界”。从而有效抑制了频谱泄漏。
+可以看到，原始波形（黑）在截断处存在“硬边界”，而尖灭后（红）两端平滑过渡至零，能有效抑制频谱泄漏。
 
