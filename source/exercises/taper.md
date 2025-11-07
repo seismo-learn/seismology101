@@ -26,7 +26,7 @@ $$
 
 其中 $w(j)$ 在信号首尾逐渐从 0 过渡到 1，并在中间区域保持为 1，实现波形的尖灭。
 
-下图比较常见两种尖灭窗：余弦窗 (cosine) 与 Hanning 窗 (hann)。参数 p=0.05 表示两端各占 5% 长度用于平滑渐入/渐出，中间保持幅度 1。
+下图比较常见两种尖灭窗：余弦窗 (cosine) 与 Hanning 窗 (hann)。参数 `p=0.05` 表示两端各占 5% 长度用于平滑渐入/渐出，中间保持幅度 1。
 
 ```{code-cell} ipython3
 import numpy as np
@@ -70,8 +70,7 @@ import matplotlib.pyplot as plt
 
 client = Client("IRIS") 
 
-# 下载 2022 年墨西哥 Mw 6.8 级地震在 ANMO 台站的波形数据
-# 直接下载 400–700 s 时间窗（约 300 s）
+# 下载 2022 年墨西哥 Mw 6.8 级地震在 ANMO 台站的波形数据(选择 400–700 s 时间窗)
 origin_time = UTCDateTime("2022-09-22T06:18:00")
 starttime = origin_time + 400
 endtime = origin_time + 700
