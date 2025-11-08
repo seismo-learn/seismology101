@@ -119,7 +119,5 @@ plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
 plt.title('Tapering Comparison')
 plt.legend()
-plt.grid(True)
-plt.tight_layout()
 plt.show()
 ```
