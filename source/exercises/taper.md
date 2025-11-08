@@ -111,8 +111,6 @@ tr_proc.taper(max_percentage=0.1, type='cosine')
 接下来，用一张图直接对比尖灭前后的波形：黑色为经过去均值，去趋势后的波形，红色为尖灭操作后的结果。
 
 ```{code-cell} ipython3
-times = tr_prev.times()
-
 plt.figure(figsize=(10, 4))
 plt.plot(tr_origin.times(), tr_origin.data, 'k-', label='Original')
 plt.plot(tr.times(), tr.data, 'r-', label='Tapered', alpha=0.85)
