@@ -103,7 +103,7 @@ tr_origin = tr.copy()   # 备份原始波形
 本例中为了使尖灭的效果更明显，使用 10% 的 Hanning 窗（`max_percentage=0.1`）：
 
 ```{code-cell} ipython3
-tr.taper(max_percentage=0.1)
+tr.taper(max_percentage=0.1, type="hann")
 ```
 
 下图演示了尖灭操作的效果：黑色和红色分别为尖灭操作前后的波形。可以看到，原始波形（黑）
