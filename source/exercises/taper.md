@@ -59,8 +59,6 @@ plt.xlabel('Normalized Time')
 plt.ylabel('Amplitude')
 plt.title('Cosine vs Hanning Taper Windows')
 plt.legend()
-plt.grid(alpha=0.5, linestyle=':')
-plt.tight_layout()
 plt.show()
 ```
 
