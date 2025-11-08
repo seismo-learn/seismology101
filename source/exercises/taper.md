@@ -102,8 +102,7 @@ tr_origin = tr.copy()   # 备份原始波形
 在实际数据处理中，常使用 5% 的 Hanning 窗。本例中为了使尖灭的效果更明显，使用 10% 的 Hanning 窗（`max_percentage=0.1`）：
 
 ```{code-cell} ipython3
-# 为使结果此处演示结果更明显，使用10% 的余弦窗尖灭；实际常用 5%
-tr_proc.taper(max_percentage=0.1, type='cosine')
+tr.taper(max_percentage=0.1, type="hanning")
 ```
 
 下图演示了尖灭操作的效果：黑色和红色分别为尖灭操作前后的波形。可以看到，原始波形（黑）
