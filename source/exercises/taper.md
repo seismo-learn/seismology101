@@ -99,7 +99,8 @@ tr_origin = tr.copy()   # 备份原始波形
 
 波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现。
 
-在实际数据处理中，常使用 5% 的 Hanning 窗（`taper` 中的 `type` 参数默认即为 `hann`）。本例中为了使尖灭的效果更明显，使用 10% 的 Hanning 窗（`max_percentage=0.1`）：
+在实际数据处理中，常使用 5% 的 Hanning 窗（`taper` 中的 `type` 参数默认即为 `hann`）。
+本例中为了使尖灭的效果更明显，使用 10% 的 Hanning 窗（`max_percentage=0.1`）：
 
 ```{code-cell} ipython3
 tr.taper(max_percentage=0.1)
