@@ -109,7 +109,7 @@ tr.taper(max_percentage=0.1, type="cosine")
 在截断处存在“硬边界”，而尖灭后（红）两端平滑过渡至零，能有效抑制频谱泄漏。
 
 ```{code-cell} ipython3
-plt.figure(figsize=(10, 4))
+plt.figure(figsize = (10, 4))
 plt.plot(tr_origin.times(), tr_origin.data, 'k-', label='Original')
 plt.plot(tr.times(), tr.data, 'r-', label='Tapered', alpha=0.85)
 plt.xlabel('Time (s)')
