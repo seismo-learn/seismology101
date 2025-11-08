@@ -29,6 +29,7 @@ $$
 下图比较常见两种尖灭窗：余弦窗 (cosine) 与 Hanning 窗 (hann)。参数 `p=0.05` 表示两端各占 5% 长度用于平滑渐入/渐出，中间保持幅度 1。
 
 ```{code-cell} ipython3
+:tags: ["hide-input"]
 import numpy as np
 import matplotlib.pyplot as plt
 from obspy.signal.invsim import cosine_taper  # ObsPy 余弦尖灭
