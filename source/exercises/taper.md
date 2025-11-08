@@ -95,8 +95,7 @@ tr = st[0]
 tr.detrend("demean")
 tr.detrend("linear")
 
-tr_prev = tr.copy()   # 尖灭前波形（黑）
-tr_proc = tr.copy()   # 尖灭后波形（红）
+tr_origin = tr.copy()   # 备份原始波形
 ```
 
 波形尖灭可使用 ObsPy 的 {meth}`obspy.core.trace.Trace.taper` 实现。
