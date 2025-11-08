@@ -46,10 +46,9 @@ win_cos = cosine_taper(npts, p=p)
 # Hanning 窗（构造两端平滑、中间平坦）
 win_han = np.ones(npts)
 edge = int(p * npts)
-if edge > 0:
-  han_full = np.hanning(2 * edge)
-  win_han[:edge] = han_full[:edge]
-  win_han[-edge:] = han_full[-edge:]
+han_full = np.hanning(2 * edge)
+win_han[:edge] = han_full[:edge]
+win_han[-edge:] = han_full[-edge:]
 
 x = np.linspace(0, 1, npts)
 plt.figure(figsize=(9, 4))
