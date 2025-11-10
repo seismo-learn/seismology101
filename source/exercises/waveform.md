@@ -13,7 +13,7 @@ kernelspec:
 
 # 地震波形数据
 
-- 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
+- 本节贡献者: {{田冬冬}}、{{姚家园}}
 - 最近更新日期: 2023-05-10
 - 预计花费时间: 60 分钟
 
@@ -30,7 +30,7 @@ from obspy import UTCDateTime
 
 接下来，我们需要初始化一个 {class}`~obspy.clients.fdsn.client.Client` 对象。
 ObsPy 的 `Client` 支持多个地震数据中心，这里我们选择使用
-[IRIS 地震数据中心](https://ds.iris.edu/ds/nodes/dmc/)：
+[EarthScope SAGE 地震数据中心](https://ds.iris.edu/ds/nodes/dmc/)（前身为 IRIS）：
 ```{code-cell} ipython3
 client = Client("IRIS")
 ```

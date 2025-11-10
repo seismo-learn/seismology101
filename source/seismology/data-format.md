@@ -1,6 +1,6 @@
 # 波形数据格式
 
-- 本节贡献者: {{ 田冬冬 }}（作者）、{{ 姚家园 }}（作者）
+- 本节贡献者: {{ 田冬冬 }}、{{ 姚家园 }}
 - 最近更新日期: 2021-01-05
 - 预计阅读时间: 10 分钟
 
@@ -28,9 +28,9 @@ SEED 全称 Standard for the Exchange of Earthquake Data（地震数据交换标
 虽然该格式包含了完备的地震学观测数据，但一般需要利用
 [rdseed](https://github.com/iris-edu-legacy/rdseed) 软件
 转换成其他格式，再进行数据处理和分析。
-IRIS 自 2020 年 1 月开始不再提供 SEED 格式的数据下载支持，
-详情可阅读 [IRIS 数据服务通讯](http://www.iris.washington.edu/ds/newsletter/vol21/no1/509/retirement-of-full-seed-data-volumes-from-iris-dmc/)。
-IRIS 也已[不再维护 rdseed 软件](https://ds.iris.edu/ds/nodes/dmc/manuals/rdseed/)。
+EarthScope SAGE（前身为 IRIS） 自 2020 年 1 月开始不再提供 SEED 格式的数据下载支持，
+详情可阅读 [EarthScope SAGE 数据服务通讯](http://www.iris.washington.edu/ds/newsletter/vol21/no1/509/retirement-of-full-seed-data-volumes-from-iris-dmc/)。
+EarthScope SAGE 也已[不再维护 rdseed 软件](https://ds.iris.edu/ds/nodes/dmc/manuals/rdseed/)。
 
 :::{note}
 除了 rdseed 外，ObsPy 也可以将 SEED 格式转换成其他格式。

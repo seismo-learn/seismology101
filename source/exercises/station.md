@@ -13,7 +13,7 @@ kernelspec:
 
 # 地震台站
 
-- 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
+- 本节贡献者: {{田冬冬}}、{{姚家园}}
 - 最近更新日期: 2023-04-29
 - 预计花费时间: 60 分钟
 
@@ -22,16 +22,16 @@ kernelspec:
 全球地震台站有成千上万个，通常在某个具体研究中只需要符合特定要求的台站，因而需要对地震台站进行筛选。
 这一节介绍如何筛选公开地震台站并获取台站信息。
 
-## 使用 IRIS GMAP 筛选台站
+## 使用 EarthScope SAGE: GMAP 筛选台站
 
 ```{note}
-IRIS GMAP 使用了 Google 地图服务，因而需要科学上网才能正常访问。
+EarthScope SAGE GMAP （之前称为 IRIS GMAP）使用了 Google 地图服务，因而需要科学上网才能正常访问。
 ```
 
-IRIS GMAP 是一个由 IRIS 提供的地震台站网页搜索工具，可以方便地查看全球地震台站分布以及台站的
-详细信息。下面演示 IRIS GMAP 的基本使用方法。
+EarthScope SAGE GMAP （之前称为 IRIS GMAP）是一个由 EarthScope SAGE 提供的地震台站网页搜索工具，可以
+方便地查看全球地震台站分布以及台站的详细信息。下面演示 EarthScope SAGE GMAP 的基本使用方法。
 
-访问 IRIS GMAP 网站 [https://ds.iris.edu/gmap/](https://ds.iris.edu/gmap/)，
+访问 EarthScope SAGE GMAP 网站 [https://ds.iris.edu/gmap/](https://ds.iris.edu/gmap/)，
 会看到如下界面：界面左侧为功能栏，可以使用不同的准则筛选地震台站；
 右侧为显示区，用于显示符合筛选条件的地震台站。
 
@@ -39,10 +39,10 @@ IRIS GMAP 是一个由 IRIS 提供的地震台站网页搜索工具，可以方�
 
 :::{figure} gmap-1.jpg
 :align: center
-:alt: "IRIS GMAP 界面"
+:alt: "EarthScope SAGE GMAP 界面"
 :width: 90%
 
-IRIS GMAP 界面
+EarthScope SAGE GMAP 界面
 :::
 
 例如，想筛选所有 `IU` 台网的宽频带地震台站，则可以在 **Network** 框中输入 `IU`，
@@ -52,10 +52,10 @@ IRIS GMAP 界面
 
 :::{figure} gmap-2.jpg
 :align: center
-:alt: "IRIS GMAP 显示 IU 台网的宽频带台站"
+:alt: "EarthScope SAGE GMAP 显示 IU 台网的宽频带台站"
 :width: 90%
 
-IRIS GMAP 显示 IU 台网的宽频带台站
+EarthScope SAGE GMAP 显示 IU 台网的宽频带台站
 :::
 
 可以更进一步查看每个台站的详细信息。以位于美国新墨西哥州的地震台站 `IU.ANMO` 为例，
@@ -63,30 +63,30 @@ IRIS GMAP 显示 IU 台网的宽频带台站
 
 :::{figure} gmap-3.jpg
 :align: center
-:alt: "IRIS GMAP 查看 IU.ANMO 台站的基本信息"
+:alt: "EarthScope SAGE GMAP 查看 IU.ANMO 台站的基本信息"
 :width: 90%
 
-IRIS GMAP 查看 IU.ANMO 台站的基本信息
+EarthScope SAGE GMAP 查看 IU.ANMO 台站的基本信息
 :::
-可以看到，`IU.ANMO` 台站位于美国新墨西哥州 Albuquerque 市，台站开始运行的时间为 
+可以看到，`IU.ANMO` 台站位于美国新墨西哥州 Albuquerque 市，台站开始运行的时间为
 2002 年 11 月 19 日，结束运行的时间为 2599 年 12 月 31 日（这一“未来”结束时间
 表示台站依然在长期运行中）。
 
-点击提示框中的 “More Information”链接，则会跳转到 [IRIS MDA](https://ds.iris.edu/mda) 中
+点击提示框中的 “More Information”链接，则会跳转到 [EarthScope SAGE MDA](https://ds.iris.edu/mda) 中
 该台站所对应的页面（即 https://ds.iris.edu/mda/IU/ANMO/?starttime=2002-11-19&endtime=2599-12-31)。
 该页面不仅列出了台站的基本信息，还列出了台站所使用的地震仪器及其基本参数。
 
 :::{figure} mda-1.jpg
 :align: center
-:alt: "IRIS MDA 中查看 IU.ANMO 台站的基本信息"
+:alt: "EarthScope SAGE MDA 中查看 IU.ANMO 台站的基本信息"
 :width: 90%
 
-IRIS MDA 中查看 IU.ANMO 台站的基本信息
+EarthScope SAGE MDA 中查看 IU.ANMO 台站的基本信息
 :::
 
 ## 使用 ObsPy 下载地震台站信息
 
-IRIS GMAP 作为一个在线工具可以很直观地查看台站分布和基本信息，但却不适合数据
+EarthScope SAGE GMAP 作为一个在线工具可以很直观地查看台站分布和基本信息，但却不适合数据
 自动化处理。ObsPy 提供了从不同的地震数据中心筛选和下载台站基本信息的功能。
 
 下面演示如何使用 ObsPy 的 {meth}`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
@@ -98,7 +98,7 @@ from obspy.clients.fdsn import Client
 ```
 
 接下来，我们需要初始化一个 {class}`~obspy.clients.fdsn.client.Client` 对象。
-ObsPy 的 `Client` 支持多个地震数据中心。这里我们选择使用 IRIS 地震数据中心：
+ObsPy 的 `Client` 支持多个地震数据中心。这里我们选择使用 EarthScope SAGE（以前称为 IRIS）地震数据中心：
 ```{code-cell} ipython3
 client = Client("IRIS")
 ```
@@ -108,7 +108,7 @@ client = Client("IRIS")
 宽频带三分量（`BH*`）台站，并同时获取台站的仪器响应信息（`level="response"`）：
 ```{code-cell} ipython3
 inv = client.get_stations(
-    network="IU", 
+    network="IU",
     station="A*",
     channel="BH*",
     starttime="2002-01-01",
@@ -116,7 +116,7 @@ inv = client.get_stations(
     level="response"
 )
 ```
-该函数会向 IRIS 地震数据中心发起请求，并返回符合条件的地震台站信息。其返回值是
+该函数会向 EarthScope 地震数据中心发起请求，并返回符合条件的地震台站信息。其返回值是
 {class}`~obspy.core.inventory.inventory.Inventory` 类型，并被保存到变量 `inv` 中。
 下面我们看看变量 `inv` 中的内容：
 ```{code-cell} ipython3
@@ -132,7 +132,7 @@ print(inv)
 inv.plot();
 ```
 
-{meth}`Inventory.plot_response() <obspy.core.inventory.inventory.Inventory.plot_response>` 
+{meth}`Inventory.plot_response() <obspy.core.inventory.inventory.Inventory.plot_response>`
 函数可以用于绘制仪器响应。下面的函数绘制了 `inv` 中所有 `BHZ` 分量的仪器响应，并设置了仪器响应图的
 最小频率为 0.001 Hz：
 ```{code-cell} ipython3
@@ -142,12 +142,12 @@ inv.plot_response(min_freq=0.001, channel="BHZ");
 ## 台站信息的读和写
 
 通过 {meth}`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
-获得的台站信息可以保存为多种不同格式。下面的代码将台站信息以 StationXML 格式保存到文件 
+获得的台站信息可以保存为多种不同格式。下面的代码将台站信息以 StationXML 格式保存到文件
 `stations.xml` 中：
 ```{code-cell} ipython3
 inv.write("stations.xml", format="STATIONXML")
 ```
-在需要时，随时可以使用 {func}`read_inventory() <obspy.core.inventory.inventory.read_inventory>` 
+在需要时，随时可以使用 {func}`read_inventory() <obspy.core.inventory.inventory.read_inventory>`
 函数读入磁盘文件中的台站信息。该函数值返回 {class}`~obspy.core.inventory.inventory.Inventory` 类型：
 
 ```{code-cell} ipython3
@@ -158,15 +158,15 @@ inv = read_inventory("stations.xml")
 ## 深入理解和使用 {class}`~obspy.core.inventory.inventory.Inventory` 类
 
 上面提到，{meth}`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
-和 {func}`read_inventory() <obspy.core.inventory.inventory.read_inventory>` 的返回值都是 
+和 {func}`read_inventory() <obspy.core.inventory.inventory.read_inventory>` 的返回值都是
 {class}`~obspy.core.inventory.inventory.Inventory` 类型。
 事实上，{class}`~obspy.core.inventory.inventory.Inventory` 类是 ObsPy 中最核心的类之一，用于储存地震台站信息。
 下图展示了 {class}`~obspy.core.inventory.inventory.Inventory` 类的属性及其层级关系：
-{class}`~obspy.core.inventory.inventory.Inventory` 类可以看做是 
+{class}`~obspy.core.inventory.inventory.Inventory` 类可以看做是
 {class}`~obspy.core.inventory.network.Network` 类的列表;
-{class}`~obspy.core.inventory.network.Network` 类可以看做是 
+{class}`~obspy.core.inventory.network.Network` 类可以看做是
 {class}`~obspy.core.inventory.station.Station` 类的列表;
-{class}`~obspy.core.inventory.station.Station` 类可以看做是 
+{class}`~obspy.core.inventory.station.Station` 类可以看做是
 {class}`~obspy.core.inventory.channel.Channel` 类的列表。
 
 :::{figure} https://docs.obspy.org/_images/Inventory.png

@@ -1,6 +1,6 @@
 # 环境变量
 
-- 本节贡献者: {{姚家园}}（作者）、{{田冬冬}}（作者）
+- 本节贡献者: {{姚家园}}、{{田冬冬}}
 - 最近更新日期: 2023-12-24
 - 预计花费时间: 30 分钟
 
@@ -55,7 +55,7 @@ export NEWVAR="envvalue"
 这将在当前 Shell 会话中添加环境变量 **ENVVAR**，但是在会话结束后，该环境变量
 将被删除。
 
-若要永久添加环境变量，可以将其添加到 Shell 配置文件中(:file:`~/.bashrc`)。
+若要永久添加环境变量，可以将其添加到 Shell 配置文件中({file}`~/.bashrc`)。
 Bash 常见的配置文件有 {file}`/etc/profile`、{file}`~/.bash_profile`、
 {file}`~/.bashrc` 等，一般通过修改 {file}`~/.bashrc` 文件来设置和更新个人 Shell 环境。
 使用 Zsh 的读者可以修改 {file}`~/.zshrc` 来设置和更新个人 Shell 环境。
