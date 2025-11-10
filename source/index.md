@@ -3,7 +3,7 @@
 欢迎阅读由[地震“学”小组](https://github.com/orgs/seismo-learn/people)撰写的
 《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
 
-:::::{grid} 2 3 3 4
+:::::{grid} 2 3 3 5
 
 ::::{grid-item-card} [田冬冬](https://github.com/seisman)
 :margin: 0 0 0 0
