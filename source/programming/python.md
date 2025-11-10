@@ -1,7 +1,7 @@
 # Python 语言
 
-- 本节贡献者: {{田冬冬}}（作者）、{{姚家园}}（审稿）
-- 最近更新日期: 2025-01-03
+- 本节贡献者: {{田冬冬}}、{{姚家园}}
+- 最近更新日期: 2025-10-11
 - 预计花费时间: 60 分钟
 
 ---
@@ -17,8 +17,8 @@
 ## 安装 Miniforge
 
 Python 是一种解释型语言，需要专门的解释器去执行 Python 代码。尽管 Linux/macOS 系统内置了 Python
-解释器，但是建议用户不要使用它，以免误操作破坏系统内置 Python， 造成系统出现问题。
-**建议用户安装 Miniforge，使用其提供的 `conda` 命令管理和安装 Python 及其模块。**
+解释器，但是建议用户不要使用它，以免误操作破坏系统内置 Python，造成系统出现问题。
+**建议用户安装 Miniforge，使用其提供的 `conda`/`mamba` 命令管理和安装 Python 及其模块。**
 
 :::{dropdown} Python、Anaconda、Miniconda 与 Miniforge
 :color: info
@@ -63,13 +63,20 @@ conda-forge
 Miniforge
 : 为了避免混用 main 和 conda-forge channel 可能导致的软件冲突，conda-forge 社区制作了 Miniforge
   发行版。Miniforge 与 Miniconda 基本相同，因而安装 Miniforge 相当于安装了 Python 解释器 +
-  核心模块/库 + 包管理器 `conda`。不同的点在于，Miniforge 默认使用 conda-forge channel，即默认只
-  从 conda-forge channel 中获取软件包，因而极大避免了混用 main 和 conda-forge channel 可能导致的
-  冲突。因而，Miniforge 是目前我们推荐的 Python 发行版。
+  核心模块/库 + 包管理器 `conda` 和 `mamba`。
+
+  其与 Miniconda 不同的点在于：
+
+  1. Miniforge 默认使用 conda-forge channel，即默认只从 conda-forge channel 中获取软件包，
+     极大避免了混用 main 和 conda-forge channel 可能导致的版本冲突
+  2. Miniforge 提供了包管理器 `mamba`，其与 `conda` 功能相同吗，但具有更好的性能。二者的具体区别在
+     下面会介绍
+
+因而，Miniforge 是目前推荐使用的 Python 发行版。
 :::
 
 下面展示了如何在 Linux 系统下安装 Miniforge。其它操作系统下的安装说明以及具体使用方法可以参考
-[地震“学”软件中 conda 相关内容](inv:software:conda/index)。
+[地震“学”软件中 conda 相关内容](inv:software:*:doc#conda/index)。
 
 1. 下载 Miniforge
 
@@ -84,16 +91,18 @@ Miniforge
    Miniforge 默认会安装到 {file}`${HOME}/miniforge3` 下，在安装过程中可以设置为其他路径。
 
    安装通常只需要十几秒，在安装的最后会出现：
+   ```
 
-      Do you wish to update your shell profile to automatically initialize conda?
-      This will activate conda on startup and change the command prompt when activated.
-      If you'd prefer that conda's base environment not be activated on startup,
-      run the following command when conda is activated:
+   Do you wish to update your shell profile to automatically initialize conda?
+   This will activate conda on startup and change the command prompt when activated.
+   If you'd prefer that conda's base environment not be activated on startup,
+   run the following command when conda is activated:
 
-          conda config --set auto_activate_base false
+      conda config --set auto_activate_base false
 
-      You can undo this by running `conda init --reverse $SHELL`? [yes|no]
-      [no] >>>
+   You can undo this by running `conda init --reverse $SHELL`? [yes|no]
+   [no] >>>
+   ```
 
    输入 `yes` 则安装包会向当前 SHELL 的配置文件写入 `conda` 初始化语句。
 
@@ -101,11 +110,12 @@ Miniforge
 
    打开一个新的终端，在终端中输入 `python`，输出中看到 `packaged by conda-forge` 字样即代表成功
    安装 Miniforge 并启动了 Python 解释器：
-
-      $ python
-      Python 3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 14:25:12) [Clang 18.1.8 ] on darwin
-      Type "help", "copyright", "credits" or "license" for more information.
-      >>>
+   ```
+   $ python
+   Python 3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 14:25:12) [Clang 18.1.8 ] on darwin
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>>
+   ```
 
    在提示符 `>>>` 后输入 `quit()` 后按下 {kbd}`Enter` 键退出 Python 解释器。
 
@@ -144,42 +154,37 @@ Hello world!”。
 Hello world!
 >>>
 ```
-这个判断语句无法在一行写完，因而需要写成多行语句。
-在主提示符后输入 `if x > 0:` 并按下 {kbd}`Enter` 键，会显示符号 `...`。
-`...` 是 Python 解释器在交互模式下的次提示符，用于表明多行语句还没写完，需要继续输入。
-在次提示符 `...` 后不输入指令而直接键入 {kbd}`Enter`，表示该代码块已结束。
-Python 解释器会对输入的多行语句进行解释，并输出字符串“Hello world!”。
+这个判断语句无法在一行写完，因而需要写成多行语句。在主提示符后输入 `if x > 0:` 并按下 {kbd}`Enter` 键，
+会显示符号 `...`。`...` 是 Python 解释器在交互模式下的次提示符，用于表明多行语句还没写完，需要继续输入。
+在次提示符 `...` 后不输入指令而直接键入 {kbd}`Enter`，表示该代码块已结束。Python 解释器会对输入的多行
+语句进行解释，并输出字符串“Hello world!”。
 :::{note}
-C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分代码块！
-因而上面的例子中 `print` 前需要用空格缩进（通常是 4 个空格）。
+C 语言使用大括号 `{ }` 划分代码块，而 Python 中使用缩进划分代码块！因而上面的例子中 `print` 前需要用
+空格缩进（通常是 4 个空格）。
 :::
 
-在主提示符 `>>>` 后输入 `quit()` 或者按下 {kbd}`Ctrl` + {kbd}`D` 键
-即可退出 Python 解释器的交互模式。
+在主提示符 `>>>` 后输入 `quit()` 或者按下 {kbd}`Ctrl` + {kbd}`D` 键即可退出 Python 解释器的交互模式。
 ```python
 >>> quit()
 ```
 
 ## Python 脚本
 
-虽然在 Python 解释器的交互模式下可以执行 Python 代码，但写长代码非常不方便，
-其代码编辑功能很弱，也不具备代码补全功能。更重要的是，退出交互模式后，
-之前写的 Python 代码不会保存，下次想要执行相同代码时只能重写。
-因而，通常都不会在 Python 解释器的交互模式下写代码，而是将 Python 代码写到 Python 脚本中。
+虽然在 Python 解释器的交互模式下可以执行 Python 代码，但写长代码非常不方便，其代码编辑功能很弱，也不
+具备代码补全功能。更重要的是，退出交互模式后，之前写的 Python 代码不会保存，下次想要执行相同代码时
+只能重写。因而，通常都不会在 Python 解释器的交互模式下写代码，而是将 Python 代码写到 Python 脚本中。
 
-Python 脚本其实就是一个包含了一系列 Python 指令的文本文件，后缀通常是 `.py`，
-在终端中可以通过 `python xxxx.py` 的方式执行 Python 脚本（`xxxx.py` 是 Python
-脚本的文件名）。
+Python 脚本其实就是一个包含了一系列 Python 指令的文本文件，后缀通常是 `.py`，在终端中可以通过
+`python xxxx.py` 的方式执行 Python 脚本（`xxxx.py` 是 Python 脚本的文件名）。
 
-下面以一个简单的 Python 脚本作为示例。启动文本编辑器，新建一个文件，将以下
-Python 代码写到文件中：
+下面以一个简单的 Python 脚本作为示例。启动文本编辑器，新建一个文件，将以下 Python 代码写到文件中：
 ```python
 x = 5
 if x > 0:
     print("Hello world!")
 ```
-将文件保存为后缀 `.py` 的文件（比如 {file}`first-script.py`），即得到了
-一个可执行的 Python 脚本。打开终端，切换到 Python 脚本所在的目录，执行如下命令来运行脚本：
+将文件保存为后缀 `.py` 的文件（比如 {file}`first-script.py`），即得到了一个可执行的 Python 脚本。
+打开终端，切换到 Python 脚本所在的目录，执行如下命令来运行脚本：
 ```
 $ python first-script.py
 Hello world!
@@ -187,55 +192,61 @@ Hello world!
 
 ## 安装 Python 包
 
-Python 语言的一大特色是其功能强大的标准库和第三方软件包（也称模块或库）。
-Python 解释器内置了所有标准库，安装解释器后就可以直接使用标准库，
-而第三方包需要先安装才能使用。
+Python 语言的一大特色是其功能强大的标准库和第三方软件包（也称模块或库）。Python 解释器内置了所有
+标准库，安装解释器后就可以直接使用标准库，而第三方包需要先安装才能使用。
 
-:::{admonition} `pip` 与 `conda`
+:::{admonition} `pip`、`conda` 与 `mamba`
 
-学习如何安装 Python 包之前，有必要先了解 `pip` 和 `conda`，以及它们之间的区别与联系:
+学习如何安装 Python 包之前，有必要先了解 `pip`、`conda` 和 `mamba`，以及它们之间的区别与联系:
 
 [`pip`](https://pip.pypa.io/)
-: `pip` 是 Python 官方提供的包管理器，可以安装 [Python 包索引网站](https://pypi.org/) 上的
-  Python 包，也可用于从源码安装 Python 包。
+: `pip` 是 Python 官方提供的包管理器，可以安装 [Python 包索引网站](https://pypi.org/) 上的 Python 包，
+  也可用于从源码安装 Python 包。
 
 [`conda`](https://docs.conda.io/)
-: `conda` 是 Miniforge 中内置的包管理器，不仅可以安装 Python 包，
-  还可以安装其他语言写的包（理论上可以安装任何软件）。它的另一个重要功能是管理 Python 环境，
-  可用于在一个系统内安装多个不同版本的 Python 解释器或包。
+: `conda` 是由 Anaconda 公司开发和维护的软件包管理器，其不仅可以安装 Python 包，还可以安装其他语言
+  写的包（理论上可以安装任何软件）。它的另一个重要功能是管理 Python 环境，可用于在一个系统内安装多个
+  不同版本的 Python 解释器或包。
+
+  Anaconda、Miniconda 和 Miniforge 发行版中都内置了 `conda`。
+
+[`mamba`](https://mamba.readthedocs.io/)
+: `mamba` 是由 QuantStack 公司开发的 `conda` 替代品。其用法与 `conda` 几乎完全兼容，但其不管是
+  依赖解析速度还是软件包下载速度都更快。
+
+  Miniforge 发行版内置了 `mamba`。Anaconda 和 Miniconda 发行版中也可以使用 `conda` 命令
+  安装 `mamba`。
 :::
 
-**推荐优先使用 `conda` 安装和管理 Python 包。对于无法使用 `conda` 安装的包，再使用 `pip` 安装。**
-
-在使用 `conda` 前，还需要对 `conda` 做简单配置：
+在使用 `conda`/`mamba` 前，还需要对 `conda`/`mamba` 做简单配置：
 ```
 # 配置使用国内清华源以加快软件下载速度
 $ conda config --set 'custom_channels.conda-forge' https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
-使用 `conda` 安装软件很简单，直接 `conda install` 加上要安装的软件包名称即可。
-`conda` 可安装的软件包位于 [Anaconda 网站](https://anaconda.org/)。
+**推荐优先使用 `mamba` 安装和管理 Python 包。对于无法使用 `mamba` 安装的包，再使用 `pip` 安装。**
+
+使用 `mamba` 安装软件很简单，直接 `mamba install` 加上要安装的软件包名称即可。
+`mamba` 可安装的软件包位于 [Anaconda 网站](https://anaconda.org/)。
 
 读者可以执行如下命令，安装本节余下内容会用到的几个 Python 包：
 ```
-$ conda install numpy matplotlib jupyterlab
+$ mamba install numpy matplotlib jupyterlab
 ```
 
 对于 [Anaconda 网站](https://anaconda.org/) 没有的包，则只能使用 `pip` 安装。
 
 ## Jupyter Notebook
 
-前面介绍了如何在 Python 解释器交互模式执行 Python 代码，也介绍了如何将 Python
-代码写成脚本并执行。这两种方式各有优缺点：交互模式下编写代码不方便，
-但是可以一句一句执行代码，随时检查某个语句的输出或某个变量的值。
-编写 Python 脚本可以在编辑器中完成，因而写代码更加高效，但执行 Python 脚本时
-只能从头到尾执行，每次修改代码后都需要重新执行脚本里的所有代码，因而调试起来很费时。
+前面介绍了如何在 Python 解释器交互模式执行 Python 代码，也介绍了如何将 Python 代码写成脚本并执行。
+这两种方式各有优缺点：交互模式下编写代码不方便，但是可以一句一句执行代码，随时检查某个语句的输出或
+某个变量的值。编写 Python 脚本可以在编辑器中完成，因而写代码更加高效，但执行 Python 脚本时只能从头
+到尾执行，每次修改代码后都需要重新执行脚本里的所有代码，因而调试起来很费时。
 
-[JupyterLab](https://jupyter.org/) 是一个基于网页的交互式开发环境，
-已经成为当前最流行的 Python 开发环境。它将两种方式的优点结合起来，
-可以高效地编辑代码、单步执行代码、随时查看变量值、支持丰富的可视化输出。
-JupyterLab 对应的文件称之为 Notebook，其文件后缀是 `.ipynb`。
-下面将通过实例展示如何使用 JupyterLab。
+[JupyterLab](https://jupyter.org/) 是一个基于网页的交互式开发环境，已经成为当前最流行的 Python 开发
+环境。它将两种方式的优点结合起来，可以高效地编辑代码、单步执行代码、随时查看变量值、支持丰富的可视化
+输出。JupyterLab 对应的文件称之为 Notebook，其文件后缀是 `.ipynb`。下面将通过实例展示如何使用
+JupyterLab。
 
 打开终端，键入命令 `jupyter-lab`，启动 JupyterLab。
 
@@ -243,42 +254,38 @@ JupyterLab 对应的文件称之为 Notebook，其文件后缀是 `.ipynb`。
 $ jupyter-lab
 ```
 
-JupyterLab 会在浏览器中打开一个标签页，显示启动界面。如下图所示，
-启动界面有若干图标，可以用于创建 Notebook、纯文本文件、Markdown 文件
-或 Python 文件，还可以在浏览器中打开一个终端。
+JupyterLab 会在浏览器中打开一个标签页，显示启动界面。如下图所示，启动界面有若干图标，可以用于创建
+Notebook、纯文本文件、Markdown 文件或 Python 文件，还可以在浏览器中打开一个终端。
 ![](jupyter-notebook-1.jpg)
 
-点击“Notebook”下的图标创建一个空白的 Notebook，文件名默认为 `Untitled.ipynb`。
-如下图所示，左侧为文件浏览器，右侧为新建的 Notebook，光标所在的矩形区域称之为单元格（cell），
-可以用于输入 Python 代码。在单元格中输入代码，
-按下 {kbd}`Shift` + {kbd}`Enter` 执行单元格中的代码。
+点击“Notebook”下的图标创建一个空白的 Notebook，文件名默认为 `Untitled.ipynb`。如下图所示，左侧为
+文件浏览器，右侧为新建的 Notebook，光标所在的矩形区域称之为单元格（cell），可以用于输入 Python 代码。
+在单元格中输入代码，按下 {kbd}`Shift` + {kbd}`Enter` 执行单元格中的代码。
 
 ![](jupyter-notebook-2.jpg)
 
-下面的两行代码会导入 NumPy 和 Matplotlib 包。将这两行代码复制到 Notebook 的
-单元格中，按下 {kbd}`Shift` + {kbd}`Enter` 执行：
+下面的两行代码会导入 NumPy 和 Matplotlib 包。将这两行代码复制到 Notebook 的单元格中，按下
+{kbd}`Shift` + {kbd}`Enter` 执行：
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-下面的代码设置 `t` 取值为 0 到 2.0，间隔为 0.05，
-然后利用函数 {math}`s = \sin(2 \pi t)` 生成了一系列点。
-将这两行代码复制到 Notebook 的单元格中，按下
-{kbd}`Shift` + {kbd}`Enter` 执行：
+下面的代码设置 `t` 取值为 0 到 2.0，间隔为 0.05，然后利用函数 {math}`s = \sin(2 \pi t)` 生成了一系列点。
+将这两行代码复制到 Notebook 的单元格中，按下 {kbd}`Shift` + {kbd}`Enter` 执行：
 ```python
 t = np.arange(0.0, 2.0, 0.05)
 s = np.sin(2 * np.pi * t)
 ```
 
-想要看看变量 `t` 的值？很简单，在单元格中输入变量 `t`，按下 {kbd}`Shift` + {kbd}`Enter`，
-Notebook 会直接显示该变量的值。如下图所示，可以看出，变量 `t` 是一个数组，其
-最小值是 0，间隔是 0.05，最大值是 1.95（不包括 2.0）：
+想要看看变量 `t` 的值？很简单，在单元格中输入变量 `t`，按下 {kbd}`Shift` + {kbd}`Enter`，Notebook
+会直接显示该变量的值。如下图所示，可以看出，变量 `t` 是一个数组，其最小值是 0，间隔是 0.05，最大值是
+1.95（不包括 2.0）：
 
 ![](jupyter-notebook-3.jpg)
 
-下面的代码将以变量 `t` 作为自变量（X 轴）、以变量 `s` 作为因变量（Y轴）绘制该函数。
-将代码复制到单元格中，按下 {kbd}`Shift` + {kbd}`Enter` 执行：
+下面的代码将以变量 `t` 作为自变量（X 轴）、以变量 `s` 作为因变量（Y轴）绘制该函数。将代码复制到
+单元格中，按下 {kbd}`Shift` + {kbd}`Enter` 执行：
 ```python
 fig, ax = plt.subplots()
 ax.plot(t, s)
@@ -289,8 +296,8 @@ plt.show()
 
 ![](jupyter-notebook-4.jpg)
 
-对画出来的图片效果不太满意，想要进一步微调图片的显示效果？下面的两行代码会
-给图片加上网格线，并设置刻度颜色、大小、宽度。
+对画出来的图片效果不太满意，想要进一步微调图片的显示效果？下面的两行代码会给图片加上网格线，并设置
+刻度颜色、大小、宽度。
 ```python
 ax.grid(True, linestyle='-.')
 ax.tick_params(labelcolor='r', labelsize='medium', width=3)
@@ -300,30 +307,27 @@ ax.tick_params(labelcolor='r', labelsize='medium', width=3)
 
 ![](jupyter-notebook-5.jpg)
 
-可以看到，修改后的代码被执行，并显示了修改后的图片。在执行修改后的代码时，
-变量 `t` 和 `s` 依然有效，不需要重新执行之前单元格中的代码。
-实际上，只要 Kernel 没有重启，Notebook 中的变量就不会被销毁，因而可以很方便地
-多次修改并调试某个单元格的代码。
+可以看到，修改后的代码被执行，并显示了修改后的图片。在执行修改后的代码时，变量 `t` 和 `s` 依然有效，
+不需要重新执行之前单元格中的代码。实际上，只要 Kernel 没有重启，Notebook 中的变量就不会被销毁，因而
+可以很方便地多次修改并调试某个单元格的代码。
 
 :::{tip}
-在 Notebook 中写代码时，可以随时用快捷键 {kbd}`Ctrl` + {kbd}`S` （Linux 或 Windows）
-或 {kbd}`Command` + {kbd}`S` （macOS）保存 Notebook。所有代码、输出以及图片都会被保存在
-`.ipynb` 文件中。
+在 Notebook 中写代码时，可以随时用快捷键 {kbd}`Ctrl` + {kbd}`S` （Linux 或 Windows）或
+{kbd}`Command` + {kbd}`S` （macOS）保存 Notebook。所有代码、输出以及图片都会被保存在 `.ipynb` 文件中。
 :::
 
 :::{tip}
-Notebook 在交互式开发代码时很方便。但通常我们会想要将代码保存为 Python 脚本，
-更加方便执行。在 JupyterLab 中点击菜单“File”→“Save and export Notebook as”→
-“Executable Script” 即可将 Notebook 转换为 Python 脚本。
+Notebook 在交互式开发代码时很方便。但通常我们会想要将代码保存为 Python 脚本，更加方便执行。在
+JupyterLab 中点击菜单“File”→“Save and export Notebook as”→“Executable Script” 即可将 Notebook
+转换为 Python 脚本。
 :::
 
-JupyterLab 除了可以编辑 Notebook 外，还可以编辑 Markdown 文件，也可以打开终端
-执行命令，还支持多个功能强大的插件。更多的功能，留待读者自行探索。
+JupyterLab 除了可以编辑 Notebook 外，还可以编辑 Markdown 文件，也可以打开终端执行命令，还支持多个
+功能强大的插件。更多的功能，留待读者自行探索。
 
 ## 其他 Python IDE/开发环境
 
-除了上面介绍的 JupyterLab 外，还有其他方便、实用的 Python IDE/开发环境，
-例如：
+除了上面介绍的 JupyterLab 外，还有其他方便、实用的 Python IDE/开发环境，例如：
 
 - [Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial)
 	- [在 Visual Studio Code 里交互式编辑和运行 Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
