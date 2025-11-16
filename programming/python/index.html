@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python 语言 &#8212; 地震“学”科研入门教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=61152374"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'programming/python';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Markdown" href="../markdown/" />
+    <link rel="prev" title="Bash 脚本" href="../bash/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震“学”科研入门教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">计算机基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../computer/operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computer/setup/">配置操作系统</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computer/linux101/">Linux 入门</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/command-line/">命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/file-operations/">文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/shell/">Shell 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/environment-variable/">环境变量</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/commands/">Linux 常用命令</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">编程基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../languages/">编程语言</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../bash/">Bash 脚本</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdown/">Markdown</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../editor/">文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../git/">Git 与代码管理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-phase/">地震震相</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/station/">地震台站</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/data-format/">波形数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/resources/">学习资料</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学实践</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/prerequisite/">准备工作</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/download/">数据下载</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog/">地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/station/">地震台站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/waveform/">地震波形数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/synthetic/">合成地震波形</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/process/">数据处理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/demean/">去均值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/detrend/">去线性趋势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/taper/">波形尖灭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/response/">去仪器响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/filter/">滤波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/rotate/">分量旋转</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/analysis/">数据分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog-analysis/">分析地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/particle-motion/">质点运动轨迹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/cross-correlation/">互相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/distaz/">震中距、方位角与反方位角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/phases/">震相</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/software/">常用软件</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">实践经验</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../best-practices/backup/">数据备份</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Linux/">Linux 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-macOS/">macOS 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Windows/">Windows 数据备份</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software/">高效率软件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/vscode/">VS Code 使用教程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外部链接</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/">地震“学”主站</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">参与讨论</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/edit/main/source/programming/python.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fprogramming/python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/programming/python.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python 语言</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge">安装 Miniforge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">初识 Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Python 脚本</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">安装 Python 包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-ide">其他 Python IDE/开发环境</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">扩展阅读</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1>Python 语言<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://me.seisman.info/">田冬冬</a>、<a class="reference external" href="https://github.com/core-man">姚家园</a></p></li>
+<li><p>最近更新日期: 2025-10-11</p></li>
+<li><p>预计花费时间: 60 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<section id="id1">
+<h2>简介<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.python.org/">Python</a> 是一种广泛使用的通用编程语言，其具有语法简单、功能强大等优点，
+是目前地震学科研最常用的编程语言之一。</p>
+<p>这一节中，我们不介绍具体的 Python 语法，而是着重介绍如何安装和管理 Python、如何编写并执行 Python 脚本
+等。这一节的最后列出了一些免费的 Python 学习资源，读者可根据需要自行学习。</p>
+</section>
+<section id="miniforge">
+<h2>安装 Miniforge<a class="headerlink" href="#miniforge" title="Link to this heading">#</a></h2>
+<p>Python 是一种解释型语言，需要专门的解释器去执行 Python 代码。尽管 Linux/macOS 系统内置了 Python
+解释器，但是建议用户不要使用它，以免误操作破坏系统内置 Python，造成系统出现问题。
+<strong>建议用户安装 Miniforge，使用其提供的 <code class="docutils literal notranslate"><span class="pre">conda</span></code>/<code class="docutils literal notranslate"><span class="pre">mamba</span></code> 命令管理和安装 Python 及其模块。</strong></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-info" viewBox="0 0 16 16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg></span><span class="sd-summary-text">Python、Anaconda、Miniconda 与 Miniforge</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">有一些 Python 使用经验的用户，可能接触或使用过 Anaconda、Miniconda 和 Miniforge。这其中涉及到很多
+概念，下面做简要解释：</p>
+<dl class="simple myst">
+<dt>Python 解释器</dt><dd><p class="sd-card-text">从 <a class="reference external" href="https://www.python.org/downloads/">Python 官方网站</a> 下载的 Python 安装包只提供了一个
+Python 解释器，仅包含 Python 的核心模块和库，是运行 Python脚本所必需的。使用官方的 Python 安装包
+相当于安装了 Python 解释器 + 核心模块/库。</p>
+</dd>
+<dt>Anaconda</dt><dd><p class="sd-card-text"><a class="reference external" href="https://www.anaconda.com/download">Anaconda</a> 是 <a class="reference external" href="https://www.anaconda.com/">Anaconda 公司</a>
+提供的一个 Python <strong>发行版</strong>，其不仅提供了 Python 解释器，还内置了很多 Python 开发工具与众多科学
+计算相关的库，形成了一个可以开箱即用的 Python 科学计算环境，省去了自行配置科学计算环境的麻烦。Anaconda
+还提供了强大的软件包管理工具 <code class="docutils literal notranslate"><span class="pre">conda</span></code>，可以方便地安装模块和管理环境。安装 Anaconda 相当于安装了
+Python 解释器 + 核心模块/库 + 数百个科学计算相关模块 + 包管理器 <code class="docutils literal notranslate"><span class="pre">conda</span></code>。</p>
+<p class="sd-card-text">尽管 Anaconda 有很多优点，其也有明显的缺点：</p>
+<ul class="simple">
+<li><p class="sd-card-text">安装包非常大（超过 500 MB）</p></li>
+<li><p class="sd-card-text">安装过程耗时长（一般超过 5 分钟）</p></li>
+<li><p class="sd-card-text">安装后占用大量硬盘空间（一般超过 3 GB）</p></li>
+<li><p class="sd-card-text">安装了很多平时用不到的模块，进而导致安装新模块时会可能出现版本冲突</p></li>
+</ul>
+</dd>
+<dt>Miniconda</dt><dd><p class="sd-card-text"><a class="reference external" href="https://docs.anaconda.com/miniconda/">Miniconda</a> 是 Anaconda 公司提供的 Anaconda 的精简版。
+安装 Miniconda 相当于安装了 Python 解释器 + 核心模块/库 + 包管理器 <code class="docutils literal notranslate"><span class="pre">conda</span></code>。因而，其避免了
+Anaconda 的臃肿，安装包只有约 50 MB，安装通常也只需要数十秒。由于内置了包管理器 <code class="docutils literal notranslate"><span class="pre">conda</span></code>，可以根据
+自己的需求安装软件包，极大地避免了内置大量软件包导致的软件版本冲突的问题。</p>
+</dd>
+<dt>conda-forge</dt><dd><p class="sd-card-text">Anaconda 公司在制作 Anaconda 发行版的同时，还维护了一个小型软件仓库，称之为 main channel。该软件
+仓库中仅包含了 Anaconda 公司感兴趣的几百个软件包，因而无法满足所有用户的需求。因而，一些有志之士成立了
+<a class="reference external" href="https://conda-forge.org/">conda-forge</a> 社区，维护了另一个软件仓库，称之为 conda-forge channel。
+该软件仓库包含了近 3 万个软件包，以满足不同用户的需求。因而，大部分人通常都使用 conda-forge channel。
+但需要注意的是，某些软件包在 main 和 conda-forge channel 中同时存在，混用不同的 channel 可能会
+导致软件版本冲突。</p>
+</dd>
+<dt>Miniforge</dt><dd><p class="sd-card-text">为了避免混用 main 和 conda-forge channel 可能导致的软件冲突，conda-forge 社区制作了 Miniforge
+发行版。Miniforge 与 Miniconda 基本相同，因而安装 Miniforge 相当于安装了 Python 解释器 +
+核心模块/库 + 包管理器 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 和 <code class="docutils literal notranslate"><span class="pre">mamba</span></code>。</p>
+<p class="sd-card-text">其与 Miniconda 不同的点在于：</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Miniforge 默认使用 conda-forge channel，即默认只从 conda-forge channel 中获取软件包，
+极大避免了混用 main 和 conda-forge channel 可能导致的版本冲突</p></li>
+<li><p class="sd-card-text">Miniforge 提供了包管理器 <code class="docutils literal notranslate"><span class="pre">mamba</span></code>，其与 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 功能相同吗，但具有更好的性能。二者的具体区别在
+下面会介绍</p></li>
+</ol>
+</dd>
+</dl>
+<p class="sd-card-text">因而，Miniforge 是目前推荐使用的 Python 发行版。</p>
+</div>
+</details><p>下面展示了如何在 Linux 系统下安装 Miniforge。其它操作系统下的安装说明以及具体使用方法可以参考
+<a class="reference external" href="https://seismo-learn.org/software/conda/" title="Project name not set">地震“学”软件中 conda 相关内容</a>。</p>
+<ol class="arabic">
+<li><p>下载 Miniforge</p>
+<p>下载地址：<a class="reference external" href="https://mirrors.tuna.tsinghua.edu.cn/github-release/conda-forge/miniforge/LatestRelease/Miniforge3-Linux-x86_64.sh">Miniforge3-Linux-x86_64.sh</a></p>
+</li>
+<li><p>安装 Miniforge</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bash Miniforge3-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>Miniforge 默认会安装到 <code class="file docutils literal notranslate"><span class="pre">$</span><em><span class="pre">HOME</span></em><span class="pre">/miniforge3</span></code> 下，在安装过程中可以设置为其他路径。</p>
+<p>安装通常只需要十几秒，在安装的最后会出现：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+Do you wish to update your shell profile to automatically initialize conda?
+This will activate conda on startup and change the command prompt when activated.
+If you&#39;d prefer that conda&#39;s base environment not be activated on startup,
+run the following command when conda is activated:
+
+   conda config --set auto_activate_base false
+
+You can undo this by running `conda init --reverse $SHELL`? [yes|no]
+[no] &gt;&gt;&gt;
+</pre></div>
+</div>
+<p>输入 <code class="docutils literal notranslate"><span class="pre">yes</span></code> 则安装包会向当前 SHELL 的配置文件写入 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 初始化语句。</p>
+</li>
+<li><p>测试安装</p>
+<p>打开一个新的终端，在终端中输入 <code class="docutils literal notranslate"><span class="pre">python</span></code>，输出中看到 <code class="docutils literal notranslate"><span class="pre">packaged</span> <span class="pre">by</span> <span class="pre">conda-forge</span></code> 字样即代表成功
+安装 Miniforge 并启动了 Python 解释器：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+Python 3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 14:25:12) [Clang 18.1.8 ] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>在提示符 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> 后输入 <code class="docutils literal notranslate"><span class="pre">quit()</span></code> 后按下 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键退出 Python 解释器。</p>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h2>初识 Python<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>打开终端，输入 <code class="docutils literal notranslate"><span class="pre">python</span></code> 就会进入 Python 解释器的交互模式：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+Python 3.12.8 | packaged by conda-forge | (main, Dec  5 2024, 14:25:12) [Clang 18.1.8 ] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>进入 Python 解释器后，首先会显示 Python 版本信息、版权声明以及帮助信息，然后会显示符号 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>。<code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>
+是 Python 解释器在交互模式下的主提示符，提示用户可以在 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> 后输入 Python 指令。</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> 提示符后输入 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code> 并按下 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键将指令 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span></code> 传给 Python 解释器。解释器
+接收指令后会执行指令，输出结果 <code class="docutils literal notranslate"><span class="pre">3</span></code>，并再次显示主提示符 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> 等待用户的下一次输入。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Python 解释器交互模式可以当做一个快捷的计算器来使用！</p>
+</div>
+<p>下面继续看一个稍复杂点的例子。给变量 <code class="docutils literal notranslate"><span class="pre">x</span></code> 赋值，然后紧跟着一个判断语句“如果 x 的值大于 0，则打印字符串
+Hello world!”。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Hello world!</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>这个判断语句无法在一行写完，因而需要写成多行语句。在主提示符后输入 <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0:</span></code> 并按下 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键，
+会显示符号 <code class="docutils literal notranslate"><span class="pre">...</span></code>。<code class="docutils literal notranslate"><span class="pre">...</span></code> 是 Python 解释器在交互模式下的次提示符，用于表明多行语句还没写完，需要继续输入。
+在次提示符 <code class="docutils literal notranslate"><span class="pre">...</span></code> 后不输入指令而直接键入 <kbd class="kbd docutils literal notranslate">Enter</kbd>，表示该代码块已结束。Python 解释器会对输入的多行
+语句进行解释，并输出字符串“Hello world!”。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>C 语言使用大括号 <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> 划分代码块，而 Python 中使用缩进划分代码块！因而上面的例子中 <code class="docutils literal notranslate"><span class="pre">print</span></code> 前需要用
+空格缩进（通常是 4 个空格）。</p>
+</div>
+<p>在主提示符 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> 后输入 <code class="docutils literal notranslate"><span class="pre">quit()</span></code> 或者按下 <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">D</kbd> 键即可退出 Python 解释器的交互模式。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Python 脚本<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>虽然在 Python 解释器的交互模式下可以执行 Python 代码，但写长代码非常不方便，其代码编辑功能很弱，也不
+具备代码补全功能。更重要的是，退出交互模式后，之前写的 Python 代码不会保存，下次想要执行相同代码时
+只能重写。因而，通常都不会在 Python 解释器的交互模式下写代码，而是将 Python 代码写到 Python 脚本中。</p>
+<p>Python 脚本其实就是一个包含了一系列 Python 指令的文本文件，后缀通常是 <code class="docutils literal notranslate"><span class="pre">.py</span></code>，在终端中可以通过
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">xxxx.py</span></code> 的方式执行 Python 脚本（<code class="docutils literal notranslate"><span class="pre">xxxx.py</span></code> 是 Python 脚本的文件名）。</p>
+<p>下面以一个简单的 Python 脚本作为示例。启动文本编辑器，新建一个文件，将以下 Python 代码写到文件中：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>将文件保存为后缀 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 的文件（比如 <code class="file docutils literal notranslate"><span class="pre">first-script.py</span></code>），即得到了一个可执行的 Python 脚本。
+打开终端，切换到 Python 脚本所在的目录，执行如下命令来运行脚本：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python first-script.py
+Hello world!
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>安装 Python 包<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>Python 语言的一大特色是其功能强大的标准库和第三方软件包（也称模块或库）。Python 解释器内置了所有
+标准库，安装解释器后就可以直接使用标准库，而第三方包需要先安装才能使用。</p>
+<div class="admonition-pip-conda-mamba admonition">
+<p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">pip</span></code>、<code class="docutils literal notranslate"><span class="pre">conda</span></code> 与 <code class="docutils literal notranslate"><span class="pre">mamba</span></code></p>
+<p>学习如何安装 Python 包之前，有必要先了解 <code class="docutils literal notranslate"><span class="pre">pip</span></code>、<code class="docutils literal notranslate"><span class="pre">conda</span></code> 和 <code class="docutils literal notranslate"><span class="pre">mamba</span></code>，以及它们之间的区别与联系:</p>
+<dl class="simple myst">
+<dt><a class="reference external" href="https://pip.pypa.io/"><code class="docutils literal notranslate"><span class="pre">pip</span></code></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">pip</span></code> 是 Python 官方提供的包管理器，可以安装 <a class="reference external" href="https://pypi.org/">Python 包索引网站</a> 上的 Python 包，
+也可用于从源码安装 Python 包。</p>
+</dd>
+<dt><a class="reference external" href="https://docs.conda.io/"><code class="docutils literal notranslate"><span class="pre">conda</span></code></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">conda</span></code> 是由 Anaconda 公司开发和维护的软件包管理器，其不仅可以安装 Python 包，还可以安装其他语言
+写的包（理论上可以安装任何软件）。它的另一个重要功能是管理 Python 环境，可用于在一个系统内安装多个
+不同版本的 Python 解释器或包。</p>
+<p>Anaconda、Miniconda 和 Miniforge 发行版中都内置了 <code class="docutils literal notranslate"><span class="pre">conda</span></code>。</p>
+</dd>
+<dt><a class="reference external" href="https://mamba.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">mamba</span></code></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">mamba</span></code> 是由 QuantStack 公司开发的 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 替代品。其用法与 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 几乎完全兼容，但其不管是
+依赖解析速度还是软件包下载速度都更快。</p>
+<p>Miniforge 发行版内置了 <code class="docutils literal notranslate"><span class="pre">mamba</span></code>。Anaconda 和 Miniconda 发行版中也可以使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code> 命令
+安装 <code class="docutils literal notranslate"><span class="pre">mamba</span></code>。</p>
+</dd>
+</dl>
+</div>
+<p>在使用 <code class="docutils literal notranslate"><span class="pre">conda</span></code>/<code class="docutils literal notranslate"><span class="pre">mamba</span></code> 前，还需要对 <code class="docutils literal notranslate"><span class="pre">conda</span></code>/<code class="docutils literal notranslate"><span class="pre">mamba</span></code> 做简单配置：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 配置使用国内清华源以加快软件下载速度
+$ conda config --set &#39;custom_channels.conda-forge&#39; https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+</pre></div>
+</div>
+<p><strong>推荐优先使用 <code class="docutils literal notranslate"><span class="pre">mamba</span></code> 安装和管理 Python 包。对于无法使用 <code class="docutils literal notranslate"><span class="pre">mamba</span></code> 安装的包，再使用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 安装。</strong></p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">mamba</span></code> 安装软件很简单，直接 <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span></code> 加上要安装的软件包名称即可。
+<code class="docutils literal notranslate"><span class="pre">mamba</span></code> 可安装的软件包位于 <a class="reference external" href="https://anaconda.org/">Anaconda 网站</a>。</p>
+<p>读者可以执行如下命令，安装本节余下内容会用到的几个 Python 包：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mamba install numpy matplotlib jupyterlab
+</pre></div>
+</div>
+<p>对于 <a class="reference external" href="https://anaconda.org/">Anaconda 网站</a> 没有的包，则只能使用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 安装。</p>
+</section>
+<section id="jupyter-notebook">
+<h2>Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="Link to this heading">#</a></h2>
+<p>前面介绍了如何在 Python 解释器交互模式执行 Python 代码，也介绍了如何将 Python 代码写成脚本并执行。
+这两种方式各有优缺点：交互模式下编写代码不方便，但是可以一句一句执行代码，随时检查某个语句的输出或
+某个变量的值。编写 Python 脚本可以在编辑器中完成，因而写代码更加高效，但执行 Python 脚本时只能从头
+到尾执行，每次修改代码后都需要重新执行脚本里的所有代码，因而调试起来很费时。</p>
+<p><a class="reference external" href="https://jupyter.org/">JupyterLab</a> 是一个基于网页的交互式开发环境，已经成为当前最流行的 Python 开发
+环境。它将两种方式的优点结合起来，可以高效地编辑代码、单步执行代码、随时查看变量值、支持丰富的可视化
+输出。JupyterLab 对应的文件称之为 Notebook，其文件后缀是 <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>。下面将通过实例展示如何使用
+JupyterLab。</p>
+<p>打开终端，键入命令 <code class="docutils literal notranslate"><span class="pre">jupyter-lab</span></code>，启动 JupyterLab。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>jupyter-lab
+</pre></div>
+</div>
+<p>JupyterLab 会在浏览器中打开一个标签页，显示启动界面。如下图所示，启动界面有若干图标，可以用于创建
+Notebook、纯文本文件、Markdown 文件或 Python 文件，还可以在浏览器中打开一个终端。
+<img alt="" src="../../_images/jupyter-notebook-1.jpg" /></p>
+<p>点击“Notebook”下的图标创建一个空白的 Notebook，文件名默认为 <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code>。如下图所示，左侧为
+文件浏览器，右侧为新建的 Notebook，光标所在的矩形区域称之为单元格（cell），可以用于输入 Python 代码。
+在单元格中输入代码，按下 <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">Enter</kbd> 执行单元格中的代码。</p>
+<p><img alt="" src="../../_images/jupyter-notebook-2.jpg" /></p>
+<p>下面的两行代码会导入 NumPy 和 Matplotlib 包。将这两行代码复制到 Notebook 的单元格中，按下
+<kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">Enter</kbd> 执行：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+<p>下面的代码设置 <code class="docutils literal notranslate"><span class="pre">t</span></code> 取值为 0 到 2.0，间隔为 0.05，然后利用函数 <span class="math notranslate nohighlight">\(s = \sin(2 \pi t)\)</span> 生成了一系列点。
+将这两行代码复制到 Notebook 的单元格中，按下 <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">Enter</kbd> 执行：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>想要看看变量 <code class="docutils literal notranslate"><span class="pre">t</span></code> 的值？很简单，在单元格中输入变量 <code class="docutils literal notranslate"><span class="pre">t</span></code>，按下 <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">Enter</kbd>，Notebook
+会直接显示该变量的值。如下图所示，可以看出，变量 <code class="docutils literal notranslate"><span class="pre">t</span></code> 是一个数组，其最小值是 0，间隔是 0.05，最大值是
+1.95（不包括 2.0）：</p>
+<p><img alt="" src="../../_images/jupyter-notebook-3.jpg" /></p>
+<p>下面的代码将以变量 <code class="docutils literal notranslate"><span class="pre">t</span></code> 作为自变量（X 轴）、以变量 <code class="docutils literal notranslate"><span class="pre">s</span></code> 作为因变量（Y轴）绘制该函数。将代码复制到
+单元格中，按下 <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">Enter</kbd> 执行：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>执行效果如下图所示，绘图结果直接在 Notebook 里显示，非常直观。</p>
+<p><img alt="" src="../../_images/jupyter-notebook-4.jpg" /></p>
+<p>对画出来的图片效果不太满意，想要进一步微调图片的显示效果？下面的两行代码会给图片加上网格线，并设置
+刻度颜色、大小、宽度。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelcolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>将上面两行代码复制到前一单元格中的 <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> 语句之前，按下 <kbd class="kbd docutils literal notranslate">Shift</kbd> + <kbd class="kbd docutils literal notranslate">Enter</kbd> 执行，
+效果如下图所示：</p>
+<p><img alt="" src="../../_images/jupyter-notebook-5.jpg" /></p>
+<p>可以看到，修改后的代码被执行，并显示了修改后的图片。在执行修改后的代码时，变量 <code class="docutils literal notranslate"><span class="pre">t</span></code> 和 <code class="docutils literal notranslate"><span class="pre">s</span></code> 依然有效，
+不需要重新执行之前单元格中的代码。实际上，只要 Kernel 没有重启，Notebook 中的变量就不会被销毁，因而
+可以很方便地多次修改并调试某个单元格的代码。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>在 Notebook 中写代码时，可以随时用快捷键 <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">S</kbd> （Linux 或 Windows）或
+<kbd class="kbd docutils literal notranslate">Command</kbd> + <kbd class="kbd docutils literal notranslate">S</kbd> （macOS）保存 Notebook。所有代码、输出以及图片都会被保存在 <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> 文件中。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Notebook 在交互式开发代码时很方便。但通常我们会想要将代码保存为 Python 脚本，更加方便执行。在
+JupyterLab 中点击菜单“File”→“Save and export Notebook as”→“Executable Script” 即可将 Notebook
+转换为 Python 脚本。</p>
+</div>
+<p>JupyterLab 除了可以编辑 Notebook 外，还可以编辑 Markdown 文件，也可以打开终端执行命令，还支持多个
+功能强大的插件。更多的功能，留待读者自行探索。</p>
+</section>
+<section id="python-ide">
+<h2>其他 Python IDE/开发环境<a class="headerlink" href="#python-ide" title="Link to this heading">#</a></h2>
+<p>除了上面介绍的 JupyterLab 外，还有其他方便、实用的 Python IDE/开发环境，例如：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs/python/python-tutorial">Visual Studio Code</a></p>
+<ul>
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">在 Visual Studio Code 里交互式编辑和运行 Jupyter Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://code.visualstudio.com/docs/python/jupyter-support-py">在 Visual Studio Code 里交互式编辑和运行 Python 脚本</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a></p></li>
+<li><p><a class="reference external" href="https://www.spyder-ide.org/">Spyder</a></p></li>
+</ul>
+<p>有兴趣的读者可以尝试不同的 Python IDE/开发环境并根据自己的喜好选择。</p>
+</section>
+<section id="id5">
+<h2>扩展阅读<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>下面列出一些 Python 以及常用科学计算模块的相关学习资源：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/">Python</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.python.org/zh-cn/3/">Python 官方文档</a>（全面、系统）</p></li>
+<li><p><a class="reference external" href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰的 Python 教程</a>（较全面、系统）</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://numpy.org/">NumPy</a></p>
+<ul>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/">NumPy 官方文档</a></p></li>
+<li><p><a class="reference external" href="https://jalammar.github.io/visual-numpy/">A Visual Intro to NumPy and Data Representation</a>（简要、形象地介绍 NumPy 数据结构）</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a></p>
+<ul>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/">Matplotlib 官方教程</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rougier/scientific-visualization-book">Scientific Visualization: Python + Matplotlib</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a></p>
+<ul>
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/">Pandas 官方教程</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://scipy.org/">SciPy</a></p>
+<ul>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/tutorial/">SciPy 官方教程</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./programming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../bash/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Bash 脚本</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../markdown/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miniforge">安装 Miniforge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">初识 Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Python 脚本</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">安装 Python 包</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-ide">其他 Python IDE/开发环境</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">扩展阅读</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By seismo-learn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
