@@ -26,7 +26,7 @@ jobs:
         shell: bash -l {0}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Micromamba
         uses: mamba-org/setup-micromamba@v2.0.7
