@@ -1,0 +1,15 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: f7e06311-b273-462c-bd92-fbea0552544b
+  # title:
+  # description:
+  # keywords: []
+  # authors: []
+  github: https://github.com/seismo-learn/seismology101
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
