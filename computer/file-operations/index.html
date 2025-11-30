@@ -1,0 +1,979 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>文件操作 &#8212; 地震“学”科研入门教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=61152374"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'computer/file-operations';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Shell 基础" href="../shell/" />
+    <link rel="prev" title="命令行" href="../command-line/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震“学”科研入门教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">计算机基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../setup/">配置操作系统</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../linux101/">Linux 入门</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../command-line/">命令行</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/">Shell 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variable/">环境变量</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">Linux 常用命令</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">编程基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programming/intro/">简介</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming/languages/">编程语言</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/bash/">Bash 脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/python/">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/markdown/">Markdown</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/editor/">文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/git/">Git 与代码管理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-phase/">地震震相</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/station/">地震台站</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/data-format/">波形数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/resources/">学习资料</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学实践</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/prerequisite/">准备工作</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/download/">数据下载</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog/">地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/station/">地震台站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/waveform/">地震波形数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/synthetic/">合成地震波形</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/process/">数据处理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/demean/">去均值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/detrend/">去线性趋势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/taper/">波形尖灭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/response/">去仪器响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/filter/">滤波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/rotate/">分量旋转</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/analysis/">数据分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog-analysis/">分析地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/particle-motion/">质点运动轨迹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/cross-correlation/">互相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/distaz/">震中距、方位角与反方位角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/phases/">震相</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/software/">常用软件</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">实践经验</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../best-practices/backup/">数据备份</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Linux/">Linux 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-macOS/">macOS 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Windows/">Windows 数据备份</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software/">高效率软件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/vscode/">VS Code 使用教程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外部链接</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/">地震“学”主站</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">参与讨论</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/edit/main/source/computer/file-operations.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fcomputer/file-operations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/computer/file-operations.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>文件操作</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">熟悉 Linux 文件系统</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">操作文件与目录</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">查看文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">切换目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">新建文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">复制文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">移动文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">删除文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">创建软链接</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">隐藏文件和隐藏目录</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">文件路径</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">文件权限</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>文件操作<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://github.com/core-man">姚家园</a>、<a class="reference external" href="https://me.seisman.info/">田冬冬</a></p></li>
+<li><p>最近更新日期: 2021-04-23</p></li>
+<li><p>预计花费时间: 30 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<section id="linux">
+<h2>熟悉 Linux 文件系统<a class="headerlink" href="#linux" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id13">
+<img alt="../../_images/linux-file-system-tree.png" src="../../_images/linux-file-system-tree.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Linux 文件系统树</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Linux 文件系统就像一颗树一样，从 <code class="file docutils literal notranslate"><span class="pre">/</span></code> 目录开始，这个特殊的目录称为根目录。
+根目录下一般有 <code class="file docutils literal notranslate"><span class="pre">/home</span></code>、<code class="file docutils literal notranslate"><span class="pre">/root</span></code>、<code class="file docutils literal notranslate"><span class="pre">/bin</span></code>、
+<code class="file docutils literal notranslate"><span class="pre">/usr</span></code>、<code class="file docutils literal notranslate"><span class="pre">/lib</span></code>、<code class="file docutils literal notranslate"><span class="pre">/opt</span></code> 等目录。</p>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">/home</span></code> 目录：用户的家目录，存储用户自己的文件</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">/bin</span></code> 目录：存储必须的程序和命令，所有用户都可用</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">/usr</span></code> 目录：大多数软件的安装位置</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">/opt</span></code> 目录：某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）
+默认将软件安装到此目录下</p></li>
+</ul>
+<p>日常科研中，大多数情况下只在 <code class="file docutils literal notranslate"><span class="pre">/home</span></code> 目录下工作。假设用户名是 seismo-learn，
+该用户的家目录便是 <code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn</span></code>。macOS 下的家目录是 <code class="file docutils literal notranslate"><span class="pre">/Users/seismo-learn</span></code>。
+在 Linux/macOS 系统下，可用 <code class="file docutils literal notranslate"><span class="pre">~</span></code> 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
+<code class="file docutils literal notranslate"><span class="pre">~/Desktop</span></code>、<code class="file docutils literal notranslate"><span class="pre">~/Documents</span></code>、<code class="file docutils literal notranslate"><span class="pre">~/Downloads</span></code> 等。熟悉 Linux 文件系统后
+可以参考 <a class="reference internal" href="../../best-practices/file-organization/"><span class="doc std std-doc">《文件管理实践经验》</span></a> 和
+<a class="reference internal" href="../../best-practices/software-installation/"><span class="doc std std-doc">《软件安装实践经验》</span></a> 进一步组织与管理家目录，
+以提高工作效率。</p>
+</section>
+<section id="id2">
+<h2>操作文件与目录<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>接下来将通过一系列命令熟悉和掌握 Linux 系统下文件和目录的常用操作。
+读者应打开终端，根据下面的教程自行输入命令（不要复制粘贴！），记住并理解每个
+命令的作用。这一小节中，假设用户名是 seismo-learn，读者根据自己的情况自行修改。</p>
+<section id="id3">
+<h3>查看文件和目录<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> （list，即列表）命令用于显示当前目录下的文件和目录。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 pwd（print working directory，即打印当前工作目录）命令查看当前所在目录
+# 可以看出，启动终端后，默认进入家目录
+$ pwd
+/home/seismo-learn
+
+# 查看当前目录（即家目录）下的子目录和文件
+$ ls
+Desktop    Documents    Downloads
+# 查看 ~/Desktop 目录
+$ ls Desktop
+# 查看 /etc/passwd 文件
+$ ls /etc/passwd
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>切换目录<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span></code>（change directory，即切换目录）命令进入用于在目录之间切换。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 切换至根目录
+$ cd /
+# 查看根目录中的子目录和文件
+$ ls
+bin   etc   lib    mnt  proc  run   srv  tmp  var
+boot  dev   home  lib64  media   opt  root  sbin  sys  usr
+# 切换回家目录（以下任一操作均可）
+$ cd /home/seismo-learn
+$ cd ~
+$ cd
+
+# 确认已经切换回家目录下
+$ pwd
+/home/seismo-learn
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>新建文件和目录<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> （make directory，即创建目录）命令可以用于新建目录，<code class="docutils literal notranslate"><span class="pre">touch</span></code> 命令可以
+用于创建一个新的空文件。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 进入家目录
+$ cd ~
+# 使用 mkdir 命令新建目录
+$ mkdir codes software
+$ ls
+codes  Desktop  Documents  Downloads  software
+# 建立 workspace 目录，并在该目录下建立 source 目录
+# 需要使用 -p 选项，表示自动创建不存在的中间层目录
+$ mkdir -p workspace/source
+$ ls workspace/
+source
+
+# 进入 workspace 目录
+$ cd workspace
+# 使用 touch 命令创建新文件 hello-world.txt 和 seismo-learn.txt
+$ touch hello-world.txt seismo-learn.txt
+$ ls
+hello-world.txt  seismo-learn.txt  source
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>复制文件和目录<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cp</span></code>（copy，即复制）命令可以用于复制文件和目录。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>以下所有操作都假设读者已经切换到 <code class="file docutils literal notranslate"><span class="pre">~/workspace</span></code> 目录下了，即:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 进入 ~/workspace 目录
+$ cd ~/workspace
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 cp 命令复制 hello-world.txt 文件到同一目录下，并重命名为 hello-world-cp.txt
+$ cp hello-world.txt hello-world-cp.txt
+$ ls
+hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
+# 复制 hello-world.txt 和 seismo-learn.txt 文件到 source 目录下
+$ cp hello-world.txt seismo-learn.txt source
+$ ls source
+hello-world.txt  seismo-learn.txt
+
+# 复制 source 目录为同一目录下的 destination 目录（目标目录不存在）
+$ cp -r source destination
+$ ls
+destination  hello-world-cp.txt  hello-world.txt  seismo-learn.txt  source
+$ ls destination
+hello-world.txt  seismo-learn.txt
+# 复制 source 目录到同一目录下的 destination 目录下（目标目录已存在）
+$ cp -r source destination
+$ ls destination
+hello-world.txt  seismo-learn.txt  source
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h3>移动文件和目录<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span></code> （move，即移动）命令可以用于移动文件和目录。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 mv 命令移动 hello-world.txt 文件同一目录下，并重命名为 hello-world-mv.txt
+$ mv hello-world.txt hello-world-mv.txt
+$ ls
+destination  hello-world-cp.txt  hello-world-mv.txt  seismo-learn.txt  source
+# 移动 hello-world-cp.txt 和 hello-world-mv.txt 文件到 source 目录下
+$ mv hello-world-cp.txt hello-world-mv.txt source
+ls
+destination  seismo-learn.txt  source
+$ ls source
+hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seismo-learn.txt
+
+# 移动 source 目录为同一目录下的 source-mv 目录（相当于重命名）
+$ mv source source-mv
+$ ls
+destination  seismo-learn.txt  source-mv
+# 移动 source-mv 目录到同一目录下的 destination 目录下
+$ mv source-mv destination
+$ ls
+destination  seismo-learn.txt
+$ ls destination
+hello-world.txt  seismo-learn.txt  source  source-mv
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3>删除文件和目录<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span></code>（remove，即删除）命令 可以用于删除文件和目录。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 使用 rm 命令删除 seismo-learn.txt 文件
+$ rm seismo-learn.txt
+$ ls
+destination
+# 删除 destination 目录
+## rm 命令无法直接删除文件夹，直接使用 rm 命令删除文件夹会出现如下报错
+$ rm destination/
+rm: destination/: is a directory
+## 需要使用 -r 选项（recursive，表示递归）
+$ rm -r destination
+$ ls
+
+# 新建 tmp 目录
+$ mkdir tmp
+$ ls
+tmp
+# 使用 rmdir（remove directory，即删除目录）命令删除空目录 tmp。目录不为空时则不删除
+$ rmdir tmp
+$ ls
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">rm</span></code> 命令删除的文件会被直接删除，并不会被放在回收站里。
+因而执行 <code class="docutils literal notranslate"><span class="pre">rm</span></code> 命令时一定要小心再小心，不要误删重要文件。
+可以先把要删除的文件移动到某目录下（如 <code class="file docutils literal notranslate"><span class="pre">~/trash</span></code>），之后统一删除；
+也可以考虑使用其他命令行工具管理回收站
+（如 <a class="reference external" href="https://github.com/andreafrancia/trash-cli">trash-cli</a>）。</p>
+</div>
+</section>
+<section id="id9">
+<h3>创建软链接<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>软链接，也叫符号链接，类似于 Windows 下的快捷方式。Linux 下可以使用 <code class="docutils literal notranslate"><span class="pre">ln</span></code> （link，即链接）
+命令为文件和目录建立软链接:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 在当前目录下，为文件 /etc/passwd 建立软链接
+$ ln -s /etc/passwd
+# 使用 ls -l 命令查看，会发现在当前目录下生成了一个 passwd 文件，其指向源文件 /etc/passwd
+$ ls -l
+total 0
+lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -&gt; /etc/passwd
+# 默认情况下，软链接与源文件同名。可以重新指定软链接的文件名
+$ ln -s /etc/passwd mylocalpasswd
+$ ls -l
+total 0
+lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:59 mylocalpasswd -&gt; /etc/passwd
+lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -&gt; /etc/passwd
+
+# 在当前目录下，为文件夹 /usr/lib 建立软链接
+$ ln -s /usr/lib mylibdir
+$ ls -l
+total 0
+lrwxr-xr-x  1 seismo-learn  seismo-learn     8B Oct  4 22:04 mylibdir -&gt; /usr/lib
+lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:59 mylocalpasswd -&gt; /etc/passwd
+lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:55 passwd -&gt; /etc/passwd
+# 可以直接对软链接进行各种操作
+$ ls mylibdir/
+
+# 删除软链接。源文件不受影响
+$ rm mylibdir passwd mylocalpasswd
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id10">
+<h2>隐藏文件和隐藏目录<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<p>Linux 中，以 <code class="docutils literal notranslate"><span class="pre">.</span></code> 开头的文件和目录是隐藏文件或隐藏目录。所谓隐藏，是指在一般情况下，
+在文件浏览器或执行 <code class="docutils literal notranslate"><span class="pre">ls</span></code> 命令时不会显示这些文件或目录。</p>
+<p>下面使用 <code class="docutils literal notranslate"><span class="pre">touch</span></code> 和 <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> 命令创建一个隐藏文件和一个隐藏目录：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 创建隐藏文件
+$ touch .hidden-example-file.txt
+# 创建隐藏目录
+$ mkdir .hidden-example-dir
+</pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">ls</span></code> 命令查看当前目录的内容，隐藏文件和隐藏目录不会被显示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls
+</pre></div>
+</div>
+<p>想要显示隐藏文件和隐藏目录，需要使用 <code class="docutils literal notranslate"><span class="pre">-a</span></code> 选项：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -a
+.              ..               .hidden-example-dir      .hidden-example-file.txt
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">.</span></code> 和 <code class="docutils literal notranslate"><span class="pre">..</span></code> 的具体含义会在下面一节介绍。</p>
+</div>
+<p>在文件浏览器中，可以勾选“Show Hidden Files”选项以显示隐藏文件和隐藏目录，
+也可以直接使用快捷键 <kbd class="kbd docutils literal notranslate">Ctrl</kbd> + <kbd class="kbd docutils literal notranslate">H</kbd>。</p>
+</section>
+<section id="id11">
+<h2>文件路径<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>访问文件或目录需要指定文件或目录的路径。Linux 下有两种表示路径的方式：绝对路径和相对路径。</p>
+<p>顾名思义，绝对路径是从根目录 <code class="file docutils literal notranslate"><span class="pre">/</span></code> 开始算起的路径。例如，家目录是 <code class="file docutils literal notranslate"><span class="pre">/home</span></code>，
+用户 seismo-learn 的家目录是 <code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn</span></code>，该用户的桌面目录的路径是
+<code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn/Desktop</span></code>。日常科研中，用户的计算机一般只有用户自己在使用，
+因此提到家目录时一般特指 <code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn</span></code>，而不是指 <code class="file docutils literal notranslate"><span class="pre">/home</span></code>。
+因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
+<code class="file docutils literal notranslate"><span class="pre">~</span></code>，其和 <code class="file docutils literal notranslate"><span class="pre">/home/seismo-learn</span></code> 是一回事。</p>
+<p>有时进入到某个目录中，使用绝对路径并不方便。例如，当前位于 <code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina-MTZ/data</span></code>
+目录中，如果想进入 <code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina-MTZ/figures</span></code> 目录下，使用绝对路径要
+输入很多字母。为了解决这个问题，Linux 文件系统定义了两个特殊的路径：</p>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">.</span></code>：当前目录</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">..</span></code>：当前目录的上一级目录</p></li>
+</ul>
+<p>利用这两个特殊路径，可以使用相对路径访问其他目录下的文件和目录。例如，</p>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">./Beijing</span></code>：当前目录下的 <code class="file docutils literal notranslate"><span class="pre">Beijing</span></code> 目录，即 <code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina-MTZ/data/Beijing</span></code>。
+当前路径也可以省略，即 <code class="file docutils literal notranslate"><span class="pre">Beijing</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">./Beijing/IC-BJT.sac</span></code>：当前目录下的 <code class="file docutils literal notranslate"><span class="pre">Beijing</span></code> 目录下的 <code class="file docutils literal notranslate"><span class="pre">IC-BJT.sac</span></code> 文件，
+即 <code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina-MTZ/data/Beijing/IC-BJT.sac</span></code>。
+当前路径也可以省略，即 <code class="file docutils literal notranslate"><span class="pre">Beijing/IC-BJT.sac</span></code></p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">..</span></code>：上一层目录，即 <code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina-MTZ</span></code> 目录</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">../..</span></code>：上一层的上一层目录，即 <code class="file docutils literal notranslate"><span class="pre">~/projects</span></code> 目录</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">../figures</span></code>：上一层目录下的 <code class="file docutils literal notranslate"><span class="pre">figures</span></code> 目录，即 <code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina-MTZ/figures</span></code> 目录</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">../figures/fig1.pdf</span></code>：上一层目录下的 <code class="file docutils literal notranslate"><span class="pre">figures</span></code> 目录下的 <code class="file docutils literal notranslate"><span class="pre">fig1.pdf</span></code> 文件，
+即 <code class="file docutils literal notranslate"><span class="pre">~/projects/NorthChina-MTZ/figures/fig1.pdf</span></code></p></li>
+</ul>
+</section>
+<section id="id12">
+<h2>文件权限<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p>Linux 下每个文件和目录都有自己的权限，使用 <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> 命令可以查看文件或目录的权限:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 进入 ~/workspace 目录，并新建 hello-world.sh 文件和 source 目录
+$ cd ~/workspace
+$ touch hello-world.sh
+$ mkdir source
+
+# 使用 ls 命令的 -l 选项可以查看 ~/workspace 目录下的所有文件和目录的详细信息
+$ ls -l
+total 0
+-rw-r--r-- 1 seismo-learn seismo-learn 0 Feb  7 22:07 hello-world.sh
+drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> 的输出中，第一列为文件权限位，第三列和第四列分别表示文件所属用户和用户组。
+此处，文件 <code class="file docutils literal notranslate"><span class="pre">hello-world.txt</span></code> 和目录 <code class="file docutils literal notranslate"><span class="pre">source</span></code> 属于用户 seismo-learn，
+且属于用户组 seismo-learn（对于个人计算机而言，用户组通常有且仅有一个用户，
+因而用户组与用户同名）。</p>
+<p>第一列文件权限位总共包含了 10 位信息（如 <code class="docutils literal notranslate"><span class="pre">-rw-r--r--</span></code>），从左到右的含义分别是：</p>
+<ul class="simple">
+<li><p>第一位：文件类型（例如，<code class="docutils literal notranslate"><span class="pre">-</span></code> 表示普通文件，<code class="docutils literal notranslate"><span class="pre">d</span></code> 表示目录）</p></li>
+<li><p>第二到第四位：文件所属用户的权限</p></li>
+<li><p>第五到第七位：文件所属用户组的权限</p></li>
+<li><p>第八到第十位：其他人的权限</p></li>
+</ul>
+<p>每种权限（即文件所属用户的权限、文件所属用户组的权限、其他人的权限）
+包含三位信息，第一位 <code class="docutils literal notranslate"><span class="pre">r</span></code> 代表可读取（read），第二位 <code class="docutils literal notranslate"><span class="pre">w</span></code> 代表可写入（write），
+第三位 <code class="docutils literal notranslate"><span class="pre">x</span></code> 代表可执行（execute，对于目录而言表示可以进入该目录），<code class="docutils literal notranslate"><span class="pre">-</span></code> 代表没有对应的权限。</p>
+<p>从文件的权限位可以看出，用户 seismo-learn 可以读写文件 <code class="file docutils literal notranslate"><span class="pre">hello-world.sh</span></code>，
+但不可直接执行该文件，对 <code class="file docutils literal notranslate"><span class="pre">source</span></code> 目录拥有可读、可写、可执行的权限。</p>
+<p>除了用字母 <code class="docutils literal notranslate"><span class="pre">rwx</span></code> 表示权限外，还可以用数字表示权限。4 代表可读，2 代表可写，
+1 代表可执行。因为 <span class="math notranslate nohighlight">\(4+2+1=7\)</span>，所以 7 代表可读、可写、可执行。以此类推，
+6 代表可读、可写、不可执行，5 代表可读、不可写、可执行，
+4 代表可读、不可写、不可执行。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">chmod</span></code>（change mode，即变更模式）命令可以修改文件或目录的权限:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 修改 hello-world.sh 权限
+# 所属用户可读可写不可执行、所属用户组可读可写不可执行、其他人所属用户可读不可写不可执行
+$ chmod 664 hello-world.sh
+$ ls -l hello-world.sh
+-rw-rw-r-- 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
+
+# 增加 hello-world.sh 的可执行属性
+$ chmod +x hello-world.sh
+-rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
+
+# 当文件有可执行权限后，即可通过 ./文件名 的方式直接执行该文件
+$ ./hello-world.sh
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./computer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../command-line/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">命令行</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../shell/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Shell 基础</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">熟悉 Linux 文件系统</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">操作文件与目录</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">查看文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">切换目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">新建文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">复制文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">移动文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">删除文件和目录</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">创建软链接</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">隐藏文件和隐藏目录</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">文件路径</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">文件权限</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By seismo-learn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

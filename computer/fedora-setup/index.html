@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fedora 配置指南 &#8212; 地震“学”科研入门教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=61152374"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'computer/fedora-setup';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Ubuntu 配置指南" href="../ubuntu-setup/" />
+    <link rel="prev" title="配置操作系统" href="../setup/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震“学”科研入门教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">计算机基础</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../setup/">配置操作系统</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../linux101/">Linux 入门</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../command-line/">命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file-operations/">文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/">Shell 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variable/">环境变量</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands/">Linux 常用命令</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">编程基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programming/intro/">简介</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming/languages/">编程语言</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/bash/">Bash 脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/python/">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/markdown/">Markdown</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/editor/">文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/git/">Git 与代码管理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-phase/">地震震相</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/station/">地震台站</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/data-format/">波形数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/resources/">学习资料</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学实践</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/prerequisite/">准备工作</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/download/">数据下载</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog/">地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/station/">地震台站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/waveform/">地震波形数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/synthetic/">合成地震波形</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/process/">数据处理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/demean/">去均值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/detrend/">去线性趋势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/taper/">波形尖灭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/response/">去仪器响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/filter/">滤波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/rotate/">分量旋转</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../exercises/analysis/">数据分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/catalog-analysis/">分析地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/particle-motion/">质点运动轨迹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/cross-correlation/">互相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/distaz/">震中距、方位角与反方位角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../exercises/phases/">震相</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exercises/software/">常用软件</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">实践经验</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../best-practices/backup/">数据备份</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Linux/">Linux 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-macOS/">macOS 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Windows/">Windows 数据备份</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software/">高效率软件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/vscode/">VS Code 使用教程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外部链接</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/">地震“学”主站</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">参与讨论</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/edit/main/source/computer/fedora-setup.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fcomputer/fedora-setup.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/computer/fedora-setup.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fedora 配置指南</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">安装系统</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">下载系统镜像</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usb">制作 USB 启动盘</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#live">进入 Live 系统</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">开始安装</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">更新系统</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">系统软件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">编程开发环境</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-c">C/C++</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran">Fortran</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#java">Java</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">git</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fedora">
+<h1>Fedora 配置指南<a class="headerlink" href="#fedora" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://me.seisman.info/">田冬冬</a>、<a class="reference external" href="https://github.com/core-man">姚家园</a>、<a class="reference external" href="https://github.com/Chuan1937">何星辰</a></p></li>
+<li><p>最近更新日期: 2025-10-03</p></li>
+<li><p>预计花费时间: 120 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本节内容适用于 <strong>Fedora 42 Workstation</strong>，不一定适用于其他 Fedora 版本。
+建议用户访问 <a class="reference external" href="https://getfedora.org/">Fedora 官网</a> 下载并安装 Fedora
+最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。</p>
+</div>
+<section id="id1">
+<h2>安装系统<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>下载系统镜像<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>访问 <a class="reference external" href="https://getfedora.org/">Fedora 官网</a> 并下载 Fedora Workstation 镜像文件，
+一般选择 x86_64 版本。</p>
+<p><strong>Fedora 42 Workstation x86_64</strong> 的 ISO 镜像文件（约 2.23 GB）下载链接：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso">官方镜像</a></p></li>
+<li><p><a class="reference external" href="https://mirrors.ustc.edu.cn/fedora/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso">中科大镜像</a> [<strong>推荐国内用户使用</strong>]</p></li>
+</ul>
+</section>
+<section id="usb">
+<h3>制作 USB 启动盘<a class="headerlink" href="#usb" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>制作 USB 启动盘时会格式化 U 盘！请确保 U 盘中无重要文件！</p>
+</div>
+<p>准备一个 4 GB 以上容量的 U 盘，并使用 <a class="reference external" href="https://ventoy.net/cn/">Ventoy</a> 制作 USB 启动盘。
+Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 <a class="reference external" href="https://ventoy.net/cn/doc_start.html">官方文档</a>。
+下面以图解形式演示如何在 Windows 下使用 Ventoy 制作 USB 启动盘。</p>
+<div class="sd-sphinx-override sd-cards-carousel sd-card-cols-1 docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+1. 启动 Ventoy2Disk.exe 程序</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-1.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+2. 将 Ventoy 写入 USB 盘</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-2.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+3. USB 启动盘制作成功</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-3.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+4. 制作成功后的显示界面</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-4.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+5. 将 Linux ISO 镜像文件复制到 U 盘中</div>
+<p class="sd-card-text"><img alt="" src="../../_images/ventoy-5.jpg" /></p>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>从 <a class="reference external" href="https://ventoy.net/cn/download.html">Ventoy 下载页面</a> 下载 Ventoy 软件包。
+解压后，执行其中的 <code class="file docutils literal notranslate"><span class="pre">Ventoy2Disk.exe</span></code> 程序，程序启动后界面如图 1 所示。
+Ventoy 程序自动找到了用于制作启动盘的 32 GB U 盘</p></li>
+<li><p>点击“安装”会将 Ventoy 安装到 U 盘中，此时 U 盘会被格式化。请务必确保选中的是
+目标 U 盘，且 U 盘中无其它重要文件</p></li>
+<li><p>Ventoy 成功安装后，会弹出成功安装的对话框，点击确定</p></li>
+<li><p>Ventoy 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
+启动盘制作成功</p></li>
+<li><p>退出 Ventoy2Disk 程序。在“我的电脑”中找到名为 Ventoy 的 U 盘，并将已下载好的
+Linux ISO 镜像文件复制到 U 盘中即可</p></li>
+</ol>
+</section>
+<section id="live">
+<h3>进入 Live 系统<a class="headerlink" href="#live" title="Link to this heading">#</a></h3>
+<p>将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
+按下 <kbd class="kbd docutils literal notranslate">F10</kbd> 或 <kbd class="kbd docutils literal notranslate">F12</kbd> 进入 BIOS，并使计算机优先从 USB 盘启动。
+正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 42”
+以进入 Fedora 的 Live 系统。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Live 系统中进行
+任何操作以体验该系统。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol class="arabic simple">
+<li><p>不同型号的电脑进入 BIOS 的方法可能不同，请自行查询。</p></li>
+<li><p>若计算机无法从 USB 盘启动，则可能是由于计算机的“安全启动”设置导致的，
+可以尝试进入 BIOS 设置，并在 BIOS 设置内关闭“安全启动”。</p></li>
+<li><p>如果尝试多次都无法正确从 USB 启动，则可能是 USB 启动盘制作失败，请尝试重新制作启动盘。</p></li>
+</ol>
+</div>
+</section>
+<section id="id3">
+<h3>开始安装<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>以下安装步骤假定用户想要将 Fedora 系统作为电脑的<strong>唯一</strong>系统，
+电脑中原有的 Windows 或其它 Linux 系统会被彻底覆盖。
+如果用户想要安装双系统（即同时安装 Windows + Linux），请参考网络上的
+其他文档。</p>
+</div>
+<p>读者可参考下面的图解步骤和对应的说明安装操作系统（图解步骤是基于 Fedora 36 的，
+但同样适用于 Fedora 42）。</p>
+<div class="sd-sphinx-override sd-cards-carousel sd-card-cols-1 docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+1. 点击 “Install to Hard Drive” 以开始安装</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-01.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+2. 选择安装过程使用的语言</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-02.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+3. 安装信息摘要界面</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-03.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+4. 选择硬盘及分区设置</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-04.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+5. 手动分区</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-05.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+6. 分区结果及微调</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-06.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+7. 接受更改，对硬盘进行分区操作</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-07.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+8. 安装系统，并等待安装完成</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-08.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+9. 重启系统后的欢迎界面</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-09.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+10. 设置用户密码</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-10.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+11. 设置用户名</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-11.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+12. 启动第三方软件源</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-12.jpg" /></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+13. 配置完成</div>
+<p class="sd-card-text"><img alt="" src="../../_images/fedora-setup-13.jpg" /></p>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>进入 Live 系统后，选择 “Install to Hard Drive” 以启动安装程序</p></li>
+<li><p>选择安装过程中使用的语言。可以选择“中文”→“简体中文（中国）” 或
+“English”→“English (Unite States)”。选择完毕后点击下方的“继续”按钮进入下一步</p></li>
+<li><p>“安装信息摘要”界面，有三个设置项，可分别设置键盘布局、日期与时间以及要
+安装系统的硬盘及分区。键盘布局、日期与时间都有默认值，一般无需修改</p></li>
+<li><p>选择“安装目的地”，进入系统硬盘和分区的设置页面。在“设备选择”中，选择要将系统
+安装到哪个硬盘。如果计算机有多个硬盘，可以将多个硬盘都选中，被选中的硬盘会有
+一个“对号”符号。需要注意，不要选中 USB 启动盘对应的 U 盘。在“存储设置”中，可以
+选择“自动”让安装程序进行自动分区，也可以选择“自定义”以人工设置分区。本教程中
+选择更灵活的“自定义”分区方式</p></li>
+<li><p>在“手动分区”页面，分区方案选择“标准分区”，然后点击“点击这里自动创建它们”，
+以自动创建分区</p></li>
+<li><p>系统一般会创建三个分区，<code class="docutils literal notranslate"><span class="pre">/</span></code> （根分区）、<code class="docutils literal notranslate"><span class="pre">/boot</span></code>（boot 分区）和 <code class="docutils literal notranslate"><span class="pre">/home</span></code>（Home 分区）。
+不了解 Linux 的用户可以直接点击“完成”按钮。有一定 Linux 基础知识且有特定
+需求的用户，可以在自动分区的基础上进一步新增分区或修改分区的硬盘大小，
+修改完成后点击“完成”按钮即可</p></li>
+<li><p>点击“完成”按钮后会弹出“分区更改摘要”对话框，点击“接受更改”则系统会对硬盘
+进行分区操作</p></li>
+<li><p>分区结束后点击“完成”按钮，则回到图 3 所示的“安装信息摘要”界面。点击“开始安装”
+按钮即进入正式安装的过程。等待安装完成，点击“完成安装”，并重启计算机。
+重启计算机时，记得拔出 USB 启动盘，以免计算机在重启后再次进入 Live 系统。</p></li>
+<li><p>重启计算机后，会看到如图 9 所示的欢迎界面</p></li>
+<li><p>设置用户密码</p></li>
+<li><p>设置账户名称。注意用户名只能是英文</p></li>
+<li><p>启用第三方软件源，以便可以直接安装更多的软件</p></li>
+<li><p>配置完成。开始使用 Fedora 系统</p></li>
+</ol>
+</section>
+<section id="id4">
+<h3>更新系统<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>当已安装的软件有可用的更新，或 Fedora 系统可升级至新版本时，
+Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软件。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>更新系统前，特别是大版本更新（如 Fedora 41 更新为 Fedora 42），最好先进行一次备份
+（可以参考<a class="reference internal" href="../../best-practices/backup/"><span class="doc std std-doc">数据备份</span></a>）。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>本节接下来介绍的大部分软件都通过命令行安装。在桌面或菜单栏中找到并点击“Terminal” 图标以
+启动终端，然后在终端中输入命令并按下 <kbd class="kbd docutils literal notranslate">Enter</kbd> 键即可执行相应的命令。</p>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>系统软件<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>Fedora 系统自带了“软件中心”，可用于查找、安装、卸载和管理软件包，但一般建议使用
+命令行工具 <code class="docutils literal notranslate"><span class="pre">dnf</span></code> 安装和管理软件。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">dnf</span></code> 会从 Fedora 软件源下载软件包。
+国内用户可以参考 <a class="reference external" href="http://mirrors.ustc.edu.cn/help/fedora.html">http://mirrors.ustc.edu.cn/help/fedora.html</a> 将默认软件源镜像
+替换为中科大镜像，以加快软件下载速度。</p>
+<p>注意：在替换软件源镜像后要执行 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dnf</span> <span class="pre">makecache</span></code> 更新本地缓存的软件包元数据。</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">dnf</span></code> 的详细用法请阅读 <a class="reference external" href="https://dnf.readthedocs.io/en/latest/index.html">dnf 参考文档</a>，
+这里只介绍一些常用命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 更新本地软件包元数据缓存
+$ sudo dnf makecache
+
+# 检查并升级所有已经安装的软件
+$ sudo dnf upgrade
+
+# 检查并升级某软件
+$ sudo dnf upgrade xxx
+
+# 搜索软件
+$ dnf search xxx
+
+# 安装软件
+$ sudo dnf install xxx
+
+# 卸载软件
+$ sudo dnf remove xxx
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Linux 用户也可以访问 <a class="reference external" href="https://pkgs.org/">https://pkgs.org/</a> 网站查询软件包。
+该网站支持多种 Linux 发行版和多个官方及第三方软件仓库，
+且为每个软件包提供了丰富的元信息、依赖和被依赖关系、包含的文件、
+安装方式以及更新历史等信息。</p>
+</div>
+</section>
+<section id="id6">
+<h2>编程开发环境<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="c-c">
+<h3>C/C++<a class="headerlink" href="#c-c" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://gcc.gnu.org/">GCC</a> 系列的 C/C++ 编译器是 Linux 下最常用的
+C/C++ 编译器，其提供了 <code class="docutils literal notranslate"><span class="pre">gcc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">g++</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install gcc gcc-c++
+</pre></div>
+</div>
+</section>
+<section id="fortran">
+<h3>Fortran<a class="headerlink" href="#fortran" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://gcc.gnu.org/fortran/">GNU Fortran</a> 编译器是 Linux 下最常用的
+Fortran 编译器，其提供了 <code class="docutils literal notranslate"><span class="pre">gfortran</span></code> 命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install gcc-gfortran
+</pre></div>
+</div>
+</section>
+<section id="java">
+<h3>Java<a class="headerlink" href="#java" title="Link to this heading">#</a></h3>
+<p>运行 Java 程序需要安装 Java 运行环境，即 OpenJDK：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install java-latest-openjdk
+</pre></div>
+</div>
+</section>
+<section id="git">
+<h3>git<a class="headerlink" href="#git" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://git-scm.com/">git</a> 是目前最流行的版本控制工具，推荐在科研过程中
+使用 git 管理自己编写的代码和文件。一般情况下系统已经安装了该软件。如果没安装，
+可以使用如下命令安装:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo dnf install git
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./computer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../setup/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">配置操作系统</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ubuntu-setup/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Ubuntu 配置指南</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">安装系统</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">下载系统镜像</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usb">制作 USB 启动盘</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#live">进入 Live 系统</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">开始安装</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">更新系统</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">系统软件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">编程开发环境</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-c">C/C++</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fortran">Fortran</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#java">Java</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git">git</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By seismo-learn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

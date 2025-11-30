@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>地震台站 &#8212; 地震“学”科研入门教程</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=55b5f74b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=61152374"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/station';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="地震波形数据" href="../waveform/" />
+    <link rel="prev" title="地震目录" href="../catalog/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">地震“学”科研入门教程</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../">
+                    地震“学”科研入门教程
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">计算机基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../computer/operating-system/">选择操作系统</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computer/setup/">配置操作系统</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/fedora-setup/">Fedora 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/ubuntu-setup/">Ubuntu 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/macos-setup/">macOS 配置指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/wsl-setup/">WSL 配置指南</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computer/linux101/">Linux 入门</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/command-line/">命令行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/file-operations/">文件操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/shell/">Shell 基础</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computer/environment-variable/">环境变量</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../computer/commands/">Linux 常用命令</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">编程基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programming/intro/">简介</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming/languages/">编程语言</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/bash/">Bash 脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/python/">Python 语言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../programming/markdown/">Markdown</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/editor/">文本编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programming/git/">Git 与代码管理</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学基础</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-source/">震源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-wave/">地震波</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismic-phase/">地震震相</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismogram/">地震图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/seismograph/">地震仪</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/station/">地震台站</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/data-format/">波形数据格式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../seismology/resources/">学习资料</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">地震学实践</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prerequisite/">准备工作</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../download/">数据下载</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../catalog/">地震目录</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">地震台站</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../waveform/">地震波形数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../synthetic/">合成地震波形</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../process/">数据处理</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../demean/">去均值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../detrend/">去线性趋势</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taper/">波形尖灭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../response/">去仪器响应</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filter/">滤波</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rotate/">分量旋转</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../analysis/">数据分析</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../catalog-analysis/">分析地震目录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../particle-motion/">质点运动轨迹</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cross-correlation/">互相关</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distaz/">震中距、方位角与反方位角</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../phases/">震相</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/">常用软件</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">实践经验</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/intro/">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/file-organization/">文件管理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software-installation/">软件安装</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../best-practices/backup/">数据备份</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Linux/">Linux 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-macOS/">macOS 数据备份</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../best-practices/backup-Windows/">Windows 数据备份</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/software/">高效率软件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/zsh/">Zsh 及其配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../best-practices/vscode/">VS Code 使用教程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">外部链接</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/">地震“学”主站</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://seismo-learn.org/contributing/">贡献指南</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/orgs/seismo-learn/discussions">参与讨论</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/edit/main/source/exercises/station.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/seismo-learn/seismology101/issues/new?title=Issue%20on%20page%20%2Fexercises/station.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/exercises/station.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>地震台站</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earthscope-sage-gmap">使用 EarthScope SAGE: GMAP 筛选台站</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obspy">使用 ObsPy 下载地震台站信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">台站信息的读和写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inventory">深入理解和使用 <code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code> 类</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code> 类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code> 类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#station"><code class="xref py py-class docutils literal notranslate"><span class="pre">Station</span></code> 类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code> 类</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>地震台站<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>本节贡献者: <a class="reference external" href="https://me.seisman.info/">田冬冬</a>、<a class="reference external" href="https://github.com/core-man">姚家园</a></p></li>
+<li><p>最近更新日期: 2023-04-29</p></li>
+<li><p>预计花费时间: 60 分钟</p></li>
+</ul>
+<hr class="docutils" />
+<p>全球地震台站有成千上万个，通常在某个具体研究中只需要符合特定要求的台站，因而需要对地震台站进行筛选。
+这一节介绍如何筛选公开地震台站并获取台站信息。</p>
+<section id="earthscope-sage-gmap">
+<h2>使用 EarthScope SAGE: GMAP 筛选台站<a class="headerlink" href="#earthscope-sage-gmap" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>EarthScope SAGE GMAP （之前称为 IRIS GMAP）使用了 Google 地图服务，因而需要科学上网才能正常访问。</p>
+</div>
+<p>EarthScope SAGE GMAP （之前称为 IRIS GMAP）是一个由 EarthScope SAGE 提供的地震台站网页搜索工具，可以
+方便地查看全球地震台站分布以及台站的详细信息。下面演示 EarthScope SAGE GMAP 的基本使用方法。</p>
+<p>访问 EarthScope SAGE GMAP 网站 <a class="reference external" href="https://ds.iris.edu/gmap/">https://ds.iris.edu/gmap/</a>，
+会看到如下界面：界面左侧为功能栏，可以使用不同的准则筛选地震台站；
+右侧为显示区，用于显示符合筛选条件的地震台站。</p>
+<p>左侧功能栏中，支持以多种不同的方式对地震台站进行筛选：指定台网名、台站名、位置码、通道名；指定时间范围；指定台站位置范围（矩形区域或圆形区域）；指定地震数据中心。</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="../../_images/gmap-1.jpg"><img alt="EarthScope SAGE GMAP 界面" src="../../_images/gmap-1.jpg" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">EarthScope SAGE GMAP 界面</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>例如，想筛选所有 <code class="docutils literal notranslate"><span class="pre">IU</span></code> 台网的宽频带地震台站，则可以在 <strong>Network</strong> 框中输入 <code class="docutils literal notranslate"><span class="pre">IU</span></code>，
+在 <strong>Channel</strong> 框中输入 <code class="docutils literal notranslate"><span class="pre">BH?</span></code>（此处的问号为通配符），然后点击上方的 <strong>Update Map</strong>
+按钮，界面右侧便会显示出所有满足筛选条件的台站。右侧上方为地图区域，圆圈标记了
+台站的位置；下方为列表区域，会显示台网名、台站名、台站位置以及台站的开始和结束时间。</p>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/gmap-2.jpg"><img alt="EarthScope SAGE GMAP 显示 IU 台网的宽频带台站" src="../../_images/gmap-2.jpg" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">EarthScope SAGE GMAP 显示 IU 台网的宽频带台站</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>可以更进一步查看每个台站的详细信息。以位于美国新墨西哥州的地震台站 <code class="docutils literal notranslate"><span class="pre">IU.ANMO</span></code> 为例，
+点击 <code class="docutils literal notranslate"><span class="pre">IU.ANMO</span></code> 台站对应的圆圈或下方列表区域的该台，会出现如下图所示的提示框：</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/gmap-3.jpg"><img alt="EarthScope SAGE GMAP 查看 IU.ANMO 台站的基本信息" src="../../_images/gmap-3.jpg" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">EarthScope SAGE GMAP 查看 IU.ANMO 台站的基本信息</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>可以看到，<code class="docutils literal notranslate"><span class="pre">IU.ANMO</span></code> 台站位于美国新墨西哥州 Albuquerque 市，台站开始运行的时间为
+2002 年 11 月 19 日，结束运行的时间为 2599 年 12 月 31 日（这一“未来”结束时间
+表示台站依然在长期运行中）。</p>
+<p>点击提示框中的 “More Information”链接，则会跳转到 <a class="reference external" href="https://ds.iris.edu/mda">EarthScope SAGE MDA</a> 中
+该台站所对应的页面（即 <a class="reference external" href="https://ds.iris.edu/mda/IU/ANMO/?starttime=2002-11-19&amp;amp;endtime=2599-12-31">https://ds.iris.edu/mda/IU/ANMO/?starttime=2002-11-19&amp;endtime=2599-12-31</a>)。
+该页面不仅列出了台站的基本信息，还列出了台站所使用的地震仪器及其基本参数。</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/mda-1.jpg"><img alt="EarthScope SAGE MDA 中查看 IU.ANMO 台站的基本信息" src="../../_images/mda-1.jpg" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">EarthScope SAGE MDA 中查看 IU.ANMO 台站的基本信息</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="obspy">
+<h2>使用 ObsPy 下载地震台站信息<a class="headerlink" href="#obspy" title="Link to this heading">#</a></h2>
+<p>EarthScope SAGE GMAP 作为一个在线工具可以很直观地查看台站分布和基本信息，但却不适合数据
+自动化处理。ObsPy 提供了从不同的地震数据中心筛选和下载台站基本信息的功能。</p>
+<p>下面演示如何使用 ObsPy 的 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_stations.html#obspy.clients.fdsn.client.Client.get_stations" title="(in ObsPy v1.4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Client.get_stations()</span></code></a>
+函数筛选和下载地震台站信息。</p>
+<p>首先，需要导入 ObsPy 中地震数据中心数据下载客户端 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.html#obspy.clients.fdsn.client.Client" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Client</span></code></a>：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">obspy.clients.fdsn</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>接下来，我们需要初始化一个 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.html#obspy.clients.fdsn.client.Client" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Client</span></code></a> 对象。
+ObsPy 的 <code class="docutils literal notranslate"><span class="pre">Client</span></code> 支持多个地震数据中心。这里我们选择使用 EarthScope SAGE（以前称为 IRIS）地震数据中心：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;IRIS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_stations.html#obspy.clients.fdsn.client.Client.get_stations" title="(in ObsPy v1.4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Client.get_stations()</span></code></a>
+函数可以根据指定的参数获取地震台站信息。这里我们想要获得 <code class="docutils literal notranslate"><span class="pre">IU</span></code> 台网中所有台站名以 <code class="docutils literal notranslate"><span class="pre">A</span></code> 开头的
+宽频带三分量（<code class="docutils literal notranslate"><span class="pre">BH*</span></code>）台站，并同时获取台站的仪器响应信息（<code class="docutils literal notranslate"><span class="pre">level=&quot;response&quot;</span></code>）：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_stations</span><span class="p">(</span>
+    <span class="n">network</span><span class="o">=</span><span class="s2">&quot;IU&quot;</span><span class="p">,</span>
+    <span class="n">station</span><span class="o">=</span><span class="s2">&quot;A*&quot;</span><span class="p">,</span>
+    <span class="n">channel</span><span class="o">=</span><span class="s2">&quot;BH*&quot;</span><span class="p">,</span>
+    <span class="n">starttime</span><span class="o">=</span><span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
+    <span class="n">endtime</span><span class="o">=</span><span class="s2">&quot;2002-01-02&quot;</span><span class="p">,</span>
+    <span class="n">level</span><span class="o">=</span><span class="s2">&quot;response&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>该函数会向 EarthScope 地震数据中心发起请求，并返回符合条件的地震台站信息。其返回值是
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类型，并被保存到变量 <code class="docutils literal notranslate"><span class="pre">inv</span></code> 中。
+下面我们看看变量 <code class="docutils literal notranslate"><span class="pre">inv</span></code> 中的内容：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">inv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inventory created at 2025-11-30T02:05:05.465300Z
+	Created by: IRIS WEB SERVICE: fdsnws-station | version: 1.1.52
+		    http://service.iris.edu/fdsnws/station/1/query?starttime=2002-01-...
+	Sending institution: IRIS-DMC (IRIS-DMC)
+	Contains:
+		Networks (1):
+			IU
+		Stations (3):
+			IU.ADK (Adak, Aleutian Islands, Alaska)
+			IU.AFI (Afiamalu, Samoa)
+			IU.ANMO (Albuquerque, New Mexico, USA)
+		Channels (15):
+			IU.ADK.00.BHZ, IU.ADK.00.BHN, IU.ADK.00.BHE, IU.AFI.00.BHZ, 
+			IU.AFI.00.BHN, IU.AFI.00.BHE, IU.AFI.10.BHZ, IU.AFI.10.BHN, 
+			IU.AFI.10.BHE, IU.ANMO.00.BHZ, IU.ANMO.00.BH1, IU.ANMO.00.BH2, 
+			IU.ANMO.10.BHZ, IU.ANMO.10.BH1, IU.ANMO.10.BH2
+</pre></div>
+</div>
+</div>
+</div>
+<p>可以看到，返回的变量 <code class="docutils literal notranslate"><span class="pre">inv</span></code> 中包含了满足条件的 1 个台网、3 个台站、15 个通道的信息。</p>
+<p><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类提供的
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.plot.html#obspy.core.inventory.inventory.Inventory.plot" title="(in ObsPy v1.4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Inventory.plot()</span></code></a> 函数
+可以用于快速绘制地震台站分布图：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d391d21aab087327e32ae456a6d0ca4d2c30aef688e3c0a25b3482eb856d5289.png" src="../../_images/d391d21aab087327e32ae456a6d0ca4d2c30aef688e3c0a25b3482eb856d5289.png" />
+</div>
+</div>
+<p><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.plot_response.html#obspy.core.inventory.inventory.Inventory.plot_response" title="(in ObsPy v1.4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Inventory.plot_response()</span></code></a>
+函数可以用于绘制仪器响应。下面的函数绘制了 <code class="docutils literal notranslate"><span class="pre">inv</span></code> 中所有 <code class="docutils literal notranslate"><span class="pre">BHZ</span></code> 分量的仪器响应，并设置了仪器响应图的
+最小频率为 0.001 Hz：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="o">.</span><span class="n">plot_response</span><span class="p">(</span><span class="n">min_freq</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="s2">&quot;BHZ&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/adb7add1eb285f054b9f0dc4607deef44cdfaa1d4b206e1cf046b5a5ff9aaca1.png" src="../../_images/adb7add1eb285f054b9f0dc4607deef44cdfaa1d4b206e1cf046b5a5ff9aaca1.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>台站信息的读和写<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>通过 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_stations.html#obspy.clients.fdsn.client.Client.get_stations" title="(in ObsPy v1.4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Client.get_stations()</span></code></a>
+获得的台站信息可以保存为多种不同格式。下面的代码将台站信息以 StationXML 格式保存到文件
+<code class="docutils literal notranslate"><span class="pre">stations.xml</span></code> 中：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inv</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;stations.xml&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;STATIONXML&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>在需要时，随时可以使用 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.read_inventory.html#obspy.core.inventory.inventory.read_inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_inventory()</span></code></a>
+函数读入磁盘文件中的台站信息。该函数值返回 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类型：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">obspy</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_inventory</span>
+<span class="n">inv</span> <span class="o">=</span> <span class="n">read_inventory</span><span class="p">(</span><span class="s2">&quot;stations.xml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inventory">
+<h2>深入理解和使用 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类<a class="headerlink" href="#inventory" title="Link to this heading">#</a></h2>
+<p>上面提到，<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_stations.html#obspy.clients.fdsn.client.Client.get_stations" title="(in ObsPy v1.4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Client.get_stations()</span></code></a>
+和 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.read_inventory.html#obspy.core.inventory.inventory.read_inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">read_inventory()</span></code></a> 的返回值都是
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类型。
+事实上，<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类是 ObsPy 中最核心的类之一，用于储存地震台站信息。
+下图展示了 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类的属性及其层级关系：
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类可以看做是
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.network.Network.html#obspy.core.inventory.network.Network" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> 类的列表;
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.network.Network.html#obspy.core.inventory.network.Network" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> 类可以看做是
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.station.Station.html#obspy.core.inventory.station.Station" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Station</span></code></a> 类的列表;
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.station.Station.html#obspy.core.inventory.station.Station" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Station</span></code></a> 类可以看做是
+<a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.channel.Channel.html#obspy.core.inventory.channel.Channel" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code></a> 类的列表。</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://docs.obspy.org/_images/Inventory.png"><img alt="ObsPy 的 Inventory 类" src="https://docs.obspy.org/_images/Inventory.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">ObsPy 的 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类。引自 <a class="reference external" href="https://docs.obspy.org/_images/Inventory.png">ObsPy 网站</a>。</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id3">
+<h3><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 类<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>可以对 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.inventory.Inventory.html#obspy.core.inventory.inventory.Inventory" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code></a> 进行列表相关的操作，
+下面对 <code class="docutils literal notranslate"><span class="pre">inv</span></code> 进行循环并打印每个元素（即 <code class="docutils literal notranslate"><span class="pre">Network</span></code> 类）的值：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">net</span> <span class="ow">in</span> <span class="n">inv</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">net</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Network IU (Global Seismograph Network (GSN - IRIS/USGS) (GSN))
+	Station Count: 3/123 (Selected/Total)
+	1988-01-01T00:00:00.000000Z - --
+	Access: open
+	Contains:
+		Stations (3):
+			IU.ADK (Adak, Aleutian Islands, Alaska)
+			IU.AFI (Afiamalu, Samoa)
+			IU.ANMO (Albuquerque, New Mexico, USA)
+		Channels (15):
+			IU.ADK.00.BHZ, IU.ADK.00.BHN, IU.ADK.00.BHE, IU.AFI.00.BHZ, 
+			IU.AFI.00.BHN, IU.AFI.00.BHE, IU.AFI.10.BHZ, IU.AFI.10.BHN, 
+			IU.AFI.10.BHE, IU.ANMO.00.BHZ, IU.ANMO.00.BH1, IU.ANMO.00.BH2, 
+			IU.ANMO.10.BHZ, IU.ANMO.10.BH1, IU.ANMO.10.BH2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="network">
+<h3><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.network.Network.html#obspy.core.inventory.network.Network" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> 类<a class="headerlink" href="#network" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.network.Network.html#obspy.core.inventory.network.Network" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> 类提供了很多台网相关的属性和函数。
+例如，下面的代码会输出第一个台网的代码、总台站数以及 <code class="docutils literal notranslate"><span class="pre">inv</span></code> 中实际包含的台站数目：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">inv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">net</span><span class="o">.</span><span class="n">total_number_of_stations</span><span class="p">,</span> <span class="n">net</span><span class="o">.</span><span class="n">selected_number_of_stations</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>IU 123 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>可以对 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.network.Network.html#obspy.core.inventory.network.Network" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> 进行列表相关的操作，
+这里我们取其第一个台站并查看其信息：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sta</span> <span class="o">=</span> <span class="n">net</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Station ADK (Adak, Aleutian Islands, Alaska)
+	Station Code: ADK
+	Channel Count: 3/309 (Selected/Total)
+	1993-09-21T00:00:00.000000Z - 
+	Access: open 
+	Latitude: 51.8823, Longitude: -176.6842, Elevation: 130.0 m
+	Available Channels:
+	  .00.BH[ZNE]    20.0 Hz  1999-02-11 to 2003-05-23
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="station">
+<h3><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.station.Station.html#obspy.core.inventory.station.Station" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Station</span></code></a> 类<a class="headerlink" href="#station" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.station.Station.html#obspy.core.inventory.station.Station" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Station</span></code></a> 类也提供了很多台站相关的属性和函数。
+例如，下面的代码输出了当前台站的台站代码、经纬度、高程、台站的总通道数目和当前 <code class="docutils literal notranslate"><span class="pre">inv</span></code> 中包含的
+通道数目：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sta</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">sta</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">sta</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">sta</span><span class="o">.</span><span class="n">elevation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sta</span><span class="o">.</span><span class="n">total_number_of_channels</span><span class="p">,</span> <span class="n">sta</span><span class="o">.</span><span class="n">selected_number_of_channels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ADK 51.8823 -176.6842 130.0
+309 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>可以对 <a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.station.Station.html#obspy.core.inventory.station.Station" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Station</span></code></a> 进行列表相关的操作，
+这里我们取该台站的第一个通道并查看其信息：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chn</span> <span class="o">=</span> <span class="n">sta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Channel &#39;BHE&#39;, Location &#39;00&#39; 
+	Time range: 1999-02-11T00:00:00.000000Z - 2003-05-23T08:40:00.000000Z
+	Latitude: 51.8823, Longitude: -176.6842, Elevation: 130.0 m, Local Depth: 0.0 m
+	Azimuth: 90.00 degrees from north, clockwise
+	Dip: 0.00 degrees down from horizontal
+	Channel types: CONTINUOUS, GEOPHYSICAL
+	Sampling Rate: 20.00 Hz
+	Sensor (Description): None (Streckeisen STS-1H/VBB Seismometer)
+	Response information available
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="channel">
+<h3><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.channel.Channel.html#obspy.core.inventory.channel.Channel" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code></a> 类<a class="headerlink" href="#channel" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://docs.obspy.org/packages/autogen/obspy.core.inventory.channel.Channel.html#obspy.core.inventory.channel.Channel" title="(in ObsPy v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code></a> 类也提供了很多通道相关的属性和函数。
+例如，下面的代码输出了当前通道的方位角、倾角、位置码和采样率等信息：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">chn</span><span class="o">.</span><span class="n">azimuth</span><span class="p">,</span> <span class="n">chn</span><span class="o">.</span><span class="n">dip</span><span class="p">,</span> <span class="n">chn</span><span class="o">.</span><span class="n">location_code</span><span class="p">,</span> <span class="n">chn</span><span class="o">.</span><span class="n">sample_rate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90.0 0.0 00 20.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./exercises"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../catalog/"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">地震目录</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../waveform/"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">地震波形数据</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earthscope-sage-gmap">使用 EarthScope SAGE: GMAP 筛选台站</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obspy">使用 ObsPy 下载地震台站信息</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">台站信息的读和写</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inventory">深入理解和使用 <code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code> 类</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inventory</span></code> 类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code> 类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#station"><code class="xref py py-class docutils literal notranslate"><span class="pre">Station</span></code> 类</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel"><code class="xref py py-class docutils literal notranslate"><span class="pre">Channel</span></code> 类</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By seismo-learn
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
