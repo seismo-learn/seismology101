@@ -1,13 +1,13 @@
 # Fedora 配置指南
 
 - 本节贡献者: {{田冬冬}}、{{姚家园}}、{{何星辰}}
-- 最近更新日期: 2025-10-03
+- 最近更新日期: 2026-04-08
 - 预计花费时间: 120 分钟
 
 ---
 
 :::{note}
-本节内容适用于 **Fedora 42 Workstation**，不一定适用于其他 Fedora 版本。
+本节内容适用于 **Fedora 43 Workstation**，不一定适用于其他 Fedora 版本。
 建议用户访问 [Fedora 官网](https://getfedora.org/) 下载并安装 Fedora
 最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
 :::
@@ -19,10 +19,10 @@
 访问 [Fedora 官网](https://getfedora.org/) 并下载 Fedora Workstation 镜像文件，
 一般选择 x86_64 版本。
 
-**Fedora 42 Workstation x86_64** 的 ISO 镜像文件（约 2.23 GB）下载链接：
+**Fedora 43 Workstation x86_64** 的 ISO 镜像文件下载链接：
 
-- [官方镜像](https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso)
-- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso) [**推荐国内用户使用**]
+- [官方镜像](https://download.fedoraproject.org/pub/fedora/linux/releases/43/Workstation/x86_64/iso/Fedora-Workstation-Live-43-1.6.x86_64.iso)
+- [中科大镜像](https://mirrors.ustc.edu.cn/fedora/releases/43/Workstation/x86_64/iso/Fedora-Workstation-Live-43-1.6.x86_64.iso) [**推荐国内用户使用**]
 
 ### 制作 USB 启动盘
 
@@ -67,7 +67,7 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 
 将制作好的 USB 启动盘插入要安装 Fedora 系统的计算机上，开机启动，
 按下 {kbd}`F10` 或 {kbd}`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
-正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 42”
+正确启动后，则会进入系统启动引导程序，按向上向下键选中“Start Fedora-Workstation-Live 43”
 以进入 Fedora 的 Live 系统。
 
 :::{note}
@@ -91,8 +91,8 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 其他文档。
 :::
 
-读者可参考下面的图解步骤和对应的说明安装操作系统（图解步骤是基于 Fedora 36 的，
-但同样适用于 Fedora 42）。
+读者可参考下面的图解步骤和对应的说明安装操作系统。下列图解基于较早版本的 Fedora，
+Fedora 43 的界面细节可能略有差异，但整体安装流程基本一致。
 
 ::::{card-carousel} 1
 :::{card} 1. 点击 “Install to Hard Drive” 以开始安装
@@ -138,7 +138,7 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 
 1. 进入 Live 系统后，选择 “Install to Hard Drive” 以启动安装程序
 2. 选择安装过程中使用的语言。可以选择“中文”→“简体中文（中国）” 或
-   “English”→“English (Unite States)”。选择完毕后点击下方的“继续”按钮进入下一步
+   “English”→“English (United States)”。选择完毕后点击下方的“继续”按钮进入下一步
 3. “安装信息摘要”界面，有三个设置项，可分别设置键盘布局、日期与时间以及要
    安装系统的硬盘及分区。键盘布局、日期与时间都有默认值，一般无需修改
 4. 选择“安装目的地”，进入系统硬盘和分区的设置页面。在“设备选择”中，选择要将系统
@@ -170,7 +170,7 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 Fedora 会弹出提醒通知。建议用户及时更新系统及已安装的软件。
 
 :::{warning}
-更新系统前，特别是大版本更新（如 Fedora 41 更新为 Fedora 42），最好先进行一次备份
+更新系统前，特别是大版本更新（如 Fedora 42 更新为 Fedora 43），最好先进行一次备份
 （可以参考[](/best-practices/backup)）。
 :::
 
