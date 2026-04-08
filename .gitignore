@@ -1,5 +1,6 @@
 # Documentation
 _build
+source/conf.py
 
 # VS Code
 .vscode
