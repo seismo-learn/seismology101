@@ -6,7 +6,7 @@ version: 2
 
 # Set the version of Python and other tools you might need
 build:
-  os: ubuntu-lts-latest
+  os: ubuntu-26.04
   tools:
     python: "miniforge3-25.11"
   jobs:
