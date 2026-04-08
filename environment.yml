@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
-  - python=3.13
+  - python=3.14.4
   - cartopy
   - jupyter-book=1.0.4
   - matplotlib
