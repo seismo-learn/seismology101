@@ -150,7 +150,7 @@ $ ls
 destination  hello-world-cp.txt  hello-world-mv.txt  seismo-learn.txt  source
 # 移动 hello-world-cp.txt 和 hello-world-mv.txt 文件到 source 目录下
 $ mv hello-world-cp.txt hello-world-mv.txt source
-ls
+$ ls
 destination  seismo-learn.txt  source
 $ ls source
 hello-world-cp.txt  hello-world.txt  hello-world-mv.txt  seismo-learn.txt
