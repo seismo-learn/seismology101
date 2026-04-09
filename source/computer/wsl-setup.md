@@ -65,13 +65,15 @@ $ wsl --list --online
 $ wsl --install <Distribution Name>
 ```
 
-例如，如果想安装 Fedora 发行版，则可以使用：
+例如，如果想安装 Fedora 发行版，可以先使用 `wsl --list --online` 查看当前可用的
+发行版名称，再根据实际输出执行安装命令。例如，若列表中显示 Fedora 的名称为
+`FedoraLinux-43`，则可以使用：
 ```
-$ wsl --install FedoraLinux-42
+$ wsl --install FedoraLinux-43
 ```
 安装完成后可以使用如下命令启动 Fedora：
 ```
-$ wsl -d FedoraLinux-42
+$ wsl -d FedoraLinux-43
 ```
 :::
 
@@ -159,7 +161,7 @@ $ wsl --unregister Ubuntu
 
 WSL 有 WSL1 和 WSL2 两个版本。WSL2 是安装 Linux 发行版时的默认版本，通常也是更推荐的选择。
 但在跨系统访问文件方面（即在 Windows 下访问 WSL 中的文件或在 WSL 下访问 Windows 中的文件），
-WSL1 的速度要远远快于 WSL2。因而，在使用 WSL2 时，建议尽量将处理的文件放在 WSL 中，
+WSL1 在某些场景下可能比 WSL2 更快。因而，在使用 WSL2 时，建议尽量将处理的文件放在 WSL 中，
 以避免跨系统访问文件。
 
 对于有经常跨系统操作文件的需求，可以使用如下命令将 Linux 发行版（假定名为 Ubuntu）从 WSL2 转换为 WSL1：
