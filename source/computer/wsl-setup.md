@@ -145,13 +145,13 @@ $ wsl --unregister Ubuntu
 # 导出 Linux 发行版，可做为备份
 # 在 D 盘中新建备份目录，命名为 WSLBAK
 $ mkdir D:\WSLBAK
-# 导出到备份目录下，命名为 20210117bak.tar
-$ wsl --export Ubuntu D:\WSLBAK\20210117bak.tar
+# 导出到备份目录下，命名为 backup.tar
+$ wsl --export Ubuntu D:\WSLBAK\backup.tar
 # 导入并还原之前备份的 Linux 发行版
-# 此例中选择在 D 盘中新建还原目录，命名为 Ubuntu24.04
-$ mkdir D:\WSLDIR\Ubuntu24.04
-# 导入并还原之前的备份，将此发行版命名为 Ubuntu24.04
-$ wsl --import Ubuntu24.04 D:\WSLDIR\Ubuntu24.04 D:\WSLBAK\20210117bak.tar
+# 此例中选择在 D 盘中新建还原目录，命名为 UbuntuData
+$ mkdir D:\WSLDIR\UbuntuData
+# 导入并还原之前的备份，将此发行版命名为 UbuntuData
+$ wsl --import UbuntuData D:\WSLDIR\UbuntuData D:\WSLBAK\backup.tar
 # 删除 C 盘里名为 Ubuntu 的发行版，以释放 C 盘空间
 $ wsl --unregister Ubuntu
 ```
