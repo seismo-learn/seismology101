@@ -44,7 +44,8 @@ jobs:
             _build/jupyter_execute/
             ~/.local/share/cartopy/
             ~/.matplotlib/
-          key: caches
+          key: ${{ runner.os }}-${{ hashFiles('environment.yml', 'source/**/*.md', 'source/**/*.yml', 'source/**/*.yaml', 'source/**/*.bib') }}
+          restore-keys: ${{ runner.os }}-
 
       - name: Disable notebook cache for scheduled jobs
         if: github.event_name == 'schedule'
