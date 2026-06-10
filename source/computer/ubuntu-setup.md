@@ -34,34 +34,30 @@
 Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](https://ventoy.net/cn/doc_start.html)。
 下面以图解形式演示如何在 Windows 下使用 Ventoy 制作 USB 启动盘。
 
-::::{card-carousel} 1
-:::{card} 1. 启动 Ventoy2Disk.exe 程序
-![](ventoy-1.jpg)
-:::
-:::{card} 2. 将 Ventoy 写入 USB 盘
-![](ventoy-2.jpg)
-:::
-:::{card} 3. USB 启动盘制作成功
-![](ventoy-3.jpg)
-:::
-:::{card} 4. 制作成功后的显示界面
-![](ventoy-4.jpg)
-:::
-:::{card} 5. 将 Linux ISO 镜像文件复制到 U 盘中
-![](ventoy-5.jpg)
-:::
-::::
-
 1. 从 [Ventoy 下载页面](https://ventoy.net/cn/download.html) 下载 Ventoy 软件包。
-   解压后，执行其中的 {file}`Ventoy2Disk.exe` 程序，程序启动后界面如图 1 所示。
+   解压后，执行其中的 `Ventoy2Disk.exe` 程序，程序启动后界面如图 1 所示。
    Ventoy 程序自动找到了用于制作启动盘的 32 GB U 盘
+
+   ![](ventoy-1.jpg)
+
 2. 点击“安装”会将 Ventoy 安装到 U 盘中，此时 U 盘会被格式化。请务必确保选中的是
    目标 U 盘，且 U 盘中无其它重要文件
+
+   ![](ventoy-2.jpg)
+
 3. Ventoy 成功安装后，会弹出成功安装的对话框，点击确定
+
+   ![](ventoy-3.jpg)
+
 4. Ventoy 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
    启动盘制作成功
+
+   ![](ventoy-4.jpg)
+
 5. 退出 Ventoy2Disk 程序。在“我的电脑”中找到名为 Ventoy 的 U 盘，并将已下载好的
    Linux ISO 镜像文件复制到 U 盘中即可
+
+   ![](ventoy-5.jpg)
 
 ### 进入 Live 系统
 
@@ -92,48 +88,44 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 
 读者可参考下面的图解步骤和对应的说明安装操作系统。
 
-::::{card-carousel} 1
-:::{card} 1. 欢迎界面
-![](ubuntu-setup-1.jpg)
-:::
-:::{card} 2. 选择安装过程中使用的语言
-![](ubuntu-setup-2.jpg)
-:::
-:::{card} 3. 设置键盘布局
-![](ubuntu-setup-3.jpg)
-:::
-:::{card} 4. 设置要安装的软件
-![](ubuntu-setup-4.jpg)
-:::
-:::{card} 5. 设置安装类型
-![](ubuntu-setup-5.jpg)
-:::
-:::{card} 6. 对硬盘进行分区操作
-![](ubuntu-setup-6.jpg)
-:::
-:::{card} 7. 设置时区
-![](ubuntu-setup-7.jpg)
-:::
-:::{card} 8. 设置用户名与密码
-![](ubuntu-setup-8.jpg)
-:::
-:::{card} 9. 等待安装完成
-![](ubuntu-setup-9.jpg)
-:::
-::::
-
 1. 进入欢迎界面，左侧可以选择安装过程中使用的语言
+
+   ![](ubuntu-setup-1.jpg)
+
 2. 选择“中文（简体）”，点击“安装 Ubuntu”即开始安装
+
+   ![](ubuntu-setup-2.jpg)
+
 3. 选择键盘布局，汉语或 “English(US)”均可
+
+   ![](ubuntu-setup-3.jpg)
+
 4. 选择“正常安装”，建议勾选“安装 Ubuntu 时下载更新”和“为图形或无线硬件，
    以及其他媒体格式安装第三方软件”
+
+   ![](ubuntu-setup-4.jpg)
+
 5. 在“安装类型”界面，选择“清除整个硬盘并安装 Ubuntu”，安装程序会进行自动分区。
    有经验的用户也可以选择“其他选项”自定义分区，但需要了解 Linux 的分区操作。
    对于一般用户而言，建议使用默认的自动分区
+
+   ![](ubuntu-setup-5.jpg)
+
 6. 单击“现在安装”，选择“继续”以将改动写入磁盘
+
+   ![](ubuntu-setup-6.jpg)
+
 7. 选择时区（例如“上海”）
+
+   ![](ubuntu-setup-7.jpg)
+
 8. 输入账户信息和密码信息。注意用户名只能是英文
+
+   ![](ubuntu-setup-8.jpg)
+
 9. 等待安装完成。完成后点击“现在重启”以重启计算机。
+
+   ![](ubuntu-setup-9.jpg)
 
 重启计算机时，记得拔出 USB 启动盘，以免再次进入 USB 安装镜像。
 

@@ -34,34 +34,30 @@
 Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](https://ventoy.net/cn/doc_start.html)。
 下面以图解形式演示如何在 Windows 下使用 Ventoy 制作 USB 启动盘。
 
-::::{card-carousel} 1
-:::{card} 1. 启动 Ventoy2Disk.exe 程序
-![](ventoy-1.jpg)
-:::
-:::{card} 2. 将 Ventoy 写入 USB 盘
-![](ventoy-2.jpg)
-:::
-:::{card} 3. USB 启动盘制作成功
-![](ventoy-3.jpg)
-:::
-:::{card} 4. 制作成功后的显示界面
-![](ventoy-4.jpg)
-:::
-:::{card} 5. 将 Linux ISO 镜像文件复制到 U 盘中
-![](ventoy-5.jpg)
-:::
-::::
-
 1. 从 [Ventoy 下载页面](https://ventoy.net/cn/download.html) 下载 Ventoy 软件包。
-   解压后，执行其中的 {file}`Ventoy2Disk.exe` 程序，程序启动后界面如图 1 所示。
+   解压后，执行其中的 `Ventoy2Disk.exe` 程序，程序启动后界面如图 1 所示。
    Ventoy 程序自动找到了用于制作启动盘的 32 GB U 盘
+
+   ![](ventoy-1.jpg)
+
 2. 点击“安装”会将 Ventoy 安装到 U 盘中，此时 U 盘会被格式化。请务必确保选中的是
    目标 U 盘，且 U 盘中无其它重要文件
+
+   ![](ventoy-2.jpg)
+
 3. Ventoy 成功安装后，会弹出成功安装的对话框，点击确定
+
+   ![](ventoy-3.jpg)
+
 4. Ventoy 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
    启动盘制作成功
+
+   ![](ventoy-4.jpg)
+
 5. 退出 Ventoy2Disk 程序。在“我的电脑”中找到名为 Ventoy 的 U 盘，并将已下载好的
    Linux ISO 镜像文件复制到 U 盘中即可
+
+   ![](ventoy-5.jpg)
 
 ### 进入 Live 系统
 
@@ -94,64 +90,67 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 读者可参考下面的图解步骤和对应的说明安装操作系统。下列图解基于较早版本的 Fedora，
 Fedora 43 的界面细节可能略有差异，但整体安装流程基本一致。
 
-::::{card-carousel} 1
-:::{card} 1. 点击 “Install to Hard Drive” 以开始安装
-![](fedora-setup-01.jpg)
-:::
-:::{card} 2. 选择安装过程使用的语言
-![](fedora-setup-02.jpg)
-:::
-:::{card} 3. 安装信息摘要界面
-![](fedora-setup-03.jpg)
-:::
-:::{card} 4. 选择硬盘及分区设置
-![](fedora-setup-04.jpg)
-:::
-:::{card} 5. 手动分区
-![](fedora-setup-05.jpg)
-:::
-:::{card} 6. 分区结果及微调
-![](fedora-setup-06.jpg)
-:::
-:::{card} 7. 接受更改，对硬盘进行分区操作
-![](fedora-setup-07.jpg)
-:::
-:::{card} 8. 安装系统，并等待安装完成
-![](fedora-setup-08.jpg)
-:::
-:::{card} 9. 重启系统后的欢迎界面
-![](fedora-setup-09.jpg)
-:::
-:::{card} 10. 设置用户密码
-![](fedora-setup-10.jpg)
-:::
-:::{card} 11. 设置用户名
-![](fedora-setup-11.jpg)
-:::
-:::{card} 12. 启动第三方软件源
-![](fedora-setup-12.jpg)
-:::
-:::{card} 13. 配置完成
-![](fedora-setup-13.jpg)
-:::
-::::
-
 1. 进入 Live 系统后，选择 “Install to Hard Drive” 以启动安装程序
+
+   ![](fedora-setup-01.jpg)
+
 2. 选择安装过程中使用的语言。可以选择“中文”→“简体中文（中国）” 或
    “English”→“English (United States)”。选择完毕后点击下方的“继续”按钮进入下一步
+
+   ![](fedora-setup-02.jpg)
+
 3. “安装信息摘要”界面，有三个设置项，可分别设置键盘布局、日期与时间以及要
    安装系统的硬盘及分区。键盘布局、日期与时间都有默认值，一般无需修改
+
+   ![](fedora-setup-03.jpg)
+
 4. 选择“安装目的地”，进入系统硬盘和分区的设置页面。在“设备选择”中，选择要将系统
    安装到哪个硬盘。如果计算机有多个硬盘，可以将多个硬盘都选中，被选中的硬盘会有
    一个“对号”符号。需要注意，不要选中 USB 启动盘对应的 U 盘。在“存储设置”中，可以
    选择“自动”让安装程序进行自动分区，也可以选择“自定义”以人工设置分区。本教程中
    选择更灵活的“自定义”分区方式
+
+   ![](fedora-setup-04.jpg)
+
 5. 在“手动分区”页面，分区方案选择“标准分区”，然后点击“点击这里自动创建它们”，
    以自动创建分区
+
+   ![](fedora-setup-05.jpg)
+
 6. 系统一般会创建三个分区，`/` （根分区）、`/boot`（boot 分区）和 `/home`（Home 分区）。
    不了解 Linux 的用户可以直接点击“完成”按钮。有一定 Linux 基础知识且有特定
    需求的用户，可以在自动分区的基础上进一步新增分区或修改分区的硬盘大小，
    修改完成后点击“完成”按钮即可
+
+   ![](fedora-setup-06.jpg)
+
+7. 接受更改，对硬盘进行分区操作
+
+   ![](fedora-setup-07.jpg)
+
+8. 安装系统，并等待安装完成
+
+   ![](fedora-setup-08.jpg)
+
+9. 重启系统后的欢迎界面
+
+   ![](fedora-setup-09.jpg)
+
+10. 设置用户密码
+
+    ![](fedora-setup-10.jpg)
+
+11. 设置用户名
+
+    ![](fedora-setup-11.jpg)
+
+12. 启动第三方软件源
+
+    ![](fedora-setup-12.jpg)
+
+13. 配置完成
+
+    ![](fedora-setup-13.jpg)
 7. 点击“完成”按钮后会弹出“分区更改摘要”对话框，点击“接受更改”则系统会对硬盘
    进行分区操作
 8. 分区结束后点击“完成”按钮，则回到图 3 所示的“安装信息摘要”界面。点击“开始安装”

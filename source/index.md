@@ -25,48 +25,43 @@
 :::::{grid} 2 3 3 5
 
 ::::{grid-item-card} [田冬冬](https://github.com/seisman)
-:margin: 0 0 0 0
-:text-align: center
-:img-top: https://avatars.githubusercontent.com/u/3974108?v=4
+
+<p align="center"><img src="https://avatars.githubusercontent.com/u/3974108?v=4" alt="田冬冬" width="96"></p>
 
 +++
-{bdg-primary}`创始人` {bdg-secondary}`核心贡献者`
+创始人 · 核心贡献者
 ::::
 
 ::::{grid-item-card} [姚家园](https://github.com/core-man)
-:margin: 0 0 0 0
-:text-align: center
-:img-top: https://avatars.githubusercontent.com/u/50591376?v=4
+
+<p align="center"><img src="https://avatars.githubusercontent.com/u/50591376?v=4" alt="姚家园" width="96"></p>
 
 +++
-{bdg-primary}`创始人` {bdg-secondary}`核心贡献者`
+创始人 · 核心贡献者
 ::::
 
 ::::{grid-item-card} [赵志远](https://github.com/zhaozhiyuan1989)
-:margin: 0 0 0 0
-:text-align: center
-:img-top: https://avatars.githubusercontent.com/u/23535406?v=4
+
+<p align="center"><img src="https://avatars.githubusercontent.com/u/23535406?v=4" alt="赵志远" width="96"></p>
 
 +++
-{bdg-success}`贡献者`
+贡献者
 ::::
 
 ::::{grid-item-card} [王亮](https://github.com/wangliang1989)
-:margin: 0 0 0 0
-:text-align: center
-:img-top: https://avatars.githubusercontent.com/u/12059719?v=4
+
+<p align="center"><img src="https://avatars.githubusercontent.com/u/12059719?v=4" alt="王亮" width="96"></p>
 
 +++
-{bdg-success}`贡献者`
+贡献者
 ::::
 
 ::::{grid-item-card} [何星辰](https://github.com/Chuan1937)
-:margin: 0 0 0 0
-:text-align: center
-:img-top: https://avatars.githubusercontent.com/u/99251452?v=4
+
+<p align="center"><img src="https://avatars.githubusercontent.com/u/99251452?v=4" alt="何星辰" width="96"></p>
 
 +++
-{bdg-success}`贡献者`
+贡献者
 ::::
 :::::
 
@@ -76,9 +71,9 @@
 即使只是发现错别字、过期链接或不够清楚的表述，也欢迎随时反馈。
 请通过如下方式给予反馈：
 
-1. {octicon}`comment-discussion` [留言参与讨论](https://github.com/orgs/seismo-learn/discussions)
-2. {octicon}`issue-opened` 在教程源码仓库下[提交 Issue](https://github.com/seismo-learn/seismology101/issues)
-3. {octicon}`git-pull-request` 修改文档并[提交 Pull Request](https://github.com/seismo-learn/seismology101/pulls)
+1. [留言参与讨论](https://github.com/orgs/seismo-learn/discussions)
+2. 在教程源码仓库下[提交 Issue](https://github.com/seismo-learn/seismology101/issues)
+3. 修改文档并[提交 Pull Request](https://github.com/seismo-learn/seismology101/pulls)
 
 ## 免责声明
 本教程的所有内容完全基于撰写者在地震学科研过程中的理解与体会，仅供读者参考。
