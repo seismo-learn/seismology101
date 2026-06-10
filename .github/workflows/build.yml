@@ -41,11 +41,11 @@ jobs:
         id: cache
         with:
           path: |
-            _build/cache/
-            _build/jupyter_execute/
+            source/_build/cache/
+            source/_build/jupyter_execute/
             ~/.local/share/cartopy/
             ~/.matplotlib/
-          key: ${{ runner.os }}-${{ hashFiles('environment.yml', 'myst.yml', 'README.md', 'source/**/*.md', 'source/**/*.bib') }}
+          key: ${{ runner.os }}-${{ hashFiles('environment.yml', 'source/myst.yml', 'README.md', 'source/**/*.md', 'source/**/*.bib') }}
           restore-keys: ${{ runner.os }}-
 
       - name: Build documentation
@@ -56,7 +56,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/html
+          publish_dir: ./source/_build/html
           # Only keep the latest commit to avoid bloating the repository
           force_orphan: true
           user_name: 'github-actions[bot]'

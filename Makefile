@@ -1,13 +1,13 @@
 .PHONY: html serve clean-html clean-all
 
 html:
-	jupyter-book build --html --strict --execute
+	cd source && jupyter-book build --html --strict --execute
 
 serve:
-	jupyter-book start
+	cd source && jupyter-book start
 
 clean-html:
-	jupyter-book clean --html -y
+	cd source && jupyter-book clean --html -y
 
 clean-all:
-	jupyter-book clean --all -y
+	cd source && jupyter-book clean --all -y

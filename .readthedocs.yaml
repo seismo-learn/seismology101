@@ -12,8 +12,8 @@ build:
   jobs:
     build:
       html:
-        - jupyter-book build --html --strict --ci
-        - mkdir -p "$READTHEDOCS_OUTPUT/html" && cp -a _build/html/. "$READTHEDOCS_OUTPUT/html/" && rm -rf _build/html
+        - cd source && jupyter-book build --html --strict --ci
+        - mkdir -p "$READTHEDOCS_OUTPUT/html" && cp -a source/_build/html/. "$READTHEDOCS_OUTPUT/html/" && rm -rf source/_build/html
 
 # Sphinx is still necessary for ReadTheDocs to install dependencies and build the documentation.
 sphinx:
