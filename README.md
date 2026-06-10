@@ -23,11 +23,10 @@ conda env create -f environment.yml
 conda activate seismo-learn
 ```
 
-构建 HTML 或 dirhtml 版本：
+构建网站：
 
 ```bash
-make html
-make dirhtml
+make build
 ```
 
 构建结果位于 `_build/` 目录。若需要清理构建文件，可执行：

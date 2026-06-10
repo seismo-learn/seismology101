@@ -1,10 +1,10 @@
-SOURCEDIR	= source
-OUTPUTDIR 	= .
+EXECUTE ?=
+BUILD_CMD = jupyter-book build --site --strict --ci $(EXECUTE)
 
-.PHONY: html dirhtml clean
+.PHONY: build html site clean
 
-html dirhtml:
-	jupyter-book build ${SOURCEDIR} --path-output ${OUTPUTDIR} --builder $@ -n
+build html site:
+	$(BUILD_CMD)
 
 clean:
-	jupyter-book clean --all ${OUTPUTDIR}
+	jupyter-book clean --all -y
