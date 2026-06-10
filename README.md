@@ -1,7 +1,7 @@
 # 地震“学”科研入门教程
 
 [![Jupyter Book Badge](https://raw.githubusercontent.com/jupyter-book/jupyter-book/next/docs/media/images/badge.svg)](https://seismo-learn.org/seismology101/)
-[![Deploy](https://github.com/seismo-learn/seismology101/actions/workflows/deploy.yml/badge.svg)](https://github.com/seismo-learn/seismology101/actions/workflows/deploy.yml)
+[![Build and Deploy](https://github.com/seismo-learn/seismology101/actions/workflows/build.yml/badge.svg)](https://github.com/seismo-learn/seismology101/actions/workflows/build.yml)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
 
 本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
@@ -12,6 +12,29 @@
 
 - 主页：https://seismo-learn.org/seismology101/
 - 源码：https://github.com/seismo-learn/seismology101
+
+## 本地构建
+
+本教程使用 [Jupyter Book](https://jupyterbook.org/) 构建。推荐使用
+[Miniforge](https://conda-forge.org/download/) 创建独立环境：
+
+```bash
+conda env create -f environment.yml
+conda activate seismo-learn
+```
+
+构建 HTML 或 dirhtml 版本：
+
+```bash
+make html
+make dirhtml
+```
+
+构建结果位于 `_build/` 目录。若需要清理构建文件，可执行：
+
+```bash
+make clean
+```
 
 ## 文档维护
 
