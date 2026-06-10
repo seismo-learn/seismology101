@@ -20,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      BASE_URL: seismology101
+      BASE_URL: /seismology101
     permissions:
       contents: write
     defaults:
