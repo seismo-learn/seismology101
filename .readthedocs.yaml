@@ -12,7 +12,7 @@ build:
   jobs:
     build:
       html:
-        - "jupyter-book build --site --strict --ci"
+        - "python -m jupyter_book build --site --strict --ci"
         - "cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
 
 # Optionally declare the Python requirements required to build your docs
