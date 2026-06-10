@@ -9,12 +9,5 @@ build:
   os: ubuntu-26.04
   tools:
     python: "miniforge3-25.11"
-  jobs:
-    build:
-      html:
-        - "python -m jupyter_book build --site --strict --ci"
-        - "cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
-
-# Optionally declare the Python requirements required to build your docs
-conda:
-  environment: environment.yml
+  commands:
+    - "conda env create -f environment.yml && conda run -n seismo-learn python -m jupyter_book build --site --strict --ci && cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
