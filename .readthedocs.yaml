@@ -12,7 +12,7 @@ build:
   jobs:
     build:
       html:
-        - "jupyter-book build --site --strict --ci"
+        - "jupyter-book build --html --strict --ci"
         - "cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
 sphinx:
   builder: html
