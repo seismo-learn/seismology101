@@ -21,6 +21,16 @@
 4. **地震学实践**：通过实践掌握基本的地震学数据处理
 5. **实践经验**：日常科研工作中的一些实践经验
 
+## 反馈与建议
+欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
+这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。
+即使只是发现错别字、过期链接或不够清楚的表述，也欢迎随时反馈。
+请通过如下方式给予反馈：
+
+1. [留言参与讨论](https://github.com/orgs/seismo-learn/discussions)
+2. 在教程源码仓库下[提交 Issue](https://github.com/seismo-learn/seismology101/issues)
+3. 修改文档并[提交 Pull Request](https://github.com/seismo-learn/seismology101/pulls)
+
 ## 贡献者
 :::::{grid} 2 3 3 5
 
@@ -65,15 +75,5 @@
 ::::
 :::::
 
-## 反馈与建议
-欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
-这些都将帮助我们进一步改进和完善本教程，造福更多的地震学新手。
-即使只是发现错别字、过期链接或不够清楚的表述，也欢迎随时反馈。
-请通过如下方式给予反馈：
-
-1. [留言参与讨论](https://github.com/orgs/seismo-learn/discussions)
-2. 在教程源码仓库下[提交 Issue](https://github.com/seismo-learn/seismology101/issues)
-3. 修改文档并[提交 Pull Request](https://github.com/seismo-learn/seismology101/pulls)
-
 ## 免责声明
-本教程的所有内容完全基于撰写者在地震学科研过程中的理解与体会，仅供读者参考。
+本教程内容基于撰写者在地震学科研中的实践经验与理解，供读者学习参考。
