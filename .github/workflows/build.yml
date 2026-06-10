@@ -40,7 +40,6 @@ jobs:
         with:
           path: |
             _build/cache/
-            _build/doctrees/
             _build/jupyter_execute/
             ~/.local/share/cartopy/
             ~/.matplotlib/
@@ -48,12 +47,7 @@ jobs:
           restore-keys: ${{ runner.os }}-
 
       - name: Build documentation
-        if: github.event_name != 'schedule'
-        run: make build
-
-      - name: Build documentation with executed notebooks
-        if: github.event_name == 'schedule'
-        run: make build EXECUTE=--execute
+        run: make html
 
       - name: Deploy documentation
         if: github.event_name != 'pull_request'

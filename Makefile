@@ -1,13 +1,7 @@
-EXECUTE ?=
-BUILD_CMD = jupyter-book build --site --strict --ci $(EXECUTE)
+.PHONY: html clean
 
-.PHONY: build html site build-execute clean
-
-build html site:
-	$(BUILD_CMD)
-
-build-execute:
-	jupyter-book build --site --strict --ci --execute
+html:
+	jupyter-book build --html --strict --execute
 
 clean:
-	jupyter-book clean --all -y
+	jupyter-book clean --html -y
