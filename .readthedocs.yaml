@@ -12,11 +12,12 @@ build:
   jobs:
     build:
       html:
-        - "jupyter-book build --html --strict --ci"
-        - "mkdir -p \"$READTHEDOCS_OUTPUT/html\" && cp -a _build/html/. \"$READTHEDOCS_OUTPUT/html/\" && rm -rf _build/html"
+        - jupyter-book build --html --strict --ci
+        - cp -r _build/html "$READTHEDOCS_OUTPUT/
+
+# Sphinx is still necessary for ReadTheDocs to install dependencies and build the documentation.
 sphinx:
   builder: html
-  configuration: source/conf.py
 
 conda:
   environment: environment.yml
