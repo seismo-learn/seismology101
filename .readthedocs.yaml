@@ -9,5 +9,11 @@ build:
   os: ubuntu-26.04
   tools:
     python: "miniforge3-25.11"
-  commands:
-    - "conda env create -f environment.yml && conda run -n seismo-learn jupyter book build --site --strict --ci && cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
+  jobs:
+    build:
+      html:
+        - "jupyter-book build --site --strict --ci"
+        - "cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
+
+conda:
+  environment: environment.yml
