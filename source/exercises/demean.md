@@ -22,7 +22,7 @@ kernelspec:
 
 我们以 2022 年 9 月 22 日发生在墨西哥的一个 Mw 6.8 级地震为例，该地震的详细信息见 <https://earthquake.usgs.gov/earthquakes/eventpage/us7000ia36>。
 
-使用 ObsPy 提供的 {meth}`Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms>` 方法下载
+使用 ObsPy 提供的 `Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms>` 方法下载
 该地震在 ANMO 台站的事件波形资料。
 
 ```{code-cell} ipython3
@@ -46,7 +46,7 @@ st = client.get_waveforms(
 st.plot();
 ```
 
-ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去均值操作。
+ObsPy 提供了 `obspy.core.trace.Trace.detrend` 方法可以实现去均值操作。
 
 ```{code-cell} ipython3
 tr = st[0]

@@ -10,14 +10,13 @@ build:
   tools:
     python: "miniforge3-25.11"
   jobs:
-    pre_build:
-      # Generate the Sphinx configuration for this Jupyter Book so it builds.
-      - "jupyter-book config sphinx source/"
-
+    build:
+      html:
+        - "jupyter-book build --html --strict --ci"
+        - "mkdir -p \"$READTHEDOCS_OUTPUT/html\" && cp -a _build/html/. \"$READTHEDOCS_OUTPUT/html/\" && rm -rf _build/html"
 sphinx:
   builder: html
   configuration: source/conf.py
 
-# Optionally declare the Python requirements required to build your docs
 conda:
   environment: environment.yml

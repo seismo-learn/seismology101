@@ -107,22 +107,22 @@ USGS 提供的在线工具可以很直观地下载地震目录并查看地震分
 ObsPy 提供了从不同的地震数据中心筛选和下载地震目录的功能，并可以对得到的地震目录进行
 进一步分析和处理。
 
-下面演示如何使用 ObsPy 的 {meth}`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>`
+下面演示如何使用 ObsPy 的 `Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>`
 函数筛选和下载地震目录。
 
-首先，需要导入 ObsPy 中地震数据中心数据下载客户端 {class}`~obspy.clients.fdsn.client.Client`:
+首先，需要导入 ObsPy 中地震数据中心数据下载客户端 `~obspy.clients.fdsn.client.Client`:
 
 ```{code-cell} ipython3
 from obspy.clients.fdsn import Client
 ```
 
-接下来，我们需要初始化一个 {class}`~obspy.clients.fdsn.client.Client` 对象。
+接下来，我们需要初始化一个 `~obspy.clients.fdsn.client.Client` 对象。
 ObsPy 的 `Client` 支持多个地震数据中心。这里我们选择使用 USGS 地震数据中心：
 ```{code-cell} ipython3
 client = Client("USGS")
 ```
 
-{func}`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>` 函数
+`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>` 函数
 可以根据指定的参数对地震目录做筛选并下载。
 下面我们将获取 2020 年上半年全球震级大于 5.0 级的地震：
 ```{code-cell} ipython3
@@ -133,8 +133,8 @@ cat = client.get_events(
 )
 ```
 
-{func}`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>` 函数会根据
-指定的参数向 USGS 地震数据中心发起请求，并返回筛选后的地震目录。其返回值是 {class}`~obspy.core.event.Catalog` 类型，
+`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>` 函数会根据
+指定的参数向 USGS 地震数据中心发起请求，并返回筛选后的地震目录。其返回值是 `~obspy.core.event.Catalog` 类型，
 并被保存在变量 `cat` 中。
 
 下面我们看看变量 `cat` 中的内容：
@@ -164,14 +164,14 @@ cat = client.get_events(
 print(cat)
 ```
 
-{class}`~obspy.core.event.Catalog` 类提供了用于绘制地震分布的
-{meth}`Catalog.plot() <obspy.core.event.Catalog.plot()>` 函数，
+`~obspy.core.event.Catalog` 类提供了用于绘制地震分布的
+`Catalog.plot() <obspy.core.event.Catalog.plot()>` 函数，
 可以直观地查看地震的分布情况。默认情况下，用圆圈表示地震，圆圈的大小代表地震
 震级大小，圆圈的颜色代表地震的深度。
 ````{margin}
 ```{note}
-{meth}`Catalog.plot() <obspy.core.event.Catalog.plot()>` 函数会绘制地震分布图并返回一个
-{class}`~matplotlib.figure.Figure` 的实例。
+`Catalog.plot() <obspy.core.event.Catalog.plot()>` 函数会绘制地震分布图并返回一个
+`~matplotlib.figure.Figure` 的实例。
 由于 Jupyter Notebook 会自动显示函数的返回值，因而在 Jupyter Notebook 中，地震分布图会绘制两次，
 一次由 `cat.plot()` 函数主动绘制，一次由 Jupyter Notebook 显示函数返回值（即 Figure 实例）时绘制。
 因而，此处的代码中在 `cat.plot()` 的后面加上了分号 `;`，使得 Jupyter Notebook 不会看到返回的
@@ -207,18 +207,18 @@ cat.plot(projection="local", resolution="i");
 
 ## 地震目录的读与写
 
-通过 {meth}`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>` 函数
+通过 `Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>` 函数
 得到的地震目录保存在变量 `cat` 中。当 Python 脚本退出时，所有变量都会被销毁，变量中储存的地震目录信息
 也会消失，因而需要及时将地震目录保存起来。
 
-{meth}`Catalog.write() <obspy.core.event.Catalog.write()>` 函数用于将地震目录保存到磁盘文件中。
-下面的代码将地震目录以 QuakeML 格式保存到文件 {file}`japan-earthquakes.xml` 中：
+`Catalog.write() <obspy.core.event.Catalog.write()>` 函数用于将地震目录保存到磁盘文件中。
+下面的代码将地震目录以 QuakeML 格式保存到文件 `japan-earthquakes.xml` 中：
 ```{code-cell} ipython3
 cat.write("japan-earthquakes.xml", format="QUAKEML")
 ```
 
-在需要时，随时可以使用 {func}`read_events() <obspy.core.event.read_events>` 函数读入
-磁盘文件中的地震目录。该函数值返回 {class}`~obspy.core.event.Catalog` 类型：
+在需要时，随时可以使用 `read_events() <obspy.core.event.read_events>` 函数读入
+磁盘文件中的地震目录。该函数值返回 `~obspy.core.event.Catalog` 类型：
 ```{code-cell} ipython3
 from obspy import read_events
 
@@ -226,25 +226,25 @@ cat = read_events("japan-earthquakes.xml")
 print(cat)
 ```
 
-## 深入理解和使用 {class}`~obspy.core.event.Catalog` 类
+## 深入理解和使用 `~obspy.core.event.Catalog` 类
 
-上面提到，{meth}`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>`
-和 {func}`read_events() <obspy.core.event.read_events>` 的返回值都是
-{class}`~obspy.core.event.Catalog` 类型。
+上面提到，`Client.get_events() <obspy.clients.fdsn.client.Client.get_events()>`
+和 `read_events() <obspy.core.event.read_events>` 的返回值都是
+`~obspy.core.event.Catalog` 类型。
 
-事实上，{class}`~obspy.core.event.Catalog` 类是 ObsPy 中最核心的类之一，用于储存
-地震目录信息。下图展示了 {class}`~obspy.core.event.Catalog` 类的属性及其层级关系：
+事实上，`~obspy.core.event.Catalog` 类是 ObsPy 中最核心的类之一，用于储存
+地震目录信息。下图展示了 `~obspy.core.event.Catalog` 类的属性及其层级关系：
 
 :::{figure} https://docs.obspy.org/_images/Event.png
 :align: center
 :alt: "ObsPy 的 Catalog 类"
 :width: 100%
 
-ObsPy 的{class}`~obspy.core.event.Catalog` 类。引自 [ObsPy 网站](https://docs.obspy.org/_images/Event.png)。
+ObsPy 的`~obspy.core.event.Catalog` 类。引自 [ObsPy 网站](https://docs.obspy.org/_images/Event.png)。
 :::
 
-{class}`~obspy.core.event.Catalog` 类可以当作一个列表。
-像常规列表一样，我们可以对 {class}`~obspy.core.event.Catalog` 类里的地震事件进行循环：
+`~obspy.core.event.Catalog` 类可以当作一个列表。
+像常规列表一样，我们可以对 `~obspy.core.event.Catalog` 类里的地震事件进行循环：
 ````{margin}
 ```{note}
 `for event in cat:` 会输出所有地震的信息。为了节省空间，这里只输出了前两个地震的信息。
@@ -255,17 +255,17 @@ for event in cat[0:2]:
     print(event)
 ```
 
-{class}`~obspy.core.event.Catalog` 列表里的每个元素都是 {class}`~obspy.core.event.Event` 类型。
-下面以第一个事件为例，看看 {class}`~obspy.core.event.Event` 类里的内容：
+`~obspy.core.event.Catalog` 列表里的每个元素都是 `~obspy.core.event.Event` 类型。
+下面以第一个事件为例，看看 `~obspy.core.event.Event` 类里的内容：
 ```{code-cell} ipython3
 event = cat[0]
 print(event)
 ```
 
-从中可以看出，{class}`~obspy.core.event.Event` 类有很多属性。在这一节里，
+从中可以看出，`~obspy.core.event.Event` 类有很多属性。在这一节里，
 我们重点关注 `origins` 和 `magnitudes`。
 
-{class}`~obspy.core.event.Event` 的 `origins` 属性也是一个列表，其元素是 {class}`~obspy.core.event.origin.Origin` 类型。
+`~obspy.core.event.Event` 的 `origins` 属性也是一个列表，其元素是 `~obspy.core.event.origin.Origin` 类型。
 ```{code-cell} ipython3
 print(event.origins)
 ```
@@ -277,7 +277,7 @@ origin = event.origins[0]
 print(origin)
 ```
 
-从上面的输出中可以看到，{class}`~obspy.core.event.origin.Origin` 类的属性中包含了我们关心的震源
+从上面的输出中可以看到，`~obspy.core.event.origin.Origin` 类的属性中包含了我们关心的震源
 信息。比如，可以通过下面的代码，输出地震震源的发震时刻、纬度、经度和深度信息：
 ````{margin}
 ```{note}
@@ -288,8 +288,8 @@ ObsPy 中震源深度的单位为 m，而有些地震目录中深度的单位为
 print(origin.time, origin.latitude, origin.longitude, origin.depth)
 ```
 
-同样的，{class}`~obspy.core.event.Event` 的 `magnitudes` 属性也是一个列表，
-其元素是 {class}`~obspy.core.event.magnitude.Magnitude` 类型。
+同样的，`~obspy.core.event.Event` 的 `magnitudes` 属性也是一个列表，
+其元素是 `~obspy.core.event.magnitude.Magnitude` 类型。
 ```{code-cell} ipython3
 print(event.magnitudes)
 ```
@@ -302,10 +302,10 @@ print(mag)
 print(mag.mag, mag.magnitude_type)
 ```
 
-## 将 {class}`~obspy.core.event.Catalog` 以更易读的格式输出
+## 将 `~obspy.core.event.Catalog` 以更易读的格式输出
 
-在了解了 {class}`~obspy.core.event.Catalog` 类的技术细节后，我们就可以很容易地从地震目录 
-{class}`~obspy.core.event.Catalog` 中获取地震的相关信息，并以更易读的文本格式输出。例如，
+在了解了 `~obspy.core.event.Catalog` 类的技术细节后，我们就可以很容易地从地震目录 
+`~obspy.core.event.Catalog` 中获取地震的相关信息，并以更易读的文本格式输出。例如，
 
 ```{code-cell} ipython3
 for event in cat:

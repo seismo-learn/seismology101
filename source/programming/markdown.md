@@ -11,7 +11,7 @@
 
 Markdown 编写的文档易于转成 HTML、PDF、LaTeX、Word 等多种格式，且大多数编辑器支持实时渲染。
 因此，其常用于写 README、记笔记、写论文、写书、写网页等。Markdown 编写的文档后缀为一般为
-{file}`.md`。
+`.md`。
 
 Markdown 有很多特色语法，如以下常用语法：
 

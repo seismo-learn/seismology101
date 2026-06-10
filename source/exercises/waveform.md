@@ -21,14 +21,14 @@ kernelspec:
 
 地震波形数据是地震学中最重要的数据。这一节介绍如何使用 ObsPy 下载地震波形数据。
 
-首先，需要导入 ObsPy 中地震数据中心数据下载客户端 {class}`~obspy.clients.fdsn.client.Client`
-以及用于处理时间的类 {class}`~obspy.core.utcdatetime.UTCDateTime`：
+首先，需要导入 ObsPy 中地震数据中心数据下载客户端 `~obspy.clients.fdsn.client.Client`
+以及用于处理时间的类 `~obspy.core.utcdatetime.UTCDateTime`：
 ```{code-cell} ipython3
 from obspy.clients.fdsn import Client
 from obspy import UTCDateTime
 ```
 
-接下来，我们需要初始化一个 {class}`~obspy.clients.fdsn.client.Client` 对象。
+接下来，我们需要初始化一个 `~obspy.clients.fdsn.client.Client` 对象。
 ObsPy 的 `Client` 支持多个地震数据中心，这里我们选择使用
 [EarthScope SAGE 地震数据中心](https://ds.iris.edu/ds/nodes/dmc/)（前身为 IRIS）：
 ```{code-cell} ipython3
@@ -54,7 +54,7 @@ client = Client("IRIS")
   位置码（`location`）和通道码（`channel`）
 - 下载哪个时间段的数据，即指定数据开始时间（`starttime`）和结束时间（`endtime`）
 
-下面的代码使用 {meth}`Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms()>`
+下面的代码使用 `Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms()>`
 函数申请了 `IU.ANMO` 台站的宽频带垂直分量（即 `BHZ` 通道）的波形数据。数据开始时间为
 2022-09-22T06:18:00（即发震后约两分钟），结束时间为 2022-09-22T06:30:00，
 数据总长度为 12 分钟（即 720 秒）。
@@ -72,16 +72,16 @@ st = client.get_waveforms(
     endtime=starttime + 720     # 指定结束时间
 )
 ```
-函数的返回值为 {class}`~obspy.core.stream.Stream` 类型，赋值给变量 `st`。
+函数的返回值为 `~obspy.core.stream.Stream` 类型，赋值给变量 `st`。
 使用 `print` 函数可以显示变量 `st` 的值：
 ```{code-cell} ipython3
 print(st)
 ```
-可以看到{class}`~obspy.core.stream.Stream` 类型的变量 `st` 中包含了一个波形
-（即 一个 {class}`~obspy.core.trace.Trace`），该波形对应的 ID 为 `IU.ANMO.00.BHZ`，
+可以看到`~obspy.core.stream.Stream` 类型的变量 `st` 中包含了一个波形
+（即 一个 `~obspy.core.trace.Trace`），该波形对应的 ID 为 `IU.ANMO.00.BHZ`，
 数据采样率为 40 Hz，共计 28800 个数据点。
 
-{class}`~obspy.core.stream.Stream` 类提供了 {meth}`Stream.plot() <obspy.core.stream.Stream.plot>`
+`~obspy.core.stream.Stream` 类提供了 `Stream.plot() <obspy.core.stream.Stream.plot>`
 函数可以用于绘制波形。波形图的横轴为时间，纵轴为振幅：
 ```{code-cell} ipython3
 st.plot();
@@ -105,7 +105,7 @@ st = client.get_waveforms(
 )
 print(st)
 ```
-函数返回的 {class}`~obspy.core.stream.Stream` 中包含三个 {class}`~obspy.core.trace.Trace`。
+函数返回的 `~obspy.core.stream.Stream` 中包含三个 `~obspy.core.trace.Trace`。
 其中 `BHZ` 为垂直分量，`BH1` 和 `BH2` 为两个水平分量。绘图结果如下：
 ```{code-cell} ipython3
 st.plot();
@@ -130,7 +130,7 @@ st = client.get_waveforms(
 )
 print(st)
 ```
-函数返回的 {class}`~obspy.core.stream.Stream` 中包含三个 {class}`~obspy.core.trace.Trace`。
+函数返回的 `~obspy.core.stream.Stream` 中包含三个 `~obspy.core.trace.Trace`。
 绘图如下。
 ```{code-cell} ipython3
 st.plot();
@@ -138,11 +138,11 @@ st.plot();
 
 ## 批量下载多个波形数据
 
-上面的示例中，虽然使用 {meth}`Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms()>`
+上面的示例中，虽然使用 `Client.get_waveforms() <obspy.clients.fdsn.client.Client.get_waveforms()>`
 可以一次性下载多个波形数据，但通配符本身不够灵活，且所有数据必须拥有相同的开始时间
 和结束时间。
 
-{meth}`Client.get_waveforms_bulk() <obspy.clients.fdsn.client.Client.get_waveforms_bulk()>` 函数
+`Client.get_waveforms_bulk() <obspy.clients.fdsn.client.Client.get_waveforms_bulk()>` 函数
 可以以更灵活的方式批量下载多个波形数据。该函数中最重要的参数是 `bulk` 参数。
 该参数可以用多种不同的方式指定，包括：
 
@@ -172,19 +172,19 @@ st.plot();
 即用户需要首先获取地震和台站信息并对其进行筛选，然后自行构建 `bulk` 参数。在需要
 下载大量波形数据时相对比较繁琐。
 
-为了更方便地下载大量波形数据，ObsPy 提供了 {mod}`obspy.clients.fdsn.mass_downloader` 模块。
-{mod}`~obspy.clients.fdsn.mass_downloader` 模块主要包含了三部分：
+为了更方便地下载大量波形数据，ObsPy 提供了 `obspy.clients.fdsn.mass_downloader` 模块。
+`~obspy.clients.fdsn.mass_downloader` 模块主要包含了三部分：
 
-- {mod}`~obspy.clients.fdsn.mass_downloader.domain`：根据位置信息筛选台站
-- {class}`~obspy.clients.fdsn.mass_downloader.restrictions.Restrictions`：用于设置波形数据的相关参数
-- {class}`~obspy.clients.fdsn.mass_downloader.mass_downloader.MassDownloader`：用于下载数据
+- `~obspy.clients.fdsn.mass_downloader.domain`：根据位置信息筛选台站
+- `~obspy.clients.fdsn.mass_downloader.restrictions.Restrictions`：用于设置波形数据的相关参数
+- `~obspy.clients.fdsn.mass_downloader.mass_downloader.MassDownloader`：用于下载数据
 
-下面通过两个示例介绍 {mod}`~obspy.clients.fdsn.mass_downloader` 模块的基本用法。
+下面通过两个示例介绍 `~obspy.clients.fdsn.mass_downloader` 模块的基本用法。
 更详细的用法参见官方文档。
 
 ### 下载地震波形数据
 
-下面的示例展示了如何使用 {class}`~obspy.clients.fdsn.mass_downloader.mass_downloader.MassDownloader`
+下面的示例展示了如何使用 `~obspy.clients.fdsn.mass_downloader.mass_downloader.MassDownloader`
 下载单个地震多台站的波形数据：
 ```
 import obspy
@@ -227,7 +227,7 @@ mdl.download(
 
 ### 下载连续波形数据
 
-下面的示例展示了如何使用 {class}`~obspy.clients.fdsn.mass_downloader.mass_downloader.MassDownloader`
+下面的示例展示了如何使用 `~obspy.clients.fdsn.mass_downloader.mass_downloader.MassDownloader`
 下载连续波形数据：
 ```
 import obspy

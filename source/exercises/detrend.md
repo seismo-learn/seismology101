@@ -58,7 +58,7 @@ tr.detrend("demean")
 slope_before = P.polyfit(tr.times(), tr.data, deg=1)[1]
 print(f"Slope before linear detrend: {slope_before}")
 ```
-ObsPy 提供了 {meth}`obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。
+ObsPy 提供了 `obspy.core.trace.Trace.detrend` 方法可以实现去线性趋势操作。
 
 ```{code-cell} ipython3
 # 去线性趋势

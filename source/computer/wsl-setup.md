@@ -85,8 +85,8 @@ $ wsl
 ```
 
 通过 WSL 安装 Linux 系统后，还需要对 Linux 系统进行配置。
-Ubuntu 和 Fedora 用户可以分别参考《[](/computer/ubuntu-setup)》和
-《[](/computer/fedora-setup)》对系统进行配置，以满足科研工作的需求。
+Ubuntu 和 Fedora 用户可以分别参考《[Ubuntu 配置指南](/computer/ubuntu-setup)》和
+《[Fedora 配置指南](/computer/fedora-setup)》对系统进行配置，以满足科研工作的需求。
 
 :::{warning}
 配置 Linux 系统时，切记要跳过“安装系统”一节，只需配置**系统软件**和**编程开发环境**。
@@ -135,8 +135,6 @@ $ wsl --unregister Ubuntu
 ```
 
 :::{dropdown} 将 WSL 从 C 盘移动到其它盘
-:color: info
-:icon: info
 
 这一节仅适用于 C 盘空间不足，或明确希望将 WSL 发行版存放到其它磁盘的读者。
 对于大多数用户而言，这不是必需步骤，可以直接跳过。

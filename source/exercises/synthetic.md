@@ -32,7 +32,7 @@ Links
 - https://service.iris.edu/irisws/syngine/docs/1/builder/
 - https://service.iris.edu/irisws/syngine/1/
 
-```
+```{code-cell} ipython3
 from obspy.clients.syngine import Client
 client = Client()
 

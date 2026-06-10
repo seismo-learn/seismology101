@@ -39,26 +39,28 @@ jobs:
         id: cache
         with:
           path: |
+            _build/cache/
+            _build/doctrees/
             _build/jupyter_execute/
             ~/.local/share/cartopy/
             ~/.matplotlib/
-          key: ${{ runner.os }}-${{ hashFiles('environment.yml', 'source/**/*.md', 'source/**/*.yml', 'source/**/*.bib') }}
+          key: ${{ runner.os }}-${{ hashFiles('environment.yml', 'myst.yml', 'README.md', 'source/**/*.md', 'source/**/*.bib') }}
           restore-keys: ${{ runner.os }}-
 
-      - name: Disable notebook cache for scheduled jobs
-        if: github.event_name == 'schedule'
-        run: |
-          sed -i"" 's/execute_notebooks: auto/execute_notebooks: force/' source/_config.yml
-
       - name: Build documentation
-        run: make dirhtml
+        if: github.event_name != 'schedule'
+        run: make build
+
+      - name: Build documentation with executed notebooks
+        if: github.event_name == 'schedule'
+        run: make build EXECUTE=--execute
 
       - name: Deploy documentation
         if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/dirhtml
+          publish_dir: ./_build/html
           # Only keep the latest commit to avoid bloating the repository
           force_orphan: true
           user_name: 'github-actions[bot]'

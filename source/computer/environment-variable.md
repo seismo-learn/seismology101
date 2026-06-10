@@ -55,10 +55,10 @@ export NEWVAR="envvalue"
 这将在当前 Shell 会话中添加环境变量 **ENVVAR**，但是在会话结束后，该环境变量
 将被删除。
 
-若要永久添加环境变量，可以将其添加到 Shell 配置文件中({file}`~/.bashrc`)。
-Bash 常见的配置文件有 {file}`/etc/profile`、{file}`~/.bash_profile`、
-{file}`~/.bashrc` 等，一般通过修改 {file}`~/.bashrc` 文件来设置和更新个人 Shell 环境。
-使用 Zsh 的读者可以修改 {file}`~/.zshrc` 来设置和更新个人 Shell 环境。
+若要永久添加环境变量，可以将其添加到 Shell 配置文件中(`~/.bashrc`)。
+Bash 常见的配置文件有 `/etc/profile`、`~/.bash_profile`、
+`~/.bashrc` 等，一般通过修改 `~/.bashrc` 文件来设置和更新个人 Shell 环境。
+使用 Zsh 的读者可以修改 `~/.zshrc` 来设置和更新个人 Shell 环境。
 修改配置文件后，打开新的终端，Shell 环境就会更新。需要注意的是，当前终端的 Shell
 环境并没有更新。可以在当前终端中使用 `source` 命令重新加载（即读取并执行）配置文件，
 当前 Shell 环境也会更新：
@@ -89,9 +89,9 @@ $ echo $USER
 环境变量 **PATH** 是 Linux 系统中最重要也最常用的环境变量。
 
 在终端中输入命令后，Shell 需要先找到该命令，才能交给系统执行。不同命令所在目录
-并不相同，常见的命令目录有 {file}`/bin`、{file}`/usr/bin`、{file}`/usr/local/bin` 等。
-此外，大多数闭源软件或商业软件默认安装在 {file}`/opt` 目录下，用户也可能会将
-一些常用工具放在 {file}`~/bin` 目录下。因此，Shell 需要知道去哪些目录下搜索用户
+并不相同，常见的命令目录有 `/bin`、`/usr/bin`、`/usr/local/bin` 等。
+此外，大多数闭源软件或商业软件默认安装在 `/opt` 目录下，用户也可能会将
+一些常用工具放在 `~/bin` 目录下。因此，Shell 需要知道去哪些目录下搜索用户
 输入的命令。而环境变量 **PATH** 则定义了用于搜索可执行程序名的目录列表。
 多个目录之间由冒号分隔。在终端中输入命令名后，Shell 会依次在该目录列表下搜索命令。
 
@@ -109,8 +109,8 @@ $ echo $PATH
 $ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 ```
 
-以上命令在 {file}`~/.bashrc` 配置文件最后添加了一行 `export PATH=$PATH:$HOME/bin`。
-假设用户名是 seismo-learn，则该行的作用是将 {file}`/home/seismo-learn/bin` 目录
+以上命令在 `~/.bashrc` 配置文件最后添加了一行 `export PATH=$PATH:$HOME/bin`。
+假设用户名是 seismo-learn，则该行的作用是将 `/home/seismo-learn/bin` 目录
 添加到搜索目录列表的末尾。
 
 使用 `echo` 命令查看 **PATH** 环境变量的值，会发现其值并没有改变：
