@@ -3,6 +3,13 @@
 欢迎阅读由[地震“学”小组](https://github.com/seismo-learn)撰写的
 《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
 
+:::{tip}
+我该从哪里开始？
+
+- 如果你是零基础读者：建议从 [计算机基础](./computer/operating-system.md) 开始
+- 如果你已具备 Linux 与 Python 基础：可直接进入 [地震学实践](./exercises/intro.md)
+:::
+
 ## 目标与受众
 本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
 其他刚接触地震学的科研人员。
