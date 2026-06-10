@@ -1,12 +1,10 @@
 #
 # Build and deploy the documentation
 #
-name: Deploy
+name: Build and Deploy
 
-# Run on main branch only
 on:
-  # uncomment 'pull_request' line to test the workflow in PR
-  # pull_request:
+  pull_request:
   push:
     branches:
       - main
@@ -19,7 +17,7 @@ concurrency:
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -44,7 +42,8 @@ jobs:
             _build/jupyter_execute/
             ~/.local/share/cartopy/
             ~/.matplotlib/
-          key: caches
+          key: ${{ runner.os }}-${{ hashFiles('environment.yml', 'source/**/*.md', 'source/**/*.yml', 'source/**/*.bib') }}
+          restore-keys: ${{ runner.os }}-
 
       - name: Disable notebook cache for scheduled jobs
         if: github.event_name == 'schedule'
@@ -55,6 +54,7 @@ jobs:
         run: make dirhtml
 
       - name: Deploy documentation
+        if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
