@@ -13,7 +13,7 @@ build:
     build:
       html:
         - "jupyter-book build --html --strict --ci"
-        - "cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
+        - "mkdir -p \"$READTHEDOCS_OUTPUT/html\" && cp -a _build/html/. \"$READTHEDOCS_OUTPUT/html/\" && rm -rf _build/html"
 sphinx:
   builder: html
   configuration: source/conf.py
