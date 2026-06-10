@@ -50,8 +50,8 @@ VS Code 的界面默认显示语言是英文，可以安装中文语言包。点
    $ ssh-keygen -t rsa -f ~/.ssh/id_rsa-remote-ssh
    ```
 
-   该命令产生的一对 SSH 密钥分别位于 {file}`~/.ssh/id_rsa-remote-ssh` 和
-   {file}`~/.ssh/id_rsa-remote-ssh.pub` 文件中。
+   该命令产生的一对 SSH 密钥分别位于 `~/.ssh/id_rsa-remote-ssh` 和
+   `~/.ssh/id_rsa-remote-ssh.pub` 文件中。
    前者是私钥文件，不能泄露；后者是公钥文件，需要告诉远程计算机。
 
    运行以下命令将公钥复制到远程计算机中（需用户输入远程计算机的密码）:
@@ -60,8 +60,8 @@ VS Code 的界面默认显示语言是英文，可以安装中文语言包。点
    $ ssh-copy-id -i ~/.ssh/id_rsa-remote-ssh.pub seismo-learn@192.168.1.100
    ```
 
-   该命令会把本地的公钥以追加的方式复制到远程计算机的 {file}`~/.ssh/authorized_keys`
-   文件中，并给远程计算机中的用户家目录、{file}`~/.ssh` 目录以及 {file}`~/.ssh/authorized_keys`
+   该命令会把本地的公钥以追加的方式复制到远程计算机的 `~/.ssh/authorized_keys`
+   文件中，并给远程计算机中的用户家目录、`~/.ssh` 目录以及 `~/.ssh/authorized_keys`
    设置合适的权限。若远程计算机或本地计算机是 Windows 系统，请参考
    [Quick start: Using SSH keys](https://code.visualstudio.com/docs/remote/troubleshooting#_quick-start-using-ssh-keys)
    进行配置。
@@ -85,7 +85,7 @@ VS Code 的界面默认显示语言是英文，可以安装中文语言包。点
 :::{tip}
 如果需要经常连接远程计算机，可以使用 SSH 配置文件。
 
-在活动栏中选择“远程资源管理器”，点击“配置”后选择 {file}`~/.ssh/config`
+在活动栏中选择“远程资源管理器”，点击“配置”后选择 `~/.ssh/config`
 配置文件，按照以下格式添加相关信息到该文件中:
 
 ```

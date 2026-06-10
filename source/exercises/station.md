@@ -89,21 +89,21 @@ EarthScope SAGE MDA 中查看 IU.ANMO 台站的基本信息
 EarthScope SAGE GMAP 作为一个在线工具可以很直观地查看台站分布和基本信息，但却不适合数据
 自动化处理。ObsPy 提供了从不同的地震数据中心筛选和下载台站基本信息的功能。
 
-下面演示如何使用 ObsPy 的 {meth}`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
+下面演示如何使用 ObsPy 的 `Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
 函数筛选和下载地震台站信息。
 
-首先，需要导入 ObsPy 中地震数据中心数据下载客户端 {class}`~obspy.clients.fdsn.client.Client`：
+首先，需要导入 ObsPy 中地震数据中心数据下载客户端 `~obspy.clients.fdsn.client.Client`：
 ```{code-cell} ipython3
 from obspy.clients.fdsn import Client
 ```
 
-接下来，我们需要初始化一个 {class}`~obspy.clients.fdsn.client.Client` 对象。
+接下来，我们需要初始化一个 `~obspy.clients.fdsn.client.Client` 对象。
 ObsPy 的 `Client` 支持多个地震数据中心。这里我们选择使用 EarthScope SAGE（以前称为 IRIS）地震数据中心：
 ```{code-cell} ipython3
 client = Client("IRIS")
 ```
 
-{meth}`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
+`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
 函数可以根据指定的参数获取地震台站信息。这里我们想要获得 `IU` 台网中所有台站名以 `A` 开头的
 宽频带三分量（`BH*`）台站，并同时获取台站的仪器响应信息（`level="response"`）：
 ```{code-cell} ipython3
@@ -117,22 +117,22 @@ inv = client.get_stations(
 )
 ```
 该函数会向 EarthScope 地震数据中心发起请求，并返回符合条件的地震台站信息。其返回值是
-{class}`~obspy.core.inventory.inventory.Inventory` 类型，并被保存到变量 `inv` 中。
+`~obspy.core.inventory.inventory.Inventory` 类型，并被保存到变量 `inv` 中。
 下面我们看看变量 `inv` 中的内容：
 ```{code-cell} ipython3
 print(inv)
 ```
 可以看到，返回的变量 `inv` 中包含了满足条件的 1 个台网、3 个台站、15 个通道的信息。
 
-{class}`~obspy.core.inventory.inventory.Inventory` 类提供的
-{meth}`Inventory.plot() <obspy.core.inventory.inventory.Inventory.plot>` 函数
+`~obspy.core.inventory.inventory.Inventory` 类提供的
+`Inventory.plot() <obspy.core.inventory.inventory.Inventory.plot>` 函数
 可以用于快速绘制地震台站分布图：
 
 ```{code-cell} ipython3
 inv.plot();
 ```
 
-{meth}`Inventory.plot_response() <obspy.core.inventory.inventory.Inventory.plot_response>`
+`Inventory.plot_response() <obspy.core.inventory.inventory.Inventory.plot_response>`
 函数可以用于绘制仪器响应。下面的函数绘制了 `inv` 中所有 `BHZ` 分量的仪器响应，并设置了仪器响应图的
 最小频率为 0.001 Hz：
 ```{code-cell} ipython3
@@ -141,70 +141,70 @@ inv.plot_response(min_freq=0.001, channel="BHZ");
 
 ## 台站信息的读和写
 
-通过 {meth}`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
+通过 `Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
 获得的台站信息可以保存为多种不同格式。下面的代码将台站信息以 StationXML 格式保存到文件
 `stations.xml` 中：
 ```{code-cell} ipython3
 inv.write("stations.xml", format="STATIONXML")
 ```
-在需要时，随时可以使用 {func}`read_inventory() <obspy.core.inventory.inventory.read_inventory>`
-函数读入磁盘文件中的台站信息。该函数值返回 {class}`~obspy.core.inventory.inventory.Inventory` 类型：
+在需要时，随时可以使用 `read_inventory() <obspy.core.inventory.inventory.read_inventory>`
+函数读入磁盘文件中的台站信息。该函数值返回 `~obspy.core.inventory.inventory.Inventory` 类型：
 
 ```{code-cell} ipython3
 from obspy import read_inventory
 inv = read_inventory("stations.xml")
 ```
 
-## 深入理解和使用 {class}`~obspy.core.inventory.inventory.Inventory` 类
+## 深入理解和使用 `~obspy.core.inventory.inventory.Inventory` 类
 
-上面提到，{meth}`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
-和 {func}`read_inventory() <obspy.core.inventory.inventory.read_inventory>` 的返回值都是
-{class}`~obspy.core.inventory.inventory.Inventory` 类型。
-事实上，{class}`~obspy.core.inventory.inventory.Inventory` 类是 ObsPy 中最核心的类之一，用于储存地震台站信息。
-下图展示了 {class}`~obspy.core.inventory.inventory.Inventory` 类的属性及其层级关系：
-{class}`~obspy.core.inventory.inventory.Inventory` 类可以看做是
-{class}`~obspy.core.inventory.network.Network` 类的列表;
-{class}`~obspy.core.inventory.network.Network` 类可以看做是
-{class}`~obspy.core.inventory.station.Station` 类的列表;
-{class}`~obspy.core.inventory.station.Station` 类可以看做是
-{class}`~obspy.core.inventory.channel.Channel` 类的列表。
+上面提到，`Client.get_stations() <obspy.clients.fdsn.client.Client.get_stations()>`
+和 `read_inventory() <obspy.core.inventory.inventory.read_inventory>` 的返回值都是
+`~obspy.core.inventory.inventory.Inventory` 类型。
+事实上，`~obspy.core.inventory.inventory.Inventory` 类是 ObsPy 中最核心的类之一，用于储存地震台站信息。
+下图展示了 `~obspy.core.inventory.inventory.Inventory` 类的属性及其层级关系：
+`~obspy.core.inventory.inventory.Inventory` 类可以看做是
+`~obspy.core.inventory.network.Network` 类的列表;
+`~obspy.core.inventory.network.Network` 类可以看做是
+`~obspy.core.inventory.station.Station` 类的列表;
+`~obspy.core.inventory.station.Station` 类可以看做是
+`~obspy.core.inventory.channel.Channel` 类的列表。
 
 :::{figure} https://docs.obspy.org/_images/Inventory.png
 :align: center
 :alt: "ObsPy 的 Inventory 类"
 :width: 100%
 
-ObsPy 的 {class}`~obspy.core.inventory.inventory.Inventory` 类。引自 [ObsPy 网站](https://docs.obspy.org/_images/Inventory.png)。
+ObsPy 的 `~obspy.core.inventory.inventory.Inventory` 类。引自 [ObsPy 网站](https://docs.obspy.org/_images/Inventory.png)。
 :::
 
-### {class}`~obspy.core.inventory.inventory.Inventory` 类
+### `~obspy.core.inventory.inventory.Inventory` 类
 
-可以对 {class}`~obspy.core.inventory.inventory.Inventory` 进行列表相关的操作，
+可以对 `~obspy.core.inventory.inventory.Inventory` 进行列表相关的操作，
 下面对 `inv` 进行循环并打印每个元素（即 `Network` 类）的值：
 ```{code-cell} ipython3
 for net in inv:
     print(net)
 ```
 
-### {class}`~obspy.core.inventory.network.Network` 类
+### `~obspy.core.inventory.network.Network` 类
 
-{class}`~obspy.core.inventory.network.Network` 类提供了很多台网相关的属性和函数。
+`~obspy.core.inventory.network.Network` 类提供了很多台网相关的属性和函数。
 例如，下面的代码会输出第一个台网的代码、总台站数以及 `inv` 中实际包含的台站数目：
 ```{code-cell} ipython3
 net = inv[0]
 print(net.code, net.total_number_of_stations, net.selected_number_of_stations)
 ```
 
-可以对 {class}`~obspy.core.inventory.network.Network` 进行列表相关的操作，
+可以对 `~obspy.core.inventory.network.Network` 进行列表相关的操作，
 这里我们取其第一个台站并查看其信息：
 ```{code-cell} ipython3
 sta = net[0]
 print(sta)
 ```
 
-### {class}`~obspy.core.inventory.station.Station` 类
+### `~obspy.core.inventory.station.Station` 类
 
-{class}`~obspy.core.inventory.station.Station` 类也提供了很多台站相关的属性和函数。
+`~obspy.core.inventory.station.Station` 类也提供了很多台站相关的属性和函数。
 例如，下面的代码输出了当前台站的台站代码、经纬度、高程、台站的总通道数目和当前 `inv` 中包含的
 通道数目：
 ```{code-cell} ipython3
@@ -212,16 +212,16 @@ print(sta.code, sta.latitude, sta.longitude, sta.elevation)
 print(sta.total_number_of_channels, sta.selected_number_of_channels)
 ```
 
-可以对 {class}`~obspy.core.inventory.station.Station` 进行列表相关的操作，
+可以对 `~obspy.core.inventory.station.Station` 进行列表相关的操作，
 这里我们取该台站的第一个通道并查看其信息：
 ```{code-cell} ipython3
 chn = sta[0]
 print(chn)
 ```
 
-### {class}`~obspy.core.inventory.channel.Channel` 类
+### `~obspy.core.inventory.channel.Channel` 类
 
-{class}`~obspy.core.inventory.channel.Channel` 类也提供了很多通道相关的属性和函数。
+`~obspy.core.inventory.channel.Channel` 类也提供了很多通道相关的属性和函数。
 例如，下面的代码输出了当前通道的方位角、倾角、位置码和采样率等信息：
 ```{code-cell} ipython3
 print(chn.azimuth, chn.dip, chn.location_code, chn.sample_rate)

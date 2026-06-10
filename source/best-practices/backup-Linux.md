@@ -15,7 +15,7 @@
 ## rsync
 
 使用 `rsync` 命令进行备份十分方便。假设用户名为 seismo-learn，移动硬盘下的备份目录
-为 {file}`/mnt/seismo-learn/backup/` 。使用以下命令可以将家目录下的所有子目录和文件
+为 `/mnt/seismo-learn/backup/` 。使用以下命令可以将家目录下的所有子目录和文件
 完整同步到备份目录下，此时备份目录是家目录的一个镜像:
 
 ```
@@ -23,9 +23,9 @@ $ rsync -av --delete /home/seismo-learn/ /mnt/seismo-learn/backup/
 ```
 
 :::{important}
-以上命令中家目录 {file}`/home/seismo-learn/` 最后的斜杠非常重要。若没有这个斜杠
-（{file}`/home/seismo-learn`），则会把家目录本身同步到备份目录下，
-即产生 {file}`/mnt/seismo-learn/backup/seismo-learn` 目录。
+以上命令中家目录 `/home/seismo-learn/` 最后的斜杠非常重要。若没有这个斜杠
+（`/home/seismo-learn`），则会把家目录本身同步到备份目录下，
+即产生 `/mnt/seismo-learn/backup/seismo-learn` 目录。
 :::
 
 `rsync` 命令的特色在于增量备份。这意味着只有第一次备份的时候需要花比较多的时间来
@@ -34,7 +34,7 @@ $ rsync -av --delete /home/seismo-learn/ /mnt/seismo-learn/backup/
 
 读者可以参考 Bash 脚本 {download}`backup.sh`。点击下载后，修改源目录、
 备份目录以及想要备份的子目录。然后按以下命令，修改文件权限为可执行，
-并将脚本移至 {file}`~/bin` 目录下，就可以运行了:
+并将脚本移至 `~/bin` 目录下，就可以运行了:
 
 ```
 # 修改可执行权限

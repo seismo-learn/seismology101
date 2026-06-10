@@ -54,7 +54,7 @@ import numpy as np
 depth = np.array([event.origins[0].depth / 1000 for event in cat])
 ```
 
-我们可以使用 Matplotlib 的 {meth}`~matplotlib.axes.Axes.hist()` 函数绘制直方图：
+我们可以使用 Matplotlib 的 `~matplotlib.axes.Axes.hist()` 函数绘制直方图：
 这里我们设置的直方的最小值为 50，最大值 700，间隔为 10，同时设置了 Y 轴以对数方式显示。
 从图中可以明显看到地震深度随着深度的变化：
 ```{code-cell} ipython3
@@ -85,7 +85,7 @@ plt.show()
 地震震级-频度关系应符合 Gutenberg–Richter 定律。为了绘制地震震级-频度关系，
 首先需要计算得到 GR 定律里的 $N$，即大于等于某个特定震级 $M$ 的地震数目。
 这里，我们选择 $M$ 的取值范围为 4.0 到 8.0，间隔为 0.1。计算 $N$ 的方法有很多，下面的
-方法使用了 Python 的列表表达式以及 {func}`numpy.sum()` 函数来实现：
+方法使用了 Python 的列表表达式以及 `numpy.sum()` 函数来实现：
 ```{code-cell} ipython3
 mw = np.arange(4.0, 8.0, 0.1)
 counts = np.array([(mag >= m).sum() for m in mw])
@@ -102,9 +102,9 @@ plt.show()
 ```
 
 更进一步，我们可以对 4.8-7.6 级之间的数据进行线性拟合，得到 GR 定律中的系数 $a$ 和 $b$。
-这里我们采用 {data}`numpy.logical_and` 函数找到数组 `mw` 中所有满足条件的元素的索引，
+这里我们采用 `numpy.logical_and` 函数找到数组 `mw` 中所有满足条件的元素的索引，
 并使用 NumPy 的布尔索引功能筛选出满足条件的震级 `mw[idx]` 和对应的 `counts[idx]`，再
-使用 {func}`numpy.polyfit` 函数拟合一元一次多项式，最后绘图：
+使用 `numpy.polyfit` 函数拟合一元一次多项式，最后绘图：
 ```{code-cell} ipython3
 idx = np.logical_and(mw >= 4.8, mw <= 7.5)
 # fitting y = p[0] * x + p[1]

@@ -14,20 +14,20 @@
 Linux 文件系统树
 :::
 
-Linux 文件系统就像一颗树一样，从 {file}`/` 目录开始，这个特殊的目录称为根目录。
-根目录下一般有 {file}`/home`、{file}`/root`、{file}`/bin`、
-{file}`/usr`、{file}`/lib`、{file}`/opt` 等目录。
+Linux 文件系统就像一颗树一样，从 `/` 目录开始，这个特殊的目录称为根目录。
+根目录下一般有 `/home`、`/root`、`/bin`、
+`/usr`、`/lib`、`/opt` 等目录。
 
-- {file}`/home` 目录：用户的家目录，存储用户自己的文件
-- {file}`/bin` 目录：存储必须的程序和命令，所有用户都可用
-- {file}`/usr` 目录：大多数软件的安装位置
-- {file}`/opt` 目录：某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）
+- `/home` 目录：用户的家目录，存储用户自己的文件
+- `/bin` 目录：存储必须的程序和命令，所有用户都可用
+- `/usr` 目录：大多数软件的安装位置
+- `/opt` 目录：某些闭源或商业软件（如 Matlab、Google Chrome、Google Earth）
   默认将软件安装到此目录下
 
-日常科研中，大多数情况下只在 {file}`/home` 目录下工作。假设用户名是 seismo-learn，
-该用户的家目录便是 {file}`/home/seismo-learn`。macOS 下的家目录是 {file}`/Users/seismo-learn`。
-在 Linux/macOS 系统下，可用 {file}`~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
-{file}`~/Desktop`、{file}`~/Documents`、{file}`~/Downloads` 等。熟悉 Linux 文件系统后
+日常科研中，大多数情况下只在 `/home` 目录下工作。假设用户名是 seismo-learn，
+该用户的家目录便是 `/home/seismo-learn`。macOS 下的家目录是 `/Users/seismo-learn`。
+在 Linux/macOS 系统下，可用 `~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
+`~/Desktop`、`~/Documents`、`~/Downloads` 等。熟悉 Linux 文件系统后
 可以参考 [《文件管理实践经验》](/best-practices/file-organization) 和
 [《软件安装实践经验》](/best-practices/software-installation) 进一步组织与管理家目录，
 以提高工作效率。
@@ -109,7 +109,7 @@ hello-world.txt  seismo-learn.txt  source
 `cp`（copy，即复制）命令可以用于复制文件和目录。
 
 :::{note}
-以下所有操作都假设读者已经切换到 {file}`~/workspace` 目录下了，即:
+以下所有操作都假设读者已经切换到 `~/workspace` 目录下了，即:
 
 ```
 # 进入 ~/workspace 目录
@@ -196,7 +196,7 @@ $ ls
 :::{warning}
 使用 `rm` 命令删除的文件会被直接删除，并不会被放在回收站里。
 因而执行 `rm` 命令时一定要小心再小心，不要误删重要文件。
-可以先把要删除的文件移动到某目录下（如 {file}`~/trash`），之后统一删除；
+可以先把要删除的文件移动到某目录下（如 `~/trash`），之后统一删除；
 也可以考虑使用其他命令行工具管理回收站
 （如 [trash-cli](https://github.com/andreafrancia/trash-cli)）。
 :::
@@ -268,32 +268,32 @@ $ ls -a
 
 访问文件或目录需要指定文件或目录的路径。Linux 下有两种表示路径的方式：绝对路径和相对路径。
 
-顾名思义，绝对路径是从根目录 {file}`/` 开始算起的路径。例如，家目录是 {file}`/home`，
-用户 seismo-learn 的家目录是 {file}`/home/seismo-learn`，该用户的桌面目录的路径是
-{file}`/home/seismo-learn/Desktop`。日常科研中，用户的计算机一般只有用户自己在使用，
-因此提到家目录时一般特指 {file}`/home/seismo-learn`，而不是指 {file}`/home`。
+顾名思义，绝对路径是从根目录 `/` 开始算起的路径。例如，家目录是 `/home`，
+用户 seismo-learn 的家目录是 `/home/seismo-learn`，该用户的桌面目录的路径是
+`/home/seismo-learn/Desktop`。日常科研中，用户的计算机一般只有用户自己在使用，
+因此提到家目录时一般特指 `/home/seismo-learn`，而不是指 `/home`。
 因为大多数情况下，我们都在用户的家目录下操作计算机，因此就给这个目录一个特殊的别称
-{file}`~`，其和 {file}`/home/seismo-learn` 是一回事。
+`~`，其和 `/home/seismo-learn` 是一回事。
 
-有时进入到某个目录中，使用绝对路径并不方便。例如，当前位于 {file}`~/projects/NorthChina-MTZ/data`
-目录中，如果想进入 {file}`~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
+有时进入到某个目录中，使用绝对路径并不方便。例如，当前位于 `~/projects/NorthChina-MTZ/data`
+目录中，如果想进入 `~/projects/NorthChina-MTZ/figures` 目录下，使用绝对路径要
 输入很多字母。为了解决这个问题，Linux 文件系统定义了两个特殊的路径：
 
-- {file}`.`：当前目录
-- {file}`..`：当前目录的上一级目录
+- `.`：当前目录
+- `..`：当前目录的上一级目录
 
 利用这两个特殊路径，可以使用相对路径访问其他目录下的文件和目录。例如，
 
-- {file}`./Beijing`：当前目录下的 {file}`Beijing` 目录，即 {file}`~/projects/NorthChina-MTZ/data/Beijing`。
-  当前路径也可以省略，即 {file}`Beijing`
-- {file}`./Beijing/IC-BJT.sac`：当前目录下的 {file}`Beijing` 目录下的 {file}`IC-BJT.sac` 文件，
-  即 {file}`~/projects/NorthChina-MTZ/data/Beijing/IC-BJT.sac`。
-  当前路径也可以省略，即 {file}`Beijing/IC-BJT.sac`
-- {file}`..`：上一层目录，即 {file}`~/projects/NorthChina-MTZ` 目录
-- {file}`../..`：上一层的上一层目录，即 {file}`~/projects` 目录
-- {file}`../figures`：上一层目录下的 {file}`figures` 目录，即 {file}`~/projects/NorthChina-MTZ/figures` 目录
-- {file}`../figures/fig1.pdf`：上一层目录下的 {file}`figures` 目录下的 {file}`fig1.pdf` 文件，
-  即 {file}`~/projects/NorthChina-MTZ/figures/fig1.pdf`
+- `./Beijing`：当前目录下的 `Beijing` 目录，即 `~/projects/NorthChina-MTZ/data/Beijing`。
+  当前路径也可以省略，即 `Beijing`
+- `./Beijing/IC-BJT.sac`：当前目录下的 `Beijing` 目录下的 `IC-BJT.sac` 文件，
+  即 `~/projects/NorthChina-MTZ/data/Beijing/IC-BJT.sac`。
+  当前路径也可以省略，即 `Beijing/IC-BJT.sac`
+- `..`：上一层目录，即 `~/projects/NorthChina-MTZ` 目录
+- `../..`：上一层的上一层目录，即 `~/projects` 目录
+- `../figures`：上一层目录下的 `figures` 目录，即 `~/projects/NorthChina-MTZ/figures` 目录
+- `../figures/fig1.pdf`：上一层目录下的 `figures` 目录下的 `fig1.pdf` 文件，
+  即 `~/projects/NorthChina-MTZ/figures/fig1.pdf`
 
 ## 文件权限
 
@@ -313,7 +313,7 @@ drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
 ```
 
 `ls -l` 的输出中，第一列为文件权限位，第三列和第四列分别表示文件所属用户和用户组。
-此处，文件 {file}`hello-world.txt` 和目录 {file}`source` 属于用户 seismo-learn，
+此处，文件 `hello-world.txt` 和目录 `source` 属于用户 seismo-learn，
 且属于用户组 seismo-learn（对于个人计算机而言，用户组通常有且仅有一个用户，
 因而用户组与用户同名）。
 
@@ -328,8 +328,8 @@ drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
 包含三位信息，第一位 `r` 代表可读取（read），第二位 `w` 代表可写入（write），
 第三位 `x` 代表可执行（execute，对于目录而言表示可以进入该目录），`-` 代表没有对应的权限。
 
-从文件的权限位可以看出，用户 seismo-learn 可以读写文件 {file}`hello-world.sh`，
-但不可直接执行该文件，对 {file}`source` 目录拥有可读、可写、可执行的权限。
+从文件的权限位可以看出，用户 seismo-learn 可以读写文件 `hello-world.sh`，
+但不可直接执行该文件，对 `source` 目录拥有可读、可写、可执行的权限。
 
 除了用字母 `rwx` 表示权限外，还可以用数字表示权限。4 代表可读，2 代表可写，
 1 代表可执行。因为 $4+2+1=7$，所以 7 代表可读、可写、可执行。以此类推，
