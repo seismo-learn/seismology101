@@ -97,6 +97,9 @@ project:
     
 site:
   template: book-theme
-  # options:
+  options:
+    logo_text: 地震“学”科研入门教程
+  parts:
+    primary_sidebar_footer: ""
   #   favicon: favicon.ico
   #   logo: site_logo.png
