@@ -18,6 +18,7 @@ build:
 # Sphinx is still necessary for ReadTheDocs to install dependencies and build the documentation.
 sphinx:
   builder: html
+  configuration: docs/conf.py
 
 conda:
   environment: environment.yml
