@@ -10,4 +10,4 @@ build:
   tools:
     python: "miniforge3-25.11"
   commands:
-    - "conda env create -f environment.yml && conda run -n seismo-learn python -m jupyter_book build --site --strict --ci && cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
+    - "conda env create -f environment.yml && conda run -n seismo-learn jupyter book build --site --strict --ci && cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
