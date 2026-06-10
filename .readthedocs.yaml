@@ -13,7 +13,7 @@ build:
     build:
       html:
         - jupyter-book build --html --strict --ci
-        - mv _build/html $READTHEDOCS_OUTPUT/
+        - cp -rv _build/html $READTHEDOCS_OUTPUT/ && rm -r _build/html
 
 # Sphinx is still necessary for ReadTheDocs to install dependencies and build the documentation.
 sphinx:
