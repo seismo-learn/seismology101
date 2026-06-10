@@ -14,6 +14,9 @@ build:
       html:
         - "jupyter-book build --site --strict --ci"
         - "cp -a _build/html \"$READTHEDOCS_OUTPUT/\""
+sphinx:
+  builder: html
+  configuration: source/conf.py
 
 conda:
   environment: environment.yml
