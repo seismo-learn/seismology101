@@ -94,12 +94,12 @@ project:
           children: []
         - title: 参与讨论
           children: []
-    
+
 site:
   template: book-theme
   options:
     logo_text: 地震“学”科研入门教程
   parts:
     primary_sidebar_footer: ""
-  #   favicon: favicon.ico
+    favicon: favicon.ico
   #   logo: site_logo.png
