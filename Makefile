@@ -1,7 +1,10 @@
-.PHONY: html clean
+.PHONY: html clean-html clean-all
 
 html:
 	jupyter-book build --html --strict --execute
 
-clean:
+clean-html:
 	jupyter-book clean --html -y
+
+clean-all:
+	jupyter-book clean --all -y
