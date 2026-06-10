@@ -29,6 +29,12 @@ conda activate seismo-learn
 make build
 ```
 
+如果希望执行 Markdown/Notebook 中的代码单元并在页面中显示输出，请使用：
+
+```bash
+make build-execute
+```
+
 构建结果位于 `_build/` 目录。若需要清理构建文件，可执行：
 
 ```bash
