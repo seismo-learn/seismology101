@@ -10,29 +10,29 @@
 :::{tip}
 我该从哪里开始？
 
-- 如果你是零基础读者：建议从 [计算机基础](./computer/operating-system.md) 开始
-- 如果你已具备 Linux 与 Python 基础：可直接进入 [地震学实践](./exercises/intro.md)
+- 如果你是零基础读者：建议从 [计算机基础](/computer/operating-system.md) 开始
+- 如果你已具备 Linux 与 Python 基础：可直接进入 [地震学实践](/exercises/intro.md)
 :::
 
 ::::{grid} 1 2 2 2
 
-:::{grid-item-card} [计算机基础](./computer/operating-system.md)
+:::{grid-item-card} [计算机基础](/computer/operating-system.md)
 科研环境配置、命令行与文件管理基础。
 :::
 
-:::{grid-item-card} [编程基础](./programming/intro.md)
+:::{grid-item-card} [编程基础](/programming/intro.md)
 Bash、Python 编程基础、数据处理与可视化。
 :::
 
-:::{grid-item-card} [地震学基础](./seismology/intro.md)
+:::{grid-item-card} [地震学基础](/seismology/intro.md)
 地震学基础知识，为后续的地震数据处理与分析打下基础。
 :::
 
-:::{grid-item-card} [地震学实践](./exercises/intro.md)
+:::{grid-item-card} [地震学实践](/exercises/intro.md)
 从数据下载到去噪、滤波、旋转与分析的完整流程。
 :::
 
-:::{grid-item-card} [实践经验](./best-practices/intro.md)
+:::{grid-item-card} [实践经验](/best-practices/intro.md)
 文件组织、软件安装、备份与工具配置的实用经验。
 :::
 
