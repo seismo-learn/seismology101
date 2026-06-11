@@ -6,13 +6,7 @@
 
 ## 目标与受众
 
-本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
-其他刚接触地震学的科研人员。
-
-本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以
-作为地震学新手的入门自学材料，也可以作为地震学研究组的入门培训材料。
-
-本教程强调以科研实践为导向，帮助初学者尽快从基础知识过渡到实际的数据获取、处理与分析工作。
+本教程主要面向地震学新手，包括高年级本科生、低年级研究生以及刚接触地震学的科研人员。它旨在帮助读者尽快从基础知识过渡到实际的数据获取、处理与分析工作，也可以作为入门自学材料或研究组培训材料。
 
 ## 教程内容
 
@@ -66,27 +60,27 @@ Bash、Python 编程基础、数据处理与可视化。
 
 ::::{grid-item}
 [![田冬冬](https://avatars.githubusercontent.com/u/3974108?v=4&s=96)](https://github.com/seisman)
-[田冬冬](https://github.com/seisman)
+田冬冬
 ::::
 
 ::::{grid-item}
 [![姚家园](https://avatars.githubusercontent.com/u/50591376?v=4&s=96)](https://github.com/core-man)
-[姚家园](https://github.com/core-man)
+姚家园
 ::::
 
 ::::{grid-item}
 [![赵志远](https://avatars.githubusercontent.com/u/23535406?v=4&s=96)](https://github.com/zhaozhiyuan1989)
-[赵志远](https://github.com/zhaozhiyuan1989)
+赵志远
 ::::
 
 ::::{grid-item}
 [![王亮](https://avatars.githubusercontent.com/u/12059719?v=4&s=96)](https://github.com/wangliang1989)
-[王亮](https://github.com/wangliang1989)
+王亮
 ::::
 
 ::::{grid-item}
 [![何星辰](https://avatars.githubusercontent.com/u/99251452?v=4&s=96)](https://github.com/Chuan1937)
-[何星辰](https://github.com/Chuan1937)
+何星辰
 ::::
 :::::
 
