@@ -59,44 +59,29 @@ Bash、Python 编程基础、数据处理与可视化。
 ## 贡献者
 :::::{grid} 2 3 3 5
 
-::::{grid-item-card} [田冬冬](https://github.com/seisman)
-
-<p align="center"><img src="https://avatars.githubusercontent.com/u/3974108?v=4" alt="田冬冬" width="96"></p>
-
-+++
-创始人 · 核心贡献者
+::::{grid-item}
+[![田冬冬](https://avatars.githubusercontent.com/u/3974108?v=4&s=96)](https://github.com/seisman)
+[田冬冬](https://github.com/seisman)
 ::::
 
-::::{grid-item-card} [姚家园](https://github.com/core-man)
-
-<p align="center"><img src="https://avatars.githubusercontent.com/u/50591376?v=4" alt="姚家园" width="96"></p>
-
-+++
-创始人 · 核心贡献者
+::::{grid-item}
+[![姚家园](https://avatars.githubusercontent.com/u/50591376?v=4&s=96)](https://github.com/core-man)
+[姚家园](https://github.com/core-man)
 ::::
 
-::::{grid-item-card} [赵志远](https://github.com/zhaozhiyuan1989)
-
-<p align="center"><img src="https://avatars.githubusercontent.com/u/23535406?v=4" alt="赵志远" width="96"></p>
-
-+++
-贡献者
+::::{grid-item}
+[![赵志远](https://avatars.githubusercontent.com/u/23535406?v=4&s=96)](https://github.com/zhaozhiyuan1989)
+[赵志远](https://github.com/zhaozhiyuan1989)
 ::::
 
-::::{grid-item-card} [王亮](https://github.com/wangliang1989)
-
-<p align="center"><img src="https://avatars.githubusercontent.com/u/12059719?v=4" alt="王亮" width="96"></p>
-
-+++
-贡献者
+::::{grid-item}
+[![王亮](https://avatars.githubusercontent.com/u/12059719?v=4&s=96)](https://github.com/wangliang1989)
+[王亮](https://github.com/wangliang1989)
 ::::
 
-::::{grid-item-card} [何星辰](https://github.com/Chuan1937)
-
-<p align="center"><img src="https://avatars.githubusercontent.com/u/99251452?v=4" alt="何星辰" width="96"></p>
-
-+++
-贡献者
+::::{grid-item}
+[![何星辰](https://avatars.githubusercontent.com/u/99251452?v=4&s=96)](https://github.com/Chuan1937)
+[何星辰](https://github.com/Chuan1937)
 ::::
 :::::
 
