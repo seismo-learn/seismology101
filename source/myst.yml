@@ -98,7 +98,6 @@ project:
 site:
   template: book-theme
   options:
-    css: ["_static/custom.css"]
     folders: true  # Keep folder-based URL structure
     logo_text: 地震“学”科研入门教程
     favicon: favicon.ico
