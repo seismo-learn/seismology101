@@ -2,6 +2,7 @@
 
 欢迎阅读由[地震“学”小组](https://github.com/seismo-learn)撰写的
 《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
+读完本教程后，你将可以独立完成地震数据的获取、预处理和基础分析。
 
 :::{tip}
 我该从哪里开始？
