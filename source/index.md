@@ -4,9 +4,6 @@
 《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
 读完本教程后，你将可以独立完成地震数据的获取、预处理和基础分析。
 
-## 目标与受众
-
-本教程主要面向地震学新手，包括高年级本科生、低年级研究生以及刚接触地震学的科研人员。它旨在帮助读者尽快从基础知识过渡到实际的数据获取、处理与分析工作，也可以作为入门自学材料或研究组培训材料。
 
 ## 教程内容
 
@@ -16,8 +13,6 @@
 - 如果你是零基础读者：建议从 [计算机基础](./computer/operating-system.md) 开始
 - 如果你已具备 Linux 与 Python 基础：可直接进入 [地震学实践](./exercises/intro.md)
 :::
-
-本教程主要包括五部分内容：
 
 ::::{grid} 1 2 2 2
 
@@ -43,6 +38,10 @@ Bash、Python 编程基础、数据处理与可视化。
 
 ::::
 
+## 目标与受众
+
+本教程主要面向地震学新手，包括高年级本科生、低年级研究生以及刚接触地震学的科研人员。它旨在帮助读者尽快从基础知识过渡到实际的数据获取、处理与分析工作，也可以作为入门自学材料或研究组培训材料。
+
 ## 反馈与建议
 
 欢迎地震学新手在阅读本教程的过程中给予反馈，也欢迎地震学专家提出意见和建议，
@@ -56,34 +55,31 @@ Bash、Python 编程基础、数据处理与可视化。
 
 ## 贡献者
 
-:::::{grid} 2 3 3 5
+:::::{grid} 3 4 4 6
 
 ::::{grid-item}
-[![田冬冬](https://avatars.githubusercontent.com/u/3974108?v=4&s=96)](https://github.com/seisman)
-田冬冬
+![田冬冬](https://avatars.githubusercontent.com/u/3974108?v=4&s=96)
+[田冬冬](https://github.com/seisman)
 ::::
 
 ::::{grid-item}
-[![姚家园](https://avatars.githubusercontent.com/u/50591376?v=4&s=96)](https://github.com/core-man)
-姚家园
+![姚家园](https://avatars.githubusercontent.com/u/50591376?v=4&s=96)
+[姚家园](https://github.com/core-man)
 ::::
 
 ::::{grid-item}
-[![赵志远](https://avatars.githubusercontent.com/u/23535406?v=4&s=96)](https://github.com/zhaozhiyuan1989)
-赵志远
+![赵志远](https://avatars.githubusercontent.com/u/23535406?v=4&s=96)
+[赵志远](https://github.com/zhaozhiyuan1989)
 ::::
 
 ::::{grid-item}
-[![王亮](https://avatars.githubusercontent.com/u/12059719?v=4&s=96)](https://github.com/wangliang1989)
-王亮
+![王亮](https://avatars.githubusercontent.com/u/12059719?v=4&s=96)
+[王亮](https://github.com/wangliang1989)
 ::::
 
 ::::{grid-item}
-[![何星辰](https://avatars.githubusercontent.com/u/99251452?v=4&s=96)](https://github.com/Chuan1937)
-何星辰
+![何星辰](https://avatars.githubusercontent.com/u/99251452?v=4&s=96)
+[何星辰](https://github.com/Chuan1937)
 ::::
 :::::
 
-## 免责声明
-
-本教程内容基于撰写者在地震学科研中的实践经验与理解，供读者学习参考。
