@@ -3,9 +3,9 @@ channels:
   - conda-forge
   - nodefaults
 dependencies:
-  - python=3.14
+  - python=3.14.6
   - cartopy=0.25
   - jupyter-book=2.1
-  - matplotlib=3.10
+  - matplotlib=3.10.9
   - numpy=2.4.6
   - obspy=1.5
