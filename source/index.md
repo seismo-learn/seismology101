@@ -2,7 +2,7 @@
 
 欢迎阅读由[地震“学”小组](https://github.com/seismo-learn)撰写的
 《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
-读完本教程后，你将可以独立完成地震数据的获取、预处理和基础分析。
+本教程面向地震学新手，帮助你从基础概念逐步过渡到数据获取、预处理和基础分析。
 
 
 ## 教程内容
@@ -10,22 +10,23 @@
 :::{tip}
 我该从哪里开始？
 
-- 如果你是零基础读者：建议从 [计算机基础](/computer/operating-system.md) 开始
-- 如果你已具备 Linux 与 Python 基础：可直接进入 [地震学实践](/exercises/intro.md)
+- 如果你是零基础读者，建议先从 [计算机基础](/computer/operating-system.md) 开始
+- 如果你已具备 Linux 与 Python 基础，可以直接进入 [地震学实践](/exercises/intro.md)
+- 如果你想先补齐概念，可以从 [地震学基础](/seismology/intro.md) 入手
 :::
 
 ::::{grid} 1 2 2 2
 
 :::{grid-item-card} [计算机基础](/computer/operating-system.md)
-科研环境配置、命令行与文件管理基础。
+科研环境配置、命令行与文件管理基础，适合零基础入门。
 :::
 
 :::{grid-item-card} [编程基础](/programming/intro.md)
-Bash、Python 编程基础、数据处理与可视化。
+Bash、Python 编程基础，以及数据处理与可视化。
 :::
 
 :::{grid-item-card} [地震学基础](/seismology/intro.md)
-地震学基础知识，为后续的地震数据处理与分析打下基础。
+地震学基础知识，为后续的数据处理与分析打下基础。
 :::
 
 :::{grid-item-card} [地震学实践](/exercises/intro.md)
@@ -40,7 +41,7 @@ Bash、Python 编程基础、数据处理与可视化。
 
 ## 目标与受众
 
-本教程主要面向地震学新手，包括高年级本科生、低年级研究生以及刚接触地震学的科研人员。它旨在帮助读者尽快从基础知识过渡到实际的数据获取、处理与分析工作，也可以作为入门自学材料或研究组培训材料。
+本教程主要面向地震学新手，包括高年级本科生、低年级研究生以及刚接触地震学的科研人员。它既可以作为入门自学材料，也可以作为研究组培训材料。
 
 ## 反馈与建议
 
@@ -82,4 +83,3 @@ Bash、Python 编程基础、数据处理与可视化。
 [何星辰](https://github.com/Chuan1937)
 ::::
 :::::
-
