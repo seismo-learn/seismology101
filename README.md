@@ -23,22 +23,28 @@ conda env create -f environment.yml
 conda activate seismo-learn
 ```
 
-构建网站：
+构建网站（默认会执行代码单元）：
 
 ```bash
-make build
+make html
 ```
 
-如果希望执行 Markdown/Notebook 中的代码单元并在页面中显示输出，请使用：
+构建结果位于 `source/_build/html/` 目录。若需要本地预览，可执行：
 
 ```bash
-make build-execute
+make serve
 ```
 
-构建结果位于 `_build/` 目录。若需要清理构建文件，可执行：
+若需要清理构建文件，可执行：
 
 ```bash
-make clean
+make clean-html
+```
+
+若需要彻底清理所有构建产物，可执行：
+
+```bash
+make clean-all
 ```
 
 ## 文档维护
