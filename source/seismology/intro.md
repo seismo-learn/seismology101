@@ -1,6 +1,6 @@
 # 简介
 
-- 本节贡献者: {{姚家园}}、{{田冬冬}}
+- 本节贡献者: 姚家园、田冬冬
 - 最近更新日期: 2021-10-28
 - 预计阅读时间: 10 分钟
 
@@ -121,4 +121,3 @@ Keiiti Aki 和 Paul G. Richards 编写的经典地震学教材《Quantitative Se
 - [History of Seismology](https://www.iris.edu/hq/inclass/poster/history_of_seismology): 地震学发展史的海报
 - Ben-Menahem, A. (1995). A concise history of mainstream seismology: Origins, legacy, and perspectives.
   Bulletin of the Seismological Society of America, 85(4), 1202–1225.
-
