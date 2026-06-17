@@ -1,9 +1,12 @@
-# Documentation
+# JupyterBook
 _build/
 source/_build/
 
-# VS Code
-.vscode
+# Editor
+.vscode/
+*.swp
+*.swo
+*~
 
 # Jupyter Notebook
 .ipynb_checkpoints/
