@@ -42,7 +42,8 @@ jobs:
         with:
           path: |
             source/_build/cache/
-            source/_build/jupyter_execute/
+            source/_build/execute/
+            source/_build/templates/
             ~/.local/share/cartopy/
             ~/.matplotlib/
           key: ${{ runner.os }}-${{ hashFiles('environment.yml', 'source/myst.yml', 'README.md', 'source/**/*.md', 'source/**/*.bib') }}
