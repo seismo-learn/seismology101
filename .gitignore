@@ -15,4 +15,4 @@ source/_build/
 .DS_Store
 
 # Data files
-*.xml
+source/exercises/*.xml
