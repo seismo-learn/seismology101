@@ -17,10 +17,5 @@ build:
         - mkdir -p "$READTHEDOCS_OUTPUT/html" 
         - cp -a source/_build/html/. "$READTHEDOCS_OUTPUT/html/" 
 
-# Sphinx is still necessary for ReadTheDocs to install dependencies and build the documentation.
-sphinx:
-  builder: html
-  configuration: docs/conf.py
-
 conda:
   environment: environment.yml
