@@ -18,23 +18,28 @@
 
 ::::{grid} 1 2 2 2
 
-:::{grid-item-card} [计算机基础](/computer/operating-system.md)
+:::{grid-item-card} 计算机基础
+:link: /computer/operating-system.md
 科研环境配置、命令行与文件管理基础，适合零基础入门。
 :::
 
-:::{grid-item-card} [编程基础](/programming/intro.md)
+:::{grid-item-card} 编程基础
+:link: /programming/intro.md
 Bash、Python 编程基础，以及数据处理与可视化。
 :::
 
-:::{grid-item-card} [地震学基础](/seismology/intro.md)
+:::{grid-item-card} 地震学基础
+:link: /seismology/intro.md
 地震学基础知识，为后续的数据处理与分析打下基础。
 :::
 
-:::{grid-item-card} [地震学实践](/exercises/intro.md)
+:::{grid-item-card} 地震学实践
+:link: /exercises/intro.md
 从数据下载到去噪、滤波、旋转与分析的完整流程。
 :::
 
-:::{grid-item-card} [实践经验](/best-practices/intro.md)
+:::{grid-item-card} 实践经验
+:link: /best-practices/intro.md
 文件组织、软件安装、备份与工具配置的实用经验。
 :::
 
