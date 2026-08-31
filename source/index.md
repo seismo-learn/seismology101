@@ -1,4 +1,4 @@
-# 地震“学”科研入门教程
+# 地震学科研入门教程
 
 欢迎阅读由[地震“学”小组](https://github.com/seismo-learn)撰写的
 《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
