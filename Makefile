@@ -1,3 +1,6 @@
+SOURCE = source
+JB = jupyter-book
+
 .PHONY: help html serve linkcheck clean-html clean-all
 
 help:
@@ -8,16 +11,16 @@ help:
 	@echo "clean-all  - Remove all build artifacts"
 
 serve:
-	cd source && jupyter-book start --execute
+	cd $(SOURCE) && $(JB) start --execute
 
 html:
-	cd source && jupyter-book build --html --strict --execute
+	cd $(SOURCE) && $(JB) build --html --strict --execute
 
 linkcheck:
-	cd source && jupyter-book build --html --check-links
+	cd $(SOURCE) && $(JB) build --html --check-links
 
 clean-html:
-	cd source && jupyter-book clean --html -y
+	cd $(SOURCE) && $(JB) clean --html -y
 
 clean-all:
-	cd source && jupyter-book clean --all -y
+	cd $(SOURCE) && $(JB) clean --all -y
