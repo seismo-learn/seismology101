@@ -1,10 +1,11 @@
 # Fedora 配置指南
 
-- 本节贡献者: 田冬冬、姚家园、何星辰
-- 最近更新日期: 2026-04-08
-- 预计阅读时间: 120 分钟
+:::{page-meta}
+:authors: 田冬冬、姚家园、何星辰
+:updated: 2026-04-08
+:reading-time: 120 分钟
+:::
 
----
 
 :::{note}
 本节内容适用于 **Fedora 43 Workstation**，不一定适用于其他 Fedora 版本。
