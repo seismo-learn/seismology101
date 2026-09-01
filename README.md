@@ -4,11 +4,11 @@
 [![Build and Deploy](https://github.com/seismo-learn/seismology101/actions/workflows/build.yml/badge.svg)](https://github.com/seismo-learn/seismology101/actions/workflows/build.yml)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.zh-hans)
 
-本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及
-其他刚接触地震学的科研人员。
+本教程主要面向地震学新手，包括地震学专业的高年级本科生、低年级研究生以及其他刚接触地震学
+的科研人员。
 
-本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以
-作为地震学新手的入门自学材料，也可以作为地震学研究组的入门培训材料。
+本教程的主要目的是帮助地震学新手快速入门，以尽快开展实际的科研工作。其既可以作为地震学
+新手的入门自学材料，也可以作为地震学研究组的入门培训材料。
 
 - 主页：https://seismo-learn.org/seismology101/
 - 源码：https://github.com/seismo-learn/seismology101
@@ -23,34 +23,24 @@ conda env create -f environment.yml
 conda activate seismo-learn
 ```
 
-构建网站（默认会执行代码单元）：
+常用命令如下（直接执行 `make` 可查看所有命令）：
 
-```bash
-make html
-```
+| 命令 | 说明 |
+| --- | --- |
+| `make html` | 构建网站，会执行代码单元 |
+| `make serve` | 本地预览，同样会执行代码单元 |
+| `make clean-html` | 清理构建的 HTML |
+| `make clean-all` | 清理所有构建产物 |
 
-构建结果位于 `source/_build/html/` 目录。若需要本地预览，可执行：
+构建结果位于 `source/_build/html/` 目录。
 
-```bash
-make serve
-```
-
-若需要清理构建文件，可执行：
-
-```bash
-make clean-html
-```
-
-若需要彻底清理所有构建产物，可执行：
-
-```bash
-make clean-all
-```
+首次执行 `make html` 或 `make serve` 时会下载数据并执行所有示例代码，耗时较长；之后的
+构建会复用缓存，速度快很多。
 
 ## 文档维护
 
-本文档尚有很多不完善之处，欢迎读者参与到文档的维护与更新中。
-详情见[贡献指南](https://seismo-learn.org/contributing/)。
+本文档尚有很多不完善之处，欢迎读者参与到文档的维护与更新中。详情见
+[贡献指南](https://seismo-learn.org/contributing/)。
 
 ## 许可协议
 
