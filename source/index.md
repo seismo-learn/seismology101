@@ -1,7 +1,7 @@
 # 地震学科研入门教程
 
 欢迎阅读由[地震“学”小组](https://github.com/seismo-learn)撰写的
-《[地震“学”科研入门教程](https://seismo-learn.org/seismology101/)》。
+《[地震学科研入门教程](https://seismo-learn.org/seismology101/)》。
 
 本教程面向地震学新手，包括地震学专业的高年级本科生、低年级研究生，以及其他
 刚接触地震学的科研人员。其既可以作为入门自学材料，也可以作为地震学研究组的

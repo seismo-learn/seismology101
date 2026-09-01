@@ -1,4 +1,4 @@
-# 地震“学”科研入门教程
+# 地震学科研入门教程
 
 [![Jupyter Book Badge](https://raw.githubusercontent.com/jupyter-book/jupyter-book/next/docs/media/images/badge.svg)](https://seismo-learn.org/seismology101/)
 [![Build and Deploy](https://github.com/seismo-learn/seismology101/actions/workflows/build.yml/badge.svg)](https://github.com/seismo-learn/seismology101/actions/workflows/build.yml)
