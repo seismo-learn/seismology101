@@ -1,15 +1,14 @@
 # 选择操作系统
 
-- 本节贡献者: 田冬冬、姚家园
-- 最近更新日期: 2026-06-11
-- 预计阅读时间: 5 分钟
+:::{page-meta}
+:authors: 田冬冬、姚家园
+:updated: 2026-06-11
+:reading-time: 5 分钟
+:::
 
-----
-
-个人电脑有三种常见的操作系统：Microsoft Windows、macOS 和 Linux。
-从市场占有率上看，Microsoft Windows 用户数目远远多于 macOS 和 Linux 用户。
-但对地震学科研工作而言，Linux 和 macOS 往往更适合作为日常科研的主要操作系统。
-主要原因有：
+个人电脑有三种常见的操作系统：Microsoft Windows、macOS 和 Linux。从市场占有率上看，
+Microsoft Windows 用户数目远远多于 macOS 和 Linux 用户。但对地震学科研工作而言，Linux
+和 macOS 往往更适合作为日常科研的主要操作系统。主要原因有：
 
 1. Linux/macOS 上可以更容易地获取和使用编程所需的开发工具
 2. 大多数地震学相关的程序/代码都是在 Linux/macOS 上编写的，且通常优先支持 Linux/macOS
@@ -27,7 +26,7 @@
 Linux 有[上百个不同的发行版](https://distrowatch.com/)，
 绝大多数都可以免费获取与安装。比较流行的发行版有
 [Ubuntu](https://ubuntu.com/)、[Debian](https://www.debian.org/)、
-[Fedora](https://getfedora.org/) 等。
+[Fedora](https://fedoraproject.org/) 等。
 有经验的读者可以根据自己的喜好自行选择合适的 Linux 发行版。
 
 对于刚接触 Linux 的读者，**推荐使用 Fedora 或 Ubuntu**。这两个发行版的资料多、社区活跃，

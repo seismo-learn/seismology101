@@ -1,10 +1,11 @@
 # Markdown
 
-- 本节贡献者: 姚家园、田冬冬
-- 最近更新日期: 2021-02-26
-- 预计阅读时间: 30 分钟
+:::{page-meta}
+:authors: 姚家园、田冬冬
+:updated: 2021-02-26
+:reading-time: 30 分钟
+:::
 
----
 
 [Markdown](https://daringfireball.net/projects/markdown/) 是一种轻量级标记语言，
 使用语法简单的纯文本格式来编写文档，帮助人们专注于写作本身而不用关注文档格式。
