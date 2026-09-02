@@ -9,6 +9,10 @@ kernelspec:
   display_name: Python 3
   language: python
   name: python3
+# Syngine 服务端当前对所有合成波形请求返回 HTTP 204（无内容），
+# 导致构建失败。本节仍在编写中，暂时跳过执行。
+execute:
+  skip: true
 ---
 
 # 合成地震波形
