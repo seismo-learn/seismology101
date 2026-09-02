@@ -32,11 +32,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-
       - name: Setup Micromamba
         uses: mamba-org/setup-micromamba@v3.2.1
         with:
