@@ -45,6 +45,6 @@ const pageMeta = {
   },
 };
 
-const plugin = { name: '页面元信息', directives: [pageMeta] };
+const plugin = { name: 'Page meta', directives: [pageMeta] };
 
 export default plugin;
