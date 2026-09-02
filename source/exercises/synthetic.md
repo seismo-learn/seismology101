@@ -13,11 +13,9 @@ kernelspec:
 
 # 合成地震波形
 
-:::{page-meta}
-:authors: 田冬冬
-:updated: 2025-02-27
-:reading-time: 60 分钟
-:::
+- 本节贡献者: 田冬冬
+- 最近更新日期: 2025-02-27
+- 预计阅读时间: 60 分钟
 
 
 :::{warning}

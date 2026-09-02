@@ -1,11 +1,10 @@
 # Zsh 及其配置
 
-:::{page-meta}
-:authors: 田冬冬、姚家园
-:updated: 2021-01-21
-:reading-time: 20 分钟
-:::
+- 本节贡献者: 田冬冬、姚家园
+- 最近更新日期: 2021-01-21
+- 预计阅读时间: 20 分钟
 
+---
 
 Linux 下有很多 Shell，最常见的是 Bash，此外还有 Zsh、csh、ksh。推荐使用 Zsh。
 
