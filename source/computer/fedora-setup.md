@@ -9,7 +9,7 @@
 
 :::{note}
 本节内容适用于 **Fedora 43 Workstation**，不一定适用于其他 Fedora 版本。
-建议用户访问 [Fedora 官网](https://getfedora.org/) 下载并安装 Fedora
+建议用户访问 [Fedora 官网](https://fedoraproject.org/) 下载并安装 Fedora
 最新版本，也欢迎用户帮助我们更新本文以适配 Fedora 最新版本。
 :::
 
@@ -17,7 +17,7 @@
 
 ### 下载系统镜像
 
-访问 [Fedora 官网](https://getfedora.org/) 并下载 Fedora Workstation 镜像文件，
+访问 [Fedora 官网](https://fedoraproject.org/) 并下载 Fedora Workstation 镜像文件，
 一般选择 x86_64 版本。
 
 **Fedora 43 Workstation x86_64** 的 ISO 镜像文件下载链接：
