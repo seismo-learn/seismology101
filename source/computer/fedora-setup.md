@@ -6,7 +6,6 @@
 :reading-time: 120 分钟
 :::
 
-
 :::{note}
 本节内容适用于 **Fedora 43 Workstation**，不一定适用于其他 Fedora 版本。
 建议用户访问 [Fedora 官网](https://fedoraproject.org/) 下载并安装 Fedora
@@ -186,13 +185,13 @@ Fedora 系统自带了“软件中心”，可用于查找、安装、卸载和�
 
 :::{note}
 `dnf` 会从 Fedora 软件源下载软件包。
-国内用户可以参考 <http://mirrors.ustc.edu.cn/help/fedora.html> 将默认软件源镜像
+国内用户可以参考 <https://mirrors.ustc.edu.cn/help/fedora.html> 将默认软件源镜像
 替换为中科大镜像，以加快软件下载速度。
 
 注意：在替换软件源镜像后要执行 `sudo dnf makecache` 更新本地缓存的软件包元数据。
 :::
 
-`dnf` 的详细用法请阅读 [dnf 参考文档](https://dnf.readthedocs.io/en/latest/index.html)，
+`dnf` 的详细用法请阅读 [dnf 参考文档](https://dnf.readthedocs.io/)，
 这里只介绍一些常用命令:
 
 ```
