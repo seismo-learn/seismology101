@@ -7,6 +7,6 @@ dependencies:
   - cartopy=0.25.0
   - jupyter-book=2.1.6
   - matplotlib-base=3.11.1
-  - numpy=2.5.2
+  - numpy=2.5.3
   - obspy=1.5.1
   - nodejs=26.6.0
