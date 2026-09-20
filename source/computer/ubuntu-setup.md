@@ -2,15 +2,14 @@
 
 :::{page-meta}
 :authors: 田冬冬、姚家园、何星辰
-:updated: 2026-04-08
+:updated: 2026-09-20
 :reading-time: 120 分钟
 :::
 
-
 :::{note}
-本节内容适用于 **Ubuntu Desktop 24.04.4 LTS**，不一定适用于其他 Ubuntu 版本。
-建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 24.04.4 LTS）或最新版本
-（目前是 Ubuntu 25.10），也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
+本节内容适用于 **Ubuntu Desktop 26.04.1 LTS**，不一定适用于其他 Ubuntu 版本。
+建议用户总是选择 Ubuntu 最新的长期支持版（目前是 Ubuntu 26.04.1 LTS），
+也欢迎用户帮助我们更新本文以适配 Ubuntu 最新版本。
 :::
 
 ## 安装系统
@@ -20,10 +19,10 @@
 访问 [Ubuntu 官网](https://ubuntu.com/download/desktop)并下载 Ubuntu Desktop 镜像文件，
 网站会自动进行下载。
 
-**Ubuntu 24.04.4 LTS** 的 ISO 镜像文件下载链接：
+**Ubuntu 26.04.1 LTS** 的 ISO 镜像文件下载链接：
 
-- [官方镜像](https://releases.ubuntu.com/noble/ubuntu-24.04.4-desktop-amd64.iso)
-- [中科大镜像](https://mirrors.ustc.edu.cn/ubuntu-releases/24.04.4/ubuntu-24.04.4-desktop-amd64.iso) [**推荐国内用户使用**]
+- [官方镜像](https://releases.ubuntu.com/26.04.1/ubuntu-26.04.1-desktop-amd64.iso)
+- [中科大镜像](https://mirrors.ustc.edu.cn/ubuntu-releases/26.04.1/ubuntu-26.04.1-desktop-amd64.iso)（**推荐国内用户使用**）
 
 ### 制作 USB 启动盘
 
@@ -36,33 +35,33 @@ Ventoy 可以在 Windows 和 Linux 下使用，详细用法见 [官方文档](ht
 下面以图解形式演示如何在 Windows 下使用 Ventoy 制作 USB 启动盘。
 
 1. 从 [Ventoy 下载页面](https://ventoy.net/cn/download.html) 下载 Ventoy 软件包。
-   解压后，执行其中的 `Ventoy2Disk.exe` 程序，程序启动后界面如图 1 所示。
-   Ventoy 程序自动找到了用于制作启动盘的 32 GB U 盘
+   解压后，执行其中的 `Ventoy2Disk.exe` 程序，程序启动后界面如下图所示，
+   可以看到 Ventoy 已自动识别出用于制作启动盘的 32 GB U 盘
 
-   ![](ventoy-1.jpg)
+   ![Ventoy程序界面](ventoy-1.jpg)
 
 2. 点击“安装”会将 Ventoy 安装到 U 盘中，此时 U 盘会被格式化。请务必确保选中的是
    目标 U 盘，且 U 盘中无其它重要文件
 
-   ![](ventoy-2.jpg)
+   ![安装 Ventoy](ventoy-2.jpg)
 
 3. Ventoy 成功安装后，会弹出成功安装的对话框，点击确定
 
-   ![](ventoy-3.jpg)
+   ![Ventoy 安装成功](ventoy-3.jpg)
 
 4. Ventoy 界面显示，安装包内 Ventoy 版本和设备内部 Ventoy 版本相同，表明 USB
    启动盘制作成功
 
-   ![](ventoy-4.jpg)
+   ![Ventoy 启动盘制作成功](ventoy-4.jpg)
 
 5. 退出 Ventoy2Disk 程序。在“我的电脑”中找到名为 Ventoy 的 U 盘，并将已下载好的
    Linux ISO 镜像文件复制到 U 盘中即可
 
-   ![](ventoy-5.jpg)
+   ![复制 ISO 镜像到 U 盘](ventoy-5.jpg)
 
 ### 进入 Live 系统
 
-将制作好的 USB 启动盘插入要安装 Ubuntu 系统的计算机上，开机启动，
+将制作好的 USB 启动盘插入要安装 Ubuntu 系统的计算机，开机启动，
 按下 {kbd}`F10` 或 {kbd}`F12` 进入 BIOS，并使计算机优先从 USB 盘启动。
 正确启动后，则会进入系统启动引导程序，按向上向下键选中“Ubuntu”以进入 Ubuntu 的 Live 系统。
 
@@ -87,48 +86,49 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 其他文档。
 :::
 
-读者可参考下面的图解步骤和对应的说明安装操作系统。
+读者可参考下面的图解步骤和对应的说明安装操作系统。下列图解基于较早版本的 Ubuntu，
+Ubuntu 26.04 LTS 的界面细节可能略有差异，但整体安装流程基本一致。
 
 1. 进入欢迎界面，左侧可以选择安装过程中使用的语言
 
-   ![](ubuntu-setup-1.jpg)
+   ![Ubuntu 欢迎界面](ubuntu-setup-1.jpg)
 
 2. 选择“中文（简体）”，点击“安装 Ubuntu”即开始安装
 
-   ![](ubuntu-setup-2.jpg)
+   ![选择语言并安装 Ubuntu](ubuntu-setup-2.jpg)
 
 3. 选择键盘布局，汉语或 “English(US)”均可
 
-   ![](ubuntu-setup-3.jpg)
+   ![选择键盘布局](ubuntu-setup-3.jpg)
 
 4. 选择“正常安装”，建议勾选“安装 Ubuntu 时下载更新”和“为图形或无线硬件，
    以及其他媒体格式安装第三方软件”
 
-   ![](ubuntu-setup-4.jpg)
+   ![选择正常安装与附加选项](ubuntu-setup-4.jpg)
 
 5. 在“安装类型”界面，选择“清除整个硬盘并安装 Ubuntu”，安装程序会进行自动分区。
    有经验的用户也可以选择“其他选项”自定义分区，但需要了解 Linux 的分区操作。
    对于一般用户而言，建议使用默认的自动分区
 
-   ![](ubuntu-setup-5.jpg)
+   ![选择安装类型与分区方式](ubuntu-setup-5.jpg)
 
 6. 单击“现在安装”，选择“继续”以将改动写入磁盘
 
-   ![](ubuntu-setup-6.jpg)
+   ![确认现在安装](ubuntu-setup-6.jpg)
 
 7. 选择时区（例如“上海”）
 
-   ![](ubuntu-setup-7.jpg)
+   ![选择时区](ubuntu-setup-7.jpg)
 
 8. 输入账户信息和密码信息。注意用户名只能是英文
 
-   ![](ubuntu-setup-8.jpg)
+   ![设置账户和密码](ubuntu-setup-8.jpg)
 
-9. 等待安装完成。完成后点击“现在重启”以重启计算机。
+9. 等待安装完成。完成后点击“现在重启”以重启计算机
 
-   ![](ubuntu-setup-9.jpg)
+   ![安装完成并重启](ubuntu-setup-9.jpg)
 
-重启计算机时，记得拔出 USB 启动盘，以免再次进入 USB 安装镜像。
+重启时记得拔出 USB 启动盘，以免计算机再次从 USB 启动盘启动。
 
 ### 更新系统
 
@@ -136,7 +136,7 @@ Live 系统是指安装在 USB 启动盘中的操作系统。用户可以在 Liv
 Ubuntu 会弹出提醒通知。建议用户及时更新系统及安装的软件。
 
 :::{warning}
-更新系统前，特别是大版本更新（如 Ubuntu 22.04 更新为 Ubuntu 24.04），
+更新系统前，特别是大版本更新（如 Ubuntu 24.04 更新为 Ubuntu 26.04），
 最好先进行一次备份（可以参考[备份实践](/best-practices/backup)）。
 :::
 
@@ -159,7 +159,7 @@ Ubuntu 系统自带了“软件中心”，可用于查找、安装、卸载和�
 注意：在替换软件源镜像后要执行 `sudo apt update` 更新本地缓存的软件包元数据。
 :::
 
-`apt` 的详细用法请阅读 [Ubuntu Manpages 中的 apt 文档](https://manpages.ubuntu.com/manpages/man8/apt.8.html)，
+`apt` 的详细用法请阅读 [Ubuntu Manpages 中的 apt 文档](https://manpages.ubuntu.com/manpages/resolute/man8/apt.8.html)，
 或直接在本机终端中执行 `man apt` 查看。这里只介绍一些常用命令:
 
 ```
@@ -179,8 +179,8 @@ $ sudo apt install xxx
 $ sudo apt --only-upgrade install xxx
 
 # 卸载软件
-$ sudo apt remove xxx  （保留配置文件）
-$ sudo apt purge xxx  （删除配置文件）
+$ sudo apt remove xxx （保留配置文件）
+$ sudo apt purge xxx （删除配置文件）
 ```
 
 :::{tip}
