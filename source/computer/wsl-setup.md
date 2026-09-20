@@ -2,10 +2,9 @@
 
 :::{page-meta}
 :authors: 赵志远、田冬冬、姚家园
-:updated: 2026-06-16
+:updated: 2026-09-20
 :reading-time: 120 分钟
 :::
-
 
 ## 简介
 
@@ -74,13 +73,13 @@ $ wsl --install <Distribution Name>
 
 例如，如果想安装 Fedora 发行版，可以先使用 `wsl --list --online` 查看当前可用的
 发行版名称，再根据实际输出执行安装命令。例如，若列表中显示 Fedora 的名称为
-`FedoraLinux-43`，则可以使用：
+`FedoraLinux-44`，则可以使用：
 ```
-$ wsl --install FedoraLinux-43
+$ wsl --install FedoraLinux-44
 ```
 安装完成后可以使用如下命令启动 Fedora：
 ```
-$ wsl -d FedoraLinux-43
+$ wsl -d FedoraLinux-44
 ```
 :::
 
@@ -123,7 +122,7 @@ $ wsl --help
 
 列出所有已安装的 Linux 发行版的状态：
 ```
-$ wsl --list
+$ wsl --list --verbose
 ```
 
 检查 WSL 状态：
@@ -131,9 +130,19 @@ $ wsl --list
 $ wsl --status
 ```
 
+更新 WSL 到最新版本：
+```
+$ wsl --update
+```
+
 停止正在运行的 Linux 发行版：
 ```
 $ wsl --terminate Ubuntu
+```
+
+终止所有正在运行的 Linux 发行版和 WSL2 虚拟机（修改配置后可用它重启 WSL 环境）：
+```
+$ wsl --shutdown
 ```
 
 注销并卸载某个 Linux 发行版：
@@ -166,13 +175,13 @@ Windows 系统的硬盘挂载在 WSL 的 `/mnt` 路径下，用户可以在 WSL 
 
 在 Windows 下搜索、打开和编辑 WSL 下的文件和目录的方式有以下两种：
 
-1. 在 Windows 资源管理器的地址栏中输入 `\\wsl$`，会显示所有已安装的 WSL 目录，
-   然后根据需要找到文件进行操作
+1. 在 Windows 资源管理器的地址栏中输入 `\\wsl.localhost`（旧写法为 `\\wsl$`），
+   会显示所有已安装的 WSL 目录，然后根据需要找到文件进行操作
 2. 进入 WSL，在终端输入 `cd ~ && explorer.exe .`，会在 Windows 下打开
    家目录，根据需要找到文件进行操作
 
 在 Windows 下访问 WSL 文件系统时，文件和目录的路径有两种表示方式：
-真实路径和 UNC 路径，后者指类似 `\\wsl$` 这种格式的路径。
+真实路径和 UNC 路径，后者指类似 `\\wsl.localhost`（旧写法为 `\\wsl$`）这种格式的路径。
 
 WSL1 支持真实路径访问，但 WSL2 不支持真实路径访问。
 
@@ -199,7 +208,3 @@ Windows 的应用程序可以使用真实路径访问 WSL1 文件系统，某些
 [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)。
 使用 VS Code 可以直接编辑和运行 WSL 里的文件，且不会因为跨文件系统工作使性能下降。
 :::
-
-## 扩展阅读
-
--  [比较 WSL2 和 WSL1](https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions)
