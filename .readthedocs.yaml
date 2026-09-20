@@ -14,8 +14,8 @@ build:
       html:
         - make html
     post_build:
-        - mkdir -p "$READTHEDOCS_OUTPUT/html" 
-        - cp -a source/_build/html/. "$READTHEDOCS_OUTPUT/html/" 
+      - mkdir -p "$READTHEDOCS_OUTPUT/html"
+      - cp -a source/_build/html/. "$READTHEDOCS_OUTPUT/html/"
 
 # Sphinx is still necessary for ReadTheDocs to install dependencies and build the documentation.
 sphinx:
