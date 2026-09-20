@@ -2,13 +2,13 @@
 
 :::{page-meta}
 :authors: 田冬冬、姚家园、何星辰、王亮
-:updated: 2026-06-15
+:updated: 2026-09-20
 :reading-time: 120 分钟
 :::
 
-
 :::{note}
 本节内容基于作者在 macOS Sequoia (15) 和 Tahoe (26) 上的配置经验，仅适用于 Apple M 系列芯片。
+尚未在 macOS 27 (Golden Gate) 上完整验证。
 如果你使用的是 Intel 芯片 Mac，部分软件的安装路径和命令会有所不同。
 :::
 
@@ -20,7 +20,7 @@ macOS 系统的更新也十分简单。当有新版本发布以后，在“系�
 直接更新即可。
 
 :::{warning}
-更新系统前，特别是大版本更新（如 macOS 14 更新为 macOS 15），
+更新系统前，特别是大版本更新（如 macOS 15 更新为 macOS 26），
 最好先备份一下（可以参考[备份实践](/best-practices/backup)）。
 :::
 
@@ -72,10 +72,10 @@ Homebrew 的安装脚本及相关资源托管在 [GitHub](https://github.com/) �
 读者应根据自己所处的地理位置使用相应的安装说明。
 
 打开终端，执行如下命令，并根据终端提示进行操作，以安装 Homebrew。
-Homebrew 以及通过 Homebrew 安装的所有软件包都会被安装到目录 `/opt/homebrew` 下。
+Homebrew 以及通过 Homebrew 安装的命令行软件包都会被安装到目录 `/opt/homebrew` 下。
 ::::{tab-set}
 :::{tab-item} 国内用户
-先配置使用 Homebrew 的中科大镜像源:
+先配置使用 Homebrew 的中科大镜像源。macOS 默认使用 zsh，其配置文件为 `~/.zshrc`：
 
 ```
 # 将 Homebrew 镜像配置写入 .zshrc 文件
@@ -268,12 +268,8 @@ BSD 和 GNU 实用工具的命令行语法有相似之处，但也有差异。
 $ brew install findutils gawk gnu-sed gnu-tar grep
 ```
 
-Homebrew 将 GNU 实用工具安装在 `/usr/local/bin` 或 `/opt/homebrew/bin` 目录下，
+Homebrew 将 GNU 实用工具安装在 `/opt/homebrew/bin` 目录下，
 但在所有工具的名称前加上了前缀 `g`，以避免替换 macOS 系统自带的 BSD 实用工具，即 `sed` 是 BSD 提供的，
 而 `gsed` 是 GNU 提供的。一般情况下，建议使用 BSD 工具（无前缀 `g`），
 在遇到不兼容的情况下，可以考虑使用 GNU 工具（有前缀 `g`），但在写脚本时，
 要额外注意脚本的可移植性。
-
-## 扩展阅读
-
-- [GNU 与 BSD 实用工具的用法区别](https://ponderthebits.com/2017/01/know-your-tools-linux-gnu-vs-mac-bsd-command-line-utilities-grep-strings-sed-and-find/)
