@@ -2,7 +2,7 @@
 
 :::{page-meta}
 :authors: 田冬冬、姚家园
-:updated: 2026-06-11
+:updated: 2026-09-02
 :reading-time: 5 分钟
 :::
 
@@ -17,7 +17,7 @@ Linux 和 macOS 往往更适合作为日常科研的主要操作系统。主要�
 
 对于地震学初学者，**更推荐使用 Linux 或 macOS 系统**。这样更容易复用他人提供的脚本和
 工具，也更容易直接照着教程完成数据处理与分析。只有在非常确定自己的科研工作不依赖他人
-提供的代码，或者已经具备在 Windows 系统下编译、安装和使用相关程序的经验时，才建议将 
+提供的代码，或者已经具备在 Windows 系统下编译、安装和使用相关程序的经验时，才建议将
 Windows 作为主要科研环境。
 
 ## Linux
@@ -27,17 +27,18 @@ Linux 有[上百个不同的发行版](https://distrowatch.com/)，绝大多数�
 [Fedora](https://fedoraproject.org/) 等。
 
 对于刚接触 Linux 的读者，**推荐使用 Fedora 或 Ubuntu**。这两个发行版的资料多、社区活跃，
-也更适合作为入门时的参考环境。可以分别参考 《[Fedora 配置指南](/computer/fedora-setup.md)》
-和《[Ubuntu 配置指南](/computer/ubuntu-setup.md)》来安装和配置系统，以满足科研工作的需求。
+也更适合作为入门时的参考环境。可以分别参考《[Fedora 配置指南](/computer/fedora-setup)》
+和《[Ubuntu 配置指南](/computer/ubuntu-setup)》来安装和配置系统，以满足科研工作的需求。
 
 已有 Linux 使用经验的读者，可以根据自己的喜好选择 Debian、Arch Linux 等其他发行版。
 
 ## macOS
 
-Mac 电脑自带的 macOS 系统可以满足科研工作的大部分需求。
+Mac 电脑自带的 macOS 系统可以满足科研工作的大部分需求。macOS 是基于 Unix 的操作系统，
+与 Linux 同属类 Unix 环境，因此大多数科研工具链在 macOS 上也能直接使用。
 **如果读者的科研主力机器是 Mac，建议直接使用 macOS 系统**。macOS 的一个优势是日常使用
 和科研使用可以比较自然地合并到同一台机器上，减少设备切换的成本。可以参考
-《[macOS 配置指南](/computer/macos-setup.md)》对 macOS 系统进行配置，以满足科研工作的需求。
+《[macOS 配置指南](/computer/macos-setup)》对 macOS 系统进行配置，以满足科研工作的需求。
 
 ## Microsoft Windows
 
@@ -55,4 +56,4 @@ Mac 电脑自带的 macOS 系统可以满足科研工作的大部分需求。
 与安装双系统相比，WSL 安装更简便且可以无缝切换；与使用虚拟机相比，WSL 启动更快、资源占用
 更少。因此，对于绝大多数 Windows 10/11 用户，WSL 是更轻量且实用的选择。
 
-可以参考《[WSL 配置指南](/computer/wsl-setup.md)》来安装并配置 WSL，以满足科研工作的需求。
+可以参考《[WSL 配置指南](/computer/wsl-setup)》来安装并配置 WSL，以满足科研工作的需求。
