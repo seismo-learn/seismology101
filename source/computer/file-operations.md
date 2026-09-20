@@ -60,7 +60,7 @@ $ ls /etc/passwd
 
 ### 切换目录
 
-`cd`（change directory，即切换目录）命令进入用于在目录之间切换。
+`cd`（change directory，即切换目录）命令用于在目录之间切换。
 
 ```
 # 切换至根目录
@@ -170,7 +170,7 @@ hello-world.txt  seismo-learn.txt  source  source-mv
 
 ### 删除文件和目录
 
-`rm`（remove，即删除）命令 可以用于删除文件和目录。
+`rm`（remove，即删除）命令可以用于删除文件和目录。
 
 ```
 # 使用 rm 命令删除 seismo-learn.txt 文件
@@ -314,7 +314,7 @@ drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
 ```
 
 `ls -l` 的输出中，第一列为文件权限位，第三列和第四列分别表示文件所属用户和用户组。
-此处，文件 `hello-world.txt` 和目录 `source` 属于用户 seismo-learn，
+此处，文件 `hello-world.sh` 和目录 `source` 属于用户 seismo-learn，
 且属于用户组 seismo-learn（对于个人计算机而言，用户组通常有且仅有一个用户，
 因而用户组与用户同名）。
 
@@ -341,7 +341,7 @@ drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
 
 ```
 # 修改 hello-world.sh 权限
-# 所属用户可读可写不可执行、所属用户组可读可写不可执行、其他人所属用户可读不可写不可执行
+# 所属用户可读可写不可执行、所属用户组可读可写不可执行、其他人可读不可写不可执行
 $ chmod 664 hello-world.sh
 $ ls -l hello-world.sh
 -rw-rw-r-- 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
