@@ -2,10 +2,9 @@
 
 :::{page-meta}
 :authors: 姚家园、田冬冬
-:updated: 2021-04-23
+:updated: 2026-09-20
 :reading-time: 30 分钟
 :::
-
 
 ## 熟悉 Linux 文件系统
 
@@ -28,7 +27,13 @@ Linux 文件系统就像一颗树一样，从 `/` 目录开始，这个特殊的
 日常科研中，大多数情况下只在 `/home` 目录下工作。假设用户名是 seismo-learn，
 该用户的家目录便是 `/home/seismo-learn`。macOS 下的家目录是 `/Users/seismo-learn`。
 在 Linux/macOS 系统下，可用 `~` 代表家目录。Linux 系统安装后，自动创建的家目录下的目录有
-`~/Desktop`、`~/Documents`、`~/Downloads` 等。熟悉 Linux 文件系统后
+`~/Desktop`、`~/Documents`、`~/Downloads` 等。
+
+需要注意，Linux 的文件系统**区分大小写**，`File.txt` 和 `file.txt` 是两个不同的文件；
+而 macOS 默认**不区分大小写**，`File.txt` 和 `file.txt` 指向同一个文件。因此，写脚本
+或处理数据时要注意文件名的大小写。
+
+熟悉 Linux 文件系统后
 可以参考 [《文件管理实践经验》](/best-practices/file-organization) 和
 [《软件安装实践经验》](/best-practices/software-installation) 进一步组织与管理家目录，
 以提高工作效率。
@@ -225,9 +230,9 @@ lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -> /etc/passwd
 $ ln -s /usr/lib mylibdir
 $ ls -l
 total 0
-lrwxr-xr-x  1 seismo-learn  seismo-learn     8B Oct  4 22:04 mylibdir -> /usr/lib
-lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:59 mylocalpasswd -> /etc/passwd
-lrwxr-xr-x  1 seismo-learn  seismo-learn    11B Oct  4 21:55 passwd -> /etc/passwd
+lrwxr-xr-x  1 seismo-learn  seismo-learn   8 Oct  4 22:04 mylibdir -> /usr/lib
+lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:59 mylocalpasswd -> /etc/passwd
+lrwxr-xr-x  1 seismo-learn  seismo-learn  11 Oct  4 21:55 passwd -> /etc/passwd
 # 可以直接对软链接进行各种操作
 $ ls mylibdir/
 
@@ -348,6 +353,7 @@ $ ls -l hello-world.sh
 
 # 增加 hello-world.sh 的可执行属性
 $ chmod +x hello-world.sh
+$ ls -l hello-world.sh
 -rwxrwxr-x 1 seismo-learn seismo-learn 0 Feb  7 22:37 hello-world.sh
 
 # 当文件有可执行权限后，即可通过 ./文件名 的方式直接执行该文件
