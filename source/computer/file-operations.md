@@ -185,7 +185,7 @@ destination
 # 删除 destination 目录
 ## rm 命令无法直接删除文件夹，直接使用 rm 命令删除文件夹会出现如下报错
 $ rm destination/
-rm: destination/: is a directory
+rm: cannot remove 'destination/': Is a directory
 ## 需要使用 -r 选项（recursive，表示递归）
 $ rm -r destination
 $ ls
@@ -315,17 +315,18 @@ $ mkdir source
 $ ls -l
 total 0
 -rw-r--r-- 1 seismo-learn seismo-learn 0 Feb  7 22:07 hello-world.sh
-drwxr-xr-x 2 seismo-learn seismo-learn 6 Feb  7 22:07 source
+drwxr-xr-x 2 seismo-learn seismo-learn 4096 Feb  7 22:07 source
 ```
 
 `ls -l` 的输出中，第一列为文件权限位，第三列和第四列分别表示文件所属用户和用户组。
 此处，文件 `hello-world.sh` 和目录 `source` 属于用户 seismo-learn，
 且属于用户组 seismo-learn（对于个人计算机而言，用户组通常有且仅有一个用户，
-因而用户组与用户同名）。
+因而用户组与用户同名）。第五列是文件大小；目录的大小由文件系统决定，
+不同文件系统下可能不同，不必深究。
 
 第一列文件权限位总共包含了 10 位信息（如 `-rw-r--r--`），从左到右的含义分别是：
 
-- 第一位：文件类型（例如，`-` 表示普通文件，`d` 表示目录）
+- 第一位：文件类型（例如，`-` 表示普通文件，`d` 表示目录，`l` 表示软链接）
 - 第二到第四位：文件所属用户的权限
 - 第五到第七位：文件所属用户组的权限
 - 第八到第十位：其他人的权限
