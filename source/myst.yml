@@ -8,6 +8,8 @@ project:
   # authors: []
   github: https://github.com/seismo-learn/seismology101
   license: CC-BY-NC-4.0
+  references:
+    software: https://seismo-learn.org/software/
   plugins:
     - plugins/page-meta.mjs
   toc:

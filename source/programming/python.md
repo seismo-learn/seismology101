@@ -75,7 +75,7 @@ Miniforge
 :::
 
 下面展示了如何在 Linux 系统下安装 Miniforge。其它操作系统下的安装说明以及具体使用方法可以参考
-[地震“学”软件中 conda 相关内容](https://seismo-learn.org/software/conda/)。
+[地震“学”软件中 conda 相关内容](xref:software/conda/)。
 
 1. 下载 Miniforge
 
