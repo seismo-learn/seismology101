@@ -9,6 +9,7 @@ project:
   github: https://github.com/seismo-learn/seismology101
   license: CC-BY-NC-4.0
   references:
+    seis: https://seismo-learn.org/seismology/
     software: https://seismo-learn.org/software/
   plugins:
     - plugins/page-meta.mjs
